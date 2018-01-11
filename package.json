@@ -1,0 +1,48 @@
+{
+  "name": "sumup-js",
+  "version": "1.0.0",
+  "description": "A module providing the standard SumUp JS configs.",
+  "main": "./dist/index.js",
+  "module": "./src/index.js",
+  "author": "Felix Jung <felix.jung@sumup.com>",
+  "license": "NO LICENSE",
+  "private": true,
+  "bin": "./dist/cli.js",
+  "scripts": {
+    "cleanup": "rimraf ./dist",
+    "build": "microbundle --format cjs --strict --compress false ./src/index.js ./src/cli.js",
+    "test:watch": "yarn test --watchAll",
+    "test": "jest",
+    "develop": "microbundle watch --format cjs --strict --compress false ./src/index.js ./src/cli.js",
+    "start": "yarn cleanup && yarn develop"
+  },
+  "files": [
+    "dist",
+    "babel.js",
+    "eslint.js",
+    "prettier.js"
+  ],
+  "dependencies": {
+    "ajv": "^5.5.1",
+    "babel-eslint": "^8.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "lodash": "^4.17.4",
+    "microbundle": "^0.2.4",
+    "prettier": "^1.7.4",
+    "rimraf": "^2.6.2",
+    "webpack-merge": "^4.1.0",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4",
+    "npm-run-all": "^4.1.2"
+  }
+}
