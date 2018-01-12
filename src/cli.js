@@ -3,8 +3,9 @@
 import yargs from 'yargs';
 
 import bootstrap from './cli/bootstrap';
+import run from './cli/run';
 
-const commands = { bootstrap };
+const commands = { bootstrap, run };
 
 // eslint-disable-next-line
 yargs
@@ -38,12 +39,17 @@ yargs
           desc: 'Write all base configurations.',
           type: 'boolean'
         }),
-    args => run('bootstrap', args)
+    args => execute('bootstrap', args)
+  )
+  .command(
+    'run <tool> [...tool options]',
+    'Run any of the bundled tools.',
+    args => execute('run', args)
   )
   .help()
   .version().argv;
 
-function run(command, args) {
+function execute(command, args) {
   const commandFn = commands[command];
 
   if (!commandFn) {
