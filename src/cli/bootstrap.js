@@ -14,17 +14,18 @@ import {
   zipObject,
   assign
 } from 'lodash/fp';
-import { SUPPORTED_CONFIGS, eslint } from '../configs';
+import { SUPPORTED_CONFIGS, eslint, babel } from '../configs';
 
 const writeFileAsync = promisify(writeFile);
 
 const { ESLINT_CONFIGS } = eslint;
+const { BABEL_CONFIGS } = babel;
 
 function getConfigName(name, val) {
   const configs = {
     eslint: ESLINT_CONFIGS,
     prettier: ['base'],
-    babel: ['base', 'react', 'node', 'webpack', 'lodash', 'defaultReactSpa']
+    babel: BABEL_CONFIGS
   };
 
   const useBaseConfig = val === true;
