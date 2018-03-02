@@ -5,11 +5,10 @@ import {
   flow,
   get,
   includes,
-  isUndefined,
   map,
   keys,
   omitBy,
-  pick,
+  pickAll,
   reduce,
   zipObject,
   assign
@@ -80,8 +79,8 @@ const getConfigs = flow(params => {
   if (all) {
     return zipObject(['base', 'base', 'base'], SUPPORTED_CONFIGS);
   }
-  return pick(SUPPORTED_CONFIGS, params);
-}, omitBy(isUndefined));
+  return pickAll(SUPPORTED_CONFIGS, params);
+}, omitBy(val => typeof val !== 'string'));
 
 export default function bootstrap(params) {
   // TODO: handle case where someone writes eslint config but not prettier
