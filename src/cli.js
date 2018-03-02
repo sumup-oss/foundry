@@ -35,7 +35,7 @@ yargs
           type: 'boolean'
         })
         .option('targetDir', {
-          coerce: val => val || process.cwd(),
+          default: process.cwd(),
           desc: 'Directory to write configs to.',
           type: 'string'
         })
