@@ -50,16 +50,25 @@ yargs
     'Run any of the bundled tools.',
     args => execute('run', args)
   )
+  .showHelpOnFail(true)
+  .demandCommand(1, '')
   .help()
-  .version().argv;
+  .version();
+
+/**
+ * Fallback, if an unsupported command was specified
+ */
+const registeredCommands = yargs.getCommandInstance().getCommands();
+const currentCommand = yargs.argv._[0];
+
+if (!registeredCommands.includes(currentCommand)) {
+  yargs.showHelp();
+  process.exit(1);
+}
 
 function execute(command, args) {
   const commands = { bootstrap, run };
   const commandFn = commands[command];
-
-  if (!commandFn) {
-    throw new TypeError(`Unknown command ${command}`);
-  }
 
   commandFn(args);
 }
