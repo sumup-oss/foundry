@@ -45,7 +45,7 @@ function createConfigExport(name, config) {
   return `module.exports = require('sumup-js/${name}').${config}`;
 }
 
-function writeConfigFile(name, content, targetDir) {
+async function writeConfigFile(name, content, targetDir) {
   const filenames = {
     eslint: '.eslintrc.js',
     prettier: 'prettier.config.js',
@@ -66,7 +66,13 @@ function writeConfigFile(name, content, targetDir) {
 
   const path = resolve(targetDir, filename);
 
-  return writeFileAsync(path, content);
+  try {
+    return await writeFileAsync(path, content);
+  } catch (e) {
+    console.error(`An error occured writing ${filename} to ${targetDir}.`);
+    console.error(e);
+    return e;
+  }
 }
 
 const getConfigs = flow(params => {
