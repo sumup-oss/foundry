@@ -28,11 +28,6 @@ function getConfigName(name, val) {
     babel: BABEL_CONFIGS
   };
 
-  const useBaseConfig = val === true;
-  if (useBaseConfig) {
-    return 'base';
-  }
-
   const supportedConfigs = get(name, configs);
 
   const isSupportedConfig = includes(val, supportedConfigs);
