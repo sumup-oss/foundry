@@ -6,28 +6,33 @@ import bootstrap from './cli/bootstrap';
 import run from './cli/run';
 
 const commands = { bootstrap, run };
+import { eslint, babel } from './configs';
+
+const { ESLINT_CONFIGS } = eslint;
+const { BABEL_CONFIGS } = babel;
 
 // eslint-disable-next-line
 yargs
   .command(
-    'bootstrap',
-    'Set up configurations for babel, eslint, prettier, etc.',
+    'bootstrap-config',
+    'Set up custom configurations for babel, eslint, prettier, etc.',
     yrgs =>
       yrgs
         .option('eslint', {
-          coerce: val => (val === true ? 'base' : undefined),
-          desc: 'Write eslint config. Optionally specify which one.',
-          type: 'string'
+          desc: 'The eslint config to write.',
+          choices: [true, ...ESLINT_CONFIGS],
+          coerce: val => (val === true ? 'base' : val)
         })
         .option('babel', {
-          coerce: val => (val === true ? 'base' : undefined),
-          desc: 'Write babel config. Optionally specify which one.',
-          type: 'string'
+          desc: 'The eslint config to write.',
+          coerce: val => (val === true ? 'base' : val),
+          choices: [true, ...BABEL_CONFIGS]
         })
         .option('prettier', {
-          coerce: val => (val === true ? 'base' : undefined),
-          desc: 'Write prettier config. Optionally specify which one.',
-          type: 'string'
+          desc: 'Write the prettier config.',
+          coerce: val => (val === true ? 'base' : val),
+          default: false,
+          type: 'boolean'
         })
         .option('targetDir', {
           coerce: val => val || process.cwd(),
