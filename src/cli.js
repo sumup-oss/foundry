@@ -5,7 +5,6 @@ import yargs from 'yargs';
 import bootstrap from './cli/bootstrap';
 import run from './cli/run';
 
-const commands = { bootstrap, run };
 import { eslint, babel } from './configs';
 
 const { ESLINT_CONFIGS } = eslint;
@@ -55,6 +54,7 @@ yargs
   .version().argv;
 
 function execute(command, args) {
+  const commands = { bootstrap, run };
   const commandFn = commands[command];
 
   if (!commandFn) {
