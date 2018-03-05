@@ -83,13 +83,15 @@ async function executeBinary(path, args) {
 
 export default async function run({ argv }) {
   const { _: commandArgs } = argv;
-  const binPath = await resolveBinaryPath(commandArgs[1]);
+  const [, tool] = commandArgs;
+  const binPath = await resolveBinaryPath(tool);
 
   if (!binPath) {
-    console.error(`No executable found for ${toolToRun}`);
+    console.error(`No executable found for ${tool}`);
+    process.exit(1);
   }
 
-  const binArgs = getToolArguments(commandArgs);
+  const binArgs = getToolArguments();
 
   await executeBinary(binPath, binArgs);
 }
