@@ -1,2 +1,5 @@
-module.exports = require('./dist/eslintrc.js').configs.eslint;
+const { resolve } = require('path');
 
+const configPath = resolve(__dirname, './dist');
+
+module.exports = require(configPath).configs.eslint;
