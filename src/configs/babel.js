@@ -19,21 +19,22 @@ export const overwriteEnvPreset = merge({
 });
 
 export const base = {
-  presets: ['env']
+  presets: ['@babel/preset-env']
 };
 
 export const react = {
-  plugins: ['transform-object-rest-spread', 'transform-class-properties'],
-  presets: ['react']
+  plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties'],
+  presets: ['@babel/preset-react', { development:
+  process.env.BABEL_ENV === 'development' }],
 };
 
 export const node = overwriteEnvPreset(base, {
-  presets: [['env', { targets: { node: '8.4.0' } }]]
+  presets: [['@babel/preset-env', { targets: { node: '8.4.0' } }]]
 });
 
 export const webpack = {
-  plugins: ['syntax-dynamic-import'],
-  presets: [['env', { modules: false }]]
+  plugins: ['@babel/plugin-syntax-dynamic-import'],
+  presets: [['@babel/preset-env', { modules: false }]]
 };
 
 export const lodash = {
