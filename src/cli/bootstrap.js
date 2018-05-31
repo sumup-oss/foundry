@@ -48,19 +48,13 @@ async function writeConfigFile(name, content, targetDir) {
   const filenames = {
     eslint: '.eslintrc.js',
     prettier: 'prettier.config.js',
-    babel: 'babel.config.js'
+    babel: '.babelrc.js',
+    plop: 'plopfile.js'
   };
   const filename = get(name, filenames);
 
   if (!filename) {
     throw new TypeError(`No filename found for config ${name}.`);
-  }
-
-  // FIXME: hack until we get babel 7 with js config support.
-  if (name === 'babel') {
-    const babelrcPath = resolve(targetDir, '.babelrc');
-    const babelRc = { presets: ['./babel.config'] };
-    writeFileAsync(babelrcPath, JSON.stringify(babelRc, null, 2));
   }
 
   const path = resolve(targetDir, filename);
@@ -74,13 +68,16 @@ async function writeConfigFile(name, content, targetDir) {
   }
 }
 
-const getConfigs = flow(params => {
-  const { all } = params;
-  if (all) {
-    return zipObject(['base', 'base', 'base'], SUPPORTED_CONFIGS);
-  }
-  return pickAll(SUPPORTED_CONFIGS, params);
-}, omitBy(val => typeof val !== 'string'));
+const getConfigs = flow(
+  params => {
+    const { all } = params;
+    if (all) {
+      return zipObject(['base', 'base', 'base', 'base'], SUPPORTED_CONFIGS);
+    }
+    return pickAll(SUPPORTED_CONFIGS, params);
+  },
+  omitBy(val => typeof val !== 'string')
+);
 
 export default function bootstrap(params) {
   // TODO: handle case where someone writes eslint config but not prettier

@@ -23,13 +23,24 @@ export const base = {
 };
 
 export const react = {
-  plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties'],
-  presets: ['@babel/preset-react', { development:
-  process.env.BABEL_ENV === 'development' }],
+  plugins: [
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties'
+  ],
+  presets: [
+    '@babel/preset-react',
+    {
+      development: process.env.BABEL_ENV === 'development'
+    }
+  ]
 };
 
 export const node = overwriteEnvPreset(base, {
-  presets: [['@babel/preset-env', { targets: { node: '8.4.0' }, modules: false }]]
+  // FIXME: this disables module transpilation in normal node envioonments. Needs
+  //        to be fixed! potentially by editing this project's .babelrc.js accordingly.
+  presets: [
+    ['@babel/preset-env', { targets: { node: '8.4.0' }, modules: false }]
+  ]
 });
 
 export const webpack = {
