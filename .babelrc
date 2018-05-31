@@ -1,3 +1,5 @@
 {
-  presets: ["./babel.config"]
+  "presets": [
+    "./babel.config"
+  ]
 }
