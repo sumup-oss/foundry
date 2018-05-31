@@ -28,8 +28,10 @@ yargs
         .option('prettier', {
           desc: 'Write the prettier config.',
           coerce: val => (val === true ? 'base' : val),
-          default: false,
-          type: 'boolean'
+        })
+        .option('plop', {
+          desc: 'Write the plop config.',
+          coerce: val => (val === true ? 'base' : val),
         })
         .option('targetDir', {
           default: process.cwd(),

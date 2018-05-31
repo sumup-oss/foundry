@@ -13,18 +13,20 @@ import {
   zipObject,
   assign
 } from 'lodash/fp';
-import { SUPPORTED_CONFIGS, eslint, babel } from '../configs';
+import { SUPPORTED_CONFIGS, eslint, babel, plop } from '../configs';
 
 const writeFileAsync = promisify(writeFile);
 
 const { ESLINT_CONFIGS } = eslint;
 const { BABEL_CONFIGS } = babel;
+const { PLOP_CONFIGS } = plop;
 
 function getConfigName(name, val) {
   const configs = {
     eslint: ESLINT_CONFIGS,
     prettier: ['base'],
-    babel: BABEL_CONFIGS
+    babel: BABEL_CONFIGS,
+    plop: PLOP_CONFIGS
   };
 
   const supportedConfigs = get(name, configs);
