@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import yargs from 'yargs';
 
 import bootstrap from './cli/bootstrap';

@@ -29,7 +29,7 @@ export const react = {
 };
 
 export const node = overwriteEnvPreset(base, {
-  presets: [['@babel/preset-env', { targets: { node: '8.4.0' } }]]
+  presets: [['@babel/preset-env', { targets: { node: '8.4.0' }, modules: false }]]
 });
 
 export const webpack = {
