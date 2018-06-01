@@ -7,8 +7,8 @@ export const overwritePresets = merge({
 });
 
 export const base = {
-  extends: ['airbnb-base', 'prettier'],
-  plugins: ['prettier'],
+  extends: ['airbnb-base', 'prettier', 'plugin:jest/recommended'],
+  plugins: ['prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'no-underscore-dangle': 'off',
@@ -22,54 +22,34 @@ export const base = {
         ignoreUrls: true
       }
     ],
+    // TODO: can you remove these when you have a config?
     'prettier/prettier': [
       'error',
       {
         singleQuote: true
       }
     ],
-    'import/prefer-default-export': 0
+    'import/prefer-default-export': 0,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '*.js',
+          'src/**/*.story.js',
+          'src/**/*.spec.js',
+        ]
+      }
+    ]
   },
   parser: 'babel-eslint',
   parserOptions: {
     allowImportExportEverywhere: true,
     ecmaFeatures: {
       ecmaVersion: 2017,
-      impliedStrict: true
-    }
-  }
-};
-
-// TODO: add node specific config here.
-export const node = merge(base, { env: { node: true } });
-
-// TODO: Use Airbnb default config here!
-// https://www.npmjs.com/package/eslint-config-airbnb
-export const react = overwritePresets(exports.base, {
-  extends: [
-    'airbnb-base',
-    'plugin:react/recommended',
-    'prettier',
-    'prettier/react'
-  ],
-  plugins: ['react'],
-  rules: {
-    'react/prop-types': [1, { ignore: ['children'] }]
-  },
-  parserOptions: {
-    ecmaFeatures: {
+      impliedStrict: true,
       jsx: true
     }
   },
-  env: {
-    browser: true,
-    node: true
-  }
-});
-
-export const test = {
-  extends: ['plugin:jest/recommended'],
-  plugins: ['jest'],
   overrides: [
     {
       files: ['src/**/*spec.js'],
@@ -86,10 +66,33 @@ export const test = {
         ]
       },
       env: {
-        jest: true
+        'jest/globals': true
       }
     }
   ]
 };
 
-export const ESLINT_CONFIGS = ['base', 'node', 'react', 'test'];
+// TODO: add node specific config here.
+export const node = merge(base, { env: { node: true } });
+
+// TODO: Use Airbnb default config here!
+// https://www.npmjs.com/package/eslint-config-airbnb
+export const react = overwritePresets(exports.base, {
+  extends: [
+    'airbnb-base',
+    'plugin:react/recommended',
+    'prettier',
+    'prettier/react'
+  ],
+  plugins: ['react'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  env: {
+    browser: true
+  }
+});
+
+export const ESLINT_CONFIGS = ['base', 'node', 'react'];
