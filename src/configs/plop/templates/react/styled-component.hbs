@@ -1,0 +1,25 @@
+import PropTypes from 'prop-types';
+import styled, { css } from 'react-emotion';
+
+const baseStyles = ({ theme }) => css`
+  label: {% lowercase name %};
+`;
+
+/**
+ * Describe {{ name }} here.
+ */
+const {{ name }} = styled('element')(baseStyles);
+
+{{ name }}.propTypes = {
+  /**
+   * A consice description of the example prop.
+   */
+  example: PropTypes.string
+};
+
+{{ name }}.defaultProps = {};
+
+/**
+ * @component
+ */
+export default {{ name }};
