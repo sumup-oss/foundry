@@ -1,0 +1,2 @@
+
+export * from './configs/eslint'

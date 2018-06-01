@@ -37,6 +37,26 @@ export default [
     ...shared
   },
   {
+    input: 'src/prettier.js',
+    output: { file: 'dist/prettier.js', format: 'cjs' },
+    ...shared
+  },
+  {
+    input: 'src/eslint.js',
+    output: { file: 'dist/eslint.js', format: 'cjs' },
+    ...shared
+  },
+  {
+    input: 'src/plop.js',
+    output: { file: 'dist/plop.js', format: 'cjs' },
+    ...shared
+  },
+  {
+    input: 'src/babel.js',
+    output: { file: 'dist/babel.js', format: 'cjs' },
+    ...shared
+  },
+  {
     input: 'src/cli.js',
     output: { file: 'dist/cli.js', format: 'cjs' },
     ...shared

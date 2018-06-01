@@ -1,27 +1,22 @@
 {
   "name": "@sumup/sumup-js",
-  "version": "1.0.0",
-  "description": "A module providing the standard SumUp JS configs.",
-  "main": "./dist/index.js",
-  "module": "./src/index.js",
+  "version": "0.0.1",
+  "description": "A toolkit for JavaScript applications at SumUp.",
+  "main": "index.js",
   "author": "Felix Jung <felix.jung@sumup.com>",
-  "license": "NO LICENSE",
-  "private": true,
-  "bin": "./dist/cli.js",
+  "license": "MIT",
+  "private": false,
+  "bin": "cli.js",
   "scripts": {
     "cleanup": "rimraf ./dist",
     "build": "BABEL_ENV=build NODE_ENV=production rollup --config",
     "test:watch": "yarn test --watchAll",
     "test": "jest",
+    "postinstall": "cp dist/*.js . && rm -rf dist",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "start": "yarn cleanup && yarn develop"
   },
-  "files": [
-    "dist",
-    "babel.js",
-    "eslint.js",
-    "prettier.js"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "ajv": "^6.5.0",
     "lodash": "^4.17.10",
