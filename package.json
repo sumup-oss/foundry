@@ -1,5 +1,5 @@
 {
-  "name": "sumup-js",
+  "name": "@sumup/sumup-js",
   "version": "1.0.0",
   "description": "A module providing the standard SumUp JS configs.",
   "main": "./dist/index.js",
