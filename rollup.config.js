@@ -3,6 +3,7 @@ import { resolve as pathResolve } from 'path';
 // Plugins
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import copy from 'rollup-plugin-copy';
 
 // Shared config
 const shared = {
@@ -20,6 +21,10 @@ const shared = {
       // eslint-disable-next-line
       jail: pathResolve('.'),
       modulesOnly: true
+    }),
+    copy({
+      'src/configs/plop/templates': 'dist/plop-templates',
+      verbose: true
     })
   ]
 };
