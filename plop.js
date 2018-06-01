@@ -1,6 +1,3 @@
-const { resolve } = require('path');
+const { configs } = require('@sumup/sumup-js');
 
-const configPath = resolve(__dirname, './dist');
-
-// eslint-disable-next-line import/no-dynamic-require
-module.exports = require(configPath).configs.plop;
+module.exports = configs.plop;

@@ -1,1 +1,3 @@
-module.exports = require('./dist').configs.prettier.base;
+const { configs } = require('@sumup/sumup-js');
+
+module.exports = configs.prettier.base;
