@@ -12,7 +12,6 @@
     "build": "BABEL_ENV=build NODE_ENV=production rollup --config",
     "test:watch": "yarn test --watchAll",
     "test": "jest",
-    "postinstall": "cp dist/*.js . && rm -rf dist",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "start": "yarn cleanup && yarn develop"
   },

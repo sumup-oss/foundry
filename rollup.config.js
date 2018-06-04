@@ -24,6 +24,9 @@ const shared = {
     }),
     copy({
       'src/configs/plop/templates': 'dist/plop-templates',
+      'package.json': 'dist/package.json',
+      'LICENSE': 'dist/LICENSE',
+      'README.md': 'dist/README.md',
       verbose: true
     })
   ]
