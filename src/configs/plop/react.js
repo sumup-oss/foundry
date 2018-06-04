@@ -39,11 +39,11 @@ export default plop => {
   const getComponentTemplateName = type => {
     switch (type) {
       case COMPONENT_TYPES.STYLED:
-        return 'styled-component.js';
+        return 'styled-component.hbs';
       case COMPONENT_TYPES.FUNCTIONAL:
-        return 'functional-component.js';
+        return 'functional-component.hbs';
       case COMPONENT_TYPES.STATEFUL:
-        return 'stateful-component.js';
+        return 'stateful-component.hbs';
       default:
         return raiseErrorAndExit(ERRORS.INVALID_COMPONENT_TYPE);
     }
@@ -149,7 +149,7 @@ export default plop => {
         const templateFileName =
           file === COMPONENT_FILES.COMPONENT
             ? getComponentTemplateName(type)
-            : `${file}.js`;
+            : `${file}.hbs`;
 
         return acc.concat({
           type: 'add',
