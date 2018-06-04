@@ -1,6 +1,6 @@
 {
   "name": "@sumup/foundry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A toolkit for JavaScript applications by SumUp.",
   "main": "index.js",
   "author": "Felix Jung <felix.jung@sumup.com>",
