@@ -16,7 +16,15 @@
     "start": "yarn cleanup && yarn develop"
   },
   "files": [
-    "dist"
+    "babel.js",
+    "eslint.js",
+    "plop.js",
+    "prettier.js",
+    "plop-templates",
+    "cli.js",
+    "index.js",
+    "LICENSE",
+    "README.md"
   ],
   "dependencies": {
     "lodash": "^4.17.10",
