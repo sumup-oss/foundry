@@ -5,7 +5,6 @@
   "main": "index.js",
   "author": "Felix Jung <felix.jung@sumup.com>",
   "license": "MIT",
-  "private": false,
   "bin": "cli.js",
   "scripts": {
     "cleanup": "rimraf ./dist",
