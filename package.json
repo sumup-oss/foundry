@@ -15,7 +15,9 @@
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "start": "yarn cleanup && yarn develop"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "ajv": "^6.5.0",
     "lodash": "^4.17.10",
@@ -28,6 +30,7 @@
     "@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.49",
     "@babel/preset-env": "7.0.0-beta.49",
+    "@sumup/foundry": "^0.0.1",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
