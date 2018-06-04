@@ -61,7 +61,11 @@ export default [
   },
   {
     input: 'src/cli.js',
-    output: { file: 'dist/cli.js', format: 'cjs' },
+    output: {
+      file: 'dist/cli.js',
+      format: 'cjs',
+      banner: '#!/usr/bin/env node'
+    },
     ...shared
   }
 ];
