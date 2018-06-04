@@ -1,3 +1,3 @@
-const { node } = require('@sumup/sumup-js/babel');
+const { node } = require('@sumup/foundry/babel');
 
 module.exports = node;

@@ -43,7 +43,7 @@ function getConfigName(name, val) {
 }
 
 function createConfigExport(name, config) {
-  return `module.exports = require('@sumup/sumup-js/${name}').${config}`;
+  return `module.exports = require('@sumup/foundry/${name}').${config}`;
 }
 
 async function writeConfigFile(name, content, targetDir) {
