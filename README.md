@@ -24,7 +24,7 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 - [Contribute](#contribute)
 - [About SumUp](#about-sumup)
 
-### Examples
+## Examples
 
 ```bash
 # Bootstrapping a project with configurations for react
@@ -37,7 +37,7 @@ $ npx --package @sumup/foundry foundry run eslint --fix
 $ npx --package @sumup/foundry foundry create component
 ```
 
-### Installation
+## Installation
 
 Foundry is supposed to be installed as a project dependency via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install).
 
@@ -51,13 +51,13 @@ $ npm install --save-dev @sumup/foundry
 $ yarn add --dev @sumup/foundry
 ```
 
-### Why?
+## Why?
 
 > ##### TLDR
 >
 > Creating and maintaining a JavaScript project can be very tedious. There are tools, configurations, dependency management, and boilerplate. With Foundry, you can fix all of that with a single dependency. It lints, creates files, links configurations, and (soon) runs your build. And the best part? You can still get down and dirty with your configurations. But only if you want.
 
-#### The problem
+### The problem
 
 Setting up and maintaining a complex JavaScript project can be very tedious.There are many different dependencies to install (linters, testing frameworks, bundlers) and configurations to set up. Once you have a running project, you end up writing a lot of boilerplate code when creating commonly used files. For example, a React component might come with a spec file (test), a Storybook file (isolated component development), and a service for handling business logic.
 
@@ -65,7 +65,7 @@ It gets much, much worse when you have several (many?) projects. What happens, w
 
 You might think you could solve these issues with a boilerplate repository and some snippets or templates. But you cannot. At least the maintenance problem will not go away.
 
-#### The solution
+### The solution
 
 Toolkits are a way to mitigate these kinds of problems. They encapsulate as much as possible of the your toolchain into a single dependency and expose it through a CLI. Doing so gets you the following, probably more!
 
@@ -75,7 +75,7 @@ Toolkits are a way to mitigate these kinds of problems. They encapsulate as much
 - Easy onboarding. New colleagues will be able to get productive much more quickly. 🙇‍♂️
 - The number of direct dependencies becomes *much* smaller and your  `package.json` shorter. :spider_web:
 
-#### But what makes Foundry different?
+### But what makes Foundry different?
 
 We were inspired by many toolkit projects, such as [create-react-app](https://github.com/facebook/create-react-app/) and [kcd-scripts](https://github.com/kentcdodds/kcd-scripts). These projects are opinionated, and so is Foundry. But Foundry is different, in our opinion, because:
 
@@ -84,22 +84,22 @@ We were inspired by many toolkit projects, such as [create-react-app](https://gi
 
 So please, go ahead and try it.
 
-### Usage
+## Usage
 
 Foundry is supposed to be installed as a dev-dependency (development) in your project. Once installed, you may bootstrap a project with corresponding configurations
 
-### Commands
+## Commands
 
 At the moment, Foundry supports two commands; `bootstrap` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), and [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
 
 
 
-### Contribute
+## Contribute
 
 We are currently not ready for contributions. If you have questions, feature requests, or want to report a *new* bug, please file an issue.
 
 
 
-### About SumUp
+## About SumUp
 
 [SumUp](https://sumup.com) is a mobile-point of sale provider. It is our mission to make easy and fast card payments a reality across the *entire* world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Elixir, Erlang, and much more. Want to come work and with us? [Head to our careers page](https://sumup.com/careers) to find out more.
