@@ -11,7 +11,7 @@ const { BABEL_CONFIGS } = babel;
 // eslint-disable-next-line
 yargs
   .command(
-    'bootstrap-config',
+    'bootstrap',
     'Set up custom configurations for babel, eslint, prettier, etc.',
     yrgs =>
       yrgs
