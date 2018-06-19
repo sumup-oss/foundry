@@ -8,7 +8,7 @@ export const overwritePresets = merge({
 
 export const base = {
   extends: ['airbnb-base', 'prettier', 'plugin:jest/recommended'],
-  plugins: ['prettier', 'jest'],
+  plugins: ['babel', 'prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'no-underscore-dangle': 'off',
@@ -23,6 +23,9 @@ export const base = {
       }
     ],
     // TODO: can you remove these when you have a config?
+    'babel/object-curly-spacing': 1,
+    'babel/quotes': 1,
+    'babel/semi': 1,
     'prettier/prettier': [
       'error',
       {
