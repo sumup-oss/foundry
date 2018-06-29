@@ -27,8 +27,8 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 ## Examples
 
 ```bash
-# Bootstrapping a project with configurations for react
-$ npx --package @sumup/foundry foundry bootstrap --eslint react --babel react --prettier react --plop react
+# Bootstrapping various tooling configs for a React project
+$ npx --package @sumup/foundry foundry bootstrap-config --eslint react --babel react --prettier react --plop react
 
 # Running ESlint with fix flag
 $ npx --package @sumup/foundry foundry run eslint --fix
@@ -90,7 +90,7 @@ Foundry is supposed to be installed as a dev-dependency (development) in your pr
 
 ## Commands
 
-At the moment, Foundry supports two commands; `bootstrap` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), and [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
+At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), and [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
 
 
 
