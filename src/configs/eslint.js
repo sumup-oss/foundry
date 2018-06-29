@@ -27,6 +27,7 @@ export const base = {
         singleQuote: true
       }
     ],
+    'curly': ['error', 'all'],
     'no-underscore-dangle': ['error', { 'allow': ['__TEST__', '__PRODUCTION__', '__DEV__'] }],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
