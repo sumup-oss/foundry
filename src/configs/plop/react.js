@@ -25,7 +25,8 @@ export default plop => {
     COMPONENT_SPEC: 'component-spec',
     STORY: 'story',
     SERVICE: 'service',
-    SERVICE_SPEC: 'service-spec'
+    SERVICE_SPEC: 'service-spec',
+    INDEX: 'index'
   };
 
   const TEMPLATE_DIR = `${__dirname}/plop-templates`;
@@ -55,7 +56,8 @@ export default plop => {
       [COMPONENT_FILES.COMPONENT_SPEC]: `${name}.spec.js`,
       [COMPONENT_FILES.STORY]: `${name}.story.js`,
       [COMPONENT_FILES.SERVICE]: `${name}Service.js`,
-      [COMPONENT_FILES.SERVICE_SPEC]: `${name}Service.spec.js`
+      [COMPONENT_FILES.SERVICE_SPEC]: `${name}Service.spec.js`,
+      [COMPONENT_FILES.INDEX]: 'index.js'
     };
     return fileNameMap[file];
   };
@@ -140,8 +142,11 @@ export default plop => {
     actions: ({ name, type, files, destinationPath }) => {
       const absDestinationPath = `${plop.getPlopfilePath()}/${destinationPath}`;
       const capitalizedName = pascalCase(name);
+      const allFiles = files.includes(COMPONENT_FILES.COMPONENT)
+        ? files.concat(COMPONENT_FILES.INDEX)
+        : files;
 
-      const actions = files.reduce((acc, file) => {
+      const actions = allFiles.reduce((acc, file) => {
         if (!Object.values(COMPONENT_FILES).includes(file)) {
           raiseErrorAndExit(ERRORS.INVALID_FILE);
         }
