@@ -75,16 +75,15 @@ export const base = {
 // TODO: add node specific config here.
 export const node = merge(base, { env: { node: true } });
 
-// TODO: Use Airbnb default config here!
-// https://www.npmjs.com/package/eslint-config-airbnb
 export const react = overwritePresets(exports.base, {
   extends: [
     'airbnb-base',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react'
   ],
-  plugins: ['react'],
+  plugins: ['react', 'jsx-a11y'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
