@@ -11,7 +11,6 @@ export const base = {
   plugins: ['prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
-    'no-param-reassign': 'off',
     'max-len': [
       'error',
       {
