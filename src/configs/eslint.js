@@ -11,7 +11,6 @@ export const base = {
   plugins: ['prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
-    'no-underscore-dangle': 'off',
     'no-param-reassign': 'off',
     'max-len': [
       'error',
@@ -29,6 +28,7 @@ export const base = {
         singleQuote: true
       }
     ],
+    'no-underscore-dangle': ['error', { 'allow': ['__TEST__', '__PRODUCTION__', '__DEV__'] }],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
       'error',
