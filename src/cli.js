@@ -1,3 +1,4 @@
+import { dirname, basename } from 'path';
 import yargs from 'yargs';
 
 import bootstrap from './cli/bootstrap';
@@ -12,22 +13,29 @@ const { BABEL_CONFIGS } = babel;
 // eslint-disable-next-line
 yargs
   .command(
-    'bootstrap <type> <category>',
+    'bootstrap [type] [category] [name]',
     'Bootstrap configurations and package.json for a project',
     yrgs =>
       yrgs
         .positional('type', {
           desc: 'The type of project you are starting',
           choices: ['node', 'react', 'vanilla'],
-          type: 'string'
+          type: 'string',
+          default: 'react'
         })
         .positional('category', {
           desc: 'The category of project you are starting',
           choices: ['app', 'library'],
-          type: 'string'
+          type: 'string',
+          default: 'app'
         })
-        .option('targetDir', {
-          default: process.cwd(),
+        .positional('name', {
+          desc: 'The name for your project',
+          type: 'string',
+          default: basename(process.cwd())
+        })
+        .option('baseDir', {
+          default: dirname(process.cwd()),
           desc: 'Directory to bootstrap your project in.',
           type: 'string'
         }),
