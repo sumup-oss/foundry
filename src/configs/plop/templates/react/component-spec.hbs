@@ -3,26 +3,24 @@ import React from 'react';
 import {{ name }} from './{{ name }}';
 
 describe.skip('{{ name }}', () => {
-  /**
-   * Style tests.
-   */
-  it('should render with default styles', () => {
-    const actual = create(<{{ name }} />);
-    expect(actual).toMatchSnapshot();
+  // !TODO: write your tests.
+  describe('styles', () => {
+    it('should render with default styles', () => {
+      const actual = create(<{{ name }} />);
+      expect(actual).toMatchSnapshot();
+    });
   });
 
-  /**
-   * Logic tests.
-   */
-
-   it('should have tests')
-
-  /**
-   * Accessibility tests.
-   */
-  it('should meet accessibility guidelines', async () => {
-    const wrapper = renderToHtml(<{{ name }} />);
-    const actual = await axe(wrapper);
-    expect(actual).toHaveNoViolations();
+  {{#if (not type 'styled') }}
+  describe('business logic', () => {
+    it('should have tests');
+  });
+  {{/if}}
+  describe('accessibility', () => {
+    it('should meet accessibility guidelines', async () => {
+      const wrapper = renderToHtml(<{{ name }} />);
+      const actual = await axe(wrapper);
+      expect(actual).toHaveNoViolations();
+    });
   });
 });
