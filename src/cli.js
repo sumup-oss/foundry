@@ -25,6 +25,11 @@ yargs
           desc: 'The category of project you are starting',
           choices: ['app', 'library'],
           type: 'string'
+        })
+        .option('targetDir', {
+          default: process.cwd(),
+          desc: 'Directory to bootstrap your project in.',
+          type: 'string'
         }),
     args => execute('bootstrap', args)
   )
@@ -45,11 +50,11 @@ yargs
         })
         .option('prettier', {
           desc: 'Write the prettier config.',
-          coerce: val => (val === true ? 'base' : val),
+          coerce: val => (val === true ? 'base' : val)
         })
         .option('plop', {
           desc: 'Write the plop config.',
-          coerce: val => (val === true ? 'base' : val),
+          coerce: val => (val === true ? 'base' : val)
         })
         .option('targetDir', {
           default: process.cwd(),
@@ -85,7 +90,7 @@ if (!registeredCommands.includes(currentCommand)) {
 }
 
 function execute(command, args) {
-  const commands = { bootstrapConfig, run };
+  const commands = { bootstrap, bootstrapConfig, run };
   const commandFn = commands[command];
 
   commandFn(args);
