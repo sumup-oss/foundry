@@ -1,6 +1,7 @@
 import yargs from 'yargs';
 
 import bootstrap from './cli/bootstrap';
+import bootstrapConfig from './cli/bootstrap-config';
 import run from './cli/run';
 
 import { eslint, babel } from './configs';
@@ -10,6 +11,23 @@ const { BABEL_CONFIGS } = babel;
 
 // eslint-disable-next-line
 yargs
+  .command(
+    'bootstrap <type> <category>',
+    'Bootstrap configurations and package.json for a project',
+    yrgs =>
+      yrgs
+        .positional('type', {
+          desc: 'The type of project you are starting',
+          choices: ['node', 'react', 'vanilla'],
+          type: 'string'
+        })
+        .positional('category', {
+          desc: 'The category of project you are starting',
+          choices: ['app', 'library'],
+          type: 'string'
+        }),
+    args => execute('bootstrap', args)
+  )
   .command(
     'bootstrap-config',
     'Set up custom configurations for babel, eslint, prettier, etc.',
@@ -43,7 +61,7 @@ yargs
           desc: 'Write all base configurations.',
           type: 'boolean'
         }),
-    args => execute('bootstrap', args)
+    args => execute('bootstrapConfig', args)
   )
   .command(
     'run <tool> [...tool options]',
@@ -67,7 +85,7 @@ if (!registeredCommands.includes(currentCommand)) {
 }
 
 function execute(command, args) {
-  const commands = { bootstrap, run };
+  const commands = { bootstrapConfig, run };
   const commandFn = commands[command];
 
   commandFn(args);
