@@ -1,3 +1,5 @@
+import { join } from 'path';
+
 import bootstrapConfig from './bootstrap-config';
 
 const TYPE_CONFIGS = {
@@ -19,9 +21,10 @@ const getConfig = collection => name => collection[name.toUpperCase()];
 const getTypeConfig = getConfig(TYPE_CONFIGS);
 const getCategoryConfig = getConfig(CATEGORY_CONFIGS);
 
-export default function bootstrap({ type, category, targetDir }) {
+function createConfigs({ type, category, baseDir, name }) {
   const typeParams = getTypeConfig(type);
   const categoryParams = getCategoryConfig(category);
+  const targetDir = join(baseDir, name);
 
   if (!typeParams) {
     console.error(`Invalid project type ${type}. Exiting...`);
@@ -40,4 +43,16 @@ export default function bootstrap({ type, category, targetDir }) {
   );
 
   return bootstrapConfig(bootstrapConfigParams);
+}
+
+export default function bootstrap(params) {
+  /**
+   * TODO:
+   * - Create the target folder if it does not exist.
+   * - Create a package.json inside the target folder, if it
+   *   does not exist.
+   * - Add the scripts to package.json. Optionally overwrite existing
+   *   scripts.
+   */
+  return createConfigs(params);
 }
