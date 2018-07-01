@@ -1,6 +1,9 @@
 import { relative, join } from 'path';
 
 export default plop => {
+  plop.setHelper('eq', (a, b) => a === b);
+  plop.setHelper('not', (a, b) => a !== b);
+
   const pascalCase = plop.getHelper('pascalCase');
 
   const ERRORS = {

@@ -11,10 +11,11 @@ describe.skip('{{ name }}', () => {
     });
   });
 
+  {{#if (not type 'styled') }}
   describe('business logic', () => {
     it('should have tests');
   });
-
+  {{/if}}
   describe('accessibility', () => {
     it('should meet accessibility guidelines', async () => {
       const wrapper = renderToHtml(<{{ name }} />);
