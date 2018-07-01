@@ -33,11 +33,7 @@ export const base = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: [
-          '*.js',
-          'src/**/*.story.js',
-          'src/**/*.spec.js',
-        ]
+        devDependencies: ['*.js', 'src/**/*.story.js', 'src/**/*.spec.js']
       }
     ]
   },
