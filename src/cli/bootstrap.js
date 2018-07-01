@@ -8,6 +8,16 @@ const TYPE_CONFIGS = {
     babel: 'react',
     prettier: 'base',
     plop: 'react'
+  },
+  NODE: {
+    eslint: 'node',
+    babel: 'node',
+    prettier: 'base'
+  },
+  VANILLA: {
+    eslint: 'base',
+    babel: 'base',
+    prettier: 'base'
   }
 };
 
