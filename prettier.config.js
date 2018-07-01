@@ -1,3 +1,1 @@
-const { configs } = require('@sumup/foundry');
-
-module.exports = configs.prettier.base;
+module.exports = require('@sumup/foundry/prettier').base;
