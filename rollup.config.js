@@ -21,13 +21,6 @@ const shared = {
       // eslint-disable-next-line
       jail: pathResolve('.'),
       modulesOnly: true
-    }),
-    copy({
-      'src/configs/plop/templates': 'dist/plop-templates',
-      'package.json': 'dist/package.json',
-      'LICENSE': 'dist/LICENSE',
-      'README.md': 'dist/README.md',
-      verbose: true
     })
   ]
 };
@@ -35,9 +28,19 @@ const shared = {
 // Entry files
 export default [
   {
+    ...shared,
     input: 'src/index.js',
     output: { file: 'dist/index.js', format: 'cjs' },
-    ...shared
+    plugins: [
+      ...shared.plugins,
+      copy({
+        'src/configs/plop/templates': 'dist/plop-templates',
+        'package.json': 'dist/package.json',
+        LICENSE: 'dist/LICENSE',
+        'README.md': 'dist/README.md',
+        verbose: true
+      })
+    ]
   },
   {
     input: 'src/prettier.js',
