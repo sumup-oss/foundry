@@ -3,7 +3,7 @@
   "version": "0.0.10",
   "description": "A toolkit for JavaScript applications by SumUp.",
   "main": "index.js",
-  "repository": "github:sumup/js-scripts",
+  "repository": "github:sumup/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>",
   "license": "MIT",
   "bin": "cli.js",
