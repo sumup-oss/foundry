@@ -1,6 +1,6 @@
 {
   "name": "@sumup/foundry",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A toolkit for JavaScript applications by SumUp.",
   "main": "index.js",
   "repository": "github:sumup/foundry",
