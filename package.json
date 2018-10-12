@@ -30,14 +30,7 @@
     "lodash": "^4.17.10",
     "plop": "^2.0.0",
     "webpack-merge": "^4.1.2",
-    "yargs": "^11.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.0.0-beta.49",
-    "@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.49",
-    "@babel/preset-env": "7.0.0-beta.49",
-    "@sumup/foundry": "^0.0.8",
+    "yargs": "^11.0.0",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -47,7 +40,14 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
     "jest": "^23.1.0",
-    "prettier": "^1.13.3",
+    "prettier": "^1.13.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
+    "@sumup/foundry": "^0.0.8",
     "rimraf": "^2.6.2",
     "rollup": "^0.59.4",
     "rollup-plugin-babel": "^4.0.0-beta.4",
