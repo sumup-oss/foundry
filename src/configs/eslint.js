@@ -56,7 +56,7 @@ export const base = {
           {
             code: 80,
             tabWidth: 2,
-            ignorePattern: '^\\s*it(:?.(:?skip|only))\\(',
+            ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
             ignoreComments: true,
             ignoreUrls: true
           }
