@@ -31,6 +31,16 @@ export const base = {
       {
         devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
       }
+    ],
+    'jsx-a11y/label-has-for': [
+      2,
+      {
+        components: ['Label'],
+        required: {
+          some: ['nesting', 'id']
+        },
+        allowChildren: true
+      }
     ]
   },
   globals: {
