@@ -11,8 +11,6 @@ export const base = {
   plugins: ['prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
-    'no-underscore-dangle': 'off',
-    'no-param-reassign': 'off',
     'max-len': [
       'error',
       {
@@ -22,13 +20,8 @@ export const base = {
         ignoreUrls: true
       }
     ],
-    // TODO: can you remove these when you have a config?
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true
-      }
-    ],
+    'curly': ['error', 'all'],
+    'no-underscore-dangle': ['error', { 'allow': ['__TEST__', '__PRODUCTION__', '__DEV__'] }],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
       'error',
@@ -75,16 +68,15 @@ export const base = {
 // TODO: add node specific config here.
 export const node = merge(base, { env: { node: true } });
 
-// TODO: Use Airbnb default config here!
-// https://www.npmjs.com/package/eslint-config-airbnb
 export const react = overwritePresets(exports.base, {
   extends: [
     'airbnb-base',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react'
   ],
-  plugins: ['react'],
+  plugins: ['react', 'jsx-a11y'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
