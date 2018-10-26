@@ -20,17 +20,16 @@ export const base = {
         ignoreUrls: true
       }
     ],
-    'curly': ['error', 'all'],
-    'no-underscore-dangle': ['error', { 'allow': ['__TEST__', '__PRODUCTION__', '__DEV__'] }],
+    curly: ['error', 'all'],
+    'no-underscore-dangle': [
+      'error',
+      { allow: ['__TEST__', '__PRODUCTION__', '__DEV__'] }
+    ],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: [
-          '*.js',
-          'src/**/*.story.js',
-          'src/**/*.spec.js',
-        ]
+        devDependencies: ['*.js', 'src/**/*.story.js', 'src/**/*.spec.js']
       }
     ]
   },
@@ -66,9 +65,9 @@ export const base = {
 };
 
 // TODO: add node specific config here.
-export const node = merge(base, { env: { node: true } });
+export const node = overwritePresets(base, { env: { node: true } });
 
-export const react = overwritePresets(exports.base, {
+export const react = overwritePresets(base, {
   extends: [
     'airbnb-base',
     'plugin:react/recommended',
