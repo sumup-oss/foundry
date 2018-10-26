@@ -29,7 +29,7 @@ export const base = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['*.js', 'src/**/*.story.js', 'src/**/*.spec.js']
+        devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
       }
     ]
   },
@@ -49,7 +49,7 @@ export const base = {
   },
   overrides: [
     {
-      files: ['src/**/*spec.js'],
+      files: ['**/*spec.js'],
       rules: {
         'max-len': [
           'error',
