@@ -23,7 +23,7 @@ export const base = {
     curly: ['error', 'all'],
     'no-underscore-dangle': [
       'error',
-      { allow: ['__TEST__', '__PRODUCTION__', '__DEV__'] }
+      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
     ],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
@@ -32,6 +32,11 @@ export const base = {
         devDependencies: ['*.js', 'src/**/*.story.js', 'src/**/*.spec.js']
       }
     ]
+  },
+  globals: {
+    __DEV__: true,
+    __PRODUCTION__: true,
+    __TEST__: true
   },
   parser: 'babel-eslint',
   parserOptions: {
@@ -56,6 +61,14 @@ export const base = {
             ignoreUrls: true
           }
         ]
+      },
+      globals: {
+        mount: true,
+        shallow: true,
+        render: true,
+        create: true,
+        axe: true,
+        renderToHtml: true
       },
       env: {
         'jest/globals': true
