@@ -23,15 +23,30 @@ export const base = {
     curly: ['error', 'all'],
     'no-underscore-dangle': [
       'error',
-      { allow: ['__TEST__', '__PRODUCTION__', '__DEV__'] }
+      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
     ],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['*.js', 'src/**/*.story.js', 'src/**/*.spec.js']
+        devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
+      }
+    ],
+    'jsx-a11y/label-has-for': [
+      2,
+      {
+        components: ['Label'],
+        required: {
+          some: ['nesting', 'id']
+        },
+        allowChildren: true
       }
     ]
+  },
+  globals: {
+    __DEV__: true,
+    __PRODUCTION__: true,
+    __TEST__: true
   },
   parser: 'babel-eslint',
   parserOptions: {
@@ -44,18 +59,26 @@ export const base = {
   },
   overrides: [
     {
-      files: ['src/**/*spec.js'],
+      files: ['**/*spec.js'],
       rules: {
         'max-len': [
           'error',
           {
             code: 80,
             tabWidth: 2,
-            ignorePattern: '^\\s*it(:?.(:?skip|only))\\(',
+            ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
             ignoreComments: true,
             ignoreUrls: true
           }
         ]
+      },
+      globals: {
+        mount: true,
+        shallow: true,
+        render: true,
+        create: true,
+        axe: true,
+        renderToHtml: true
       },
       env: {
         'jest/globals': true
