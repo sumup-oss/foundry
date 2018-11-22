@@ -11,7 +11,7 @@
     "cleanup": "rimraf ./dist",
     "build": "BABEL_ENV=build NODE_ENV=production rollup --config",
     "lint": "yarn foundry run eslint src",
-    "test": "yarn cleanup && jest",
+    "test": "jest",
     "test:watch": "yarn test --watchAll",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "start": "yarn cleanup && yarn develop"
