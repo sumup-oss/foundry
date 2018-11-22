@@ -1,1 +1,1 @@
-export * from './configs/plop'
+export * from './configs/plop';

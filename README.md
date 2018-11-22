@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/sumup/foundry.svg?style=svg&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)](https://circleci.com/gh/sumup/foundry)
+
 <div align="center">
 
 ## :construction: Under construction :construction:

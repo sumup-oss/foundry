@@ -1,2 +1,1 @@
-
-export * from './configs/eslint'
+export * from './configs/eslint';
