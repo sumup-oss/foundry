@@ -82,17 +82,6 @@ export const react = overwritePresets(base, {
   ],
   plugins: ['react', 'jsx-a11y'],
   rules: {
-    'jsx-a11y/label-has-for': [
-      2,
-      {
-        components: ['Label'],
-        required: {
-          some: ['nesting', 'id']
-        },
-        allowChildren: true
-      }
-    ],
-
     'import/no-extraneous-dependencies': [
       'error',
       {
