@@ -5,8 +5,9 @@ import {
   flow,
   get,
   includes,
-  map,
   keys,
+  map,
+  mapValues,
   omitBy,
   pickAll,
   reduce,
@@ -32,6 +33,7 @@ function getConfigName(name, val) {
   const supportedConfigs = get(name, configs);
 
   const isSupportedConfig = includes(val, supportedConfigs);
+
   if (!isSupportedConfig) {
     console.warn(
       `Config ${val} is not available for ${name}. Falling back to base config.`
@@ -73,12 +75,19 @@ async function writeConfigFile(name, content, targetDir) {
 const getConfigs = flow(
   params => {
     const { all } = params;
+
     if (all) {
-      return zipObject(['base', 'base', 'base', 'base'], SUPPORTED_CONFIGS);
+      return zipObject(SUPPORTED_CONFIGS, ['base', 'base', 'base', 'base']);
     }
-    return pickAll(SUPPORTED_CONFIGS, params);
+
+    const picked = flow(
+      pickAll(SUPPORTED_CONFIGS),
+      mapValues(v => (v === true ? 'base' : v))
+    )(params);
+
+    return picked;
   },
-  omitBy(val => typeof val !== 'string')
+  omitBy(val => !val)
 );
 
 export default function bootstrap(params) {
@@ -91,7 +100,9 @@ export default function bootstrap(params) {
 
   const configs = reduce(
     (acc, tool) =>
-      assign(acc, { [tool]: getConfigName(tool, configParams[tool]) }),
+      assign(acc, {
+        [tool]: getConfigName(tool, configParams[tool])
+      }),
     {},
     tools
   );
