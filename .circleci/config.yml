@@ -25,10 +25,10 @@ jobs:
 
       - run:
           name: "Lint"
-          command: yarn lint --format junit -o __reports__/eslint/eslint-results.xml
+          command: yarn lint --format junit -o __reports__/eslint-results.xml
       - run:
           name: "Test"
-          command: yarn test --ci --runInBand --coverage --reporters "jest-junit"
+          command: yarn test --ci --runInBand --coverage
 
       - store_test_results:
           path: __reports__
