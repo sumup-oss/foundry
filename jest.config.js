@@ -1,9 +1,8 @@
 module.exports = {
   clearMocks: true,
   coverageDirectory: '__coverage__',
-  coveragePathIgnorePatterns: ['/node_modules/', 'plop/templates'],
   coverageReporters: ['json', 'text', 'lcov', 'clover'],
-  collectCoverageFrom: ['src/**/*.js'],
+  coveragePathIgnorePatterns: ['node_modules'],
   testEnvironment: 'node',
   setupTestFrameworkScriptFile: './testSetup.js'
 };
