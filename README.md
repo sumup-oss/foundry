@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/sumup/foundry/tree/master.svg?style=svg)](https://circleci.com/gh/sumup/foundry/tree/master)
+
 <div align="center">
 
 ## :construction: Under construction :construction:
