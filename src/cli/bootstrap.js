@@ -48,6 +48,7 @@ function createConfigExport(name, config) {
   return `module.exports = require('@sumup/foundry/${name}').${config}`;
 }
 
+// eslint-disable-next-line consistent-return
 async function writeConfigFile(name, content, targetDir) {
   const filenames = {
     eslint: '.eslintrc.js',
@@ -57,10 +58,6 @@ async function writeConfigFile(name, content, targetDir) {
   };
   const filename = get(name, filenames);
 
-  if (!filename) {
-    throw new TypeError(`No filename found for config ${name}.`);
-  }
-
   const path = resolve(targetDir, filename);
 
   try {
@@ -68,7 +65,7 @@ async function writeConfigFile(name, content, targetDir) {
   } catch (e) {
     console.error(`An error occured writing ${filename} to ${targetDir}.`);
     console.error(e);
-    return e;
+    process.exit(1);
   }
 }
 

@@ -10,7 +10,7 @@ export const withoutPreset = preset => arr =>
 export const overwriteEnvPreset = merge({
   customizeArray(a, b, key) {
     if (key === 'presets') {
-      const aWithoutEnv = withoutPreset('env')(a);
+      const aWithoutEnv = withoutPreset('@babel/preset-env')(a);
       return Object.values(merge(aWithoutEnv, b));
     }
 
