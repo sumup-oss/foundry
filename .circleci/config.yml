@@ -25,14 +25,14 @@ jobs:
 
       - run:
           name: "Lint"
-          command: yarn lint --format junit -o __reports__/eslint-results.xml
+          command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
       - run:
           name: "Test"
-          command: yarn test --ci --runInBand --coverage --reporters "jest-junit"
+          command: yarn test --ci --runInBand --coverage --reporters default --reporters "jest-junit"
           environment:
-            JEST_JUNIT_OUTPUT: "__reports__/jest-results.xml"
+            JEST_JUNIT_OUTPUT: "__reports__/junit/jest-results.xml"
 
       - store_test_results:
-          path: __reports__
+          path: __reports__/junit
       - store_artifacts:
-          path: __reports__
+          path: __reports__/junit
