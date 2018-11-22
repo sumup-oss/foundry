@@ -1,1 +1,1 @@
-export * from './configs/prettier'
+export * from './configs/prettier';

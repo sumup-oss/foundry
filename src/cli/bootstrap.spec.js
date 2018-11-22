@@ -8,93 +8,203 @@ const { ESLINT_CONFIGS } = eslint;
 const { BABEL_CONFIGS } = babel;
 
 describe('bootstrap command', () => {
+  const consoleBackup = console;
+  beforeEach(() => {
+    global.console = {
+      log: jest.fn(),
+      warn: jest.fn(),
+      error: jest.fn()
+    };
+  });
+
+  afterAll(() => {
+    global.console = consoleBackup;
+  });
+
   const defaultParams = {
     targetDir: '/some/cool/path',
     all: false
   };
 
-  it.skip('should write all configs by default', () => {});
+  it('should allow write all configs', () => {
+    // The all param is getting set by yargs
+    const params = { targetDir: defaultParams.targetDir, all: true };
+    bootstrap(params);
 
-  it.skip('should write configs to the current working directory by default', () => {});
-
-  it.skip('should write configs to the location specified by the targetDir flag', () => {});
+    expect(writeFile).toHaveBeenCalledWith(
+      expect.stringContaining('eslint'),
+      expect.stringContaining('base'),
+      expect.any(Function)
+    );
+    expect(writeFile).toHaveBeenCalledWith(
+      expect.stringContaining('prettier'),
+      expect.stringContaining('base'),
+      expect.any(Function)
+    );
+    expect(writeFile).toHaveBeenCalledWith(
+      expect.stringContaining('babel'),
+      expect.stringContaining('base'),
+      expect.any(Function)
+    );
+  });
 
   describe('when passed the eslint param', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
     it('should create the eslintrc', () => {
       const params = Object.assign({}, defaultParams, { eslint: 'base' });
       bootstrap(params);
-      const actualPath = writeFile.mock.calls[0][0];
-      const writesEslintRc = new RegExp('eslintrc').test(actualPath);
-      expect(writesEslintRc).toBeTruthy();
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.stringContaining('eslint'),
+        expect.any(String),
+        expect.any(Function)
+      );
     });
 
-    it(`should use the base config when no config is specified`, () => {
+    it('should use the base config when no config is specified', () => {
       const params = Object.assign({}, defaultParams, { eslint: true });
       bootstrap(params);
-      const actualContent = writeFile.mock.calls[0][1];
-      const importsCorrectPreset = new RegExp('base').test(actualContent);
-      expect(importsCorrectPreset).toBeTruthy();
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.stringContaining('base'),
+        expect.any(Function)
+      );
     });
 
     ESLINT_CONFIGS.forEach(config => {
       it(`should write the config file for ${config}`, () => {
-        const params = Object.assign({}, defaultParams, { eslint: config });
+        const params = { ...defaultParams, eslint: config };
         bootstrap(params);
-        const actualContent = writeFile.mock.calls[0][1];
-        const importsCorrectPreset = new RegExp(config).test(actualContent);
-        expect(importsCorrectPreset).toBeTruthy();
+
+        expect(writeFile).toHaveBeenCalledWith(
+          expect.any(String),
+          expect.stringContaining(config),
+          expect.any(Function)
+        );
       });
     });
   });
 
   describe('when passed the babel flag', () => {
-    // For the babel configuration we write two files (.babelrc and
-    // babel.config.js). That's why the indicees for writeFile calls are
-    // different then for eslint.
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
     it('should create the .babelrc', () => {
       const params = Object.assign({}, defaultParams, { babel: 'base' });
       bootstrap(params);
-      const actualPath = writeFile.mock.calls[0][0];
-      const writesEslintRc = new RegExp('babelrc').test(actualPath);
-      expect(writesEslintRc).toBeTruthy();
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.stringContaining('babel'),
+        expect.any(String),
+        expect.any(Function)
+      );
     });
 
     it('should create the babel.config.js preset file', () => {
       const params = Object.assign({}, defaultParams, { babel: 'base' });
       bootstrap(params);
-      const actualPath = writeFile.mock.calls[1][0];
-      const writesEslintRc = new RegExp('babel.config.js').test(actualPath);
-      expect(writesEslintRc).toBeTruthy();
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.stringContaining('base'),
+        expect.any(Function)
+      );
     });
 
-    it(`should use the base config when no config is specified`, () => {
-      const params = Object.assign({}, defaultParams, { babel: true });
+    it('should use the base config when no config is specified', () => {
+      const params = { ...defaultParams, babel: true };
       bootstrap(params);
-      const actualContent = writeFile.mock.calls[1][1];
-      const importsCorrectPreset = new RegExp('base').test(actualContent);
-      expect(importsCorrectPreset).toBeTruthy();
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.stringContaining('base'),
+        expect.any(Function)
+      );
     });
 
     BABEL_CONFIGS.forEach(config => {
       it(`should write the config file for ${config}`, () => {
-        const params = Object.assign({}, defaultParams, { babel: config });
+        const params = { ...defaultParams, babel: config };
         bootstrap(params);
-        const actualContent = writeFile.mock.calls[1][1];
-        const importsCorrectPreset = new RegExp(config).test(actualContent);
-        expect(importsCorrectPreset).toBeTruthy();
+
+        expect(writeFile).toHaveBeenCalledWith(
+          expect.any(String),
+          expect.stringContaining(config),
+          expect.any(Function)
+        );
       });
     });
   });
 
-  describe.skip('when passed the prettier flag', () => {
-    it('should write the prettier.config.js', () => {});
+  describe('when passed the prettier flag', () => {
+    it('should write the prettier.config.js', () => {
+      bootstrap({
+        ...defaultParams,
+        prettier: true
+      });
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.stringContaining('prettier.config.js'),
+        expect.stringContaining('base'),
+        expect.any(Function)
+      );
+    });
+  });
+
+  describe('when passed an invalid configuration name', () => {
+    it('should default to the base configuration', () => {
+      bootstrap({
+        ...defaultParams,
+        prettier: 'react'
+      });
+
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.stringContaining('prettier.config.js'),
+        expect.stringContaining('base'),
+        expect.any(Function)
+      );
+    });
+
+    it('should print an error for the user', () => {
+      bootstrap({
+        ...defaultParams,
+        prettier: 'react'
+      });
+
+      expect(console.warn).toHaveBeenCalledWith(
+        expect.stringContaining('react')
+      );
+      expect(console.warn).toHaveBeenCalledWith(
+        expect.stringContaining('base')
+      );
+    });
+  });
+
+  describe('when passed an unsupported tool name', () => {
+    it('should not do anything', () => {
+      bootstrap({
+        ...defaultParams,
+        'some-tool': 'react'
+      });
+
+      expect(writeFile).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('when writing to a config file fails', () => {
+    const processExitBackup = global.process.exit;
+    beforeAll(() => {
+      global.process.exit = jest.fn();
+    });
+
+    afterAll(() => {
+      global.process.exit = processExitBackup;
+    });
+
+    it('should log an error and exit the program', async () => {
+      writeFile.mockImplementationOnce((foo, bar, onErr) => {
+        onErr(new Error('Foo'));
+      });
+
+      await bootstrap({ ...defaultParams, prettier: 'base' });
+      expect(global.console.error).toHaveBeenCalled();
+      expect(process.exit).toHaveBeenCalledWith(1);
+    });
   });
 });

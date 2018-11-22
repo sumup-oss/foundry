@@ -1,1 +1,1 @@
-export * from './configs/babel'
+export * from './configs/babel';

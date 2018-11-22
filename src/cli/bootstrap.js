@@ -5,8 +5,9 @@ import {
   flow,
   get,
   includes,
-  map,
   keys,
+  map,
+  mapValues,
   omitBy,
   pickAll,
   reduce,
@@ -32,6 +33,7 @@ function getConfigName(name, val) {
   const supportedConfigs = get(name, configs);
 
   const isSupportedConfig = includes(val, supportedConfigs);
+
   if (!isSupportedConfig) {
     console.warn(
       `Config ${val} is not available for ${name}. Falling back to base config.`
@@ -46,6 +48,7 @@ function createConfigExport(name, config) {
   return `module.exports = require('@sumup/foundry/${name}').${config}`;
 }
 
+// eslint-disable-next-line consistent-return
 async function writeConfigFile(name, content, targetDir) {
   const filenames = {
     eslint: '.eslintrc.js',
@@ -55,10 +58,6 @@ async function writeConfigFile(name, content, targetDir) {
   };
   const filename = get(name, filenames);
 
-  if (!filename) {
-    throw new TypeError(`No filename found for config ${name}.`);
-  }
-
   const path = resolve(targetDir, filename);
 
   try {
@@ -66,19 +65,26 @@ async function writeConfigFile(name, content, targetDir) {
   } catch (e) {
     console.error(`An error occured writing ${filename} to ${targetDir}.`);
     console.error(e);
-    return e;
+    process.exit(1);
   }
 }
 
 const getConfigs = flow(
   params => {
     const { all } = params;
+
     if (all) {
-      return zipObject(['base', 'base', 'base', 'base'], SUPPORTED_CONFIGS);
+      return zipObject(SUPPORTED_CONFIGS, ['base', 'base', 'base', 'base']);
     }
-    return pickAll(SUPPORTED_CONFIGS, params);
+
+    const picked = flow(
+      pickAll(SUPPORTED_CONFIGS),
+      mapValues(v => (v === true ? 'base' : v))
+    )(params);
+
+    return picked;
   },
-  omitBy(val => typeof val !== 'string')
+  omitBy(val => !val)
 );
 
 export default function bootstrap(params) {
@@ -91,7 +97,9 @@ export default function bootstrap(params) {
 
   const configs = reduce(
     (acc, tool) =>
-      assign(acc, { [tool]: getConfigName(tool, configParams[tool]) }),
+      assign(acc, {
+        [tool]: getConfigName(tool, configParams[tool])
+      }),
     {},
     tools
   );
