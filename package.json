@@ -11,7 +11,7 @@
     "cleanup": "rimraf ./dist",
     "build": "BABEL_ENV=build NODE_ENV=production rollup --config",
     "test:watch": "yarn test --watchAll",
-    "test": "jest",
+    "test": "yarn cleanup && jest",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "start": "yarn cleanup && yarn develop"
   },
@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
@@ -37,6 +38,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "jest-extended": "^0.11.0",
     "lodash": "^4.17.11",
     "plop": "^2.1.0",
     "prettier": "^1.14.3",
