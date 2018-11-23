@@ -173,25 +173,4 @@ export default plop => {
       return actions;
     }
   });
-
-  /**
-   * Generating a Ladda API.
-   */
-  // plop.setGenerator('api', {
-  //   description: 'Ladda API',
-  //   prompts: [
-  //     {
-  //       type: 'input',
-  //       name: 'name',
-  //       message: "What's the name of your API?"
-  //     }
-  //   ],
-  //   actions: [
-  //     {
-  //       type: 'add',
-  //       path: 'src/{{name}}.js',
-  //       templateFile: 'plop-templates/controller.hbs'
-  //     }
-  //   ]
-  // });
 };

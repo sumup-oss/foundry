@@ -25,23 +25,6 @@ export const base = {
       'error',
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
     ],
-    'import/prefer-default-export': 0,
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
-      }
-    ],
-    'jsx-a11y/label-has-for': [
-      2,
-      {
-        components: ['Label'],
-        required: {
-          some: ['nesting', 'id']
-        },
-        allowChildren: true
-      }
-    ]
   },
   globals: {
     __DEV__: true,
@@ -54,7 +37,6 @@ export const base = {
     ecmaFeatures: {
       ecmaVersion: 2017,
       impliedStrict: true,
-      jsx: true
     }
   },
   overrides: [
@@ -99,6 +81,14 @@ export const react = overwritePresets(base, {
     'prettier/react'
   ],
   plugins: ['react', 'jsx-a11y'],
+  rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
+      }
+    ],
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true
