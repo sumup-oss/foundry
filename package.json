@@ -14,6 +14,7 @@
     "test": "jest",
     "test:watch": "yarn test --watchAll",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
+    "codedov": "codecov",
     "start": "yarn cleanup && yarn develop"
   },
   "files": [
@@ -53,6 +54,7 @@
     "@babel/preset-env": "7.1.6",
     "@sumup/foundry": "beta",
     "babel-core": "7.0.0-bridge.0",
+    "codecov": "^3.1.0",
     "jest-junit": "^5.2.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.3",

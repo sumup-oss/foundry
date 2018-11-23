@@ -31,6 +31,9 @@ jobs:
           command: yarn test --ci --runInBand --coverage --reporters default --reporters "jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "__reports__/junit/jest-results.xml"
+      - run:
+          name: "Publish coverage"
+          command: yarn codecov
 
       - store_test_results:
           path: __reports__/junit

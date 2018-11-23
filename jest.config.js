@@ -2,7 +2,7 @@ module.exports = {
   clearMocks: true,
   rootDir: 'src',
   coverageDirectory: '../__reports__',
-  reporters: ['jest-junit'],
+  reporters: ['default', 'jest-junit'],
   coveragePathIgnorePatterns: ['node_modules'],
   testEnvironment: 'node',
   setupTestFrameworkScriptFile: '../testSetup.js'
