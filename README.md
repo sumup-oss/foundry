@@ -1,4 +1,7 @@
-[![CircleCI](https://circleci.com/gh/sumup/foundry.svg?style=svg&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)](https://circleci.com/gh/sumup/foundry)
+![Build status](https://circleci.com/gh/sumup/foundry.svg?style=shield&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)
+![Code coverage](https://codecov.io/gh/sumup/foundry/branch/master/graph/badge.svg?token=3fxP3TZEAN)
+[![npm version](https://badge.fury.io/js/%40sumup%2Ffoundry.svg)](https://www.npmjs.com/package/@sumup/foundry)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sumup/foundry/blob/master/LICENSE)
 
 <div align="center">
 
