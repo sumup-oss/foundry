@@ -1,7 +1,9 @@
 import { dirname, resolve, join, relative } from 'path';
-import { spawn } from 'child_process';
 import { access, readFile } from 'fs';
 import { promisify } from 'util';
+import { isString } from 'lodash/fp';
+
+import spawn from '../lib/spawn';
 
 const readFileAsync = promisify(readFile);
 const accessAsync = promisify(access);
@@ -55,8 +57,9 @@ async function resolveBinaryPath(name, useRelative = false) {
     // This could potentially break, if the name of a binary (name) is different
     // from the name of the package.
     const packageJsonPath = await getPackageJsonPath(name, useRelative);
-    const { bin: packageBinaries } = await loadJson(packageJsonPath);
-    const binaryPath = packageBinaries[name];
+    const { bin: packageBin } = await loadJson(packageJsonPath);
+    const binaryPath = isString(packageBin) ? packageBin : packageBin[name];
+
     if (!binaryPath) {
       return null;
     }
@@ -76,7 +79,7 @@ function getToolArguments() {
 }
 
 async function executeBinary(path, args) {
-  spawn(path, args, {
+  return spawn(path, args, {
     stdio: 'inherit'
   });
 }
@@ -93,5 +96,9 @@ export default async function run({ argv }) {
 
   const binArgs = getToolArguments();
 
-  await executeBinary(binPath, binArgs);
+  try {
+    await executeBinary(binPath, binArgs);
+  } catch (err) {
+    process.exit(1);
+  }
 }
