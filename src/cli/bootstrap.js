@@ -78,7 +78,10 @@ const getConfigs = flow(
     const { all } = params;
 
     if (all) {
-      return zipObject(SUPPORTED_CONFIGS, ['base', 'base', 'base', 'base']);
+      return zipObject(
+        SUPPORTED_CONFIGS,
+        Array.from(Array(SUPPORTED_CONFIGS.length).keys()).map(() => 'base')
+      );
     }
 
     const picked = flow(
