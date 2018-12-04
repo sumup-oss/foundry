@@ -26,6 +26,8 @@ function getConfigName(name, val) {
   const configs = {
     eslint: ESLINT_CONFIGS,
     prettier: ['base'],
+    husky: ['base'],
+    'lint-staged': ['base'],
     babel: BABEL_CONFIGS,
     plop: PLOP_CONFIGS
   };
@@ -54,7 +56,9 @@ async function writeConfigFile(name, content, targetDir) {
     eslint: '.eslintrc.js',
     prettier: 'prettier.config.js',
     babel: '.babelrc.js',
-    plop: 'plopfile.js'
+    plop: 'plopfile.js',
+    husky: '.huskyrc.js',
+    'lint-staged': 'lint-staged.config.js'
   };
   const filename = get(name, filenames);
 
@@ -105,8 +109,10 @@ export default function bootstrap(params) {
   );
 
   const configExportStrings = reduce(
-    (acc, tool) =>
-      assign(acc, { [tool]: createConfigExport(tool, configs[tool]) }),
+    (acc, tool) => ({
+      ...acc,
+      [tool]: createConfigExport(tool, configs[tool])
+    }),
     {},
     tools
   );
