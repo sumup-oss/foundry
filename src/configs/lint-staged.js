@@ -1,3 +1,5 @@
 export const base = {
-  '*.js': ['foundry run eslint --fix', 'git add']
+  linters: {
+    '*.js': ['foundry run eslint --fix', 'git add']
+  }
 };
