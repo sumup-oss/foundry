@@ -19,32 +19,37 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 
 </div>
 
+> **TLDR;**
+>
+> 1. Set up desired configuration files, `npx foundry bootstrap-config —eslint —prettier`.
+>
+> 2. Add commands to `package.json`
+>
+>    ```
+>    "scripts": {
+>        "lint": "foundry run eslint src"
+>    }
+>    ```
+>
+> 3. Be productive and don’t worry about tooling dependencies.
+
+
+
 ##### Table of contents
 
 - [Examples](#examples)
 - [Installation](#installation)
-- [Why?](#why?)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Why?](#why?)
 - [Contribute](#contribute)
 - [About SumUp](#about-sumup)
 
-## Examples
 
-```bash
-# Bootstrapping various tooling configs for a React project
-$ npx --package @sumup/foundry foundry bootstrap-config --eslint react --babel react --prettier react --plop react
-
-# Running ESlint with fix flag
-$ npx --package @sumup/foundry foundry run eslint --fix
-
-# Creating a React component
-$ npx --package @sumup/foundry foundry create component
-```
 
 ## Installation
 
-Foundry is supposed to be installed as a project dependency via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install).
+Foundry is supposed to be installed as a dev-dependency (development) via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install).
 
 Depending on your preference, run one of the following.
 
@@ -55,6 +60,68 @@ $ npm install --save-dev @sumup/foundry
 # With yarn
 $ yarn add --dev @sumup/foundry
 ```
+
+
+
+## Usage
+
+Once you have installed Foundry, you should bootstrap configuration files the CLI tools you would like to use through Foundry and set up scripts in you `package.json` to actually run them.
+
+### Bootstrap configuration files
+
+Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to bootstrap a configuration file for each tool you would like to use. This is done with the `bootstrap-config` command. Foundry supports different presets for each tool, `base` being the default preset. You can specify the tool you would like to use as a flag, the preset as the flag’s value.
+
+```bash
+# Bootstraps the eslint and prettier config files using the react preset for ESLint and the default (base) preset for prettier.
+$ npx foundry bootstrap-config --eslint react --prettier
+```
+
+### Running a tool through Foundry
+
+Foundry manages all supported CLI tools for you and exposes them via the `run` command. To run ESLint through Foundry execute `npx foundry run eslint src` from the terminal. Here, `src` is the folder you want ESLint to check. Note that you can use any of the command line flags and arguments supported by ESLint and other tools. Foundry simply forwards them and they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
+
+### Use Foundry for your `package.json` scripts
+
+For automation purposes and easier access, you will want to alias frequently used commands as scripts in your `package.json`. Here are some examples.
+
+```json
+"scripts": {
+    "lint": "foundry run eslint --fix src",
+    "create-component": "foundry run plop component"
+}
+```
+
+
+
+## List of commands
+
+At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
+
+
+
+## List of configuration presets
+
+Here is a list of supported presets for the `bootstrap-config` command, grouped by CLI tool.
+
+### ESLint (`--eslint` flag)
+
+We lint our code with ESLint. Linting our code helps us spot mistakes early. You can inspect all presets in the [respective config file](https://github.com/sumup/foundry/blob/master/src/configs/eslint.js).
+
+- `base`: the default preset. Uses the `airbnb-base`, `prettier`, and  `jest/recommended` presets, `prettier` and `jest` plugins and some configurations.
+- `node`: like `base` but specifies `node` as environment.
+- `react`: like `base` but adding the `react/recommended`, `jsx-a11y/recommended`, and `prettier/react` presets. 
+
+### Prettier (`--prettier` flag)
+
+Prettier is our code formatter of choice. It makes all our code look the same after every save. We only have a `base` preset, which follows our [default formatting rules](https://github.com/sumup/foundry/blob/master/src/configs/prettier.js).
+
+### Plop (`—plop` flag)
+
+Plop allows us to quickly create a set of files, e.g. for a React component, with a single command. This is very helpful when creating a lot of components and reduces the boilerplate you have to write as a developer.
+
+Currently, we only have a plop generator for React components. Use the `react` preset for that.
+
+
 
 ## Why?
 
@@ -88,14 +155,6 @@ We were inspired by many toolkit projects, such as [create-react-app](https://gi
 - It merely proxies the tools you use on a CLI level instead of talking to them through their Node.js APIs. We literally execute the binaries and forward any options you provided.
 
 So please, go ahead and try it.
-
-## Usage
-
-Foundry is supposed to be installed as a dev-dependency (development) in your project. Once installed, you may bootstrap a project with corresponding configurations
-
-## Commands
-
-At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), and [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
 
 
 
