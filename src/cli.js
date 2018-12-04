@@ -27,11 +27,19 @@ yargs
         })
         .option('prettier', {
           desc: 'Write the prettier config.',
-          coerce: val => (val === true ? 'base' : val),
+          coerce: val => (val === true ? 'base' : val)
         })
         .option('plop', {
           desc: 'Write the plop config.',
-          coerce: val => (val === true ? 'base' : val),
+          coerce: val => (val === true ? 'base' : val)
+        })
+        .option('husky', {
+          desc: 'Write the husky config.',
+          coerce: val => (val === true ? 'base' : val)
+        })
+        .option('lint-staged', {
+          desc: 'Write the lint-staged config.',
+          coerce: val => (val === true ? 'base' : val)
         })
         .option('targetDir', {
           default: process.cwd(),

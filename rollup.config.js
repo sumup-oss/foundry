@@ -63,6 +63,16 @@ export default [
     ...shared
   },
   {
+    input: 'src/lint-staged.js',
+    output: { file: 'dist/lint-staged.js', format: 'cjs' },
+    ...shared
+  },
+  {
+    input: 'src/husky.js',
+    output: { file: 'dist/husky.js', format: 'cjs' },
+    ...shared
+  },
+  {
     input: 'src/cli.js',
     output: {
       file: 'dist/cli.js',
