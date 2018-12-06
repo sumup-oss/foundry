@@ -89,7 +89,7 @@ export const react = overwritePresets(base, {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
+        devDependencies: true
       }
     ]
   },
