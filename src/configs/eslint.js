@@ -7,7 +7,11 @@ export const overwritePresets = merge({
 });
 
 export const base = {
-  extends: ['airbnb-base', 'prettier', 'plugin:jest/recommended'],
+  extends: [
+    'airbnb-base',
+    'plugin:jest/recommended',
+    'plugin:prettier/recommended'
+  ],
   plugins: ['prettier', 'jest'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
@@ -24,7 +28,7 @@ export const base = {
     'no-underscore-dangle': [
       'error',
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
-    ],
+    ]
   },
   globals: {
     __DEV__: true,
@@ -36,7 +40,7 @@ export const base = {
     allowImportExportEverywhere: true,
     ecmaFeatures: {
       ecmaVersion: 2017,
-      impliedStrict: true,
+      impliedStrict: true
     }
   },
   overrides: [
@@ -77,7 +81,7 @@ export const react = overwritePresets(base, {
     'airbnb-base',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
     'prettier/react'
   ],
   plugins: ['react', 'jsx-a11y'],
@@ -87,7 +91,7 @@ export const react = overwritePresets(base, {
       {
         devDependencies: ['*.js', '**/*.story.js', '**/*.spec.js']
       }
-    ],
+    ]
   },
   parserOptions: {
     ecmaFeatures: {
