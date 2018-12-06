@@ -22,6 +22,8 @@
     "eslint.js",
     "plop.js",
     "prettier.js",
+    "lint-staged.js",
+    "husky.js",
     "plop-templates",
     "cli.js",
     "index.js",
