@@ -5,14 +5,6 @@
 
 <div align="center">
 
-## :construction: Under construction :construction:
-
-This project is still at an early stage. We are testing it internally and hope to add more powerful features as well as tools.
-
-</div>
-
-<div align="center">
-
 # Foundry
 
 An opinionated but configurable CLI (Command Line Interface) toolkit for writing JavaScript. We currently support [React](https://reactjs.org), [Node](https://nodejs.org/en/), and vanilla JavaScript with varying feature breadth.
@@ -95,7 +87,7 @@ For automation purposes and easier access, you will want to alias frequently use
 
 ## List of commands
 
-At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [Babel](https://babeljs.io), [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), [Plop](https://plopjs.com). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
+At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), [Plop](https://plopjs.com), [Husky](https://github.com/typicode/husky), and [lint-staged](https://www.npmjs.com/package/lint-staged). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
 
 
 
@@ -115,11 +107,23 @@ We lint our code with ESLint. Linting our code helps us spot mistakes early. You
 
 Prettier is our code formatter of choice. It makes all our code look the same after every save. We only have a `base` preset, which follows our [default formatting rules](https://github.com/sumup/foundry/blob/master/src/configs/prettier.js).
 
-### Plop (`—plop` flag)
+### Plop (`--plop` flag)
 
-Plop allows us to quickly create a set of files, e.g. for a React component, with a single command. This is very helpful when creating a lot of components and reduces the boilerplate you have to write as a developer.
+[Plop](https://plopjs.com) allows us to quickly create a set of files, e.g. for a React component, with a single command. This is very helpful when creating a lot of components and reduces the boilerplate you have to write as a developer.
 
 Currently, we only have a plop generator for React components. Use the `react` preset for that.
+
+### lint-staged (`--lint-staged` flag)
+
+[lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with [Husky](https://github.com/typicode/husky), it makes ensuring bad code gets committed very easy.
+
+`lint-staged` only comes with a `base` preset.
+
+### Husky (`--husky` flag)
+
+Husky makes  setting up git hooks consistently very easy. Whenever someone installs your project, husky will automatically set up git hooks as part of its postinstall script.
+
+Husky only comes with a `base` preset.
 
 
 
