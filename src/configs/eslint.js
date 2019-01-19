@@ -69,6 +69,17 @@ export const base = {
       env: {
         'jest/globals': true
       }
+    },
+    {
+      files: ['*.config.js', '.*rc.js'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: true
+          }
+        ]
+      }
     }
   ]
 };
