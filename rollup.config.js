@@ -73,6 +73,11 @@ export default [
     ...shared
   },
   {
+    input: 'src/semantic-release.js',
+    output: { file: 'dist/semantic-release.js', format: 'cjs' },
+    ...shared
+  },
+  {
     input: 'src/cli.js',
     output: {
       file: 'dist/cli.js',

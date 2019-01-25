@@ -41,6 +41,10 @@ yargs
           desc: 'Write the lint-staged config.',
           coerce: val => (val === true ? 'base' : val)
         })
+        .option('semantic-release', {
+          desc: 'Write the semantic-release config.',
+          coerce: val => (val === true ? 'base' : val)
+        })
         .option('targetDir', {
           default: process.cwd(),
           desc: 'Directory to write configs to.',
