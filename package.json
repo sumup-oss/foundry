@@ -48,7 +48,7 @@
     "lodash": "^4.17.11",
     "plop": "^2.1.0",
     "prettier": "^1.15.2",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^16.0.0-beta.17",
     "webpack-merge": "^4.1.4",
     "yargs": "^12.0.5"
   },
