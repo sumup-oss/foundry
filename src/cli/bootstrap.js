@@ -29,7 +29,8 @@ function getConfigName(name, val) {
     husky: ['base'],
     'lint-staged': ['base'],
     babel: BABEL_CONFIGS,
-    plop: PLOP_CONFIGS
+    plop: PLOP_CONFIGS,
+    'semantic-release': ['base']
   };
 
   const supportedConfigs = get(name, configs);
@@ -58,7 +59,8 @@ async function writeConfigFile(name, content, targetDir) {
     babel: '.babelrc.js',
     plop: 'plopfile.js',
     husky: '.huskyrc.js',
-    'lint-staged': 'lint-staged.config.js'
+    'lint-staged': 'lint-staged.config.js',
+    'semantic-release': '.releaserc.js'
   };
   const filename = get(name, filenames);
 
