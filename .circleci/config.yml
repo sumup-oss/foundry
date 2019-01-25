@@ -12,9 +12,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run: yarn
 
@@ -24,16 +24,19 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: "Lint"
+          name: 'Lint'
           command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
       - run:
-          name: "Test"
+          name: 'Test'
           command: yarn test --ci --runInBand --coverage --reporters default --reporters "jest-junit"
           environment:
-            JEST_JUNIT_OUTPUT: "__reports__/junit/jest-results.xml"
+            JEST_JUNIT_OUTPUT: '__reports__/junit/jest-results.xml'
       - run:
-          name: "Publish coverage"
+          name: 'Publish coverage'
           command: yarn codecov
+      - deploy:
+          name: 'Deploy'
+          command: yarn release
 
       - store_test_results:
           path: __reports__/junit
