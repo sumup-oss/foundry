@@ -14,13 +14,20 @@ import {
   zipObject,
   assign
 } from 'lodash/fp';
-import { SUPPORTED_CONFIGS, eslint, babel, plop } from '../configs';
+import {
+  SUPPORTED_CONFIGS,
+  eslint,
+  babel,
+  plop,
+  semanticRelease
+} from '../configs';
 
 const writeFileAsync = promisify(writeFile);
 
 const { ESLINT_CONFIGS } = eslint;
 const { BABEL_CONFIGS } = babel;
 const { PLOP_CONFIGS } = plop;
+const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 function getConfigName(name, val) {
   const configs = {
@@ -30,7 +37,7 @@ function getConfigName(name, val) {
     'lint-staged': ['base'],
     babel: BABEL_CONFIGS,
     plop: PLOP_CONFIGS,
-    'semantic-release': ['base']
+    'semantic-release': [SEMANTIC_RELEASE_CONFIGS]
   };
 
   const supportedConfigs = get(name, configs);
