@@ -26,6 +26,7 @@
     "prettier.js",
     "lint-staged.js",
     "husky.js",
+    "semantic-release.js",
     "plop-templates",
     "cli.js",
     "index.js",
