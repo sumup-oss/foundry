@@ -3,10 +3,11 @@ import yargs from 'yargs';
 import bootstrap from './cli/bootstrap';
 import run from './cli/run';
 
-import { eslint, babel } from './configs';
+import { eslint, babel, semanticRelease } from './configs';
 
 const { ESLINT_CONFIGS } = eslint;
 const { BABEL_CONFIGS } = babel;
+const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 // eslint-disable-next-line
 yargs
@@ -43,7 +44,8 @@ yargs
         })
         .option('semantic-release', {
           desc: 'Write the semantic-release config.',
-          coerce: val => (val === true ? 'base' : val)
+          coerce: val => (val === true ? 'base' : val),
+          choices: [true, ...SEMANTIC_RELEASE_CONFIGS]
         })
         .option('targetDir', {
           default: process.cwd(),

@@ -4,5 +4,21 @@ export const base = {
     'master',
     { name: 'next', prerelease: true },
     { name: 'beta', prerelease: true }
+  ],
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/github'
   ]
 };
+
+export const module = Object.assign(base, {
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/npm',
+    '@semantic-release/github'
+  ]
+});
+
+export const SEMANTIC_RELEASE_CONFIGS = ['base', 'module'];
