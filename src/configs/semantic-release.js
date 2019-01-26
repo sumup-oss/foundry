@@ -2,7 +2,8 @@
 export const base = {
   branches: [
     'master',
-    { name: 'next', prerelease: true },
+    'next',
+    { name: 'alpha', prerelease: true },
     { name: 'beta', prerelease: true }
   ],
   plugins: [
