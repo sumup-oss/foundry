@@ -25,8 +25,6 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 >
 > 3. Be productive and don’t worry about tooling dependencies.
 
-
-
 ##### Table of contents
 
 - [Examples](#examples)
@@ -36,8 +34,6 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 - [Why?](#why?)
 - [Contribute](#contribute)
 - [About SumUp](#about-sumup)
-
-
 
 ## Installation
 
@@ -52,8 +48,6 @@ $ npm install --save-dev @sumup/foundry
 # With yarn
 $ yarn add --dev @sumup/foundry
 ```
-
-
 
 ## Usage
 
@@ -83,13 +77,9 @@ For automation purposes and easier access, you will want to alias frequently use
 }
 ```
 
-
-
 ## List of commands
 
 At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), [Plop](https://plopjs.com), [Husky](https://github.com/typicode/husky), and [lint-staged](https://www.npmjs.com/package/lint-staged). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
-
-
 
 ## List of configuration presets
 
@@ -97,15 +87,15 @@ Here is a list of supported presets for the `bootstrap-config` command, grouped 
 
 ### ESLint (`--eslint` flag)
 
-We lint our code with ESLint. Linting our code helps us spot mistakes early. You can inspect all presets in the [respective config file](https://github.com/sumup/foundry/blob/master/src/configs/eslint.js).
+We lint our code with [ESLint](https://www.npmjs.com/package/eslint). Linting our code helps us spot mistakes early. You can inspect all presets in the [respective config file](https://github.com/sumup/foundry/blob/master/src/configs/eslint.js).
 
-- `base`: the default preset. Uses the `airbnb-base`, `prettier`, and  `jest/recommended` presets, `prettier` and `jest` plugins and some configurations.
+- `base`: the default preset. Uses the `airbnb-base`, `prettier`, and `jest/recommended` presets, `prettier` and `jest` plugins and some configurations.
 - `node`: like `base` but specifies `node` as environment.
-- `react`: like `base` but adding the `react/recommended`, `jsx-a11y/recommended`, and `prettier/react` presets. 
+- `react`: like `base` but adding the `react/recommended`, `jsx-a11y/recommended`, and `prettier/react` presets.
 
 ### Prettier (`--prettier` flag)
 
-Prettier is our code formatter of choice. It makes all our code look the same after every save. We only have a `base` preset, which follows our [default formatting rules](https://github.com/sumup/foundry/blob/master/src/configs/prettier.js).
+[Prettier](https://www.npmjs.com/package/prettier) is our code formatter of choice. It makes all our code look the same after every save. We only have a `base` preset, which follows our [default formatting rules](https://github.com/sumup/foundry/blob/master/src/configs/prettier.js).
 
 ### Plop (`--plop` flag)
 
@@ -121,11 +111,15 @@ Currently, we only have a plop generator for React components. Use the `react` p
 
 ### Husky (`--husky` flag)
 
-Husky makes  setting up git hooks consistently very easy. Whenever someone installs your project, husky will automatically set up git hooks as part of its postinstall script.
+Husky makes setting up git hooks consistently very easy. Whenever someone installs your project, husky will automatically set up git hooks as part of its postinstall script.
 
 Husky only comes with a `base` preset.
 
+### semantic-release (`--semantic-release` flag)
 
+[`semantic-release`](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
+
+`semantic-release` only comes with a `base` preset.
 
 ## Why?
 
@@ -149,7 +143,7 @@ Toolkits are a way to mitigate these kinds of problems. They encapsulate as much
 - When you need to update a tooling dependency or change a configuration, do it in the toolkit and update the toolkit dependency in your projects &mdash; preferably in an automated fashion. That's it. :sparkles:
 - Make the way you write JavaScript more consistent. All your projects will work exactly the same. :straight_ruler:
 - Easy onboarding. New colleagues will be able to get productive much more quickly. 🙇‍♂️
-- The number of direct dependencies becomes *much* smaller and your  `package.json` shorter. :spider_web:
+- The number of direct dependencies becomes _much_ smaller and your `package.json` shorter. :spider_web:
 
 ### But what makes Foundry different?
 
@@ -160,14 +154,10 @@ We were inspired by many toolkit projects, such as [create-react-app](https://gi
 
 So please, go ahead and try it.
 
-
-
 ## Contribute
 
-We are currently not ready for contributions. If you have questions, feature requests, or want to report a *new* bug, please file an issue.
-
-
+We are currently not ready for contributions. If you have questions, feature requests, or want to report a _new_ bug, please file an issue.
 
 ## About SumUp
 
-[SumUp](https://sumup.com) is a mobile-point of sale provider. It is our mission to make easy and fast card payments a reality across the *entire* world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Elixir, Erlang, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
+[SumUp](https://sumup.com) is a mobile-point of sale provider. It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Elixir, Erlang, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
