@@ -127,7 +127,7 @@ export const copyright = {
       'notice/notice': [
         'error',
         {
-          templateFile: `${__dirname}/copyright.js`,
+          templateFile: `${__dirname}/copyright.tpl`,
           templateVars:{ NAME: 'SumUp Ltd.' },
           varRegexps:{ NAME: /SumUp Ltd./ }
         }
