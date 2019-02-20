@@ -1,4 +1,4 @@
-const { node, test } = require('@sumup/foundry/eslint');
+const { node, test, copyright } = require('@sumup/foundry/eslint');
 const { merge } = require('@sumup/foundry');
 
-module.exports = merge(node, test);
+module.exports = merge(node, test, copyright);
