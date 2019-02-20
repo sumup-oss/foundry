@@ -121,4 +121,18 @@ export const react = overwritePresets(base, {
   }
 });
 
+export const copyright = {
+    plugins:['notice'],
+    rules: {
+      'notice/notice': [
+        'error',
+        {
+          templateFile: `${__dirname}/copyright.js`,
+          templateVars:{ NAME: 'SumUp Ltd.' },
+          varRegexps:{ NAME: /SumUp Ltd./ }
+        }
+      ]
+    }
+}
+
 export const ESLINT_CONFIGS = ['base', 'node', 'react'];
