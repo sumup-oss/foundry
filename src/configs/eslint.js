@@ -95,8 +95,10 @@ export const react = overwritePresets(base, {
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  plugins: ['react', 'jsx-a11y'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y'],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warning',
     'import/no-extraneous-dependencies': [
       'error',
       {
