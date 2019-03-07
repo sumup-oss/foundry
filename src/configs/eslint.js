@@ -98,7 +98,7 @@ export const react = overwritePresets(base, {
   plugins: ['react', 'react-hooks', 'jsx-a11y'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warning',
+    'react-hooks/exhaustive-deps': 'warn',
     'import/no-extraneous-dependencies': [
       'error',
       {
