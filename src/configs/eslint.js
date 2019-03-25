@@ -45,7 +45,7 @@ export const base = {
   },
   overrides: [
     {
-      files: ['**/*spec.js'],
+      files: ['**/*spec.js', 'e2e/**/*.js'],
       rules: {
         'max-len': [
           'error',
@@ -67,7 +67,8 @@ export const base = {
         renderToHtml: true
       },
       env: {
-        'jest/globals': true
+        'jest/globals': true,
+        'cypress/globals': true
       }
     },
     {
