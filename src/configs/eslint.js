@@ -12,7 +12,7 @@ export const base = {
     'plugin:jest/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['prettier', 'jest'],
+  plugins: ['prettier', 'jest', 'cypress'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'max-len': [
