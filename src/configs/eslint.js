@@ -12,7 +12,7 @@ export const base = {
     'plugin:jest/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['prettier', 'jest'],
+  plugins: ['prettier', 'jest', 'cypress'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'max-len': [
@@ -45,7 +45,7 @@ export const base = {
   },
   overrides: [
     {
-      files: ['**/*spec.js'],
+      files: ['**/*spec.js', 'e2e/**/*.js'],
       rules: {
         'max-len': [
           'error',
@@ -67,7 +67,8 @@ export const base = {
         renderToHtml: true
       },
       env: {
-        'jest/globals': true
+        'jest/globals': true,
+        'cypress/globals': true
       }
     },
     {
