@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 __reports__
+junit.xml
 node_modules/
 .npm
 .eslintcache

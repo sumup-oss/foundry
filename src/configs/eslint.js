@@ -96,10 +96,15 @@ export const react = overwritePresets(base, {
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  plugins: ['react', 'react-hooks', 'jsx-a11y'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'emotion'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'emotion/jsx-import': 'error',
+    'emotion/no-vanilla': 'error',
+    'emotion/import-from-emotion': 'error',
+    'emotion/styled-import': 'error',
+    'emotion/syntax-preference': [2, 'string'],
     'import/no-extraneous-dependencies': [
       'error',
       {
