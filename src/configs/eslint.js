@@ -104,7 +104,6 @@ export const react = overwritePresets(base, {
     'emotion/no-vanilla': 'error',
     'emotion/import-from-emotion': 'error',
     'emotion/styled-import': 'error',
-    'emotion/syntax-preference': [2, 'string'],
     'import/no-extraneous-dependencies': [
       'error',
       {
