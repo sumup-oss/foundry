@@ -119,10 +119,8 @@ Husky only comes with a `base` preset.
 
 [`semantic-release`](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
 
-`semantic-release` only comes with a `base` preset.
-
 - `base`: the default preset. Analyzes the commit history, generates release notes and publishes them to GitHub.
-- `module`: like `base` but also publishes the code to `npm`. For node modules.
+- `modules`: like `base` but also publishes the code to `npm`. For node modules.
 
 ## Why?
 
