@@ -1,6 +1,6 @@
 {
   "name": "@sumup/foundry",
-  "version": "1.2.0",
+  "version": "0.0.0-semantically-released",
   "description": "A toolkit for JavaScript applications by SumUp.",
   "main": "index.js",
   "repository": "github:sumup/foundry",
@@ -15,7 +15,9 @@
     "test:watch": "yarn test --watchAll",
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "codedov": "codecov",
-    "start": "yarn cleanup && yarn develop"
+    "start": "yarn cleanup && yarn develop",
+    "prerelease": "yarn build",
+    "release": "cd ./dist && npx semantic-release"
   },
   "files": [
     "babel.js",
@@ -24,6 +26,7 @@
     "prettier.js",
     "lint-staged.js",
     "husky.js",
+    "semantic-release.js",
     "plop-templates",
     "cli.js",
     "index.js",
@@ -31,6 +34,11 @@
     "README.md"
   ],
   "dependencies": {
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "eslint": "^5.9.0",
@@ -51,6 +59,7 @@
     "lodash": "^4.17.11",
     "plop": "^2.1.0",
     "prettier": "^1.15.2",
+    "semantic-release": "^16.0.0-beta.18",
     "webpack-merge": "^4.1.4",
     "yargs": "^12.0.5"
   },
@@ -59,7 +68,7 @@
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/preset-env": "7.1.6",
-    "@sumup/foundry": "beta",
+    "@sumup/foundry": "next",
     "babel-core": "7.0.0-bridge.0",
     "codecov": "^3.1.0",
     "jest-junit": "^5.2.0",
