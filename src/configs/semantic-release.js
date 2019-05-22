@@ -3,6 +3,7 @@ export const base = {
   branches: [
     'master',
     'next',
+    'canary',
     { name: 'alpha', prerelease: true },
     { name: 'beta', prerelease: true }
   ],
