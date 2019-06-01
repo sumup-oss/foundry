@@ -71,7 +71,6 @@ export default [
       ...shared.plugins,
       copy({
         targets: {
-          'src/configs/eslint/copyright.tpl': 'dist/copyright.tpl',
           'src/configs/plop/templates': 'dist/plop-templates',
           'package.json': 'dist/package.json',
           LICENSE: 'dist/LICENSE',
