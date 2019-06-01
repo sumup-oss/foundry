@@ -6,10 +6,10 @@
   "repository": "github:sumup/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>",
   "license": "Apache-2.0",
-  "bin": "cli.js",
+  "bin": "cli",
   "scripts": {
     "cleanup": "rimraf ./dist",
-    "build": "BABEL_ENV=build NODE_ENV=production rollup --config",
+    "build": "BABEL_ENV=build NODE_ENV=production rollup --config && chmod +x dist/cli",
     "lint": "yarn foundry run eslint src",
     "test": "jest",
     "test:watch": "yarn test --watchAll",
