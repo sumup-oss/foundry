@@ -70,11 +70,13 @@ export default [
     plugins: [
       ...shared.plugins,
       copy({
-        'src/configs/eslint/copyright.tpl': 'dist/copyright.tpl',
-        'src/configs/plop/templates': 'dist/plop-templates',
-        'package.json': 'dist/package.json',
-        LICENSE: 'dist/LICENSE',
-        'README.md': 'dist/README.md',
+        targets: {
+          'src/configs/eslint/copyright.tpl': 'dist/copyright.tpl',
+          'src/configs/plop/templates': 'dist/plop-templates',
+          'package.json': 'dist/package.json',
+          LICENSE: 'dist/LICENSE',
+          'README.md': 'dist/README.md'
+        },
         verbose: true
       })
     ]
