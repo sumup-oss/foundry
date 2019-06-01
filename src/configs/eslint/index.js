@@ -65,7 +65,7 @@ export const base = {
 `,
         templateVars: { NAME: 'SumUp Ltd.' },
         varRegexps: { NAME: /SumUp Ltd\./ },
-        onNonMatchingHeader: 'replace'
+        onNonMatchingHeader: 'report'
       }
     ]
   },
