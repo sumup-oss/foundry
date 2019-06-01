@@ -20,7 +20,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import copy from 'rollup-plugin-copy';
 import cleanup from 'rollup-plugin-cleanup';
-import { name, version } from './package.json';
 
 // Shared config
 const shared = {
@@ -43,9 +42,7 @@ const shared = {
 };
 
 const banner = `/**
- * ${name}, v${version}
- * Build time: ${new Date().toUTCString()}
- *
+ * Foundry
  * Copyright 2018, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
