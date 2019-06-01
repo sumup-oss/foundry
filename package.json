@@ -9,7 +9,7 @@
   "bin": "cli",
   "scripts": {
     "cleanup": "rimraf ./dist",
-    "build": "BABEL_ENV=build NODE_ENV=production rollup --config && chmod +x dist/cli",
+    "build": "yarn cleanup && BABEL_ENV=build NODE_ENV=production rollup --config && chmod +x dist/cli",
     "lint": "yarn foundry run eslint src",
     "test": "jest",
     "test:watch": "yarn test --watchAll",
