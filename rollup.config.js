@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { resolve as pathResolve, join as pathJoin } from 'path';
+import { resolve as pathResolve } from 'path';
 
 // Plugins
 import resolve from 'rollup-plugin-node-resolve';
