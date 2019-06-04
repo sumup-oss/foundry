@@ -28,7 +28,7 @@
     "husky.js",
     "semantic-release.js",
     "plop-templates",
-    "cli.js",
+    "cli",
     "index.js",
     "LICENSE",
     "README.md"
