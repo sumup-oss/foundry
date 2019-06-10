@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/git": "7.1.0-beta.3",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/npm": "^5.1.4",
     "@semantic-release/release-notes-generator": "^7.1.4",
@@ -69,8 +69,8 @@
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/preset-env": "7.1.6",
     "@sumup/foundry": "next",
-    "babel-jest": "^23.6.0",
     "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "codecov": "^3.1.0",
     "jest-junit": "^5.2.0",
     "rimraf": "^2.6.2",
