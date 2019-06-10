@@ -16,6 +16,7 @@
     "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "codedov": "codecov",
     "start": "yarn cleanup && yarn develop",
+    "license-check": "license-checker --production --summary --failOn=GPLv3",
     "prerelease": "yarn build",
     "release": "cd ./dist && semantic-release"
   },
@@ -73,6 +74,7 @@
     "babel-jest": "^23.6.0",
     "codecov": "^3.1.0",
     "jest-junit": "^5.2.0",
+    "license-checker": "^25.0.1",
     "rimraf": "^2.6.2",
     "rollup": "^1.13.0",
     "rollup-plugin-babel": "^4.3.2",
