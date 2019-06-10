@@ -1,8 +1,8 @@
 ![Build status](https://circleci.com/gh/sumup/foundry.svg?style=shield&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)
 ![Code coverage](https://codecov.io/gh/sumup/foundry/branch/master/graph/badge.svg?token=3fxP3TZEAN)
 [![npm version](https://badge.fury.io/js/%40sumup%2Ffoundry.svg)](https://www.npmjs.com/package/@sumup/foundry)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sumup/foundry/blob/master/LICENSE)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](https://github.com/sumup/foundry/blob/master/CODE_OF_CONDUCT.md)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 <div align="center">
 
@@ -156,7 +156,7 @@ We were inspired by many toolkit projects, such as [create-react-app](https://gi
 
 So please, go ahead and try it.
 
-## Code of conduct (CoC)
+## Code of Conduct (CoC)
 
 We want to foster an inclusive and friendly community around our Open Source efforts. Like all SumUp Open Source projects, this project follows the Contributor Covenant Code of Conduct. Please, [read it and follow it](CODE_OF_CONDUCT.md).
 
