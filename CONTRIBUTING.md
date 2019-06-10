@@ -17,7 +17,7 @@ If you feel another member of the community violated our CoC or you are experien
 
 1. Check existing issues and verify that your issue is not already submitted. If a similar issue already exists, we highly recommend to add your report to that issue.
 2. Open issue
-3. Be as detailed as possible - `go` version, what did you do, what did you expect to happen, what actually happened.
+3. Be as detailed as possible - include the `node` version, what you did, what you expected to happen, and what actually happened.
 
 ### Submitting a PR
 

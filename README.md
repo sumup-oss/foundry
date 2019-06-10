@@ -1,7 +1,7 @@
 ![Build status](https://circleci.com/gh/sumup/foundry.svg?style=shield&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)
 ![Code coverage](https://codecov.io/gh/sumup/foundry/branch/master/graph/badge.svg?token=3fxP3TZEAN)
 [![npm version](https://badge.fury.io/js/%40sumup%2Ffoundry.svg)](https://www.npmjs.com/package/@sumup/foundry)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/sumup/foundry.svg)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 <div align="center">
@@ -32,7 +32,7 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 - [Usage](#usage)
 - [List of commands](#list-of-commands)
 - [List of configuration presets](#list-of-configuration-presets)
-- [Why?](#why?)
+- [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
 - [About SumUp](#about-sumup)
 
