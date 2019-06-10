@@ -27,10 +27,10 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 
 ##### Table of contents
 
-- [Examples](#examples)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Commands](#commands)
+- [List of commands](#list-of-commands)
+- [List of configuration presets](#list-of-configuration-presets)
 - [Why?](#why?)
 - [Contribute](#contribute)
 - [About SumUp](#about-sumup)
@@ -161,4 +161,6 @@ We are currently not ready for contributions. If you have questions, feature req
 
 ## About SumUp
 
-[SumUp](https://sumup.com) is a mobile-point of sale provider. It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Elixir, Erlang, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
+![SumUp logo](https://raw.githubusercontent.com/sumup-oss/assets/master/sumup-logo.svg?sanitize=true)
+
+It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Go, Java, Erlang, Elixir and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
