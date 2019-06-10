@@ -24,6 +24,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
+          name: 'Security audit'
+          command: yarn check:security
+      - run:
           name: 'Lint'
           command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
       - run:
@@ -36,7 +39,7 @@ jobs:
           command: yarn codecov
       - run:
           name: 'License check'
-          command: yarn license-check
+          command: yarn check:licenses
       - deploy:
           name: 'Deploy'
           command: yarn release
