@@ -31,7 +31,7 @@ export default function asyncSpawn(cmd, args, options) {
   const stdout = [];
 
   return new Promise((resolve, reject) => {
-    const child = spawn(cmd, args, {
+    const child = spawn(process.execPath, [cmd, ...args], {
       ...DEFAULT_OPTIONS,
       ...options
     });
