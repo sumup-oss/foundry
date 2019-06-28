@@ -105,6 +105,7 @@ export default async function run({ argv }) {
   const binPath = await resolveBinaryPath(tool);
 
   if (!binPath) {
+    // eslint-disable-next-line no-console
     console.error(`No executable found for ${tool}`);
     process.exit(1);
   }
@@ -114,6 +115,11 @@ export default async function run({ argv }) {
   try {
     await executeBinary(binPath, binArgs);
   } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`,
+      err
+    );
     process.exit(1);
   }
 }
