@@ -13,14 +13,13 @@
  * limitations under the License.
  */
 
-// eslint-disable-next-line import/prefer-default-export
 export const base = {
   branches: [
     'master',
     'next',
-    'canary',
     { name: 'alpha', prerelease: true },
-    { name: 'beta', prerelease: true }
+    { name: 'beta', prerelease: true },
+    { name: 'canary', prerelease: true }
   ],
   plugins: [
     '@semantic-release/commit-analyzer',
