@@ -24,8 +24,7 @@ export const base = {
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/github',
-    '@semantic-release/git'
+    '@semantic-release/github'
   ]
 };
 
@@ -34,8 +33,7 @@ export const modules = Object.assign({}, base, {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
-    '@semantic-release/github',
-    '@semantic-release/git'
+    '@semantic-release/github'
   ]
 });
 
