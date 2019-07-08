@@ -3,9 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as knobs from '@storybook/addon-knobs/react';
 
-import withTests from '../../util/withTests';
 import {{ name }} from './{{ name }}';
 
-storiesOf('{{ name }}', module)
-  .addDecorator(withTests('{{ name }}'))
-  .add('{{ name }}', () => <{{ name }} />);
+storiesOf('{{ name }}', module).add('{{ name }}', () => <{{ name }} />);
