@@ -35,7 +35,7 @@ export default plop => {
   const COMPONENT_TYPES = {
     STYLED: 'styled',
     FUNCTIONAL: 'functional',
-    STATEFUL: 'stateful'
+    CLASS: 'class'
   };
 
   const COMPONENT_FILES = {
@@ -61,8 +61,8 @@ export default plop => {
         return 'styled-component.hbs';
       case COMPONENT_TYPES.FUNCTIONAL:
         return 'functional-component.hbs';
-      case COMPONENT_TYPES.STATEFUL:
-        return 'stateful-component.hbs';
+      case COMPONENT_TYPES.CLASS:
+        return 'class-component.hbs';
       default:
         return raiseErrorAndExit(ERRORS.INVALID_COMPONENT_TYPE);
     }
@@ -107,8 +107,8 @@ export default plop => {
             value: COMPONENT_TYPES.FUNCTIONAL
           },
           {
-            name: 'Stateful',
-            value: COMPONENT_TYPES.STATEFUL
+            name: 'Class',
+            value: COMPONENT_TYPES.CLASS
           }
         ],
         default: 'functional'
