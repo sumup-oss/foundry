@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
+import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
-export default plop => {
+export default (plop, opts = {}) => {
   plop.setHelper('eq', (a, b) => a === b);
   plop.setHelper('not', (a, b) => a !== b);
 
@@ -47,7 +48,7 @@ export default plop => {
     INDEX: 'index'
   };
 
-  const TEMPLATE_DIR = `${__dirname}/plop-templates`;
+  const TEMPLATE_DIR = `${__dirname}/plop-templates/react`;
 
   const raiseErrorAndExit = message => {
     // eslint-disable-next-line no-console
@@ -80,8 +81,23 @@ export default plop => {
     return fileNameMap[file];
   };
 
+  const getTemplatePath = templateFileName => {
+    if (opts.templateDir) {
+      const customPath = join(
+        plop.getPlopfilePath(),
+        opts.templateDir,
+        templateFileName
+      );
+      if (existsSync(customPath)) {
+        return customPath;
+      }
+    }
+
+    return join(TEMPLATE_DIR, templateFileName);
+  };
+
   /**
-   * Generating React components and
+   * Generating React components and helper files.
    */
   plop.setGenerator('component', {
     description: 'React component',
@@ -181,7 +197,7 @@ export default plop => {
             capitalizedName,
             getFileName(file, name)
           ),
-          templateFile: join(TEMPLATE_DIR, 'react', templateFileName)
+          templateFile: getTemplatePath(templateFileName)
         });
       }, []);
 
