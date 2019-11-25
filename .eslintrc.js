@@ -1,1 +1,2 @@
-module.exports = require('@sumup/foundry/eslint').node;
+require = require('esm')(module);
+module.exports = require('./src/configs/eslint').node;
