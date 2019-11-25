@@ -1,1 +1,2 @@
-module.exports = require('@sumup/foundry/semantic-release').modules;
+require = require('esm')(module);
+module.exports = require('./src/configs/semantic-release').modules;
