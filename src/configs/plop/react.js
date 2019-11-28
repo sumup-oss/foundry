@@ -70,13 +70,14 @@ export default (plop, opts = {}) => {
   };
 
   const getFileName = (file, name) => {
+    const extension = opts.templateExtension || 'js';
     const fileNameMap = {
-      [COMPONENT_FILES.COMPONENT]: `${name}.js`,
-      [COMPONENT_FILES.COMPONENT_SPEC]: `${name}.spec.js`,
-      [COMPONENT_FILES.STORY]: `${name}.story.js`,
-      [COMPONENT_FILES.SERVICE]: `${name}Service.js`,
-      [COMPONENT_FILES.SERVICE_SPEC]: `${name}Service.spec.js`,
-      [COMPONENT_FILES.INDEX]: 'index.js'
+      [COMPONENT_FILES.COMPONENT]: `${name}.${extension}`,
+      [COMPONENT_FILES.COMPONENT_SPEC]: `${name}.spec.${extension}`,
+      [COMPONENT_FILES.STORY]: `${name}.story.${extension}`,
+      [COMPONENT_FILES.SERVICE]: `${name}Service.${extension}`,
+      [COMPONENT_FILES.SERVICE_SPEC]: `${name}Service.spec.${extension}`,
+      [COMPONENT_FILES.INDEX]: `index.${extension}`
     };
     return fileNameMap[file];
   };
