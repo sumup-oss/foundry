@@ -65,7 +65,7 @@ describe('bootstrap command', () => {
 
   describe('when passed the eslint param', () => {
     it('should create the eslintrc', () => {
-      const params = Object.assign({}, defaultParams, { eslint: 'base' });
+      const params = { ...defaultParams, eslint: 'base' };
       bootstrap(params);
 
       expect(writeFile).toHaveBeenCalledWith(
@@ -76,7 +76,7 @@ describe('bootstrap command', () => {
     });
 
     it('should use the base config when no config is specified', () => {
-      const params = Object.assign({}, defaultParams, { eslint: true });
+      const params = { ...defaultParams, eslint: true };
       bootstrap(params);
 
       expect(writeFile).toHaveBeenCalledWith(
@@ -102,7 +102,7 @@ describe('bootstrap command', () => {
 
   describe('when passed the babel flag', () => {
     it('should create the .babelrc', () => {
-      const params = Object.assign({}, defaultParams, { babel: 'base' });
+      const params = { ...defaultParams, babel: 'base' };
       bootstrap(params);
       expect(writeFile).toHaveBeenCalledWith(
         expect.stringContaining('babel'),
@@ -112,7 +112,7 @@ describe('bootstrap command', () => {
     });
 
     it('should create the babel.config.js preset file', () => {
-      const params = Object.assign({}, defaultParams, { babel: 'base' });
+      const params = { ...defaultParams, babel: 'base' };
       bootstrap(params);
 
       expect(writeFile).toHaveBeenCalledWith(
