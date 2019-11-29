@@ -28,13 +28,14 @@ export const base = {
   ]
 };
 
-export const modules = Object.assign({}, base, {
+export const modules = {
+  ...base,
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     '@semantic-release/github'
   ]
-});
+};
 
 export const SEMANTIC_RELEASE_CONFIGS = ['base', 'modules'];
