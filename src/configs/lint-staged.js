@@ -16,6 +16,13 @@
 // eslint-disable-next-line import/prefer-default-export
 export const base = {
   linters: {
-    '*.js': ['foundry run eslint --fix', 'git add']
+    '*.jsx?': ['foundry run eslint --fix']
+  }
+};
+
+export const typescript = {
+  linters: {
+    '*.jsx?': ['foundry run eslint --fix'],
+    '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
   }
 };

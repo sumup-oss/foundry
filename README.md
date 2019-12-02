@@ -38,7 +38,7 @@ An opinionated but configurable CLI (Command Line Interface) toolkit for writing
 
 ## Installation
 
-Foundry is supposed to be installed as a dev-dependency (development) via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install).
+Foundry is supposed to be installed as a dev-dependency (development) via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v10+.
 
 Depending on your preference, run one of the following.
 
