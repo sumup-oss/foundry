@@ -1,23 +1,58 @@
+# Project #
+
+node_modules
 dist
-logs
-*.log
+public
+lib
+jest-test-results.json
 junit.xml
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+__coverage__
 __reports__
-junit.xml
-node_modules/
 .npm
 .eslintcache
-.node_repl_history
 .yarn-integrity
 .env
 .next
-.vscode
+
 /babel.js
 /prettier.js
 /eslint.js
 /index.js
 /cli.js
 /plop.js
+
+# Packages #
+
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Text editor files #
+
+*.sublime-workspace
+*.sublime-project
+*.editorconfig
+*.swp
+.idea
+.vscode
+
+# Logs #
+
+*.log
+
+# OS generated files #
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
