@@ -16,10 +16,10 @@
 import merge from 'webpack-merge';
 
 export const overwritePresets = merge({
-  customizeArray(a, b, key) {
+  customizeArray(a: any[], b: any[], key: string) {
     return key === 'extends' ? b : undefined;
   },
-  customizeObject(a, b, key) {
+  customizeObject(a: object, b: object, key: string) {
     return key === 'rules' ? { ...a, ...b } : undefined;
   }
 });

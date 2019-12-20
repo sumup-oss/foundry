@@ -17,8 +17,8 @@
 
 import yargs from 'yargs';
 
-import bootstrap from './cli/bootstrap';
-import run from './cli/run';
+import { bootstrap, BootstrapParams } from './cli/bootstrap';
+import { run, RunParams } from './cli/run';
 
 import { eslint, babel, semanticRelease } from './configs';
 
@@ -74,19 +74,21 @@ yargs
           desc: 'Write all base configurations.',
           type: 'boolean'
         }),
-    args => execute('bootstrap', args)
+    (args: BootstrapParams) => execute('bootstrap', args)
   )
   .command(
     'run <tool> [...tool options]',
     'Run any of the bundled tools.',
-    args => execute('run', args)
+    (args: RunParams) => execute('run', args)
   )
   .showHelpOnFail(true)
   .demandCommand(1, '')
   .help()
   .version().argv;
 
-function execute(command, args) {
+type CommandType = 'bootstrap' | 'run';
+
+function execute(command: CommandType, args: any) {
   const commands = { bootstrap, run };
   const commandFn = commands[command];
 

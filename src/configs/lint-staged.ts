@@ -13,14 +13,23 @@
  * limitations under the License.
  */
 
+type LinterCommand = string | string[];
+type LinterFn = (filenames: string[]) => LinterCommand;
+
+interface LintStagedConfig {
+  linters: {
+    [key: string]: LinterCommand | LinterFn;
+  };
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export const base = {
+export const base: LintStagedConfig = {
   linters: {
     '*.jsx?': ['foundry run eslint --fix']
   }
 };
 
-export const typescript = {
+export const typescript: LintStagedConfig = {
   linters: {
     '*.jsx?': ['foundry run eslint --fix'],
     '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'

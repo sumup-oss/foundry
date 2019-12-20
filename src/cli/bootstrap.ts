@@ -16,19 +16,7 @@
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { resolve } from 'path';
-import {
-  flow,
-  get,
-  includes,
-  keys,
-  map,
-  mapValues,
-  omitBy,
-  pickAll,
-  reduce,
-  zipObject,
-  assign
-} from 'lodash/fp';
+import { flow, mapValues, omitBy, pick } from 'lodash/fp';
 import {
   SUPPORTED_CONFIGS,
   eslint,
@@ -44,37 +32,70 @@ const { BABEL_CONFIGS } = babel;
 const { PLOP_CONFIGS } = plop;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
-function getConfigName(name, val) {
-  const configs = {
+export interface BootstrapParams {
+  eslint?: 'base' | 'node' | 'react';
+  babel?: 'base' | 'node' | 'react' | 'webpack' | 'lodash';
+  prettier?: 'base';
+  plop?: 'base' | 'react';
+  husky?: 'base';
+  'lint-staged'?: 'base' | 'typescript';
+  'semantic-release'?: 'base' | 'modules';
+  targetDir?: string;
+  all?: boolean;
+}
+
+type Tool =
+  | 'eslint'
+  | 'babel'
+  | 'prettier'
+  | 'plop'
+  | 'husky'
+  | 'lint-staged'
+  | 'semantic-release';
+
+type Tools = Tool[];
+
+type SupportedConfigs = { [key in Tool]: string[] };
+
+type Configs = { [key in Tool]: string };
+
+type ConfigExports = { [key in Tool]: string };
+
+function getConfigType(tool: Tool, type: string): string {
+  const configs: SupportedConfigs = {
     eslint: ESLINT_CONFIGS,
     prettier: ['base'],
     husky: ['base'],
     'lint-staged': ['base'],
     babel: BABEL_CONFIGS,
     plop: PLOP_CONFIGS,
-    'semantic-release': [SEMANTIC_RELEASE_CONFIGS]
+    'semantic-release': SEMANTIC_RELEASE_CONFIGS
   };
 
-  const supportedConfigs = get(name, configs);
+  const supportedConfigs = configs[tool];
 
-  const isSupportedConfig = includes(val, supportedConfigs);
+  const isSupportedConfig = supportedConfigs.includes(type);
 
   if (!isSupportedConfig) {
     console.warn(
-      `Config ${val} is not available for ${name}. Falling back to base config.`
+      `Config ${type} is not available for ${name}. Falling back to base config.`
     );
     return 'base';
   }
 
-  return val;
+  return type;
 }
 
-function createConfigExport(name, config) {
-  return `module.exports = require('@sumup/foundry/${name}').${config}`;
+function createConfigExport(tool: Tool, type: string): string {
+  return `module.exports = require('@sumup/foundry/${tool}').${type}`;
 }
 
 // eslint-disable-next-line consistent-return
-async function writeConfigFile(name, content, targetDir) {
+async function writeConfigFile(
+  tool: Tool,
+  content: string,
+  targetDir: string
+): Promise<void> {
   const filenames = {
     eslint: '.eslintrc.js',
     prettier: 'prettier.config.js',
@@ -84,7 +105,7 @@ async function writeConfigFile(name, content, targetDir) {
     'lint-staged': 'lint-staged.config.js',
     'semantic-release': '.releaserc.js'
   };
-  const filename = get(name, filenames);
+  const filename = filenames[tool];
 
   const path = resolve(targetDir, filename);
 
@@ -102,53 +123,34 @@ const getConfigs = flow(
     const { all } = params;
 
     if (all) {
-      return zipObject(
-        SUPPORTED_CONFIGS,
-        Array.from(Array(SUPPORTED_CONFIGS.length).keys()).map(() => 'base')
+      return SUPPORTED_CONFIGS.reduce((allConfigs, configName) =>
+        Object.assign(allConfigs, { [configName]: 'bases' })
       );
     }
 
-    const picked = flow(
-      pickAll(SUPPORTED_CONFIGS),
+    return flow(
+      pick(SUPPORTED_CONFIGS),
       mapValues(v => (v === true ? 'base' : v))
     )(params);
-
-    return picked;
   },
   omitBy(val => !val)
 );
 
-export default function bootstrap(params) {
+export function bootstrap(params: BootstrapParams) {
   // TODO: handle case where someone writes eslint config but not prettier
   //       config. Should at least get a message telling them they will either
   //       need to overwrite the eslint plugins/presets or provide one manually.
-  const { targetDir } = params;
-  const configParams = getConfigs(params);
-  const tools = keys(configParams);
+  const { targetDir = './' } = params;
+  const configParams = getConfigs(params) as Configs;
+  const tools = Object.keys(configParams) as Tools;
 
-  const configs = reduce(
-    (acc, tool) =>
-      assign(acc, {
-        [tool]: getConfigName(tool, configParams[tool])
-      }),
-    {},
-    tools
+  const configExports = tools.reduce((acc, tool) => {
+    const configType = getConfigType(tool, configParams[tool]);
+    const configExport = createConfigExport(tool, configType);
+    return { ...acc, [tool]: configExport };
+  }, {}) as ConfigExports;
+
+  return Promise.all(
+    tools.map(tool => writeConfigFile(tool, configExports[tool], targetDir))
   );
-
-  const configExportStrings = reduce(
-    (acc, tool) => ({
-      ...acc,
-      [tool]: createConfigExport(tool, configs[tool])
-    }),
-    {},
-    tools
-  );
-
-  // TODO: Add a flag for the target directory.
-  return flow(
-    map((tool: string) =>
-      writeConfigFile(tool, configExportStrings[tool], targetDir)
-    ),
-    promises => Promise.all(promises) // breaks if you don't put the arrow function here.
-  )(tools);
 }

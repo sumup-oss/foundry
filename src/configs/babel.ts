@@ -15,7 +15,7 @@
 
 const merge = require('webpack-merge');
 
-export const withoutPreset = preset => arr =>
+export const withoutPreset = (preset: string) => (arr: any[]) =>
   arr.filter(el => {
     const isStringPreset = typeof el === 'string' && el === preset;
     const isArrayPreset = el.constructor.name === 'Array' && el[0] === preset;
@@ -23,7 +23,7 @@ export const withoutPreset = preset => arr =>
   });
 
 export const overwriteEnvPreset = merge({
-  customizeArray(a, b, key) {
+  customizeArray(a: any[], b: any[], key: string) {
     if (key === 'presets') {
       const aWithoutEnv = withoutPreset('@babel/preset-env')(a);
       return Object.values(merge(aWithoutEnv, b));

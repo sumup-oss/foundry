@@ -13,8 +13,13 @@
  * limitations under the License.
  */
 
+interface HuskyConfig {
+  skipCI?: boolean;
+  hooks?: { [key: string]: string };
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export const base = {
+export const base: HuskyConfig = {
   hooks: {
     'pre-commit': 'foundry run lint-staged'
   }

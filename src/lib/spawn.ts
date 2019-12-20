@@ -13,25 +13,32 @@
  * limitations under the License.
  */
 
-import { spawn } from 'child_process';
+import * as childProcess from 'child_process';
 
-const DEFAULT_OPTIONS = {
+type StdioBaseOption = 'pipe' | 'inherit' | 'ignore';
+type StdioOption = StdioBaseOption | StdioBaseOption[];
+
+interface SpawnOptions {
+  cwd?: string;
+  detached?: boolean;
+  stdio?: StdioOption;
+}
+
+const DEFAULT_OPTIONS: SpawnOptions = {
   cwd: process.cwd(),
   detached: true,
   stdio: 'inherit'
 };
 
-function getBufferContent(chunks) {
-  return Buffer.isBuffer(chunks[0])
-    ? Buffer.concat(chunks).toString('utf8')
-    : null;
+function getBufferContent(chunks: Uint8Array[]) {
+  return Buffer.concat(chunks).toString('utf8');
 }
 
-export default function asyncSpawn(cmd, args, options) {
-  const stdout = [];
+export function spawn(cmd: string, args: string[], options: SpawnOptions) {
+  const stdout: Uint8Array[] = [];
 
   return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, [cmd, ...args], {
+    const child = childProcess.spawn(process.execPath, [cmd, ...args], {
       ...DEFAULT_OPTIONS,
       ...options
     });

@@ -3,7 +3,7 @@
     "target": "ES2017",
     "module": "commonjs",
     "declaration": true,
-    "strict": false,
+    "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,5 +13,6 @@
     "outDir": "./dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.spec.*"]
+  "exclude": ["**/*.spec.*"],
+  "typeRoots": ["./node_modules/@types", "./src/types/"]
 }

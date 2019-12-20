@@ -13,12 +13,33 @@
  * limitations under the License.
  */
 
+interface PrettierConfig {
+  printWidth: number;
+  tabWidth: number;
+  useTabs: boolean;
+  semi: boolean;
+  singleQuote: boolean;
+  quoteProps: 'as-needed' | 'consistent' | 'preserve';
+  trailingComma: 'none' | 'es5' | 'all';
+  jsxSingleQuote: boolean;
+  bracketSpacing: boolean;
+  jsxBracketSameLine: boolean;
+  arrowParens: 'avoid' | 'always';
+  endOfLine: 'auto' | 'lf' | 'crlf';
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export const base = {
-  singleQuote: true,
+export const base: PrettierConfig = {
+  printWidth: 80,
   tabWidth: 2,
   useTabs: false,
+  semi: true,
+  singleQuote: true,
+  quoteProps: 'consistent',
   trailingComma: 'none',
+  jsxSingleQuote: false,
   bracketSpacing: true,
-  jsxBracketSameLine: false
+  jsxBracketSameLine: false,
+  arrowParens: 'always',
+  endOfLine: 'lf'
 };
