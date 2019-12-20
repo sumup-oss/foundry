@@ -24,8 +24,10 @@ const { BABEL_CONFIGS } = babel;
 
 describe('bootstrap command', () => {
   const consoleBackup = console;
+
   beforeEach(() => {
     global.console = {
+      ...console,
       log: jest.fn(),
       warn: jest.fn(),
       error: jest.fn()
@@ -203,23 +205,26 @@ describe('bootstrap command', () => {
   });
 
   describe('when writing to a config file fails', () => {
-    const processExitBackup = global.process.exit;
+    let processExit;
+
     beforeAll(() => {
-      global.process.exit = jest.fn();
+      processExit = jest.spyOn(process, 'exit').mockImplementation();
     });
 
     afterAll(() => {
-      global.process.exit = processExitBackup;
+      processExit.mockRestore();
     });
 
     it('should log an error and exit the program', async () => {
-      writeFile.mockImplementationOnce((foo, bar, onErr) => {
-        onErr(new Error('Foo'));
-      });
+      ((writeFile as unknown) as jest.Mock).mockImplementationOnce(
+        (foo, bar, onErr) => {
+          onErr(new Error('Foo'));
+        }
+      );
 
       await bootstrap({ ...defaultParams, prettier: 'base' });
       expect(global.console.error).toHaveBeenCalled();
-      expect(process.exit).toHaveBeenCalledWith(1);
+      expect(processExit).toHaveBeenCalledWith(1);
     });
   });
 });

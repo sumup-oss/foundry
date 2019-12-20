@@ -46,7 +46,6 @@ export default function asyncSpawn(cmd, args, options) {
       if (code !== 0) {
         // eslint-disable-next-line no-console
         const err = new Error(`${cmd} exited with an error (code ${code}).`);
-        err.log = getBufferContent(stdout);
         reject(err);
         return;
       }
