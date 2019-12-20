@@ -42,7 +42,7 @@ export const base = {
         ignoreUrls: true
       }
     ],
-    curly: ['error', 'all'],
+    'curly': ['error', 'all'],
     'no-underscore-dangle': [
       'error',
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }

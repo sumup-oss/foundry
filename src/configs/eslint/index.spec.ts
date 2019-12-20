@@ -42,7 +42,7 @@ describe('The eslint configuration module', () => {
       const base = {
         rules: {
           'no-use-before-define': ['error', { functions: false }],
-          curly: ['error', 'all'],
+          'curly': ['error', 'all'],
           'no-underscore-dangle': [
             'error',
             { allow: ['__DEV__', '__PRODUCTION__'] }
@@ -59,7 +59,7 @@ describe('The eslint configuration module', () => {
       const expected = {
         rules: {
           'no-use-before-define': ['error', { functions: false }],
-          curly: ['error', 'all'],
+          'curly': ['error', 'all'],
           'no-underscore-dangle': ['warning', { allow: ['__resourcePath'] }],
           'react-hooks/rules-of-hooks': 'error',
           'react-hooks/exhaustive-deps': 'warn'

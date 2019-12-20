@@ -44,12 +44,12 @@ export function spawn(cmd: string, args: string[], options: SpawnOptions) {
     });
 
     if (child.stdout) {
-      child.stdout.on('data', chunk => {
+      child.stdout.on('data', (chunk) => {
         stdout.push(chunk);
       });
     }
 
-    child.on('close', code => {
+    child.on('close', (code) => {
       if (code !== 0) {
         // eslint-disable-next-line no-console
         const err = new Error(`${cmd} exited with an error (code ${code}).`);
@@ -60,7 +60,7 @@ export function spawn(cmd: string, args: string[], options: SpawnOptions) {
       resolve(getBufferContent(stdout));
     });
 
-    child.on('error', err => {
+    child.on('error', (err) => {
       reject(err);
     });
   });

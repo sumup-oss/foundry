@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-const merge = require('webpack-merge');
+import merge from 'webpack-merge';
 
 export const withoutPreset = (preset: string) => (arr: any[]) =>
-  arr.filter(el => {
+  arr.filter((el) => {
     const isStringPreset = typeof el === 'string' && el === preset;
     const isArrayPreset = el.constructor.name === 'Array' && el[0] === preset;
     return !isStringPreset && !isArrayPreset;

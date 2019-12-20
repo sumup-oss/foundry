@@ -33,15 +33,15 @@ const { PLOP_CONFIGS } = plop;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 export interface BootstrapParams {
-  eslint?: 'base' | 'node' | 'react';
-  babel?: 'base' | 'node' | 'react' | 'webpack' | 'lodash';
-  prettier?: 'base';
-  plop?: 'base' | 'react';
-  husky?: 'base';
-  'lint-staged'?: 'base' | 'typescript';
-  'semantic-release'?: 'base' | 'modules';
-  targetDir?: string;
-  all?: boolean;
+  'eslint'?: 'base' | 'node' | 'react' | true;
+  'babel'?: 'base' | 'node' | 'react' | 'webpack' | 'lodash' | true;
+  'prettier'?: 'base' | true;
+  'plop'?: 'base' | 'react' | true;
+  'husky'?: 'base' | true;
+  'lint-staged'?: 'base' | 'typescript' | true;
+  'semantic-release'?: 'base' | 'modules' | true;
+  'targetDir'?: string;
+  'all'?: boolean;
 }
 
 type Tool =
@@ -63,12 +63,12 @@ type ConfigExports = { [key in Tool]: string };
 
 function getConfigType(tool: Tool, type: string): string {
   const configs: SupportedConfigs = {
-    eslint: ESLINT_CONFIGS,
-    prettier: ['base'],
-    husky: ['base'],
+    'eslint': ESLINT_CONFIGS,
+    'prettier': ['base'],
+    'husky': ['base'],
     'lint-staged': ['base'],
-    babel: BABEL_CONFIGS,
-    plop: PLOP_CONFIGS,
+    'babel': BABEL_CONFIGS,
+    'plop': PLOP_CONFIGS,
     'semantic-release': SEMANTIC_RELEASE_CONFIGS
   };
 
@@ -78,7 +78,7 @@ function getConfigType(tool: Tool, type: string): string {
 
   if (!isSupportedConfig) {
     console.warn(
-      `Config ${type} is not available for ${name}. Falling back to base config.`
+      `Config ${type} is not available for ${tool}. Falling back to base config.`
     );
     return 'base';
   }
@@ -97,11 +97,11 @@ async function writeConfigFile(
   targetDir: string
 ): Promise<void> {
   const filenames = {
-    eslint: '.eslintrc.js',
-    prettier: 'prettier.config.js',
-    babel: '.babelrc.js',
-    plop: 'plopfile.js',
-    husky: '.huskyrc.js',
+    'eslint': '.eslintrc.js',
+    'prettier': 'prettier.config.js',
+    'babel': '.babelrc.js',
+    'plop': 'plopfile.js',
+    'husky': '.huskyrc.js',
     'lint-staged': 'lint-staged.config.js',
     'semantic-release': '.releaserc.js'
   };
@@ -119,21 +119,23 @@ async function writeConfigFile(
 }
 
 const getConfigs = flow(
-  params => {
+  (params) => {
     const { all } = params;
 
     if (all) {
-      return SUPPORTED_CONFIGS.reduce((allConfigs, configName) =>
-        Object.assign(allConfigs, { [configName]: 'bases' })
+      return SUPPORTED_CONFIGS.reduce(
+        (allConfigs, configName) =>
+          Object.assign(allConfigs, { [configName]: 'base' }),
+        {}
       );
     }
 
     return flow(
       pick(SUPPORTED_CONFIGS),
-      mapValues(v => (v === true ? 'base' : v))
+      mapValues((v) => (v === true ? 'base' : v))
     )(params);
   },
-  omitBy(val => !val)
+  omitBy((val) => !val)
 );
 
 export function bootstrap(params: BootstrapParams) {
@@ -151,6 +153,6 @@ export function bootstrap(params: BootstrapParams) {
   }, {}) as ConfigExports;
 
   return Promise.all(
-    tools.map(tool => writeConfigFile(tool, configExports[tool], targetDir))
+    tools.map((tool) => writeConfigFile(tool, configExports[tool], targetDir))
   );
 }
