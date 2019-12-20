@@ -1,1 +1,0 @@
-require('jest-extended');
