@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * Copyright 2019, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -82,18 +84,7 @@ yargs
   .showHelpOnFail(true)
   .demandCommand(1, '')
   .help()
-  .version();
-
-/**
- * Fallback, if an unsupported command was specified
- */
-const registeredCommands = yargs.getCommandInstance().getCommands();
-const currentCommand = yargs.argv._[0];
-
-if (!registeredCommands.includes(currentCommand)) {
-  yargs.showHelp();
-  process.exit(1);
-}
+  .version().argv;
 
 function execute(command, args) {
   const commands = { bootstrap, run };

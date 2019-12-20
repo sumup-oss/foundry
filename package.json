@@ -8,33 +8,20 @@
   "license": "Apache-2.0",
   "bin": "cli",
   "scripts": {
-    "cleanup": "rimraf ./dist",
-    "build": "yarn cleanup && BABEL_ENV=build NODE_ENV=production rollup --config && chmod +x dist/cli",
+    "build": "yarn cleanup && yarn copy && tsc && chmod +x dist/cli.js",
+    "dev": "yarn cleanup && yarn copy && tsc --watch",
+    "start": "yarn dev",
+    "cleanup": "rimraf ./dist && mkdir dist",
+    "copy": "cp -r src/configs/plop/templates dist/plop-templates && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "lint": "yarn eslint src",
     "test": "jest",
     "test:watch": "yarn test --watchAll",
-    "develop": "BABEL_ENV=develop NODE_ENV=develop rollup --config --watch",
     "codedov": "codecov",
-    "start": "yarn cleanup && yarn develop",
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
     "prerelease": "yarn build",
     "release": "cd ./dist && semantic-release"
   },
-  "files": [
-    "babel.js",
-    "eslint.js",
-    "plop.js",
-    "prettier.js",
-    "lint-staged.js",
-    "husky.js",
-    "semantic-release.js",
-    "plop-templates",
-    "cli",
-    "index.js",
-    "LICENSE",
-    "README.md"
-  ],
   "engines": {
     "node": ">=10.0.0"
   },
@@ -70,6 +57,8 @@
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/preset-env": "7.1.6",
+    "@types/lodash": "^4.14.149",
+    "@types/yargs": "^13.0.3",
     "audit-ci": "^2.0.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
@@ -80,12 +69,6 @@
     "jest-junit": "^9.0.0",
     "license-checker": "^25.0.1",
     "rimraf": "^2.6.2",
-    "rollup": "^1.13.0",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-copy": "^2.0.1",
-    "rollup-plugin-license": "^0.8.1",
-    "rollup-plugin-node-resolve": "^5.0.1",
-    "rollup-plugin-preserve-shebang": "^0.1.6"
+    "typescript": "^3.7.3"
   }
 }

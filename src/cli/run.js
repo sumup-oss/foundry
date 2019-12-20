@@ -61,7 +61,7 @@ async function loadJson(path) {
   }
   try {
     const data = await readFileAsync(path);
-    return JSON.parse(data);
+    return JSON.parse(data.toString());
   } catch (err) {
     return new Error(`Path does not exist. ${path}`);
   }
