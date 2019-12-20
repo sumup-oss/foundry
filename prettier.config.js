@@ -13,6 +13,4 @@
  * limitations under the License.
  */
 
-// eslint-disable-next-line no-global-assign
-require = require('esm')(module);
-module.exports = require('./src/configs/prettier').base;
+module.exports = require('./dist/configs/prettier').base;
