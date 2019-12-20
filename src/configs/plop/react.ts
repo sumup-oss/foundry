@@ -16,7 +16,14 @@
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
-export default (plop, opts = {}) => {
+type TemplateExtension = ['js', 'jsx', 'ts', 'tsx'];
+
+interface PlopOptions {
+  templateDir?: string;
+  templateExtension?: TemplateExtension;
+}
+
+export default (plop, opts: PlopOptions = {}) => {
   plop.setHelper('eq', (a, b) => a === b);
   plop.setHelper('not', (a, b) => a !== b);
 
@@ -183,7 +190,7 @@ export default (plop, opts = {}) => {
 
       const actions = allFiles.reduce((acc, file) => {
         if (!Object.values(COMPONENT_FILES).includes(file)) {
-          raiseErrorAndExit(ERRORS.INVALID_FILE);
+          raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE);
         }
 
         const templateFileName =

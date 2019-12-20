@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2017",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./dist",
     "strict": false,
-
-    "allowJs": true,
-    "checkJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "outDir": "./dist"
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.*"]

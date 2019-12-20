@@ -51,7 +51,7 @@ export const react = {
 };
 
 export const node = overwriteEnvPreset(base, {
-  // FIXME: this disables module transpilation in normal node envioonments. Needs
+  // FIXME: this disables module transpilation in normal node envionments. Needs
   //        to be fixed! potentially by editing this project's .babelrc.js accordingly.
   presets: [
     ['@babel/preset-env', { targets: { node: '8.4.0' }, modules: false }]

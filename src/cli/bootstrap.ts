@@ -146,7 +146,9 @@ export default function bootstrap(params) {
 
   // TODO: Add a flag for the target directory.
   return flow(
-    map(tool => writeConfigFile(tool, configExportStrings[tool], targetDir)),
+    map((tool: string) =>
+      writeConfigFile(tool, configExportStrings[tool], targetDir)
+    ),
     promises => Promise.all(promises) // breaks if you don't put the arrow function here.
   )(tools);
 }
