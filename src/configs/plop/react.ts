@@ -16,6 +16,7 @@
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
+import * as logger from '../../lib/logger';
 // TODO: Import from node modules once https://github.com/plopjs/node-plop/issues/140 has been resolved.
 import { NodePlopAPI, ActionConfig } from '../../types/plop';
 
@@ -73,8 +74,7 @@ export default (plop: NodePlopAPI, opts: PlopOptions = {}) => {
   };
 
   const raiseErrorAndExit = (message: string) => {
-    // eslint-disable-next-line no-console
-    console.error([message, 'Please try again. 👋'].join(' '));
+    logger.error([message, 'Please try again. 👋'].join(' '));
     process.exit(1);
   };
 

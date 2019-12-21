@@ -24,6 +24,7 @@ import {
   plop,
   semanticRelease
 } from '../configs';
+import * as logger from '../lib/logger';
 
 const writeFileAsync = promisify(writeFile);
 
@@ -77,7 +78,7 @@ function getConfigType(tool: Tool, type: string): string {
   const isSupportedConfig = supportedConfigs.includes(type);
 
   if (!isSupportedConfig) {
-    console.warn(
+    logger.warn(
       `Config ${type} is not available for ${tool}. Falling back to base config.`
     );
     return 'base';
@@ -112,8 +113,8 @@ async function writeConfigFile(
   try {
     return await writeFileAsync(path, content);
   } catch (e) {
-    console.error(`An error occured writing ${filename} to ${targetDir}.`);
-    console.error(e);
+    logger.error(`An error occured writing ${filename} to ${targetDir}.`);
+    logger.error(e);
     process.exit(1);
   }
 }

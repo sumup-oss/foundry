@@ -51,7 +51,6 @@ export function spawn(cmd: string, args: string[], options: SpawnOptions) {
 
     child.on('close', (code) => {
       if (code !== 0) {
-        // eslint-disable-next-line no-console
         const err = new Error(`${cmd} exited with an error (code ${code}).`);
         reject(err);
         return;
