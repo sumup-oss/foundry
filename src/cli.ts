@@ -20,48 +20,42 @@ import yargs from 'yargs';
 import { bootstrap, BootstrapParams } from './cli/bootstrap';
 import { run, RunParams } from './cli/run';
 
-import { eslint, babel, semanticRelease } from './configs';
+import { eslint, semanticRelease } from './configs';
 
 const { ESLINT_CONFIGS } = eslint;
-const { BABEL_CONFIGS } = babel;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 // eslint-disable-next-line
 yargs
   .command(
     'bootstrap-config',
-    'Set up custom configurations for babel, eslint, prettier, etc.',
-    yrgs =>
+    'Set up custom configurations for Eslint, Prettier, Semantic Release etc.',
+    (yrgs) =>
       yrgs
         .option('eslint', {
           desc: 'The eslint config to write.',
           choices: [true, ...ESLINT_CONFIGS],
-          coerce: val => (val === true ? 'base' : val)
-        })
-        .option('babel', {
-          desc: 'The eslint config to write.',
-          coerce: val => (val === true ? 'base' : val),
-          choices: [true, ...BABEL_CONFIGS]
+          coerce: (val) => (val === true ? 'base' : val)
         })
         .option('prettier', {
           desc: 'Write the prettier config.',
-          coerce: val => (val === true ? 'base' : val)
+          coerce: (val) => (val === true ? 'base' : val)
         })
         .option('plop', {
           desc: 'Write the plop config.',
-          coerce: val => (val === true ? 'base' : val)
+          coerce: (val) => (val === true ? 'base' : val)
         })
         .option('husky', {
           desc: 'Write the husky config.',
-          coerce: val => (val === true ? 'base' : val)
+          coerce: (val) => (val === true ? 'base' : val)
         })
         .option('lint-staged', {
           desc: 'Write the lint-staged config.',
-          coerce: val => (val === true ? 'base' : val)
+          coerce: (val) => (val === true ? 'base' : val)
         })
         .option('semantic-release', {
           desc: 'Write the semantic-release config.',
-          coerce: val => (val === true ? 'base' : val),
+          coerce: (val) => (val === true ? 'base' : val),
           choices: [true, ...SEMANTIC_RELEASE_CONFIGS]
         })
         .option('targetDir', {

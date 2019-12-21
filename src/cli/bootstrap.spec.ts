@@ -15,12 +15,11 @@
 
 import { writeFile } from 'fs';
 import { bootstrap, BootstrapParams } from './bootstrap';
-import { eslint, babel } from '../configs';
+import { eslint } from '../configs';
 
 jest.mock('fs', () => ({ writeFile: jest.fn() }));
 
 const { ESLINT_CONFIGS } = eslint;
-const { BABEL_CONFIGS } = babel;
 
 describe('bootstrap command', () => {
   const consoleBackup = console;
@@ -62,7 +61,7 @@ describe('bootstrap command', () => {
       expect.any(Function)
     );
     expect(writeFile).toHaveBeenCalledWith(
-      expect.stringContaining('babel'),
+      expect.stringContaining('plop'),
       expect.stringContaining('base'),
       expect.any(Function)
     );
@@ -96,56 +95,6 @@ describe('bootstrap command', () => {
         const params: BootstrapParams = {
           ...defaultParams,
           eslint: config as 'base' | 'node' | 'react'
-        };
-        bootstrap(params);
-
-        expect(writeFile).toHaveBeenCalledWith(
-          expect.any(String),
-          expect.stringContaining(config),
-          expect.any(Function)
-        );
-      });
-    });
-  });
-
-  describe('when passed the babel flag', () => {
-    it('should create the .babelrc', () => {
-      const params: BootstrapParams = { ...defaultParams, babel: 'base' };
-      bootstrap(params);
-      expect(writeFile).toHaveBeenCalledWith(
-        expect.stringContaining('babel'),
-        expect.any(String),
-        expect.any(Function)
-      );
-    });
-
-    it('should create the babel.config.js preset file', () => {
-      const params: BootstrapParams = { ...defaultParams, babel: 'base' };
-      bootstrap(params);
-
-      expect(writeFile).toHaveBeenCalledWith(
-        expect.any(String),
-        expect.stringContaining('base'),
-        expect.any(Function)
-      );
-    });
-
-    it('should use the base config when no config is specified', () => {
-      const params: BootstrapParams = { ...defaultParams, babel: true };
-      bootstrap(params);
-
-      expect(writeFile).toHaveBeenCalledWith(
-        expect.any(String),
-        expect.stringContaining('base'),
-        expect.any(Function)
-      );
-    });
-
-    BABEL_CONFIGS.forEach((config) => {
-      it(`should write the config file for ${config}`, () => {
-        const params: BootstrapParams = {
-          ...defaultParams,
-          babel: config as 'base' | 'node' | 'react' | 'webpack' | 'lodash'
         };
         bootstrap(params);
 

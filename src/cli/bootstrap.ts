@@ -17,25 +17,18 @@ import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { resolve } from 'path';
 import { flow, mapValues, omitBy, pick } from 'lodash/fp';
-import {
-  SUPPORTED_CONFIGS,
-  eslint,
-  babel,
-  plop,
-  semanticRelease
-} from '../configs';
+
+import { SUPPORTED_CONFIGS, eslint, plop, semanticRelease } from '../configs';
 import * as logger from '../lib/logger';
 
 const writeFileAsync = promisify(writeFile);
 
 const { ESLINT_CONFIGS } = eslint;
-const { BABEL_CONFIGS } = babel;
 const { PLOP_CONFIGS } = plop;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 export interface BootstrapParams {
   'eslint'?: 'base' | 'node' | 'react' | true;
-  'babel'?: 'base' | 'node' | 'react' | 'webpack' | 'lodash' | true;
   'prettier'?: 'base' | true;
   'plop'?: 'base' | 'react' | true;
   'husky'?: 'base' | true;
@@ -47,7 +40,6 @@ export interface BootstrapParams {
 
 type Tool =
   | 'eslint'
-  | 'babel'
   | 'prettier'
   | 'plop'
   | 'husky'
@@ -68,7 +60,6 @@ function getConfigType(tool: Tool, type: string): string {
     'prettier': ['base'],
     'husky': ['base'],
     'lint-staged': ['base'],
-    'babel': BABEL_CONFIGS,
     'plop': PLOP_CONFIGS,
     'semantic-release': SEMANTIC_RELEASE_CONFIGS
   };
@@ -100,7 +91,6 @@ async function writeConfigFile(
   const filenames = {
     'eslint': '.eslintrc.js',
     'prettier': 'prettier.config.js',
-    'babel': '.babelrc.js',
     'plop': 'plopfile.js',
     'husky': '.huskyrc.js',
     'lint-staged': 'lint-staged.config.js',
