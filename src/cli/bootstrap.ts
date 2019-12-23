@@ -21,6 +21,8 @@ import { flow, mapValues, omitBy, pick } from 'lodash/fp';
 import { SUPPORTED_CONFIGS, eslint, plop, semanticRelease } from '../configs';
 import * as logger from '../lib/logger';
 
+import { Tool } from '../types/shared';
+
 const writeFileAsync = promisify(writeFile);
 
 const { ESLINT_CONFIGS } = eslint;
@@ -37,14 +39,6 @@ export interface BootstrapParams {
   'targetDir'?: string;
   'all'?: boolean;
 }
-
-type Tool =
-  | 'eslint'
-  | 'prettier'
-  | 'plop'
-  | 'husky'
-  | 'lint-staged'
-  | 'semantic-release';
 
 type Tools = Tool[];
 

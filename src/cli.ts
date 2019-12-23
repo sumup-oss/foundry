@@ -19,14 +19,17 @@ import yargs from 'yargs';
 
 import { bootstrap, BootstrapParams } from './cli/bootstrap';
 import { run, RunParams } from './cli/run';
+import { init } from './cli/init';
 
 import { eslint, semanticRelease } from './configs';
 
 const { ESLINT_CONFIGS } = eslint;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
-// eslint-disable-next-line
 yargs
+  .command('init', 'Run any of the bundled tools.', (args: any) =>
+    execute('init', args)
+  )
   .command(
     'bootstrap-config',
     'Set up custom configurations for Eslint, Prettier, Semantic Release etc.',
@@ -80,10 +83,10 @@ yargs
   .help()
   .version().argv;
 
-type CommandType = 'bootstrap' | 'run';
+type CommandType = 'init' | 'bootstrap' | 'run';
 
 function execute(command: CommandType, args: any) {
-  const commands = { bootstrap, run };
+  const commands = { bootstrap, run, init };
   const commandFn = commands[command];
 
   commandFn(args);

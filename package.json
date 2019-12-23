@@ -46,6 +46,8 @@
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^2.0.0",
     "husky": "^3.0.0",
+    "inquirer": "^7.0.1",
+    "inquirer-fuzzy-path": "^2.2.0",
     "lint-staged": "^10.0.0-beta",
     "lodash": "^4.17.11",
     "plop": "^2.1.0",
@@ -55,6 +57,7 @@
     "yargs": "^12.0.5"
   },
   "devDependencies": {
+    "@types/inquirer": "^6.5.0",
     "@types/jest": "^24.0.24",
     "@types/lodash": "^4.14.149",
     "@types/node": "^10.0.0",
