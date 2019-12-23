@@ -17,7 +17,7 @@ import inquirer from 'inquirer';
 import PathPrompt from 'inquirer-fuzzy-path';
 import { isEmpty } from 'lodash/fp';
 
-import { Tool, Language, Target } from '../types/shared';
+import { Options, Tool, Language, Target } from '../types/shared';
 
 export interface InitParams {
   tools?: Tool[];
@@ -29,14 +29,6 @@ export interface InitParams {
   _: string[];
 }
 
-interface Options {
-  tools: Tool[];
-  language?: Language;
-  target?: Target;
-  publish?: boolean;
-  configDir: string;
-}
-
 export function init(args: InitParams) {
   const questions = [
     {
@@ -44,16 +36,9 @@ export function init(args: InitParams) {
       name: 'tools',
       message: 'Which tools to you want to configure?',
       choices: enumToChoices(Tool),
-      validate: (tools: Tool[]): string | boolean => {
-        if (isEmpty(tools)) {
-          return 'You must choose at least one tool.';
-        }
-        if (tools.includes(Tool.PRETTIER) && !tools.includes(Tool.ESLINT)) {
-          return 'Prettier requires Eslint to be configured as well.';
-        }
-        return true;
-      },
-      when: typeof args.tools === 'undefined'
+      validate: validateTools,
+      default: args.tools,
+      when: typeof validateTools(args.tools as Tool[]) === 'string'
     },
     {
       type: 'list',
@@ -129,4 +114,14 @@ export function mergeOptions(args: InitParams, answers: Options) {
 
 export function whenToolsSelected(answers: Options, tools: Tool[]) {
   return tools.some((tool) => answers.tools.includes(tool));
+}
+
+export function validateTools(tools: Tool[]): string | boolean {
+  if (isEmpty(tools)) {
+    return 'You must choose at least one tool.';
+  }
+  if (tools.includes(Tool.PRETTIER) && !tools.includes(Tool.ESLINT)) {
+    return 'Prettier requires Eslint to be configured as well.';
+  }
+  return true;
 }

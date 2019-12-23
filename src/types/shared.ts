@@ -17,3 +17,11 @@ export enum Target {
   BROWSER = 'Browser',
   REACT = 'React'
 }
+
+export interface Options {
+  tools: Tool[];
+  language?: Language;
+  target?: Target;
+  publish?: boolean;
+  configDir: string;
+}
