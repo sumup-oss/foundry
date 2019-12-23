@@ -19,13 +19,25 @@ import { isEmpty } from 'lodash/fp';
 
 import { Tool, Language, Target } from '../types/shared';
 
-interface Answers {
+export interface InitParams {
+  tools?: Tool[];
+  language?: Language;
+  target?: Target;
+  publish?: boolean;
+  configDir?: string;
+  $0: string;
+  _: string[];
+}
+
+interface Options {
   tools: Tool[];
   language?: Language;
   target?: Target;
+  publish?: boolean;
+  configDir: string;
 }
 
-export function init() {
+export function init(args: InitParams) {
   const questions = [
     {
       type: 'checkbox',
@@ -40,44 +52,69 @@ export function init() {
           return 'Prettier requires Eslint to be configured as well.';
         }
         return true;
-      }
+      },
+      when: typeof args.tools === 'undefined'
     },
     {
       type: 'list',
       name: 'language',
       message: 'Which programming language does the project use?',
       choices: enumToChoices(Language),
-      when: whenToolsSelected([Tool.ESLINT, Tool.PLOP, Tool.LINT_STAGED])
+      when: (answers: Options) => {
+        const options = mergeOptions(args, answers);
+        return (
+          typeof options.language === 'undefined' &&
+          whenToolsSelected(options, [Tool.ESLINT, Tool.PLOP, Tool.LINT_STAGED])
+        );
+      }
     },
     {
       type: 'list',
       name: 'target',
       message: 'Which platform does the project target?',
       choices: enumToChoices(Target),
-      when: whenToolsSelected([Tool.ESLINT, Tool.PLOP, Tool.SEMANTIC_RELEASE])
+      when: (answers: Options) => {
+        const options = mergeOptions(args, answers);
+        return (
+          typeof options.target === 'undefined' &&
+          whenToolsSelected(options, [
+            Tool.ESLINT,
+            Tool.PLOP,
+            Tool.SEMANTIC_RELEASE
+          ])
+        );
+      }
     },
     {
       type: 'confirm',
       name: 'publish',
       message: 'Would you like to publish your package to NPM?',
-      when: whenToolsSelected([Tool.PLOP, Tool.SEMANTIC_RELEASE]),
+      when: (answers: Options) => {
+        const options = mergeOptions(args, answers);
+        return (
+          typeof options.publish === 'undefined' &&
+          whenToolsSelected(options, [Tool.SEMANTIC_RELEASE])
+        );
+      },
       default: false
     },
     {
       type: 'path',
-      name: 'targetDir',
+      name: 'configDir',
       message: 'Where should the config files be placed?',
       default: '.',
       depthLimit: 3,
       itemType: 'directory',
       excludePath: (nodePath: string) => nodePath.startsWith('node_modules'),
-      excludeFilter: (nodePath: string) => nodePath.startsWith('.')
+      excludeFilter: (nodePath: string) => nodePath.startsWith('.'),
+      when: typeof args.configDir === 'undefined'
     }
   ];
 
   inquirer.registerPrompt('path', PathPrompt);
-  inquirer.prompt(questions).then((answers) => {
-    console.log(JSON.stringify(answers, null, 2));
+  inquirer.prompt(questions).then((answers: Options) => {
+    const options: Options = mergeOptions(args, answers);
+    console.log(JSON.stringify(options, null, 2));
   });
 }
 
@@ -85,8 +122,11 @@ export function enumToChoices(enums: { [key: string]: string }) {
   return Object.values(enums);
 }
 
-export function whenToolsSelected(tools: Tool[]) {
-  return (answers: Answers) => {
-    return tools.some((tool) => answers.tools.includes(tool));
-  };
+export function mergeOptions(args: InitParams, answers: Options) {
+  const { $0, _, ...rest } = args;
+  return { ...rest, ...answers };
+}
+
+export function whenToolsSelected(answers: Options, tools: Tool[]) {
+  return tools.some((tool) => answers.tools.includes(tool));
 }

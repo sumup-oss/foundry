@@ -19,16 +19,42 @@ import yargs from 'yargs';
 
 import { bootstrap, BootstrapParams } from './cli/bootstrap';
 import { run, RunParams } from './cli/run';
-import { init } from './cli/init';
+import { init, InitParams, enumToChoices } from './cli/init';
 
+import { Tool, Language, Target } from './types/shared';
 import { eslint, semanticRelease } from './configs';
 
 const { ESLINT_CONFIGS } = eslint;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 yargs
-  .command('init', 'Run any of the bundled tools.', (args: any) =>
-    execute('init', args)
+  .command(
+    'init',
+    'Initialize the configurations for Eslint, Prettier, Husky, etc.',
+    (yrgs) =>
+      yrgs
+        .option('tools', {
+          desc: 'The tools to configure.',
+          choices: enumToChoices(Tool),
+          type: 'array'
+        })
+        .option('language', {
+          desc: 'The programming language the project uses',
+          choices: enumToChoices(Language)
+        })
+        .option('target', {
+          desc: 'The platform that the project targets.',
+          choices: enumToChoices(Target)
+        })
+        .option('publish', {
+          desc: 'The platform that the project targets.',
+          type: 'boolean'
+        })
+        .option('configDir', {
+          desc: 'Directory to write configs to.',
+          type: 'string'
+        }),
+    (args: InitParams) => execute('init', args)
   )
   .command(
     'bootstrap-config',
