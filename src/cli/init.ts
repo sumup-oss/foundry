@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
+import { existsSync } from 'fs';
+import { resolve } from 'path';
 import inquirer from 'inquirer';
-import PathPrompt from 'inquirer-fuzzy-path';
 import { isEmpty } from 'lodash/fp';
 
 import { Options, Tool, Language, Target } from '../types/shared';
@@ -36,9 +37,9 @@ export function init(args: InitParams) {
       name: 'tools',
       message: 'Which tools to you want to configure?',
       choices: enumToChoices(Tool),
-      validate: validateTools,
       default: args.tools,
-      when: typeof validateTools(args.tools as Tool[]) === 'string'
+      validate: validateTools,
+      when: validateTools(args.tools as Tool[]) !== true
     },
     {
       type: 'list',
@@ -74,29 +75,25 @@ export function init(args: InitParams) {
       type: 'confirm',
       name: 'publish',
       message: 'Would you like to publish your package to NPM?',
+      default: false,
       when: (answers: Options) => {
         const options = mergeOptions(args, answers);
         return (
           typeof options.publish === 'undefined' &&
           whenToolsSelected(options, [Tool.SEMANTIC_RELEASE])
         );
-      },
-      default: false
+      }
     },
     {
-      type: 'path',
+      type: 'input',
       name: 'configDir',
       message: 'Where should the config files be placed?',
-      default: '.',
-      depthLimit: 3,
-      itemType: 'directory',
-      excludePath: (nodePath: string) => nodePath.startsWith('node_modules'),
-      excludeFilter: (nodePath: string) => nodePath.startsWith('.'),
-      when: typeof args.configDir === 'undefined'
+      default: args.configDir || '.',
+      validate: validatePath,
+      when: validatePath(args.configDir as string) !== true
     }
   ];
 
-  inquirer.registerPrompt('path', PathPrompt);
   inquirer.prompt(questions).then((answers: Options) => {
     const options: Options = mergeOptions(args, answers);
     console.log(JSON.stringify(options, null, 2));
@@ -125,5 +122,19 @@ export function validateTools(tools: Tool[]): string | boolean {
   if (tools.includes(Tool.PRETTIER) && !tools.includes(Tool.ESLINT)) {
     return 'Prettier requires Eslint to be configured as well.';
   }
+  return true;
+}
+
+export function validatePath(path?: string): string | boolean {
+  if (!path) {
+    return false;
+  }
+
+  const resolvedPath = resolve(path);
+
+  if (!existsSync(resolvedPath)) {
+    return `The path "${resolvedPath}" doesn't exist. Please try another one.`;
+  }
+
   return true;
 }

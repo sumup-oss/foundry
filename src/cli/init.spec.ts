@@ -4,7 +4,8 @@ import {
   enumToChoices,
   mergeOptions,
   whenToolsSelected,
-  validateTools
+  validateTools,
+  validatePath
 } from './init';
 
 describe('init command', () => {
@@ -73,22 +74,37 @@ describe('init command', () => {
     it('should return an error message when no tools were selected', () => {
       const tools: Tool[] = [];
       const actual = validateTools(tools);
-      expect(actual).toMatchInlineSnapshot(
-        `"You must choose at least one tool."`
-      );
+      expect(typeof actual).toBe('string');
     });
 
     it('should return an error message when Prettier was selected without Eslint', () => {
       const tools = [Tool.PRETTIER];
       const actual = validateTools(tools);
-      expect(actual).toMatchInlineSnapshot(
-        `"Prettier requires Eslint to be configured as well."`
-      );
+      expect(typeof actual).toBe('string');
     });
 
     it('should return true otherwise', () => {
       const tools = [Tool.PRETTIER];
       const actual = validateTools(tools);
+      expect(actual).toBeTruthy();
+    });
+  });
+
+  describe('validatePath', () => {
+    it('should return false if no path was passed', () => {
+      const actual = validatePath();
+      expect(actual).toBeFalsy();
+    });
+
+    it('should return an error if the path is not valid', () => {
+      const path = 'foo/bar';
+      const actual = validatePath(path);
+      expect(typeof actual).toBe('string');
+    });
+
+    it('should return true if the path is valid', () => {
+      const path = '.';
+      const actual = validatePath(path);
       expect(actual).toBeTruthy();
     });
   });
