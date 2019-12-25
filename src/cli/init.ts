@@ -35,7 +35,7 @@ export function init(args: InitParams) {
     {
       type: 'checkbox',
       name: 'tools',
-      message: 'Which tools to you want to configure?',
+      message: 'Which tools do you want to configure?',
       choices: enumToChoices(Tool),
       default: args.tools,
       validate: validateTools,
@@ -87,7 +87,7 @@ export function init(args: InitParams) {
     {
       type: 'input',
       name: 'configDir',
-      message: 'Where should the config files be placed?',
+      message: 'Where should the config files be stored?',
       default: args.configDir || '.',
       validate: validatePath,
       when: validatePath(args.configDir as string) !== true
