@@ -25,8 +25,8 @@ export interface InitParams {
   target?: Target;
   publish?: boolean;
   configDir?: string;
-  $0: string;
-  _: string[];
+  $0?: string;
+  _?: string[];
 }
 
 export function init(args: InitParams) {
@@ -100,20 +100,22 @@ export function init(args: InitParams) {
   inquirer.prompt(questions).then((answers: Options) => {
     const options: Options = mergeOptions(args, answers);
     console.log(JSON.stringify(options, null, 2));
+
+    // TODO: Generate config file for each tool and pass the relevant options.
   });
 }
 
-export function enumToChoices(enums: { [key: string]: string }) {
+export function enumToChoices(enums: { [key: string]: string }): string[] {
   return Object.values(enums);
 }
 
-export function mergeOptions(args: InitParams, answers: Options) {
+export function mergeOptions(args: InitParams, answers: Options): Options {
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };
 }
 
-export function whenToolsSelected(answers: Options, tools: Tool[]) {
-  return tools.some((tool) => answers.tools.includes(tool));
+export function whenToolsSelected(options: Options, tools: Tool[]): boolean {
+  return tools.some((tool) => options.tools.includes(tool));
 }
 
 export function validateTools(tools: Tool[]): string | boolean {
