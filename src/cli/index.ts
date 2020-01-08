@@ -17,12 +17,12 @@
 
 import yargs from 'yargs';
 
-import { bootstrap, BootstrapParams } from './cli/bootstrap';
-import { run, RunParams } from './cli/run';
-import { init, InitParams, enumToChoices } from './cli/init';
+import { Tool, Language, Target } from '../types/shared';
+import { eslint, semanticRelease } from '../configs';
 
-import { Tool, Language, Target } from './types/shared';
-import { eslint, semanticRelease } from './configs';
+import { bootstrap, BootstrapParams } from './bootstrap';
+import { run, RunParams } from './run';
+import { init, InitParams, enumToChoices } from './init';
 
 const { ESLINT_CONFIGS } = eslint;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;

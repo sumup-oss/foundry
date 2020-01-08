@@ -19,6 +19,7 @@ import inquirer from 'inquirer';
 import { isEmpty } from 'lodash/fp';
 
 import { Options, Preset, Language, Target } from '../types/shared';
+import presets from '../presets';
 
 export interface InitParams {
   presets?: Preset[];
@@ -36,7 +37,7 @@ export function init(args: InitParams) {
       type: 'checkbox',
       name: 'presets',
       message: 'Which presets do you want to use?',
-      choices: enumToChoices(Preset),
+      choices: presets,
       default: args.presets,
       validate: validatePresets,
       when: validatePresets(args.presets as Preset[]) !== true
@@ -50,7 +51,7 @@ export function init(args: InitParams) {
         const options = mergeOptions(args, answers);
         return (
           typeof options.language === 'undefined' &&
-          whenPresetsSelected(options, [Preset.LINT, Preset.TEMPLATE])
+          whenPresetsSelected(options, [Preset.LINT, Preset.TEMPLATES])
         );
       }
     },
@@ -65,7 +66,7 @@ export function init(args: InitParams) {
           typeof options.target === 'undefined' &&
           whenPresetsSelected(options, [
             Preset.LINT,
-            Preset.TEMPLATE,
+            Preset.TEMPLATES,
             Preset.RELEASE
           ])
         );

@@ -10,7 +10,7 @@ export enum Tool {
 export enum Preset {
   LINT = 'lint',
   RELEASE = 'release',
-  TEMPLATE = 'template'
+  TEMPLATES = 'templates'
 }
 
 export enum Language {
@@ -23,10 +23,6 @@ export enum Target {
   BROWSER = 'Browser',
   REACT = 'React'
 }
-
-export type Presets = {
-  [key in Preset]: Tool[];
-};
 
 export interface Options {
   presets: Preset[];
