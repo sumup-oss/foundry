@@ -17,7 +17,7 @@
 
 import yargs from 'yargs';
 
-import { Tool, Language, Target } from '../types/shared';
+import { Preset, Language, Target } from '../types/shared';
 import { eslint, semanticRelease } from '../configs';
 
 import { bootstrap, BootstrapParams } from './bootstrap';
@@ -33,9 +33,9 @@ yargs
     'Initialize the configurations for Eslint, Prettier, Husky, etc.',
     (yrgs) =>
       yrgs
-        .option('tools', {
-          desc: 'The tools to configure.',
-          choices: enumToChoices(Tool),
+        .option('presets', {
+          desc: 'The presets to use.',
+          choices: enumToChoices(Preset),
           type: 'array'
         })
         .option('language', {
@@ -52,7 +52,8 @@ yargs
         })
         .option('configDir', {
           desc: 'Directory to write configs to.',
-          type: 'string'
+          type: 'string',
+          default: '.'
         }),
     (args: InitParams) => execute('init', args)
   )

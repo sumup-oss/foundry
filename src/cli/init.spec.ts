@@ -3,7 +3,6 @@ import { Preset, Tool } from '../types/shared';
 import {
   enumToChoices,
   mergeOptions,
-  whenPresetsSelected,
   validatePresets,
   validatePath
 } from './init';
@@ -51,22 +50,6 @@ describe('init command', () => {
       const actual = mergeOptions(args, answers);
       const expected = { configDir: './src', presets: ['lint'] };
       expect(actual).toEqual(expected);
-    });
-  });
-
-  describe('whenPresetsSelected', () => {
-    it('should return true if the options contain the specified presets', () => {
-      const options = { presets: [Preset.LINT], configDir: '.' };
-      const presets = [Preset.LINT];
-      const actual = whenPresetsSelected(options, presets);
-      expect(actual).toBeTruthy();
-    });
-
-    it('should return true if the options do not contain the specified presets', () => {
-      const options = { presets: [Preset.LINT], configDir: '.' };
-      const presets = [Preset.RELEASE];
-      const actual = whenPresetsSelected(options, presets);
-      expect(actual).toBeFalsy();
     });
   });
 

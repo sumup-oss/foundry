@@ -15,92 +15,81 @@
 
 import { existsSync } from 'fs';
 import { resolve } from 'path';
-import inquirer from 'inquirer';
-import { isEmpty } from 'lodash/fp';
+import inquirer, { Question } from 'inquirer';
+import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 
-import { Options, Preset, Language, Target } from '../types/shared';
-import presets from '../presets';
+import { Options, Preset, Prompt, Language, Target } from '../types/shared';
+import { presets, presetChoices } from '../presets';
 
 export interface InitParams {
+  configDir: string;
   presets?: Preset[];
   language?: Language;
   target?: Target;
   publish?: boolean;
-  configDir?: string;
   $0?: string;
   _?: string[];
 }
 
 export function init(args: InitParams) {
-  const questions = [
-    {
-      type: 'checkbox',
-      name: 'presets',
-      message: 'Which presets do you want to use?',
-      choices: presets,
-      default: args.presets,
-      validate: validatePresets,
-      when: validatePresets(args.presets as Preset[]) !== true
-    },
-    {
-      type: 'list',
-      name: 'language',
-      message: 'Which programming language does the project use?',
-      choices: enumToChoices(Language),
-      when: (answers: Options) => {
-        const options = mergeOptions(args, answers);
-        return (
-          typeof options.language === 'undefined' &&
-          whenPresetsSelected(options, [Preset.LINT, Preset.TEMPLATES])
-        );
+  inquirer
+    .prompt([
+      {
+        type: 'checkbox',
+        name: 'presets',
+        message: 'Which presets do you want to use?',
+        choices: presetChoices,
+        default: args.presets,
+        validate: validatePresets,
+        when: () => validatePresets(args.presets as Preset[]) !== true
+      },
+      {
+        type: 'input',
+        name: 'configDir',
+        message: 'Where should the config files be stored?',
+        default: args.configDir || '.',
+        validate: validatePath,
+        when: validatePath(args.configDir as string) !== true
       }
-    },
-    {
-      type: 'list',
-      name: 'target',
-      message: 'Which platform does the project target?',
-      choices: enumToChoices(Target),
-      when: (answers: Options) => {
-        const options = mergeOptions(args, answers);
-        return (
-          typeof options.target === 'undefined' &&
-          whenPresetsSelected(options, [
-            Preset.LINT,
-            Preset.TEMPLATES,
-            Preset.RELEASE
-          ])
-        );
-      }
-    },
-    {
-      type: 'confirm',
-      name: 'publish',
-      message: 'Would you like to publish your package to NPM?',
-      default: false,
-      when: (answers: Options) => {
-        const options = mergeOptions(args, answers);
-        return (
-          typeof options.publish === 'undefined' &&
-          whenPresetsSelected(options, [Preset.RELEASE])
-        );
-      }
-    },
-    {
-      type: 'input',
-      name: 'configDir',
-      message: 'Where should the config files be stored?',
-      default: args.configDir || '.',
-      validate: validatePath,
-      when: validatePath(args.configDir as string) !== true
-    }
-  ];
+    ])
+    .then((initialAnswers) => {
+      const prompts = {
+        language: {
+          type: 'list',
+          name: 'language',
+          message: 'Which programming language does the project use?',
+          choices: enumToChoices(Language),
+          when: () => validateChoice<Language>(args.language, Language)
+        },
+        target: {
+          type: 'list',
+          name: 'target',
+          message: 'Which platform does the project target?',
+          choices: enumToChoices(Target),
+          when: () => validateChoice<Target>(args.target, Target)
+        },
+        publish: {
+          type: 'confirm',
+          name: 'publish',
+          message: 'Would you like to publish your package to NPM?',
+          default: false,
+          when: () => typeof args.publish === 'undefined'
+        }
+      };
 
-  inquirer.prompt(questions).then((answers: Options) => {
-    const options: Options = mergeOptions(args, answers);
-    console.log(JSON.stringify(options, null, 2));
+      const additionalPrompts = mapPresetsToPrompts(
+        initialAnswers.presets,
+        prompts
+      );
 
-    // TODO: Generate config file for each tool and pass the relevant options.
-  });
+      inquirer.prompt(additionalPrompts).then((additionalAnswers) => {
+        const answers: Options = { ...initialAnswers, ...additionalAnswers };
+        const options: Options = mergeOptions(args, answers);
+
+        // TODO: Generate config file for each tool and pass the relevant options.
+        console.log(JSON.stringify(options, null, 2));
+      });
+    });
 }
 
 export function enumToChoices(enums: { [key: string]: string }): string[] {
@@ -112,17 +101,41 @@ export function mergeOptions(args: InitParams, answers: Options): Options {
   return { ...rest, ...answers };
 }
 
-export function whenPresetsSelected(
-  options: Options,
-  presets: Preset[]
-): boolean {
-  return presets.some((preset) => options.presets.includes(preset));
+export function mapPresetsToPrompts(
+  selectedPresets: Preset[],
+  prompts: { [key in Prompt]: Question }
+): Question[] {
+  return flow(
+    map((preset: Preset): Prompt[] => presets[preset].prompts),
+    flatten,
+    uniq,
+    map((prompt: Prompt) => prompts[prompt])
+  )(selectedPresets);
 }
 
-export function validatePresets(presets: Preset[]): string | boolean {
-  if (isEmpty(presets)) {
+export function validateChoice<ChoiceType>(
+  choice: ChoiceType | undefined,
+  choiceEnum: any
+): boolean {
+  return !choice || !Object.values(choiceEnum).includes(choice);
+}
+
+export function validatePresets(selectedPresets: Preset[]): string | boolean {
+  if (isEmpty(selectedPresets)) {
     return 'You must choose at least one preset.';
   }
+
+  const invalidPreset = selectedPresets.find((preset) =>
+    validateChoice<Preset>(preset, Preset)
+  );
+
+  if (invalidPreset) {
+    const validPresets = Object.values(Preset)
+      .map((preset) => `"${preset}"`)
+      .join(', ');
+    return `"${invalidPreset}" is not a valid preset. Try one of [${validPresets}].`;
+  }
+
   return true;
 }
 

@@ -13,6 +13,12 @@ export enum Preset {
   TEMPLATES = 'templates'
 }
 
+export enum Prompt {
+  LANGUAGE = 'language',
+  TARGET = 'target',
+  PUBLISH = 'publish'
+}
+
 export enum Language {
   TYPESCRIPT = 'TypeScript',
   JAVASCRIPT = 'JavaScript'
@@ -26,8 +32,8 @@ export enum Target {
 
 export interface Options {
   presets: Preset[];
+  configDir: string;
   language?: Language;
   target?: Target;
   publish?: boolean;
-  configDir: string;
 }
