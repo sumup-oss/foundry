@@ -1,10 +1,10 @@
-import { Tool } from '../types/shared';
+import { Preset, Tool } from '../types/shared';
 
 import {
   enumToChoices,
   mergeOptions,
-  whenToolsSelected,
-  validateTools,
+  whenPresetsSelected,
+  validatePresets,
   validatePath
 } from './init';
 
@@ -25,67 +25,61 @@ describe('init command', () => {
   describe('mergeOptions', () => {
     it('should override the CLI args with the answers', () => {
       const args = {
-        tools: [Tool.ESLINT],
+        presets: [Preset.LINT],
         configDir: './'
       };
       const answers = {
-        tools: [Tool.PRETTIER],
+        presets: [Preset.RELEASE],
         configDir: './src'
       };
       const actual = mergeOptions(args, answers);
-      const expected = { configDir: './src', tools: ['prettier'] };
+      const expected = { configDir: './src', presets: ['release'] };
       expect(actual).toEqual(expected);
     });
 
     it('should strip out additional CLI args', () => {
       const args = {
-        tools: [Tool.ESLINT],
+        presets: [Preset.LINT],
         configDir: './',
         $0: 'cli.js',
         _: ['init']
       };
       const answers = {
-        tools: [Tool.PRETTIER],
+        presets: [Preset.LINT],
         configDir: './src'
       };
       const actual = mergeOptions(args, answers);
-      const expected = { configDir: './src', tools: ['prettier'] };
+      const expected = { configDir: './src', presets: ['lint'] };
       expect(actual).toEqual(expected);
     });
   });
 
-  describe('whenToolsSelected', () => {
-    it('should return true if the options contain the specifed tools', () => {
-      const options = { tools: [Tool.ESLINT, Tool.HUSKY], configDir: '.' };
-      const tools = [Tool.ESLINT];
-      const actual = whenToolsSelected(options, tools);
+  describe('whenPresetsSelected', () => {
+    it('should return true if the options contain the specified presets', () => {
+      const options = { presets: [Preset.LINT], configDir: '.' };
+      const presets = [Preset.LINT];
+      const actual = whenPresetsSelected(options, presets);
       expect(actual).toBeTruthy();
     });
 
-    it('should return true if the options do not contain the specifed tools', () => {
-      const options = { tools: [Tool.ESLINT, Tool.HUSKY], configDir: '.' };
-      const tools = [Tool.SEMANTIC_RELEASE];
-      const actual = whenToolsSelected(options, tools);
+    it('should return true if the options do not contain the specified presets', () => {
+      const options = { presets: [Preset.LINT], configDir: '.' };
+      const presets = [Preset.RELEASE];
+      const actual = whenPresetsSelected(options, presets);
       expect(actual).toBeFalsy();
     });
   });
 
-  describe('validateTools', () => {
-    it('should return an error message when no tools were selected', () => {
-      const tools: Tool[] = [];
-      const actual = validateTools(tools);
-      expect(typeof actual).toBe('string');
-    });
-
-    it('should return an error message when Prettier was selected without Eslint', () => {
-      const tools = [Tool.PRETTIER];
-      const actual = validateTools(tools);
+  describe('validatePresets', () => {
+    it('should return an error message when no presets were selected', () => {
+      const presets: Preset[] = [];
+      const actual = validatePresets(presets);
       expect(typeof actual).toBe('string');
     });
 
     it('should return true otherwise', () => {
-      const tools = [Tool.PRETTIER];
-      const actual = validateTools(tools);
+      const presets = [Preset.LINT];
+      const actual = validatePresets(presets);
       expect(actual).toBeTruthy();
     });
   });

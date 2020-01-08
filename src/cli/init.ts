@@ -18,10 +18,10 @@ import { resolve } from 'path';
 import inquirer from 'inquirer';
 import { isEmpty } from 'lodash/fp';
 
-import { Options, Tool, Language, Target } from '../types/shared';
+import { Options, Preset, Language, Target } from '../types/shared';
 
 export interface InitParams {
-  tools?: Tool[];
+  presets?: Preset[];
   language?: Language;
   target?: Target;
   publish?: boolean;
@@ -34,12 +34,12 @@ export function init(args: InitParams) {
   const questions = [
     {
       type: 'checkbox',
-      name: 'tools',
-      message: 'Which tools do you want to configure?',
-      choices: enumToChoices(Tool),
-      default: args.tools,
-      validate: validateTools,
-      when: validateTools(args.tools as Tool[]) !== true
+      name: 'presets',
+      message: 'Which presets do you want to use?',
+      choices: enumToChoices(Preset),
+      default: args.presets,
+      validate: validatePresets,
+      when: validatePresets(args.presets as Preset[]) !== true
     },
     {
       type: 'list',
@@ -50,7 +50,7 @@ export function init(args: InitParams) {
         const options = mergeOptions(args, answers);
         return (
           typeof options.language === 'undefined' &&
-          whenToolsSelected(options, [Tool.ESLINT, Tool.PLOP, Tool.LINT_STAGED])
+          whenPresetsSelected(options, [Preset.LINT, Preset.TEMPLATE])
         );
       }
     },
@@ -63,10 +63,10 @@ export function init(args: InitParams) {
         const options = mergeOptions(args, answers);
         return (
           typeof options.target === 'undefined' &&
-          whenToolsSelected(options, [
-            Tool.ESLINT,
-            Tool.PLOP,
-            Tool.SEMANTIC_RELEASE
+          whenPresetsSelected(options, [
+            Preset.LINT,
+            Preset.TEMPLATE,
+            Preset.RELEASE
           ])
         );
       }
@@ -80,7 +80,7 @@ export function init(args: InitParams) {
         const options = mergeOptions(args, answers);
         return (
           typeof options.publish === 'undefined' &&
-          whenToolsSelected(options, [Tool.SEMANTIC_RELEASE])
+          whenPresetsSelected(options, [Preset.RELEASE])
         );
       }
     },
@@ -111,16 +111,16 @@ export function mergeOptions(args: InitParams, answers: Options): Options {
   return { ...rest, ...answers };
 }
 
-export function whenToolsSelected(options: Options, tools: Tool[]): boolean {
-  return tools.some((tool) => options.tools.includes(tool));
+export function whenPresetsSelected(
+  options: Options,
+  presets: Preset[]
+): boolean {
+  return presets.some((preset) => options.presets.includes(preset));
 }
 
-export function validateTools(tools: Tool[]): string | boolean {
-  if (isEmpty(tools)) {
-    return 'You must choose at least one tool.';
-  }
-  if (tools.includes(Tool.PRETTIER) && !tools.includes(Tool.ESLINT)) {
-    return 'Prettier requires Eslint to be configured as well.';
+export function validatePresets(presets: Preset[]): string | boolean {
+  if (isEmpty(presets)) {
+    return 'You must choose at least one preset.';
   }
   return true;
 }

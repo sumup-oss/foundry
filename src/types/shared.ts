@@ -1,10 +1,16 @@
 export enum Tool {
   ESLINT = 'eslint',
   PRETTIER = 'prettier',
-  PLOP = 'plop',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
+  PLOP = 'plop',
   SEMANTIC_RELEASE = 'semantic-release'
+}
+
+export enum Preset {
+  LINT = 'lint',
+  RELEASE = 'release',
+  TEMPLATE = 'template'
 }
 
 export enum Language {
@@ -18,8 +24,12 @@ export enum Target {
   REACT = 'React'
 }
 
+export type Presets = {
+  [key in Preset]: Tool[];
+};
+
 export interface Options {
-  tools: Tool[];
+  presets: Preset[];
   language?: Language;
   target?: Target;
   publish?: boolean;
