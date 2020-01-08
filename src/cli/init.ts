@@ -19,7 +19,7 @@ import inquirer, { Question } from 'inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 
 import { Options, Preset, Prompt, Language, Target } from '../types/shared';
-import { enumToChoices } from '../lib/prompts';
+import { enumToChoices } from '../lib/choices';
 import { presets, presetChoices } from '../presets';
 
 export interface InitParams {
@@ -52,6 +52,7 @@ export function init(args: InitParams) {
           name: 'language',
           message: 'Which programming language does the project use?',
           choices: enumToChoices(Language),
+          default: Language.TYPESCRIPT,
           when: () => !args.language
         },
         target: {
@@ -59,6 +60,7 @@ export function init(args: InitParams) {
           name: 'target',
           message: 'Which platform does the project target?',
           choices: enumToChoices(Target),
+          default: Target.BROWSER,
           when: () => !args.target
         },
         publish: {

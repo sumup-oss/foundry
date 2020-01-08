@@ -13,10 +13,34 @@
  * limitations under the License.
  */
 
-import { overwritePresets } from '.';
+import { Target } from '../../types/shared';
+import { getAllChoiceCombinations } from '../../lib/choices';
 
-describe('The eslint configuration module', () => {
-  describe('overwritePresets()', () => {
+import { overwritePresets, config } from './config';
+
+describe('eslint', () => {
+  describe('overwritePresets', () => {
+    it('should merge two configurations overwriting existing presets', () => {
+      const config = {
+        extends: ['some-preset'],
+        rules: {
+          'some-custom-rule': false
+        }
+      };
+      const newConfig = {
+        extends: ['other-preset']
+      };
+      const actual = overwritePresets(config, newConfig);
+      expect(actual).toEqual(
+        expect.objectContaining({
+          extends: ['other-preset'],
+          rules: {
+            'some-custom-rule': false
+          }
+        })
+      );
+    });
+
     it('should overwrite the extends of the base config with the custom config', () => {
       const base = {
         extends: [
@@ -67,6 +91,30 @@ describe('The eslint configuration module', () => {
       };
       const actual = overwritePresets(base, custom);
       expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('with options', () => {
+    const matrix = getAllChoiceCombinations({ target: Target });
+
+    it.each(matrix)('should return a config for %o', (options) => {
+      const actual = config(options);
+      expect(actual).toMatchSnapshot();
+    });
+  });
+
+  describe('with overrides', () => {
+    it('should override the default config', () => {
+      const options = undefined;
+      const overrides = {
+        extends: ['prettier/react']
+      };
+      const actual = config(options, overrides);
+      expect(actual).toEqual(
+        expect.objectContaining({
+          extends: ['prettier/react']
+        })
+      );
     });
   });
 });

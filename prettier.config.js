@@ -13,4 +13,4 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/configs/prettier').base;
+module.exports = require('./dist/prettier')();

@@ -18,7 +18,7 @@
 import yargs from 'yargs';
 
 import { Preset, Language, Target } from '../types/shared';
-import { enumToChoices } from '../lib/prompts';
+import { enumToChoices } from '../lib/choices';
 import { eslint, semanticRelease } from '../configs';
 
 import { bootstrap, BootstrapParams } from './bootstrap';

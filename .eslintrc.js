@@ -13,4 +13,4 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/configs/eslint').node;
+module.exports = require('./dist/eslint')({ target: 'node' });

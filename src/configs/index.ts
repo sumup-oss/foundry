@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import * as eslint from './eslint';
-import * as prettier from './prettier';
-import * as plop from './plop';
-import * as lintStaged from './lint-staged';
-import * as husky from './husky';
-import * as semanticRelease from './semantic-release';
+import * as eslint from './eslint/config';
+import * as prettier from './prettier/config';
+import * as plop from './plop/config';
+import * as lintStaged from './lint-staged/config';
+import * as husky from './husky/config';
+import * as semanticRelease from './semantic-release/config';
 
 export const SUPPORTED_CONFIGS = [
   'eslint',

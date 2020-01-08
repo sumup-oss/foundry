@@ -13,4 +13,6 @@
  * limitations under the License.
  */
 
-export * from './configs/plop';
+import { config } from './configs/plop/config';
+
+export = config;

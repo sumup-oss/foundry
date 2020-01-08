@@ -15,6 +15,12 @@
 
 import merge from 'webpack-merge';
 
+import { Target } from '../../types/shared';
+
+export interface EslintOptions {
+  target?: Target;
+}
+
 export const overwritePresets = merge({
   customizeArray(a: any[], b: any[], key: string) {
     return key === 'extends' ? b : undefined;
@@ -24,7 +30,7 @@ export const overwritePresets = merge({
   }
 });
 
-export const base = {
+const base = {
   extends: [
     'airbnb-base',
     'plugin:jest/recommended',
@@ -127,6 +133,8 @@ export const base = {
   ]
 };
 
+export const browser = base;
+
 // TODO: add node specific config here.
 export const node = overwritePresets(base, { env: { node: true } });
 
@@ -163,4 +171,16 @@ export const react = overwritePresets(base, {
   }
 });
 
-export const ESLINT_CONFIGS = ['base', 'node', 'react'];
+export const ESLINT_CONFIGS = ['browser', 'node', 'react'];
+
+const TARGETS = {
+  [Target.BROWSER]: browser,
+  [Target.NODE]: node,
+  [Target.REACT]: react
+};
+
+export function config(options: EslintOptions = {}, overrides: any = {}) {
+  const { target = Target.BROWSER } = options;
+  const baseConfig = TARGETS[target];
+  return overwritePresets(baseConfig, overrides);
+}

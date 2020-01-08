@@ -13,4 +13,6 @@
  * limitations under the License.
  */
 
-export * from './configs/eslint';
+import { config } from './configs/eslint/config';
+
+export = config;

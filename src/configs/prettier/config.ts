@@ -13,9 +13,28 @@
  * limitations under the License.
  */
 
-/* istanbul ignore file */
+import { Options as PrettierConfig } from 'prettier';
 
-export { default as react } from './react';
-export { default as base } from './base';
+export interface PrettierOptions {}
 
-export const PLOP_CONFIGS = ['base', 'react'];
+const base: PrettierConfig = {
+  printWidth: 80,
+  tabWidth: 2,
+  useTabs: false,
+  semi: true,
+  singleQuote: true,
+  quoteProps: 'consistent',
+  trailingComma: 'none',
+  jsxSingleQuote: false,
+  bracketSpacing: true,
+  jsxBracketSameLine: false,
+  arrowParens: 'always',
+  endOfLine: 'lf'
+};
+
+export function config(
+  options: PrettierOptions = {},
+  overrides: PrettierConfig = {}
+) {
+  return { ...base, ...overrides };
+}
