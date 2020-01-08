@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "bin": "cli",
   "scripts": {
-    "build": "yarn cleanup && yarn copy && tsc && chmod +x dist/cli.js",
+    "build": "yarn cleanup && yarn copy && tsc && chmod +x dist/cli/index.js",
     "dev": "yarn cleanup && yarn copy && tsc --watch",
     "start": "yarn dev",
     "cleanup": "rimraf ./dist && mkdir dist",
