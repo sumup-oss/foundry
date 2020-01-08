@@ -16,7 +16,7 @@ const lint = {
 const templates = {
   name: formatName(
     'Templates',
-    'Bootstrap common files such as React components'
+    'Generate boilerplate code e.g. for React components'
   ),
   value: Preset.TEMPLATES,
   short: 'Templates',
@@ -27,7 +27,7 @@ const templates = {
 const release = {
   name: formatName(
     'Release',
-    'Automatically generate release notes and publish to a package registry'
+    'Automatically generate release notes and (optionally) publish to NPM'
   ),
   value: Preset.RELEASE,
   short: 'Templates',

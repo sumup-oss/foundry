@@ -31,11 +31,12 @@ const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 yargs
   .command(
     'init',
-    'Initialize the configurations for Eslint, Prettier, Husky, etc.',
+    "Initialize Foundry's tools in your project",
     (yrgs) =>
       yrgs
         .option('presets', {
-          desc: 'The presets to use.',
+          desc:
+            'A preset configures a group of tools that solve a common problem',
           choices: enumToChoices(Preset),
           type: 'array'
         })
@@ -44,15 +45,15 @@ yargs
           choices: enumToChoices(Language)
         })
         .option('target', {
-          desc: 'The platform that the project targets.',
+          desc: 'The platform that the project targets',
           choices: enumToChoices(Target)
         })
         .option('publish', {
-          desc: 'The platform that the project targets.',
+          desc: 'Whether to publish to NPM',
           type: 'boolean'
         })
         .option('configDir', {
-          desc: 'Directory to write configs to.',
+          desc: 'The directory to write configs to',
           type: 'string',
           default: '.'
         }),
