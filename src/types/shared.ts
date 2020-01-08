@@ -32,7 +32,7 @@ export enum Target {
 
 export interface Options {
   presets: Preset[];
-  configDir: string;
+  configDir?: string;
   language?: Language;
   target?: Target;
   publish?: boolean;

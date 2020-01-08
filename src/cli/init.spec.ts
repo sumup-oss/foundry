@@ -1,26 +1,8 @@
-import { Preset, Tool } from '../types/shared';
+import { Preset } from '../types/shared';
 
-import {
-  enumToChoices,
-  mergeOptions,
-  validatePresets,
-  validatePath
-} from './init';
+import { mergeOptions, validatePresets, validatePath } from './init';
 
 describe('init command', () => {
-  describe('enumToChoices', () => {
-    it('should convert an enum to an array of options', () => {
-      enum Fruit {
-        MANGO = 'Mango',
-        BANANA = 'Banana',
-        KIWI = 'Kiwi'
-      }
-      const actual = enumToChoices(Fruit);
-      const expected = ['Mango', 'Banana', 'Kiwi'];
-      expect(actual).toEqual(expected);
-    });
-  });
-
   describe('mergeOptions', () => {
     it('should override the CLI args with the answers', () => {
       const args = {

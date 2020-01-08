@@ -18,11 +18,12 @@
 import yargs from 'yargs';
 
 import { Preset, Language, Target } from '../types/shared';
+import { enumToChoices } from '../lib/prompts';
 import { eslint, semanticRelease } from '../configs';
 
 import { bootstrap, BootstrapParams } from './bootstrap';
 import { run, RunParams } from './run';
-import { init, InitParams, enumToChoices } from './init';
+import { init, InitParams } from './init';
 
 const { ESLINT_CONFIGS } = eslint;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;

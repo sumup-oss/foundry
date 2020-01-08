@@ -19,6 +19,7 @@ import inquirer, { Question } from 'inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 
 import { Options, Preset, Prompt, Language, Target } from '../types/shared';
+import { enumToChoices } from '../lib/prompts';
 import { presets, presetChoices } from '../presets';
 
 export interface InitParams {
@@ -42,14 +43,6 @@ export function init(args: InitParams) {
         default: args.presets,
         validate: validatePresets,
         when: () => validatePresets(args.presets as Preset[]) !== true
-      },
-      {
-        type: 'input',
-        name: 'configDir',
-        message: 'Where should the config files be stored?',
-        default: args.configDir || '.',
-        validate: validatePath,
-        when: validatePath(args.configDir as string) !== true
       }
     ])
     .then((initialAnswers) => {
@@ -59,14 +52,14 @@ export function init(args: InitParams) {
           name: 'language',
           message: 'Which programming language does the project use?',
           choices: enumToChoices(Language),
-          when: () => validateChoice<Language>(args.language, Language)
+          when: () => !args.language
         },
         target: {
           type: 'list',
           name: 'target',
           message: 'Which platform does the project target?',
           choices: enumToChoices(Target),
-          when: () => validateChoice<Target>(args.target, Target)
+          when: () => !args.target
         },
         publish: {
           type: 'confirm',
@@ -92,10 +85,6 @@ export function init(args: InitParams) {
     });
 }
 
-export function enumToChoices(enums: { [key: string]: string }): string[] {
-  return Object.values(enums);
-}
-
 export function mergeOptions(args: InitParams, answers: Options): Options {
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };
@@ -113,27 +102,9 @@ export function mapPresetsToPrompts(
   )(selectedPresets);
 }
 
-export function validateChoice<ChoiceType>(
-  choice: ChoiceType | undefined,
-  choiceEnum: any
-): boolean {
-  return !choice || !Object.values(choiceEnum).includes(choice);
-}
-
 export function validatePresets(selectedPresets: Preset[]): string | boolean {
   if (isEmpty(selectedPresets)) {
     return 'You must choose at least one preset.';
-  }
-
-  const invalidPreset = selectedPresets.find((preset) =>
-    validateChoice<Preset>(preset, Preset)
-  );
-
-  if (invalidPreset) {
-    const validPresets = Object.values(Preset)
-      .map((preset) => `"${preset}"`)
-      .join(', ');
-    return `"${invalidPreset}" is not a valid preset. Try one of [${validPresets}].`;
   }
 
   return true;
