@@ -13,22 +13,25 @@
  * limitations under the License.
  */
 
-import * as eslint from './eslint';
-import * as babel from './babel';
-import * as prettier from './prettier';
-import * as plop from './plop';
-import * as lintStaged from './lint-staged';
-import * as husky from './husky';
-import * as semanticRelease from './semantic-release';
+type LinterCommand = string | string[];
+type LinterFn = (filenames: string[]) => LinterCommand;
 
-export const SUPPORTED_CONFIGS = [
-  'eslint',
-  'babel',
-  'prettier',
-  'plop',
-  'husky',
-  'lint-staged',
-  'semantic-release'
-];
+interface LintStagedConfig {
+  linters: {
+    [key: string]: LinterCommand | LinterFn;
+  };
+}
 
-export { eslint, babel, prettier, plop, lintStaged, husky, semanticRelease };
+// eslint-disable-next-line import/prefer-default-export
+export const base: LintStagedConfig = {
+  linters: {
+    '*.jsx?': ['foundry run eslint --fix']
+  }
+};
+
+export const typescript: LintStagedConfig = {
+  linters: {
+    '*.jsx?': ['foundry run eslint --fix'],
+    '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
+  }
+};

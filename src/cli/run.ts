@@ -18,18 +18,19 @@ import { access, readFile } from 'fs';
 import { promisify } from 'util';
 import { isString } from 'lodash/fp';
 
-import spawn from '../lib/spawn';
+import { spawn } from '../lib/spawn';
+import * as logger from '../lib/logger';
 
 const readFileAsync = promisify(readFile);
 const accessAsync = promisify(access);
 
-function shouldStopRecursion(path) {
+function shouldStopRecursion(path: string): boolean {
   return !/^.+node_modules/.test(path);
 }
 
-async function resolveTo(path, name) {
+async function resolveTo(path: string, name: string): Promise<string> {
   if (shouldStopRecursion(path)) {
-    return null;
+    return '';
   }
 
   const packageJsonPath = join(path, name);
@@ -43,18 +44,21 @@ async function resolveTo(path, name) {
   }
 }
 
-async function getPackageJsonPath(name, useRelative = false) {
-  const pathMain = require.resolve(name);
-  const pathPackage = await resolveTo(pathMain, 'package.json');
+async function getPackageJsonPath(
+  name: string,
+  useRelative: boolean = false
+): Promise<string> {
+  const pathMain: string = require.resolve(name);
+  const pathPackage: string = await resolveTo(pathMain, 'package.json');
   return useRelative ? relative(__dirname, pathPackage) : pathPackage;
 }
 
-function isRelativePath(path) {
-  const firstChar = path.split()[0];
+function isRelativePath(path: string): boolean {
+  const firstChar = path.split('')[0];
   return firstChar === '.';
 }
 
-async function loadJson(path) {
+async function loadJson(path: string) {
   const isRelative = isRelativePath(path);
   if (isRelative) {
     throw new TypeError(`Relative paths are not supported: ${path}`);
@@ -67,7 +71,10 @@ async function loadJson(path) {
   }
 }
 
-async function resolveBinaryPath(name, useRelative = false) {
+async function resolveBinaryPath(
+  name: string,
+  useRelative: boolean = false
+): Promise<string | null> {
   try {
     // This could potentially break, if the name of a binary (name) is different
     // from the name of the package.
@@ -89,24 +96,29 @@ function getToolArguments() {
   // The standard 2 indicating node binary, executing script, and
   // the run command and the tool argument.
   const SKIP_COUNT = 4;
-  const processArgs = process.argv;
-  return processArgs.slice(SKIP_COUNT);
+  const { argv } = process;
+  return argv.slice(SKIP_COUNT);
 }
 
-async function executeBinary(path, args) {
+async function executeBinary(path: string, args: any) {
   return spawn(path, args, {
     stdio: 'inherit'
   });
 }
 
-export default async function run({ argv }) {
+export interface RunParams {
+  argv: {
+    _: string[];
+  };
+}
+
+export async function run({ argv }: RunParams) {
   const { _: commandArgs } = argv;
   const [, tool] = commandArgs;
   const binPath = await resolveBinaryPath(tool);
 
   if (!binPath) {
-    // eslint-disable-next-line no-console
-    console.error(`No executable found for ${tool}`);
+    logger.error(`No executable found for ${tool}`);
     process.exit(1);
   }
 
@@ -115,11 +127,10 @@ export default async function run({ argv }) {
   try {
     await executeBinary(binPath, binArgs);
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error(
-      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`,
-      err
+    logger.error(
+      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`
     );
+    logger.error(err);
     process.exit(1);
   }
 }

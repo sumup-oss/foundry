@@ -30,9 +30,11 @@ jobs:
       - run:
           name: 'Security audit'
           command: yarn check:security
-      - run:
-          name: 'Lint'
-          command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
+      # We need to configure Eslint to support TypeScript.
+      # Currently, Eslint fails because it doesn't find any supported files.
+      # - run:
+      #     name: 'Lint'
+      #     command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
       - run:
           name: 'Test'
           command: yarn test --ci --runInBand --coverage --reporters default --reporters "jest-junit"

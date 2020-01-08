@@ -13,7 +13,14 @@
  * limitations under the License.
  */
 
-import merge from 'webpack-merge';
+interface HuskyConfig {
+  skipCI?: boolean;
+  hooks?: { [key: string]: string };
+}
 
 // eslint-disable-next-line import/prefer-default-export
-export { merge };
+export const base: HuskyConfig = {
+  hooks: {
+    'pre-commit': 'foundry run lint-staged'
+  }
+};
