@@ -19,6 +19,7 @@ import { promisify } from 'util';
 import { isString } from 'lodash/fp';
 
 import { spawn } from '../lib/spawn';
+import * as logger from '../lib/logger';
 
 const readFileAsync = promisify(readFile);
 const accessAsync = promisify(access);
@@ -117,8 +118,7 @@ export async function run({ argv }: RunParams) {
   const binPath = await resolveBinaryPath(tool);
 
   if (!binPath) {
-    // eslint-disable-next-line no-console
-    console.error(`No executable found for ${tool}`);
+    logger.error(`No executable found for ${tool}`);
     process.exit(1);
   }
 
@@ -127,11 +127,10 @@ export async function run({ argv }: RunParams) {
   try {
     await executeBinary(binPath, binArgs);
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error(
-      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`,
-      err
+    logger.error(
+      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`
     );
+    logger.error(err);
     process.exit(1);
   }
 }
