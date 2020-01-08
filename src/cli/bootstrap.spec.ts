@@ -69,7 +69,10 @@ describe('bootstrap command', () => {
 
   describe('when passed the eslint param', () => {
     it('should create the eslintrc', () => {
-      const params: BootstrapParams = { ...defaultParams, eslint: 'base' };
+      const params: BootstrapParams = {
+        ...defaultParams,
+        eslint: 'base'
+      };
       bootstrap(params);
 
       expect(writeFile).toHaveBeenCalledWith(
@@ -80,7 +83,10 @@ describe('bootstrap command', () => {
     });
 
     it('should use the base config when no config is specified', () => {
-      const params: BootstrapParams = { ...defaultParams, eslint: true };
+      const params: BootstrapParams = {
+        ...defaultParams,
+        eslint: true
+      };
       bootstrap(params);
 
       expect(writeFile).toHaveBeenCalledWith(
@@ -90,20 +96,18 @@ describe('bootstrap command', () => {
       );
     });
 
-    ESLINT_CONFIGS.forEach((config) => {
-      it(`should write the config file for ${config}`, () => {
-        const params: BootstrapParams = {
-          ...defaultParams,
-          eslint: config as 'base' | 'node' | 'react'
-        };
-        bootstrap(params);
+    it.each(ESLINT_CONFIGS)(`should write the config file for %s`, (config) => {
+      const params: BootstrapParams = {
+        ...defaultParams,
+        eslint: config as 'base' | 'node' | 'react'
+      };
+      bootstrap(params);
 
-        expect(writeFile).toHaveBeenCalledWith(
-          expect.any(String),
-          expect.stringContaining(config),
-          expect.any(Function)
-        );
-      });
+      expect(writeFile).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.stringContaining(config),
+        expect.any(Function)
+      );
     });
   });
 
@@ -122,6 +126,7 @@ describe('bootstrap command', () => {
     });
   });
 
+  // NOTE: Passing an invalid configuration name doesn't work with strict type checks.
   // describe('when passed an invalid configuration name', () => {
   //   it('should default to the base configuration', () => {
   //     const params: BootstrapParams = { ...defaultParams, prettier: 'react' };
@@ -176,7 +181,10 @@ describe('bootstrap command', () => {
         }
       );
 
-      await bootstrap({ ...defaultParams, prettier: 'base' });
+      await bootstrap({
+        ...defaultParams,
+        prettier: 'base'
+      });
       expect(global.console.error).toHaveBeenCalled();
       expect(processExit).toHaveBeenCalledWith(1);
     });
