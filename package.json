@@ -15,6 +15,7 @@
     "copy": "cp -r src/configs/plop/templates dist/plop-templates && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "prelint": "yarn build",
     "lint": "yarn eslint src",
+    "lint:fix": "yarn eslint --fix src",
     "test": "jest --watchAll",
     "test:ci": "jest --ci --runInBand --coverage --reporters default --reporters \"jest-junit\"",
     "codedov": "codecov",
