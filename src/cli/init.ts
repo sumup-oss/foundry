@@ -85,7 +85,7 @@ export async function init(args: InitParams) {
       when: () => isEmpty(args.environments)
     },
     [Prompt.FRAMEWORKS]: {
-      type: 'list',
+      type: 'checkbox',
       name: 'frameworks',
       message: 'Which framework(s) does the project use?',
       choices: enumToChoices(Framework),
