@@ -13,17 +13,33 @@
  * limitations under the License.
  */
 
+import process from 'process';
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Options, Environment, Framework } from '../../types/shared';
+import { Options, Language, Environment, Framework } from '../../types/shared';
 
 type EslintOptions = Pick<
   Options,
   'language' | 'environments' | 'frameworks' | 'openSource'
 >;
 // NOTE: Using the Linter.Config interface from Eslint causes errors
-//       and I couldn't figure out how to fix them. — Connor
+//       and I couldn't figure out how to fix them. — @connor_baer
 type EslintConfig = any;
+
+export function config(
+  options: EslintOptions = {},
+  overrides: EslintConfig = {}
+) {
+  return flow(
+    customizeLanguage(options.language),
+    customizeEnv(options.environments),
+    customizeFramework(options.frameworks),
+    addCopyrightNotice(options.openSource),
+    applyOverrides(overrides)
+  )(base);
+}
+
+export const customizeConfig = mergeWith(customizer);
 
 function customizer(objValue: any, srcValue: any, key: string) {
   if (isArray(objValue)) {
@@ -35,10 +51,9 @@ function customizer(objValue: any, srcValue: any, key: string) {
   return undefined;
 }
 
-export const customizeConfig = mergeWith(customizer);
-
 const base = {
-  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  root: true,
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
@@ -62,14 +77,6 @@ const base = {
     __PRODUCTION__: true,
     __TEST__: true
   },
-  parser: 'babel-eslint',
-  parserOptions: {
-    allowImportExportEverywhere: true,
-    ecmaFeatures: {
-      ecmaVersion: 2017,
-      impliedStrict: true
-    }
-  },
   overrides: [
     {
       files: ['*.config.js', '.*rc.js'],
@@ -84,6 +91,45 @@ const base = {
     }
   ]
 };
+
+function customizeLanguage(
+  language: Language = Language.TYPESCRIPT
+): EslintConfig {
+  const languageMap = {
+    [Language.TYPESCRIPT]: {
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint'],
+      extends: [
+        'airbnb-typescript/base',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+      ],
+      parserOptions: {
+        tsconfigRootDir: process.cwd(),
+        project: ['./tsconfig.json']
+      }
+    },
+    [Language.JAVASCRIPT]: {
+      extends: ['airbnb-base'],
+      parser: 'babel-eslint',
+      parserOptions: {
+        allowImportExportEverywhere: true,
+        ecmaFeatures: {
+          ecmaVersion: 2017,
+          impliedStrict: true
+        }
+      }
+    }
+  };
+  return (config: EslintConfig) => {
+    if (!language) {
+      return config;
+    }
+    const overrides = languageMap[language];
+    return customizeConfig(config, overrides);
+  };
+}
 
 function customizeEnv(environments?: Environment[]): EslintConfig {
   return (config: EslintConfig) => {
@@ -218,16 +264,4 @@ function addCopyrightNotice(openSource?: boolean): EslintConfig {
 
 function applyOverrides(overrides: EslintConfig): EslintConfig {
   return (config: EslintConfig) => customizeConfig(config, overrides);
-}
-
-export function config(
-  options: EslintOptions = {},
-  overrides: EslintConfig = {}
-) {
-  return flow(
-    customizeEnv(options.environments),
-    customizeFramework(options.frameworks),
-    addCopyrightNotice(options.openSource),
-    applyOverrides(overrides)
-  )(base);
 }

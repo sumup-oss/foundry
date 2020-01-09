@@ -1,6 +1,6 @@
 import { pick } from 'lodash/fp';
 
-import { Options } from '../../types/shared';
+import { Options, Language } from '../../types/shared';
 
 export const files = (options: Options) => [
   {
@@ -11,7 +11,17 @@ export const files = (options: Options) => [
   }
 ];
 
-export const scripts = () => ({
-  'lint': 'foundry run eslint',
-  'lint:fix': 'foundry run eslint --fix'
-});
+export const scripts = (options: Options) => {
+  const { language = Language.TYPESCRIPT } = options;
+  const extensionMap = {
+    [Language.TYPESCRIPT]: '.js,.jsx,.ts,.tsx',
+    [Language.JAVASCRIPT]: '.js,.jsx'
+  };
+  const extensions = extensionMap[language];
+  return {
+    'lint': `foundry run eslint . --ext ${extensions}`,
+    'lint:fix': 'yarn lint --fix',
+    'lint:ci':
+      'yarn lint --format junit -o __reports__/junit/eslint-results.xml'
+  };
+};

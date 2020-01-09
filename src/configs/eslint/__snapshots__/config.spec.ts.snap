@@ -8,8 +8,9 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -44,6 +45,7 @@ Object {
     "prettier",
     "emotion",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -90,8 +92,9 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -159,6 +162,7 @@ Object {
     "prettier",
     "jest",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -201,8 +205,9 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -243,6 +248,7 @@ Object {
     "react-hooks",
     "jsx-a11y",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -292,8 +298,9 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -328,6 +335,7 @@ Object {
     "prettier",
     "emotion",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -374,8 +382,9 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -443,6 +452,7 @@ Object {
     "prettier",
     "jest",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -485,8 +495,9 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -527,6 +538,7 @@ Object {
     "react-hooks",
     "jsx-a11y",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -576,8 +588,12 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -600,18 +616,19 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "emotion",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -658,8 +675,12 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -715,18 +736,19 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "jest",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -769,8 +791,12 @@ Object {
     "Browser": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -796,21 +822,24 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
       "jsx": true,
     },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -860,8 +889,12 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -884,18 +917,19 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "emotion",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -942,8 +976,12 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -999,18 +1037,19 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "jest",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -1053,8 +1092,12 @@ Object {
     "Node": true,
   },
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -1080,21 +1123,24 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
       "jsx": true,
     },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",
@@ -1139,8 +1185,12 @@ Object {
 exports[`eslint with options should return a config with a copyright notice 1`] = `
 Object {
   "extends": Array [
-    "airbnb-base",
+    "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1163,18 +1213,19 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
     "prettier",
+    "@typescript-eslint",
     "notice",
   ],
+  "root": true,
   "rules": Object {
     "curly": Array [
       "error",

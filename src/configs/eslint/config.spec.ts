@@ -18,6 +18,10 @@ import { getAllChoiceCombinations } from '../../lib/choices';
 
 import { customizeConfig, config } from './config';
 
+jest.mock('process', () => ({
+  cwd: () => '/project/dir'
+}));
+
 describe('eslint', () => {
   describe('customizeConfig', () => {
     it('should merge the presets of the base config with the custom config', () => {
@@ -119,11 +123,10 @@ describe('eslint', () => {
       const actual = config(options, overrides);
       expect(actual).toEqual(
         expect.objectContaining({
-          extends: [
-            'airbnb-base',
-            'plugin:prettier/recommended',
+          extends: expect.arrayContaining([
+            'eslint:recommended',
             'prettier/react'
-          ]
+          ])
         })
       );
     });
