@@ -16,11 +16,11 @@
 import { Target } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 
-import { overwritePresets, config } from './config';
+import { customizeConfig, config } from './config';
 
 describe('eslint', () => {
-  describe('overwritePresets', () => {
-    it('should merge two configurations overwriting existing presets', () => {
+  describe('customizeConfig', () => {
+    it('should merge the presets of the base config with the custom config', () => {
       const config = {
         extends: ['some-preset'],
         rules: {
@@ -30,10 +30,10 @@ describe('eslint', () => {
       const newConfig = {
         extends: ['other-preset']
       };
-      const actual = overwritePresets(config, newConfig);
+      const actual = customizeConfig(config, newConfig);
       expect(actual).toEqual(
         expect.objectContaining({
-          extends: ['other-preset'],
+          extends: ['some-preset', 'other-preset'],
           rules: {
             'some-custom-rule': false
           }
@@ -41,24 +41,21 @@ describe('eslint', () => {
       );
     });
 
-    it('should overwrite the extends of the base config with the custom config', () => {
+    it('should merge the extends of the base config with the custom config', () => {
       const base = {
-        extends: [
-          'airbnb-base',
-          'plugin:jest/recommended',
-          'plugin:prettier/recommended'
-        ]
+        extends: ['airbnb-base', 'plugin:prettier/recommended']
       };
       const custom = {
+        extends: ['plugin:react/recommended']
+      };
+      const expected = {
         extends: [
           'airbnb-base',
-          'plugin:react/recommended',
-          'plugin:jsx-a11y/recommended',
-          'prettier/react'
+          'plugin:prettier/recommended',
+          'plugin:react/recommended'
         ]
       };
-      const expected = custom;
-      const actual = overwritePresets(base, custom);
+      const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
     });
 
@@ -89,7 +86,7 @@ describe('eslint', () => {
           'react-hooks/exhaustive-deps': 'warn'
         }
       };
-      const actual = overwritePresets(base, custom);
+      const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
     });
   });
@@ -104,7 +101,7 @@ describe('eslint', () => {
   });
 
   describe('with overrides', () => {
-    it('should override the default config', () => {
+    it('should merge with the default config', () => {
       const options = undefined;
       const overrides = {
         extends: ['prettier/react']
@@ -112,7 +109,12 @@ describe('eslint', () => {
       const actual = config(options, overrides);
       expect(actual).toEqual(
         expect.objectContaining({
-          extends: ['prettier/react']
+          extends: [
+            'airbnb-base',
+            'plugin:jest/recommended',
+            'plugin:prettier/recommended',
+            'prettier/react'
+          ]
         })
       );
     });

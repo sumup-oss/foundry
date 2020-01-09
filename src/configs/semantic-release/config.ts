@@ -55,8 +55,6 @@ const npm: SemanticReleaseConfig = {
   ]
 };
 
-export const SEMANTIC_RELEASE_CONFIGS = ['base', 'npm'];
-
 export function config(
   options: SemanticReleaseOptions = {},
   overrides: SemanticReleaseConfig = {}

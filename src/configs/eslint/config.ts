@@ -13,15 +13,16 @@
  * limitations under the License.
  */
 
-import { mergeWith, isArray, isObject, uniq } from 'lodash/fp';
+import { flow, mergeWith, isArray, isObject, uniq } from 'lodash/fp';
 
 import { Target, Options } from '../../types/shared';
 
 type EslintOptions = Pick<Options, 'target'>;
+type EslintConfig = any;
 
 function customizer(objValue: any, srcValue: any, key: string) {
   if (isArray(objValue)) {
-    return key === 'extends' ? srcValue : uniq([...objValue, ...srcValue]);
+    return uniq([...objValue, ...srcValue]);
   }
   if (isObject(objValue)) {
     return key === 'rules' ? { ...objValue, ...srcValue } : undefined;
@@ -29,7 +30,7 @@ function customizer(objValue: any, srcValue: any, key: string) {
   return undefined;
 }
 
-export const overwritePresets = mergeWith(customizer);
+export const customizeConfig = mergeWith(customizer);
 
 const base = {
   extends: [
@@ -134,54 +135,65 @@ const base = {
   ]
 };
 
-export const browser = base;
-
-// TODO: add node specific config here.
-export const node = overwritePresets(base, { env: { node: true } });
-
-export const react = overwritePresets(base, {
-  extends: [
-    'airbnb-base',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
-    'prettier/react'
-  ],
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'emotion'],
-  rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'emotion/jsx-import': 'error',
-    'emotion/no-vanilla': 'error',
-    'emotion/import-from-emotion': 'error',
-    'emotion/styled-import': 'error',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true
+function customizeTarget(target: Target = Target.BROWSER): EslintConfig {
+  const overrideMap = {
+    [Target.BROWSER]: {
+      env: {
+        browser: true
       }
-    ]
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
+    },
+    [Target.NODE]: {
+      env: {
+        node: true
+      }
+    },
+    [Target.REACT]: {
+      extends: [
+        'plugin:react/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier/react'
+      ],
+      plugins: ['react', 'react-hooks', 'jsx-a11y', 'emotion'],
+      rules: {
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
+        'emotion/jsx-import': 'error',
+        'emotion/no-vanilla': 'error',
+        'emotion/import-from-emotion': 'error',
+        'emotion/styled-import': 'error',
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: true
+          }
+        ]
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      },
+      env: {
+        browser: true
+      }
     }
-  },
-  env: {
-    browser: true
-  }
-});
+  };
+  return (config: EslintConfig) => {
+    const overrides = overrideMap[target];
+    return customizeConfig(config, overrides);
+  };
+}
 
-export const ESLINT_CONFIGS = ['browser', 'node', 'react'];
+function applyOverrides(overrides: EslintConfig): EslintConfig {
+  return (config: EslintConfig) => customizeConfig(config, overrides);
+}
 
-const TARGETS = {
-  [Target.BROWSER]: browser,
-  [Target.NODE]: node,
-  [Target.REACT]: react
-};
-
-export function config(options: EslintOptions = {}, overrides: any = {}) {
-  const { target = Target.BROWSER } = options;
-  const baseConfig = TARGETS[target];
-  return overwritePresets(baseConfig, overrides);
+export function config(
+  options: EslintOptions = {},
+  overrides: EslintConfig = {}
+) {
+  return flow(
+    customizeTarget(options.target),
+    applyOverrides(overrides)
+  )(base);
 }

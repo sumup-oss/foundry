@@ -2,6 +2,9 @@
 
 exports[`eslint with options should return a config for { target: 'Browser' } 1`] = `
 Object {
+  "env": Object {
+    "browser": true,
+  },
   "extends": Array [
     "airbnb-base",
     "plugin:jest/recommended",
@@ -278,9 +281,10 @@ Object {
   },
   "extends": Array [
     "airbnb-base",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
     "prettier/react",
   ],
   "globals": Object {
