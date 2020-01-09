@@ -3,7 +3,6 @@
 node_modules
 dist
 public
-lib
 jest-test-results.json
 junit.xml
 __coverage__
@@ -13,13 +12,6 @@ __reports__
 .yarn-integrity
 .env
 .next
-
-/babel.js
-/prettier.js
-/eslint.js
-/index.js
-/cli.js
-/plop.js
 
 # Packages #
 
