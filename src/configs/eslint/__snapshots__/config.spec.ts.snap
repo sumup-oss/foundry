@@ -52,7 +52,7 @@ Object {
       "all",
     ],
     "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
+    "emotion/jsx-import": "off",
     "emotion/no-vanilla": "error",
     "emotion/styled-import": "error",
     "max-len": Array [
@@ -126,10 +126,16 @@ Object {
         "**/*spec.js",
       ],
       "globals": Object {
+        "act": true,
+        "actHook": true,
         "axe": true,
         "create": true,
+        "fireEvent": true,
         "render": true,
+        "renderHook": true,
         "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
       },
       "rules": Object {
         "max-len": Array [
@@ -275,6 +281,11 @@ Object {
     ],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
   },
 }
 `;
@@ -331,7 +342,7 @@ Object {
       "all",
     ],
     "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
+    "emotion/jsx-import": "off",
     "emotion/no-vanilla": "error",
     "emotion/styled-import": "error",
     "max-len": Array [
@@ -405,10 +416,16 @@ Object {
         "**/*spec.js",
       ],
       "globals": Object {
+        "act": true,
+        "actHook": true,
         "axe": true,
         "create": true,
+        "fireEvent": true,
         "render": true,
+        "renderHook": true,
         "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
       },
       "rules": Object {
         "max-len": Array [
@@ -555,6 +572,11 @@ Object {
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
   },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
 }
 `;
 
@@ -610,7 +632,7 @@ Object {
       "all",
     ],
     "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
+    "emotion/jsx-import": "off",
     "emotion/no-vanilla": "error",
     "emotion/styled-import": "error",
     "max-len": Array [
@@ -684,10 +706,16 @@ Object {
         "**/*spec.js",
       ],
       "globals": Object {
+        "act": true,
+        "actHook": true,
         "axe": true,
         "create": true,
+        "fireEvent": true,
         "render": true,
+        "renderHook": true,
         "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
       },
       "rules": Object {
         "max-len": Array [
@@ -834,6 +862,11 @@ Object {
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
   },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
 }
 `;
 
@@ -889,7 +922,7 @@ Object {
       "all",
     ],
     "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
+    "emotion/jsx-import": "off",
     "emotion/no-vanilla": "error",
     "emotion/styled-import": "error",
     "max-len": Array [
@@ -963,10 +996,16 @@ Object {
         "**/*spec.js",
       ],
       "globals": Object {
+        "act": true,
+        "actHook": true,
         "axe": true,
         "create": true,
+        "fireEvent": true,
         "render": true,
+        "renderHook": true,
         "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
       },
       "rules": Object {
         "max-len": Array [
@@ -1112,6 +1151,11 @@ Object {
     ],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
   },
 }
 `;

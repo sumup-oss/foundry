@@ -114,12 +114,17 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
         ecmaFeatures: {
           jsx: true
         }
+      },
+      settings: {
+        react: {
+          version: 'detect'
+        }
       }
     },
     [Framework.EMOTION]: {
       plugins: ['emotion'],
       rules: {
-        'emotion/jsx-import': 'error',
+        'emotion/jsx-import': 'off',
         'emotion/no-vanilla': 'error',
         'emotion/import-from-emotion': 'error',
         'emotion/styled-import': 'error'
@@ -147,6 +152,12 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
             render: true,
             create: true,
             renderToHtml: true,
+            fireEvent: true,
+            userEvent: true,
+            wait: true,
+            act: true,
+            actHook: true,
+            renderHook: true,
             axe: true
           },
           env: {
