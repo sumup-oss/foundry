@@ -15,7 +15,8 @@ export enum Tool {
 
 export enum Prompt {
   LANGUAGE = 'language',
-  TARGET = 'target',
+  ENVIRONMENTS = 'environments',
+  FRAMEWORKS = 'frameworks',
   PUBLISH = 'publish'
 }
 
@@ -24,17 +25,23 @@ export enum Language {
   JAVASCRIPT = 'JavaScript'
 }
 
-export enum Target {
+export enum Environment {
   NODE = 'Node',
-  BROWSER = 'Browser',
-  REACT = 'React'
+  BROWSER = 'Browser'
+}
+
+export enum Framework {
+  REACT = 'React',
+  EMOTION = 'Emotion',
+  JEST = 'jest'
 }
 
 export interface Options {
   presets: Preset[];
   configDir: string;
   language?: Language;
-  target?: Target;
+  environments?: Environment[];
+  frameworks?: Framework[];
   publish?: boolean;
 }
 

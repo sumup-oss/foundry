@@ -13,11 +13,13 @@
  * limitations under the License.
  */
 
-import { flow, mergeWith, isArray, isObject, uniq } from 'lodash/fp';
+import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Target, Options } from '../../types/shared';
+import { Options, Environment, Framework } from '../../types/shared';
 
-type EslintOptions = Pick<Options, 'target'>;
+type EslintOptions = Pick<Options, 'language' | 'environments' | 'frameworks'>;
+// NOTE: Using the Linter.Config interface from Eslint causes errors
+//       and I couldn't figure out how to fix them — Connor.
 type EslintConfig = any;
 
 function customizer(objValue: any, srcValue: any, key: string) {
@@ -33,12 +35,8 @@ function customizer(objValue: any, srcValue: any, key: string) {
 export const customizeConfig = mergeWith(customizer);
 
 const base = {
-  extends: [
-    'airbnb-base',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended'
-  ],
-  plugins: ['prettier', 'jest', 'cypress', 'notice'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  plugins: ['prettier', 'notice'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'max-len': [
@@ -95,33 +93,6 @@ const base = {
   },
   overrides: [
     {
-      files: ['**/*spec.js', 'e2e/**/*.js'],
-      rules: {
-        'max-len': [
-          'error',
-          {
-            code: 80,
-            tabWidth: 2,
-            ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
-            ignoreComments: true,
-            ignoreUrls: true
-          }
-        ]
-      },
-      globals: {
-        mount: true,
-        shallow: true,
-        render: true,
-        create: true,
-        axe: true,
-        renderToHtml: true
-      },
-      env: {
-        'jest/globals': true,
-        'cypress/globals': true
-      }
-    },
-    {
       files: ['*.config.js', '.*rc.js'],
       rules: {
         'import/no-extraneous-dependencies': [
@@ -135,52 +106,85 @@ const base = {
   ]
 };
 
-function customizeTarget(target: Target = Target.BROWSER): EslintConfig {
-  const overrideMap = {
-    [Target.BROWSER]: {
-      env: {
-        browser: true
-      }
-    },
-    [Target.NODE]: {
-      env: {
-        node: true
-      }
-    },
-    [Target.REACT]: {
+function customizeEnv(environments?: Environment[]): EslintConfig {
+  return (config: EslintConfig) => {
+    if (!environments || isEmpty(environments)) {
+      return config;
+    }
+    return environments.reduce((acc, environment: Environment) => {
+      const overrides = { env: { [environment]: true } };
+      return customizeConfig(acc, overrides);
+    }, config);
+  };
+}
+
+function customizeFramework(frameworks?: Framework[]): EslintConfig {
+  const frameworkMap = {
+    [Framework.REACT]: {
       extends: [
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
         'prettier/react'
       ],
-      plugins: ['react', 'react-hooks', 'jsx-a11y', 'emotion'],
+      plugins: ['react', 'react-hooks', 'jsx-a11y'],
       rules: {
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn',
-        'emotion/jsx-import': 'error',
-        'emotion/no-vanilla': 'error',
-        'emotion/import-from-emotion': 'error',
-        'emotion/styled-import': 'error',
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: true
-          }
-        ]
+        'react-hooks/exhaustive-deps': 'warn'
       },
       parserOptions: {
         ecmaFeatures: {
           jsx: true
         }
-      },
-      env: {
-        browser: true
       }
+    },
+    [Framework.EMOTION]: {
+      plugins: ['emotion'],
+      rules: {
+        'emotion/jsx-import': 'error',
+        'emotion/no-vanilla': 'error',
+        'emotion/import-from-emotion': 'error',
+        'emotion/styled-import': 'error'
+      }
+    },
+    [Framework.JEST]: {
+      extends: ['plugin:jest/recommended'],
+      plugins: ['jest'],
+      overrides: [
+        {
+          files: ['**/*spec.js'],
+          rules: {
+            'max-len': [
+              'error',
+              {
+                code: 80,
+                tabWidth: 2,
+                ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
+                ignoreComments: true,
+                ignoreUrls: true
+              }
+            ]
+          },
+          globals: {
+            render: true,
+            create: true,
+            renderToHtml: true,
+            axe: true
+          },
+          env: {
+            jest: true
+          }
+        }
+      ]
     }
   };
   return (config: EslintConfig) => {
-    const overrides = overrideMap[target];
-    return customizeConfig(config, overrides);
+    if (!frameworks || isEmpty(frameworks)) {
+      return config;
+    }
+    return frameworks.reduce((acc, framework: Framework) => {
+      const overrides = frameworkMap[framework];
+      return customizeConfig(acc, overrides);
+    }, config);
   };
 }
 
@@ -193,7 +197,8 @@ export function config(
   overrides: EslintConfig = {}
 ) {
   return flow(
-    customizeTarget(options.target),
+    customizeEnv(options.environments),
+    customizeFramework(options.frameworks),
     applyOverrides(overrides)
   )(base);
 }

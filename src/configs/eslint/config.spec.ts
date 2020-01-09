@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Target } from '../../types/shared';
+import { Language, Environment, Framework } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 
 import { customizeConfig, config } from './config';
@@ -92,7 +92,11 @@ describe('eslint', () => {
   });
 
   describe('with options', () => {
-    const matrix = getAllChoiceCombinations({ target: Target });
+    const matrix = getAllChoiceCombinations({
+      language: Language,
+      frameworks: [Framework],
+      env: [Environment]
+    });
 
     it.each(matrix)('should return a config for %o', (options) => {
       const actual = config(options);
@@ -111,7 +115,6 @@ describe('eslint', () => {
         expect.objectContaining({
           extends: [
             'airbnb-base',
-            'plugin:jest/recommended',
             'plugin:prettier/recommended',
             'prettier/react'
           ]

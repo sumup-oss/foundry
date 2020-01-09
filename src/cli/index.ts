@@ -17,7 +17,7 @@
 
 import yargs from 'yargs';
 
-import { Preset, Language, Target } from '../types/shared';
+import { Preset, Language, Environment, Framework } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
 
 import { run, RunParams } from './run';
@@ -30,24 +30,35 @@ yargs
     (yrgs) =>
       yrgs
         .option('presets', {
+          alias: 'p',
           desc:
             'A preset configures a group of tools that solve a common problem',
           choices: enumToChoices(Preset),
           type: 'array'
         })
         .option('language', {
+          alias: 'l',
           desc: 'The programming language the project uses',
           choices: enumToChoices(Language)
         })
-        .option('target', {
-          desc: 'The platform that the project targets',
-          choices: enumToChoices(Target)
+        .option('environments', {
+          alias: 'e',
+          desc: 'The environment(s) that the code runs in',
+          choices: enumToChoices(Environment),
+          type: 'array'
+        })
+        .option('frameworks', {
+          alias: 'f',
+          desc: 'The frameworks the project uses',
+          choices: enumToChoices(Framework),
+          type: 'array'
         })
         .option('publish', {
           desc: 'Whether to publish to NPM',
           type: 'boolean'
         })
         .option('configDir', {
+          alias: 'c',
           desc: 'The directory to write configs to',
           type: 'string',
           default: '.'

@@ -25,7 +25,8 @@ import {
   Preset,
   Prompt,
   Language,
-  Target,
+  Environment,
+  Framework,
   Tool,
   ToolOptions,
   File,
@@ -46,7 +47,8 @@ export interface InitParams {
   configDir: string;
   presets?: Preset[];
   language?: Language;
-  target?: Target;
+  environments?: Environment[];
+  frameworks?: Framework[];
   publish?: boolean;
   $0?: string;
   _?: string[];
@@ -66,7 +68,7 @@ export async function init(args: InitParams) {
   ]);
 
   const prompts = {
-    language: {
+    [Prompt.LANGUAGE]: {
       type: 'list',
       name: 'language',
       message: 'Which programming language does the project use?',
@@ -74,15 +76,21 @@ export async function init(args: InitParams) {
       default: Language.TYPESCRIPT,
       when: () => !args.language
     },
-    target: {
-      type: 'list',
-      name: 'target',
-      message: 'Which platform does the project target?',
-      choices: enumToChoices(Target),
-      default: Target.BROWSER,
-      when: () => !args.target
+    [Prompt.ENVIRONMENTS]: {
+      type: 'checkbox',
+      name: 'environments',
+      message: 'Which environment(s) will the code run in?',
+      choices: enumToChoices(Environment),
+      when: () => isEmpty(args.environments)
     },
-    publish: {
+    [Prompt.FRAMEWORKS]: {
+      type: 'list',
+      name: 'frameworks',
+      message: 'Which framework(s) does the project use?',
+      choices: enumToChoices(Framework),
+      when: () => !args.frameworks
+    },
+    [Prompt.PUBLISH]: {
       type: 'confirm',
       name: 'publish',
       message: 'Would you like to publish your package to NPM?',
@@ -102,6 +110,9 @@ export async function init(args: InitParams) {
   const tools = getToolsForPresets(options.presets);
   const files = getFilesForTools(options, tools);
   const scripts = getScriptsForTools(options, tools);
+
+  // Add an empty line between the prompts and the tasks to make the output prettier ✨
+  console.log('\n');
 
   const tasks = new Listr([
     {
