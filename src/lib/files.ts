@@ -3,24 +3,22 @@ import path from 'path';
 import prettier from 'prettier';
 import pkgUp from 'pkg-up';
 
-import { config as prettierConfig } from '../configs/prettier/config';
+import { Language } from '../types/shared';
+import prettierConfig from '../prettier';
 
 export async function writeFile(
   configDir: string,
   filename: string,
   content: string,
-  overwrite?: boolean
+  shouldOverwrite?: boolean
 ): Promise<void> {
-  const formatOptions = prettierConfig();
+  const formatOptions = prettierConfig({ language: Language.TYPESCRIPT });
   const fileContent = prettier.format(content, formatOptions);
   const targetDir = path.resolve(configDir);
   const filePath = path.resolve(targetDir, filename);
+  const flag = shouldOverwrite ? 'w' : 'wx';
 
-  if (overwrite) {
-    return await fs.writeFile(filePath, fileContent);
-  }
-
-  return await fs.writeFile(filePath, fileContent, { flag: 'wx' });
+  return await fs.writeFile(filePath, fileContent, { flag });
 }
 
 export async function findPackageJson(): Promise<string> {
@@ -32,8 +30,8 @@ export async function findPackageJson(): Promise<string> {
 }
 
 export function addPackageScript(packageJson: any, key: string, value: string) {
-  const exists = packageJson.scripts[key];
-  if (exists) {
+  const hasConflict = packageJson.scripts[key];
+  if (hasConflict) {
     throw new Error(`A script with the name "${key}" already exists.`);
   }
   packageJson.scripts[key] = value;

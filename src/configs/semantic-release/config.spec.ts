@@ -1,6 +1,3 @@
-import { Language } from '../../types/shared';
-import { getAllChoiceCombinations } from '../../lib/choices';
-
 import { config } from './config';
 
 describe('semantic-release', () => {

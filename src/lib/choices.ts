@@ -3,21 +3,23 @@ export function enumToChoices(enums: { [key: string]: string }): string[] {
 }
 
 type Choices = { [key: string]: any };
-type Combination = { [key: string]: any };
 
-export function getAllChoiceCombinations(options: Choices): Combination[] {
-  return Object.entries(options).reduce(
-    (acc, [optionName, optionValues]) => {
-      const allChoiceCombinations: Combination[] = [];
+export function getAllChoiceCombinations(possibleChoices: Choices): Choices[] {
+  return Object.entries(possibleChoices).reduce(
+    (acc, [optionName, choiceEnum]) => {
+      const choicesForOption = Object.values(choiceEnum);
+      const allCombinations: Choices[] = [];
 
-      acc.forEach((combination: Combination) => {
-        Object.values(optionValues).forEach((value: any) => {
-          const newCombination = { ...combination, [optionName]: value };
-          allChoiceCombinations.push(newCombination);
+      acc.forEach((combination: Choices) => {
+        choicesForOption.forEach((choice: any) => {
+          allCombinations.push({
+            ...combination,
+            [optionName]: choice
+          });
         });
       });
 
-      return allChoiceCombinations;
+      return allCombinations;
     },
     [{}]
   );
