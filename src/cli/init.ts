@@ -119,16 +119,16 @@ export async function init(args: InitParams) {
   const files = getFilesForTools(options, tools);
   const scripts = getScriptsForTools(options, tools);
 
-  // Add an empty line between the prompts and the tasks to make the output prettier ✨
-  console.log('\n');
+  // Add an empty line between the prompts and the tasks ✨
+  console.log('');
 
   const tasks = new Listr([
     {
-      title: 'Write config files',
+      title: 'Writing config files',
       task: () =>
         new Listr(
           files.map((file) => ({
-            title: `Writing "${file.name}"...`,
+            title: `Write "${file.name}"`,
             task: async (ctx: never, task) =>
               writeFile(options.configDir, file.name, file.content).catch(() =>
                 listrInquirer(
@@ -157,7 +157,7 @@ export async function init(args: InitParams) {
         )
     },
     {
-      title: 'Add scripts to package.json',
+      title: 'Adding scripts to package.json',
       task: async () => {
         type Context = {
           packagePath: string;
@@ -167,14 +167,14 @@ export async function init(args: InitParams) {
         };
         return new Listr<Context>([
           {
-            title: 'Read package.json...',
+            title: 'Read package.json',
             task: async (ctx) => {
               ctx.packagePath = await findPackageJson();
               ctx.packageJson = require(ctx.packagePath);
             }
           },
           ...Object.entries(scripts).map(([key, value]) => ({
-            title: `Adding "${key}" script to package.json...`,
+            title: `Adding "${key}" script to package.json`,
             task: (ctx: Context, task: ListrTaskWrapper<Context>) => {
               try {
                 return addPackageScript(ctx.packageJson, key, value);
@@ -184,7 +184,7 @@ export async function init(args: InitParams) {
             }
           })),
           {
-            title: 'Saving package.json...',
+            title: 'Save package.json',
             task: (ctx) => savePackageJson(ctx.packageJson)
           }
         ]);
