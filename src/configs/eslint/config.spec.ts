@@ -16,48 +16,48 @@
 import { Language, Environment, Framework } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 
-import { customizeConfig, config } from './config';
+import { customizeConfig, createConfig } from './config';
 
 jest.mock('process', () => ({
-  cwd: () => '/project/dir'
+  cwd: (): string => '/project/dir',
 }));
 
 describe('eslint', () => {
   describe('customizeConfig', () => {
     it('should merge the presets of the base config with the custom config', () => {
-      const config = {
+      const baseConfig = {
         extends: ['some-preset'],
         rules: {
-          'some-custom-rule': false
-        }
+          'some-custom-rule': false,
+        },
       };
       const newConfig = {
-        extends: ['other-preset']
+        extends: ['other-preset'],
       };
-      const actual = customizeConfig(config, newConfig);
+      const actual = customizeConfig(baseConfig, newConfig);
       expect(actual).toEqual(
         expect.objectContaining({
           extends: ['some-preset', 'other-preset'],
           rules: {
-            'some-custom-rule': false
-          }
-        })
+            'some-custom-rule': false,
+          },
+        }),
       );
     });
 
     it('should merge the extends of the base config with the custom config', () => {
       const base = {
-        extends: ['airbnb-base', 'plugin:prettier/recommended']
+        extends: ['airbnb-base', 'plugin:prettier/recommended'],
       };
       const custom = {
-        extends: ['plugin:react/recommended']
+        extends: ['plugin:react/recommended'],
       };
       const expected = {
         extends: [
           'airbnb-base',
           'plugin:prettier/recommended',
-          'plugin:react/recommended'
-        ]
+          'plugin:react/recommended',
+        ],
       };
       const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
@@ -70,16 +70,16 @@ describe('eslint', () => {
           'curly': ['error', 'all'],
           'no-underscore-dangle': [
             'error',
-            { allow: ['__DEV__', '__PRODUCTION__'] }
-          ]
-        }
+            { allow: ['__DEV__', '__PRODUCTION__'] },
+          ],
+        },
       };
       const custom = {
         rules: {
           'react-hooks/rules-of-hooks': 'error',
           'react-hooks/exhaustive-deps': 'warn',
-          'no-underscore-dangle': ['warning', { allow: ['__resourcePath'] }]
-        }
+          'no-underscore-dangle': ['warning', { allow: ['__resourcePath'] }],
+        },
       };
       const expected = {
         rules: {
@@ -87,8 +87,8 @@ describe('eslint', () => {
           'curly': ['error', 'all'],
           'no-underscore-dangle': ['warning', { allow: ['__resourcePath'] }],
           'react-hooks/rules-of-hooks': 'error',
-          'react-hooks/exhaustive-deps': 'warn'
-        }
+          'react-hooks/exhaustive-deps': 'warn',
+        },
       };
       const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
@@ -99,17 +99,17 @@ describe('eslint', () => {
     const matrix = getAllChoiceCombinations({
       language: Language,
       environments: [Environment],
-      frameworks: [Framework]
+      frameworks: [Framework],
     });
 
     it.each(matrix)('should return a config for %o', (options) => {
-      const actual = config(options);
+      const actual = createConfig(options);
       expect(actual).toMatchSnapshot();
     });
 
     it('should return a config with a copyright notice', () => {
       const options = { openSource: true };
-      const actual = config(options);
+      const actual = createConfig(options);
       expect(actual).toMatchSnapshot();
     });
   });
@@ -118,16 +118,16 @@ describe('eslint', () => {
     it('should merge with the default config', () => {
       const options = undefined;
       const overrides = {
-        extends: ['prettier/react']
+        extends: ['prettier/react'],
       };
-      const actual = config(options, overrides);
+      const actual = createConfig(options, overrides);
       expect(actual).toEqual(
         expect.objectContaining({
           extends: expect.arrayContaining([
-            'eslint:recommended',
-            'prettier/react'
-          ])
-        })
+            'plugin:prettier/recommended',
+            'prettier/react',
+          ]),
+        }),
       );
     });
   });

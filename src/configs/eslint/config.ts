@@ -26,22 +26,9 @@ type EslintOptions = Pick<
 //       and I couldn't figure out how to fix them. — @connor_baer
 type EslintConfig = any;
 
-export function config(
-  options: EslintOptions = {},
-  overrides: EslintConfig = {}
-) {
-  return flow(
-    customizeLanguage(options.language),
-    customizeEnv(options.environments),
-    customizeFramework(options.frameworks),
-    addCopyrightNotice(options.openSource),
-    applyOverrides(overrides)
-  )(base);
-}
-
 export const customizeConfig = mergeWith(customizer);
 
-function customizer(objValue: any, srcValue: any, key: string) {
+function customizer(objValue: any, srcValue: any, key: string): any {
   if (isArray(objValue)) {
     return uniq([...objValue, ...srcValue]);
   }
@@ -56,26 +43,35 @@ const base = {
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
-    'no-use-before-define': ['error', { functions: false }],
+    'curly': ['error', 'all'],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     'max-len': [
       'error',
       {
         code: 80,
         tabWidth: 2,
         ignoreComments: true,
-        ignoreUrls: true
-      }
+        ignoreUrls: true,
+      },
     ],
-    'curly': ['error', 'all'],
     'no-underscore-dangle': [
       'error',
-      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
-    ]
+      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] },
+    ],
+    'import/prefer-default-export': 'off',
+    // Handled by prettier.
+    'quote-props': 'off',
+    'comma-dangle': 'off',
+    'object-curly-newline': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
+    'operator-linebreak': 'off',
   },
   globals: {
     __DEV__: true,
     __PRODUCTION__: true,
-    __TEST__: true
+    __TEST__: true,
   },
   overrides: [
     {
@@ -84,31 +80,45 @@ const base = {
         'import/no-extraneous-dependencies': [
           'error',
           {
-            devDependencies: true
-          }
-        ]
-      }
-    }
-  ]
+            devDependencies: true,
+          },
+        ],
+      },
+    },
+  ],
 };
 
 function customizeLanguage(
-  language: Language = Language.TYPESCRIPT
+  language: Language = Language.TYPESCRIPT,
 ): EslintConfig {
   const languageMap = {
     [Language.TYPESCRIPT]: {
-      parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
       extends: [
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'prettier/@typescript-eslint',
       ],
+      plugins: ['@typescript-eslint'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         tsconfigRootDir: process.cwd(),
-        project: ['./tsconfig.json']
-      }
+        project: ['./tsconfig.json'],
+      },
+      overrides: [
+        {
+          files: ['*.d.ts'],
+          rules: {
+            'import/no-extraneous-dependencies': [
+              'error',
+              {
+                devDependencies: true,
+              },
+            ],
+          },
+        },
+      ],
     },
     [Language.JAVASCRIPT]: {
       extends: ['airbnb-base'],
@@ -117,12 +127,12 @@ function customizeLanguage(
         allowImportExportEverywhere: true,
         ecmaFeatures: {
           ecmaVersion: 2017,
-          impliedStrict: true
-        }
-      }
-    }
+          impliedStrict: true,
+        },
+      },
+    },
   };
-  return (config: EslintConfig) => {
+  return (config: EslintConfig): EslintConfig => {
     if (!language) {
       return config;
     }
@@ -132,7 +142,7 @@ function customizeLanguage(
 }
 
 function customizeEnv(environments?: Environment[]): EslintConfig {
-  return (config: EslintConfig) => {
+  return (config: EslintConfig): EslintConfig => {
     if (!environments || isEmpty(environments)) {
       return config;
     }
@@ -149,23 +159,23 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
       extends: [
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
-        'prettier/react'
+        'prettier/react',
       ],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
       rules: {
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn'
+        'react-hooks/exhaustive-deps': 'warn',
       },
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       settings: {
         react: {
-          version: 'detect'
-        }
-      }
+          version: 'detect',
+        },
+      },
     },
     [Framework.EMOTION]: {
       plugins: ['emotion'],
@@ -173,15 +183,15 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
         'emotion/jsx-import': 'off',
         'emotion/no-vanilla': 'error',
         'emotion/import-from-emotion': 'error',
-        'emotion/styled-import': 'error'
-      }
+        'emotion/styled-import': 'error',
+      },
     },
     [Framework.JEST]: {
       extends: ['plugin:jest/recommended'],
       plugins: ['jest'],
       overrides: [
         {
-          files: ['**/*spec.js'],
+          files: ['**/*spec.*'],
           rules: {
             'max-len': [
               'error',
@@ -190,9 +200,9 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
                 tabWidth: 2,
                 ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
                 ignoreComments: true,
-                ignoreUrls: true
-              }
-            ]
+                ignoreUrls: true,
+              },
+            ],
           },
           globals: {
             render: true,
@@ -204,16 +214,16 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
             act: true,
             actHook: true,
             renderHook: true,
-            axe: true
+            axe: true,
           },
           env: {
-            jest: true
-          }
-        }
-      ]
-    }
+            jest: true,
+          },
+        },
+      ],
+    },
   };
-  return (config: EslintConfig) => {
+  return (config: EslintConfig): EslintConfig => {
     if (!frameworks || isEmpty(frameworks)) {
       return config;
     }
@@ -225,7 +235,7 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
 }
 
 function addCopyrightNotice(openSource?: boolean): EslintConfig {
-  return (config: EslintConfig) => {
+  return (config: EslintConfig): EslintConfig => {
     const copyrightNotice = {
       plugins: ['notice'],
       rules: {
@@ -250,10 +260,10 @@ function addCopyrightNotice(openSource?: boolean): EslintConfig {
 `,
             templateVars: { NAME: 'SumUp Ltd.' },
             varRegexps: { NAME: /SumUp Ltd\./ },
-            onNonMatchingHeader: 'report'
-          }
-        ]
-      }
+            onNonMatchingHeader: 'prepend',
+          },
+        ],
+      },
     };
     if (!openSource) {
       return config;
@@ -263,5 +273,19 @@ function addCopyrightNotice(openSource?: boolean): EslintConfig {
 }
 
 function applyOverrides(overrides: EslintConfig): EslintConfig {
-  return (config: EslintConfig) => customizeConfig(config, overrides);
+  return (config: EslintConfig): EslintConfig =>
+    customizeConfig(config, overrides);
+}
+
+export function createConfig(
+  options: EslintOptions = {},
+  overrides: EslintConfig = {},
+): EslintConfig {
+  return flow(
+    customizeLanguage(options.language),
+    customizeEnv(options.environments),
+    customizeFramework(options.frameworks),
+    addCopyrightNotice(options.openSource),
+    applyOverrides(overrides),
+  )(base);
 }

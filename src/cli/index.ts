@@ -23,6 +23,7 @@ import { enumToChoices } from '../lib/choices';
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs
   .command(
     'init',
@@ -34,46 +35,46 @@ yargs
           desc:
             'A preset configures a group of tools that solve a common problem',
           choices: enumToChoices(Preset),
-          type: 'array'
+          type: 'array',
         })
         .option('language', {
           alias: 'l',
           desc: 'The programming language the project uses',
-          choices: enumToChoices(Language)
+          choices: enumToChoices(Language),
         })
         .option('environments', {
           alias: 'e',
           desc: 'The environment(s) that the code runs in',
           choices: enumToChoices(Environment),
-          type: 'array'
+          type: 'array',
         })
         .option('frameworks', {
           alias: 'f',
           desc: 'The frameworks the project uses',
           choices: enumToChoices(Framework),
-          type: 'array'
+          type: 'array',
         })
         .option('openSource', {
           alias: 'o',
           desc: 'Whether the project is open source',
-          type: 'boolean'
+          type: 'boolean',
         })
         .option('publish', {
           desc: 'Whether to publish to NPM',
-          type: 'boolean'
+          type: 'boolean',
         })
         .option('configDir', {
           alias: 'c',
           desc: 'The directory to write configs to',
           type: 'string',
-          default: '.'
+          default: '.',
         }),
-    (args: InitParams) => execute('init', args)
+    (args: InitParams) => execute('init', args),
   )
   .command(
     'run <tool> [...tool options]',
     'Run any of the bundled tools.',
-    (args: RunParams) => execute('run', args)
+    (args: RunParams) => execute('run', args),
   )
   .showHelpOnFail(true)
   .demandCommand(1, '')
@@ -82,7 +83,7 @@ yargs
 
 type CommandType = 'init' | 'run';
 
-function execute(command: CommandType, args: any) {
+function execute(command: CommandType, args: any): void {
   const commands = { run, init };
   const commandFn = commands[command];
 

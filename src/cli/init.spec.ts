@@ -1,3 +1,18 @@
+/**
+ * Copyright 2020, SumUp Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { Preset } from '../types/shared';
 
 import { mergeOptions, validatePresets, validatePath } from './init';
@@ -7,11 +22,11 @@ describe('init command', () => {
     it('should override the CLI args with the answers', () => {
       const args = {
         presets: [Preset.LINT],
-        configDir: './'
+        configDir: './',
       };
       const answers = {
         presets: [Preset.RELEASE],
-        configDir: './src'
+        configDir: './src',
       };
       const actual = mergeOptions(args, answers);
       const expected = { configDir: './src', presets: ['release'] };
@@ -23,11 +38,11 @@ describe('init command', () => {
         presets: [Preset.LINT],
         configDir: './',
         $0: 'cli.js',
-        _: ['init']
+        _: ['init'],
       };
       const answers = {
         presets: [Preset.LINT],
-        configDir: './src'
+        configDir: './src',
       };
       const actual = mergeOptions(args, answers);
       const expected = { configDir: './src', presets: ['lint'] };

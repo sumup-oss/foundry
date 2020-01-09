@@ -26,13 +26,13 @@ interface HuskyConfig {
 
 export const base: HuskyConfig = {
   hooks: {
-    'pre-commit': 'foundry run lint-staged'
-  }
+    'pre-commit': 'foundry run lint-staged',
+  },
 };
 
 export function config(
   options: HuskyOptions = {},
-  overrides: HuskyConfig = {}
-) {
+  overrides: HuskyConfig = {},
+): HuskyConfig {
   return merge(base, overrides);
 }

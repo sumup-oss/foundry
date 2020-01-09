@@ -27,13 +27,13 @@ type Parsers = {
 
 const PARSERS: Parsers = {
   [Language.JAVASCRIPT]: 'babel',
-  [Language.TYPESCRIPT]: 'typescript'
+  [Language.TYPESCRIPT]: 'typescript',
 };
 
 export function config(
   options: PrettierOptions = { language: Language.TYPESCRIPT },
-  overrides: PrettierConfig = {}
-) {
+  overrides: PrettierConfig = {},
+): PrettierConfig {
   const { language } = options;
   const base: PrettierConfig = {
     parser: PARSERS[language],
@@ -43,12 +43,12 @@ export function config(
     semi: true,
     singleQuote: true,
     quoteProps: 'consistent',
-    trailingComma: 'none',
+    trailingComma: 'all',
     jsxSingleQuote: false,
-    bracketSpacing: true,
     jsxBracketSameLine: false,
+    bracketSpacing: true,
     arrowParens: 'always',
-    endOfLine: 'lf'
+    endOfLine: 'lf',
   };
   return { ...base, ...overrides };
 }

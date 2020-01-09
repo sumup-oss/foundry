@@ -13,4 +13,8 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/eslint')({ target: 'node' });
+module.exports = require('./dist/eslint')({
+  environments: ['node'],
+  frameworks: ['Jest'],
+  openSource: true,
+});
