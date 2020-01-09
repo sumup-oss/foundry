@@ -2,7 +2,7 @@
 
 exports[`lint-staged with options should return a config for { language: 'JavaScript' } 1`] = `
 Object {
-  "*.jsx?": Array [
+  "*.(js|jsx)": Array [
     "foundry run eslint --fix",
   ],
 }
@@ -10,15 +10,18 @@ Object {
 
 exports[`lint-staged with options should return a config for { language: 'TypeScript' } 1`] = `
 Object {
-  "*.jsx?": Array [
+  "*.(js|jsx)": Array [
     "foundry run eslint --fix",
   ],
-  "*.tsx?": [Function],
+  "*.(ts|tsx)": [Function],
 }
 `;
 
 exports[`lint-staged with overrides should override the default config 1`] = `
 Object {
+  "*.(js|jsx)": Array [
+    "foundry run eslint --fix",
+  ],
   "*.jsx?": Array [
     "custom command",
   ],
