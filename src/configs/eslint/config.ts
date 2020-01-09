@@ -13,20 +13,23 @@
  * limitations under the License.
  */
 
-import merge from 'webpack-merge';
+import { mergeWith, isArray, isObject, uniq } from 'lodash/fp';
 
 import { Target, Options } from '../../types/shared';
 
 type EslintOptions = Pick<Options, 'target'>;
 
-export const overwritePresets = merge({
-  customizeArray(a: any[], b: any[], key: string) {
-    return key === 'extends' ? b : undefined;
-  },
-  customizeObject(a: object, b: object, key: string) {
-    return key === 'rules' ? { ...a, ...b } : undefined;
+function customizer(objValue: any, srcValue: any, key: string) {
+  if (isArray(objValue)) {
+    return key === 'extends' ? srcValue : uniq([...objValue, ...srcValue]);
   }
-});
+  if (isObject(objValue)) {
+    return key === 'rules' ? { ...objValue, ...srcValue } : undefined;
+  }
+  return undefined;
+}
+
+export const overwritePresets = mergeWith(customizer);
 
 const base = {
   extends: [
