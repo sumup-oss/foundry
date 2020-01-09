@@ -17,9 +17,12 @@ import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
 import { Options, Environment, Framework } from '../../types/shared';
 
-type EslintOptions = Pick<Options, 'language' | 'environments' | 'frameworks'>;
+type EslintOptions = Pick<
+  Options,
+  'language' | 'environments' | 'frameworks' | 'openSource'
+>;
 // NOTE: Using the Linter.Config interface from Eslint causes errors
-//       and I couldn't figure out how to fix them — Connor.
+//       and I couldn't figure out how to fix them. — Connor
 type EslintConfig = any;
 
 function customizer(objValue: any, srcValue: any, key: string) {
@@ -36,7 +39,7 @@ export const customizeConfig = mergeWith(customizer);
 
 const base = {
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
-  plugins: ['prettier', 'notice'],
+  plugins: ['prettier'],
   rules: {
     'no-use-before-define': ['error', { functions: false }],
     'max-len': [
@@ -52,30 +55,6 @@ const base = {
     'no-underscore-dangle': [
       'error',
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
-    ],
-    'notice/notice': [
-      'error',
-      {
-        template: `/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-`,
-        templateVars: { NAME: 'SumUp Ltd.' },
-        varRegexps: { NAME: /SumUp Ltd\./ },
-        onNonMatchingHeader: 'report'
-      }
     ]
   },
   globals: {
@@ -188,6 +167,44 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
   };
 }
 
+function addCopyrightNotice(openSource?: boolean): EslintConfig {
+  return (config: EslintConfig) => {
+    const copyrightNotice = {
+      plugins: ['notice'],
+      rules: {
+        'notice/notice': [
+          'error',
+          {
+            template: `/**
+ * Copyright <%= YEAR %>, <%= NAME %>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+`,
+            templateVars: { NAME: 'SumUp Ltd.' },
+            varRegexps: { NAME: /SumUp Ltd\./ },
+            onNonMatchingHeader: 'report'
+          }
+        ]
+      }
+    };
+    if (!openSource) {
+      return config;
+    }
+    return customizeConfig(config, copyrightNotice);
+  };
+}
+
 function applyOverrides(overrides: EslintConfig): EslintConfig {
   return (config: EslintConfig) => customizeConfig(config, overrides);
 }
@@ -199,6 +216,7 @@ export function config(
   return flow(
     customizeEnv(options.environments),
     customizeFramework(options.frameworks),
+    addCopyrightNotice(options.openSource),
     applyOverrides(overrides)
   )(base);
 }

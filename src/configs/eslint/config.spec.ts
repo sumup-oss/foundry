@@ -94,11 +94,17 @@ describe('eslint', () => {
   describe('with options', () => {
     const matrix = getAllChoiceCombinations({
       language: Language,
-      frameworks: [Framework],
-      env: [Environment]
+      environments: [Environment],
+      frameworks: [Framework]
     });
 
     it.each(matrix)('should return a config for %o', (options) => {
+      const actual = config(options);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should return a config with a copyright notice', () => {
+      const options = { openSource: true };
       const actual = config(options);
       expect(actual).toMatchSnapshot();
     });

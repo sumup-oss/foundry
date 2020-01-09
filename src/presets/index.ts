@@ -10,7 +10,12 @@ const lint = {
   value: Preset.LINT,
   short: 'Lint',
   tools: [Tool.ESLINT, Tool.PRETTIER, Tool.HUSKY, Tool.LINT_STAGED],
-  prompts: [Prompt.LANGUAGE, Prompt.ENVIRONMENTS, Prompt.FRAMEWORKS]
+  prompts: [
+    Prompt.LANGUAGE,
+    Prompt.ENVIRONMENTS,
+    Prompt.FRAMEWORKS,
+    Prompt.OPEN_SOURCE
+  ]
 };
 
 const templates = {

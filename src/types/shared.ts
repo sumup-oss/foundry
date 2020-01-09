@@ -17,6 +17,7 @@ export enum Prompt {
   LANGUAGE = 'language',
   ENVIRONMENTS = 'environments',
   FRAMEWORKS = 'frameworks',
+  OPEN_SOURCE = 'open-source',
   PUBLISH = 'publish'
 }
 
@@ -33,7 +34,7 @@ export enum Environment {
 export enum Framework {
   REACT = 'React',
   EMOTION = 'Emotion',
-  JEST = 'jest'
+  JEST = 'Jest'
 }
 
 export interface Options {
@@ -42,6 +43,7 @@ export interface Options {
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
+  openSource?: boolean;
   publish?: boolean;
 }
 

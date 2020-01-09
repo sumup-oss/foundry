@@ -2,10 +2,13 @@
 
 exports[`eslint with options should return a config for {
   language: 'JavaScript',
-  frameworks: [ 'Emotion', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
 Object {
+  "env": Object {
+    "Browser": true,
+  },
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -41,7 +44,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "emotion",
   ],
   "rules": Object {
@@ -78,382 +80,19 @@ Object {
         "functions": false,
       },
     ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
   },
 }
 `;
 
 exports[`eslint with options should return a config for {
   language: 'JavaScript',
-  frameworks: [ 'Emotion', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
 Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
+  "env": Object {
+    "Browser": true,
   },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "emotion",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  frameworks: [ 'React', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
-} 1`] = `
-Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier/react",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-      "jsx": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  frameworks: [ 'React', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
-} 1`] = `
-Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier/react",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-      "jsx": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  frameworks: [ 'jest', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
-} 1`] = `
-Object {
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -516,7 +155,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "jest",
   ],
   "rules": Object {
@@ -547,34 +185,6 @@ Object {
       "error",
       Object {
         "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
       },
     ],
   },
@@ -583,363 +193,13 @@ Object {
 
 exports[`eslint with options should return a config for {
   language: 'JavaScript',
-  frameworks: [ 'jest', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
 Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
+  "env": Object {
+    "Browser": true,
   },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "env": Object {
-        "jest": true,
-      },
-      "files": Array [
-        "**/*spec.js",
-      ],
-      "globals": Object {
-        "axe": true,
-        "create": true,
-        "render": true,
-        "renderToHtml": true,
-      },
-      "rules": Object {
-        "max-len": Array [
-          "error",
-          Object {
-            "code": 80,
-            "ignoreComments": true,
-            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
-            "ignoreUrls": true,
-            "tabWidth": 2,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "jest",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  frameworks: [ 'Emotion', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
-} 1`] = `
-Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "emotion",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  frameworks: [ 'Emotion', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
-} 1`] = `
-Object {
-  "extends": Array [
-    "airbnb-base",
-    "plugin:prettier/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "*.config.js",
-        ".*rc.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": Object {
-    "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
-      "impliedStrict": true,
-    },
-  },
-  "plugins": Array [
-    "prettier",
-    "notice",
-    "emotion",
-  ],
-  "rules": Object {
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "error",
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  frameworks: [ 'React', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
-} 1`] = `
-Object {
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -979,7 +239,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -1014,34 +273,6 @@ Object {
         "functions": false,
       },
     ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
   },
@@ -1049,11 +280,205 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  frameworks: [ 'React', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
+  language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
 Object {
+  "env": Object {
+    "Node": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "emotion",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+  },
+}
+`;
+
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Node": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "env": Object {
+        "jest": true,
+      },
+      "files": Array [
+        "**/*spec.js",
+      ],
+      "globals": Object {
+        "axe": true,
+        "create": true,
+        "render": true,
+        "renderToHtml": true,
+      },
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "jest",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+  },
+}
+`;
+
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Node": true,
+  },
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -1093,7 +518,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -1128,34 +552,6 @@ Object {
         "functions": false,
       },
     ],
-    "notice/notice": Array [
-      "error",
-      Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
-      },
-    ],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
   },
@@ -1164,10 +560,97 @@ Object {
 
 exports[`eslint with options should return a config for {
   language: 'TypeScript',
-  frameworks: [ 'jest', [length]: 1 ],
-  env: [ 'Browser', [length]: 1 ]
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
 Object {
+  "env": Object {
+    "Browser": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "emotion",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+  },
+}
+`;
+
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Browser": true,
+  },
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -1230,7 +713,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "jest",
   ],
   "rules": Object {
@@ -1263,32 +745,176 @@ Object {
         "functions": false,
       },
     ],
-    "notice/notice": Array [
+  },
+}
+`;
+
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Browser": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+      "jsx": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "max-len": Array [
       "error",
       Object {
-        "onNonMatchingHeader": "report",
-        "template": "/**
- * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+}
+`;
 
-",
-        "templateVars": Object {
-          "NAME": "SumUp Ltd.",
-        },
-        "varRegexps": Object {
-          "NAME": /SumUp Ltd\\\\\\./,
-        },
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Node": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "emotion",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
       },
     ],
   },
@@ -1297,10 +923,13 @@ Object {
 
 exports[`eslint with options should return a config for {
   language: 'TypeScript',
-  frameworks: [ 'jest', [length]: 1 ],
-  env: [ 'Node', [length]: 1 ]
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
 Object {
+  "env": Object {
+    "Node": true,
+  },
   "extends": Array [
     "airbnb-base",
     "plugin:prettier/recommended",
@@ -1363,8 +992,168 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "notice",
     "jest",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+  },
+}
+`;
+
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
+Object {
+  "env": Object {
+    "Node": true,
+  },
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+      "jsx": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "rules": Object {
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+}
+`;
+
+exports[`eslint with options should return a config with a copyright notice 1`] = `
+Object {
+  "extends": Array [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "ecmaVersion": 2017,
+      "impliedStrict": true,
+    },
+  },
+  "plugins": Array [
+    "prettier",
+    "notice",
   ],
   "rules": Object {
     "curly": Array [

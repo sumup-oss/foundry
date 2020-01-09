@@ -53,6 +53,11 @@ yargs
           choices: enumToChoices(Framework),
           type: 'array'
         })
+        .option('openSource', {
+          alias: 'o',
+          desc: 'Whether the project is open source',
+          type: 'boolean'
+        })
         .option('publish', {
           desc: 'Whether to publish to NPM',
           type: 'boolean'

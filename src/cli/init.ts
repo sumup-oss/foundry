@@ -49,6 +49,7 @@ export interface InitParams {
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
+  openSource?: boolean;
   publish?: boolean;
   $0?: string;
   _?: string[];
@@ -96,6 +97,13 @@ export async function init(args: InitParams) {
       message: 'Would you like to publish your package to NPM?',
       default: false,
       when: () => typeof args.publish === 'undefined'
+    },
+    [Prompt.OPEN_SOURCE]: {
+      type: 'confirm',
+      name: 'openSource',
+      message: 'Do you plan to open-source this project?',
+      default: false,
+      when: () => typeof args.openSource === 'undefined'
     }
   };
 
