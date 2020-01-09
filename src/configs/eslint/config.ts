@@ -15,11 +15,9 @@
 
 import merge from 'webpack-merge';
 
-import { Target } from '../../types/shared';
+import { Target, Options } from '../../types/shared';
 
-export interface EslintOptions {
-  target?: Target;
-}
+type EslintOptions = Pick<Options, 'target'>;
 
 export const overwritePresets = merge({
   customizeArray(a: any[], b: any[], key: string) {

@@ -13,28 +13,42 @@
  * limitations under the License.
  */
 
-import { Options as PrettierConfig } from 'prettier';
+import { Options as PrettierConfig, BuiltInParserName } from 'prettier';
 
-export interface PrettierOptions {}
+import { Language } from '../../types/shared';
 
-const base: PrettierConfig = {
-  printWidth: 80,
-  tabWidth: 2,
-  useTabs: false,
-  semi: true,
-  singleQuote: true,
-  quoteProps: 'consistent',
-  trailingComma: 'none',
-  jsxSingleQuote: false,
-  bracketSpacing: true,
-  jsxBracketSameLine: false,
-  arrowParens: 'always',
-  endOfLine: 'lf'
+type PrettierOptions = {
+  language: Language;
+};
+
+type Parsers = {
+  [key in Language]: BuiltInParserName;
+};
+
+const PARSERS: Parsers = {
+  [Language.JAVASCRIPT]: 'babel',
+  [Language.TYPESCRIPT]: 'typescript'
 };
 
 export function config(
-  options: PrettierOptions = {},
+  options: PrettierOptions = { language: Language.TYPESCRIPT },
   overrides: PrettierConfig = {}
 ) {
+  const { language } = options;
+  const base: PrettierConfig = {
+    parser: PARSERS[language],
+    printWidth: 80,
+    tabWidth: 2,
+    useTabs: false,
+    semi: true,
+    singleQuote: true,
+    quoteProps: 'consistent',
+    trailingComma: 'none',
+    jsxSingleQuote: false,
+    bracketSpacing: true,
+    jsxBracketSameLine: false,
+    arrowParens: 'always',
+    endOfLine: 'lf'
+  };
   return { ...base, ...overrides };
 }

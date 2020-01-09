@@ -15,7 +15,9 @@
 
 import { merge } from 'lodash/fp';
 
-export interface HuskyOptions {}
+import { Options } from '../../types/shared';
+
+export type HuskyOptions = Partial<Options>;
 
 interface HuskyConfig {
   skipCI?: boolean;

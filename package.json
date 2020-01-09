@@ -48,7 +48,10 @@
     "husky": "^3.0.0",
     "inquirer": "^7.0.1",
     "lint-staged": "^10.0.0-beta",
+    "listr": "^0.14.3",
+    "listr-inquirer": "^0.1.0",
     "lodash": "^4.17.11",
+    "pkg-up": "^3.1.0",
     "plop": "^2.1.0",
     "prettier": "^1.15.2",
     "semantic-release": "^16.0.0-beta.18",
@@ -58,6 +61,7 @@
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/jest": "^24.0.24",
+    "@types/listr": "^0.14.2",
     "@types/lodash": "^4.14.149",
     "@types/node": "^10.0.0",
     "@types/prettier": "^1.19.0",

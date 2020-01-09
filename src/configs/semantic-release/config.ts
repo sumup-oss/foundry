@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-export interface SemanticReleaseOptions {
-  publish?: boolean;
-}
+import { Options } from '../../types/shared';
+
+type SemanticReleaseOptions = Pick<Options, 'publish'>;
 
 type Branch = string | { name: string; prerelease: boolean };
 

@@ -16,11 +16,31 @@
 import { existsSync } from 'fs';
 import { resolve } from 'path';
 import inquirer, { Question } from 'inquirer';
+import Listr, { ListrTaskWrapper } from 'listr';
+import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 
-import { Options, Preset, Prompt, Language, Target } from '../types/shared';
+import {
+  Options,
+  Preset,
+  Prompt,
+  Language,
+  Target,
+  Tool,
+  ToolOptions,
+  File,
+  Scripts
+} from '../types/shared';
+import * as logger from '../lib/logger';
 import { enumToChoices } from '../lib/choices';
+import {
+  writeFile,
+  findPackageJson,
+  addPackageScript,
+  savePackageJson
+} from '../lib/files';
 import { presets, presetChoices } from '../presets';
+import { tools } from '../configs';
 
 export interface InitParams {
   configDir: string;
@@ -32,67 +52,142 @@ export interface InitParams {
   _?: string[];
 }
 
-export function init(args: InitParams) {
-  inquirer
-    .prompt([
-      {
-        type: 'checkbox',
-        name: 'presets',
-        message: 'Which presets do you want to use?',
-        choices: presetChoices,
-        default: args.presets,
-        validate: validatePresets,
-        when: () => validatePresets(args.presets as Preset[]) !== true
+export async function init(args: InitParams) {
+  const initialAnswers = await inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'presets',
+      message: 'Which presets do you want to use?',
+      choices: presetChoices,
+      default: args.presets,
+      validate: validatePresets,
+      when: () => validatePresets(args.presets as Preset[]) !== true
+    }
+  ]);
+
+  const prompts = {
+    language: {
+      type: 'list',
+      name: 'language',
+      message: 'Which programming language does the project use?',
+      choices: enumToChoices(Language),
+      default: Language.TYPESCRIPT,
+      when: () => !args.language
+    },
+    target: {
+      type: 'list',
+      name: 'target',
+      message: 'Which platform does the project target?',
+      choices: enumToChoices(Target),
+      default: Target.BROWSER,
+      when: () => !args.target
+    },
+    publish: {
+      type: 'confirm',
+      name: 'publish',
+      message: 'Would you like to publish your package to NPM?',
+      default: false,
+      when: () => typeof args.publish === 'undefined'
+    }
+  };
+
+  const additionalPrompts = getPromptsForPresets(
+    initialAnswers.presets,
+    prompts
+  );
+  const additionalAnswers = await inquirer.prompt(additionalPrompts);
+
+  const answers = { ...initialAnswers, ...additionalAnswers };
+  const options = mergeOptions(args, answers);
+  const tools = getToolsForPresets(options.presets);
+  const files = getFilesForTools(options, tools);
+  const scripts = getScriptsForTools(options, tools);
+
+  const tasks = new Listr([
+    {
+      title: 'Write config files',
+      task: () =>
+        new Listr(
+          files.map((file) => ({
+            title: `Writing "${file.name}"...`,
+            task: async (ctx: never, task) =>
+              writeFile(options.configDir, file.name, file.content).catch(() =>
+                listrInquirer(
+                  [
+                    {
+                      type: 'confirm',
+                      name: 'overwrite',
+                      message: `"${file.name}" already exists. Would you like to replace it?`,
+                      default: false
+                    }
+                  ],
+                  (answers: { overwrite: boolean }) => {
+                    if (!answers.overwrite) {
+                      return task.skip('Skipped');
+                    }
+                    return writeFile(
+                      options.configDir,
+                      file.name,
+                      file.content,
+                      true
+                    );
+                  }
+                )
+              )
+          }))
+        )
+    },
+    {
+      title: 'Add scripts to package.json',
+      task: async () => {
+        type Context = {
+          packagePath: string;
+          packageJson: {
+            scripts: Scripts;
+          };
+        };
+        return new Listr<Context>([
+          {
+            title: 'Read package.json...',
+            task: async (ctx) => {
+              ctx.packagePath = await findPackageJson();
+              ctx.packageJson = require(ctx.packagePath);
+            }
+          },
+          ...Object.entries(scripts).map(([key, value]) => ({
+            title: `Adding "${key}" script to package.json...`,
+            task: (ctx: Context, task: ListrTaskWrapper<Context>) => {
+              try {
+                return addPackageScript(ctx.packageJson, key, value);
+              } catch (error) {
+                return task.skip(error.message);
+              }
+            }
+          })),
+          {
+            title: 'Saving package.json...',
+            task: (ctx) => savePackageJson(ctx.packageJson)
+          }
+        ]);
       }
-    ])
-    .then((initialAnswers) => {
-      const prompts = {
-        language: {
-          type: 'list',
-          name: 'language',
-          message: 'Which programming language does the project use?',
-          choices: enumToChoices(Language),
-          default: Language.TYPESCRIPT,
-          when: () => !args.language
-        },
-        target: {
-          type: 'list',
-          name: 'target',
-          message: 'Which platform does the project target?',
-          choices: enumToChoices(Target),
-          default: Target.BROWSER,
-          when: () => !args.target
-        },
-        publish: {
-          type: 'confirm',
-          name: 'publish',
-          message: 'Would you like to publish your package to NPM?',
-          default: false,
-          when: () => typeof args.publish === 'undefined'
-        }
-      };
+    }
+  ]);
 
-      const additionalPrompts = mapPresetsToPrompts(
-        initialAnswers.presets,
-        prompts
-      );
-
-      inquirer.prompt(additionalPrompts).then((additionalAnswers) => {
-        const answers: Options = { ...initialAnswers, ...additionalAnswers };
-        const options: Options = mergeOptions(args, answers);
-
-        // TODO: Generate config file for each tool and pass the relevant options.
-        console.log(JSON.stringify(options, null, 2));
-      });
-    });
+  tasks.run().catch((err) => {
+    logger.error(err);
+    process.exit(1);
+  });
 }
 
-export function mergeOptions(args: InitParams, answers: Options): Options {
+export function mergeOptions(
+  args: InitParams,
+  answers: Omit<Options, 'configDir'>
+): Options {
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };
 }
 
-export function mapPresetsToPrompts(
+function getPromptsForPresets(
   selectedPresets: Preset[],
   prompts: { [key in Prompt]: Question }
 ): Question[] {
@@ -102,6 +197,41 @@ export function mapPresetsToPrompts(
     uniq,
     map((prompt: Prompt) => prompts[prompt])
   )(selectedPresets);
+}
+
+function getToolsForPresets(selectedPresets: Preset[]) {
+  return flow(
+    map((preset: Preset): Tool[] => presets[preset].tools),
+    flatten,
+    uniq,
+    map((tool: Tool) => tools[tool])
+  )(selectedPresets) as ToolOptions[];
+}
+
+function getFilesForTools(
+  options: Options,
+  selectedTools: ToolOptions[]
+): File[] {
+  return selectedTools.reduce((allFiles: File[], tool) => {
+    if (tool.files) {
+      const filesForTool = tool.files(options);
+      allFiles.push(...filesForTool);
+    }
+    return allFiles;
+  }, []);
+}
+
+function getScriptsForTools(
+  options: Options,
+  selectedTools: ToolOptions[]
+): Scripts {
+  return selectedTools.reduce((allScripts: Scripts, tool) => {
+    if (tool.scripts) {
+      const scriptsForTool = tool.scripts(options);
+      return { ...allScripts, ...scriptsForTool };
+    }
+    return allScripts;
+  }, {});
 }
 
 export function validatePresets(selectedPresets: Preset[]): string | boolean {

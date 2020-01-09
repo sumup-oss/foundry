@@ -13,12 +13,9 @@
  * limitations under the License.
  */
 
-import { Language } from '../../types/shared';
+import { Language, Options } from '../../types/shared';
 
-export interface LintStagedOptions {
-  language?: Language;
-}
-
+type LintStagedOptions = Pick<Options, 'language'>;
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;
 

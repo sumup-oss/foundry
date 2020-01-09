@@ -19,14 +19,9 @@ import yargs from 'yargs';
 
 import { Preset, Language, Target } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
-import { eslint, semanticRelease } from '../configs';
 
-import { bootstrap, BootstrapParams } from './bootstrap';
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
-
-const { ESLINT_CONFIGS } = eslint;
-const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
 yargs
   .command(
@@ -60,49 +55,6 @@ yargs
     (args: InitParams) => execute('init', args)
   )
   .command(
-    'bootstrap-config',
-    'Set up custom configurations for Eslint, Prettier, Semantic Release etc.',
-    (yrgs) =>
-      yrgs
-        .option('eslint', {
-          desc: 'The eslint config to write.',
-          choices: [true, ...ESLINT_CONFIGS],
-          coerce: (val) => (val === true ? 'base' : val)
-        })
-        .option('prettier', {
-          desc: 'Write the prettier config.',
-          coerce: (val) => (val === true ? 'base' : val)
-        })
-        .option('plop', {
-          desc: 'Write the plop config.',
-          coerce: (val) => (val === true ? 'base' : val)
-        })
-        .option('husky', {
-          desc: 'Write the husky config.',
-          coerce: (val) => (val === true ? 'base' : val)
-        })
-        .option('lint-staged', {
-          desc: 'Write the lint-staged config.',
-          coerce: (val) => (val === true ? 'base' : val)
-        })
-        .option('semantic-release', {
-          desc: 'Write the semantic-release config.',
-          coerce: (val) => (val === true ? 'base' : val),
-          choices: [true, ...SEMANTIC_RELEASE_CONFIGS]
-        })
-        .option('targetDir', {
-          default: process.cwd(),
-          desc: 'Directory to write configs to.',
-          type: 'string'
-        })
-        .option('all', {
-          default: false,
-          desc: 'Write all base configurations.',
-          type: 'boolean'
-        }),
-    (args: BootstrapParams) => execute('bootstrap', args)
-  )
-  .command(
     'run <tool> [...tool options]',
     'Run any of the bundled tools.',
     (args: RunParams) => execute('run', args)
@@ -112,10 +64,10 @@ yargs
   .help()
   .version().argv;
 
-type CommandType = 'init' | 'bootstrap' | 'run';
+type CommandType = 'init' | 'run';
 
 function execute(command: CommandType, args: any) {
-  const commands = { bootstrap, run, init };
+  const commands = { run, init };
   const commandFn = commands[command];
 
   commandFn(args);
