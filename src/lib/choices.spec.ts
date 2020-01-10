@@ -1,4 +1,4 @@
-import { enumToChoices } from './prompts';
+import { enumToChoices } from './choices';
 
 describe('prompts', () => {
   describe('enumToChoices', () => {

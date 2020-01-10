@@ -13,8 +13,25 @@
  * limitations under the License.
  */
 
-export const base = {
+import { Options } from '../../types/shared';
+
+type SemanticReleaseOptions = Pick<Options, 'publish'>;
+
+type Branch = string | { name: string; prerelease: boolean };
+
+interface SemanticReleaseConfig {
+  extends?: string | string[];
+  branches?: Branch[];
+  plugins?: string[];
+  tagFormat?: string;
+  repositoryUrl?: string;
+  dryRun?: boolean;
+  ci?: boolean;
+}
+
+const base: SemanticReleaseConfig = {
   branches: [
+    '+([0-9])?(.{+([0-9]),x}).x',
     'master',
     'next',
     { name: 'alpha', prerelease: true },
@@ -28,7 +45,7 @@ export const base = {
   ]
 };
 
-export const modules = {
+const npm: SemanticReleaseConfig = {
   ...base,
   plugins: [
     '@semantic-release/commit-analyzer',
@@ -38,4 +55,13 @@ export const modules = {
   ]
 };
 
-export const SEMANTIC_RELEASE_CONFIGS = ['base', 'modules'];
+export const SEMANTIC_RELEASE_CONFIGS = ['base', 'npm'];
+
+export function config(
+  options: SemanticReleaseOptions = {},
+  overrides: SemanticReleaseConfig = {}
+) {
+  const { publish = false } = options;
+  const baseConfig = publish ? npm : base;
+  return { ...baseConfig, ...overrides };
+}

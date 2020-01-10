@@ -13,4 +13,6 @@
  * limitations under the License.
  */
 
-export * from './configs/lint-staged';
+import { config } from './configs/lint-staged/config';
+
+export = config;

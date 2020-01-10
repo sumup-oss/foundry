@@ -13,25 +13,26 @@
  * limitations under the License.
  */
 
-type LinterCommand = string | string[];
-type LinterFn = (filenames: string[]) => LinterCommand;
+import { merge } from 'lodash/fp';
 
-interface LintStagedConfig {
-  linters: {
-    [key: string]: LinterCommand | LinterFn;
-  };
+import { Options } from '../../types/shared';
+
+export type HuskyOptions = Partial<Options>;
+
+interface HuskyConfig {
+  skipCI?: boolean;
+  hooks?: { [key: string]: string };
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export const base: LintStagedConfig = {
-  linters: {
-    '*.jsx?': ['foundry run eslint --fix']
+export const base: HuskyConfig = {
+  hooks: {
+    'pre-commit': 'foundry run lint-staged'
   }
 };
 
-export const typescript: LintStagedConfig = {
-  linters: {
-    '*.jsx?': ['foundry run eslint --fix'],
-    '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
-  }
-};
+export function config(
+  options: HuskyOptions = {},
+  overrides: HuskyConfig = {}
+) {
+  return merge(base, overrides);
+}

@@ -13,14 +13,11 @@
  * limitations under the License.
  */
 
-interface HuskyConfig {
-  skipCI?: boolean;
-  hooks?: { [key: string]: string };
-}
-
-// eslint-disable-next-line import/prefer-default-export
-export const base: HuskyConfig = {
+// NOTE: Unfortunately, we can't use the config exported by Foundry itself,
+//       since it tries to run a command through Foundry. Packages cannot
+//       run their own binaries.
+module.exports = {
   hooks: {
-    'pre-commit': 'foundry run lint-staged'
+    'pre-commit': 'lint-staged'
   }
 };

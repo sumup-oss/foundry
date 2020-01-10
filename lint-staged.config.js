@@ -13,4 +13,10 @@
  * limitations under the License.
  */
 
-export default () => {};
+// NOTE: Unfortunately, we can't use the config exported by Foundry itself,
+//       since it tries to run a command through Foundry. Packages cannot
+//       run their own binaries.
+module.exports = {
+  '*.jsx?': ['yarn eslint --fix'],
+  '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
+};
