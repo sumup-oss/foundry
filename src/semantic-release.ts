@@ -13,4 +13,6 @@
  * limitations under the License.
  */
 
-export * from './configs/semantic-release';
+import { config } from './configs/semantic-release/config';
+
+export = config;

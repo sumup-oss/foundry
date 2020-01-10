@@ -1,0 +1,1565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "emotion",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "off",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:jest/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "env": Object {
+        "jest": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "globals": Object {
+        "act": true,
+        "actHook": true,
+        "axe": true,
+        "create": true,
+        "fireEvent": true,
+        "render": true,
+        "renderHook": true,
+        "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
+      },
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "jest",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:node/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "emotion",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "off",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:node/recommended",
+    "plugin:jest/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "env": Object {
+        "jest": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "globals": Object {
+        "act": true,
+        "actHook": true,
+        "axe": true,
+        "create": true,
+        "fireEvent": true,
+        "render": true,
+        "renderHook": true,
+        "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
+      },
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "jest",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:node/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "emotion",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "off",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:jest/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+    Object {
+      "env": Object {
+        "jest": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "globals": Object {
+        "act": true,
+        "actHook": true,
+        "axe": true,
+        "create": true,
+        "fireEvent": true,
+        "render": true,
+        "renderHook": true,
+        "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
+      },
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "jest",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:node/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "emotion",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "emotion/import-from-emotion": "error",
+    "emotion/jsx-import": "off",
+    "emotion/no-vanilla": "error",
+    "emotion/styled-import": "error",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:node/recommended",
+    "plugin:jest/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+    Object {
+      "env": Object {
+        "jest": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "globals": Object {
+        "act": true,
+        "actHook": true,
+        "axe": true,
+        "create": true,
+        "fireEvent": true,
+        "render": true,
+        "renderHook": true,
+        "renderToHtml": true,
+        "userEvent": true,
+        "wait": true,
+      },
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "jest",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:node/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+  },
+  "settings": Object {
+    "react": Object {
+      "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config with a copyright notice 1`] = `
+Object {
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "notice",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "notice/notice": Array [
+      "error",
+      Object {
+        "onNonMatchingHeader": "prepend",
+        "template": "/**
+ * Copyright <%= YEAR %>, <%= NAME %>
+ * Licensed under the Apache License, Version 2.0 (the \\"License\\");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an \\"AS IS\\" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+",
+        "templateVars": Object {
+          "NAME": "SumUp Ltd.",
+        },
+        "varRegexps": Object {
+          "NAME": /SumUp Ltd\\\\\\./,
+        },
+      },
+    ],
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;

@@ -13,4 +13,6 @@
  * limitations under the License.
  */
 
-export * from './configs/husky';
+import { config } from './configs/husky/config';
+
+export = config;

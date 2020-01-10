@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,25 +13,20 @@
  * limitations under the License.
  */
 
-type LinterCommand = string | string[];
-type LinterFn = (filenames: string[]) => LinterCommand;
+import { pick } from 'lodash/fp';
 
-interface LintStagedConfig {
-  linters: {
-    [key: string]: LinterCommand | LinterFn;
-  };
-}
+import { Options, File, Scripts } from '../../types/shared';
 
-// eslint-disable-next-line import/prefer-default-export
-export const base: LintStagedConfig = {
-  linters: {
-    '*.jsx?': ['foundry run eslint --fix']
-  }
-};
+export const files = (options: Options): File[] => [
+  {
+    name: '.releaserc.js',
+    content: `
+  module.exports = require('@sumup/foundry/semantic-release')(${JSON.stringify(
+    pick(['publish'], options),
+  )})`,
+  },
+];
 
-export const typescript: LintStagedConfig = {
-  linters: {
-    '*.jsx?': ['foundry run eslint --fix'],
-    '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
-  }
-};
+export const scripts = (): Scripts => ({
+  release: 'foundry run semantic-release',
+});

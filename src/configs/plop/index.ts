@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,20 @@
  * limitations under the License.
  */
 
-/* istanbul ignore file */
+import { pick } from 'lodash/fp';
 
-export { default as react } from './react';
-export { default as base } from './base';
+import { Options, File, Scripts } from '../../types/shared';
 
-export const PLOP_CONFIGS = ['base', 'react'];
+export const files = (options: Options): File[] => [
+  {
+    name: 'plopfile.js',
+    content: `
+    module.exports = require('@sumup/foundry/plop')(${JSON.stringify(
+      pick(['language'], options),
+    )})`,
+  },
+];
+
+export const scripts = (): Scripts => ({
+  'create:component': 'foundry run plop component',
+});

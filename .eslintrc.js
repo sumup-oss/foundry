@@ -13,4 +13,23 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/configs/eslint').node;
+module.exports = require('./dist/eslint')(
+  {
+    environments: ['Node'],
+    frameworks: ['Jest'],
+    openSource: true,
+  },
+  {
+    rules: {
+      'no-process-exit': 'off',
+    },
+    overrides: [
+      {
+        files: ['src/cli/index.ts'],
+        rules: {
+          'node/shebang': 'off',
+        },
+      },
+    ],
+  },
+);

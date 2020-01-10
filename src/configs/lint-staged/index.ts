@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,4 +13,16 @@
  * limitations under the License.
  */
 
-export default () => {};
+import { pick } from 'lodash/fp';
+
+import { Options, File } from '../../types/shared';
+
+export const files = (options: Options): File[] => [
+  {
+    name: 'lint-staged.config.js',
+    content: `
+    module.exports = require('@sumup/foundry/lint-staged')(${JSON.stringify(
+      pick(['language'], options),
+    )})`,
+  },
+];

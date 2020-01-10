@@ -27,20 +27,24 @@ interface SpawnOptions {
 const DEFAULT_OPTIONS: SpawnOptions = {
   cwd: process.cwd(),
   detached: true,
-  stdio: 'inherit'
+  stdio: 'inherit',
 };
 
-function getBufferContent(chunks: Uint8Array[]) {
+function getBufferContent(chunks: Uint8Array[]): string {
   return Buffer.concat(chunks).toString('utf8');
 }
 
-export function spawn(cmd: string, args: string[], options: SpawnOptions) {
+export function spawn(
+  cmd: string,
+  args: string[],
+  options: SpawnOptions,
+): Promise<string> {
   const stdout: Uint8Array[] = [];
 
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(process.execPath, [cmd, ...args], {
       ...DEFAULT_OPTIONS,
-      ...options
+      ...options,
     });
 
     if (child.stdout) {

@@ -1,6 +1,21 @@
-// TODO: Remove once https://github.com/plopjs/node-plop/issues/140 has been resolved.
+/**
+ * Copyright 2020, SumUp Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-import inquirer = require('inquirer');
+/* eslint-disable import/no-extraneous-dependencies */
+
+// TODO: Remove once https://github.com/plopjs/node-plop/issues/140 has been resolved.
 // @types/globby doesn't export types for GlobOptions, so we have to work a little bit to extract them:
 // GlobOptions is the second parameter of the sync function, which can be extracted with the Parameters<T> type
 import { GlobbyOptions } from 'globby';
@@ -89,7 +104,7 @@ export interface NodePlopAPI {
   load(
     target: string[] | string,
     loadCfg: PlopCfg,
-    includeOverride: boolean
+    includeOverride: boolean,
   ): void;
   /**
    * Sets the default config that will be used for this plopfile if it is
@@ -106,7 +121,7 @@ export interface NodePlopAPI {
    * Runs `template` through the handlebars template renderer using `data`.
    * @returns the rendered template.
    */
-  renderString(template: string, data: any): String; //set to any matching handlebars declaration
+  renderString(template: string, data: any): string; // set to any matching handlebars declaration
 
   // passthroughs for backward compatibility
   addPrompt: typeof inquirer.registerPrompt;
@@ -122,7 +137,7 @@ export interface PlopGenerator {
   /**
    * Questions to ask the user.
    */
-  prompts: inquirer.Question[];
+  prompts: inquirer.QuestionGroup;
   /**
    * Actions to perform.
    * If your list of actions needs to be dynamic, take a look at
@@ -145,7 +160,7 @@ export type CustomActionFunction<TData extends object = object> = (
   /**
    * The plop api for the plopfile where this action is being run.
    */
-  plopfileApi?: NodePlopAPI
+  plopfileApi?: NodePlopAPI,
 ) => Promise<ActionType[]> | ActionType[];
 
 export type ActionType<TData extends object = object> =

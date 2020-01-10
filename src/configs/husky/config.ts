@@ -13,14 +13,26 @@
  * limitations under the License.
  */
 
+import { merge } from 'lodash/fp';
+
+import { Options } from '../../types/shared';
+
+export type HuskyOptions = Partial<Options>;
+
 interface HuskyConfig {
   skipCI?: boolean;
   hooks?: { [key: string]: string };
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const base: HuskyConfig = {
   hooks: {
-    'pre-commit': 'foundry run lint-staged'
-  }
+    'pre-commit': 'foundry run lint-staged',
+  },
 };
+
+export function config(
+  options: HuskyOptions = {},
+  overrides: HuskyConfig = {},
+): HuskyConfig {
+  return merge(base, overrides);
+}
