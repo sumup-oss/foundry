@@ -48,19 +48,14 @@ const base = {
     '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     'max-len': [
       'error',
-      {
-        code: 80,
-        tabWidth: 2,
-        ignoreComments: true,
-        ignoreUrls: true,
-      },
+      { code: 80, tabWidth: 2, ignoreComments: true, ignoreUrls: true },
     ],
     'no-underscore-dangle': [
       'error',
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] },
     ],
     'import/prefer-default-export': 'off',
-    // Handled by prettier.
+    // The rules below are already covered by prettier.
     'quote-props': 'off',
     'comma-dangle': 'off',
     'object-curly-newline': 'off',
@@ -79,9 +74,7 @@ const base = {
       rules: {
         'import/no-extraneous-dependencies': [
           'error',
-          {
-            devDependencies: true,
-          },
+          { devDependencies: true },
         ],
       },
     },
@@ -112,9 +105,7 @@ function customizeLanguage(
           rules: {
             'import/no-extraneous-dependencies': [
               'error',
-              {
-                devDependencies: true,
-              },
+              { devDependencies: true },
             ],
           },
         },
@@ -166,16 +157,8 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
       },
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      settings: {
-        react: {
-          version: 'detect',
-        },
-      },
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      settings: { react: { version: 'detect' } },
     },
     [Framework.EMOTION]: {
       plugins: ['emotion'],
@@ -216,9 +199,7 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
             renderHook: true,
             axe: true,
           },
-          env: {
-            jest: true,
-          },
+          env: { jest: true },
         },
       ],
     },
