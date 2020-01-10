@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import path from 'path';
+import { promisify } from 'util';
 import prettier from 'prettier';
 import pkgUp from 'pkg-up';
 
 import { Language, PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
+
+const writeFileAsync = promisify(fs.writeFile);
 
 export function writeFile(
   configDir: string,
@@ -33,7 +36,7 @@ export function writeFile(
   const filePath = path.resolve(targetDir, filename);
   const flag = shouldOverwrite ? 'w' : 'wx';
 
-  return fs.writeFile(filePath, fileContent, { flag });
+  return writeFileAsync(filePath, fileContent, { flag });
 }
 
 export async function findPackageJson(): Promise<string> {
@@ -61,5 +64,5 @@ export function addPackageScript(
 export async function savePackageJson(packageJson: PackageJson): Promise<void> {
   const packagePath = await findPackageJson();
   const content = `${JSON.stringify(packageJson, null, 2)}\n`;
-  return fs.writeFile(packagePath, content);
+  return writeFileAsync(packagePath, content);
 }

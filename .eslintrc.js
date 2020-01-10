@@ -13,9 +13,24 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/eslint')({
-  language: 'TypeScript',
-  environments: ['Node'],
-  frameworks: ['Jest'],
-  openSource: true,
-});
+module.exports = require('./dist/eslint')(
+  {
+    language: 'TypeScript',
+    environments: ['Node'],
+    frameworks: ['Jest'],
+    openSource: true,
+  },
+  {
+    rules: {
+      'no-process-exit': 'off',
+    },
+    overrides: [
+      {
+        files: ['src/cli/index.ts'],
+        rules: {
+          'node/shebang': 'off',
+        },
+      },
+    ],
+  },
+);
