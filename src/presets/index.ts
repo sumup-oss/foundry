@@ -30,7 +30,7 @@ const release = {
     'Automatically generate release notes and (optionally) publish to NPM'
   ),
   value: Preset.RELEASE,
-  short: 'Templates',
+  short: 'Release',
   tools: [Tool.SEMANTIC_RELEASE],
   prompts: [Prompt.PUBLISH]
 };
