@@ -37,9 +37,11 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -156,9 +158,11 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -241,10 +245,12 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
       "jsx": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -307,6 +313,7 @@ Object {
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:node/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -341,9 +348,11 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -383,6 +392,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -401,6 +413,7 @@ Object {
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:node/recommended",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -468,9 +481,11 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -506,6 +521,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -524,6 +542,7 @@ Object {
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:node/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -561,10 +580,12 @@ Object {
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
-      "ecmaVersion": 2017,
       "impliedStrict": true,
       "jsx": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
+    "sourceType": "module",
   },
   "plugins": Array [
     "prettier",
@@ -602,6 +623,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -663,6 +687,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -676,9 +701,14 @@ Object {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -781,6 +811,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -826,9 +857,14 @@ Object {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -929,6 +965,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -944,10 +981,13 @@ Object {
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -1022,6 +1062,7 @@ Object {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
+    "plugin:node/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1054,6 +1095,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -1075,9 +1117,14 @@ Object {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -1125,6 +1172,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -1147,6 +1197,7 @@ Object {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
+    "plugin:node/recommended",
     "plugin:jest/recommended",
   ],
   "globals": Object {
@@ -1180,6 +1231,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -1233,9 +1285,14 @@ Object {
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -1279,6 +1336,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -1301,6 +1361,7 @@ Object {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
+    "plugin:node/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier/react",
@@ -1336,6 +1397,7 @@ Object {
             "devDependencies": true,
           },
         ],
+        "node/no-extraneous-import": "off",
       },
     },
     Object {
@@ -1359,10 +1421,13 @@ Object {
   "parserOptions": Object {
     "ecmaFeatures": Object {
       "jsx": true,
+      "modules": true,
     },
+    "ecmaVersion": 6,
     "project": Array [
       "./tsconfig.json",
     ],
+    "sourceType": "module",
     "tsconfigRootDir": "/project/dir",
   },
   "plugins": Array [
@@ -1408,6 +1473,9 @@ Object {
       },
     ],
     "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
