@@ -37,7 +37,7 @@ jobs:
       #     command: yarn lint --format junit -o __reports__/junit/eslint-results.xml
       - run:
           name: 'Test'
-          command: yarn test --ci --runInBand --coverage --reporters default --reporters "jest-junit"
+          command: yarn test:ci
           environment:
             JEST_JUNIT_OUTPUT: '__reports__/junit/jest-results.xml'
       - run:

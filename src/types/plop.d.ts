@@ -122,7 +122,7 @@ export interface PlopGenerator {
   /**
    * Questions to ask the user.
    */
-  prompts: inquirer.Question[];
+  prompts: inquirer.QuestionGroup;
   /**
    * Actions to perform.
    * If your list of actions needs to be dynamic, take a look at

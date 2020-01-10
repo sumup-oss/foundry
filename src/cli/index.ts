@@ -17,16 +17,48 @@
 
 import yargs from 'yargs';
 
-import { bootstrap, BootstrapParams } from './cli/bootstrap';
-import { run, RunParams } from './cli/run';
+import { Preset, Language, Target } from '../types/shared';
+import { enumToChoices } from '../lib/prompts';
+import { eslint, semanticRelease } from '../configs';
 
-import { eslint, semanticRelease } from './configs';
+import { bootstrap, BootstrapParams } from './bootstrap';
+import { run, RunParams } from './run';
+import { init, InitParams } from './init';
 
 const { ESLINT_CONFIGS } = eslint;
 const { SEMANTIC_RELEASE_CONFIGS } = semanticRelease;
 
-// eslint-disable-next-line
 yargs
+  .command(
+    'init',
+    "Initialize Foundry's tools in your project",
+    (yrgs) =>
+      yrgs
+        .option('presets', {
+          desc:
+            'A preset configures a group of tools that solve a common problem',
+          choices: enumToChoices(Preset),
+          type: 'array'
+        })
+        .option('language', {
+          desc: 'The programming language the project uses',
+          choices: enumToChoices(Language)
+        })
+        .option('target', {
+          desc: 'The platform that the project targets',
+          choices: enumToChoices(Target)
+        })
+        .option('publish', {
+          desc: 'Whether to publish to NPM',
+          type: 'boolean'
+        })
+        .option('configDir', {
+          desc: 'The directory to write configs to',
+          type: 'string',
+          default: '.'
+        }),
+    (args: InitParams) => execute('init', args)
+  )
   .command(
     'bootstrap-config',
     'Set up custom configurations for Eslint, Prettier, Semantic Release etc.',
@@ -80,10 +112,10 @@ yargs
   .help()
   .version().argv;
 
-type CommandType = 'bootstrap' | 'run';
+type CommandType = 'init' | 'bootstrap' | 'run';
 
 function execute(command: CommandType, args: any) {
-  const commands = { bootstrap, run };
+  const commands = { bootstrap, run, init };
   const commandFn = commands[command];
 
   commandFn(args);
