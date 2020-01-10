@@ -5,7 +5,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -97,7 +97,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -218,7 +218,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'React', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -319,7 +319,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -411,7 +411,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -532,7 +532,7 @@ exports[`eslint with options should return a config for { language: 'JavaScript'
   frameworks: [ 'React', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -633,7 +633,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -742,7 +742,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -880,7 +880,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'React', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Browser": true,
+    "browser": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -1000,7 +1000,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -1109,7 +1109,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
@@ -1247,7 +1247,7 @@ exports[`eslint with options should return a config for { language: 'TypeScript'
   frameworks: [ 'React', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
-    "Node": true,
+    "node": true,
   },
   "extends": Array [
     "eslint:recommended",
