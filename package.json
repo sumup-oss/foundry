@@ -6,7 +6,7 @@
   "repository": "github:sumup/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>",
   "license": "Apache-2.0",
-  "bin": "cli",
+  "bin": "cli/index.js",
   "scripts": {
     "build": "yarn cleanup && yarn copy && tsc && chmod +x dist/cli/index.js",
     "dev": "yarn cleanup && yarn copy && tsc --watch",
