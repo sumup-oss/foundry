@@ -133,12 +133,20 @@ function customizeLanguage(
 }
 
 function customizeEnv(environments?: Environment[]): EslintConfig {
+  const environmentMap = {
+    [Environment.NODE]: {
+      env: { node: true },
+    },
+    [Environment.BROWSER]: {
+      env: { browser: true },
+    },
+  };
   return (config: EslintConfig): EslintConfig => {
     if (!environments || isEmpty(environments)) {
       return config;
     }
     return environments.reduce((acc, environment: Environment) => {
-      const overrides = { env: { [environment]: true } };
+      const overrides = environmentMap[environment];
       return customizeConfig(acc, overrides);
     }, config);
   };

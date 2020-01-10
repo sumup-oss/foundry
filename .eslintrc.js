@@ -14,7 +14,7 @@
  */
 
 module.exports = require('./dist/eslint')({
-  environments: ['node'],
+  environments: ['Node'],
   frameworks: ['Jest'],
   openSource: true,
 });
