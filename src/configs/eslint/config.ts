@@ -45,7 +45,6 @@ const base = {
   rules: {
     'curly': ['error', 'all'],
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     'max-len': [
       'error',
       { code: 80, tabWidth: 2, ignoreComments: true, ignoreUrls: true },
@@ -81,9 +80,7 @@ const base = {
   ],
 };
 
-function customizeLanguage(
-  language: Language = Language.TYPESCRIPT,
-): EslintConfig {
+function customizeLanguage(language?: Language): EslintConfig {
   const languageMap = {
     [Language.TYPESCRIPT]: {
       extends: [
@@ -99,6 +96,12 @@ function customizeLanguage(
         tsconfigRootDir: process.cwd(),
         project: ['./tsconfig.json'],
       },
+      rules: {
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          { functions: false },
+        ],
+      },
       overrides: [
         {
           files: ['*.d.ts'],
@@ -107,6 +110,12 @@ function customizeLanguage(
               'error',
               { devDependencies: true },
             ],
+          },
+        },
+        {
+          files: ['*.spec.*'],
+          rules: {
+            '@typescript-eslint/no-var-requires': 'off',
           },
         },
       ],
@@ -136,6 +145,14 @@ function customizeEnv(environments?: Environment[]): EslintConfig {
   const environmentMap = {
     [Environment.NODE]: {
       env: { node: true },
+      overrides: [
+        {
+          files: ['*.spec.*'],
+          rules: {
+            'node/no-unpublished-import': 'off',
+          },
+        },
+      ],
     },
     [Environment.BROWSER]: {
       env: { browser: true },
