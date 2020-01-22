@@ -18,6 +18,7 @@ import { access, readFile } from 'fs';
 import { promisify } from 'util';
 import { isString } from 'lodash/fp';
 
+import { PackageJson } from '../types/shared';
 import { spawn } from '../lib/spawn';
 import * as logger from '../lib/logger';
 
@@ -46,7 +47,7 @@ async function resolveTo(path: string, name: string): Promise<string> {
 
 async function getPackageJsonPath(
   name: string,
-  useRelative: boolean = false
+  useRelative = false,
 ): Promise<string> {
   const pathMain: string = require.resolve(name);
   const pathPackage: string = await resolveTo(pathMain, 'package.json');
@@ -58,7 +59,7 @@ function isRelativePath(path: string): boolean {
   return firstChar === '.';
 }
 
-async function loadJson(path: string) {
+async function loadJson(path: string): Promise<PackageJson> {
   const isRelative = isRelativePath(path);
   if (isRelative) {
     throw new TypeError(`Relative paths are not supported: ${path}`);
@@ -67,13 +68,13 @@ async function loadJson(path: string) {
     const data = await readFileAsync(path);
     return JSON.parse(data.toString());
   } catch (err) {
-    return new Error(`Path does not exist. ${path}`);
+    throw new Error(`Path does not exist. ${path}`);
   }
 }
 
 async function resolveBinaryPath(
   name: string,
-  useRelative: boolean = false
+  useRelative = false,
 ): Promise<string | null> {
   try {
     // This could potentially break, if the name of a binary (name) is different
@@ -92,7 +93,7 @@ async function resolveBinaryPath(
   }
 }
 
-function getToolArguments() {
+function getToolArguments(): string[] {
   // The standard 2 indicating node binary, executing script, and
   // the run command and the tool argument.
   const SKIP_COUNT = 4;
@@ -100,9 +101,9 @@ function getToolArguments() {
   return argv.slice(SKIP_COUNT);
 }
 
-async function executeBinary(path: string, args: any) {
+async function executeBinary(path: string, args: string[]): Promise<string> {
   return spawn(path, args, {
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
 }
 
@@ -112,7 +113,7 @@ export interface RunParams {
   };
 }
 
-export async function run({ argv }: RunParams) {
+export async function run({ argv }: RunParams): Promise<void> {
   const { _: commandArgs } = argv;
   const [, tool] = commandArgs;
   const binPath = await resolveBinaryPath(tool);
@@ -128,7 +129,7 @@ export async function run({ argv }: RunParams) {
     await executeBinary(binPath, binArgs);
   } catch (err) {
     logger.error(
-      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`
+      `Executing the command "${binPath} ${binArgs.join(' ')}" failed`,
     );
     logger.error(err);
     process.exit(1);

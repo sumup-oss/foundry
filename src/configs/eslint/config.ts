@@ -13,48 +13,242 @@
  * limitations under the License.
  */
 
-import merge from 'webpack-merge';
+import process from 'process';
+import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Target, Options } from '../../types/shared';
+import { Options, Language, Environment, Framework } from '../../types/shared';
 
-type EslintOptions = Pick<Options, 'target'>;
+type EslintOptions = Pick<
+  Options,
+  'language' | 'environments' | 'frameworks' | 'openSource'
+>;
+// NOTE: Using the Linter.Config interface from Eslint causes errors
+//       and I couldn't figure out how to fix them. — @connor_baer
+type EslintConfig = any;
 
-export const overwritePresets = merge({
-  customizeArray(a: any[], b: any[], key: string) {
-    return key === 'extends' ? b : undefined;
-  },
-  customizeObject(a: object, b: object, key: string) {
-    return key === 'rules' ? { ...a, ...b } : undefined;
+export const customizeConfig = mergeWith(customizer);
+
+function customizer(objValue: any, srcValue: any, key: string): any {
+  if (isArray(objValue)) {
+    return uniq([...objValue, ...srcValue]);
   }
-});
+  if (isObject(objValue)) {
+    return key === 'rules' ? { ...objValue, ...srcValue } : undefined;
+  }
+  return undefined;
+}
 
 const base = {
-  extends: [
-    'airbnb-base',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended'
-  ],
-  plugins: ['prettier', 'jest', 'cypress', 'notice'],
+  root: true,
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  plugins: ['prettier'],
   rules: {
-    'no-use-before-define': ['error', { functions: false }],
+    'curly': ['error', 'all'],
+    'no-use-before-define': 'off',
     'max-len': [
       'error',
-      {
-        code: 80,
-        tabWidth: 2,
-        ignoreComments: true,
-        ignoreUrls: true
-      }
+      { code: 80, tabWidth: 2, ignoreComments: true, ignoreUrls: true },
     ],
-    'curly': ['error', 'all'],
     'no-underscore-dangle': [
       'error',
-      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] }
+      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] },
     ],
-    'notice/notice': [
-      'error',
-      {
-        template: `/**
+    'import/prefer-default-export': 'off',
+    // The rules below are already covered by prettier.
+    'quote-props': 'off',
+    'comma-dangle': 'off',
+    'object-curly-newline': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
+    'operator-linebreak': 'off',
+  },
+  globals: {
+    __DEV__: true,
+    __PRODUCTION__: true,
+    __TEST__: true,
+  },
+  overrides: [
+    {
+      files: ['*.config.js', '.*rc.js'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
+      },
+    },
+  ],
+};
+
+function customizeLanguage(language?: Language): EslintConfig {
+  const languageMap = {
+    [Language.TYPESCRIPT]: {
+      extends: [
+        'airbnb-typescript/base',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'prettier/@typescript-eslint',
+      ],
+      plugins: ['@typescript-eslint'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        tsconfigRootDir: process.cwd(),
+        project: ['./tsconfig.json'],
+      },
+      rules: {
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          { functions: false },
+        ],
+      },
+      overrides: [
+        {
+          files: ['*.d.ts'],
+          rules: {
+            'import/no-extraneous-dependencies': [
+              'error',
+              { devDependencies: true },
+            ],
+          },
+        },
+        {
+          files: ['*.spec.*'],
+          rules: {
+            '@typescript-eslint/no-var-requires': 'off',
+          },
+        },
+      ],
+    },
+    [Language.JAVASCRIPT]: {
+      extends: ['airbnb-base'],
+      parser: 'babel-eslint',
+      parserOptions: {
+        allowImportExportEverywhere: true,
+        ecmaFeatures: {
+          ecmaVersion: 2017,
+          impliedStrict: true,
+        },
+      },
+    },
+  };
+  return (config: EslintConfig): EslintConfig => {
+    if (!language) {
+      return config;
+    }
+    const overrides = languageMap[language];
+    return customizeConfig(config, overrides);
+  };
+}
+
+function customizeEnv(environments?: Environment[]): EslintConfig {
+  const environmentMap = {
+    [Environment.NODE]: {
+      env: { node: true },
+      overrides: [
+        {
+          files: ['*.spec.*'],
+          rules: {
+            'node/no-unpublished-import': 'off',
+          },
+        },
+      ],
+    },
+    [Environment.BROWSER]: {
+      env: { browser: true },
+    },
+  };
+  return (config: EslintConfig): EslintConfig => {
+    if (!environments || isEmpty(environments)) {
+      return config;
+    }
+    return environments.reduce((acc, environment: Environment) => {
+      const overrides = environmentMap[environment];
+      return customizeConfig(acc, overrides);
+    }, config);
+  };
+}
+
+function customizeFramework(frameworks?: Framework[]): EslintConfig {
+  const frameworkMap = {
+    [Framework.REACT]: {
+      extends: [
+        'plugin:react/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier/react',
+      ],
+      plugins: ['react', 'react-hooks', 'jsx-a11y'],
+      rules: {
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
+      },
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      settings: { react: { version: 'detect' } },
+    },
+    [Framework.EMOTION]: {
+      plugins: ['emotion'],
+      rules: {
+        'emotion/jsx-import': 'off',
+        'emotion/no-vanilla': 'error',
+        'emotion/import-from-emotion': 'error',
+        'emotion/styled-import': 'error',
+      },
+    },
+    [Framework.JEST]: {
+      extends: ['plugin:jest/recommended'],
+      plugins: ['jest'],
+      overrides: [
+        {
+          files: ['**/*spec.*'],
+          rules: {
+            'max-len': [
+              'error',
+              {
+                code: 80,
+                tabWidth: 2,
+                ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
+                ignoreComments: true,
+                ignoreUrls: true,
+              },
+            ],
+          },
+          globals: {
+            render: true,
+            create: true,
+            renderToHtml: true,
+            fireEvent: true,
+            userEvent: true,
+            wait: true,
+            act: true,
+            actHook: true,
+            renderHook: true,
+            axe: true,
+          },
+          env: { jest: true },
+        },
+      ],
+    },
+  };
+  return (config: EslintConfig): EslintConfig => {
+    if (!frameworks || isEmpty(frameworks)) {
+      return config;
+    }
+    return frameworks.reduce((acc, framework: Framework) => {
+      const overrides = frameworkMap[framework];
+      return customizeConfig(acc, overrides);
+    }, config);
+  };
+}
+
+function addCopyrightNotice(openSource?: boolean): EslintConfig {
+  return (config: EslintConfig): EslintConfig => {
+    const copyrightNotice = {
+      plugins: ['notice'],
+      rules: {
+        'notice/notice': [
+          'error',
+          {
+            template: `/**
  * Copyright <%= YEAR %>, <%= NAME %>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,115 +264,34 @@ const base = {
  */
 
 `,
-        templateVars: { NAME: 'SumUp Ltd.' },
-        varRegexps: { NAME: /SumUp Ltd\./ },
-        onNonMatchingHeader: 'report'
-      }
-    ]
-  },
-  globals: {
-    __DEV__: true,
-    __PRODUCTION__: true,
-    __TEST__: true
-  },
-  parser: 'babel-eslint',
-  parserOptions: {
-    allowImportExportEverywhere: true,
-    ecmaFeatures: {
-      ecmaVersion: 2017,
-      impliedStrict: true
-    }
-  },
-  overrides: [
-    {
-      files: ['**/*spec.js', 'e2e/**/*.js'],
-      rules: {
-        'max-len': [
-          'error',
-          {
-            code: 80,
-            tabWidth: 2,
-            ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
-            ignoreComments: true,
-            ignoreUrls: true
-          }
-        ]
+            templateVars: { NAME: 'SumUp Ltd.' },
+            varRegexps: { NAME: /SumUp Ltd\./ },
+            onNonMatchingHeader: 'prepend',
+          },
+        ],
       },
-      globals: {
-        mount: true,
-        shallow: true,
-        render: true,
-        create: true,
-        axe: true,
-        renderToHtml: true
-      },
-      env: {
-        'jest/globals': true,
-        'cypress/globals': true
-      }
-    },
-    {
-      files: ['*.config.js', '.*rc.js'],
-      rules: {
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: true
-          }
-        ]
-      }
+    };
+    if (!openSource) {
+      return config;
     }
-  ]
-};
+    return customizeConfig(config, copyrightNotice);
+  };
+}
 
-export const browser = base;
+function applyOverrides(overrides: EslintConfig): EslintConfig {
+  return (config: EslintConfig): EslintConfig =>
+    customizeConfig(config, overrides);
+}
 
-// TODO: add node specific config here.
-export const node = overwritePresets(base, { env: { node: true } });
-
-export const react = overwritePresets(base, {
-  extends: [
-    'airbnb-base',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
-    'prettier/react'
-  ],
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'emotion'],
-  rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'emotion/jsx-import': 'error',
-    'emotion/no-vanilla': 'error',
-    'emotion/import-from-emotion': 'error',
-    'emotion/styled-import': 'error',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true
-      }
-    ]
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  env: {
-    browser: true
-  }
-});
-
-export const ESLINT_CONFIGS = ['browser', 'node', 'react'];
-
-const TARGETS = {
-  [Target.BROWSER]: browser,
-  [Target.NODE]: node,
-  [Target.REACT]: react
-};
-
-export function config(options: EslintOptions = {}, overrides: any = {}) {
-  const { target = Target.BROWSER } = options;
-  const baseConfig = TARGETS[target];
-  return overwritePresets(baseConfig, overrides);
+export function createConfig(
+  options: EslintOptions = {},
+  overrides: EslintConfig = {},
+): EslintConfig {
+  return flow(
+    customizeLanguage(options.language),
+    customizeEnv(options.environments),
+    customizeFramework(options.frameworks),
+    addCopyrightNotice(options.openSource),
+    applyOverrides(overrides),
+  )(base);
 }

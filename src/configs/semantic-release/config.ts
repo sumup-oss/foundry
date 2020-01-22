@@ -36,13 +36,13 @@ const base: SemanticReleaseConfig = {
     'next',
     { name: 'alpha', prerelease: true },
     { name: 'beta', prerelease: true },
-    { name: 'canary', prerelease: true }
+    { name: 'canary', prerelease: true },
   ],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/github'
-  ]
+    '@semantic-release/github',
+  ],
 };
 
 const npm: SemanticReleaseConfig = {
@@ -51,16 +51,14 @@ const npm: SemanticReleaseConfig = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
-    '@semantic-release/github'
-  ]
+    '@semantic-release/github',
+  ],
 };
-
-export const SEMANTIC_RELEASE_CONFIGS = ['base', 'npm'];
 
 export function config(
   options: SemanticReleaseOptions = {},
-  overrides: SemanticReleaseConfig = {}
-) {
+  overrides: SemanticReleaseConfig = {},
+): SemanticReleaseConfig {
   const { publish = false } = options;
   const baseConfig = publish ? npm : base;
   return { ...baseConfig, ...overrides };

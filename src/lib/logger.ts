@@ -21,25 +21,27 @@ type LogMessage = string | string[];
 const IS_DEBUG =
   process.argv.includes('--debug') || process.env.NODE_ENV === 'DEBUG';
 
-const getMessage = (arg: LogMessage): string =>
-  Array.isArray(arg) ? arg.join('\n') : arg;
+const getMessage = (arg: LogMessage): string => {
+  const message = Array.isArray(arg) ? arg.join('\n') : arg;
+  return message;
+};
 
-export const error = (arg: LogMessage) => {
+export const error = (arg: LogMessage): void => {
   const msg = getMessage(arg);
   console.error(`🚨 ${chalk.red(msg)}`);
 };
 
-export const warn = (arg: LogMessage) => {
+export const warn = (arg: LogMessage): void => {
   const msg = getMessage(arg);
   console.warn(`⚠️ ${chalk.yellow(msg)}`);
 };
 
-export const log = (arg: LogMessage) => {
+export const log = (arg: LogMessage): void => {
   const msg = getMessage(arg);
   console.log(`ℹ️ ${msg}`);
 };
 
-export const debug = (arg: LogMessage) => {
+export const debug = (arg: LogMessage): void => {
   if (!IS_DEBUG) {
     return;
   }

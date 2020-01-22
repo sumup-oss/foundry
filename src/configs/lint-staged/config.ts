@@ -24,23 +24,23 @@ interface LintStagedConfig {
 }
 
 export const javascript: LintStagedConfig = {
-  '*.jsx?': ['foundry run eslint --fix']
+  '*.(js|jsx)': ['foundry run eslint --fix'],
 };
 
 export const typescript: LintStagedConfig = {
-  '*.jsx?': ['foundry run eslint --fix'],
-  '*.tsx?': () => 'tsc -p tsconfig.json --noEmit'
+  '*.(js|jsx)': ['foundry run eslint --fix'],
+  '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
 };
 
 const LANGUAGES = {
   [Language.JAVASCRIPT]: javascript,
-  [Language.TYPESCRIPT]: typescript
+  [Language.TYPESCRIPT]: typescript,
 };
 
 export function config(
   options: LintStagedOptions = {},
-  overrides: LintStagedConfig = {}
-) {
+  overrides: LintStagedConfig = {},
+): LintStagedConfig {
   const { language = Language.JAVASCRIPT } = options;
   const baseConfig = LANGUAGES[language];
   return { ...baseConfig, ...overrides };

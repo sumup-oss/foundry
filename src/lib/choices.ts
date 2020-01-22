@@ -1,3 +1,20 @@
+/**
+ * Copyright 2020, SumUp Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { isArray } from 'lodash/fp';
+
 export function enumToChoices(enums: { [key: string]: string }): string[] {
   return Object.values(enums);
 }
@@ -6,21 +23,24 @@ type Choices = { [key: string]: any };
 
 export function getAllChoiceCombinations(possibleChoices: Choices): Choices[] {
   return Object.entries(possibleChoices).reduce(
-    (acc, [optionName, choiceEnum]) => {
+    (acc, [optionName, choices]) => {
+      const isMultiple = isArray(choices);
+      const choiceEnum = isMultiple ? choices[0] : choices;
       const choicesForOption = Object.values(choiceEnum);
       const allCombinations: Choices[] = [];
 
       acc.forEach((combination: Choices) => {
-        choicesForOption.forEach((choice: any) => {
+        choicesForOption.forEach((value: any) => {
+          const choice = isMultiple ? [value] : value;
           allCombinations.push({
             ...combination,
-            [optionName]: choice
+            [optionName]: choice,
           });
         });
       });
 
       return allCombinations;
     },
-    [{}]
+    [{}],
   );
 }

@@ -25,11 +25,13 @@ import {
   Preset,
   Prompt,
   Language,
-  Target,
+  Environment,
+  Framework,
   Tool,
   ToolOptions,
   File,
-  Scripts
+  Scripts,
+  PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { enumToChoices } from '../lib/choices';
@@ -37,7 +39,7 @@ import {
   writeFile,
   findPackageJson,
   addPackageScript,
-  savePackageJson
+  savePackageJson,
 } from '../lib/files';
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
@@ -46,13 +48,15 @@ export interface InitParams {
   configDir: string;
   presets?: Preset[];
   language?: Language;
-  target?: Target;
+  environments?: Environment[];
+  frameworks?: Framework[];
+  openSource?: boolean;
   publish?: boolean;
   $0?: string;
   _?: string[];
 }
 
-export async function init(args: InitParams) {
+export async function init(args: InitParams): Promise<void> {
   const initialAnswers = await inquirer.prompt([
     {
       type: 'checkbox',
@@ -61,127 +65,145 @@ export async function init(args: InitParams) {
       choices: presetChoices,
       default: args.presets,
       validate: validatePresets,
-      when: () => validatePresets(args.presets as Preset[]) !== true
-    }
+      when: (): boolean => validatePresets(args.presets as Preset[]) !== true,
+    },
   ]);
 
   const prompts = {
-    language: {
+    [Prompt.LANGUAGE]: {
       type: 'list',
       name: 'language',
       message: 'Which programming language does the project use?',
       choices: enumToChoices(Language),
       default: Language.TYPESCRIPT,
-      when: () => !args.language
+      when: (): boolean => !args.language,
     },
-    target: {
-      type: 'list',
-      name: 'target',
-      message: 'Which platform does the project target?',
-      choices: enumToChoices(Target),
-      default: Target.BROWSER,
-      when: () => !args.target
+    [Prompt.ENVIRONMENTS]: {
+      type: 'checkbox',
+      name: 'environments',
+      message: 'Which environment(s) will the code run in?',
+      choices: enumToChoices(Environment),
+      when: (): boolean => isEmpty(args.environments),
     },
-    publish: {
+    [Prompt.FRAMEWORKS]: {
+      type: 'checkbox',
+      name: 'frameworks',
+      message: 'Which framework(s) does the project use?',
+      choices: enumToChoices(Framework),
+      when: (): boolean => !args.frameworks,
+    },
+    [Prompt.PUBLISH]: {
       type: 'confirm',
       name: 'publish',
       message: 'Would you like to publish your package to NPM?',
       default: false,
-      when: () => typeof args.publish === 'undefined'
-    }
+      when: (): boolean => typeof args.publish === 'undefined',
+    },
+    [Prompt.OPEN_SOURCE]: {
+      type: 'confirm',
+      name: 'openSource',
+      message: 'Do you plan to open-source this project?',
+      default: false,
+      when: (): boolean => typeof args.openSource === 'undefined',
+    },
   };
 
   const additionalPrompts = getPromptsForPresets(
     initialAnswers.presets,
-    prompts
+    prompts,
   );
   const additionalAnswers = await inquirer.prompt(additionalPrompts);
 
   const answers = { ...initialAnswers, ...additionalAnswers };
   const options = mergeOptions(args, answers);
-  const tools = getToolsForPresets(options.presets);
-  const files = getFilesForTools(options, tools);
-  const scripts = getScriptsForTools(options, tools);
+  const selectedTools = getToolsForPresets(options.presets);
+  const files = getFilesForTools(options, selectedTools);
+  const scripts = getScriptsForTools(options, selectedTools);
+
+  // Add an empty line between the prompts and the tasks ✨
+  // eslint-disable-next-line no-console
+  console.log('');
 
   const tasks = new Listr([
     {
-      title: 'Write config files',
-      task: () =>
+      title: 'Writing config files',
+      task: (): Listr<never> =>
         new Listr(
           files.map((file) => ({
-            title: `Writing "${file.name}"...`,
-            task: async (ctx: never, task) =>
+            title: `Write "${file.name}"`,
+            task: (ctx: never, task): Promise<void> =>
               writeFile(options.configDir, file.name, file.content).catch(() =>
                 listrInquirer(
                   [
                     {
                       type: 'confirm',
                       name: 'overwrite',
+                      // eslint-disable-next-line max-len
                       message: `"${file.name}" already exists. Would you like to replace it?`,
-                      default: false
-                    }
+                      default: false,
+                    },
                   ],
-                  (answers: { overwrite: boolean }) => {
-                    if (!answers.overwrite) {
+                  ({ overwrite }: { overwrite: boolean }) => {
+                    if (!overwrite) {
                       return task.skip('Skipped');
                     }
                     return writeFile(
                       options.configDir,
                       file.name,
                       file.content,
-                      true
+                      true,
                     );
-                  }
-                )
-              )
-          }))
-        )
+                  },
+                ),
+              ),
+          })),
+        ),
     },
     {
-      title: 'Add scripts to package.json',
-      task: async () => {
+      title: 'Adding scripts to package.json',
+      // eslint-disable-next-line @typescript-eslint/require-await
+      task: async (): Promise<Listr> => {
         type Context = {
           packagePath: string;
-          packageJson: {
-            scripts: Scripts;
-          };
+          packageJson: PackageJson;
         };
         return new Listr<Context>([
           {
-            title: 'Read package.json...',
-            task: async (ctx) => {
+            title: 'Read package.json',
+            task: async (ctx): Promise<void> => {
               ctx.packagePath = await findPackageJson();
+              // eslint-disable-next-line import/no-dynamic-require, global-require
               ctx.packageJson = require(ctx.packagePath);
-            }
+            },
           },
           ...Object.entries(scripts).map(([key, value]) => ({
-            title: `Adding "${key}" script to package.json...`,
-            task: (ctx: Context, task: ListrTaskWrapper<Context>) => {
+            title: `Adding "${key}" script to package.json`,
+            task: (ctx: Context, task: ListrTaskWrapper<Context>): void => {
               try {
-                return addPackageScript(ctx.packageJson, key, value);
+                addPackageScript(ctx.packageJson, key, value);
               } catch (error) {
-                return task.skip(error.message);
+                task.skip(error.message);
               }
-            }
+            },
           })),
           {
-            title: 'Saving package.json...',
-            task: (ctx) => savePackageJson(ctx.packageJson)
-          }
+            title: 'Save package.json',
+            task: (ctx): Promise<void> => savePackageJson(ctx.packageJson),
+          },
         ]);
-      }
-    }
+      },
+    },
   ]);
 
-  tasks.run().catch((err) => {
-    logger.error(err);
+  tasks.run().catch((error: string) => {
+    logger.error(error);
     process.exit(1);
   });
 }
 
 export function mergeOptions(
   args: InitParams,
-  answers: Omit<Options, 'configDir'>
+  answers: Omit<Options, 'configDir'>,
 ): Options {
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };
@@ -189,28 +211,28 @@ export function mergeOptions(
 
 function getPromptsForPresets(
   selectedPresets: Preset[],
-  prompts: { [key in Prompt]: Question }
+  prompts: { [key in Prompt]: Question },
 ): Question[] {
   return flow(
     map((preset: Preset): Prompt[] => presets[preset].prompts),
     flatten,
     uniq,
-    map((prompt: Prompt) => prompts[prompt])
+    map((prompt: Prompt) => prompts[prompt]),
   )(selectedPresets);
 }
 
-function getToolsForPresets(selectedPresets: Preset[]) {
+function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
   return flow(
     map((preset: Preset): Tool[] => presets[preset].tools),
     flatten,
     uniq,
-    map((tool: Tool) => tools[tool])
+    map((tool: Tool) => tools[tool]),
   )(selectedPresets) as ToolOptions[];
 }
 
 function getFilesForTools(
   options: Options,
-  selectedTools: ToolOptions[]
+  selectedTools: ToolOptions[],
 ): File[] {
   return selectedTools.reduce((allFiles: File[], tool) => {
     if (tool.files) {
@@ -223,7 +245,7 @@ function getFilesForTools(
 
 function getScriptsForTools(
   options: Options,
-  selectedTools: ToolOptions[]
+  selectedTools: ToolOptions[],
 ): Scripts {
   return selectedTools.reduce((allScripts: Scripts, tool) => {
     if (tool.scripts) {
