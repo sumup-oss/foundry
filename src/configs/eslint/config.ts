@@ -95,6 +95,11 @@ function customizeLanguage(language?: Language): EslintConfig {
       parserOptions: {
         tsconfigRootDir: process.cwd(),
         project: ['./tsconfig.json'],
+        sourceType: 'module',
+        ecmaVersion: 6,
+        ecmaFeatures: {
+          modules: true,
+        },
       },
       rules: {
         '@typescript-eslint/no-use-before-define': [
@@ -106,6 +111,7 @@ function customizeLanguage(language?: Language): EslintConfig {
         {
           files: ['*.d.ts'],
           rules: {
+            'node/no-extraneous-import': 'off',
             'import/no-extraneous-dependencies': [
               'error',
               { devDependencies: true },
@@ -124,11 +130,13 @@ function customizeLanguage(language?: Language): EslintConfig {
       extends: ['airbnb-base'],
       parser: 'babel-eslint',
       parserOptions: {
-        allowImportExportEverywhere: true,
+        sourceType: 'module',
+        ecmaVersion: 6,
         ecmaFeatures: {
-          ecmaVersion: 2017,
+          modules: true,
           impliedStrict: true,
         },
+        allowImportExportEverywhere: true,
       },
     },
   };
@@ -143,8 +151,21 @@ function customizeLanguage(language?: Language): EslintConfig {
 
 function customizeEnv(environments?: Environment[]): EslintConfig {
   const environmentMap = {
+    [Environment.BROWSER]: {
+      env: { browser: true },
+    },
     [Environment.NODE]: {
+      extends: ['plugin:node/recommended'],
       env: { node: true },
+      rules: {
+        // We don't know if the user's source code is using EJS or CJS.
+        'node/no-unsupported-features/es-syntax': 'off',
+        // This rule breaks when used in combination with TypeScript
+        // and is already covered by similar Eslint rules.
+        'node/no-missing-import': 'off',
+        // This rule is already covered by similar Eslint rules.
+        'node/no-extraneous-import': 'off',
+      },
       overrides: [
         {
           files: ['*.spec.*'],
@@ -153,9 +174,6 @@ function customizeEnv(environments?: Environment[]): EslintConfig {
           },
         },
       ],
-    },
-    [Environment.BROWSER]: {
-      env: { browser: true },
     },
   };
   return (config: EslintConfig): EslintConfig => {
