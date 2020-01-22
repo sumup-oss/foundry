@@ -47,12 +47,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -172,12 +166,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -266,12 +254,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -346,6 +328,14 @@ Object {
         ],
       },
     },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
   ],
   "parser": "babel-eslint",
   "parserOptions": Object {
@@ -361,12 +351,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -440,6 +424,14 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
+    Object {
       "env": Object {
         "jest": true,
       },
@@ -486,12 +478,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -562,6 +548,14 @@ Object {
         ],
       },
     },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
   ],
   "parser": "babel-eslint",
   "parserOptions": Object {
@@ -580,12 +574,6 @@ Object {
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
@@ -677,6 +665,14 @@ Object {
         ],
       },
     },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
@@ -785,6 +781,14 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -925,6 +929,14 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
   ],
@@ -1044,6 +1056,22 @@ Object {
         ],
       },
     },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": Object {
@@ -1152,6 +1180,22 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
       },
     },
     Object {
@@ -1292,6 +1336,22 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
       },
     },
   ],
@@ -1367,11 +1427,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1393,40 +1448,13 @@ Object {
         ],
       },
     },
-    Object {
-      "files": Array [
-        "*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "tsconfigRootDir": "/project/dir",
-  },
   "plugins": Array [
     "prettier",
-    "@typescript-eslint",
     "notice",
   ],
   "root": true,
   "rules": Object {
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
     "comma-dangle": "off",
     "curly": Array [
       "error",
