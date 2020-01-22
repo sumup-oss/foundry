@@ -14,6 +14,7 @@
  */
 
 module.exports = require('./dist/eslint')({
+  language: 'TypeScript',
   environments: ['Node'],
   frameworks: ['Jest'],
   openSource: true,
