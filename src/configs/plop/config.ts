@@ -222,10 +222,11 @@ function getComponentTemplateName(type: ComponentType): string {
 function getFileName(
   language: Language,
   fileType: FileType,
-  fileName: string,
+  templateFileName: string,
 ): string {
   const jsExtension = JS_EXTENSIONS[language];
   const jsxExtension = JSX_EXTENSIONS[language];
+  const fileName = templateFileName.replace('.hbs', '');
   const fileNameMap = {
     [FileType.COMPONENT]: `${fileName}.${jsxExtension}`,
     [FileType.COMPONENT_SPEC]: `${fileName}.spec.${jsExtension}`,
