@@ -43,7 +43,7 @@ enum FileType {
 }
 
 interface ActionOptions {
-  componentName: string;
+  name: string;
   componentType: ComponentType;
   files: FileType[];
   destinationPath: string;
@@ -84,7 +84,7 @@ export function config(options: PlopOptions) {
         // Component name
         {
           type: 'input',
-          name: 'componentName',
+          name: 'name',
           message: "What's the name of your component?",
         },
         // Component type
@@ -153,7 +153,7 @@ export function config(options: PlopOptions) {
         },
       ],
       actions: ({
-        componentName,
+        name: componentName,
         componentType,
         files,
         destinationPath,
