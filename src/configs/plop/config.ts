@@ -188,7 +188,7 @@ export function config(options: PlopOptions) {
                 path: join(
                   absDestPath,
                   capitalizedName,
-                  getFileName(options.language, file, templateFileName),
+                  getFileName(options.language, file, componentName),
                 ),
                 templateFile: getTemplatePath(
                   plopfilePath,
@@ -222,17 +222,16 @@ function getComponentTemplateName(type: ComponentType): string {
 function getFileName(
   language: Language,
   fileType: FileType,
-  templateFileName: string,
+  componentName: string,
 ): string {
   const jsExtension = JS_EXTENSIONS[language];
   const jsxExtension = JSX_EXTENSIONS[language];
-  const fileName = templateFileName.replace('.hbs', '');
   const fileNameMap = {
-    [FileType.COMPONENT]: `${fileName}.${jsxExtension}`,
-    [FileType.COMPONENT_SPEC]: `${fileName}.spec.${jsExtension}`,
-    [FileType.STORY]: `${fileName}.story.${jsxExtension}`,
-    [FileType.SERVICE]: `${fileName}Service.${jsExtension}`,
-    [FileType.SERVICE_SPEC]: `${fileName}Service.spec.${jsExtension}`,
+    [FileType.COMPONENT]: `${componentName}.${jsxExtension}`,
+    [FileType.COMPONENT_SPEC]: `${componentName}.spec.${jsExtension}`,
+    [FileType.STORY]: `${componentName}.story.${jsxExtension}`,
+    [FileType.SERVICE]: `${componentName}Service.${jsExtension}`,
+    [FileType.SERVICE_SPEC]: `${componentName}Service.spec.${jsExtension}`,
     [FileType.INDEX]: `index.${jsExtension}`,
   };
   return fileNameMap[fileType];
