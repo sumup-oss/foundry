@@ -27,14 +27,46 @@ interface PlopOptions {
   language: Language;
 }
 
-type ComponentType = 'styled' | 'functional' | 'class';
+enum ComponentType {
+  STYLED = 'styled',
+  FUNCTIONAL = 'functional',
+  CLASS = 'class',
+}
+
+enum FileType {
+  COMPONENT = 'component',
+  COMPONENT_SPEC = 'component-spec',
+  STORY = 'story',
+  SERVICE = 'service',
+  SERVICE_SPEC = 'service-spec',
+  INDEX = 'index',
+}
 
 interface ActionOptions {
   componentName: string;
   componentType: ComponentType;
-  files: string[];
+  files: FileType[];
   destinationPath: string;
 }
+
+const JS_EXTENSIONS = {
+  [Language.JAVASCRIPT]: 'js',
+  [Language.TYPESCRIPT]: 'ts',
+};
+
+const JSX_EXTENSIONS = {
+  [Language.JAVASCRIPT]: 'js',
+  [Language.TYPESCRIPT]: 'tsx',
+};
+
+const TEMPLATE_DIR = `${__dirname}/templates/react`;
+
+const ERRORS = {
+  INVALID_FILE_TYPE: (file: string): string =>
+    `We don't have templates for "${file}" files, 😞.`,
+  INVALID_DESTINATION: (path: string): string =>
+    `We couldn't find the destination folder ${path} in your project, 🤷.`,
+};
 
 export function config(options: PlopOptions) {
   return (plop: NodePlopAPI): void => {
@@ -42,84 +74,6 @@ export function config(options: PlopOptions) {
     plop.setHelper('not', (a: any, b: any): boolean => a !== b);
 
     const pascalCase = plop.getHelper('pascalCase');
-
-    const COMPONENT_TYPES = {
-      STYLED: 'styled',
-      FUNCTIONAL: 'functional',
-      CLASS: 'class',
-    };
-
-    const COMPONENT_FILES = {
-      COMPONENT: 'component',
-      COMPONENT_SPEC: 'component-spec',
-      STORY: 'story',
-      SERVICE: 'service',
-      SERVICE_SPEC: 'service-spec',
-      INDEX: 'index',
-    };
-
-    const JS_EXTENSIONS = {
-      [Language.JAVASCRIPT]: 'js',
-      [Language.TYPESCRIPT]: 'ts',
-    };
-
-    const JSX_EXTENSIONS = {
-      [Language.JAVASCRIPT]: 'js',
-      [Language.TYPESCRIPT]: 'tsx',
-    };
-
-    const TEMPLATE_DIR = `${__dirname}/plop-templates/react`;
-
-    const ERRORS = {
-      INVALID_FILE_TYPE: (file: string): string =>
-        `We don't have templates for "${file}" files, 😞.`,
-      INVALID_DESTINATION: (path: string): string =>
-        `We couldn't find the destination folder ${path} in your project, 🤷.`,
-    };
-
-    const raiseErrorAndExit = (message: string): never => {
-      logger.error([message, 'Please try again. 👋'].join(' '));
-      process.exit(1);
-    };
-
-    const getComponentTemplateName = (type: ComponentType): string => {
-      const templateNameMap = {
-        [COMPONENT_TYPES.STYLED]: 'styled-component.hbs',
-        [COMPONENT_TYPES.FUNCTIONAL]: 'functional-component.hbs',
-        [COMPONENT_TYPES.CLASS]: 'class-component.hbs',
-      };
-      return templateNameMap[type];
-    };
-
-    const getFileName = (file: string, name: string): string => {
-      const { language } = options;
-      const jsExtension = JS_EXTENSIONS[language];
-      const jsxExtension = JSX_EXTENSIONS[language];
-      const fileNameMap = {
-        [COMPONENT_FILES.COMPONENT]: `${name}.${jsxExtension}`,
-        [COMPONENT_FILES.COMPONENT_SPEC]: `${name}.spec.${jsExtension}`,
-        [COMPONENT_FILES.STORY]: `${name}.story.${jsxExtension}`,
-        [COMPONENT_FILES.SERVICE]: `${name}Service.${jsExtension}`,
-        [COMPONENT_FILES.SERVICE_SPEC]: `${name}Service.spec.${jsExtension}`,
-        [COMPONENT_FILES.INDEX]: `index.${jsExtension}`,
-      };
-      return fileNameMap[file];
-    };
-
-    const getTemplatePath = (templateFileName: string): string => {
-      if (options.templateDir) {
-        const customPath = join(
-          plop.getPlopfilePath(),
-          options.templateDir,
-          templateFileName,
-        );
-        if (existsSync(customPath)) {
-          return customPath;
-        }
-      }
-
-      return join(TEMPLATE_DIR, templateFileName);
-    };
 
     /**
      * Generating React components and helper files.
@@ -141,15 +95,15 @@ export function config(options: PlopOptions) {
           choices: [
             {
               name: 'Styled',
-              value: COMPONENT_TYPES.STYLED,
+              value: ComponentType.STYLED,
             },
             {
               name: 'Functional',
-              value: COMPONENT_TYPES.FUNCTIONAL,
+              value: ComponentType.FUNCTIONAL,
             },
             {
               name: 'Class',
-              value: COMPONENT_TYPES.CLASS,
+              value: ComponentType.CLASS,
             },
           ],
           default: 'functional',
@@ -172,27 +126,27 @@ export function config(options: PlopOptions) {
           choices: [
             {
               name: 'Component',
-              value: COMPONENT_FILES.COMPONENT,
+              value: FileType.COMPONENT,
               checked: true,
             },
             {
               name: 'Component spec',
-              value: COMPONENT_FILES.COMPONENT_SPEC,
+              value: FileType.COMPONENT_SPEC,
               checked: true,
             },
             {
               name: 'Story',
-              value: COMPONENT_FILES.STORY,
+              value: FileType.STORY,
               checked: false,
             },
             {
               name: 'Service',
-              value: COMPONENT_FILES.SERVICE,
+              value: FileType.SERVICE,
               checked: false,
             },
             {
               name: 'Service spec',
-              value: COMPONENT_FILES.SERVICE_SPEC,
+              value: FileType.SERVICE_SPEC,
               checked: false,
             },
           ],
@@ -204,20 +158,26 @@ export function config(options: PlopOptions) {
         files,
         destinationPath,
       }: ActionOptions): ActionConfig[] => {
-        const absDestPath = `${plop.getPlopfilePath()}/${destinationPath}`;
+        const plopfilePath = plop.getPlopfilePath();
+        const absDestPath = `${plopfilePath}/${destinationPath}`;
+
+        if (existsSync(absDestPath)) {
+          raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(absDestPath));
+        }
+
         const capitalizedName = pascalCase(componentName);
-        const allFiles = files.includes(COMPONENT_FILES.COMPONENT)
-          ? files.concat(COMPONENT_FILES.INDEX)
+        const allFiles = files.includes(FileType.COMPONENT)
+          ? files.concat(FileType.INDEX)
           : files;
 
         return allFiles.reduce(
           (acc, file) => {
-            if (!Object.values(COMPONENT_FILES).includes(file)) {
+            if (!Object.values(FileType).includes(file)) {
               raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(file));
             }
 
             const templateFileName =
-              file === COMPONENT_FILES.COMPONENT
+              file === FileType.COMPONENT
                 ? getComponentTemplateName(componentType)
                 : `${file}.hbs`;
 
@@ -228,9 +188,13 @@ export function config(options: PlopOptions) {
                 path: join(
                   absDestPath,
                   capitalizedName,
-                  getFileName(file, templateFileName),
+                  getFileName(options.language, file, templateFileName),
                 ),
-                templateFile: getTemplatePath(templateFileName),
+                templateFile: getTemplatePath(
+                  plopfilePath,
+                  options.templateDir,
+                  templateFileName,
+                ),
               },
             ];
           },
@@ -239,4 +203,51 @@ export function config(options: PlopOptions) {
       },
     });
   };
+}
+
+function raiseErrorAndExit(message: string): never {
+  logger.error([message, 'Please try again. 👋'].join(' '));
+  process.exit(1);
+}
+
+function getComponentTemplateName(type: ComponentType): string {
+  const templateNameMap = {
+    [ComponentType.STYLED]: 'styled-component.hbs',
+    [ComponentType.FUNCTIONAL]: 'functional-component.hbs',
+    [ComponentType.CLASS]: 'class-component.hbs',
+  };
+  return templateNameMap[type];
+}
+
+function getFileName(
+  language: Language,
+  fileType: FileType,
+  fileName: string,
+): string {
+  const jsExtension = JS_EXTENSIONS[language];
+  const jsxExtension = JSX_EXTENSIONS[language];
+  const fileNameMap = {
+    [FileType.COMPONENT]: `${fileName}.${jsxExtension}`,
+    [FileType.COMPONENT_SPEC]: `${fileName}.spec.${jsExtension}`,
+    [FileType.STORY]: `${fileName}.story.${jsxExtension}`,
+    [FileType.SERVICE]: `${fileName}Service.${jsExtension}`,
+    [FileType.SERVICE_SPEC]: `${fileName}Service.spec.${jsExtension}`,
+    [FileType.INDEX]: `index.${jsExtension}`,
+  };
+  return fileNameMap[fileType];
+}
+
+function getTemplatePath(
+  plopDir: string,
+  templateDir: string | undefined,
+  templateFileName: string,
+): string {
+  if (templateDir) {
+    const customPath = join(plopDir, templateDir, templateFileName);
+    if (existsSync(customPath)) {
+      return customPath;
+    }
+  }
+
+  return join(TEMPLATE_DIR, templateFileName);
 }
