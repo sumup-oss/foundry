@@ -15,7 +15,7 @@
 
 import { pick } from 'lodash/fp';
 
-import { Options, File, Scripts } from '../../types/shared';
+import { Options, File, Script } from '../../types/shared';
 
 export const files = (options: Options): File[] => [
   {
@@ -27,6 +27,10 @@ export const files = (options: Options): File[] => [
   },
 ];
 
-export const scripts = (): Scripts => ({
-  'create:component': 'foundry run plop component',
-});
+export const scripts = (): Script[] => [
+  {
+    name: 'create:component',
+    command: 'foundry run plop component',
+    description: 'generate the files for a React component',
+  },
+];
