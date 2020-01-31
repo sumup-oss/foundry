@@ -49,18 +49,6 @@ interface ActionOptions {
   destinationPath: string;
 }
 
-const JS_EXTENSIONS = {
-  [Language.JAVASCRIPT]: 'js',
-  [Language.TYPESCRIPT]: 'ts',
-};
-
-const JSX_EXTENSIONS = {
-  [Language.JAVASCRIPT]: 'js',
-  [Language.TYPESCRIPT]: 'tsx',
-};
-
-const TEMPLATE_DIR = `${__dirname}/templates/react`;
-
 const ERRORS = {
   INVALID_FILE_TYPE: (file: string): string =>
     `We don't have templates for "${file}" files, 😞.`,
@@ -159,10 +147,10 @@ export function config(options: PlopOptions) {
         destinationPath,
       }: ActionOptions): ActionConfig[] => {
         const plopfilePath = plop.getPlopfilePath();
-        const absDestPath = `${plopfilePath}/${destinationPath}`;
+        const absDestPath = join(plopfilePath, destinationPath);
 
-        if (existsSync(absDestPath)) {
-          raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(absDestPath));
+        if (!existsSync(absDestPath)) {
+          raiseErrorAndExit(ERRORS.INVALID_DESTINATION(absDestPath));
         }
 
         const capitalizedName = pascalCase(componentName);
@@ -191,8 +179,9 @@ export function config(options: PlopOptions) {
                   getFileName(options.language, file, componentName),
                 ),
                 templateFile: getTemplatePath(
-                  plopfilePath,
+                  options.language,
                   options.templateDir,
+                  plopfilePath,
                   templateFileName,
                 ),
               },
@@ -219,6 +208,16 @@ function getComponentTemplateName(type: ComponentType): string {
   return templateNameMap[type];
 }
 
+const JS_EXTENSIONS = {
+  [Language.JAVASCRIPT]: 'js',
+  [Language.TYPESCRIPT]: 'ts',
+};
+
+const JSX_EXTENSIONS = {
+  [Language.JAVASCRIPT]: 'js',
+  [Language.TYPESCRIPT]: 'tsx',
+};
+
 function getFileName(
   language: Language,
   fileType: FileType,
@@ -237,9 +236,15 @@ function getFileName(
   return fileNameMap[fileType];
 }
 
+const LANGUAGE_DIRS = {
+  [Language.JAVASCRIPT]: 'js',
+  [Language.TYPESCRIPT]: 'ts',
+};
+
 function getTemplatePath(
-  plopDir: string,
+  language: Language,
   templateDir: string | undefined,
+  plopDir: string,
   templateFileName: string,
 ): string {
   if (templateDir) {
@@ -249,5 +254,7 @@ function getTemplatePath(
     }
   }
 
-  return join(TEMPLATE_DIR, templateFileName);
+  const languageDir = LANGUAGE_DIRS[language];
+
+  return join(__dirname, 'templates', languageDir, templateFileName);
 }
