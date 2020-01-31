@@ -4,7 +4,7 @@
   "description": "A toolkit for JavaScript applications by SumUp.",
   "main": "index.js",
   "repository": "github:sumup/foundry",
-  "author": "Felix Jung <felix.jung@sumup.com>",
+  "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",
   "license": "Apache-2.0",
   "bin": "cli/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "dev": "yarn cleanup && yarn copy && tsc --watch",
     "start": "yarn dev",
     "cleanup": "rimraf ./dist && mkdir dist",
-    "copy": "mkdir -p dist/configs/plop/templates && cp -r src/configs/plop/templates dist/configs/plop/templates && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
+    "copy": "mkdir -p dist/configs/plop/templates && cp -r src/configs/plop/templates dist/configs/plop && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "prelint": "yarn build",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
