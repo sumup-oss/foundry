@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-An opinionated but configurable toolkit for writing JavaScript and TypeScript. We currently support [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -126,7 +126,7 @@ module.exports = require('@sumup/foundry/plop')({
 });
 ```
 
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup/foundry/tree/master/src/configs/plop/templates).
+To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.comsumup-oss/foundry/tree/master/src/configs/plop/templates).
 
 ## Running a tool
 
