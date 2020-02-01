@@ -38,6 +38,11 @@ export const warn = (arg: LogMessage): void => {
 
 export const log = (arg: LogMessage): void => {
   const msg = getMessage(arg);
+  console.log(msg);
+};
+
+export const info = (arg: LogMessage): void => {
+  const msg = getMessage(arg);
   console.log(`ℹ️ ${msg}`);
 };
 
@@ -50,4 +55,6 @@ export const debug = (arg: LogMessage): void => {
   console.debug(`🛠️ ${chalk.cyan(msg)}`);
 };
 
-export const info = log;
+export const empty = (): void => {
+  console.log('');
+};

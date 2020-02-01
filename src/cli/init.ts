@@ -30,7 +30,7 @@ import {
   Tool,
   ToolOptions,
   File,
-  Scripts,
+  Script,
   PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
@@ -120,9 +120,7 @@ export async function init(args: InitParams): Promise<void> {
   const files = getFilesForTools(options, selectedTools);
   const scripts = getScriptsForTools(options, selectedTools);
 
-  // Add an empty line between the prompts and the tasks ✨
-  // eslint-disable-next-line no-console
-  console.log('');
+  logger.empty();
 
   const tasks = new Listr([
     {
@@ -145,14 +143,10 @@ export async function init(args: InitParams): Promise<void> {
                   ],
                   ({ overwrite }: { overwrite: boolean }) => {
                     if (!overwrite) {
-                      return task.skip('Skipped');
+                      task.skip('Skipped');
+                      return;
                     }
-                    return writeFile(
-                      options.configDir,
-                      file.name,
-                      file.content,
-                      true,
-                    );
+                    writeFile(options.configDir, file.name, file.content, true);
                   },
                 ),
               ),
@@ -176,13 +170,34 @@ export async function init(args: InitParams): Promise<void> {
               ctx.packageJson = require(ctx.packagePath);
             },
           },
-          ...Object.entries(scripts).map(([key, value]) => ({
-            title: `Adding "${key}" script to package.json`,
-            task: (ctx: Context, task: ListrTaskWrapper<Context>): void => {
+          ...scripts.map(({ name, command }) => ({
+            title: `Add "${name}"`,
+            task: (
+              ctx: Context,
+              task: ListrTaskWrapper<Context>,
+            ): undefined | Promise<void> => {
               try {
-                addPackageScript(ctx.packageJson, key, value);
+                addPackageScript(ctx.packageJson, name, command);
+                return undefined;
               } catch (error) {
-                task.skip(error.message);
+                return listrInquirer(
+                  [
+                    {
+                      type: 'confirm',
+                      name: 'overwriteScript',
+                      // eslint-disable-next-line max-len
+                      message: `"${name}" already exists. Would you like to replace it?`,
+                      default: false,
+                    },
+                  ],
+                  ({ overwrite }: { overwrite: boolean }) => {
+                    if (!overwrite) {
+                      task.skip('Skipped');
+                      return;
+                    }
+                    addPackageScript(ctx.packageJson, name, command, true);
+                  },
+                );
               }
             },
           })),
@@ -195,10 +210,20 @@ export async function init(args: InitParams): Promise<void> {
     },
   ]);
 
-  tasks.run().catch((error: string) => {
-    logger.error(error);
-    process.exit(1);
-  });
+  tasks
+    .run()
+    .then(() => {
+      logger.empty();
+      logger.info('Added the following scripts to "package.json":');
+      logger.empty();
+      scripts.forEach(({ name, description }) => {
+        logger.log(`  "${name}": ${description}`);
+      });
+    })
+    .catch((error: string) => {
+      logger.error(error);
+      process.exit(1);
+    });
 }
 
 export function mergeOptions(
@@ -246,14 +271,14 @@ function getFilesForTools(
 function getScriptsForTools(
   options: Options,
   selectedTools: ToolOptions[],
-): Scripts {
-  return selectedTools.reduce((allScripts: Scripts, tool) => {
+): Script[] {
+  return selectedTools.reduce((allScripts: Script[], tool) => {
     if (tool.scripts) {
       const scriptsForTool = tool.scripts(options);
-      return { ...allScripts, ...scriptsForTool };
+      return [...allScripts, ...scriptsForTool];
     }
     return allScripts;
-  }, {});
+  }, []);
 }
 
 export function validatePresets(selectedPresets: Preset[]): string | boolean {

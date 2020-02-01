@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - **Signed and verified CLA**
-- Node 8+ and `yarn`
+- Node 10+ and `yarn`
 
 ## Code of Conduct (CoC)
 
@@ -26,26 +26,10 @@ If you feel another member of the community violated our CoC or you are experien
 3. Code, add, commit and push your changes in your branch.
 4. Make sure that tests and linter(s) pass locally for you.
 5. Submit a PR.
-6. Collaborate with the codeowners/reviewers to merge this in `master`.
+6. Collaborate with the codeowners/reviewers to merge this to `master`.
 
 ## Common commands
 
-### Running the tests
-
-```sh
-yarn start
-```
-
-### Running the tests
-
-```sh
-yarn test
-# or continuously:
-yarn test:watch
-```
-
-### Running the linter
-
-```sh
-yarn lint
-```
+- Continously transpile the code: `yarn dev`
+- Continously run the tests: `yarn test`
+- Run the linter: `yarn lint`

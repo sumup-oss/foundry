@@ -1,157 +1,148 @@
-![Build status](https://circleci.com/gh/sumup/foundry.svg?style=shield&circle-token=736b00da66fa4b46701da7cd184b23ded097e49c)
-![Code coverage](https://codecov.io/gh/sumup/foundry/branch/master/graph/badge.svg?token=3fxP3TZEAN)
-[![npm version](https://badge.fury.io/js/%40sumup%2Ffoundry.svg)](https://www.npmjs.com/package/@sumup/foundry)
-[![License](https://img.shields.io/github/license/sumup/foundry.svg)](LICENSE)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
-
 <div align="center">
 
 # Foundry
 
-An opinionated but configurable CLI (Command Line Interface) toolkit for writing JavaScript. We currently support [React](https://reactjs.org), [Node](https://nodejs.org/en/), and vanilla JavaScript with varying feature breadth.
+[![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), and [Node](https://nodejs.org/en/).
 
 </div>
 
-> **TLDR;**
->
-> 1. Set up desired configuration files, `npx foundry bootstrap-config —eslint —prettier`.
->
-> 2. Add commands to `package.json`
->
->    ```
->    "scripts": {
->        "lint": "foundry run eslint src"
->    }
->    ```
->
-> 3. Be productive and don’t worry about tooling dependencies.
+**Table of contents**
 
-##### Table of contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [List of commands](#list-of-commands)
-- [List of configuration presets](#list-of-configuration-presets)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Initialization](#initialization)
+  - [Automation](#automation)
+- [Presets](#presets)
+  - [🔍 Lint](#-lint)
+  - [🚀 Release](#-release)
+  - [🖇️ Templates](#-templates)
+- [Running a tool](#running-a-tool)
 - [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
 - [About SumUp](#about-sumup)
 
-## Installation
+## Getting Started
 
-Foundry is supposed to be installed as a dev-dependency (development) via the [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v10+.
+### Installation
+
+Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v10+.
 
 Depending on your preference, run one of the following.
 
-```bash
+```sh
+# With Yarn
+$ yarn add --dev @sumup/foundry
+
 # With npm
 $ npm install --save-dev @sumup/foundry
-
-# With yarn
-$ yarn add --dev @sumup/foundry
 ```
 
-## Usage
+### Initialization
 
-Once you have installed Foundry, you should bootstrap configuration files the CLI tools you would like to use through Foundry and set up scripts in you `package.json` to actually run them.
+Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to initialize a configuration file for each tool you would like to use. This is done with the `init` command.
 
-### Bootstrap configuration files
-
-Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to bootstrap a configuration file for each tool you would like to use. This is done with the `bootstrap-config` command. Foundry supports different presets for each tool, `base` being the default preset. You can specify the tool you would like to use as a flag, the preset as the flag’s value.
-
-```bash
-# Bootstraps the eslint and prettier config files using the react preset for ESLint and the default (base) preset for prettier.
-$ npx foundry bootstrap-config --eslint react --prettier
+```sh
+$ npx foundry init
 ```
 
-### Running a tool through Foundry
+Foundry will launch an interactive prompt to ask you questions about your project, such as in which language it is written, which frameworks it uses, or whether you are planning to open source it. Once you have answered all questions, Foundry will write the config files (don't worry, it asks before overwriting existing files) and will add scripts to your `package.json` file to conveniently run the tools.
 
-Foundry manages all supported CLI tools for you and exposes them via the `run` command. To run ESLint through Foundry execute `npx foundry run eslint src` from the terminal. Here, `src` is the folder you want ESLint to check. Note that you can use any of the command line flags and arguments supported by ESLint and other tools. Foundry simply forwards them and they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
+Alternatively, you can pass your answers to the `init` command directly as flags. This is useful for environments such as CI where interactive prompts cannot be used. Here is an overview of all available options (you can view this help menu by running `npx foundry init --help`):
 
-### Use Foundry for your `package.json` scripts
-
-For automation purposes and easier access, you will want to alias frequently used commands as scripts in your `package.json`. Here are some examples.
-
-```json
-"scripts": {
-    "lint": "foundry run eslint --fix src",
-    "create-component": "foundry run plop component"
-}
+```sh
+--presets, -p       A preset configures a group of tools that solve a common
+                    problem  [array] [options: "lint", "release", "templates"]
+--language, -l      The programming language in which the project is written
+                                         [options: "TypeScript", "JavaScript"]
+--environments, -e  The environment(s) in which the code runs
+                                          [array] [options: "Node", "Browser"]
+--frameworks, -f    The framework(s) that the project uses
+                                 [array] [options: "React", "Emotion", "Jest"]
+--openSource, -o    Whether the project is open source               [boolean]
+--publish           Whether to publish to NPM                        [boolean]
+--configDir, -c     The directory to write the configs to   
+                                                       [string] [default: "."]
+--help              Show this help menu                              [boolean]
 ```
 
-## List of commands
+### Automation
 
-At the moment, Foundry supports two commands; `bootstrap-config` and `run`. They allow you to create configurations and run the cooresponding tools. The tools we support are [ESlint](https://eslint.org) (with [Prettier](https://prettier.io)), [Plop](https://plopjs.com), [Husky](https://github.com/typicode/husky), and [lint-staged](https://www.npmjs.com/package/lint-staged). We will add more documentation here. For now, you can try `foundry --help` or `foundry {command} --help` to se your options.
+...
 
-## List of configuration presets
+## Presets
 
-Here is a list of supported presets for the `bootstrap-config` command, grouped by CLI tool.
+A preset includes the configurations and scripts that are needed for a certain task.
 
-### ESLint (`--eslint` flag)
+### 🔍 Lint
 
-We lint our code with [ESLint](https://www.npmjs.com/package/eslint). Linting our code helps us spot mistakes early. You can inspect all presets in the [respective config file](https://github.com/sumup/foundry/blob/master/src/configs/eslint.js).
+Check code for syntax errors and format it automatically. The preset includes: 
 
-- `base`: the default preset. Uses the `airbnb-base`, `prettier`, and `jest/recommended` presets, `prettier` and `jest` plugins and some configurations.
-- `node`: like `base` but specifies `node` as environment.
-- `react`: like `base` but adding the `react/recommended`, `jsx-a11y/recommended`, and `prettier/react` presets.
+- [**ESLint**](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
+- [**Prettier**](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
+- [**lint-staged**](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
+- [**Husky**](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
 
-### Prettier (`--prettier` flag)
+The preset adds the following scripts to your `package.json`:
 
-[Prettier](https://www.npmjs.com/package/prettier) is our code formatter of choice. It makes all our code look the same after every save. We only have a `base` preset, which follows our [default formatting rules](https://github.com/sumup/foundry/blob/master/src/configs/prettier.js).
+- `lint`: check files for problematic patterns and report them
+- `lint:fix`: same as `lint`, but also try to fix the issues
+- `lint:ci`: same as `lint`, but also save the report to a file
 
-### Plop (`--plop` flag)
+### 🚀 Release
 
-[Plop](https://plopjs.com) allows us to quickly create a set of files, e.g. for a React component, with a single command. This is very helpful when creating a lot of components and reduces the boilerplate you have to write as a developer.
+Automatically generate release notes and (optionally) publish to NPM. The preset includes:
 
-Currently, we only have a plop generator for React components. Use the `react` preset for that.
+- [**semantic-release**](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
+
+The preset adds the following script to your `package.json`:
+
+- `release`: release and publish a new version
+
+### 🖇️ Templates
+
+Generate boilerplate code e.g. for React components. The preset includes:
+
+- [**Plop**](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
+
+The preset adds the following script to your `package.json`:
+
+- `create:component`: generate the files for a React component
 
 #### Custom templates
 
 ⭐ _This is an advanced use case._
 
-Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory and extension. Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
+Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory. Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
 
-In order to specify the template directory or extension, you need to modify the config file (`plopfile.js`) that was generated by `foundry bootstrap-config --plop`, like so:
+In order to specify the template directory, you need to modify the config file (`plopfile.js`) that was generated by `npx foundry init`, like so:
 
 ```diff
-- module.exports = require('@sumup/foundry/plop').react;
-+ const configFn = require('@sumup/foundry/plop').react;
-+
-+ const opts = {
-+   // The path should be relative to the location of the plopfile.js.
-+   templateDir: <path-to-templates>
-+   // The extension without a leading period, defaults to 'js' .
-+   templateExtension: <file-extension>
-+ }
-+
-+ module.exports = plop => configFn(plop, opts);
+module.exports = require('@sumup/foundry/plop')({
+  language: <language>,
++  // The path should be relative to the location of plopfile.js
++  templateDir: <path-to-templates>,
+});
 ```
 
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup/foundry/tree/master/src/configs/plop/templates).
+To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.comsumup-oss/foundry/tree/master/src/configs/plop/templates).
 
-### lint-staged (`--lint-staged` flag)
+## Running a tool
 
-[lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with [Husky](https://github.com/typicode/husky), it makes ensuring bad code gets committed very easy.
+Foundry manages all supported tools for you and exposes them via the `run` command. As an example: to run ESLint through Foundry execute:
 
-`lint-staged` only comes with a `base` preset.
+```sh
+npx foundry run eslint src
+```
 
-### Husky (`--husky` flag)
-
-Husky makes setting up git hooks consistently very easy. Whenever someone installs your project, husky will automatically set up git hooks as part of its postinstall script.
-
-Husky only comes with a `base` preset.
-
-### semantic-release (`--semantic-release` flag)
-
-[`semantic-release`](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
-
-- `base`: the default preset. Analyzes the commit history, generates release notes and publishes them to GitHub.
-- `modules`: like `base` but also publishes the code to `npm`. For node modules.
+Here, `src` is the folder you want ESLint to check. Note that you can use any of the command line flags and arguments supported by ESLint and other tools. Foundry simply forwards them and they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
 
 ## Why?
 
 > ##### TLDR
 >
-> Creating and maintaining a JavaScript project can be very tedious. There are tools, configurations, dependency management, and boilerplate. With Foundry, you can fix all of that with a single dependency. It lints, creates files, links configurations, and (soon) runs your build. And the best part? You can still get down and dirty with your configurations. But only if you want.
+> Creating and maintaining a JavaScript project can be very tedious. There are tools, configurations, dependency management, and boilerplate. With Foundry, you can fix all of that with a single dependency. It lints, creates files, and keeps the tools up to date. And the best part? You can still get down and dirty with your configurations. But only if you want.
 
 ### The problem
 
@@ -188,8 +179,8 @@ If you feel another member of the community violated our CoC or you are experien
 
 ### Maintainers
 
-- [Felix Jung](mailto:felix.jung@sumup.com)
 - [Connor Bär](mailto:connor.baer@sumup.com)
+- [Felix Jung](mailto:felix.jung@sumup.com)
 
 ## About SumUp
 

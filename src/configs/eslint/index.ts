@@ -15,7 +15,7 @@
 
 import { pick } from 'lodash/fp';
 
-import { Options, Language, Scripts, File } from '../../types/shared';
+import { Options, Language, Script, File } from '../../types/shared';
 
 export const files = (options: Options): File[] => [
   {
@@ -27,17 +27,29 @@ export const files = (options: Options): File[] => [
   },
 ];
 
-export const scripts = (options: Options): Scripts => {
+export const scripts = (options: Options): Script[] => {
   const { language = Language.TYPESCRIPT } = options;
   const extensionMap = {
     [Language.TYPESCRIPT]: '.js,.jsx,.ts,.tsx',
     [Language.JAVASCRIPT]: '.js,.jsx',
   };
   const extensions = extensionMap[language];
-  return {
-    'lint': `foundry run eslint . --ext ${extensions}`,
-    'lint:fix': 'yarn lint --fix',
-    'lint:ci':
-      'yarn lint --format junit -o __reports__/junit/eslint-results.xml',
-  };
+  return [
+    {
+      name: 'lint',
+      command: `foundry run eslint . --ext ${extensions}`,
+      description: 'checksfiles for problematic patterns and report them',
+    },
+    {
+      name: 'lint:fix',
+      command: 'yarn lint --fix',
+      description: 'same as `lint`, but also try to fix the issues',
+    },
+    {
+      name: 'lint:ci',
+      command:
+        'yarn lint --format junit -o __reports__/junit/eslint-results.xml',
+      description: 'same as `lint`, but also save the report to a file',
+    },
+  ];
 };

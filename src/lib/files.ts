@@ -28,7 +28,7 @@ export function writeFile(
   configDir: string,
   filename: string,
   content: string,
-  shouldOverwrite?: boolean,
+  shouldOverwrite = false,
 ): Promise<void> {
   const formatOptions = prettierConfig({ language: Language.TYPESCRIPT });
   const fileContent = prettier.format(content, formatOptions);
@@ -49,15 +49,16 @@ export async function findPackageJson(): Promise<string> {
 
 export function addPackageScript(
   packageJson: PackageJson,
-  key: string,
-  value: string,
+  name: string,
+  command: string,
+  shouldOverwrite = false,
 ): PackageJson {
-  const hasConflict = packageJson.scripts[key];
-  if (hasConflict) {
-    throw new Error(`A script with the name "${key}" already exists.`);
+  const hasConflict = Boolean(packageJson.scripts[name]);
+  if (hasConflict && !shouldOverwrite) {
+    throw new Error(`A script with the name "${name}" already exists.`);
   }
   // eslint-disable-next-line no-param-reassign
-  packageJson.scripts[key] = value;
+  packageJson.scripts[name] = command;
   return packageJson;
 }
 

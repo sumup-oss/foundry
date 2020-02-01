@@ -68,17 +68,19 @@ export type File = {
   overwrite?: boolean;
 };
 
-export type Scripts = {
-  [key: string]: string;
+export type Script = {
+  name: string;
+  command: string;
+  description: string;
 };
 
 export interface ToolOptions {
   files?: (options: Options) => File[];
-  scripts?: (options: Options) => Scripts;
+  scripts?: (options: Options) => Script[];
 }
 
 export type PackageJson = {
-  scripts: Scripts;
+  scripts: { [key: string]: string };
   bin: string;
   [key: string]: object | string;
 };

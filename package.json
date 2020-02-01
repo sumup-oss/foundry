@@ -1,7 +1,7 @@
 {
   "name": "@sumup/foundry",
   "version": "0.0.0-semantically-released",
-  "description": "A toolkit for JavaScript applications by SumUp.",
+  "description": "A toolkit for JavaScript + TypeScript applications by SumUp.",
   "main": "index.js",
   "repository": "github:sumup/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",
