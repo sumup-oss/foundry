@@ -2,6 +2,112 @@
 
 exports[`eslint with options should return a config for { language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:cypress/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "env": Object {
+        "cypress/globals": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+        "e2e/**/*",
+      ],
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "cypress",
+  ],
+  "root": true,
+  "rules": Object {
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
@@ -123,7 +229,7 @@ Object {
     },
     Object {
       "env": Object {
-        "jest": true,
+        "jest/globals": true,
       },
       "files": Array [
         "**/*spec.*",
@@ -304,6 +410,124 @@ Object {
 
 exports[`eslint with options should return a config for { language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:node/recommended",
+    "plugin:cypress/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
+    Object {
+      "env": Object {
+        "cypress/globals": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+        "e2e/**/*",
+      ],
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+    "cypress",
+  ],
+  "root": true,
+  "rules": Object {
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
@@ -446,7 +670,7 @@ Object {
     },
     Object {
       "env": Object {
-        "jest": true,
+        "jest/globals": true,
       },
       "files": Array [
         "**/*spec.*",
@@ -642,6 +866,147 @@ Object {
 
 exports[`eslint with options should return a config for { language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:cypress/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "env": Object {
+        "cypress/globals": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+        "e2e/**/*",
+      ],
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "cypress",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
@@ -824,7 +1189,7 @@ Object {
     },
     Object {
       "env": Object {
-        "jest": true,
+        "jest/globals": true,
       },
       "files": Array [
         "**/*spec.*",
@@ -1049,6 +1414,159 @@ Object {
 
 exports[`eslint with options should return a config for { language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:node/recommended",
+    "plugin:cypress/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "*.config.js",
+        ".*rc.js",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "*.spec.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
+    Object {
+      "env": Object {
+        "cypress/globals": true,
+      },
+      "files": Array [
+        "**/*spec.*",
+        "e2e/**/*",
+      ],
+      "rules": Object {
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^\\\\s*it(?:\\\\.(?:skip|only))?\\\\(",
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+      },
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+    "cypress",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
 Object {
   "env": Object {
@@ -1252,7 +1770,7 @@ Object {
     },
     Object {
       "env": Object {
-        "jest": true,
+        "jest/globals": true,
       },
       "files": Array [
         "**/*spec.*",
