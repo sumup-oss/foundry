@@ -242,7 +242,29 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
             renderHook: true,
             axe: true,
           },
-          env: { jest: true },
+          env: { 'jest/globals': true },
+        },
+      ],
+    },
+    [Framework.CYPRESS]: {
+      extends: ['plugin:cypress/recommended'],
+      plugins: ['cypress'],
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*'],
+          rules: {
+            'max-len': [
+              'error',
+              {
+                code: 80,
+                tabWidth: 2,
+                ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
+                ignoreComments: true,
+                ignoreUrls: true,
+              },
+            ],
+          },
+          env: { 'cypress/globals': true },
         },
       ],
     },
