@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - **Signed and verified CLA**
-- Node 10+ and `yarn`
+- Node v10.13+ and `yarn`
 
 ## Code of Conduct (CoC)
 
