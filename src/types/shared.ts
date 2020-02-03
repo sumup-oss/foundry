@@ -50,6 +50,7 @@ export enum Framework {
   REACT = 'React',
   EMOTION = 'Emotion',
   JEST = 'Jest',
+  CYPRESS = 'Cypress',
 }
 
 export interface Options {
