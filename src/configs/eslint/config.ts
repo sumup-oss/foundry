@@ -47,7 +47,17 @@ const base = {
     'no-use-before-define': 'off',
     'max-len': [
       'error',
-      { code: 80, tabWidth: 2, ignoreComments: true, ignoreUrls: true },
+      {
+        code: 80,
+        tabWidth: 2,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+        ignorePattern:
+          '^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()',
+      },
     ],
     'no-underscore-dangle': [
       'error',
@@ -218,18 +228,6 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
       overrides: [
         {
           files: ['**/*spec.*'],
-          rules: {
-            'max-len': [
-              'error',
-              {
-                code: 80,
-                tabWidth: 2,
-                ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
-                ignoreComments: true,
-                ignoreUrls: true,
-              },
-            ],
-          },
           globals: {
             render: true,
             create: true,
@@ -252,18 +250,6 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
       overrides: [
         {
           files: ['**/*spec.*', 'e2e/**/*'],
-          rules: {
-            'max-len': [
-              'error',
-              {
-                code: 80,
-                tabWidth: 2,
-                ignorePattern: '^\\s*it(?:\\.(?:skip|only))?\\(',
-                ignoreComments: true,
-                ignoreUrls: true,
-              },
-            ],
-          },
           env: { 'cypress/globals': true },
         },
       ],
