@@ -13,24 +13,12 @@
  * limitations under the License.
  */
 
-import { Handlebars } from '../../lib/handlebars';
-import { Options, File, CI } from '../../types/shared';
+import { includes } from 'lodash/fp';
+import Handlebars from 'handlebars';
 
-import * as githubActions from './github-actions';
+// eslint-disable-next-line no-confusing-arrow
+Handlebars.registerHelper('includes', (array, value, options) =>
+  includes(value, array) ? options.fn(options.data.root) : null,
+);
 
-const PLATFORM_MAP = {
-  [CI.GITHUB_ACTIONS]: githubActions,
-};
-
-export const files = (options: Options): File[] => {
-  const { ci = CI.GITHUB_ACTIONS } = options;
-  const platform = PLATFORM_MAP[ci];
-  const template = Handlebars.compile(platform.template);
-  const content = template(options);
-  return [
-    {
-      name: platform.fileName,
-      content,
-    },
-  ];
-};
+export { Handlebars };
