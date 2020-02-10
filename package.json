@@ -3,7 +3,7 @@
   "version": "0.0.0-semantically-released",
   "description": "A toolkit for JavaScript + TypeScript applications by SumUp.",
   "main": "index.js",
-  "repository": "github:sumup-oss/foundry",
+  "repository": "https://github.com/github:sumup-oss/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",
   "license": "Apache-2.0",
   "bin": "cli/index.js",

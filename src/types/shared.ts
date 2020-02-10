@@ -61,6 +61,7 @@ export interface Options {
   frameworks?: Framework[];
   openSource?: boolean;
   publish?: boolean;
+  overwrite?: boolean;
 }
 
 export type File = {
