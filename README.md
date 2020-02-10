@@ -126,7 +126,7 @@ module.exports = require('@sumup/foundry/plop')({
 });
 ```
 
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.comsumup-oss/foundry/tree/master/src/configs/plop/templates).
+To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/master/src/configs/plop/templates).
 
 ## Running a tool
 
