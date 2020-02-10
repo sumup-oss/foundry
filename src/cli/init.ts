@@ -27,6 +27,7 @@ import {
   Language,
   Environment,
   Framework,
+  CI,
   Tool,
   ToolOptions,
   File,
@@ -51,6 +52,7 @@ export interface InitParams {
   environments?: Environment[];
   frameworks?: Framework[];
   openSource?: boolean;
+  ci?: CI;
   overwrite?: boolean;
   publish?: boolean;
   $0?: string;
@@ -92,6 +94,13 @@ export async function init(args: InitParams): Promise<void> {
       message: 'Which framework(s) does the project use?',
       choices: enumToChoices(Framework),
       when: (): boolean => !args.frameworks,
+    },
+    [Prompt.CI]: {
+      type: 'checkbox',
+      name: 'ci',
+      message: 'Which CI platform would you like to use?',
+      choices: enumToChoices(CI),
+      when: (): boolean => isEmpty(args.ci),
     },
     [Prompt.PUBLISH]: {
       type: 'confirm',

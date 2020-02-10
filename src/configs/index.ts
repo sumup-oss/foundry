@@ -21,6 +21,7 @@ import * as lintStaged from './lint-staged';
 import * as plop from './plop';
 import * as prettier from './prettier';
 import * as semanticRelease from './semantic-release';
+import * as ci from './ci';
 
 export const tools: { [key in Tool]?: ToolOptions } = {
   [Tool.ESLINT]: eslint,
@@ -29,4 +30,5 @@ export const tools: { [key in Tool]?: ToolOptions } = {
   [Tool.PLOP]: plop,
   [Tool.PRETTIER]: prettier,
   [Tool.SEMANTIC_RELEASE]: semanticRelease,
+  [Tool.CI]: ci,
 };
