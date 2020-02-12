@@ -227,7 +227,7 @@ function getFileName(
   const jsxExtension = JSX_EXTENSIONS[language];
   const fileNameMap = {
     [FileType.COMPONENT]: `${componentName}.${jsxExtension}`,
-    [FileType.COMPONENT_SPEC]: `${componentName}.spec.${jsExtension}`,
+    [FileType.COMPONENT_SPEC]: `${componentName}.spec.${jsxExtension}`,
     [FileType.STORY]: `${componentName}.story.${jsxExtension}`,
     [FileType.SERVICE]: `${componentName}Service.${jsExtension}`,
     [FileType.SERVICE_SPEC]: `${componentName}Service.spec.${jsExtension}`,
