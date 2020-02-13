@@ -81,6 +81,11 @@ async function resolveBinaryPath(
     // from the name of the package.
     const packageJsonPath = await getPackageJsonPath(name, useRelative);
     const { bin: packageBin } = await loadJson(packageJsonPath);
+
+    if (!packageBin) {
+      return null;
+    }
+
     const binaryPath = isString(packageBin) ? packageBin : packageBin[name];
 
     if (!binaryPath) {

@@ -27,6 +27,7 @@ import {
   Language,
   Environment,
   Framework,
+  CI,
   Tool,
   ToolOptions,
   File,
@@ -51,6 +52,8 @@ export interface InitParams {
   environments?: Environment[];
   frameworks?: Framework[];
   openSource?: boolean;
+  ci?: CI;
+  overwrite?: boolean;
   publish?: boolean;
   $0?: string;
   _?: string[];
@@ -92,6 +95,13 @@ export async function init(args: InitParams): Promise<void> {
       choices: enumToChoices(Framework),
       when: (): boolean => !args.frameworks,
     },
+    [Prompt.CI]: {
+      type: 'checkbox',
+      name: 'ci',
+      message: 'Which CI platform would you like to use?',
+      choices: enumToChoices(CI),
+      when: (): boolean => isEmpty(args.ci),
+    },
     [Prompt.PUBLISH]: {
       type: 'confirm',
       name: 'publish',
@@ -130,7 +140,12 @@ export async function init(args: InitParams): Promise<void> {
           files.map((file) => ({
             title: `Write "${file.name}"`,
             task: (ctx: never, task): Promise<void> =>
-              writeFile(options.configDir, file.name, file.content).catch(() =>
+              writeFile(
+                options.configDir,
+                file.name,
+                file.content,
+                options.overwrite,
+              ).catch(() =>
                 listrInquirer(
                   [
                     {
@@ -177,7 +192,12 @@ export async function init(args: InitParams): Promise<void> {
               task: ListrTaskWrapper<Context>,
             ): undefined | Promise<void> => {
               try {
-                addPackageScript(ctx.packageJson, name, command);
+                addPackageScript(
+                  ctx.packageJson,
+                  name,
+                  command,
+                  options.overwrite,
+                );
                 return undefined;
               } catch (error) {
                 return listrInquirer(
@@ -228,7 +248,7 @@ export async function init(args: InitParams): Promise<void> {
 
 export function mergeOptions(
   args: InitParams,
-  answers: Omit<Options, 'configDir'>,
+  answers: Omit<Options, 'configDir' | 'overwrite'>,
 ): Options {
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };

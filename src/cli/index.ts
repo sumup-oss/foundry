@@ -68,6 +68,11 @@ yargs
           desc: 'The directory to write configs to',
           type: 'string',
           default: '.',
+        })
+        .option('overwrite', {
+          desc: 'Whether to overwrite existing config files',
+          type: 'boolean',
+          default: false,
         }),
     (args: InitParams) => execute('init', args),
   )

@@ -13,22 +13,12 @@
  * limitations under the License.
  */
 
-import { Tool, ToolOptions } from '../types/shared';
+import { includes } from 'lodash/fp';
+import Handlebars from 'handlebars';
 
-import * as eslint from './eslint';
-import * as husky from './husky';
-import * as lintStaged from './lint-staged';
-import * as plop from './plop';
-import * as prettier from './prettier';
-import * as semanticRelease from './semantic-release';
-import * as ci from './ci';
+// eslint-disable-next-line no-confusing-arrow
+Handlebars.registerHelper('includes', (array, value, options) =>
+  includes(value, array) ? options.fn(options.data.root) : null,
+);
 
-export const tools: { [key in Tool]?: ToolOptions } = {
-  [Tool.ESLINT]: eslint,
-  [Tool.HUSKY]: husky,
-  [Tool.LINT_STAGED]: lintStaged,
-  [Tool.PLOP]: plop,
-  [Tool.PRETTIER]: prettier,
-  [Tool.SEMANTIC_RELEASE]: semanticRelease,
-  [Tool.CI]: ci,
-};
+export { Handlebars };

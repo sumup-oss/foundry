@@ -17,6 +17,7 @@ export enum Preset {
   LINT = 'lint',
   RELEASE = 'release',
   TEMPLATES = 'templates',
+  CI = 'ci',
 }
 
 export enum Tool {
@@ -26,6 +27,7 @@ export enum Tool {
   LINT_STAGED = 'lint-staged',
   PLOP = 'plop',
   SEMANTIC_RELEASE = 'semantic-release',
+  CI = 'ci',
 }
 
 export enum Prompt {
@@ -34,6 +36,7 @@ export enum Prompt {
   FRAMEWORKS = 'frameworks',
   OPEN_SOURCE = 'open-source',
   PUBLISH = 'publish',
+  CI = 'ci',
 }
 
 export enum Language {
@@ -53,14 +56,20 @@ export enum Framework {
   CYPRESS = 'Cypress',
 }
 
+export enum CI {
+  GITHUB_ACTIONS = 'github-actions',
+}
+
 export interface Options {
   presets: Preset[];
   configDir: string;
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
+  ci?: CI;
   openSource?: boolean;
   publish?: boolean;
+  overwrite?: boolean;
 }
 
 export type File = {
@@ -82,6 +91,6 @@ export interface ToolOptions {
 
 export type PackageJson = {
   scripts: { [key: string]: string };
-  bin: string;
-  [key: string]: object | string;
+  bin?: string;
+  [key: string]: object | string | undefined;
 };

@@ -13,22 +13,24 @@
  * limitations under the License.
  */
 
-import { Tool, ToolOptions } from '../types/shared';
+import { Handlebars } from '../../lib/handlebars';
+import { Options, File, CI } from '../../types/shared';
 
-import * as eslint from './eslint';
-import * as husky from './husky';
-import * as lintStaged from './lint-staged';
-import * as plop from './plop';
-import * as prettier from './prettier';
-import * as semanticRelease from './semantic-release';
-import * as ci from './ci';
+import * as githubActions from './github-actions';
 
-export const tools: { [key in Tool]?: ToolOptions } = {
-  [Tool.ESLINT]: eslint,
-  [Tool.HUSKY]: husky,
-  [Tool.LINT_STAGED]: lintStaged,
-  [Tool.PLOP]: plop,
-  [Tool.PRETTIER]: prettier,
-  [Tool.SEMANTIC_RELEASE]: semanticRelease,
-  [Tool.CI]: ci,
+const PLATFORM_MAP = {
+  [CI.GITHUB_ACTIONS]: githubActions,
+};
+
+export const files = (options: Options): File[] => {
+  const { ci = CI.GITHUB_ACTIONS } = options;
+  const platform = PLATFORM_MAP[ci];
+  const template = Handlebars.compile(platform.template);
+  const content = template(options);
+  return [
+    {
+      name: platform.fileName,
+      content,
+    },
+  ];
 };

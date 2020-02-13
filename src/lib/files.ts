@@ -17,6 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 import prettier from 'prettier';
+import { includes } from 'lodash/fp';
 import pkgUp from 'pkg-up';
 
 import { Language, PackageJson } from '../types/shared';
@@ -24,16 +25,27 @@ import prettierConfig from '../prettier';
 
 const writeFileAsync = promisify(fs.writeFile);
 
+const CONFIG_MAP: { [key: string]: any } = {
+  '.js': prettierConfig({ language: Language.JAVASCRIPT }),
+  '.yaml': { parser: 'yaml' },
+};
+
 export function writeFile(
   configDir: string,
   filename: string,
   content: string,
   shouldOverwrite = false,
 ): Promise<void> {
-  const formatOptions = prettierConfig({ language: Language.TYPESCRIPT });
+  const extension = path.extname(filename);
+  const formatOptions = includes(extension, ['.js', '.yaml'])
+    ? CONFIG_MAP[extension]
+    : CONFIG_MAP.js;
   const fileContent = prettier.format(content, formatOptions);
-  const targetDir = path.resolve(configDir);
-  const filePath = path.resolve(targetDir, filename);
+  const filePath = path.join(configDir, filename);
+  const directory = path.dirname(filePath);
+  if (directory && directory !== '.') {
+    fs.mkdirSync(directory, { recursive: true });
+  }
   const flag = shouldOverwrite ? 'w' : 'wx';
 
   return writeFileAsync(filePath, fileContent, { flag });

@@ -55,9 +55,20 @@ const release = {
   prompts: [Prompt.PUBLISH],
 };
 
+const ci = {
+  name: formatName(
+    'Continous Integration',
+    'Validate the code on every push using the configured presets',
+  ),
+  value: Preset.CI,
+  short: 'CI',
+  tools: [Tool.CI],
+  prompts: [Prompt.CI],
+};
+
 function formatName(name: string, description: string): string {
   return [`${chalk.bold(name)}:`, description].join(' ');
 }
 
-export const presets = { lint, templates, release };
-export const presetChoices = [lint, templates, release];
+export const presets = { lint, templates, release, ci };
+export const presetChoices = [lint, templates, release, ci];
