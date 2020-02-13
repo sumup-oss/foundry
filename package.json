@@ -14,7 +14,7 @@
     "cleanup": "rimraf ./dist && mkdir dist",
     "copy": "mkdir -p dist/configs/plop/templates && cp -r src/configs/plop/templates dist/configs/plop && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "prelint": "yarn build",
-    "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --format junit -o __reports__/junit/eslint-results.xml",
     "test": "jest --watch",
@@ -23,7 +23,7 @@
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
     "prerelease": "yarn build",
-    "release": "foundry run semantic-release"
+    "release": "cd ./dist && semantic-release"
   },
   "engines": {
     "node": ">=10.13.0"
