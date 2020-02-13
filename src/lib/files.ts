@@ -25,23 +25,30 @@ import prettierConfig from '../prettier';
 
 const writeFileAsync = promisify(fs.writeFile);
 
-const CONFIG_MAP: { [key: string]: any } = {
-  '.js': prettierConfig({ language: Language.JAVASCRIPT }),
-  '.yaml': { parser: 'yaml' },
-};
+export function formatContent(fileName: string, content: string): string {
+  const configMap: { [key: string]: any } = {
+    '.js': prettierConfig({ language: Language.JAVASCRIPT }),
+    '.yaml': { parser: 'yaml' },
+  };
+
+  const extension = path.extname(fileName);
+  const formatConfig = configMap[extension];
+
+  if (!formatConfig) {
+    return content;
+  }
+
+  return prettier.format(content, formatConfig);
+}
 
 export function writeFile(
   configDir: string,
-  filename: string,
+  fileName: string,
   content: string,
   shouldOverwrite = false,
 ): Promise<void> {
-  const extension = path.extname(filename);
-  const formatOptions = includes(extension, ['.js', '.yaml'])
-    ? CONFIG_MAP[extension]
-    : CONFIG_MAP.js;
-  const fileContent = prettier.format(content, formatOptions);
-  const filePath = path.join(configDir, filename);
+  const fileContent = formatContent(fileName, content);
+  const filePath = path.join(configDir, fileName);
   const directory = path.dirname(filePath);
   if (directory && directory !== '.') {
     fs.mkdirSync(directory, { recursive: true });
