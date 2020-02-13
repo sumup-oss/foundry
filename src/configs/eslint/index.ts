@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import dedent from 'dedent';
 import { pick } from 'lodash/fp';
 
 import { Options, Language, Script, File } from '../../types/shared';
@@ -24,6 +25,12 @@ export const files = (options: Options): File[] => [
     module.exports = require('@sumup/foundry/eslint')(${JSON.stringify(
       pick(['language', 'environments', 'frameworks', 'openSource'], options),
     )})`,
+  },
+  {
+    name: '.eslintignore',
+    content: `${dedent`
+      node_modules/
+    `}\n`,
   },
 ];
 

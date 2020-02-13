@@ -14,7 +14,7 @@
     "cleanup": "rimraf ./dist && mkdir dist",
     "copy": "mkdir -p dist/configs/plop/templates && cp -r src/configs/plop/templates dist/configs/plop && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "prelint": "yarn build",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint": "foundry run eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --format junit -o __reports__/junit/eslint-results.xml",
     "test": "jest --watch",
@@ -23,7 +23,7 @@
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
     "prerelease": "yarn build",
-    "release": "cd ./dist && semantic-release"
+    "release": "foundry run semantic-release"
   },
   "engines": {
     "node": ">=10.13.0"
@@ -37,6 +37,7 @@
     "@typescript-eslint/parser": "^2.15.0",
     "babel-eslint": "^10.0.1",
     "chalk": "^3.0.0",
+    "dedent": "^0.7.0",
     "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
@@ -65,6 +66,7 @@
     "yargs": "^12.0.5"
   },
   "devDependencies": {
+    "@types/dedent": "^0.7.0",
     "@types/inquirer": "^6.5.0",
     "@types/jest": "^24.0.24",
     "@types/listr": "^0.14.2",
