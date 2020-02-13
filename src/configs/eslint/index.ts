@@ -30,6 +30,14 @@ export const files = (options: Options): File[] => [
     name: '.eslintignore',
     content: `${dedent`
       node_modules/
+      build/
+      dist/
+      .next/
+      .out/
+      static/
+      public/
+      coverage/
+      __coverage__/
     `}\n`,
   },
 ];
