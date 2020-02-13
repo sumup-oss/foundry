@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import dedent from 'dedent';
 import { pick } from 'lodash/fp';
 
 import { Options, File } from '../../types/shared';
@@ -24,5 +25,12 @@ export const files = (options: Options): File[] => [
     module.exports = require('@sumup/foundry/prettier')(${JSON.stringify(
       pick(['language'], options),
     )})`,
+  },
+  {
+    name: '.prettierignore',
+    content: `${dedent`
+      node_modules/
+      package.json
+    `}\n`,
   },
 ];
