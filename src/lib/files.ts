@@ -41,10 +41,9 @@ export function writeFile(
     ? CONFIG_MAP[extension]
     : CONFIG_MAP.js;
   const fileContent = prettier.format(content, formatOptions);
-  const targetDir = path.resolve(configDir);
-  const filePath = path.resolve(targetDir, filename);
+  const filePath = path.join(configDir, filename);
   const directory = path.dirname(filePath);
-  if (directory) {
+  if (directory && directory !== '.') {
     fs.mkdirSync(directory, { recursive: true });
   }
   const flag = shouldOverwrite ? 'w' : 'wx';
