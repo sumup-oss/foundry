@@ -23,6 +23,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -31,6 +32,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -67,6 +77,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -80,6 +91,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -120,6 +132,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -128,6 +141,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],
@@ -159,6 +181,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -172,6 +195,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -213,6 +237,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -221,6 +246,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -268,6 +302,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -281,6 +316,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -324,6 +360,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -332,6 +369,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],
@@ -362,6 +408,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -375,6 +422,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -424,6 +472,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -432,6 +481,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -476,6 +534,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -489,6 +548,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -533,6 +593,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -541,6 +602,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -580,6 +650,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -593,6 +664,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -638,6 +710,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -646,6 +719,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -701,6 +783,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -714,6 +797,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -761,6 +845,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -769,6 +854,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -807,6 +901,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -820,6 +915,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -875,6 +971,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -883,6 +980,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -950,6 +1056,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -963,6 +1070,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -977,6 +1085,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1007,6 +1116,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1015,6 +1125,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1077,6 +1196,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1090,6 +1210,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1104,6 +1225,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1135,6 +1257,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1143,6 +1266,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1221,6 +1353,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1234,6 +1367,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1248,6 +1382,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1281,6 +1416,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1289,6 +1425,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1350,6 +1495,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1363,6 +1509,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1379,6 +1526,7 @@ Object {
     "quote-props": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
   },
   "settings": Object {
     "react": Object {
@@ -1416,6 +1564,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1424,6 +1573,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1499,6 +1657,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1512,6 +1671,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1529,6 +1689,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1560,6 +1721,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1568,6 +1730,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1638,6 +1809,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1651,6 +1823,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1668,6 +1841,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1700,6 +1874,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1708,6 +1883,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1794,6 +1978,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1807,6 +1992,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1824,6 +2010,7 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/prop-types": "off",
   },
 }
 `;
@@ -1858,6 +2045,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1866,6 +2054,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
     Object {
@@ -1935,6 +2132,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -1948,6 +2146,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {
@@ -1967,6 +2166,7 @@ Object {
     "quote-props": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
   },
   "settings": Object {
     "react": Object {
@@ -1992,6 +2192,7 @@ Object {
       "files": Array [
         "*.config.js",
         ".*rc.js",
+        "plopfile.js",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -2000,6 +2201,15 @@ Object {
             "devDependencies": true,
           },
         ],
+      },
+    },
+    Object {
+      "files": Array [
+        "*.story.*",
+        "*.stories.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],
@@ -2017,6 +2227,7 @@ Object {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
+    "indent": "off",
     "max-len": Array [
       "error",
       Object {
@@ -2030,6 +2241,7 @@ Object {
         "tabWidth": 2,
       },
     ],
+    "no-confusing-arrow": "off",
     "no-underscore-dangle": Array [
       "error",
       Object {

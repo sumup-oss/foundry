@@ -44,6 +44,10 @@ $ npm install --save-dev @sumup/foundry
 Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to initialize a configuration file for each tool you would like to use. This is done with the `init` command.
 
 ```sh
+# With Yarn
+$ yarn run foundry init
+
+# With npm
 $ npx foundry init
 ```
 

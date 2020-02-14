@@ -53,7 +53,7 @@ export const scripts = (options: Options): Script[] => {
     {
       name: 'lint',
       command: `foundry run eslint . --ext ${extensions}`,
-      description: 'checksfiles for problematic patterns and report them',
+      description: 'check files for problematic patterns and report them',
     },
     {
       name: 'lint:fix',
