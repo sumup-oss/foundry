@@ -18,7 +18,7 @@ import { relative, join } from 'path';
 
 import * as logger from '../../lib/logger';
 // TODO: Import from node modules once https://github.com/plopjs/node-plop/issues/140 has been resolved.
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import { NodePlopAPI, ActionConfig } from '../../types/plop';
 import { Language } from '../../types/shared';
 
@@ -158,37 +158,34 @@ export function config(options: PlopOptions) {
           ? files.concat(FileType.INDEX)
           : files;
 
-        return allFiles.reduce(
-          (acc, file) => {
-            if (!Object.values(FileType).includes(file)) {
-              raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(file));
-            }
+        return allFiles.reduce((acc, file) => {
+          if (!Object.values(FileType).includes(file)) {
+            raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(file));
+          }
 
-            const templateFileName =
-              file === FileType.COMPONENT
-                ? getComponentTemplateName(componentType)
-                : `${file}.hbs`;
+          const templateFileName =
+            file === FileType.COMPONENT
+              ? getComponentTemplateName(componentType)
+              : `${file}.hbs`;
 
-            return [
-              ...acc,
-              {
-                type: 'add',
-                path: join(
-                  absDestPath,
-                  capitalizedName,
-                  getFileName(options.language, file, componentName),
-                ),
-                templateFile: getTemplatePath(
-                  options.language,
-                  options.templateDir,
-                  plopfilePath,
-                  templateFileName,
-                ),
-              },
-            ];
-          },
-          [] as ActionConfig[],
-        );
+          return [
+            ...acc,
+            {
+              type: 'add',
+              path: join(
+                absDestPath,
+                capitalizedName,
+                getFileName(options.language, file, componentName),
+              ),
+              templateFile: getTemplatePath(
+                options.language,
+                options.templateDir,
+                plopfilePath,
+                templateFileName,
+              ),
+            },
+          ];
+        }, [] as ActionConfig[]);
       },
     });
   };
