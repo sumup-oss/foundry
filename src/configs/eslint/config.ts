@@ -45,6 +45,7 @@ const base = {
   rules: {
     'curly': ['error', 'all'],
     'no-use-before-define': 'off',
+    'no-confusing-arrow': 'off',
     'max-len': [
       'error',
       {
@@ -71,6 +72,7 @@ const base = {
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
     'operator-linebreak': 'off',
+    'indent': 'off',
   },
   globals: {
     __DEV__: true,
@@ -79,12 +81,18 @@ const base = {
   },
   overrides: [
     {
-      files: ['*.config.js', '.*rc.js'],
+      files: ['*.config.js', '.*rc.js', 'plopfile.js'],
       rules: {
         'import/no-extraneous-dependencies': [
           'error',
           { devDependencies: true },
         ],
+      },
+    },
+    {
+      files: ['*.story.*', '*.stories.*'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ],
@@ -116,6 +124,7 @@ function customizeLanguage(language?: Language): EslintConfig {
           'error',
           { functions: false },
         ],
+        'react/prop-types': 'off',
       },
       overrides: [
         {
@@ -268,6 +277,9 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
 
 function addCopyrightNotice(openSource?: boolean): EslintConfig {
   return (config: EslintConfig): EslintConfig => {
+    if (!openSource) {
+      return config;
+    }
     const copyrightNotice = {
       plugins: ['notice'],
       rules: {
@@ -297,9 +309,6 @@ function addCopyrightNotice(openSource?: boolean): EslintConfig {
         ],
       },
     };
-    if (!openSource) {
-      return config;
-    }
     return customizeConfig(config, copyrightNotice);
   };
 }
