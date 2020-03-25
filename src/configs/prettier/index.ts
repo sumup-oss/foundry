@@ -14,17 +14,14 @@
  */
 
 import dedent from 'dedent';
-import { pick } from 'lodash/fp';
 
-import { Options, File } from '../../types/shared';
+import { File } from '../../types/shared';
 
-export const files = (options: Options): File[] => [
+export const files = (): File[] => [
   {
     name: 'prettier.config.js',
     content: `
-    module.exports = require('@sumup/foundry/prettier')(${JSON.stringify(
-      pick(['language'], options),
-    )})`,
+    module.exports = require('@sumup/foundry/prettier')()`,
   },
   {
     name: '.prettierignore',
