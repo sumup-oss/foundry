@@ -89,7 +89,7 @@ The preset includes the following tools:
 
 #### Eslint
 
-[**ESLint**](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
+[ESLint](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
 
 Eslint's configuration options: 
 
@@ -102,13 +102,13 @@ Eslint's configuration options:
 
 #### Prettier
 
-[**Prettier**](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
+[Prettier](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
 
 Prettier currently has no configuration options.
 
 #### lint-staged
 
-[**lint-staged**](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
+[lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
 
 lint-staged's configuration options: 
 
@@ -118,7 +118,7 @@ lint-staged's configuration options:
 
 #### Husky
 
-[**Husky**](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
+[Husky](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
 
 Husky currently has no configuration options.
 
@@ -132,7 +132,7 @@ The preset includes the following tools:
 
 #### semantic-release
 
-[**semantic-release**](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
+[semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
 
 semantic-releases's configuration options: 
 
@@ -156,7 +156,7 @@ The preset includes the following tool:
 
 #### Plop
 
-[**Plop**](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
+[Plop](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
 
 Plop's configuration options:
 
