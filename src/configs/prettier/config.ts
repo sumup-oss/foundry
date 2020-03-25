@@ -13,30 +13,17 @@
  * limitations under the License.
  */
 
-import { Options as PrettierConfig, BuiltInParserName } from 'prettier';
+import { Options as PrettierConfig } from 'prettier';
 
-import { Language } from '../../types/shared';
+import { Options } from '../../types/shared';
 
-type PrettierOptions = {
-  language: Language;
-};
-
-type Parsers = {
-  [key in Language]: BuiltInParserName;
-};
-
-const PARSERS: Parsers = {
-  [Language.JAVASCRIPT]: 'babel',
-  [Language.TYPESCRIPT]: 'typescript',
-};
+export type PrettierOptions = Partial<Options>;
 
 export function config(
-  options: PrettierOptions = { language: Language.TYPESCRIPT },
+  options: PrettierOptions = {},
   overrides: PrettierConfig = {},
 ): PrettierConfig {
-  const { language } = options;
   const base: PrettierConfig = {
-    parser: PARSERS[language],
     printWidth: 80,
     tabWidth: 2,
     useTabs: false,

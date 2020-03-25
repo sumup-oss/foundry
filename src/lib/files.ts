@@ -16,18 +16,19 @@
 import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
-import prettier from 'prettier';
-import { includes } from 'lodash/fp';
+import prettier, { Options as PrettierConfig } from 'prettier';
+
 import pkgUp from 'pkg-up';
 
-import { Language, PackageJson } from '../types/shared';
+import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
 
 const writeFileAsync = promisify(fs.writeFile);
 
 export function formatContent(fileName: string, content: string): string {
-  const configMap: { [key: string]: any } = {
-    '.js': prettierConfig({ language: Language.JAVASCRIPT }),
+  const configMap: { [key: string]: PrettierConfig } = {
+    '.js': prettierConfig({}, { parser: 'babel' }),
+    '.json': { parser: 'json' },
     '.yaml': { parser: 'yaml' },
   };
 
