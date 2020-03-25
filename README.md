@@ -78,60 +78,98 @@ A preset includes the configurations and scripts that are needed for a certain t
 
 ### 🔍 Lint
 
-Check code for syntax errors and format it automatically. The preset includes: 
-
-- [**ESLint**](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
-- [**Prettier**](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
-- [**lint-staged**](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
-- [**Husky**](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
-
-The preset adds the following scripts to your `package.json`:
+Check code for syntax errors and format it automatically. The preset adds the following scripts to your `package.json`:
 
 - `lint`: check files for problematic patterns and report them
 - `lint:fix`: same as `lint`, but also try to fix the issues
 - `lint:ci`: same as `lint`, but also save the report to a file
 
+
+The preset includes the following tools: 
+
+#### Eslint
+
+[ESLint](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
+
+Eslint's configuration options: 
+
+| Name         | Type    | Options                                  | Default      |
+|--------------|---------|------------------------------------------|--------------|
+| language     | string  | 'TypeScript' | 'JavaScript'              | 'TypeScript' |
+| environments | array   | 'Browser' | 'Node'                       | []           |
+| frameworks   | array   | 'React' | 'Emotion' | 'Jest' | 'Cypress' | []           |
+| openSource   | boolean | true | false                             | false        |
+
+#### Prettier
+
+[Prettier](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
+
+Prettier currently has no configuration options.
+
+#### lint-staged
+
+[lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
+
+lint-staged's configuration options: 
+
+| Name     | Type   | Options                     | Default      |
+|----------|--------|-----------------------------|--------------|
+| language | string | 'TypeScript' | 'JavaScript' | 'TypeScript' |
+
+#### Husky
+
+[Husky](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
+
+Husky currently has no configuration options.
+
 ### 🚀 Release
 
-Automatically generate release notes and (optionally) publish to NPM. The preset includes:
-
-- [**semantic-release**](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
-
-The preset adds the following script to your `package.json`:
+Automatically generate release notes and (optionally) publish to NPM. The preset adds the following script to your `package.json`:
 
 - `release`: release and publish a new version
 
+The preset includes the following tools:
+
+#### semantic-release
+
+[semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
+
+semantic-releases's configuration options: 
+
+| Name    | Type    | Options      | Default |
+|---------|---------|--------------|---------|
+| publish | boolean | true | false | false   |
+
 ### 🤖 Continous Integration (CI)
 
-Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The preset includes:
+Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
 - [**GitHub Actions**](https://github.com/features/actions) builds, tests, and deploys your code right from GitHub.
 
 ### 🖇️ Templates
 
-Generate boilerplate code e.g. for React components. The preset includes:
-
-- [**Plop**](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
-
-The preset adds the following script to your `package.json`:
+Generate boilerplate code e.g. for React components. The preset adds the following script to your `package.json`:
 
 - `create:component`: generate the files for a React component
+
+The preset includes the following tool:
+
+#### Plop
+
+[Plop](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
+
+Plop's configuration options:
+
+| Name        | Type   | Options                                        | Default      |
+|-------------|--------|------------------------------------------------|--------------|
+| language    | string | 'TypeScript' | 'JavaScript'                    | 'TypeScript' |
+| templateDir | string | A path relative to the location of plopfile.js | '.'          |
 
 #### Custom templates
 
 ⭐ _This is an advanced use case._
 
-Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory. Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
-
-In order to specify the template directory, you need to modify the config file (`plopfile.js`) that was generated by `npx foundry init`, like so:
-
-```diff
-module.exports = require('@sumup/foundry/plop')({
-  language: <language>,
-+  // The path should be relative to the location of plopfile.js
-+  templateDir: <path-to-templates>,
-});
-```
+Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
 
 To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/master/src/configs/plop/templates).
 
