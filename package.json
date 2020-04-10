@@ -68,7 +68,7 @@
   "devDependencies": {
     "@types/dedent": "^0.7.0",
     "@types/inquirer": "^6.5.0",
-    "@types/jest": "^24.0.24",
+    "@types/jest": "^25.0.0",
     "@types/listr": "^0.14.2",
     "@types/lodash": "^4.14.149",
     "@types/node": "^10.0.0",
@@ -76,12 +76,12 @@
     "@types/yargs": "^13.0.3",
     "audit-ci": "^2.0.1",
     "codecov": "^3.1.0",
-    "jest": "^24.0.0",
+    "jest": "^25.0.0",
     "jest-extended": "^0.11.2",
-    "jest-junit": "^9.0.0",
+    "jest-junit": "^10.0.0",
     "license-checker": "^25.0.1",
     "rimraf": "^2.6.2",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^25.0.0",
     "typescript": "^3.7.3"
   }
 }
