@@ -4,13 +4,13 @@ import { create, renderToHtml, axe, RenderFn } from 'config/test-utils';
 
 import { {{ name }}, {{ name }}Props } from './{{ name }}';
 
-describe.skip('{{ name }}', () => {
+describe('{{ name }}', () => {
   function render{{ name }}(renderFn: RenderFn, props: {{ name }}Props = {}) {
     return renderFn(<{{ name }} {...props} />);
   }
 
   describe('styles', () => {
-    it('should render with default styles', () => {
+    it.todo('should render with default styles', () => {
       const actual = render{{ name }}(create);
       expect(actual).toMatchSnapshot();
     });
@@ -18,12 +18,12 @@ describe.skip('{{ name }}', () => {
 
   {{#if (not type 'styled') }}
   describe('business logic', () => {
-    it('should have tests');
+    it.todo('should have tests');
   });
 
   {{/if}}
   describe('accessibility', () => {
-    it('should meet accessibility guidelines', async () => {
+    it.todo('should meet accessibility guidelines', async () => {
       const wrapper = render{{ name }}(renderToHtml);
       const actual = await axe(wrapper);
       expect(actual).toHaveNoViolations();
