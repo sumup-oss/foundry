@@ -106,6 +106,25 @@ describe('files', () => {
       expect(actual).toEqual(expected);
     });
 
+    it('should initialize the scripts if they do not exist yet', () => {
+      const packageJson = {};
+      const name = 'lint';
+      const command = 'foundry run eslint src';
+      const shouldOverwrite = false;
+
+      const actual = addPackageScript(
+        packageJson,
+        name,
+        command,
+        shouldOverwrite,
+      );
+
+      const expected = {
+        scripts: { lint: 'foundry run eslint src' },
+      };
+      expect(actual).toEqual(expected);
+    });
+
     it('should throw an error if a conflicting script exists', () => {
       const packageJson = { scripts: { lint: 'eslint .' } };
       const name = 'lint';

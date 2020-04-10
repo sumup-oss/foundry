@@ -90,7 +90,7 @@ export interface ToolOptions {
 }
 
 export type PackageJson = {
-  scripts: { [key: string]: string };
+  scripts?: { [key: string]: string };
   bin?: string;
   [key: string]: object | string | undefined;
 };
