@@ -58,18 +58,18 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 
 ```sh
 --presets, -p       A preset configures a group of tools that solve a common
-                    problem  [array] [options: "lint", "release", "templates"]
+                    problem  [array] [options: "lint", "release", "templates", "ci"]
 --language, -l      The programming language in which the project is written
-                                         [options: "TypeScript", "JavaScript"]
+                                               [options: "TypeScript", "JavaScript"]
 --environments, -e  The environment(s) in which the code runs
-                                          [array] [options: "Node", "Browser"]
+                                                [array] [options: "Node", "Browser"]
 --frameworks, -f    The framework(s) that the project uses
-                                 [array] [options: "React", "Emotion", "Jest"]
---openSource, -o    Whether the project is open source               [boolean]
---publish           Whether to publish to NPM                        [boolean]
---configDir, -c     The directory to write the configs to   
-                                                       [string] [default: "."]
---help              Show this help menu                              [boolean]
+                                       [array] [options: "React", "Emotion", "Jest"]
+--ci                The CI platform the project uses     [options: "github-actions"]
+--openSource, -o    Whether the project is open source                     [boolean]
+--publish           Whether to publish to NPM                              [boolean]
+--configDir, -c     The directory to write the configs to      [string] [default: "."]
+--help              Show this help menu                                    [boolean]
 ```
 
 ## Presets
@@ -84,21 +84,20 @@ Check code for syntax errors and format it automatically. The preset adds the fo
 - `lint:fix`: same as `lint`, but also try to fix the issues
 - `lint:ci`: same as `lint`, but also save the report to a file
 
-
-The preset includes the following tools: 
+The preset includes the following tools:
 
 #### Eslint
 
 [ESLint](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
 
-Eslint's configuration options: 
+Eslint's configuration options:
 
-| Name         | Type    | Options                                  | Default      |
-|--------------|---------|------------------------------------------|--------------|
-| language     | string  | 'TypeScript' | 'JavaScript'              | 'TypeScript' |
-| environments | array   | 'Browser' | 'Node'                       | []           |
-| frameworks   | array   | 'React' | 'Emotion' | 'Jest' | 'Cypress' | []           |
-| openSource   | boolean | true | false                             | false        |
+| Name         | Type    | Options      | Default      |
+| ------------ | ------- | ------------ | ------------ |
+| language     | string  | 'TypeScript' | 'JavaScript' | 'TypeScript' |
+| environments | array   | 'Browser'    | 'Node'       | [] |
+| frameworks   | array   | 'React'      | 'Emotion'    | 'Jest' | 'Cypress' | [] |
+| openSource   | boolean | true         | false        | false |
 
 #### Prettier
 
@@ -110,10 +109,10 @@ Prettier currently has no configuration options.
 
 [lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
 
-lint-staged's configuration options: 
+lint-staged's configuration options:
 
-| Name     | Type   | Options                     | Default      |
-|----------|--------|-----------------------------|--------------|
+| Name     | Type   | Options      | Default      |
+| -------- | ------ | ------------ | ------------ |
 | language | string | 'TypeScript' | 'JavaScript' | 'TypeScript' |
 
 #### Husky
@@ -134,11 +133,11 @@ The preset includes the following tools:
 
 [semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
 
-semantic-releases's configuration options: 
+semantic-releases's configuration options:
 
-| Name    | Type    | Options      | Default |
-|---------|---------|--------------|---------|
-| publish | boolean | true | false | false   |
+| Name    | Type    | Options | Default |
+| ------- | ------- | ------- | ------- |
+| publish | boolean | true    | false   | false |
 
 ### 🤖 Continous Integration (CI)
 
@@ -161,8 +160,8 @@ The preset includes the following tool:
 Plop's configuration options:
 
 | Name        | Type   | Options                                        | Default      |
-|-------------|--------|------------------------------------------------|--------------|
-| language    | string | 'TypeScript' | 'JavaScript'                    | 'TypeScript' |
+| ----------- | ------ | ---------------------------------------------- | ------------ |
+| language    | string | 'TypeScript'                                   | 'JavaScript' | 'TypeScript' |
 | templateDir | string | A path relative to the location of plopfile.js | '.'          |
 
 #### Custom templates

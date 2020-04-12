@@ -17,7 +17,7 @@
 
 import yargs from 'yargs';
 
-import { Preset, Language, Environment, Framework } from '../types/shared';
+import { Preset, Language, Environment, Framework, CI } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
 
 import { run, RunParams } from './run';
@@ -53,6 +53,10 @@ yargs
           desc: 'The frameworks the project uses',
           choices: enumToChoices(Framework),
           type: 'array',
+        })
+        .option('ci', {
+          desc: 'The CI platform the project uses',
+          choices: enumToChoices(CI),
         })
         .option('openSource', {
           alias: 'o',
