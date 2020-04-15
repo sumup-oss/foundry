@@ -21,23 +21,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -130,23 +117,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -235,23 +209,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -358,23 +319,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -470,23 +418,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -494,7 +429,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -591,23 +528,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -615,7 +539,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -708,23 +634,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -732,7 +645,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -843,23 +758,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -867,7 +769,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -969,23 +873,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -993,7 +884,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1003,11 +902,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1087,6 +987,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1114,23 +1026,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1138,7 +1037,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1148,11 +1055,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1227,6 +1135,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1255,23 +1175,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1279,7 +1186,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1289,11 +1204,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1384,6 +1300,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1414,23 +1342,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1438,7 +1353,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1448,11 +1371,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1529,6 +1453,16 @@ Object {
     "react/prop-types": "off",
   },
   "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
     "react": Object {
       "version": "detect",
     },
@@ -1562,23 +1496,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1586,7 +1507,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1596,11 +1525,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1608,7 +1538,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -1691,6 +1623,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1719,23 +1663,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1743,7 +1674,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1753,11 +1692,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1765,7 +1705,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -1843,6 +1785,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1872,23 +1826,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1896,7 +1837,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -1906,11 +1855,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -1918,7 +1868,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -2012,6 +1964,18 @@ Object {
     "quote-props": "off",
     "react/prop-types": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -2043,23 +2007,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -2067,7 +2018,15 @@ Object {
     },
     Object {
       "files": Array [
-        "*.d.ts",
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": Array [
@@ -2077,11 +2036,12 @@ Object {
           },
         ],
         "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
       },
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
       ],
       "rules": Object {
         "@typescript-eslint/no-var-requires": "off",
@@ -2089,7 +2049,9 @@ Object {
     },
     Object {
       "files": Array [
-        "*.spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "node/no-unpublished-import": "off",
@@ -2169,6 +2131,16 @@ Object {
     "react/prop-types": "off",
   },
   "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
     "react": Object {
       "version": "detect",
     },
@@ -2190,23 +2162,10 @@ Object {
   "overrides": Array [
     Object {
       "files": Array [
-        "*.config.js",
-        ".*rc.js",
-        "plopfile.js",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-      },
-    },
-    Object {
-      "files": Array [
-        "*.story.*",
-        "*.stories.*",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",

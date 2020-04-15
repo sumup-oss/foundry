@@ -81,16 +81,12 @@ const base = {
   },
   overrides: [
     {
-      files: ['*.config.js', '.*rc.js', 'plopfile.js'],
-      rules: {
-        'import/no-extraneous-dependencies': [
-          'error',
-          { devDependencies: true },
-        ],
-      },
-    },
-    {
-      files: ['*.story.*', '*.stories.*'],
+      files: [
+        '**/*.story.*',
+        '**/*.stories.*',
+        '**/setupTests.*',
+        '**/test-utils.*',
+      ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
@@ -119,6 +115,13 @@ function customizeLanguage(language?: Language): EslintConfig {
           modules: true,
         },
       },
+      settings: {
+        'import/resolver': {
+          node: {
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          },
+        },
+      },
       rules: {
         '@typescript-eslint/no-use-before-define': [
           'error',
@@ -128,8 +131,15 @@ function customizeLanguage(language?: Language): EslintConfig {
       },
       overrides: [
         {
-          files: ['*.d.ts'],
+          files: ['**/*.js'],
           rules: {
+            '@typescript-eslint/explicit-function-return-type': 'off',
+          },
+        },
+        {
+          files: ['**/*.d.ts'],
+          rules: {
+            'spaced-comment': 'off',
             'node/no-extraneous-import': 'off',
             'import/no-extraneous-dependencies': [
               'error',
@@ -138,7 +148,7 @@ function customizeLanguage(language?: Language): EslintConfig {
           },
         },
         {
-          files: ['*.spec.*'],
+          files: ['**/*.spec.*'],
           rules: {
             '@typescript-eslint/no-var-requires': 'off',
           },
@@ -187,7 +197,7 @@ function customizeEnv(environments?: Environment[]): EslintConfig {
       },
       overrides: [
         {
-          files: ['*.spec.*'],
+          files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
           rules: {
             'node/no-unpublished-import': 'off',
           },

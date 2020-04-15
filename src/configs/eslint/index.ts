@@ -38,6 +38,10 @@ export const files = (options: Options): File[] => [
       public/
       coverage/
       __coverage__/
+      __reports__/
+      /*.config.js
+      /*rc.js
+      plopfile.js
     `}\n`,
   },
 ];
@@ -62,8 +66,7 @@ export const scripts = (options: Options): Script[] => {
     },
     {
       name: 'lint:ci',
-      command:
-        'yarn lint --format junit -o __reports__/junit/eslint-results.xml',
+      command: 'yarn lint --format junit -o __reports__/eslint-results.xml',
       description: 'same as `lint`, but also save the report to a file',
     },
   ];
