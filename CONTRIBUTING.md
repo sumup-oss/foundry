@@ -1,9 +1,8 @@
 # Contributing
 
-## Prerequisites
+## Contributor License Agreement (CLA)
 
-- **Signed and verified CLA**
-- Node v10.13+ and `yarn`
+To start contributing to SumUp Open Source projects, [please accept our Contributor License Agreement](https://opensource.sumup.com/cla). Should you have any questions or concerns, please get in touch with [opensource@sumup.com](mailto:opensource@sumup.com).
 
 ## Code of Conduct (CoC)
 
@@ -20,6 +19,8 @@ If you feel another member of the community violated our CoC or you are experien
 3. Be as detailed as possible - include the `node` version, what you did, what you expected to happen, and what actually happened.
 
 ### Submitting a PR
+
+_Before you get started, make sure you have [Node](https://nodejs.org/en/) v10.13+ and the [Yarn CLI](https://yarnpkg.com/en/docs/install) installed on your computer._
 
 1. Find an existing issue to work on or follow `Submitting an issue` to create one that you're also going to fix. Make sure to notify that you're working on a fix for the issue you picked.
 2. Branch out from latest `master`.
