@@ -68,7 +68,7 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 --ci                The CI platform the project uses     [options: "github-actions"]
 --openSource, -o    Whether the project is open source                     [boolean]
 --publish           Whether to publish to NPM                              [boolean]
---configDir, -c     The directory to write the configs to      [string] [default: "."]
+--configDir, -c     The directory to write the configs to    [string] [default: "."]
 --help              Show this help menu                                    [boolean]
 ```
 
@@ -92,12 +92,12 @@ The preset includes the following tools:
 
 Eslint's configuration options:
 
-| Name         | Type    | Options      | Default      |
-| ------------ | ------- | ------------ | ------------ |
-| language     | string  | 'TypeScript' | 'JavaScript' | 'TypeScript' |
-| environments | array   | 'Browser'    | 'Node'       | [] |
-| frameworks   | array   | 'React'      | 'Emotion'    | 'Jest' | 'Cypress' | [] |
-| openSource   | boolean | true         | false        | false |
+| Name         | Type    | Options                               | Default      |
+| ------------ | ------- | ------------------------------------- | ------------ |
+| language     | string  | 'TypeScript', 'JavaScript'            | 'TypeScript' |
+| environments | array   | 'Browser', 'Node'                     | []           |
+| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress' | []           |
+| openSource   | boolean | true, false                           | false        |
 
 #### Prettier
 
@@ -111,9 +111,9 @@ Prettier currently has no configuration options.
 
 lint-staged's configuration options:
 
-| Name     | Type   | Options      | Default      |
-| -------- | ------ | ------------ | ------------ |
-| language | string | 'TypeScript' | 'JavaScript' | 'TypeScript' |
+| Name     | Type   | Options                    | Default      |
+| -------- | ------ | -------------------------- | ------------ |
+| language | string | 'TypeScript', 'JavaScript' | 'TypeScript' |
 
 #### Husky
 
@@ -135,9 +135,9 @@ The preset includes the following tools:
 
 semantic-releases's configuration options:
 
-| Name    | Type    | Options | Default |
-| ------- | ------- | ------- | ------- |
-| publish | boolean | true    | false   | false |
+| Name    | Type    | Options     | Default |
+| ------- | ------- | ----------- | ------- |
+| publish | boolean | true, false | false   |
 
 ### 🤖 Continous Integration (CI)
 
@@ -161,7 +161,7 @@ Plop's configuration options:
 
 | Name        | Type   | Options                                        | Default      |
 | ----------- | ------ | ---------------------------------------------- | ------------ |
-| language    | string | 'TypeScript'                                   | 'JavaScript' | 'TypeScript' |
+| language    | string | 'TypeScript', 'JavaScript'                     | 'TypeScript' |
 | templateDir | string | A path relative to the location of plopfile.js | '.'          |
 
 #### Custom templates
