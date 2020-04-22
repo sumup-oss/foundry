@@ -10,7 +10,7 @@ Object {
 
 exports[`lint-staged with options should return a config for { language: 'TypeScript' } 1`] = `
 Object {
-  "*.(js|jsx)": Array [
+  "*.(js|jsx|ts|tsx)": Array [
     "foundry run eslint --fix",
   ],
   "*.(ts|tsx)": [Function],
