@@ -139,7 +139,7 @@ semantic-releases's configuration options:
 | ------- | ------- | ----------- | ------- |
 | publish | boolean | true, false | false   |
 
-### 🤖 Continous Integration (CI)
+### 🤖 Continuous Integration (CI)
 
 Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
