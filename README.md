@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continous integration (CI)](#-continous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -17,7 +17,7 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 - [Presets](#presets)
   - [🔍 Lint](#-lint)
   - [🚀 Release](#-release)
-  - [🤖 Continous Integration (CI)](#-continous-integration-ci)
+  - [🤖 Continuous Integration (CI)](#-continuous-integration-ci)
   - [🖇️ Templates](#-templates)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
@@ -139,7 +139,7 @@ semantic-releases's configuration options:
 | ------- | ------- | ----------- | ------- |
 | publish | boolean | true, false | false   |
 
-### 🤖 Continous Integration (CI)
+### 🤖 Continuous Integration (CI)
 
 Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
