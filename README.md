@@ -17,7 +17,7 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 - [Presets](#presets)
   - [🔍 Lint](#-lint)
   - [🚀 Release](#-release)
-  - [🤖 Continous Integration (CI)](#-continous-integration-ci)
+  - [🤖 Continuous Integration (CI)](#-continous-integration-ci)
   - [🖇️ Templates](#-templates)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
@@ -139,7 +139,7 @@ semantic-releases's configuration options:
 | ------- | ------- | ----------- | ------- |
 | publish | boolean | true, false | false   |
 
-### 🤖 Continous Integration (CI)
+### 🤖 Continuous Integration (CI)
 
 Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
