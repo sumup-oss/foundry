@@ -20,6 +20,8 @@ import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 
+import '../types/listr-inquirer.d';
+
 import {
   Options,
   Preset,

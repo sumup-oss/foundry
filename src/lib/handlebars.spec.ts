@@ -27,14 +27,14 @@ hello
       const template = Handlebars.compile(input);
       const actual = template({ foo: ['bar'] });
       const expected = 'hello';
-      expect(actual).toInclude(expected);
+      expect(actual).toContain(expected);
     });
 
     it('should return nothin if the value is not included in the array', () => {
       const template = Handlebars.compile(input);
       const actual = template({ foo: ['bazz'] });
       const expected = 'hello';
-      expect(actual).not.toInclude(expected);
+      expect(actual).not.toContain(expected);
     });
   });
 });

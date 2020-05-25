@@ -21,5 +21,4 @@ module.exports = {
   reporters: ['default', 'jest-junit'],
   coveragePathIgnorePatterns: ['node_modules'],
   testEnvironment: 'node',
-  setupFilesAfterEnv: ['jest-extended']
 };
