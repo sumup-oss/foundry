@@ -15,6 +15,7 @@
 
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
+
 import { NodePlopAPI, ActionConfig } from 'plop';
 
 import * as logger from '../../lib/logger';

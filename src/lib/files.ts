@@ -16,8 +16,9 @@
 import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
-import pkgUp from 'pkg-up';
+
 import { format, Options as PrettierConfig } from 'prettier';
+import pkgUp from 'pkg-up';
 
 import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
