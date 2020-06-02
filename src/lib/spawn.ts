@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import * as childProcess from 'child_process';
+import crossSpawn from 'cross-spawn';
 
 type StdioBaseOption = 'pipe' | 'inherit' | 'ignore';
 type StdioOption = StdioBaseOption | StdioBaseOption[];
@@ -42,7 +42,7 @@ export function spawn(
   const stdout: Uint8Array[] = [];
 
   return new Promise((resolve, reject) => {
-    const child = childProcess.spawn(process.execPath, [cmd, ...args], {
+    const child = crossSpawn(process.execPath, [cmd, ...args], {
       ...DEFAULT_OPTIONS,
       ...options,
     });
