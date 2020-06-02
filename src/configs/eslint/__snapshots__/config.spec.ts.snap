@@ -932,14 +932,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -990,6 +982,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1091,14 +1084,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1140,6 +1125,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1246,14 +1232,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1315,6 +1293,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1419,14 +1398,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1471,6 +1442,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1579,14 +1551,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1647,6 +1611,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1752,14 +1717,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1811,6 +1768,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1921,14 +1879,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -2000,6 +1950,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2108,14 +2059,6 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    },
-    Object {
-      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -2170,6 +2113,7 @@ Object {
   ],
   "root": true,
   "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {

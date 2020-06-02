@@ -125,6 +125,7 @@ function customizeLanguage(language?: Language): EslintConfig {
         },
       },
       rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-use-before-define': [
           'error',
           { functions: false },
@@ -132,12 +133,6 @@ function customizeLanguage(language?: Language): EslintConfig {
         'react/prop-types': 'off',
       },
       overrides: [
-        {
-          files: ['**/*.js'],
-          rules: {
-            '@typescript-eslint/explicit-function-return-type': 'off',
-          },
-        },
         {
           files: ['**/*.d.ts'],
           rules: {
