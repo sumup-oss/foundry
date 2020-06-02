@@ -17,6 +17,6 @@
 //       since it tries to run a command through Foundry. Packages cannot
 //       run their own binaries.
 module.exports = {
-  '*.(js|jsx)': ['eslint --fix'],
+  '*.(js|jsx|ts|tsx)': ['eslint --fix'],
   '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
 };

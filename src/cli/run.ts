@@ -16,6 +16,7 @@
 import { dirname, resolve, join, relative } from 'path';
 import { access, readFile } from 'fs';
 import { promisify } from 'util';
+
 import { isString } from 'lodash/fp';
 
 import { PackageJson } from '../types/shared';

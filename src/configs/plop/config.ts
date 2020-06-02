@@ -16,10 +16,9 @@
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
+import { NodePlopAPI, ActionConfig } from 'plop';
+
 import * as logger from '../../lib/logger';
-// TODO: Import from node modules once https://github.com/plopjs/node-plop/issues/140 has been resolved.
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import { NodePlopAPI, ActionConfig } from '../../types/plop';
 import { Language } from '../../types/shared';
 
 interface PlopOptions {

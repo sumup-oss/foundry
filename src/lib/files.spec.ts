@@ -21,6 +21,7 @@ jest.mock('fs', () => ({
   writeFile: jest.fn(),
   mkdirSync: jest.fn(),
   existsSync: jest.fn(),
+  readFile: jest.fn(),
 }));
 
 const content = `module.exports = "Hello world"`;
