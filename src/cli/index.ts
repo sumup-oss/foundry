@@ -20,70 +20,70 @@ import yargs from 'yargs';
 import { Preset, Language, Environment, Framework, CI } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
 
-import { run, RunParams } from './run';
-import { init, InitParams } from './init';
+import { run } from './run';
+import { init } from './init';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs
   .command(
     'init',
     "Initialize Foundry's tools in your project",
-    (yrgs) =>
-      yrgs
-        .option('presets', {
-          alias: 'p',
-          desc:
-            'A preset configures a group of tools that solve a common problem',
-          choices: enumToChoices(Preset),
-          type: 'array',
-        })
-        .option('language', {
-          alias: 'l',
-          desc: 'The programming language the project uses',
-          choices: enumToChoices(Language),
-        })
-        .option('environments', {
-          alias: 'e',
-          desc: 'The environment(s) that the code runs in',
-          choices: enumToChoices(Environment),
-          type: 'array',
-        })
-        .option('frameworks', {
-          alias: 'f',
-          desc: 'The frameworks the project uses',
-          choices: enumToChoices(Framework),
-          type: 'array',
-        })
-        .option('ci', {
-          desc: 'The CI platform the project uses',
-          choices: enumToChoices(CI),
-        })
-        .option('openSource', {
-          alias: 'o',
-          desc: 'Whether the project is open source',
-          type: 'boolean',
-        })
-        .option('publish', {
-          desc: 'Whether to publish to NPM',
-          type: 'boolean',
-        })
-        .option('configDir', {
-          alias: 'c',
-          desc: 'The directory to write configs to',
-          type: 'string',
-          default: '.',
-        })
-        .option('overwrite', {
-          desc: 'Whether to overwrite existing config files',
-          type: 'boolean',
-          default: false,
-        }),
-    (args: InitParams) => execute('init', args),
+    {
+      presets: {
+        alias: 'p',
+        desc:
+          'A preset configures a group of tools that solve a common problem',
+        choices: enumToChoices(Preset) as Preset[],
+        type: 'array',
+      },
+      language: {
+        alias: 'l',
+        desc: 'The programming language the project uses',
+        choices: enumToChoices(Language),
+      },
+      environments: {
+        alias: 'e',
+        desc: 'The environment(s) that the code runs in',
+        choices: enumToChoices(Environment),
+        type: 'array',
+      },
+      frameworks: {
+        alias: 'f',
+        desc: 'The frameworks the project uses',
+        choices: enumToChoices(Framework),
+        type: 'array',
+      },
+      ci: {
+        desc: 'The CI platform the project uses',
+        choices: enumToChoices(CI),
+      },
+      openSource: {
+        alias: 'o',
+        desc: 'Whether the project is open source',
+        type: 'boolean',
+      },
+      publish: {
+        desc: 'Whether to publish to NPM',
+        type: 'boolean',
+      },
+      configDir: {
+        alias: 'c',
+        desc: 'The directory to write configs to',
+        type: 'string',
+        default: '.',
+      },
+      overwrite: {
+        desc: 'Whether to overwrite existing config files',
+        type: 'boolean',
+        default: false,
+      },
+    },
+    execute('init'),
   )
   .command(
     'run <tool> [...tool options]',
     'Run any of the bundled tools.',
-    (args: RunParams) => execute('run', args),
+    execute('run'),
   )
   .showHelpOnFail(true)
   .demandCommand(1, '')
@@ -92,9 +92,11 @@ yargs
 
 type CommandType = 'init' | 'run';
 
-function execute(command: CommandType, args: any): void {
+function execute(command: CommandType) {
   const commands = { run, init };
   const commandFn = commands[command];
 
-  commandFn(args);
+  return (args: any): void => {
+    commandFn(args);
+  };
 }

@@ -28,7 +28,7 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 
 ### Installation
 
-Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v10.13+.
+Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v10.18+.
 
 Depending on your preference, run one of the following.
 
@@ -174,11 +174,11 @@ To see which variables are available for use in a Handlebars template, have a lo
 
 ## Running a tool
 
-Foundry manages all supported tools for you and exposes them via the `run` command. As an example: to run ESLint through Foundry execute:
+Foundry manages all supported tools for you and exposes them via the `run` command. As an example: to run ESLint through Foundry, execute:
 
 ```sh
 # With Yarn
-$ yarn run foundry run eslint src
+$ yarn foundry run eslint src
 
 # With npm
 $ npx foundry run eslint src

@@ -17,7 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
-import prettier, { Options as PrettierConfig } from 'prettier';
+import { format, Options as PrettierConfig } from 'prettier';
 import pkgUp from 'pkg-up';
 
 import { PackageJson } from '../types/shared';
@@ -39,7 +39,7 @@ export function formatContent(fileName: string, content: string): string {
     return content;
   }
 
-  return prettier.format(content, formatConfig);
+  return format(content, formatConfig);
 }
 
 export function writeFile(
