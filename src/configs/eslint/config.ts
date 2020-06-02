@@ -14,6 +14,7 @@
  */
 
 import process from 'process';
+
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
 import { Options, Language, Environment, Framework } from '../../types/shared';
@@ -65,6 +66,7 @@ const base = {
       { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] },
     ],
     'import/prefer-default-export': 'off',
+    'import/order': ['error', { 'newlines-between': 'always' }],
     // The rules below are already covered by prettier.
     'quote-props': 'off',
     'comma-dangle': 'off',
