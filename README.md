@@ -2,13 +2,13 @@
 
 # Foundry
 
-[![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/master/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), and [Node](https://nodejs.org/en/).
 
 </div>
 
-**Table of contents**
+## Table of contents
 
 - [Getting Started](#getting-started)
   - [Installation](#installation)
@@ -170,7 +170,7 @@ Plop's configuration options:
 
 Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
 
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/master/src/configs/plop/templates).
+To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/main/src/configs/plop/templates).
 
 ## Running a tool
 

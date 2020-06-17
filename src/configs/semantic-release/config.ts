@@ -32,11 +32,13 @@ interface SemanticReleaseConfig {
 const base: SemanticReleaseConfig = {
   branches: [
     '+([0-9])?(.{+([0-9]),x}).x',
-    'master',
+    'main',
     'next',
     { name: 'alpha', prerelease: true },
     { name: 'beta', prerelease: true },
     { name: 'canary', prerelease: true },
+    // @deprecated, remove in next major release
+    'master',
   ],
   plugins: [
     '@semantic-release/commit-analyzer',

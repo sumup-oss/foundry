@@ -33,10 +33,10 @@ describe('semantic-release', () => {
     it('should override the default config', () => {
       const options = undefined;
       const overrides = {
-        branches: ['master'],
+        branches: ['main'],
       };
       const actual = config(options, overrides);
-      expect(actual).toEqual(expect.objectContaining({ branches: ['master'] }));
+      expect(actual).toEqual(expect.objectContaining({ branches: ['main'] }));
     });
   });
 });
