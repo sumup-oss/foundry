@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { create, renderToHtml, axe, RenderFn } from 'config/test-utils';
+import { create, renderToHtml, axe, RenderFn } from '../../util/test-utils';
 
 import { {{ name }}, {{ name }}Props } from './{{ name }}';
 
@@ -10,7 +10,7 @@ describe('{{ name }}', () => {
   }
 
   describe('styles', () => {
-    it.todo('should render with default styles', () => {
+    it('should render with default styles', () => {
       const actual = render{{ name }}(create);
       expect(actual).toMatchSnapshot();
     });
@@ -23,7 +23,7 @@ describe('{{ name }}', () => {
 
   {{/if}}
   describe('accessibility', () => {
-    it.todo('should meet accessibility guidelines', async () => {
+    it('should meet accessibility guidelines', async () => {
       const wrapper = render{{ name }}(renderToHtml);
       const actual = await axe(wrapper);
       expect(actual).toHaveNoViolations();
