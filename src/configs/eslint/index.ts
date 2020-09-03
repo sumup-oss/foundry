@@ -49,8 +49,8 @@ export const files = (options: Options): File[] => [
 export const scripts = (options: Options): Script[] => {
   const { language = Language.TYPESCRIPT } = options;
   const extensionMap = {
-    [Language.TYPESCRIPT]: '.js,.jsx,.ts,.tsx',
-    [Language.JAVASCRIPT]: '.js,.jsx',
+    [Language.TYPESCRIPT]: '.js,.jsx,.json,.ts,.tsx',
+    [Language.JAVASCRIPT]: '.js,.jsx,.json',
   };
   const extensions = extensionMap[language];
   return [

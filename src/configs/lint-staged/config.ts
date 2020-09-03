@@ -24,11 +24,11 @@ interface LintStagedConfig {
 }
 
 export const javascript: LintStagedConfig = {
-  '*.(js|jsx)': ['foundry run eslint --fix'],
+  '*.(js|jsx|json)': ['foundry run eslint --fix'],
 };
 
 export const typescript: LintStagedConfig = {
-  '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
+  '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
   '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
 };
 

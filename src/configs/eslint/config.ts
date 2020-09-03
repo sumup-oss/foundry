@@ -41,7 +41,11 @@ function customizer(objValue: any, srcValue: any, key: string): any {
 
 const base = {
   root: true,
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:json/recommended',
+  ],
   plugins: ['prettier'],
   rules: {
     'curly': ['error', 'all'],

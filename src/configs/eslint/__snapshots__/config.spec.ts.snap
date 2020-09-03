@@ -10,6 +10,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:cypress/recommended",
   ],
@@ -113,6 +114,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
   ],
   "globals": Object {
@@ -210,6 +212,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:jest/recommended",
   ],
@@ -324,6 +327,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
@@ -430,6 +434,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:cypress/recommended",
@@ -547,6 +552,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
@@ -658,6 +664,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:jest/recommended",
@@ -786,6 +793,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:react/recommended",
@@ -906,6 +914,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1059,6 +1068,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1206,6 +1216,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1370,6 +1381,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1524,6 +1536,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1691,6 +1704,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1852,6 +1866,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -2030,6 +2045,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -2193,6 +2209,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
