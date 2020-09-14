@@ -18,7 +18,8 @@ import fs from 'fs';
 import { writeFile, addPackageScript } from './files';
 
 jest.mock('fs', () => ({
-  writeFile: jest.fn(),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  writeFile: jest.fn((file, data, options, callback) => callback()),
   mkdirSync: jest.fn(),
   existsSync: jest.fn(),
   readFile: jest.fn(),
@@ -31,22 +32,22 @@ const formattedContent = `module.exports = 'Hello world';
 
 describe('files', () => {
   describe('writeFile', () => {
-    it('should create the target folder if it does not exist', () => {
+    it('should create the target folder if it does not exist', async () => {
       const configDir = './config';
       const filename = '.eslintrc.js';
       const shouldOverwrite = false;
 
-      writeFile(configDir, filename, content, shouldOverwrite);
+      await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fs.mkdirSync).toHaveBeenCalledWith('config', { recursive: true });
     });
 
-    it('should write the file to disk', () => {
+    it('should write the file to disk', async () => {
       const configDir = './config';
       const filename = '.eslintrc.js';
       const shouldOverwrite = false;
 
-      writeFile(configDir, filename, content, shouldOverwrite);
+      await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fs.writeFile).toHaveBeenCalledWith(
         'config/.eslintrc.js',
@@ -56,12 +57,12 @@ describe('files', () => {
       );
     });
 
-    it('should overwrite the file if it already exists', () => {
+    it('should overwrite the file if it already exists', async () => {
       const configDir = '.';
       const filename = '.eslintrc.js';
       const shouldOverwrite = true;
 
-      writeFile(configDir, filename, content, shouldOverwrite);
+      await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fs.writeFile).toHaveBeenCalledWith(
         '.eslintrc.js',
@@ -71,12 +72,12 @@ describe('files', () => {
       );
     });
 
-    it('should format the file contents', () => {
+    it('should format the file contents', async () => {
       const configDir = '.';
       const filename = '.eslintrc.js';
       const shouldOverwrite = true;
 
-      writeFile(configDir, filename, content, shouldOverwrite);
+      await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fs.writeFile).toHaveBeenCalledWith(
         expect.any(String),

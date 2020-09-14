@@ -959,6 +959,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1112,6 +1113,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1261,6 +1263,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1428,6 +1431,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1582,6 +1586,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1749,6 +1754,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1912,6 +1918,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -2093,6 +2100,7 @@ Object {
         "**/*.spec.*",
       ],
       "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
         "@typescript-eslint/no-var-requires": "off",
       },
     },

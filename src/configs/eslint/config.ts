@@ -25,15 +25,23 @@ type EslintOptions = Pick<
 >;
 // NOTE: Using the Linter.Config interface from Eslint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
-type EslintConfig = any;
+type EslintConfig = unknown;
 
 export const customizeConfig = mergeWith(customizer);
 
-function customizer(objValue: any, srcValue: any, key: string): any {
-  if (isArray(objValue)) {
+function isArrayTypeGuard(array: unknown): array is unknown[] {
+  return isArray(array);
+}
+
+function customizer(
+  objValue: unknown,
+  srcValue: unknown,
+  key: string,
+): unknown {
+  if (isArrayTypeGuard(objValue) && isArrayTypeGuard(srcValue)) {
     return uniq([...objValue, ...srcValue]);
   }
-  if (isObject(objValue)) {
+  if (isObject(objValue) && isObject(srcValue)) {
     return key === 'rules' ? { ...objValue, ...srcValue } : undefined;
   }
   return undefined;
@@ -100,7 +108,7 @@ const base = {
   ],
 };
 
-function customizeLanguage(language?: Language): EslintConfig {
+function customizeLanguage(language?: Language) {
   const languageMap = {
     [Language.TYPESCRIPT]: {
       extends: [
@@ -152,6 +160,7 @@ function customizeLanguage(language?: Language): EslintConfig {
           files: ['**/*.spec.*'],
           rules: {
             '@typescript-eslint/no-var-requires': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'warn',
           },
         },
       ],
@@ -179,7 +188,7 @@ function customizeLanguage(language?: Language): EslintConfig {
   };
 }
 
-function customizeEnv(environments?: Environment[]): EslintConfig {
+function customizeEnv(environments?: Environment[]) {
   const environmentMap = {
     [Environment.BROWSER]: {
       env: { browser: true },
@@ -217,7 +226,7 @@ function customizeEnv(environments?: Environment[]): EslintConfig {
   };
 }
 
-function customizeFramework(frameworks?: Framework[]): EslintConfig {
+function customizeFramework(frameworks?: Framework[]) {
   const frameworkMap = {
     [Framework.REACT]: {
       extends: [
@@ -286,7 +295,7 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
   };
 }
 
-function addCopyrightNotice(openSource?: boolean): EslintConfig {
+function addCopyrightNotice(openSource?: boolean) {
   return (config: EslintConfig): EslintConfig => {
     if (!openSource) {
       return config;
@@ -324,7 +333,7 @@ function addCopyrightNotice(openSource?: boolean): EslintConfig {
   };
 }
 
-function applyOverrides(overrides: EslintConfig): EslintConfig {
+function applyOverrides(overrides: EslintConfig) {
   return (config: EslintConfig): EslintConfig =>
     customizeConfig(config, overrides);
 }

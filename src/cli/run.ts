@@ -67,7 +67,7 @@ async function loadJson(path: string): Promise<PackageJson> {
   }
   try {
     const data = await readFileAsync(path);
-    return JSON.parse(data.toString());
+    return JSON.parse(data.toString()) as PackageJson;
   } catch (err) {
     throw new Error(`Path does not exist. ${path}`);
   }

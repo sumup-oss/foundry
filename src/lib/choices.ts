@@ -19,19 +19,26 @@ export function enumToChoices(enums: { [key: string]: string }): string[] {
   return Object.values(enums);
 }
 
-type Choices = { [key: string]: any };
+type Enum = { [key: string]: string };
+type Choices = { [key: string]: Enum | Enum[] };
+type Combination = { [key: string]: string | string[] };
 
-export function getAllChoiceCombinations(possibleChoices: Choices): Choices[] {
+function isArrayTypeGuard(array: unknown): array is unknown[] {
+  return isArray(array);
+}
+
+export function getAllChoiceCombinations(
+  possibleChoices: Choices,
+): Combination[] {
   return Object.entries(possibleChoices).reduce(
     (acc, [optionName, choices]) => {
-      const isMultiple = isArray(choices);
-      const choiceEnum = isMultiple ? choices[0] : choices;
+      const choiceEnum = isArrayTypeGuard(choices) ? choices[0] : choices;
       const choicesForOption = Object.values(choiceEnum);
-      const allCombinations: Choices[] = [];
+      const allCombinations: Combination[] = [];
 
-      acc.forEach((combination: Choices) => {
-        choicesForOption.forEach((value: any) => {
-          const choice = isMultiple ? [value] : value;
+      acc.forEach((combination: Combination) => {
+        choicesForOption.forEach((value) => {
+          const choice = isArrayTypeGuard(choices) ? [value] : value;
           allCombinations.push({
             ...combination,
             [optionName]: choice,
