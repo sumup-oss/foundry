@@ -97,6 +97,7 @@ function execute(command: CommandType) {
   const commandFn = commands[command];
 
   return (args: any): void => {
-    commandFn(args);
+    // eslint-disable-next-line no-console
+    commandFn(args).catch(console.error);
   };
 }

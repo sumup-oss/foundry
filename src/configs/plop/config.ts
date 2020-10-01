@@ -57,8 +57,8 @@ const ERRORS = {
 
 export function config(options: PlopOptions) {
   return (plop: NodePlopAPI): void => {
-    plop.setHelper('eq', (a: any, b: any): boolean => a === b);
-    plop.setHelper('not', (a: any, b: any): boolean => a !== b);
+    plop.setHelper('eq', (a: unknown, b: unknown): boolean => a === b);
+    plop.setHelper('not', (a: unknown, b: unknown): boolean => a !== b);
 
     const pascalCase = plop.getHelper('pascalCase');
 
@@ -139,12 +139,13 @@ export function config(options: PlopOptions) {
           ],
         },
       ],
-      actions: ({
-        name: componentName,
-        componentType,
-        files,
-        destinationPath,
-      }: ActionOptions): ActionConfig[] => {
+      actions: (answers): ActionConfig[] => {
+        const {
+          name: componentName,
+          componentType,
+          files,
+          destinationPath,
+        } = answers as ActionOptions;
         const plopfilePath = plop.getPlopfilePath();
         const absDestPath = join(plopfilePath, destinationPath);
 
@@ -152,7 +153,7 @@ export function config(options: PlopOptions) {
           raiseErrorAndExit(ERRORS.INVALID_DESTINATION(absDestPath));
         }
 
-        const capitalizedName = pascalCase(componentName);
+        const capitalizedName = pascalCase(componentName) as string;
         const allFiles = files.includes(FileType.COMPONENT)
           ? files.concat(FileType.INDEX)
           : files;

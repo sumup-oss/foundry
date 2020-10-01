@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-import { includes } from 'lodash/fp';
-import Handlebars from 'handlebars';
+import { includes, get } from 'lodash/fp';
+import Handlebars, { HelperOptions } from 'handlebars';
 
 // eslint-disable-next-line no-confusing-arrow
-Handlebars.registerHelper('includes', (array, value, options) =>
-  includes(value, array) ? options.fn(options.data.root) : null,
+Handlebars.registerHelper(
+  'includes',
+  (array: string[], value: string, options: HelperOptions) =>
+    includes(value, array) ? options.fn(get('data.root', options)) : null,
 );
 
 export { Handlebars };

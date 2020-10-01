@@ -140,13 +140,14 @@ export async function init(args: InitParams): Promise<void> {
         new Listr(
           files.map((file) => ({
             title: `Write "${file.name}"`,
-            task: (ctx: never, task): Promise<void> =>
+            task: (ctx: never, task): Promise<unknown> =>
               writeFile(
                 options.configDir,
                 file.name,
                 file.content,
                 options.overwrite,
               ).catch(() =>
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
                 listrInquirer(
                   [
                     {
@@ -157,12 +158,17 @@ export async function init(args: InitParams): Promise<void> {
                       default: false,
                     },
                   ],
-                  ({ overwrite }: { overwrite: boolean }) => {
+                  async ({ overwrite }: { overwrite: boolean }) => {
                     if (!overwrite) {
                       task.skip('Skipped');
                       return;
                     }
-                    writeFile(options.configDir, file.name, file.content, true);
+                    await writeFile(
+                      options.configDir,
+                      file.name,
+                      file.content,
+                      true,
+                    );
                   },
                 ),
               ),
@@ -182,8 +188,8 @@ export async function init(args: InitParams): Promise<void> {
             title: 'Read package.json',
             task: async (ctx): Promise<void> => {
               ctx.packagePath = await findPackageJson();
-              // eslint-disable-next-line import/no-dynamic-require, global-require
-              ctx.packageJson = require(ctx.packagePath);
+              // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
+              ctx.packageJson = require(ctx.packagePath) as PackageJson;
             },
           },
           ...scripts.map(({ name, command }) => ({
@@ -201,6 +207,7 @@ export async function init(args: InitParams): Promise<void> {
                 );
                 return undefined;
               } catch (error) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
                 return listrInquirer(
                   [
                     {
@@ -251,6 +258,7 @@ export function mergeOptions(
   args: InitParams,
   answers: Omit<Options, 'configDir' | 'overwrite'>,
 ): Options {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { $0, _, ...rest } = args;
   return { ...rest, ...answers };
 }
