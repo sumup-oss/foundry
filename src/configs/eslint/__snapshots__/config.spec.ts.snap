@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -29,6 +31,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -104,9 +114,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -132,6 +144,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
   ],
@@ -202,9 +222,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -231,6 +253,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -317,9 +347,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -348,6 +380,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
   ],
@@ -424,9 +464,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -454,6 +496,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -542,9 +592,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -571,6 +623,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -654,9 +714,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -684,6 +746,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -783,9 +853,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -815,6 +887,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -904,9 +984,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -937,6 +1019,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1058,9 +1148,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1090,6 +1182,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1206,9 +1306,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1239,6 +1341,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1371,9 +1481,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1406,6 +1518,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1526,9 +1646,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -1560,6 +1682,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1694,9 +1824,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -1727,6 +1859,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1856,9 +1996,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -1890,6 +2032,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -2035,9 +2185,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2071,6 +2223,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -2226,6 +2386,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
   ],
