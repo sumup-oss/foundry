@@ -97,6 +97,12 @@ const base = {
         'import/no-extraneous-dependencies': 'off',
       },
     },
+    {
+      files: ['**/*.json'],
+      rules: {
+        'notice/notice': 'off',
+      },
+    },
   ],
 };
 

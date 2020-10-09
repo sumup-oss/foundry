@@ -32,6 +32,14 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
       "env": Object {
         "cypress/globals": true,
       },
@@ -134,6 +142,14 @@ Object {
         "import/no-extraneous-dependencies": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
   ],
   "parser": "babel-eslint",
   "parserOptions": Object {
@@ -231,6 +247,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -348,6 +372,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
   ],
@@ -458,6 +490,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.spec.*",
         "**/setupTests.*",
         "**/test-utils.*",
@@ -575,6 +615,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.spec.*",
         "**/setupTests.*",
         "**/test-utils.*",
@@ -684,6 +732,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -815,6 +871,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -941,6 +1005,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1094,6 +1166,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1239,6 +1319,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1406,6 +1494,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -1564,6 +1660,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1731,6 +1835,14 @@ Object {
     },
     Object {
       "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.d.ts",
       ],
       "rules": Object {
@@ -1890,6 +2002,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -2071,6 +2191,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
     Object {
@@ -2226,6 +2354,14 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
       },
     },
   ],
