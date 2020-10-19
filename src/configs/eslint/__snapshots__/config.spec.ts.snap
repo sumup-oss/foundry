@@ -1050,6 +1050,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -1202,6 +1205,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -1379,6 +1385,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -1535,6 +1544,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -1715,6 +1727,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -1881,6 +1896,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -2072,6 +2090,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
@@ -2242,6 +2263,9 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
     "project": Array [
       "./tsconfig.json",
     ],
