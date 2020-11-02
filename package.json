@@ -71,7 +71,7 @@
     "@types/cross-spawn": "^6.0.2",
     "@types/dedent": "^0.7.0",
     "@types/inquirer": "^6.5.0",
-    "@types/jest": "^25.0.0",
+    "@types/jest": "^26.0.15",
     "@types/listr": "^0.14.2",
     "@types/lodash": "^4.14.149",
     "@types/node": "^10.0.0",
