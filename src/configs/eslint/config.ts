@@ -121,6 +121,7 @@ function customizeLanguage(language?: Language): EslintConfig {
       parserOptions: {
         tsconfigRootDir: process.cwd(),
         project: ['./tsconfig.json'],
+        extraFileExtensions: ['.json'],
         sourceType: 'module',
         ecmaVersion: 6,
         ecmaFeatures: {
