@@ -61,7 +61,7 @@ export interface InitParams {
 }
 
 export async function init(args: InitParams): Promise<void> {
-  const initialAnswers = await inquirer.prompt([
+  const initialAnswers = await inquirer.prompt<{ presets: Preset[] }>([
     {
       type: 'checkbox',
       name: 'presets',
