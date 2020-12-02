@@ -42,6 +42,7 @@ export const files = (options: Options): File[] => [
       /*.config.js
       /*rc.js
       plopfile.js
+      tsconfig.json
     `}\n`,
   },
 ];

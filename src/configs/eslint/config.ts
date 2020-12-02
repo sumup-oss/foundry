@@ -105,6 +105,12 @@ const base = {
         'import/no-extraneous-dependencies': 'off',
       },
     },
+    {
+      files: ['**/*.json'],
+      rules: {
+        'notice/notice': 'off',
+      },
+    },
   ],
 };
 
@@ -123,6 +129,7 @@ function customizeLanguage(language?: Language) {
       parserOptions: {
         tsconfigRootDir: process.cwd(),
         project: ['./tsconfig.json'],
+        extraFileExtensions: ['.json'],
         sourceType: 'module',
         ecmaVersion: 6,
         ecmaFeatures: {
