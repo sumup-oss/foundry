@@ -5,8 +5,8 @@ import { render, axe } from '../../test-utils';
 import { {{ name }}, {{ name }}Props } from './{{ name }}';
 
 describe('{{ name }}', () => {
-  function render{{ name }}(props: {{ name }}Props = {}) {
-    return render(<{{ name }} {...props} />);
+  function render{{ name }}(props: {{ name }}Props = {}, options = {}) {
+    return render(<{{ name }} {...props} />, options);
   }
 
   describe('styles', () => {
