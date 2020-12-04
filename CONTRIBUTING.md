@@ -18,6 +18,17 @@ If you feel another member of the community violated our CoC or you are experien
 2. Open issue
 3. Be as detailed as possible - include the `node` version, what you did, what you expected to happen, and what actually happened.
 
+### Development
+
+For development and local testing we recommend the following.
+
+1. Run `yarn dev`. This will clean the `dist` folder and copy over all relevant files.
+2. Run `yarn` inside the `dist` folder. This will ensure all dependencies are present in the dist folder when linking.
+3. Inside the `dist` folder run `yarn link`. This will make the compiled version of Foundry available for linking in projects you want to test your changes in, for example changes to the ESLint config.
+4. Inside the project you want to test your local changes to Foundry, run `yarn link @sumup/foundry`.
+
+Refer to the [Yarn docs](https://classic.yarnpkg.com/en/docs/cli/link#search) to learn more about linking local dependencies.
+
 ### Submitting a PR
 
 _Before you get started, make sure you have [Node](https://nodejs.org/en/) v10.18+ and the [Yarn CLI](https://yarnpkg.com/en/docs/install) installed on your computer._
