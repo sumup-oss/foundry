@@ -22,7 +22,7 @@ If you feel another member of the community violated our CoC or you are experien
 
 For development and local testing we recommend the following.
 
-1. Run `yarn:dev`. This will clean the `dist` folder and copy over all relevant files.
+1. Run `yarn dev`. This will clean the `dist` folder and copy over all relevant files.
 2. Run `yarn` inside the `dist` folder. This will ensure all dependencies are present in the dist folder when linking.
 3. Inside the `dist` folder run `yarn link`. This will make the compiled version of Foundry available for linking in projects you want to test your changes in, for example changes to the ESLint config.
 4. Inside the project you want to test your local changes to Foundry, run `yarn link @sumup/foundry`.
