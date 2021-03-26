@@ -10,9 +10,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -32,6 +30,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -43,9 +44,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -61,7 +68,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -122,7 +128,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
   ],
   "globals": Object {
@@ -143,6 +148,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -228,9 +236,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -250,6 +256,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -261,6 +270,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -276,6 +288,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "babel-eslint",
@@ -290,7 +305,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -351,7 +365,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
@@ -375,6 +388,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -466,10 +482,8 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -489,6 +503,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -510,9 +527,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -528,7 +551,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -592,7 +614,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
@@ -614,6 +635,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -712,10 +736,8 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -735,6 +757,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -756,6 +781,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -771,6 +799,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "babel-eslint",
@@ -785,7 +816,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -849,7 +879,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:react/recommended",
@@ -874,6 +903,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -978,13 +1010,11 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1004,6 +1034,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1038,9 +1071,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -1062,7 +1101,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -1143,7 +1181,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1168,6 +1205,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1302,13 +1342,11 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1328,6 +1366,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1362,6 +1403,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -1377,6 +1421,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "@typescript-eslint/parser",
@@ -1397,7 +1444,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -1478,7 +1524,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1506,6 +1551,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1644,14 +1692,12 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:node/recommended",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1671,6 +1717,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1715,9 +1764,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -1739,7 +1794,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -1823,7 +1877,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1849,6 +1902,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1996,14 +2052,12 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:node/recommended",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2023,6 +2077,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -2067,6 +2124,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -2082,6 +2142,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "@typescript-eslint/parser",
@@ -2102,7 +2165,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -2186,7 +2248,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -2215,6 +2276,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -2361,7 +2425,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2381,6 +2444,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
