@@ -483,8 +483,6 @@ Object {
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
-    "plugin:testing-library/react",
-    "plugin:testing-library/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -515,8 +513,15 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+        "plugin:testing-library/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
       ],
     },
   ],
@@ -532,7 +537,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "testing-library",
   ],
   "root": true,
   "rules": Object {
@@ -1123,8 +1127,6 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:testing-library/react",
-    "plugin:testing-library/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1165,8 +1167,15 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+        "plugin:testing-library/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
       ],
     },
   ],
@@ -1182,7 +1191,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "testing-library",
   ],
   "root": true,
   "rules": Object {
@@ -1933,8 +1941,6 @@ Object {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
-    "plugin:testing-library/react",
-    "plugin:testing-library/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1988,8 +1994,15 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+        "plugin:testing-library/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
       ],
     },
   ],
@@ -2011,7 +2024,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "testing-library",
   ],
   "root": true,
   "rules": Object {
@@ -2836,8 +2848,6 @@ Object {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:node/recommended",
-    "plugin:testing-library/react",
-    "plugin:testing-library/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2901,8 +2911,15 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+        "plugin:testing-library/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
       ],
     },
   ],
@@ -2924,7 +2941,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "testing-library",
   ],
   "root": true,
   "rules": Object {
