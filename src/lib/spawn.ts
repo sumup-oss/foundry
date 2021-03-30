@@ -55,7 +55,11 @@ export function spawn(
 
     child.on('close', (code) => {
       if (code !== 0) {
-        const err = new Error(`${cmd} exited with an error (code ${code}).`);
+        const err = new Error(
+          `${cmd} exited with an error (code ${
+            code ? code.toString() : 'unknown'
+          }).`,
+        );
         reject(err);
         return;
       }
