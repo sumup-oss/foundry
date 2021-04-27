@@ -282,11 +282,8 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
       overrides: [
         {
           files: ['**/*spec.*'],
+          extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
-          extends: [
-            'plugin:testing-library/react',
-            'plugin:testing-library/recommended',
-          ],
         },
       ],
     },
