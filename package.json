@@ -54,6 +54,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-testing-library": "^3.10.2",
     "handlebars": "^4.7.3",
     "husky": "^4.0.0",
     "inquirer": "^7.0.1",

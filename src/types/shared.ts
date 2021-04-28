@@ -54,6 +54,7 @@ export enum Framework {
   EMOTION = 'Emotion',
   JEST = 'Jest',
   CYPRESS = 'Cypress',
+  TESTING_LIBRARY = 'Testing Library',
 }
 
 export enum CI {

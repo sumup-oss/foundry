@@ -16,7 +16,8 @@
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
-import { NodePlopAPI, ActionConfig } from 'plop';
+import { NodePlopAPI, ActionType } from 'plop';
+import { Answers } from 'inquirer';
 
 import * as logger from '../../lib/logger';
 import { Language } from '../../types/shared';
@@ -139,12 +140,16 @@ export function config(options: PlopOptions) {
           ],
         },
       ],
-      actions: ({
-        name: componentName,
-        componentType,
-        files,
-        destinationPath,
-      }: ActionOptions): ActionConfig[] => {
+      actions: (data?: Answers): ActionType[] => {
+        if (!data) {
+          return [];
+        }
+        const {
+          name: componentName,
+          componentType,
+          files,
+          destinationPath,
+        } = data;
         const plopfilePath = plop.getPlopfilePath();
         const absDestPath = join(plopfilePath, destinationPath);
 
@@ -157,7 +162,7 @@ export function config(options: PlopOptions) {
           ? files.concat(FileType.INDEX)
           : files;
 
-        return allFiles.reduce((acc, file) => {
+        return allFiles.reduce((acc: ActionType[], file: FileType) => {
           if (!Object.values(FileType).includes(file)) {
             raiseErrorAndExit(ERRORS.INVALID_FILE_TYPE(file));
           }
@@ -184,7 +189,7 @@ export function config(options: PlopOptions) {
               ),
             },
           ];
-        }, [] as ActionConfig[]);
+        }, [] as ActionType[]);
       },
     });
   };

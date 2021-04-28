@@ -278,6 +278,15 @@ function customizeFramework(frameworks?: Framework[]): EslintConfig {
         },
       ],
     },
+    [Framework.TESTING_LIBRARY]: {
+      overrides: [
+        {
+          files: ['**/*spec.*'],
+          extends: ['plugin:testing-library/react'],
+          plugins: ['testing-library'],
+        },
+      ],
+    },
   };
   return (config: EslintConfig): EslintConfig => {
     if (!frameworks || isEmpty(frameworks)) {

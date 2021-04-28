@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), [Node](https://nodejs.org/en/) and [Testing Library](https://testing-library.com/).
 
 </div>
 
@@ -117,12 +117,12 @@ The preset includes the following tools:
 
 Eslint's configuration options:
 
-| Name         | Type    | Options                               | Default      |
-| ------------ | ------- | ------------------------------------- | ------------ |
-| language     | string  | 'TypeScript', 'JavaScript'            | 'TypeScript' |
-| environments | array   | 'Browser', 'Node'                     | []           |
-| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress' | []           |
-| openSource   | boolean | true, false                           | false        |
+| Name         | Type    | Options                                   | Default      |
+| ------------ | ------- | ----------------------------------------- | ------------ |
+| language     | string  | 'TypeScript', 'JavaScript'                               | 'TypeScript' |
+| environments | array   | 'Browser', 'Node'                                        | []           |
+| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress', 'Testing Library' | []           |
+| openSource   | boolean | true, false                                              | false        |
 
 #### Prettier
 
