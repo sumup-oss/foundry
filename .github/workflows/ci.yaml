@@ -39,8 +39,12 @@ jobs:
         uses: codecov/codecov-action@v1.0.3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Release
+      - name: Publish to NPM
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn release
+      - name: Publish to GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo $PWD && echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc && ./.github/prepare-github-release && yarn release
