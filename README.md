@@ -66,7 +66,7 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 --frameworks, -f    The framework(s) that the project uses
                                        [array] [options: "React", "Emotion", "Jest"]
 --ci                The CI platform the project uses     [options: "github-actions"]
---openSource, -o    Whether the project is open source                     [boolean]
+--openSource, -o    Whether the project is open-source                     [boolean]
 --publish           Whether to publish to NPM                              [boolean]
 --configDir, -c     The directory to write the configs to    [string] [default: "."]
 --help              Show this help menu                                    [boolean]
@@ -81,7 +81,7 @@ module.exports = require('@sumup/foundry/<tool>')(options, overrides);
 
 // Example for .eslintrc.js:
 module.exports = require('@sumup/foundry/eslint')(
-  { 
+  {
     language: 'TypeScript',
     frameworks: ['React', 'Emotion'],
   },
@@ -93,7 +93,7 @@ module.exports = require('@sumup/foundry/eslint')(
 );
 ```
 
-The options for each tool are documented below. 
+The options for each tool are documented below.
 
 The overrides are merged with Foundry's default configuration after the options have been applied. The overrides follow each tool's configuration schema, please refer to their official documentation.
 
@@ -117,8 +117,8 @@ The preset includes the following tools:
 
 Eslint's configuration options:
 
-| Name         | Type    | Options                                   | Default      |
-| ------------ | ------- | ----------------------------------------- | ------------ |
+| Name         | Type    | Options                                                  | Default      |
+| ------------ | ------- | -------------------------------------------------------- | ------------ |
 | language     | string  | 'TypeScript', 'JavaScript'                               | 'TypeScript' |
 | environments | array   | 'Browser', 'Node'                                        | []           |
 | frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress', 'Testing Library' | []           |
@@ -156,7 +156,7 @@ The preset includes the following tools:
 
 #### semantic-release
 
-[semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including: determining the next version number, generating the release notes and publishing the package.
+[semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including determining the next version number, generating the release notes, and publishing the package.
 
 semantic-releases's configuration options:
 
@@ -193,7 +193,7 @@ Plop's configuration options:
 
 ⭐ _This is an advanced use case._
 
-Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fallback to the default template.
+Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fall back to the default template.
 
 To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/main/src/configs/plop/templates).
 
@@ -209,7 +209,7 @@ $ yarn foundry run eslint src
 $ npx foundry run eslint src
 ```
 
-Here, `src` is the folder you want ESLint to check. Note that you can use any of the command line flags and arguments supported by ESLint and other tools. Foundry simply forwards them and they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
+Here, `src` is the folder you want ESLint to check. Note that you can use any of the command-line flags and arguments supported by ESLint and other tools. Foundry forwards them so they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
 
 ## Why?
 
@@ -219,15 +219,15 @@ Here, `src` is the folder you want ESLint to check. Note that you can use any of
 
 ### The problem
 
-Setting up and maintaining a complex JavaScript project can be very tedious.There are many different dependencies to install (linters, testing frameworks, bundlers) and configurations to set up. Once you have a running project, you end up writing a lot of boilerplate code when creating commonly used files. For example, a React component might come with a spec file (test), a Storybook file (isolated component development), and a service for handling business logic.
+Setting up and maintaining a complex JavaScript project can be very tedious. There are many different dependencies to install (linters, testing frameworks, bundlers) and configurations to set up. Once you have a running project, you end up writing a lot of boilerplate code when creating commonly used files. For example, a React component might come with a spec file (test), a Storybook file (isolated component development), and a service for handling business logic.
 
-It gets much, much worse when you have several (many?) projects. What happens, when there is a breaking change in a tooling dependency? What if team decides you need to add a new linting rule? Nobody wants to go through every project and update those files all the time. And who knows, if they are even the same? Syncing configurations is terrible. Or think about that new engineer you are onboarding. How are they supposed to know how you structure your project, how your components are supposed to look, which files they need to create?
+It gets much, much worse when you have several (many?) projects. What happens when there is a breaking change in a tooling dependency? What if a team decides you need to add a new linting rule? Nobody wants to go through every project and update those files all the time. And who knows, if they are even the same? Syncing configurations is terrible. Or think about that new engineer you are onboarding. How are they supposed to know how you structure your project, how your components are supposed to look, which files they need to create?
 
 You might think you could solve these issues with a boilerplate repository and some snippets or templates. But you cannot. At least the maintenance problem will not go away.
 
 ### The solution
 
-Toolkits are a way to mitigate these kinds of problems. They encapsulate as much as possible of the your toolchain into a single dependency and expose it through a CLI. Doing so gets you the following, probably more!
+Toolkits are a way to mitigate these kinds of problems. They encapsulate as much as possible of the toolchain into a single dependency and expose it through a CLI. Doing so gets you the following, probably more!
 
 - You don't need to set up any tooling when creating a new project. Bootstrap it and start coding. :rocket:
 - When you need to update a tooling dependency or change a configuration, do it in the toolkit and update the toolkit dependency in your projects &mdash; preferably in an automated fashion. That's it. :sparkles:
@@ -239,7 +239,7 @@ Toolkits are a way to mitigate these kinds of problems. They encapsulate as much
 
 We were inspired by many toolkit projects, such as [create-react-app](https://github.com/facebook/create-react-app/) and [kcd-scripts](https://github.com/kentcdodds/kcd-scripts). These projects are opinionated, and so is Foundry. But Foundry is different, in our opinion, because:
 
-- It encapsulates tools and their configurations, but also lets you get down and dirty with the configs in your project.
+- It encapsulates tools and their configuration, but also lets you get down and dirty with the configs in your project.
 - It merely proxies the tools you use on a CLI level instead of talking to them through their Node.js APIs. We literally execute the binaries and forward any options you provided.
 
 So please, go ahead and try it.
@@ -259,4 +259,4 @@ If you feel another member of the community violated our CoC or you are experien
 
 ![SumUp logo](https://raw.githubusercontent.com/sumup-oss/assets/master/sumup-logo.svg?sanitize=true)
 
-It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Go, Java, Erlang, Elixir and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
+It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Go, Java, Erlang, Elixir, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
