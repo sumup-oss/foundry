@@ -16,14 +16,28 @@
 import { existsSync } from 'fs';
 import { relative, join } from 'path';
 
-import { NodePlopAPI, ActionConfig } from 'plop';
+import { NodePlopAPI, ActionType } from 'plop';
+import { Answers } from 'inquirer';
 
 import * as logger from '../../lib/logger';
 import { Language } from '../../types/shared';
 
 interface PlopOptions {
-  templateDir?: string;
+  /**
+   * The programming language for the generated files.
+   */
   language: Language;
+  /**
+   * A path relative to the location of `plopfile.js` where the template files
+   * are located. If a template file isn't found in the custom location, the
+   * default one is used instead.
+   */
+  templateDir?: string;
+  /**
+   * A path relative to the location of `plopfile.js` where the generated files
+   * should be saved. Default: `./src/components`.
+   */
+  targetDir?: string;
 }
 
 enum ComponentType {
@@ -102,7 +116,7 @@ export function config(options: PlopOptions) {
           message: 'Where would you like to put your component?',
           default: relative(
             process.cwd(),
-            `${plop.getPlopfilePath()}/src/components`,
+            join(plop.getPlopfilePath(), options.targetDir || 'src/components'),
           ),
         },
         // Files
@@ -139,7 +153,10 @@ export function config(options: PlopOptions) {
           ],
         },
       ],
-      actions: (answers): ActionConfig[] => {
+      actions: (answers?: Answers): ActionType[] => {
+        if (!answers) {
+          return [];
+        }
         const {
           name: componentName,
           componentType,
@@ -185,7 +202,7 @@ export function config(options: PlopOptions) {
               ),
             },
           ];
-        }, [] as ActionConfig[]);
+        }, [] as ActionType[]);
       },
     });
   };

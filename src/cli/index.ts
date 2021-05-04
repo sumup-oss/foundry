@@ -59,7 +59,7 @@ yargs
       },
       openSource: {
         alias: 'o',
-        desc: 'Whether the project is open source',
+        desc: 'Whether the project is open-source',
         type: 'boolean',
       },
       publish: {

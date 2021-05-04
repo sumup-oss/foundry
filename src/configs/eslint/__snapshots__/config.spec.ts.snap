@@ -10,9 +10,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -32,6 +30,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -43,9 +44,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -61,7 +68,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -122,7 +128,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
   ],
   "globals": Object {
@@ -143,6 +148,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -228,9 +236,7 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -250,6 +256,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -261,6 +270,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -276,6 +288,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "babel-eslint",
@@ -290,7 +305,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -351,7 +365,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
@@ -375,6 +388,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -452,6 +468,120 @@ Object {
     "react": Object {
       "version": "detect",
     },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+      ],
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
+      ],
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+  ],
+  "root": true,
+  "rules": Object {
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/order": Array [
+      "error",
+      Object {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
   },
 }
 `;
@@ -466,10 +596,8 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -489,6 +617,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -510,9 +641,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -528,7 +665,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -592,7 +728,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
@@ -614,6 +749,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -712,10 +850,8 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -735,6 +871,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -756,6 +895,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -771,6 +913,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "babel-eslint",
@@ -785,7 +930,6 @@ Object {
   },
   "plugins": Array [
     "prettier",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -849,7 +993,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:react/recommended",
@@ -874,6 +1017,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -964,6 +1110,134 @@ Object {
     "react": Object {
       "version": "detect",
     },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'JavaScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-base",
+    "plugin:node/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+      ],
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
+      ],
+    },
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": Array [
+    "prettier",
+  ],
+  "root": true,
+  "rules": Object {
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/order": Array [
+      "error",
+      Object {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
   },
 }
 `;
@@ -978,13 +1252,11 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1004,6 +1276,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1054,9 +1329,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -1078,7 +1359,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -1159,7 +1439,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1184,6 +1463,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1334,13 +1616,11 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1360,6 +1640,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1410,6 +1693,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -1425,6 +1711,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "@typescript-eslint/parser",
@@ -1445,7 +1734,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -1526,7 +1814,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1554,6 +1841,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1693,6 +1983,189 @@ Object {
     },
     "react": Object {
       "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Browser', [length]: 1 ],
+  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "browser": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/restrict-plus-operands": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+      ],
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
+      ],
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/order": Array [
+      "error",
+      Object {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react/prop-types": "off",
+  },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
     },
   },
 }
@@ -1708,14 +2181,12 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:node/recommended",
-    "plugin:cypress/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1735,6 +2206,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -1795,9 +2269,15 @@ Object {
       "env": Object {
         "cypress/globals": true,
       },
+      "extends": Array [
+        "plugin:cypress/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
         "e2e/**/*",
+      ],
+      "plugins": Array [
+        "cypress",
       ],
     },
   ],
@@ -1819,7 +2299,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "cypress",
   ],
   "root": true,
   "rules": Object {
@@ -1903,7 +2382,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -1929,6 +2407,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -2092,14 +2573,12 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:node/recommended",
-    "plugin:jest/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2119,6 +2598,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -2179,6 +2661,9 @@ Object {
       "env": Object {
         "jest/globals": true,
       },
+      "extends": Array [
+        "plugin:jest/recommended",
+      ],
       "files": Array [
         "**/*spec.*",
       ],
@@ -2194,6 +2679,9 @@ Object {
         "userEvent": true,
         "wait": true,
       },
+      "plugins": Array [
+        "jest",
+      ],
     },
   ],
   "parser": "@typescript-eslint/parser",
@@ -2214,7 +2702,6 @@ Object {
   "plugins": Array [
     "prettier",
     "@typescript-eslint",
-    "jest",
   ],
   "root": true,
   "rules": Object {
@@ -2298,7 +2785,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -2327,6 +2813,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],
@@ -2479,6 +2968,203 @@ Object {
     },
     "react": Object {
       "version": "detect",
+    },
+  },
+}
+`;
+
+exports[`eslint with options should return a config for { language: 'TypeScript',
+  environments: [ 'Node', [length]: 1 ],
+  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+Object {
+  "env": Object {
+    "node": true,
+  },
+  "extends": Array [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier/@typescript-eslint",
+    "plugin:node/recommended",
+  ],
+  "globals": Object {
+    "__DEV__": true,
+    "__PRODUCTION__": true,
+    "__TEST__": true,
+  },
+  "overrides": Array [
+    Object {
+      "files": Array [
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
+      "files": Array [
+        "**/*.json",
+      ],
+      "rules": Object {
+        "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.js",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/restrict-plus-operands": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "node/no-unpublished-import": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "plugin:testing-library/react",
+      ],
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "plugins": Array [
+        "testing-library",
+      ],
+    },
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": Object {
+    "ecmaFeatures": Object {
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "extraFileExtensions": Array [
+      ".json",
+    ],
+    "project": Array [
+      "./tsconfig.json",
+    ],
+    "sourceType": "module",
+    "tsconfigRootDir": "/project/dir",
+  },
+  "plugins": Array [
+    "prettier",
+    "@typescript-eslint",
+  ],
+  "root": true,
+  "rules": Object {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": Array [
+      "error",
+      Object {
+        "functions": false,
+      },
+    ],
+    "comma-dangle": "off",
+    "curly": Array [
+      "error",
+      "all",
+    ],
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/order": Array [
+      "error",
+      Object {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "max-len": Array [
+      "error",
+      Object {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": Array [
+      "error",
+      Object {
+        "allow": Array [
+          "__DEV__",
+          "__PRODUCTION__",
+          "__TEST__",
+        ],
+      },
+    ],
+    "no-use-before-define": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "quote-props": "off",
+    "react/prop-types": "off",
+  },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
     },
   },
 }
@@ -2489,7 +3175,6 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:json/recommended",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2509,6 +3194,9 @@ Object {
       },
     },
     Object {
+      "extends": Array [
+        "plugin:json/recommended",
+      ],
       "files": Array [
         "**/*.json",
       ],

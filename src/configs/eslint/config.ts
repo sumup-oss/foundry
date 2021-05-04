@@ -49,11 +49,7 @@ function customizer(
 
 const base = {
   root: true,
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:json/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
     'curly': ['error', 'all'],
@@ -107,6 +103,7 @@ const base = {
     },
     {
       files: ['**/*.json'],
+      extends: ['plugin:json/recommended'],
       rules: {
         'notice/notice': 'off',
       },
@@ -272,11 +269,11 @@ function customizeFramework(frameworks?: Framework[]) {
       },
     },
     [Framework.JEST]: {
-      extends: ['plugin:jest/recommended'],
-      plugins: ['jest'],
       overrides: [
         {
           files: ['**/*spec.*'],
+          extends: ['plugin:jest/recommended'],
+          plugins: ['jest'],
           globals: {
             render: true,
             create: true,
@@ -294,12 +291,21 @@ function customizeFramework(frameworks?: Framework[]) {
       ],
     },
     [Framework.CYPRESS]: {
-      extends: ['plugin:cypress/recommended'],
-      plugins: ['cypress'],
       overrides: [
         {
           files: ['**/*spec.*', 'e2e/**/*'],
+          extends: ['plugin:cypress/recommended'],
+          plugins: ['cypress'],
           env: { 'cypress/globals': true },
+        },
+      ],
+    },
+    [Framework.TESTING_LIBRARY]: {
+      overrides: [
+        {
+          files: ['**/*spec.*'],
+          extends: ['plugin:testing-library/react'],
+          plugins: ['testing-library'],
         },
       ],
     },
