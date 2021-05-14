@@ -15,41 +15,9 @@
 
 import { Preset } from '../types/shared';
 
-import { mergeOptions, validatePresets, validatePath } from './init';
+import { validatePresets, validatePath } from './init';
 
 describe('init command', () => {
-  describe('mergeOptions', () => {
-    it('should override the CLI args with the answers', () => {
-      const args = {
-        presets: [Preset.LINT],
-        configDir: './',
-      };
-      const answers = {
-        presets: [Preset.RELEASE],
-        configDir: './src',
-      };
-      const actual = mergeOptions(args, answers);
-      const expected = { configDir: './src', presets: ['release'] };
-      expect(actual).toEqual(expected);
-    });
-
-    it('should strip out additional CLI args', () => {
-      const args = {
-        presets: [Preset.LINT],
-        configDir: './',
-        $0: 'cli.js',
-        _: ['init'],
-      };
-      const answers = {
-        presets: [Preset.LINT],
-        configDir: './src',
-      };
-      const actual = mergeOptions(args, answers);
-      const expected = { configDir: './src', presets: ['lint'] };
-      expect(actual).toEqual(expected);
-    });
-  });
-
   describe('validatePresets', () => {
     it('should return an error message when no presets were selected', () => {
       const presets: Preset[] = [];
