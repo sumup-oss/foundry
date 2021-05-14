@@ -21,6 +21,7 @@ import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
+import isCI from 'is-ci';
 
 import {
   Options,
@@ -48,9 +49,6 @@ import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
-// import isCI from 'is-ci';
-
-const isCI = true;
 
 export interface InitParams {
   configDir: string;
