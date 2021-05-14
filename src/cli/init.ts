@@ -20,7 +20,7 @@ import inquirer, { Question } from 'inquirer';
 import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
-import isCI from 'is-ci';
+import chalk from 'chalk';
 
 import {
   Options,
@@ -48,6 +48,9 @@ import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
+// import isCI from 'is-ci';
+
+const isCI = true;
 
 export interface InitParams {
   configDir: string;
@@ -133,6 +136,9 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
     options = { ...args, ...initialAnswers, ...additionalAnswers };
   } else {
+    logger.empty();
+    logger.info('Detected CI environment, falling back to default options.');
+
     options = { ...DEFAULT_OPTIONS, ...args };
   }
 
@@ -259,7 +265,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
       logger.info('Added the following scripts to "package.json":');
       logger.empty();
       scripts.forEach(({ name, description }) => {
-        logger.log(`  "${name}": ${description}`);
+        logger.log(`  ${chalk.bold(`"${name}"`)}: ${description}`);
       });
     })
     .catch((error: string) => {
