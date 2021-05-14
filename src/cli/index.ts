@@ -22,6 +22,7 @@ import { enumToChoices } from '../lib/choices';
 
 import { run } from './run';
 import { init } from './init';
+import { DEFAULT_OPTIONS } from './defaults';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs
@@ -70,12 +71,12 @@ yargs
         alias: 'c',
         desc: 'The directory to write configs to',
         type: 'string',
-        default: '.',
+        default: DEFAULT_OPTIONS.configDir,
       },
       overwrite: {
         desc: 'Whether to overwrite existing config files',
         type: 'boolean',
-        default: false,
+        default: DEFAULT_OPTIONS.overwrite,
       },
     },
     execute('init'),

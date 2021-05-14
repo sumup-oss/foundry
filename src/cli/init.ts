@@ -20,6 +20,7 @@ import inquirer, { Question } from 'inquirer';
 import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
+import isCI from 'is-ci';
 
 import {
   Options,
@@ -46,6 +47,8 @@ import {
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
+import { DEFAULT_OPTIONS } from './defaults';
+
 export interface InitParams {
   configDir: string;
   presets?: Preset[];
@@ -60,73 +63,79 @@ export interface InitParams {
   _?: string[];
 }
 
-export async function init(args: InitParams): Promise<void> {
-  const initialAnswers = await inquirer.prompt([
-    {
-      type: 'checkbox',
-      name: 'presets',
-      message: 'Which presets do you want to use?',
-      choices: presetChoices,
-      default: args.presets,
-      validate: validatePresets,
-      when: (): boolean => validatePresets(args.presets as Preset[]) !== true,
-    },
-  ]);
+export async function init({ $0, _, ...args }: InitParams): Promise<void> {
+  let options: Options;
 
-  const prompts = {
-    [Prompt.LANGUAGE]: {
-      type: 'list',
-      name: 'language',
-      message: 'Which programming language does the project use?',
-      choices: enumToChoices(Language),
-      default: Language.TYPESCRIPT,
-      when: (): boolean => !args.language,
-    },
-    [Prompt.ENVIRONMENTS]: {
-      type: 'checkbox',
-      name: 'environments',
-      message: 'Which environment(s) will the code run in?',
-      choices: enumToChoices(Environment),
-      when: (): boolean => isEmpty(args.environments),
-    },
-    [Prompt.FRAMEWORKS]: {
-      type: 'checkbox',
-      name: 'frameworks',
-      message: 'Which framework(s) does the project use?',
-      choices: enumToChoices(Framework),
-      when: (): boolean => !args.frameworks,
-    },
-    [Prompt.CI]: {
-      type: 'checkbox',
-      name: 'ci',
-      message: 'Which CI platform would you like to use?',
-      choices: enumToChoices(CI),
-      when: (): boolean => isEmpty(args.ci),
-    },
-    [Prompt.PUBLISH]: {
-      type: 'confirm',
-      name: 'publish',
-      message: 'Would you like to publish your package to NPM?',
-      default: false,
-      when: (): boolean => typeof args.publish === 'undefined',
-    },
-    [Prompt.OPEN_SOURCE]: {
-      type: 'confirm',
-      name: 'openSource',
-      message: 'Do you plan to open-source this project?',
-      default: false,
-      when: (): boolean => typeof args.openSource === 'undefined',
-    },
-  };
+  if (!isCI) {
+    const initialAnswers = await inquirer.prompt([
+      {
+        type: 'checkbox',
+        name: 'presets',
+        message: 'Which presets do you want to use?',
+        choices: presetChoices,
+        default: args.presets,
+        validate: validatePresets,
+        when: (): boolean => validatePresets(args.presets as Preset[]) !== true,
+      },
+    ]);
 
-  const additionalPrompts = getPromptsForPresets(
-    initialAnswers.presets,
-    prompts,
-  );
-  const additionalAnswers = await inquirer.prompt(additionalPrompts);
+    const prompts = {
+      [Prompt.LANGUAGE]: {
+        type: 'list',
+        name: 'language',
+        message: 'Which programming language does the project use?',
+        choices: enumToChoices(Language),
+        default: DEFAULT_OPTIONS.language,
+        when: (): boolean => !args.language,
+      },
+      [Prompt.ENVIRONMENTS]: {
+        type: 'checkbox',
+        name: 'environments',
+        message: 'Which environment(s) will the code run in?',
+        choices: enumToChoices(Environment),
+        when: (): boolean => isEmpty(args.environments),
+      },
+      [Prompt.FRAMEWORKS]: {
+        type: 'checkbox',
+        name: 'frameworks',
+        message: 'Which framework(s) does the project use?',
+        choices: enumToChoices(Framework),
+        when: (): boolean => !args.frameworks,
+      },
+      [Prompt.CI]: {
+        type: 'checkbox',
+        name: 'ci',
+        message: 'Which CI platform would you like to use?',
+        choices: enumToChoices(CI),
+        when: (): boolean => isEmpty(args.ci),
+      },
+      [Prompt.PUBLISH]: {
+        type: 'confirm',
+        name: 'publish',
+        message: 'Would you like to publish your package to NPM?',
+        default: DEFAULT_OPTIONS.publish,
+        when: (): boolean => typeof args.publish === 'undefined',
+      },
+      [Prompt.OPEN_SOURCE]: {
+        type: 'confirm',
+        name: 'openSource',
+        message: 'Do you plan to open-source this project?',
+        default: DEFAULT_OPTIONS.openSource,
+        when: (): boolean => typeof args.openSource === 'undefined',
+      },
+    };
 
-  const answers = { ...initialAnswers, ...additionalAnswers };
-  const options = mergeOptions(args, answers);
+    const additionalPrompts = getPromptsForPresets(
+      initialAnswers.presets,
+      prompts,
+    );
+    const additionalAnswers = await inquirer.prompt(additionalPrompts);
+
+    options = { ...args, ...initialAnswers, ...additionalAnswers };
+  } else {
+    options = { ...DEFAULT_OPTIONS, ...args };
+  }
+
   const selectedTools = getToolsForPresets(options.presets);
   const files = getFilesForTools(options, selectedTools);
   const scripts = getScriptsForTools(options, selectedTools);
@@ -147,24 +156,31 @@ export async function init(args: InitParams): Promise<void> {
                 file.content,
                 options.overwrite,
               ).catch(() =>
-                listrInquirer(
-                  [
-                    {
-                      type: 'confirm',
-                      name: 'overwrite',
-                      // eslint-disable-next-line max-len
-                      message: `"${file.name}" already exists. Would you like to replace it?`,
-                      default: false,
-                    },
-                  ],
-                  ({ overwrite }: { overwrite: boolean }) => {
-                    if (!overwrite) {
-                      task.skip('Skipped');
-                      return;
-                    }
-                    writeFile(options.configDir, file.name, file.content, true);
-                  },
-                ),
+                isCI
+                  ? task.skip('Skipped')
+                  : listrInquirer(
+                      [
+                        {
+                          type: 'confirm',
+                          name: 'overwrite',
+                          // eslint-disable-next-line max-len
+                          message: `"${file.name}" already exists. Would you like to replace it?`,
+                          default: false,
+                        },
+                      ],
+                      ({ overwrite }: { overwrite: boolean }) => {
+                        if (!overwrite) {
+                          task.skip('Skipped');
+                          return;
+                        }
+                        writeFile(
+                          options.configDir,
+                          file.name,
+                          file.content,
+                          true,
+                        );
+                      },
+                    ),
               ),
           })),
         ),
@@ -201,6 +217,11 @@ export async function init(args: InitParams): Promise<void> {
                 );
                 return undefined;
               } catch (error) {
+                if (isCI) {
+                  task.skip('Skipped');
+                  return undefined;
+                }
+
                 return listrInquirer(
                   [
                     {
@@ -245,14 +266,6 @@ export async function init(args: InitParams): Promise<void> {
       logger.error(error);
       process.exit(1);
     });
-}
-
-export function mergeOptions(
-  args: InitParams,
-  answers: Omit<Options, 'configDir' | 'overwrite'>,
-): Options {
-  const { $0, _, ...rest } = args;
-  return { ...rest, ...answers };
 }
 
 function getPromptsForPresets(
