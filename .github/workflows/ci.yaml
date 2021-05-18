@@ -40,13 +40,20 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Publish to NPM
+        id: semantic
+        working-directory: ./dist
+        uses: cycjimmy/semantic-release-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
       - name: Publish to GitHub Packages
+        if: steps.semantic.outputs.new_release_published == 'true'
+        working-directory: ./dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_REGISTRY: 'https://npm.pkg.github.com/'
-        run: ./.github/prepare-github-release && yarn release
+        run: |
+          echo $PWD && echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ../.npmrc
+          ../.github/prepare-github-release
+          npm publish --tag=${{ steps.semantic.outputs.new_release_channel }}
