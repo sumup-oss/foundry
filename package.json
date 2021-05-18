@@ -8,8 +8,8 @@
   "license": "Apache-2.0",
   "bin": "cli/index.js",
   "scripts": {
-    "build": "yarn cleanup && yarn copy && tsc && chmod +x dist/cli/index.js",
-    "dev": "yarn cleanup && yarn copy && tsc --watch",
+    "build": "tsc && chmod +x dist/cli/index.js",
+    "dev": "tsc --watch",
     "start": "yarn dev",
     "cleanup": "rimraf ./dist && mkdir dist",
     "copy": "mkdir -p dist/configs/plop/templates && cp -r src/configs/plop/templates dist/configs/plop && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
