@@ -17,7 +17,7 @@ import process from 'process';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Options, Language, Environment, Framework } from '../../types/shared';
+import { Options, Environment, Framework } from '../../types/shared';
 
 type EslintOptions = Pick<
   Options,
@@ -47,48 +47,51 @@ function customizer(
   return undefined;
 }
 
+const baseRules = {
+  'curly': ['error', 'all'],
+  'no-use-before-define': 'off',
+  'no-confusing-arrow': 'off',
+  'max-len': [
+    'error',
+    {
+      code: 80,
+      tabWidth: 2,
+      ignoreComments: true,
+      ignoreUrls: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+      ignoreRegExpLiterals: true,
+      ignorePattern: '^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()',
+    },
+  ],
+  'no-underscore-dangle': 'error',
+  'import/prefer-default-export': 'off',
+  'import/order': ['error', { 'newlines-between': 'always' }],
+  // The rules below are already covered by prettier.
+  'quote-props': 'off',
+  'comma-dangle': 'off',
+  'object-curly-newline': 'off',
+  'implicit-arrow-linebreak': 'off',
+  'function-paren-newline': 'off',
+  'operator-linebreak': 'off',
+  'indent': 'off',
+};
+
 const base = {
   root: true,
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'airbnb-base'],
   plugins: ['prettier'],
-  rules: {
-    'curly': ['error', 'all'],
-    'no-use-before-define': 'off',
-    'no-confusing-arrow': 'off',
-    'max-len': [
-      'error',
-      {
-        code: 80,
-        tabWidth: 2,
-        ignoreComments: true,
-        ignoreUrls: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true,
-        ignorePattern:
-          '^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()',
-      },
-    ],
-    'no-underscore-dangle': [
-      'error',
-      { allow: ['__DEV__', '__PRODUCTION__', '__TEST__'] },
-    ],
-    'import/prefer-default-export': 'off',
-    'import/order': ['error', { 'newlines-between': 'always' }],
-    // The rules below are already covered by prettier.
-    'quote-props': 'off',
-    'comma-dangle': 'off',
-    'object-curly-newline': 'off',
-    'implicit-arrow-linebreak': 'off',
-    'function-paren-newline': 'off',
-    'operator-linebreak': 'off',
-    'indent': 'off',
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      modules: true,
+      impliedStrict: true,
+    },
+    allowImportExportEverywhere: true,
   },
-  globals: {
-    __DEV__: true,
-    __PRODUCTION__: true,
-    __TEST__: true,
-  },
+  rules: baseRules,
   overrides: [
     {
       files: [
@@ -108,12 +111,8 @@ const base = {
         'notice/notice': 'off',
       },
     },
-  ],
-};
-
-function customizeLanguage(language?: Language) {
-  const languageMap = {
-    [Language.TYPESCRIPT]: {
+    {
+      files: ['**/*.ts', '**/*.tsx'],
       extends: [
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -140,6 +139,7 @@ function customizeLanguage(language?: Language) {
         },
       },
       rules: {
+        ...baseRules,
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/indent': 'off',
         '@typescript-eslint/no-use-before-define': [
@@ -148,62 +148,27 @@ function customizeLanguage(language?: Language) {
         ],
         'react/prop-types': 'off',
       },
-      overrides: [
-        {
-          files: ['**/*.d.ts'],
-          rules: {
-            'spaced-comment': 'off',
-            'node/no-extraneous-import': 'off',
-            'import/no-extraneous-dependencies': [
-              'error',
-              { devDependencies: true },
-            ],
-          },
-        },
-        {
-          files: ['**/*.js'],
-          rules: {
-            '@typescript-eslint/no-unsafe-call': 'off',
-            '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/no-unsafe-return': 'off',
-            '@typescript-eslint/no-unsafe-assignment': 'off',
-            '@typescript-eslint/restrict-plus-operands': 'off',
-            '@typescript-eslint/no-unsafe-member-access': 'off',
-            '@typescript-eslint/restrict-template-expressions': 'off',
-            '@typescript-eslint/explicit-module-boundary-types': 'off',
-          },
-        },
-        {
-          files: ['**/*.spec.*'],
-          rules: {
-            '@typescript-eslint/no-var-requires': 'off',
-            '@typescript-eslint/no-unsafe-assignment': 'warn',
-          },
-        },
-      ],
     },
-    [Language.JAVASCRIPT]: {
-      extends: ['airbnb-base'],
-      parser: 'babel-eslint',
-      parserOptions: {
-        sourceType: 'module',
-        ecmaVersion: 6,
-        ecmaFeatures: {
-          modules: true,
-          impliedStrict: true,
-        },
-        allowImportExportEverywhere: true,
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'spaced-comment': 'off',
+        'node/no-extraneous-import': 'off',
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
       },
     },
-  };
-  return (config: EslintConfig): EslintConfig => {
-    if (!language) {
-      return config;
-    }
-    const overrides = languageMap[language];
-    return customizeConfig(config, overrides);
-  };
-}
+    {
+      files: ['**/*.spec.ts', '**/*.spec.tsx'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'warn',
+      },
+    },
+  ],
+};
 
 function customizeEnv(environments?: Environment[]) {
   const environmentMap = {
@@ -365,7 +330,6 @@ export function createConfig(
   overrides: EslintConfig = {},
 ): EslintConfig {
   return flow(
-    customizeLanguage(options.language),
     customizeEnv(options.environments),
     customizeFramework(options.frameworks),
     addCopyrightNotice(options.openSource),
