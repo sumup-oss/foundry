@@ -24,16 +24,15 @@ import { run } from './run';
 import { init } from './init';
 import { DEFAULT_OPTIONS } from './defaults';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-yargs
+// eslint-disable-next-line no-void
+void yargs
   .command(
     'init',
     "Initialize Foundry's tools in your project",
     {
       presets: {
         alias: 'p',
-        desc:
-          'A preset configures a group of tools that solve a common problem',
+        desc: 'A preset configures a group of tools that solve a common problem',
         choices: enumToChoices(Preset) as Preset[],
         type: 'array',
       },
