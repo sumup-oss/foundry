@@ -119,7 +119,6 @@ function customizeLanguage(language?: Language) {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'prettier/@typescript-eslint',
       ],
       plugins: ['@typescript-eslint'],
       parser: '@typescript-eslint/parser',
@@ -142,6 +141,7 @@ function customizeLanguage(language?: Language) {
       },
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/indent': 'off',
         '@typescript-eslint/no-use-before-define': [
           'error',
           { functions: false },
@@ -246,11 +246,7 @@ function customizeEnv(environments?: Environment[]) {
 function customizeFramework(frameworks?: Framework[]) {
   const frameworkMap = {
     [Framework.REACT]: {
-      extends: [
-        'plugin:react/recommended',
-        'plugin:jsx-a11y/recommended',
-        'prettier/react',
-      ],
+      extends: ['plugin:react/recommended', 'plugin:jsx-a11y/recommended'],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
       rules: {
         'react-hooks/rules-of-hooks': 'error',

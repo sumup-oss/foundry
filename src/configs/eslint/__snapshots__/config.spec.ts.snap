@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -118,9 +120,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -226,9 +230,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -355,9 +361,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -368,7 +376,6 @@ Object {
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/react",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -472,9 +479,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Testing Library', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -586,9 +595,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -718,9 +729,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -840,9 +853,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -983,9 +998,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -997,7 +1014,6 @@ Object {
     "plugin:node/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/react",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1114,9 +1130,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'JavaScript',
+exports[`eslint with options should return a config for {
+  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Testing Library', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -1242,9 +1260,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1256,7 +1276,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1363,6 +1382,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1429,9 +1449,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1443,7 +1465,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1536,6 +1557,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1606,9 +1628,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1620,7 +1644,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1738,6 +1761,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1804,9 +1828,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -1818,10 +1844,8 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/react",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -1917,6 +1941,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -1988,9 +2013,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Testing Library', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "browser": true,
@@ -2002,7 +2029,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2105,6 +2131,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2171,9 +2198,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Cypress', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2185,7 +2214,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:node/recommended",
   ],
   "globals": Object {
@@ -2303,6 +2331,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2372,9 +2401,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Emotion', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2386,7 +2417,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:node/recommended",
   ],
   "globals": Object {
@@ -2490,6 +2520,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2563,9 +2594,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Jest', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2577,7 +2610,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:node/recommended",
   ],
   "globals": Object {
@@ -2706,6 +2738,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2775,9 +2808,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ] } 1`] = `
+  frameworks: [ 'React', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2789,11 +2824,9 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:node/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/react",
   ],
   "globals": Object {
     "__DEV__": true,
@@ -2899,6 +2932,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {
@@ -2973,9 +3007,11 @@ Object {
 }
 `;
 
-exports[`eslint with options should return a config for { language: 'TypeScript',
+exports[`eslint with options should return a config for {
+  language: 'TypeScript',
   environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ] } 1`] = `
+  frameworks: [ 'Testing Library', [length]: 1 ]
+} 1`] = `
 Object {
   "env": Object {
     "node": true,
@@ -2987,7 +3023,6 @@ Object {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier/@typescript-eslint",
     "plugin:node/recommended",
   ],
   "globals": Object {
@@ -3101,6 +3136,7 @@ Object {
   "root": true,
   "rules": Object {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-use-before-define": Array [
       "error",
       Object {

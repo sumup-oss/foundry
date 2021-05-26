@@ -25,7 +25,7 @@ jest.mock('fs', () => ({
   readFile: jest.fn(),
 }));
 
-const content = `module.exports = "Hello world"`;
+const content = 'module.exports = "Hello world"';
 
 const formattedContent = `module.exports = 'Hello world';
 `;
