@@ -26,7 +26,7 @@
     "release": "cd ./dist && semantic-release"
   },
   "engines": {
-    "node": ">=10.18.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "@semantic-release/commit-analyzer": "^8.0.0",
