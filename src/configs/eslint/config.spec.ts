@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Language, Environment, Framework } from '../../types/shared';
+import { Environment, Framework } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 
 import { customizeConfig, createConfig } from './config';
@@ -97,7 +97,6 @@ describe('eslint', () => {
 
   describe('with options', () => {
     const matrix = getAllChoiceCombinations({
-      language: Language,
       environments: [Environment],
       frameworks: [Framework],
     });

@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
@@ -14,11 +13,6 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -40,6 +34,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -102,16 +208,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -121,7 +218,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
@@ -134,11 +230,6 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -160,6 +251,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
   ],
@@ -212,16 +415,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -231,7 +425,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
@@ -244,11 +437,6 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -270,6 +458,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -343,16 +643,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -362,7 +653,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
@@ -377,11 +667,6 @@ Object {
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -403,6 +688,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
   ],
@@ -454,16 +851,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -480,7 +868,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
@@ -493,11 +880,6 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -519,6 +901,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -577,16 +1071,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -596,7 +1081,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
@@ -610,11 +1094,6 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -636,6 +1115,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -708,16 +1299,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
@@ -730,7 +1312,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
@@ -744,11 +1325,6 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -770,6 +1346,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -832,16 +1520,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
@@ -854,7 +1533,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
@@ -868,11 +1546,6 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -894,6 +1567,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -977,16 +1762,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
@@ -999,7 +1775,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
@@ -1015,11 +1790,6 @@ Object {
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -1041,6 +1811,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -1102,16 +1984,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
@@ -1131,7 +2004,6 @@ Object {
 `;
 
 exports[`eslint with options should return a config for {
-  language: 'JavaScript',
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
@@ -1145,11 +2017,6 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -1171,6 +2038,118 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
     Object {
@@ -1239,16 +2218,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
@@ -1256,1952 +2226,6 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "browser": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "env": Object {
-        "cypress/globals": true,
-      },
-      "extends": Array [
-        "plugin:cypress/recommended",
-      ],
-      "files": Array [
-        "**/*spec.*",
-        "e2e/**/*",
-      ],
-      "plugins": Array [
-        "cypress",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "browser": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-    "emotion",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "off",
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "browser": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "env": Object {
-        "jest/globals": true,
-      },
-      "extends": Array [
-        "plugin:jest/recommended",
-      ],
-      "files": Array [
-        "**/*spec.*",
-      ],
-      "globals": Object {
-        "act": true,
-        "actHook": true,
-        "axe": true,
-        "create": true,
-        "fireEvent": true,
-        "render": true,
-        "renderHook": true,
-        "renderToHtml": true,
-        "userEvent": true,
-        "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "browser": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "jsx": true,
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-    "react": Object {
-      "version": "detect",
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "browser": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:testing-library/react",
-      ],
-      "files": Array [
-        "**/*spec.*",
-      ],
-      "plugins": Array [
-        "testing-library",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "node": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:node/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "node/no-unpublished-import": "off",
-      },
-    },
-    Object {
-      "env": Object {
-        "cypress/globals": true,
-      },
-      "extends": Array [
-        "plugin:cypress/recommended",
-      ],
-      "files": Array [
-        "**/*spec.*",
-        "e2e/**/*",
-      ],
-      "plugins": Array [
-        "cypress",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "node/no-extraneous-import": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "node": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:node/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "node/no-unpublished-import": "off",
-      },
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-    "emotion",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "emotion/import-from-emotion": "error",
-    "emotion/jsx-import": "off",
-    "emotion/no-vanilla": "error",
-    "emotion/styled-import": "error",
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "node/no-extraneous-import": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "node": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:node/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "node/no-unpublished-import": "off",
-      },
-    },
-    Object {
-      "env": Object {
-        "jest/globals": true,
-      },
-      "extends": Array [
-        "plugin:jest/recommended",
-      ],
-      "files": Array [
-        "**/*spec.*",
-      ],
-      "globals": Object {
-        "act": true,
-        "actHook": true,
-        "axe": true,
-        "create": true,
-        "fireEvent": true,
-        "render": true,
-        "renderHook": true,
-        "renderToHtml": true,
-        "userEvent": true,
-        "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "node/no-extraneous-import": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "node": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:node/recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "node/no-unpublished-import": "off",
-      },
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "jsx": true,
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "node/no-extraneous-import": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
-    "react": Object {
-      "version": "detect",
-    },
-  },
-}
-`;
-
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
-Object {
-  "env": Object {
-    "node": true,
-  },
-  "extends": Array [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:node/recommended",
-  ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
-  "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:json/recommended",
-      ],
-      "files": Array [
-        "**/*.json",
-      ],
-      "rules": Object {
-        "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.d.ts",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
-          "error",
-          Object {
-            "devDependencies": true,
-          },
-        ],
-        "node/no-extraneous-import": "off",
-        "spaced-comment": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.js",
-      ],
-      "rules": Object {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
-        "@typescript-eslint/restrict-plus-operands": "off",
-        "@typescript-eslint/restrict-template-expressions": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-      ],
-      "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
-        "@typescript-eslint/no-var-requires": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "node/no-unpublished-import": "off",
-      },
-    },
-    Object {
-      "extends": Array [
-        "plugin:testing-library/react",
-      ],
-      "files": Array [
-        "**/*spec.*",
-      ],
-      "plugins": Array [
-        "testing-library",
-      ],
-    },
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": Object {
-    "ecmaFeatures": Object {
-      "modules": true,
-    },
-    "ecmaVersion": 6,
-    "extraFileExtensions": Array [
-      ".json",
-    ],
-    "project": Array [
-      "./tsconfig.json",
-    ],
-    "sourceType": "module",
-    "tsconfigRootDir": "/project/dir",
-  },
-  "plugins": Array [
-    "prettier",
-    "@typescript-eslint",
-  ],
-  "root": true,
-  "rules": Object {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-use-before-define": Array [
-      "error",
-      Object {
-        "functions": false,
-      },
-    ],
-    "comma-dangle": "off",
-    "curly": Array [
-      "error",
-      "all",
-    ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/order": Array [
-      "error",
-      Object {
-        "newlines-between": "always",
-      },
-    ],
-    "import/prefer-default-export": "off",
-    "indent": "off",
-    "max-len": Array [
-      "error",
-      Object {
-        "code": 80,
-        "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true,
-        "tabWidth": 2,
-      },
-    ],
-    "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
-    "no-use-before-define": "off",
-    "node/no-extraneous-import": "off",
-    "node/no-missing-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
-    "react/prop-types": "off",
-  },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    },
   },
 }
 `;
@@ -3211,12 +2235,8 @@ Object {
   "extends": Array [
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "airbnb-base",
   ],
-  "globals": Object {
-    "__DEV__": true,
-    "__PRODUCTION__": true,
-    "__TEST__": true,
-  },
   "overrides": Array [
     Object {
       "files": Array [
@@ -3240,7 +2260,129 @@ Object {
         "notice/notice": "off",
       },
     },
+    Object {
+      "extends": Array [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": Array [
+        "**/*.ts",
+        "**/*.tsx",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": Array [
+          ".json",
+        ],
+        "project": Array [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": Array [
+        "@typescript-eslint",
+      ],
+      "rules": Object {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": Array [
+          "error",
+          Object {
+            "functions": false,
+          },
+        ],
+        "comma-dangle": "off",
+        "curly": Array [
+          "error",
+          "all",
+        ],
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/order": Array [
+          "error",
+          Object {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "max-len": Array [
+          "error",
+          Object {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "quote-props": "off",
+        "react/prop-types": "off",
+      },
+      "settings": Object {
+        "import/resolver": Object {
+          "node": Object {
+            "extensions": Array [
+              ".js",
+              ".jsx",
+              ".ts",
+              ".tsx",
+            ],
+          },
+        },
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.d.ts",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": Array [
+          "error",
+          Object {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+      ],
+      "rules": Object {
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
   ],
+  "parser": "babel-eslint",
+  "parserOptions": Object {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": Object {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
   "plugins": Array [
     "prettier",
     "notice",
@@ -3276,16 +2418,7 @@ Object {
       },
     ],
     "no-confusing-arrow": "off",
-    "no-underscore-dangle": Array [
-      "error",
-      Object {
-        "allow": Array [
-          "__DEV__",
-          "__PRODUCTION__",
-          "__TEST__",
-        ],
-      },
-    ],
+    "no-underscore-dangle": "error",
     "no-use-before-define": "off",
     "notice/notice": Array [
       "error",

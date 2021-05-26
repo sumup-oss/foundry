@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+// eslint-disable-next-line node/no-unpublished-require
 module.exports = require('./dist/eslint')(
   {
-    language: 'TypeScript',
     environments: ['Node'],
     frameworks: ['Jest'],
     openSource: true,
