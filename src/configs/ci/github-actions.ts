@@ -51,10 +51,6 @@ jobs:
       - name: Lint
         run: yarn lint:ci
 {{/includes}}
-      - name: Upload code coverage
-        uses: codecov/codecov-action@v1.0.3
-        with:
-          token: $\\{{ secrets.CODECOV_TOKEN }}
 {{#includes presets "release"}}
       - name: Release
         env:
