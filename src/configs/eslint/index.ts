@@ -23,7 +23,7 @@ export const files = (options: Options): File[] => [
     name: '.eslintrc.js',
     content: `
     module.exports = require('@sumup/foundry/eslint')(${JSON.stringify(
-      pick(['environments', 'frameworks', 'openSource'], options),
+      pick(['language', 'environments', 'frameworks', 'openSource'], options),
     )})`,
   },
   {

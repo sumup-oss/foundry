@@ -17,7 +17,7 @@ import process from 'process';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Options, Environment, Framework } from '../../types/shared';
+import { Options, Language, Environment, Framework } from '../../types/shared';
 
 type EslintOptions = Pick<
   Options,
@@ -47,7 +47,7 @@ function customizer(
   return undefined;
 }
 
-const baseRules = {
+const sharedRules = {
   'curly': ['error', 'all'],
   'no-use-before-define': 'off',
   'no-confusing-arrow': 'off',
@@ -91,6 +91,7 @@ const base = {
       impliedStrict: true,
     },
     allowImportExportEverywhere: true,
+    requireConfigFile: false,
   },
   settings: {
     'import/resolver': {
@@ -99,55 +100,13 @@ const base = {
       },
     },
   },
-  rules: baseRules,
+  rules: sharedRules,
   overrides: [
     {
       files: ['**/*.json'],
       extends: ['plugin:json/recommended'],
       rules: {
         'notice/notice': 'off',
-      },
-    },
-    {
-      files: ['**/*.{ts,tsx}'],
-      extends: [
-        'airbnb-typescript/base',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      ],
-      plugins: ['@typescript-eslint'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        tsconfigRootDir: process.cwd(),
-        project: ['./tsconfig.json'],
-        extraFileExtensions: ['.json'],
-        sourceType: 'module',
-        ecmaVersion: 6,
-        ecmaFeatures: {
-          modules: true,
-        },
-      },
-      rules: {
-        ...baseRules,
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/indent': 'off',
-        '@typescript-eslint/no-use-before-define': [
-          'error',
-          { functions: false },
-        ],
-        'react/prop-types': 'off',
-      },
-    },
-    {
-      files: ['**/*.d.ts'],
-      rules: {
-        'spaced-comment': 'off',
-        'node/no-extraneous-import': 'off',
-        'import/no-extraneous-dependencies': [
-          'error',
-          { devDependencies: true },
-        ],
       },
     },
     {
@@ -158,12 +117,6 @@ const base = {
       },
     },
     {
-      files: ['**/*.{story,stories}.{ts,tsx}'],
-      rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-      },
-    },
-    {
       files: ['**/*spec.*', '**/setupTests.*', '**/test-utils.*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
@@ -171,20 +124,85 @@ const base = {
         'react/prop-types': 'off',
       },
     },
-    {
-      files: [
-        '**/*spec.{ts,tsx}',
-        '**/setupTests.{ts,tsx}',
-        '**/test-utils.{ts,tsx}',
-      ],
-      rules: {
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-      },
-    },
   ],
 };
+
+function customizeLanguage(language?: Language) {
+  const languageMap = {
+    [Language.JAVASCRIPT]: {},
+    [Language.TYPESCRIPT]: {
+      overrides: [
+        {
+          files: ['**/*.{ts,tsx}'],
+          extends: [
+            'airbnb-typescript/base',
+            'plugin:@typescript-eslint/eslint-recommended',
+            'plugin:@typescript-eslint/recommended',
+            'plugin:@typescript-eslint/recommended-requiring-type-checking',
+          ],
+          plugins: ['@typescript-eslint'],
+          parser: '@typescript-eslint/parser',
+          parserOptions: {
+            tsconfigRootDir: process.cwd(),
+            project: ['./tsconfig.json'],
+            extraFileExtensions: ['.json'],
+            sourceType: 'module',
+            ecmaVersion: 6,
+            ecmaFeatures: {
+              modules: true,
+            },
+          },
+          rules: {
+            ...sharedRules,
+            '@typescript-eslint/explicit-function-return-type': 'off',
+            '@typescript-eslint/indent': 'off',
+            '@typescript-eslint/no-use-before-define': [
+              'error',
+              { functions: false },
+            ],
+            'react/prop-types': 'off',
+          },
+        },
+        {
+          files: ['**/*.d.ts'],
+          rules: {
+            'spaced-comment': 'off',
+            'node/no-extraneous-import': 'off',
+            'import/no-extraneous-dependencies': [
+              'error',
+              { devDependencies: true },
+            ],
+          },
+        },
+        {
+          files: ['**/*.{story,stories}.{ts,tsx}'],
+          rules: {
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
+          },
+        },
+        {
+          files: [
+            '**/*spec.{ts,tsx}',
+            '**/setupTests.{ts,tsx}',
+            '**/test-utils.{ts,tsx}',
+          ],
+          rules: {
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-var-requires': 'off',
+            '@typescript-eslint/no-unsafe-assignment': 'off',
+          },
+        },
+      ],
+    },
+  };
+  return (config: EslintConfig): EslintConfig => {
+    if (!language) {
+      return config;
+    }
+    const overrides = languageMap[language];
+    return customizeConfig(config, overrides);
+  };
+}
 
 function customizeEnv(environments?: Environment[]) {
   const environmentMap = {
@@ -346,6 +364,7 @@ export function createConfig(
   overrides: EslintConfig = {},
 ): EslintConfig {
   return flow(
+    customizeLanguage(options.language),
     customizeEnv(options.environments),
     customizeFramework(options.frameworks),
     addCopyrightNotice(options.openSource),
