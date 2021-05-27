@@ -18,7 +18,7 @@ module.exports = {
   clearMocks: true,
   rootDir: 'src',
   coverageDirectory: '../__reports__',
-  reporters: ['default', 'jest-junit'],
+  reporters: ['default', 'jest-github-reporter'],
   coveragePathIgnorePatterns: ['node_modules'],
   testEnvironment: 'node',
 };

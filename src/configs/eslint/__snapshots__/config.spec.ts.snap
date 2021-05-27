@@ -121,6 +121,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -146,9 +147,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -355,6 +359,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -380,9 +385,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -579,6 +587,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -604,9 +613,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -826,6 +838,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -851,9 +864,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1054,6 +1070,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -1079,9 +1096,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1285,6 +1305,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -1310,9 +1331,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1533,6 +1557,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -1558,9 +1583,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -1771,6 +1799,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -1796,9 +1825,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -2032,6 +2064,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -2057,9 +2090,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -2274,6 +2310,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -2299,9 +2336,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },
@@ -2511,6 +2551,7 @@ Object {
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
       },
     },
     Object {
@@ -2536,9 +2577,12 @@ Object {
     Object {
       "files": Array [
         "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
       ],
       "rules": Object {
-        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
       },
     },

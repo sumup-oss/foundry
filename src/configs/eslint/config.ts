@@ -154,6 +154,7 @@ const base = {
       files: ['**/*.{story,stories}.*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+        'no-alert': 'off',
       },
     },
     {
@@ -171,10 +172,15 @@ const base = {
       },
     },
     {
-      files: ['**/*spec.{ts,tsx}'],
+      files: [
+        '**/*spec.{ts,tsx}',
+        '**/setupTests.{ts,tsx}',
+        '**/test-utils.{ts,tsx}',
+      ],
       rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'warn',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
       },
     },
   ],
