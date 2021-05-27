@@ -67,6 +67,7 @@ const baseRules = {
   'no-underscore-dangle': 'error',
   'import/prefer-default-export': 'off',
   'import/order': ['error', { 'newlines-between': 'always' }],
+  'import/extensions': 'off',
   // The rules below are already covered by prettier.
   'quote-props': 'off',
   'comma-dangle': 'off',
@@ -91,19 +92,15 @@ const base = {
     },
     allowImportExportEverywhere: true,
   },
-  rules: baseRules,
-  overrides: [
-    {
-      files: [
-        '**/*.story.*',
-        '**/*.stories.*',
-        '**/setupTests.*',
-        '**/test-utils.*',
-      ],
-      rules: {
-        'import/no-extraneous-dependencies': 'off',
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
+  },
+  rules: baseRules,
+  overrides: [
     {
       files: ['**/*.json'],
       extends: ['plugin:json/recommended'],
@@ -131,13 +128,6 @@ const base = {
           modules: true,
         },
       },
-      settings: {
-        'import/resolver': {
-          node: {
-            extensions: ['.js', '.jsx', '.ts', '.tsx'],
-          },
-        },
-      },
       rules: {
         ...baseRules,
         '@typescript-eslint/explicit-function-return-type': 'off',
@@ -161,7 +151,26 @@ const base = {
       },
     },
     {
-      files: ['**/*.spec.ts', '**/*.spec.tsx'],
+      files: [
+        '**/*.story.*',
+        '**/*.stories.*',
+        '**/*spec.*',
+        '**/setupTests.*',
+        '**/test-utils.*',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['**/*spec.*'],
+      rules: {
+        'react/display-name': 'off',
+        'react/prop-types': 'off',
+      },
+    },
+    {
+      files: ['**/*spec.ts', '**/*spec.tsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'warn',

@@ -15,17 +15,6 @@ Object {
   ],
   "overrides": Array [
     Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "plugin:json/recommended",
       ],
@@ -81,6 +70,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -110,18 +100,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -140,8 +118,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -186,6 +185,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -214,6 +214,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -231,17 +243,6 @@ Object {
     "airbnb-base",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -298,6 +299,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -327,18 +329,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -357,8 +347,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -393,6 +404,7 @@ Object {
     "emotion/styled-import": "error",
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -421,6 +433,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -438,17 +462,6 @@ Object {
     "airbnb-base",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -505,6 +518,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -534,18 +548,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -564,8 +566,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -621,6 +644,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -649,6 +673,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -668,17 +704,6 @@ Object {
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -735,6 +760,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -764,18 +790,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -794,8 +808,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -829,6 +864,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -860,6 +896,16 @@ Object {
     "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
     "react": Object {
       "version": "detect",
     },
@@ -881,17 +927,6 @@ Object {
     "airbnb-base",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -948,6 +983,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -977,18 +1013,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -1007,8 +1031,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1049,6 +1094,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -1076,6 +1122,18 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+  },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
   },
 }
 `;
@@ -1096,17 +1154,6 @@ Object {
   ],
   "overrides": Array [
     Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "plugin:json/recommended",
       ],
@@ -1162,6 +1209,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -1191,18 +1239,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -1221,8 +1257,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1277,6 +1334,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -1308,6 +1366,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1326,17 +1396,6 @@ Object {
     "plugin:node/recommended",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -1393,6 +1452,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -1422,18 +1482,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -1452,8 +1500,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1498,6 +1567,7 @@ Object {
     "emotion/styled-import": "error",
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -1529,6 +1599,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1547,17 +1629,6 @@ Object {
     "plugin:node/recommended",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -1614,6 +1685,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -1643,18 +1715,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -1673,8 +1733,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1740,6 +1821,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -1771,6 +1853,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -1791,17 +1885,6 @@ Object {
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -1858,6 +1941,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -1887,18 +1971,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -1917,8 +1989,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1962,6 +2055,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -1996,6 +2090,16 @@ Object {
     "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
     "react": Object {
       "version": "detect",
     },
@@ -2018,17 +2122,6 @@ Object {
     "plugin:node/recommended",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -2085,6 +2178,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -2114,18 +2208,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -2144,8 +2226,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -2196,6 +2299,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -2227,6 +2331,18 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+  },
 }
 `;
 
@@ -2238,17 +2354,6 @@ Object {
     "airbnb-base",
   ],
   "overrides": Array [
-    Object {
-      "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
     Object {
       "extends": Array [
         "plugin:json/recommended",
@@ -2305,6 +2410,7 @@ Object {
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
+        "import/extensions": "off",
         "import/order": Array [
           "error",
           Object {
@@ -2334,18 +2440,6 @@ Object {
         "quote-props": "off",
         "react/prop-types": "off",
       },
-      "settings": Object {
-        "import/resolver": Object {
-          "node": Object {
-            "extensions": Array [
-              ".js",
-              ".jsx",
-              ".ts",
-              ".tsx",
-            ],
-          },
-        },
-      },
     },
     Object {
       "files": Array [
@@ -2364,8 +2458,29 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.spec.ts",
-        "**/*.spec.tsx",
+        "**/*.story.*",
+        "**/*.stories.*",
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+      ],
+      "rules": Object {
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.ts",
+        "**/*spec.tsx",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -2396,6 +2511,7 @@ Object {
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
     "import/order": Array [
       "error",
       Object {
@@ -2451,6 +2567,18 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+  },
+  "settings": Object {
+    "import/resolver": Object {
+      "node": Object {
+        "extensions": Array [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
   },
 }
 `;
