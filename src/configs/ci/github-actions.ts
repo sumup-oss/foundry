@@ -18,7 +18,7 @@
 export const fileName = '.github/workflows/ci.yaml';
 
 export const template = `
-name: Continous Integration
+name: Continuous Integration
 
 on: [push]
 
@@ -36,7 +36,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         id: yarn-cache
         with:
           path: $\\{{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -44,9 +44,7 @@ jobs:
           restore-keys: |
             $\\{{ runner.os }}-yarn-
       - name: Install dependencies
-        run: |
-          npm install -g yarn
-          yarn --pure-lockfile
+        run: yarn --pure-lockfile --prefer-offline
 {{#includes presets "lint"}}
       - name: Lint
         run: yarn lint:ci
