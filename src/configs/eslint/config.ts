@@ -116,7 +116,7 @@ const base = {
       },
     },
     {
-      files: ['**/*spec.*', '**/jest*.*', '**/setupTests.*', '**/test-utils.*'],
+      files: ['**/*spec.*', '**/jest*', '**/setupTests.*', '**/test-utils.*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
         'react/display-name': 'off',
@@ -224,7 +224,7 @@ function customizeEnv(environments?: Environment[]) {
         {
           files: [
             '**/*.spec.*',
-            '**/jest*.*',
+            '**/jest*',
             '**/setupTests.*',
             '**/test-utils.*',
           ],
@@ -275,10 +275,10 @@ function customizeFramework(frameworks?: Framework[]) {
         {
           files: [
             '**/*.spec.*',
-            '**/jest*.*',
+            '**/jest*',
             '**/setupTests.*',
             '**/test-utils.*',
-            '**/*fixtures.*',
+            '**/*Fixtures.*',
             '**/__fixtures__/**/*',
             '**/__mocks__/**/*',
           ],

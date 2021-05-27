@@ -38,7 +38,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -168,7 +168,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -288,7 +288,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -307,10 +307,10 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
-        "**/*fixtures.*",
+        "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
@@ -437,7 +437,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -561,7 +561,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -690,7 +690,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -703,7 +703,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -838,7 +838,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -851,7 +851,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -976,7 +976,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -989,7 +989,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1009,10 +1009,10 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
-        "**/*fixtures.*",
+        "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
@@ -1143,7 +1143,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1156,7 +1156,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1285,7 +1285,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1298,7 +1298,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1430,7 +1430,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1670,7 +1670,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1900,7 +1900,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2029,10 +2029,10 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
-        "**/*fixtures.*",
+        "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
@@ -2159,7 +2159,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2393,7 +2393,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2632,7 +2632,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2755,7 +2755,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2890,7 +2890,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3013,7 +3013,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3138,7 +3138,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3261,7 +3261,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3281,10 +3281,10 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
-        "**/*fixtures.*",
+        "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
@@ -3415,7 +3415,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3538,7 +3538,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3667,7 +3667,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3790,7 +3790,7 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3915,7 +3915,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
-        "**/jest*.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
