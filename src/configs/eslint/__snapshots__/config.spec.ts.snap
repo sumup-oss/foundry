@@ -71,7 +71,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -186,7 +185,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -332,7 +330,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -450,7 +447,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -584,7 +580,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -725,7 +720,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -854,7 +848,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1014,7 +1007,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1146,7 +1138,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1294,7 +1285,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1537,7 +1527,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -1762,7 +1751,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2018,7 +2006,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2246,7 +2233,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2490,7 +2476,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2741,7 +2726,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -2980,7 +2964,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3250,7 +3233,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3492,7 +3474,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3750,7 +3731,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [
@@ -3861,7 +3841,6 @@ Object {
       "modules": true,
     },
     "ecmaVersion": 6,
-    "requireConfigFile": false,
     "sourceType": "module",
   },
   "plugins": Array [

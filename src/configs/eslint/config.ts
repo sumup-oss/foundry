@@ -91,7 +91,6 @@ const base = {
       impliedStrict: true,
     },
     allowImportExportEverywhere: true,
-    requireConfigFile: false,
   },
   settings: {
     'import/resolver': {
