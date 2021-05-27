@@ -116,7 +116,7 @@ const base = {
       },
     },
     {
-      files: ['**/*spec.*', '**/setupTests.*', '**/test-utils.*'],
+      files: ['**/*spec.*', '**/jest*.*', '**/setupTests.*', '**/test-utils.*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
         'react/display-name': 'off',
@@ -222,9 +222,17 @@ function customizeEnv(environments?: Environment[]) {
       },
       overrides: [
         {
-          files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
+          files: [
+            '**/*.spec.*',
+            '**/jest*.*',
+            '**/setupTests.*',
+            '**/test-utils.*',
+          ],
           rules: {
             'node/no-unpublished-import': 'off',
+            'node/no-unpublished-require': 'off',
+            'node/no-missing-require': 'off',
+            'node/no-extraneous-require': 'off',
           },
         },
       ],
@@ -265,7 +273,15 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.JEST]: {
       overrides: [
         {
-          files: ['**/*spec.*'],
+          files: [
+            '**/*.spec.*',
+            '**/jest*.*',
+            '**/setupTests.*',
+            '**/test-utils.*',
+            '**/*fixtures.*',
+            '**/__fixtures__/**/*',
+            '**/__mocks__/**/*',
+          ],
           extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
           globals: {
@@ -297,7 +313,7 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.TESTING_LIBRARY]: {
       overrides: [
         {
-          files: ['**/*spec.*'],
+          files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
           extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
         },

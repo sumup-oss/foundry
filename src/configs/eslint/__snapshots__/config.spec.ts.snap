@@ -38,6 +38,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -167,6 +168,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -286,6 +288,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -303,7 +306,13 @@ Object {
         "plugin:jest/recommended",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/jest*.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "globals": Object {
         "act": true,
@@ -428,6 +437,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -551,6 +561,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -565,7 +576,9 @@ Object {
         "plugin:testing-library/react",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "plugins": Array [
         "testing-library",
@@ -677,6 +690,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -689,11 +703,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -820,6 +838,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -832,11 +851,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
   ],
@@ -953,6 +976,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -965,11 +989,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -980,7 +1008,13 @@ Object {
         "plugin:jest/recommended",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/jest*.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "globals": Object {
         "act": true,
@@ -1109,6 +1143,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1121,11 +1156,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
   ],
@@ -1246,6 +1285,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1258,11 +1298,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -1270,7 +1314,9 @@ Object {
         "plugin:testing-library/react",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "plugins": Array [
         "testing-library",
@@ -1384,6 +1430,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1623,6 +1670,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1852,6 +1900,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -1979,7 +2028,13 @@ Object {
         "plugin:jest/recommended",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/jest*.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "globals": Object {
         "act": true,
@@ -2104,6 +2159,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2337,6 +2393,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2461,7 +2518,9 @@ Object {
         "plugin:testing-library/react",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "plugins": Array [
         "testing-library",
@@ -2573,6 +2632,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2695,11 +2755,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -2826,6 +2890,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -2948,11 +3013,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
   ],
@@ -3069,6 +3138,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3191,11 +3261,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -3206,7 +3280,13 @@ Object {
         "plugin:jest/recommended",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/jest*.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "globals": Object {
         "act": true,
@@ -3335,6 +3415,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3457,11 +3538,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
   ],
@@ -3582,6 +3667,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
@@ -3704,11 +3790,15 @@ Object {
     Object {
       "files": Array [
         "**/*.spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
       "rules": Object {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
       },
     },
     Object {
@@ -3716,7 +3806,9 @@ Object {
         "plugin:testing-library/react",
       ],
       "files": Array [
-        "**/*spec.*",
+        "**/*.spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
       ],
       "plugins": Array [
         "testing-library",
@@ -3823,6 +3915,7 @@ Object {
     Object {
       "files": Array [
         "**/*spec.*",
+        "**/jest*.*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
