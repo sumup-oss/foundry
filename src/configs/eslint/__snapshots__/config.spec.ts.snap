@@ -33,8 +33,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -118,11 +117,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -130,17 +125,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -262,8 +267,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -347,11 +351,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -359,17 +359,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -481,8 +491,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -566,11 +575,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -578,17 +583,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -723,8 +738,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -808,11 +822,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -820,17 +830,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -946,8 +966,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -1031,11 +1050,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1043,17 +1058,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1172,8 +1197,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -1257,11 +1281,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1269,17 +1289,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1415,8 +1445,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -1500,11 +1529,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1512,17 +1537,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1648,8 +1683,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -1733,11 +1767,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -1745,17 +1775,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -1904,8 +1944,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -1989,11 +2028,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -2001,17 +2036,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -2141,8 +2186,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -2226,11 +2270,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -2238,17 +2278,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",
@@ -2373,8 +2423,7 @@ Object {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       "files": Array [
-        "**/*.ts",
-        "**/*.tsx",
+        "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": Object {
@@ -2458,11 +2507,7 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*.story.*",
-        "**/*.stories.*",
-        "**/*spec.*",
-        "**/setupTests.*",
-        "**/test-utils.*",
+        "**/*.{story,stories}.*",
       ],
       "rules": Object {
         "import/no-extraneous-dependencies": "off",
@@ -2470,17 +2515,27 @@ Object {
     },
     Object {
       "files": Array [
-        "**/*spec.*",
+        "**/*.{story,stories}.{ts,tsx}",
       ],
       "rules": Object {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
     Object {
       "files": Array [
-        "**/*spec.ts",
-        "**/*spec.tsx",
+        "**/*spec.{ts,tsx}",
       ],
       "rules": Object {
         "@typescript-eslint/no-unsafe-assignment": "warn",

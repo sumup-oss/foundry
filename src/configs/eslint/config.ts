@@ -109,7 +109,7 @@ const base = {
       },
     },
     {
-      files: ['**/*.ts', '**/*.tsx'],
+      files: ['**/*.{ts,tsx}'],
       extends: [
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -151,26 +151,27 @@ const base = {
       },
     },
     {
-      files: [
-        '**/*.story.*',
-        '**/*.stories.*',
-        '**/*spec.*',
-        '**/setupTests.*',
-        '**/test-utils.*',
-      ],
+      files: ['**/*.{story,stories}.*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
     },
     {
-      files: ['**/*spec.*'],
+      files: ['**/*.{story,stories}.{ts,tsx}'],
       rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+    {
+      files: ['**/*spec.*', '**/setupTests.*', '**/test-utils.*'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
       },
     },
     {
-      files: ['**/*spec.ts', '**/*spec.tsx'],
+      files: ['**/*spec.{ts,tsx}'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'warn',
