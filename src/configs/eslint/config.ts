@@ -82,7 +82,7 @@ const base = {
   root: true,
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'airbnb-base'],
   plugins: ['prettier'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 6,

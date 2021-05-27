@@ -168,7 +168,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -387,7 +387,7 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -637,7 +637,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -858,7 +858,7 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -1097,7 +1097,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -1342,7 +1342,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -1575,7 +1575,7 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -1839,7 +1839,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -2074,7 +2074,7 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -2327,7 +2327,7 @@ Object {
       ],
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
@@ -2543,7 +2543,7 @@ Object {
       },
     },
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": Object {
     "allowImportExportEverywhere": true,
     "ecmaFeatures": Object {
