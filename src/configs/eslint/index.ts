@@ -60,7 +60,7 @@ export const scripts = (): Script[] => [
   },
   {
     name: 'lint:ci',
-    command: 'yarn lint --format junit -o __reports__/eslint-results.xml',
+    command: 'yarn lint --format github',
     description: 'same as `lint`, but also save the report to a file',
   },
 ];
