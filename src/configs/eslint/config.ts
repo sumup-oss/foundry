@@ -78,6 +78,24 @@ const sharedRules = {
   'indent': 'off',
 };
 
+const sharedOverrides = [
+  {
+    files: ['**/*.{story,stories}.*'],
+    rules: {
+      'import/no-extraneous-dependencies': 'off',
+      'no-alert': 'off',
+    },
+  },
+  {
+    files: ['**/*spec.*', '**/jest*', '**/setupTests.*', '**/test-utils.*'],
+    rules: {
+      'import/no-extraneous-dependencies': 'off',
+      'react/display-name': 'off',
+      'react/prop-types': 'off',
+    },
+  },
+];
+
 const base = {
   root: true,
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'airbnb-base'],
@@ -108,27 +126,14 @@ const base = {
         'notice/notice': 'off',
       },
     },
-    {
-      files: ['**/*.{story,stories}.*'],
-      rules: {
-        'import/no-extraneous-dependencies': 'off',
-        'no-alert': 'off',
-      },
-    },
-    {
-      files: ['**/*spec.*', '**/jest*', '**/setupTests.*', '**/test-utils.*'],
-      rules: {
-        'import/no-extraneous-dependencies': 'off',
-        'react/display-name': 'off',
-        'react/prop-types': 'off',
-      },
-    },
   ],
 };
 
 function customizeLanguage(language?: Language) {
   const languageMap = {
-    [Language.JAVASCRIPT]: {},
+    [Language.JAVASCRIPT]: {
+      overrides: sharedOverrides,
+    },
     [Language.TYPESCRIPT]: {
       overrides: [
         {
@@ -191,6 +196,7 @@ function customizeLanguage(language?: Language) {
             '@typescript-eslint/no-unsafe-assignment': 'off',
           },
         },
+        ...sharedOverrides,
       ],
     },
   };

@@ -1419,28 +1419,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -1548,6 +1526,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -1659,28 +1659,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -1788,6 +1766,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
   ],
@@ -1889,28 +1889,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2018,6 +1996,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -2148,28 +2148,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2277,6 +2255,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
   ],
@@ -2382,28 +2382,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2511,6 +2489,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -2621,28 +2621,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2750,6 +2728,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -2879,28 +2879,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3008,6 +2986,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -3127,28 +3127,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3256,6 +3234,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -3404,28 +3404,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3533,6 +3511,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -3656,28 +3656,6 @@ Object {
       },
     },
     Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
-      },
-    },
-    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3785,6 +3763,28 @@ Object {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": Object {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
       },
     },
     Object {
@@ -3901,28 +3901,6 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*.{story,stories}.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "no-alert": "off",
-      },
-    },
-    Object {
-      "files": Array [
-        "**/*spec.*",
-        "**/jest*",
-        "**/setupTests.*",
-        "**/test-utils.*",
-      ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": "off",
-        "react/display-name": "off",
-        "react/prop-types": "off",
       },
     },
   ],
