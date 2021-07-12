@@ -1143,9 +1143,9 @@
     "@types/node" "*"
 
 "@types/listr@^0.14.2":
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/@types/listr/-/listr-0.14.3.tgz#f6cfd1f0841ce6c0d2571fb114279ba07be43796"
-  integrity sha512-+TxIH5cf6w/44VH+cc1oTccaR7aBQdUJU0nas+seJ/iOYPi7q0kHf153eFayT0KitxCZMVoyFmruCrWt/bxq2g==
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/@types/listr/-/listr-0.14.4.tgz#6ba2a4206615cf80d79d10f9ba9701c303cd57b6"
+  integrity sha512-+MWvidNujBUgJsi4yMVwEQQwaHe6oHedPSy+dwk3akGEeuIbvhWkK+TGsXSwbFup7Y0cCBb+wzzdD+yGKp7sOg==
   dependencies:
     "@types/node" "*"
     rxjs "^6.5.1"
@@ -1227,9 +1227,9 @@
     "@types/yargs-parser" "*"
 
 "@types/yargs@^17.0.0":
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.1.tgz#7129ed41a450b21d11be5dae30d1a834deaa63ab"
-  integrity sha512-bGmavvJsnGi4uPUH++e3kb7G3TzRF/rB8m/OY1eH0Q2QahKgPInk3Y+b7tT7D418N08MjsXhB11nDjuqw9w3EQ==
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.2.tgz#8fb2e0f4cdc7ab2a1a570106e56533f31225b584"
+  integrity sha512-JhZ+pNdKMfB0rXauaDlrIvm+U7V4m03PPOSVoPS66z8gf+G4Z/UW8UlrVIj2MRQOBzuoEvYtjS0bqYwnpZaS9Q==
   dependencies:
     "@types/yargs-parser" "*"
 
