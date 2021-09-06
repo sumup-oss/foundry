@@ -137,7 +137,7 @@ export async function run({ argv }: RunParams): Promise<void> {
     logger.error(
       `Executing the command "${binPath} ${binArgs.join(' ')}" failed`,
     );
-    logger.error(err);
+    logger.error(err as string);
     process.exit(1);
   }
 }
