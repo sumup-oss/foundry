@@ -1228,7 +1228,7 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/experimental-utils@4.30.0", "@typescript-eslint/experimental-utils@^4.0.1", "@typescript-eslint/experimental-utils@^4.24.0":
+"@typescript-eslint/experimental-utils@4.30.0":
   version "4.30.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.30.0.tgz#9e49704fef568432ae16fc0d6685c13d67db0fd5"
   integrity sha512-K8RNIX9GnBsv5v4TjtwkKtqMSzYpjqAQg/oSphtxf3xxdt6T0owqnpojztjjTcatSteH3hLj3t/kklKx87NPqw==
@@ -1237,6 +1237,18 @@
     "@typescript-eslint/scope-manager" "4.30.0"
     "@typescript-eslint/types" "4.30.0"
     "@typescript-eslint/typescript-estree" "4.30.0"
+    eslint-scope "^5.1.1"
+    eslint-utils "^3.0.0"
+
+"@typescript-eslint/experimental-utils@^4.0.1", "@typescript-eslint/experimental-utils@^4.30.0":
+  version "4.31.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.31.0.tgz#0ef1d5d86c334f983a00f310e43c1ce4c14e054d"
+  integrity sha512-Hld+EQiKLMppgKKkdUsLeVIeEOrwKc2G983NmznY/r5/ZtZCDvIOXnXtwqJIgYz/ymsy7n7RGvMyrzf1WaSQrw==
+  dependencies:
+    "@types/json-schema" "^7.0.7"
+    "@typescript-eslint/scope-manager" "4.31.0"
+    "@typescript-eslint/types" "4.31.0"
+    "@typescript-eslint/typescript-estree" "4.31.0"
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
@@ -3106,11 +3118,11 @@ eslint-plugin-react@^7.23.1:
     string.prototype.matchall "^4.0.5"
 
 eslint-plugin-testing-library@^4.6.0:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-4.12.0.tgz#51a25a5897a88cfe4a2f61c7036944339103efa1"
-  integrity sha512-kQQlBDvtw5mZeb59QNoe85hz5HbQ2x1xw+IJIKQw4XoCcd/VHNXqiNIcp0XfItmxmfzFfcOAUiW9a2WCJ14Fvw==
+  version "4.12.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-4.12.2.tgz#b99e7694b1ef20bb090e1f62eb5c8214f2919dc2"
+  integrity sha512-lcysxW7I3oXmZIyFP2N1dFMPfuB3qyl3iDcDboCl7U+TAaeG9OOycNSkZUAsDWQLsfEtXYmRbwTH98qSgk6peA==
   dependencies:
-    "@typescript-eslint/experimental-utils" "^4.24.0"
+    "@typescript-eslint/experimental-utils" "^4.30.0"
 
 eslint-rule-docs@^1.1.5:
   version "1.1.226"
