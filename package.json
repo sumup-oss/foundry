@@ -31,10 +31,10 @@
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.3",
-    "@semantic-release/commit-analyzer": "^8.0.0",
-    "@semantic-release/github": "^7.0.0",
-    "@semantic-release/npm": "^7.0.0",
-    "@semantic-release/release-notes-generator": "^9.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/github": "^8.0.1",
+    "@semantic-release/npm": "^8.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.2",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "chalk": "^4.0.0",
@@ -68,7 +68,7 @@
     "pkg-up": "^3.1.0",
     "plop": "^2.1.0",
     "prettier": "^2.0.0",
-    "semantic-release": "^17.0.0",
+    "semantic-release": "^18.0.0",
     "yargs": "^17.0.1"
   },
   "devDependencies": {
