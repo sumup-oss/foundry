@@ -194,6 +194,7 @@ function customizeLanguage(language?: Language) {
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/no-var-requires': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
+            '@typescript-eslint/unbound-method': 'off',
           },
         },
         ...sharedOverrides,
@@ -303,6 +304,9 @@ function customizeFramework(frameworks?: Framework[]) {
             axe: true,
           },
           env: { 'jest/globals': true },
+          rules: {
+            'jest/unbound-method': 'error',
+          },
         },
       ],
     },
