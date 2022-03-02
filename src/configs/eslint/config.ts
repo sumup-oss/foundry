@@ -71,6 +71,7 @@ const sharedRules = {
   // The rules below are already covered by prettier.
   'quote-props': 'off',
   'comma-dangle': 'off',
+  'react/display-name': 'off',
   'object-curly-newline': 'off',
   'implicit-arrow-linebreak': 'off',
   'function-paren-newline': 'off',
