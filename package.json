@@ -37,7 +37,7 @@
     "@semantic-release/release-notes-generator": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
-    "chalk": "^4.0.0",
+    "chalk": "^5.0.1",
     "cross-spawn": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^7.23.0",
