@@ -31,7 +31,7 @@ Refer to the [Yarn docs](https://classic.yarnpkg.com/en/docs/cli/link#search) to
 
 ### Submitting a PR
 
-_Before you get started, make sure you have [Node](https://nodejs.org/en/) v12+ and the [Yarn CLI](https://yarnpkg.com/en/docs/install) installed on your computer._
+_Before you get started, make sure you have [Node](https://nodejs.org/en/) v16+ and the [Yarn CLI](https://yarnpkg.com/en/docs/install) installed on your computer._
 
 1. Find an existing issue to work on or follow `Submitting an issue` to create one that you're also going to fix. Make sure to notify that you're working on a fix for the issue you picked.
 2. Branch out from latest `main`.
@@ -42,6 +42,6 @@ _Before you get started, make sure you have [Node](https://nodejs.org/en/) v12+ 
 
 ## Common commands
 
-- Continously transpile the code: `yarn dev`
-- Continously run the tests: `yarn test`
+- Continuously transpile the code: `yarn dev`
+- Continuously run the tests: `yarn test`
 - Run the linter: `yarn lint`
