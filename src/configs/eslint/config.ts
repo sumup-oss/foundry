@@ -269,12 +269,12 @@ function customizeFramework(frameworks?: Framework[]) {
       settings: { react: { version: 'detect' } },
     },
     [Framework.EMOTION]: {
-      plugins: ['emotion'],
+      plugins: ['@emotion'],
       rules: {
-        'emotion/jsx-import': 'off',
-        'emotion/no-vanilla': 'error',
-        'emotion/import-from-emotion': 'error',
-        'emotion/styled-import': 'error',
+        '@emotion/jsx-import': 'off',
+        '@emotion/no-vanilla': 'error',
+        '@emotion/import-from-emotion': 'error',
+        '@emotion/styled-import': 'error',
       },
     },
     [Framework.JEST]: {
