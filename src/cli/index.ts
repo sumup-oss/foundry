@@ -92,8 +92,8 @@ void yargs
 
 type CommandType = 'init' | 'run';
 
-function execute<T extends CommandType>(command: T) {
-  const commands = { run, init } as const;
+function execute(command: CommandType) {
+  const commands = { run, init };
   const commandFn = commands[command];
 
   return (args: unknown): void => {
