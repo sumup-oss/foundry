@@ -32,7 +32,7 @@ export function config(
     quoteProps: 'consistent',
     trailingComma: 'all',
     jsxSingleQuote: false,
-    jsxBracketSameLine: false,
+    bracketSameLine: false,
     bracketSpacing: true,
     arrowParens: 'always',
     endOfLine: 'lf',
