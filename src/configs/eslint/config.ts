@@ -271,9 +271,10 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.EMOTION]: {
       plugins: ['@emotion'],
       rules: {
+        '@emotion/import-from-emotion': 'error',
         '@emotion/jsx-import': 'off',
         '@emotion/no-vanilla': 'error',
-        '@emotion/import-from-emotion': 'error',
+        '@emotion/pkg-renaming': 'error',
         '@emotion/styled-import': 'error',
       },
     },
