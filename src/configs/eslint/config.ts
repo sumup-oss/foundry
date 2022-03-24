@@ -311,22 +311,30 @@ function customizeFramework(frameworks?: Framework[]) {
         },
       ],
     },
-    [Framework.CYPRESS]: {
-      overrides: [
-        {
-          files: ['**/*spec.*', 'e2e/**/*'],
-          extends: ['plugin:cypress/recommended'],
-          plugins: ['cypress'],
-          env: { 'cypress/globals': true },
-        },
-      ],
-    },
     [Framework.TESTING_LIBRARY]: {
       overrides: [
         {
           files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
           extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
+        },
+      ],
+    },
+    [Framework.CYPRESS]: {
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          extends: ['plugin:cypress/recommended'],
+          plugins: ['cypress'],
+          env: { 'cypress/globals': true },
+        },
+      ],
+    },
+    [Framework.PLAYWRIGHT]: {
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          extends: ['plugin:playwright/playwright-test'],
         },
       ],
     },

@@ -53,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-notice": "^0.9.10",
+    "eslint-plugin-playwright": "^0.8.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.0.0",

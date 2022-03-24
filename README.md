@@ -111,18 +111,18 @@ Check code for syntax errors and format it automatically. The preset adds the fo
 
 The preset includes the following tools:
 
-#### Eslint
+#### ESLint
 
 [ESLint](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
 
-Eslint's configuration options:
+ESLint's configuration options:
 
-| Name         | Type    | Options                                                  | Default      |
-| ------------ | ------- | -------------------------------------------------------- | ------------ |
-| language     | string  | 'TypeScript', 'JavaScript'                               | 'TypeScript' |
-| environments | array   | 'Browser', 'Node'                                        | []           |
-| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress', 'Testing Library' | []           |
-| openSource   | boolean | true, false                                              | false        |
+| Name         | Type    | Options                                                                | Default      |
+| ------------ | ------- | ---------------------------------------------------------------------- | ------------ |
+| language     | string  | 'TypeScript', 'JavaScript'                                             | 'TypeScript' |
+| environments | array   | 'Browser', 'Node'                                                      | []           |
+| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | []           |
+| openSource   | boolean | true, false                                                            | false        |
 
 #### Prettier
 
