@@ -20,8 +20,8 @@ import yargs from 'yargs';
 import { Preset, Language, Environment, Framework, CI } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
 
-import { run } from './run';
-import { init } from './init';
+import { run, RunParams } from './run';
+import { init, InitParams } from './init';
 import { DEFAULT_OPTIONS } from './defaults';
 
 // eslint-disable-next-line no-void
@@ -96,8 +96,8 @@ function execute(command: CommandType) {
   const commands = { run, init };
   const commandFn = commands[command];
 
-  return (args: any): void => {
+  return (args: unknown): void => {
     // eslint-disable-next-line no-console
-    commandFn(args).catch(console.error);
+    commandFn(args as RunParams & InitParams).catch(console.error);
   };
 }

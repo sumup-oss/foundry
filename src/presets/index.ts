@@ -57,7 +57,7 @@ const release = {
 
 const ci = {
   name: formatName(
-    'Continous Integration',
+    'Continuous Integration',
     'Validate the code on every push using the configured presets',
   ),
   value: Preset.CI,

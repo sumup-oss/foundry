@@ -3,9 +3,9 @@
 exports[`prettier with options should return a config 1`] = `
 Object {
   "arrowParens": "always",
+  "bracketSameLine": false,
   "bracketSpacing": true,
   "endOfLine": "lf",
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "printWidth": 80,
   "quoteProps": "consistent",
