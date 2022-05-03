@@ -18,7 +18,6 @@ import path from 'path';
 import { promisify } from 'util';
 
 import { format, Options as PrettierConfig } from 'prettier';
-import pkgUp from 'pkg-up';
 
 import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
@@ -59,14 +58,6 @@ export function writeFile(
   return writeFileAsync(filePath, fileContent, { flag });
 }
 
-export async function findPackageJson(): Promise<string> {
-  const packagePath = await pkgUp();
-  if (!packagePath) {
-    throw new Error('Unable to find a "package.json" file.');
-  }
-  return packagePath;
-}
-
 export function addPackageScript(
   packageJson: PackageJson,
   name: string,
@@ -88,8 +79,10 @@ export function addPackageScript(
   return packageJson;
 }
 
-export async function savePackageJson(packageJson: PackageJson): Promise<void> {
-  const packagePath = await findPackageJson();
+export async function savePackageJson(
+  packagePath: string,
+  packageJson: PackageJson,
+): Promise<void> {
   const content = `${JSON.stringify(packageJson, null, 2)}\n`;
   return writeFileAsync(packagePath, content);
 }

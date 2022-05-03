@@ -22,6 +22,7 @@ import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
 import isCI from 'is-ci';
+import readPkgUp from 'read-pkg-up';
 
 import {
   Options,
@@ -39,12 +40,7 @@ import {
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { enumToChoices } from '../lib/choices';
-import {
-  writeFile,
-  findPackageJson,
-  addPackageScript,
-  savePackageJson,
-} from '../lib/files';
+import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
@@ -207,9 +203,14 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Read package.json',
             task: async (ctx): Promise<void> => {
-              ctx.packagePath = await findPackageJson();
-              // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
-              ctx.packageJson = require(ctx.packagePath) as PackageJson;
+              const pkg = await readPkgUp();
+
+              if (!pkg) {
+                throw new Error('Unable to find a "package.json" file.');
+              }
+
+              ctx.packagePath = pkg.path;
+              ctx.packageJson = pkg.packageJson;
             },
           },
           ...scripts.map(({ name, command }) => ({
@@ -258,7 +259,8 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           })),
           {
             title: 'Save package.json',
-            task: (ctx): Promise<void> => savePackageJson(ctx.packageJson),
+            task: (ctx): Promise<void> =>
+              savePackageJson(ctx.packagePath, ctx.packageJson),
           },
         ]);
       },
