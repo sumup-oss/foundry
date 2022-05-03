@@ -51,6 +51,7 @@ export enum Environment {
 
 export enum Framework {
   REACT = 'React',
+  NEXT_JS = 'Next.js',
   EMOTION = 'Emotion',
   JEST = 'Jest',
   TESTING_LIBRARY = 'Testing Library',

@@ -18,6 +18,7 @@ import process from 'process';
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
 import { Options, Language, Environment, Framework } from '../../types/shared';
+import * as logger from '../../lib/logger';
 
 type EslintOptions = Pick<
   Options,
@@ -273,6 +274,9 @@ function customizeFramework(frameworks?: Framework[]) {
       parserOptions: { ecmaFeatures: { jsx: true } },
       settings: { react: { version: 'detect' } },
     },
+    [Framework.NEXT_JS]: {
+      extends: ['plugin:@next/next/recommended'],
+    },
     [Framework.EMOTION]: {
       plugins: ['@emotion'],
       rules: {
@@ -348,6 +352,20 @@ function customizeFramework(frameworks?: Framework[]) {
     if (!frameworks || isEmpty(frameworks)) {
       return config;
     }
+
+    if (
+      frameworks.includes(Framework.NEXT_JS) &&
+      frameworks.includes(Framework.REACT)
+    ) {
+      logger.warn(
+        `The '${Framework.NEXT_JS}' framework includes React-specific rules. Please remove the '${Framework.REACT}' framework to avoid conflicts.`,
+      );
+      // eslint-disable-next-line no-param-reassign
+      frameworks = frameworks.filter(
+        (framework) => framework !== Framework.REACT,
+      );
+    }
+
     return frameworks.reduce((acc, framework: Framework) => {
       const overrides = frameworkMap[framework];
       return customizeConfig(acc, overrides);
