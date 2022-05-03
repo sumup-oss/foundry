@@ -159,35 +159,39 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                 file.name,
                 file.content,
                 options.overwrite,
-              ).catch(() =>
+              ).catch(() => {
+                logger.debug(`File "${file.name}" already exists`);
+                if (isCI) {
+                  logger.debug('In a CI environment, skipping...');
+                  task.skip('Skipped');
+                  return undefined;
+                }
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                isCI
-                  ? task.skip('Skipped')
-                  : // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                    listrInquirer(
-                      [
-                        {
-                          type: 'confirm',
-                          name: 'overwrite',
-                          // eslint-disable-next-line max-len
-                          message: `"${file.name}" already exists. Would you like to replace it?`,
-                          default: false,
-                        },
-                      ],
-                      ({ overwrite }: { overwrite: boolean }) => {
-                        if (!overwrite) {
-                          task.skip('Skipped');
-                          return undefined;
-                        }
-                        return writeFile(
-                          options.configDir,
-                          file.name,
-                          file.content,
-                          true,
-                        );
-                      },
-                    ),
-              ),
+                return listrInquirer(
+                  [
+                    {
+                      type: 'confirm',
+                      name: 'overwrite',
+                      // eslint-disable-next-line max-len
+                      message: `"${file.name}" already exists. Would you like to replace it?`,
+                      default: false,
+                    },
+                  ],
+                  ({ overwrite }: { overwrite: boolean }) => {
+                    logger.debug(`Overwrite file: ${overwrite.toString()}`);
+                    if (!overwrite) {
+                      task.skip('Skipped');
+                      return undefined;
+                    }
+                    return writeFile(
+                      options.configDir,
+                      file.name,
+                      file.content,
+                      true,
+                    );
+                  },
+                );
+              }),
           })),
         ),
     },
@@ -223,11 +227,12 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                 );
                 return undefined;
               } catch (error) {
+                logger.debug(`Script "${name}" already exists`);
                 if (isCI) {
+                  logger.debug('In a CI environment, skipping...');
                   task.skip('Skipped');
                   return undefined;
                 }
-
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
                 return listrInquirer(
                   [
@@ -240,6 +245,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                     },
                   ],
                   ({ overwrite }: { overwrite: boolean }) => {
+                    logger.debug(`Overwrite script: ${overwrite.toString()}`);
                     if (!overwrite) {
                       task.skip('Skipped');
                       return;
