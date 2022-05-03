@@ -550,6 +550,7 @@ Object {
     "airbnb-base",
     "plugin:compat/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
@@ -641,8 +642,6 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -1407,6 +1406,7 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
@@ -1515,8 +1515,6 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -2676,6 +2674,7 @@ Object {
     "airbnb-base",
     "plugin:compat/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
@@ -2878,8 +2877,6 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -4199,6 +4196,7 @@ Object {
     "airbnb-base",
     "plugin:node/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
   "overrides": Array [
@@ -4418,8 +4416,6 @@ Object {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
   },
   "settings": Object {
     "import/resolver": Object {
