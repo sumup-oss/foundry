@@ -40,7 +40,12 @@ import {
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { enumToChoices } from '../lib/choices';
-import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
+import {
+  writeFile,
+  addPackageScript,
+  savePackageJson,
+  detectFrameworks,
+} from '../lib/files';
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
@@ -97,6 +102,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
         name: 'frameworks',
         message: 'Which framework(s) does the project use?',
         choices: enumToChoices(Framework),
+        default: detectFrameworks,
         when: (): boolean => !args.frameworks,
       },
       [Prompt.CI]: {
