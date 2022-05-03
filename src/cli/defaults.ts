@@ -27,7 +27,12 @@ export const DEFAULT_OPTIONS: Options = {
   configDir: '.',
   language: Language.TYPESCRIPT,
   environments: [Environment.BROWSER],
-  frameworks: [Framework.REACT, Framework.EMOTION, Framework.EMOTION],
+  frameworks: [
+    Framework.REACT,
+    Framework.EMOTION,
+    Framework.JEST,
+    Framework.TESTING_LIBRARY,
+  ],
   ci: CI.GITHUB_ACTIONS,
   openSource: false,
   publish: false,
