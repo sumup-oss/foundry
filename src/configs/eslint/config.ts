@@ -261,12 +261,12 @@ function customizeEnv(environments?: Environment[]) {
 function customizeFramework(frameworks?: Framework[]) {
   const frameworkMap = {
     [Framework.REACT]: {
-      extends: ['plugin:react/recommended', 'plugin:jsx-a11y/recommended'],
+      extends: [
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+      ],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
-      rules: {
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn',
-      },
       parserOptions: { ecmaFeatures: { jsx: true } },
       settings: { react: { version: 'detect' } },
     },
