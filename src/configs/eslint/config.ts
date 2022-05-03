@@ -213,7 +213,9 @@ function customizeLanguage(language?: Language) {
 function customizeEnv(environments?: Environment[]) {
   const environmentMap = {
     [Environment.BROWSER]: {
+      extends: ['plugin:compat/recommended'],
       env: { browser: true },
+      settings: { lintAllEsApis: true },
     },
     [Environment.NODE]: {
       extends: ['plugin:node/recommended'],
