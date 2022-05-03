@@ -15,14 +15,15 @@
 
 import fs from 'fs';
 
+import { PackageJson } from '../types/shared';
+
 import { writeFile, addPackageScript } from './files';
 
 jest.mock('fs', () => ({
+  ...jest.requireActual('fs'),
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   writeFile: jest.fn((file, data, options, callback) => callback()),
   mkdirSync: jest.fn(),
-  existsSync: jest.fn(),
-  readFile: jest.fn(),
 }));
 
 const content = 'module.exports = "Hello world"';
@@ -90,7 +91,7 @@ describe('files', () => {
 
   describe('addPackageScript', () => {
     it('should add a script to the package.json file', () => {
-      const packageJson = { scripts: {} };
+      const packageJson = { scripts: {} } as PackageJson;
       const name = 'lint';
       const command = 'foundry run eslint src';
       const shouldOverwrite = false;
@@ -109,7 +110,7 @@ describe('files', () => {
     });
 
     it('should initialize the scripts if they do not exist yet', () => {
-      const packageJson = {};
+      const packageJson = {} as PackageJson;
       const name = 'lint';
       const command = 'foundry run eslint src';
       const shouldOverwrite = false;
@@ -128,7 +129,9 @@ describe('files', () => {
     });
 
     it('should throw an error if a conflicting script exists', () => {
-      const packageJson = { scripts: { lint: 'eslint .' } };
+      const packageJson = {
+        scripts: { lint: 'eslint .' },
+      } as unknown as PackageJson;
       const name = 'lint';
       const command = 'foundry run eslint src';
       const shouldOverwrite = false;
@@ -140,7 +143,9 @@ describe('files', () => {
     });
 
     it('should overwrite the conflicting script', () => {
-      const packageJson = { scripts: { lint: 'eslint .' } };
+      const packageJson = {
+        scripts: { lint: 'eslint .' },
+      } as unknown as PackageJson;
       const name = 'lint';
       const command = 'foundry run eslint src';
       const shouldOverwrite = true;

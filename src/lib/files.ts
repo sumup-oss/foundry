@@ -18,10 +18,12 @@ import path from 'path';
 import { promisify } from 'util';
 
 import { format, Options as PrettierConfig } from 'prettier';
-import pkgUp from 'pkg-up';
+import readPkgUp from 'read-pkg-up';
 
-import { PackageJson } from '../types/shared';
+import { Framework, PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
+
+import * as logger from './logger';
 
 const writeFileAsync = promisify(fs.writeFile);
 
@@ -59,14 +61,6 @@ export function writeFile(
   return writeFileAsync(filePath, fileContent, { flag });
 }
 
-export async function findPackageJson(): Promise<string> {
-  const packagePath = await pkgUp();
-  if (!packagePath) {
-    throw new Error('Unable to find a "package.json" file.');
-  }
-  return packagePath;
-}
-
 export function addPackageScript(
   packageJson: PackageJson,
   name: string,
@@ -88,8 +82,58 @@ export function addPackageScript(
   return packageJson;
 }
 
-export async function savePackageJson(packageJson: PackageJson): Promise<void> {
-  const packagePath = await findPackageJson();
+export async function savePackageJson(
+  packagePath: string,
+  packageJson: PackageJson,
+): Promise<void> {
   const content = `${JSON.stringify(packageJson, null, 2)}\n`;
   return writeFileAsync(packagePath, content);
+}
+
+export function detectFrameworks(): Framework[] {
+  const frameworks: Framework[] = [];
+
+  const pkg = readPkgUp.sync();
+
+  if (!pkg) {
+    logger.warn(
+      'Unable to find a "package.json" file and autodetect the frameworks.',
+    );
+    return frameworks;
+  }
+
+  const { dependencies = {}, devDependencies = {} } = pkg.packageJson;
+
+  if (dependencies.next) {
+    frameworks.push(Framework.NEXT_JS);
+  }
+
+  if (!dependencies.next && dependencies.react) {
+    frameworks.push(Framework.REACT);
+  }
+
+  if (dependencies['@emotion/react']) {
+    frameworks.push(Framework.EMOTION);
+  }
+
+  if (dependencies.jest || devDependencies.jest) {
+    frameworks.push(Framework.JEST);
+  }
+
+  if (
+    dependencies['@testing-library/react'] ||
+    devDependencies['@testing-library/react']
+  ) {
+    frameworks.push(Framework.TESTING_LIBRARY);
+  }
+
+  if (dependencies.cypress || devDependencies.cypress) {
+    frameworks.push(Framework.CYPRESS);
+  }
+
+  if (dependencies.playwright || devDependencies.playwright) {
+    frameworks.push(Framework.PLAYWRIGHT);
+  }
+
+  return frameworks;
 }

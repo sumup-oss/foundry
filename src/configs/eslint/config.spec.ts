@@ -108,7 +108,7 @@ describe('eslint', () => {
     });
 
     it('should return a config with a copyright notice', () => {
-      const options = { openSource: true };
+      const options = { openSource: true, frameworks: [] };
       const actual = createConfig(options);
       expect(actual).toMatchSnapshot();
     });

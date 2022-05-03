@@ -19,6 +19,7 @@ import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
 import { Options, Language, Environment, Framework } from '../../types/shared';
 import * as logger from '../../lib/logger';
+import { detectFrameworks } from '../../lib/files';
 
 type EslintOptions = Pick<
   Options,
@@ -423,7 +424,7 @@ export function createConfig(
   return flow(
     customizeLanguage(options.language),
     customizeEnv(options.environments),
-    customizeFramework(options.frameworks),
+    customizeFramework(options.frameworks || detectFrameworks()),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
   )(base);

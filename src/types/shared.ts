@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import type { NormalizedPackageJson } from 'read-pkg-up';
+
 export enum Preset {
   LINT = 'lint',
   RELEASE = 'release',
@@ -92,8 +94,4 @@ export interface ToolOptions {
   scripts?: (options: Options) => Script[];
 }
 
-export type PackageJson = {
-  scripts?: { [key: string]: string };
-  bin?: string;
-  [key: string]: Record<string, unknown> | string | undefined;
-};
+export type PackageJson = NormalizedPackageJson;
