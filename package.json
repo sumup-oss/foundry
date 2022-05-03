@@ -41,6 +41,7 @@
     "@babel/core": "^7.17.8",
     "@babel/eslint-parser": "^7.14.3",
     "@emotion/eslint-plugin": "^11.7.0",
+    "@next/eslint-plugin-next": "^12.1.6",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^9.0.1",

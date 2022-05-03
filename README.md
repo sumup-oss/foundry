@@ -117,12 +117,12 @@ The preset includes the following tools:
 
 ESLint's configuration options:
 
-| Name         | Type    | Options                                                                | Default      |
-| ------------ | ------- | ---------------------------------------------------------------------- | ------------ |
-| language     | string  | 'TypeScript', 'JavaScript'                                             | 'TypeScript' |
-| environments | array   | 'Browser', 'Node'                                                      | []           |
-| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | []           |
-| openSource   | boolean | true, false                                                            | false        |
+| Name         | Type    | Options                                                                           | Default      |
+| ------------ | ------- | --------------------------------------------------------------------------------- | ------------ |
+| language     | string  | 'TypeScript', 'JavaScript'                                                        | 'TypeScript' |
+| environments | array   | 'Browser', 'Node'                                                                 | []           |
+| frameworks   | array   | 'React', 'Next.js', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | []           |
+| openSource   | boolean | true, false                                                                       | false        |
 
 #### Prettier
 
