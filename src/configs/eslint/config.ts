@@ -71,7 +71,6 @@ const sharedRules = {
   // The rules below are already covered by prettier.
   'quote-props': 'off',
   'comma-dangle': 'off',
-  'react/display-name': 'off',
   'object-curly-newline': 'off',
   'implicit-arrow-linebreak': 'off',
   'function-paren-newline': 'off',
@@ -268,6 +267,9 @@ function customizeFramework(frameworks?: Framework[]) {
         'plugin:jsx-a11y/recommended',
       ],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
+      rules: {
+        'react/display-name': 'off',
+      },
       parserOptions: { ecmaFeatures: { jsx: true } },
       settings: { react: { version: 'detect' } },
     },
