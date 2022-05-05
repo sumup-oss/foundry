@@ -221,9 +221,11 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                       default: false,
                     },
                   ],
-                  ({ overwrite }: { overwrite: boolean }) => {
-                    logger.debug(`Overwrite script: ${overwrite.toString()}`);
-                    if (!overwrite) {
+                  ({ overwriteScript }: { overwriteScript: boolean }) => {
+                    logger.debug(
+                      `Overwrite script: ${overwriteScript.toString()}`,
+                    );
+                    if (!overwriteScript) {
                       task.skip('Skipped');
                       return;
                     }
