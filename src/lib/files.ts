@@ -17,6 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
+import { omit } from 'lodash/fp';
 import { format, Options as PrettierConfig } from 'prettier';
 import readPkgUp from 'read-pkg-up';
 
@@ -94,6 +95,8 @@ export async function savePackageJson(
   packagePath: string,
   packageJson: PackageJson,
 ): Promise<void> {
-  const content = `${JSON.stringify(packageJson, null, 2)}\n`;
+  // This property is added by `read-pkg-up`
+  const sanitizedPackageJson = omit('_id', packageJson);
+  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
   return writeFileAsync(packagePath, content, { flag: 'w' });
 }
