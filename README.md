@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), and [🤖 continuous integration (CI)](#-continuous-integration-ci), and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -18,7 +18,6 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
   - [🔍 Lint](#-lint)
   - [🚀 Release](#-release)
   - [🤖 Continuous Integration (CI)](#-continuous-integration-ci)
-  - [🖇️ Templates](#-templates)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
@@ -58,7 +57,7 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 
 ```sh
 --presets, -p       A preset configures a group of tools that solve a common
-                    problem  [array] [options: "lint", "release", "templates", "ci"]
+                    problem  [array] [options: "lint", "release", "ci"]
 --language, -l      The programming language in which the project is written
                                                [options: "TypeScript", "JavaScript"]
 --environments, -e  The environment(s) in which the code runs
@@ -168,34 +167,7 @@ semantic-releases's configuration options:
 
 Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
-- [**GitHub Actions**](https://github.com/features/actions) builds, tests, and deploys your code right from GitHub.
-
-### 🖇️ Templates
-
-Generate boilerplate code e.g. for React components. The preset adds the following script to your `package.json`:
-
-- `create:component`: generate the files for a React component
-
-The preset includes the following tool:
-
-#### Plop
-
-[Plop](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
-
-Plop's configuration options:
-
-| Name        | Type   | Options                                        | Default      |
-| ----------- | ------ | ---------------------------------------------- | ------------ |
-| language    | string | 'TypeScript', 'JavaScript'                     | 'TypeScript' |
-| templateDir | string | A path relative to the location of plopfile.js | '.'          |
-
-#### Custom templates
-
-⭐ _This is an advanced use case._
-
-Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fall back to the default template.
-
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/main/src/configs/plop/templates).
+- [**GitHub Actions**](https://github.com/features/actions) builds, tests, and publishes your code right from GitHub.
 
 ## Running a tool
 

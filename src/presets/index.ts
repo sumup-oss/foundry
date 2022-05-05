@@ -33,17 +33,6 @@ const lint = {
   ],
 };
 
-const templates = {
-  name: formatName(
-    'Templates',
-    'Generate boilerplate code e.g. for React components',
-  ),
-  value: Preset.TEMPLATES,
-  short: 'Templates',
-  tools: [Tool.PLOP],
-  prompts: [Prompt.LANGUAGE],
-};
-
 const release = {
   name: formatName(
     'Release',
@@ -70,5 +59,5 @@ function formatName(name: string, description: string): string {
   return [`${chalk.bold(name)}:`, description].join(' ');
 }
 
-export const presets = { lint, templates, release, ci };
-export const presetChoices = [lint, templates, release, ci];
+export const presets = { lint, release, ci };
+export const presetChoices = [lint, release, ci];
