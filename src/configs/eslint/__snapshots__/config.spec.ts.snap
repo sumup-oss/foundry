@@ -422,7 +422,7 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
-    "plugin:@next/next/recommended",
+    "next",
   ],
   "overrides": Array [
     Object {
@@ -1381,7 +1381,7 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:@next/next/recommended",
+    "next",
   ],
   "overrides": Array [
     Object {
@@ -2689,7 +2689,7 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
-    "plugin:@next/next/recommended",
+    "next",
   ],
   "overrides": Array [
     Object {
@@ -4425,7 +4425,7 @@ Object {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:@next/next/recommended",
+    "next",
   ],
   "overrides": Array [
     Object {

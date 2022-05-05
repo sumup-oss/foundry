@@ -276,7 +276,7 @@ function customizeFramework(frameworks?: Framework[]) {
       settings: { react: { version: 'detect' } },
     },
     [Framework.NEXT_JS]: {
-      extends: ['plugin:@next/next/recommended'],
+      extends: ['next'],
     },
     [Framework.EMOTION]: {
       plugins: ['@emotion'],
