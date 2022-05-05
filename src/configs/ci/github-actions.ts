@@ -53,7 +53,9 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: $\\{{ secrets.GITHUB_TOKEN }}
+{{#if publish}}
           NPM_TOKEN: $\\{{ secrets.NPM_TOKEN }}
+{{/if}}
         run: yarn release
 {{/includes}}
 `;

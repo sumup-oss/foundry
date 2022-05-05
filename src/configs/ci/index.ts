@@ -14,17 +14,12 @@
  */
 
 import { Handlebars } from '../../lib/handlebars';
-import { InitOptions, File, CI } from '../../types/shared';
+import { InitOptions, File } from '../../types/shared';
 
 import * as githubActions from './github-actions';
 
-const PLATFORM_MAP = {
-  [CI.GITHUB_ACTIONS]: githubActions,
-};
-
 export const files = (options: InitOptions): File[] => {
-  const { ci = CI.GITHUB_ACTIONS } = options;
-  const platform = PLATFORM_MAP[ci];
+  const platform = githubActions;
   const template = Handlebars.compile(platform.template);
   const content = template(options);
   return [

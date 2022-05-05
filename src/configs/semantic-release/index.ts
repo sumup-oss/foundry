@@ -13,17 +13,13 @@
  * limitations under the License.
  */
 
-import { pick } from 'lodash/fp';
+import { File, Script } from '../../types/shared';
 
-import { InitOptions, File, Script } from '../../types/shared';
-
-export const files = (options: InitOptions): File[] => [
+export const files = (): File[] => [
   {
     name: '.releaserc.js',
     content: `
-  module.exports = require('@sumup/foundry/semantic-release')(${JSON.stringify(
-    pick(['publish'], options),
-  )})`,
+  module.exports = require('@sumup/foundry/semantic-release')()`,
   },
 ];
 

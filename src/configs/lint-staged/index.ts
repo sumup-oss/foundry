@@ -13,16 +13,12 @@
  * limitations under the License.
  */
 
-import { pick } from 'lodash/fp';
+import { File } from '../../types/shared';
 
-import { InitOptions, File } from '../../types/shared';
-
-export const files = (options: InitOptions): File[] => [
+export const files = (): File[] => [
   {
     name: 'lint-staged.config.js',
     content: `
-    module.exports = require('@sumup/foundry/lint-staged')(${JSON.stringify(
-      pick(['language'], options),
-    )})`,
+    module.exports = require('@sumup/foundry/lint-staged')()`,
   },
 ];

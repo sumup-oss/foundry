@@ -15,12 +15,19 @@
 
 import { Language, Environment, Framework } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
+import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { customizeConfig, createConfig } from './config';
 
 jest.mock('process', () => ({
   cwd: (): string => '/project/dir',
 }));
+
+jest.mock('../../lib/options', () => ({
+  getOptions: jest.fn(() => ({})),
+}));
+
+const getOptions = getOptionsMock as jest.Mock;
 
 describe('eslint', () => {
   describe('customizeConfig', () => {
@@ -103,32 +110,31 @@ describe('eslint', () => {
     });
 
     it.each(matrix)('should return a config for %o', (options) => {
-      const actual = createConfig(options);
+      getOptions.mockReturnValue(options);
+      const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
 
     it('should return a config with a copyright notice', () => {
       const options = { openSource: true, frameworks: [] };
-      const actual = createConfig(options);
+      getOptions.mockReturnValue(options);
+      const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
   });
 
-  describe('with overrides', () => {
-    it('should merge with the default config', () => {
-      const options = undefined;
-      const overrides = {
-        extends: ['prettier/react'],
-      };
-      const actual = createConfig(options, overrides);
-      expect(actual).toEqual(
-        expect.objectContaining({
-          extends: expect.arrayContaining([
-            'plugin:prettier/recommended',
-            'prettier/react',
-          ]),
-        }),
-      );
-    });
+  it('should merge with the default config', () => {
+    const overrides = {
+      extends: ['prettier/react'],
+    };
+    const actual = createConfig(overrides);
+    expect(actual).toEqual(
+      expect.objectContaining({
+        extends: expect.arrayContaining([
+          'plugin:prettier/recommended',
+          'prettier/react',
+        ]),
+      }),
+    );
   });
 });

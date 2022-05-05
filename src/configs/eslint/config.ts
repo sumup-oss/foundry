@@ -17,14 +17,10 @@ import process from 'process';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Options, Language, Environment, Framework } from '../../types/shared';
+import { Language, Environment, Framework } from '../../types/shared';
 import * as logger from '../../lib/logger';
-import { detectFrameworks } from '../../lib/files';
+import { getOptions } from '../../lib/options';
 
-type EslintOptions = Pick<
-  Options,
-  'language' | 'environments' | 'frameworks' | 'openSource'
->;
 // NOTE: Using the Linter.Config interface from Eslint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
 type EslintConfig = unknown;
@@ -417,14 +413,13 @@ function applyOverrides(overrides: EslintConfig) {
     customizeConfig(config, overrides);
 }
 
-export function createConfig(
-  options: EslintOptions = {},
-  overrides: EslintConfig = {},
-): EslintConfig {
+export function createConfig(overrides: EslintConfig = {}): EslintConfig {
+  const options = getOptions();
+
   return flow(
     customizeLanguage(options.language),
     customizeEnv(options.environments),
-    customizeFramework(options.frameworks || detectFrameworks()),
+    customizeFramework(options.frameworks),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
   )(base);

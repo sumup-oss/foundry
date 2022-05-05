@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { Language, Options } from '../../types/shared';
+import { getOptions } from '../../lib/options';
+import { Language } from '../../types/shared';
 
-type LintStagedOptions = Pick<Options, 'language'>;
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;
 
@@ -37,11 +37,8 @@ const LANGUAGES = {
   [Language.TYPESCRIPT]: typescript,
 };
 
-export function config(
-  options: LintStagedOptions = {},
-  overrides: LintStagedConfig = {},
-): LintStagedConfig {
-  const { language = Language.JAVASCRIPT } = options;
-  const baseConfig = LANGUAGES[language];
+export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
+  const options = getOptions();
+  const baseConfig = LANGUAGES[options.language];
   return { ...baseConfig, ...overrides };
 }

@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lint-staged should override the default config 1`] = `
+Object {
+  "*.(js|jsx|json)": Array [
+    "next lint",
+  ],
+  "*.jsx?": Array [
+    "custom command",
+  ],
+}
+`;
+
 exports[`lint-staged with options should return a config for { language: 'JavaScript' } 1`] = `
 Object {
   "*.(js|jsx|json)": Array [
@@ -14,16 +25,5 @@ Object {
     "foundry run eslint --fix",
   ],
   "*.(ts|tsx)": [Function],
-}
-`;
-
-exports[`lint-staged with overrides should override the default config 1`] = `
-Object {
-  "*.(js|jsx|json)": Array [
-    "foundry run eslint --fix",
-  ],
-  "*.jsx?": Array [
-    "custom command",
-  ],
 }
 `;

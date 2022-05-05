@@ -14,17 +14,14 @@
  */
 
 import dedent from 'dedent';
-import { pick } from 'lodash/fp';
 
-import { InitOptions, Script, File } from '../../types/shared';
+import { Script, File } from '../../types/shared';
 
-export const files = (options: InitOptions): File[] => [
+export const files = (): File[] => [
   {
     name: '.eslintrc.js',
     content: `
-    module.exports = require('@sumup/foundry/eslint')(${JSON.stringify(
-      pick(['language', 'environments', 'frameworks', 'openSource'], options),
-    )})`,
+    module.exports = require('@sumup/foundry/eslint')()`,
   },
   {
     name: '.eslintignore',
