@@ -14,7 +14,7 @@
  */
 
 import {
-  Options,
+  InitOptions,
   Preset,
   Language,
   Environment,
@@ -22,7 +22,7 @@ import {
   CI,
 } from '../types/shared';
 
-export const DEFAULT_OPTIONS: Options = {
+export const DEFAULT_OPTIONS: InitOptions = {
   presets: [Preset.LINT],
   configDir: '.',
   language: Language.TYPESCRIPT,

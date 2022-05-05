@@ -64,14 +64,17 @@ export enum CI {
 }
 
 export interface Options {
-  presets: Preset[];
-  configDir: string;
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
-  ci?: CI;
   openSource?: boolean;
   publish?: boolean;
+}
+
+export interface InitOptions extends Options {
+  presets: Preset[];
+  configDir: string;
+  ci?: CI;
   overwrite?: boolean;
 }
 
@@ -88,8 +91,8 @@ export type Script = {
 };
 
 export interface ToolOptions {
-  files?: (options: Options) => File[];
-  scripts?: (options: Options) => Script[];
+  files?: (options: InitOptions) => File[];
+  scripts?: (options: InitOptions) => Script[];
 }
 
 export type PackageJson = NormalizedPackageJson;

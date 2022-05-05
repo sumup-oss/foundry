@@ -16,9 +16,9 @@
 import dedent from 'dedent';
 import { pick } from 'lodash/fp';
 
-import { Options, Script, File } from '../../types/shared';
+import { InitOptions, Script, File } from '../../types/shared';
 
-export const files = (options: Options): File[] => [
+export const files = (options: InitOptions): File[] => [
   {
     name: '.eslintrc.js',
     content: `

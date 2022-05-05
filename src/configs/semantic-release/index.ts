@@ -15,9 +15,9 @@
 
 import { pick } from 'lodash/fp';
 
-import { Options, File, Script } from '../../types/shared';
+import { InitOptions, File, Script } from '../../types/shared';
 
-export const files = (options: Options): File[] => [
+export const files = (options: InitOptions): File[] => [
   {
     name: '.releaserc.js',
     content: `

@@ -25,7 +25,7 @@ import isCI from 'is-ci';
 import readPkgUp from 'read-pkg-up';
 
 import {
-  Options,
+  InitOptions,
   Preset,
   Prompt,
   Language,
@@ -66,7 +66,7 @@ export interface InitParams {
 }
 
 export async function init({ $0, _, ...args }: InitParams): Promise<void> {
-  let options: Options;
+  let options: InitOptions;
 
   if (!isCI) {
     const initialAnswers = (await inquirer.prompt([
@@ -311,7 +311,7 @@ function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
 }
 
 function getFilesForTools(
-  options: Options,
+  options: InitOptions,
   selectedTools: ToolOptions[],
 ): File[] {
   return selectedTools.reduce((allFiles: File[], tool) => {
@@ -324,7 +324,7 @@ function getFilesForTools(
 }
 
 function getScriptsForTools(
-  options: Options,
+  options: InitOptions,
   selectedTools: ToolOptions[],
 ): Script[] {
   return selectedTools.reduce((allScripts: Script[], tool) => {
