@@ -28,10 +28,6 @@ import {
   InitOptions,
   Preset,
   Prompt,
-  Language,
-  Environment,
-  Framework,
-  CI,
   Tool,
   ToolOptions,
   File,
@@ -39,13 +35,7 @@ import {
   PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
-import { enumToChoices } from '../lib/choices';
-import {
-  writeFile,
-  addPackageScript,
-  savePackageJson,
-  detectFrameworks,
-} from '../lib/files';
+import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
@@ -54,13 +44,9 @@ import { DEFAULT_OPTIONS } from './defaults';
 export interface InitParams {
   configDir: string;
   presets?: Preset[];
-  language?: Language;
-  environments?: Environment[];
-  frameworks?: Framework[];
   openSource?: boolean;
-  ci?: CI;
-  overwrite?: boolean;
   publish?: boolean;
+  overwrite?: boolean;
   $0?: string;
   _?: string[];
 }
@@ -82,36 +68,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     ])) as { presets: Preset[] };
 
     const prompts = {
-      [Prompt.LANGUAGE]: {
-        type: 'list',
-        name: 'language',
-        message: 'Which programming language does the project use?',
-        choices: enumToChoices(Language),
-        default: DEFAULT_OPTIONS.language,
-        when: (): boolean => !args.language,
-      },
-      [Prompt.ENVIRONMENTS]: {
-        type: 'checkbox',
-        name: 'environments',
-        message: 'Which environment(s) will the code run in?',
-        choices: enumToChoices(Environment),
-        when: (): boolean => isEmpty(args.environments),
-      },
-      [Prompt.FRAMEWORKS]: {
-        type: 'checkbox',
-        name: 'frameworks',
-        message: 'Which framework(s) does the project use?',
-        choices: enumToChoices(Framework),
-        default: detectFrameworks,
-        when: (): boolean => !args.frameworks,
-      },
-      [Prompt.CI]: {
-        type: 'checkbox',
-        name: 'ci',
-        message: 'Which CI platform would you like to use?',
-        choices: enumToChoices(CI),
-        when: (): boolean => isEmpty(args.ci),
-      },
       [Prompt.PUBLISH]: {
         type: 'confirm',
         name: 'publish',
@@ -122,7 +78,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
       [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
         name: 'openSource',
-        message: 'Do you plan to open-source this project?',
+        message: 'Do you intend to open-source this project?',
         default: DEFAULT_OPTIONS.openSource,
         when: (): boolean => typeof args.openSource === 'undefined',
       },
@@ -198,7 +154,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
         ),
     },
     {
-      title: 'Adding scripts to package.json',
+      title: 'Updating package.json',
       // eslint-disable-next-line @typescript-eslint/require-await
       task: async (): Promise<Listr> => {
         type Context = {
@@ -219,8 +175,22 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
               ctx.packageJson = pkg.packageJson;
             },
           },
+          {
+            title: 'Add license field',
+            enabled: () => options.openSource === true,
+            task: (ctx): void => {
+              ctx.packageJson.license = 'Apache-2.0';
+            },
+          },
+          {
+            title: 'Add Foundry config',
+            enabled: () => options.presets.includes(Preset.RELEASE),
+            task: (ctx): void => {
+              ctx.packageJson.foundry = { publish: options.publish };
+            },
+          },
           ...scripts.map(({ name, command }) => ({
-            title: `Add "${name}"`,
+            title: `Add "${name}" script`,
             task: (
               ctx: Context,
               task: ListrTaskWrapper<Context>,
@@ -294,7 +264,7 @@ function getPromptsForPresets(
   prompts: { [key in Prompt]: Question },
 ): Question[] {
   return flow(
-    map((preset: Preset): Prompt[] => presets[preset].prompts),
+    map((preset: Preset) => presets[preset].prompts || []),
     flatten,
     uniq,
     map((prompt: Prompt) => prompts[prompt]),

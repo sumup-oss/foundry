@@ -31,12 +31,8 @@ export enum Tool {
 }
 
 export enum Prompt {
-  LANGUAGE = 'language',
-  ENVIRONMENTS = 'environments',
-  FRAMEWORKS = 'frameworks',
   OPEN_SOURCE = 'open-source',
   PUBLISH = 'publish',
-  CI = 'ci',
 }
 
 export enum Language {
@@ -59,10 +55,6 @@ export enum Framework {
   PLAYWRIGHT = 'Playwright',
 }
 
-export enum CI {
-  GITHUB_ACTIONS = 'github-actions',
-}
-
 export interface Options {
   language?: Language;
   environments?: Environment[];
@@ -74,7 +66,6 @@ export interface Options {
 export interface InitOptions extends Options {
   presets: Preset[];
   configDir: string;
-  ci?: CI;
   overwrite?: boolean;
 }
 

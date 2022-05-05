@@ -13,27 +13,11 @@
  * limitations under the License.
  */
 
-import {
-  InitOptions,
-  Preset,
-  Language,
-  Environment,
-  Framework,
-  CI,
-} from '../types/shared';
+import { InitOptions, Preset } from '../types/shared';
 
 export const DEFAULT_OPTIONS: InitOptions = {
   presets: [Preset.LINT],
   configDir: '.',
-  language: Language.TYPESCRIPT,
-  environments: [Environment.BROWSER],
-  frameworks: [
-    Framework.REACT,
-    Framework.EMOTION,
-    Framework.JEST,
-    Framework.TESTING_LIBRARY,
-  ],
-  ci: CI.GITHUB_ACTIONS,
   openSource: false,
   publish: false,
   overwrite: false,

@@ -17,7 +17,15 @@ import chalk from 'chalk';
 
 import { Preset, Tool, Prompt } from '../types/shared';
 
-const lint = {
+type PresetConfig = {
+  name: string;
+  value: Preset;
+  short: string;
+  tools: Tool[];
+  prompts?: Prompt[];
+};
+
+const lint: PresetConfig = {
   name: formatName(
     'Lint',
     'Check code for syntax errors and format it automatically',
@@ -25,15 +33,10 @@ const lint = {
   value: Preset.LINT,
   short: 'Lint',
   tools: [Tool.ESLINT, Tool.PRETTIER, Tool.HUSKY, Tool.LINT_STAGED],
-  prompts: [
-    Prompt.LANGUAGE,
-    Prompt.ENVIRONMENTS,
-    Prompt.FRAMEWORKS,
-    Prompt.OPEN_SOURCE,
-  ],
+  prompts: [Prompt.OPEN_SOURCE],
 };
 
-const release = {
+const release: PresetConfig = {
   name: formatName(
     'Release',
     'Automatically generate release notes and (optionally) publish to NPM',
@@ -44,7 +47,7 @@ const release = {
   prompts: [Prompt.PUBLISH],
 };
 
-const ci = {
+const ci: PresetConfig = {
   name: formatName(
     'Continuous Integration',
     'Validate the code on every push using the configured presets',
@@ -52,7 +55,6 @@ const ci = {
   value: Preset.CI,
   short: 'CI',
   tools: [Tool.CI],
-  prompts: [Prompt.CI],
 };
 
 function formatName(name: string, description: string): string {
