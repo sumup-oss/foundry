@@ -26,7 +26,7 @@
     "release": "cd ./dist && semantic-release"
   },
   "engines": {
-    "node": ">=16 || ^14.17"
+    "node": "^14.17 || >=16"
   },
   "browserslist": [
     "node 14.17",
