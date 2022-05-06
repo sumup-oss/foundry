@@ -15,14 +15,7 @@
 
 import { Options as PrettierConfig } from 'prettier';
 
-import { Options } from '../../types/shared';
-
-export type PrettierOptions = Partial<Options>;
-
-export function config(
-  options: PrettierOptions = {},
-  overrides: PrettierConfig = {},
-): PrettierConfig {
+export function config(overrides: PrettierConfig = {}): PrettierConfig {
   const base: PrettierConfig = {
     printWidth: 80,
     tabWidth: 2,
@@ -32,7 +25,7 @@ export function config(
     quoteProps: 'consistent',
     trailingComma: 'all',
     jsxSingleQuote: false,
-    jsxBracketSameLine: false,
+    bracketSameLine: false,
     bracketSpacing: true,
     arrowParens: 'always',
     endOfLine: 'lf',

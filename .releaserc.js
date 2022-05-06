@@ -13,4 +13,4 @@
  * limitations under the License.
  */
 
-module.exports = require('./dist/semantic-release')({ publish: true });
+module.exports = require('./dist/semantic-release')();

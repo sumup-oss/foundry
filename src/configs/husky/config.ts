@@ -15,10 +15,6 @@
 
 import { merge } from 'lodash/fp';
 
-import { Options } from '../../types/shared';
-
-export type HuskyOptions = Partial<Options>;
-
 interface HuskyConfig {
   skipCI?: boolean;
   hooks?: { [key: string]: string };
@@ -30,9 +26,6 @@ export const base: HuskyConfig = {
   },
 };
 
-export function config(
-  options: HuskyOptions = {},
-  overrides: HuskyConfig = {},
-): HuskyConfig {
+export function config(overrides: HuskyConfig = {}): HuskyConfig {
   return merge(base, overrides);
 }

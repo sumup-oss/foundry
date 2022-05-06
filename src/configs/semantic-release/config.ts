@@ -13,9 +13,7 @@
  * limitations under the License.
  */
 
-import { Options } from '../../types/shared';
-
-type SemanticReleaseOptions = Pick<Options, 'publish'>;
+import { getOptions } from '../../lib/options';
 
 type Branch = string | { name: string; prerelease: boolean };
 
@@ -58,10 +56,9 @@ const npm: SemanticReleaseConfig = {
 };
 
 export function config(
-  options: SemanticReleaseOptions = {},
   overrides: SemanticReleaseConfig = {},
 ): SemanticReleaseConfig {
-  const { publish = false } = options;
-  const baseConfig = publish ? npm : base;
+  const options = getOptions();
+  const baseConfig = options.publish ? npm : base;
   return { ...baseConfig, ...overrides };
 }

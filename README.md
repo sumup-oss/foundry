@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), [🤖 continuous integration (CI)](#-continuous-integration-ci), and [🖇️ templates](#-templates) and currently supports [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), [Node](https://nodejs.org/en/) and [Testing Library](https://testing-library.com/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), and [🤖 continuous integration (CI)](#-continuous-integration-ci), and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -18,7 +18,6 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
   - [🔍 Lint](#-lint)
   - [🚀 Release](#-release)
   - [🤖 Continuous Integration (CI)](#-continuous-integration-ci)
-  - [🖇️ Templates](#-templates)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
@@ -28,7 +27,7 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 
 ### Installation
 
-Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node v12+.
+Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node `^14.17 || >=16`.
 
 Depending on your preference, run one of the following.
 
@@ -52,50 +51,59 @@ $ yarn run foundry init
 $ npx foundry init
 ```
 
-Foundry will launch an interactive prompt to ask you questions about your project, such as in which language it is written, which frameworks it uses, or whether you are planning to open source it. Once you have answered all questions, Foundry will write the config files (don't worry, it asks before overwriting existing files) and will add scripts to your `package.json` file to conveniently run the tools.
+Foundry will launch an interactive prompt to ask you questions about your project, such as whether you are planning to open source it. Once you have answered all questions, Foundry will write the config files (don't worry, it asks before overwriting existing files) and will add scripts to your `package.json` file to conveniently run the tools.
 
 Alternatively, you can pass your answers to the `init` command directly as flags. This is useful for environments such as CI where interactive prompts cannot be used. Here is an overview of all available options (you can view this help menu by running `npx foundry init --help`):
 
 ```sh
---presets, -p       A preset configures a group of tools that solve a common
-                    problem  [array] [options: "lint", "release", "templates", "ci"]
---language, -l      The programming language in which the project is written
-                                               [options: "TypeScript", "JavaScript"]
---environments, -e  The environment(s) in which the code runs
-                                                [array] [options: "Node", "Browser"]
---frameworks, -f    The framework(s) that the project uses
-                                       [array] [options: "React", "Emotion", "Jest"]
---ci                The CI platform the project uses     [options: "github-actions"]
---openSource, -o    Whether the project is open-source                     [boolean]
---publish           Whether to publish to NPM                              [boolean]
---configDir, -c     The directory to write the configs to    [string] [default: "."]
---help              Show this help menu                                    [boolean]
+  -p, --presets     A preset configures a group of tools that solve a common
+                    problem           [array] [choices: "lint", "release", "ci"]
+  -o, --openSource  Whether the project is open-source                 [boolean]
+      --publish     Whether to publish to NPM                          [boolean]
+  -c, --configDir   The directory to write configs to    [string] [default: "."]
+      --overwrite   Whether to overwrite existing config files
+                                                      [boolean] [default: false]
+      --version     Show version number                                [boolean]
+      --help        Show this help menu                                [boolean]
 ```
 
 ## Configuration
 
-All config files that are generated by Foundry follow the same format. They import a configuration function, optionally call it with an options object and/or overrides, and export the result. Here's an example:
+All config files that are generated by Foundry follow the same format. They import a configuration function, optionally call it with overrides, and export the result. Here's an example:
 
 ```js
-module.exports = require('@sumup/foundry/<tool>')(options, overrides);
+module.exports = require('@sumup/foundry/<tool>')(overrides);
 
 // Example for .eslintrc.js:
-module.exports = require('@sumup/foundry/eslint')(
-  {
-    language: 'TypeScript',
-    frameworks: ['React', 'Emotion'],
+module.exports = require('@sumup/foundry/eslint')({
+  rules: {
+    '@emotion/jsx-import': 'error',
   },
-  {
-    rules: {
-      'emotion/jsx-import': 'error',
-    },
-  },
-);
+});
 ```
 
-The options for each tool are documented below.
+The overrides are merged with Foundry's default configuration. The overrides follow each tool's configuration schema, please refer to their official documentation.
 
-The overrides are merged with Foundry's default configuration after the options have been applied. The overrides follow each tool's configuration schema, please refer to their official documentation.
+Foundry analyzes your project's `package.json` file to tailor the configurations to your project. If the automatic detection is inaccurate, [please open an issue](https://github.com/sumup-oss/foundry/issues/new/choose) so we can improve it for everyone. Alternatively, you can explicitly set the options under the `foundry` property in your `package.json` file:
+
+```json
+// package.json
+{
+  "foundry": {
+    "publish": true
+  }
+}
+```
+
+The supported options are:
+
+| Name         | Type    | Options                                                                           | Default        |
+| ------------ | ------- | --------------------------------------------------------------------------------- | -------------- |
+| language     | string  | 'TypeScript', 'JavaScript'                                                        | _autodetected_ |
+| environments | array   | 'Browser', 'Node'                                                                 | _autodetected_ |
+| frameworks   | array   | 'React', 'Next.js', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | _autodetected_ |
+| openSource   | boolean | true, false                                                                       | _autodetected_ |
+| publish      | boolean | true, false                                                                       | false          |
 
 ## Presets
 
@@ -111,40 +119,10 @@ Check code for syntax errors and format it automatically. The preset adds the fo
 
 The preset includes the following tools:
 
-#### Eslint
-
-[ESLint](https://www.npmjs.com/package/eslint) identifies and fixes problematic patterns in your JavaScript code so you can spot mistakes early.
-
-Eslint's configuration options:
-
-| Name         | Type    | Options                                                  | Default      |
-| ------------ | ------- | -------------------------------------------------------- | ------------ |
-| language     | string  | 'TypeScript', 'JavaScript'                               | 'TypeScript' |
-| environments | array   | 'Browser', 'Node'                                        | []           |
-| frameworks   | array   | 'React', 'Emotion', 'Jest', 'Cypress', 'Testing Library' | []           |
-| openSource   | boolean | true, false                                              | false        |
-
-#### Prettier
-
-[Prettier](https://prettier.io) is our code formatter of choice. It makes all our code look the same after every save.
-
-Prettier currently has no configuration options.
-
-#### lint-staged
-
-[lint-staged](https://www.npmjs.com/package/lint-staged) is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents bad code from being committed.
-
-lint-staged's configuration options:
-
-| Name     | Type   | Options                    | Default      |
-| -------- | ------ | -------------------------- | ------------ |
-| language | string | 'TypeScript', 'JavaScript' | 'TypeScript' |
-
-#### Husky
-
-[Husky](https://github.com/typicode/husky) makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
-
-Husky currently has no configuration options.
+- **[ESLint](https://www.npmjs.com/package/eslint)** identifies and fixes problematic patterns in your code so you can spot mistakes early.
+- **[Prettier](https://prettier.io)** is our code formatter of choice. It makes all our code look the same after every save.
+- **[lint-staged](https://www.npmjs.com/package/lint-staged)** is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents problematic code from being committed.
+- **[Husky](https://github.com/typicode/husky)** makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
 
 ### 🚀 Release
 
@@ -154,52 +132,17 @@ Automatically generate release notes and (optionally) publish to NPM. The preset
 
 The preset includes the following tools:
 
-#### semantic-release
-
-[semantic-release](https://www.npmjs.com/package/semantic-release) automates the whole package release workflow including determining the next version number, generating the release notes, and publishing the package.
-
-semantic-releases's configuration options:
-
-| Name    | Type    | Options     | Default |
-| ------- | ------- | ----------- | ------- |
-| publish | boolean | true, false | false   |
+- **[semantic-release](https://www.npmjs.com/package/semantic-release)** automates the whole package release workflow including determining the next version number, generating the release notes, and publishing the package.
 
 ### 🤖 Continuous Integration (CI)
 
 Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
 
-- [**GitHub Actions**](https://github.com/features/actions) builds, tests, and deploys your code right from GitHub.
-
-### 🖇️ Templates
-
-Generate boilerplate code e.g. for React components. The preset adds the following script to your `package.json`:
-
-- `create:component`: generate the files for a React component
-
-The preset includes the following tool:
-
-#### Plop
-
-[Plop](https://plopjs.com) generates common files from templates. This is very helpful when creating similar files repeatedly and reduces the boilerplate you have to write as a developer.
-
-Plop's configuration options:
-
-| Name        | Type   | Options                                        | Default      |
-| ----------- | ------ | ---------------------------------------------- | ------------ |
-| language    | string | 'TypeScript', 'JavaScript'                     | 'TypeScript' |
-| templateDir | string | A path relative to the location of plopfile.js | '.'          |
-
-#### Custom templates
-
-⭐ _This is an advanced use case._
-
-Plop uses [Handlebar](http://handlebarsjs.com/) templates to generate the files. If you'd like to override a built-in template, you can specify a custom template directory (see config options above). Plop will first check if a custom template exists, otherwise, it will fall back to the default template.
-
-To see which variables are available for use in a Handlebars template, have a look at the [default templates](https://github.com/sumup-oss/foundry/tree/main/src/configs/plop/templates).
+- **[GitHub Actions](https://github.com/features/actions)** builds, tests, and publishes your code right from GitHub.
 
 ## Running a tool
 
-Foundry manages all supported tools for you and exposes them via the `run` command. As an example: to run ESLint through Foundry, execute:
+Foundry manages all supported tools for you and exposes them via the `run` command. As an example, to run ESLint through Foundry, execute:
 
 ```sh
 # With Yarn
@@ -213,7 +156,7 @@ Here, `src` is the folder you want ESLint to check. Note that you can use any of
 
 ## Why?
 
-> ##### TLDR
+> ##### TL;DR
 >
 > Creating and maintaining a JavaScript project can be very tedious. There are tools, configurations, dependency management, and boilerplate. With Foundry, you can fix all of that with a single dependency. It lints, creates files, and keeps the tools up to date. And the best part? You can still get down and dirty with your configurations. But only if you want.
 
@@ -259,4 +202,4 @@ If you feel another member of the community violated our CoC or you are experien
 
 ![SumUp logo](https://raw.githubusercontent.com/sumup-oss/assets/master/sumup-logo.svg?sanitize=true)
 
-It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Go, Java, Erlang, Elixir, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.
+It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in TypeScript, Swift, Ruby, Go, Java, Erlang, Elixir, and more. Want to come work with us? [Head to our careers page](https://sumup.com/careers) to find out more.

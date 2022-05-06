@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`semantic-release with options should return a config to publish to NPM 1`] = `
+exports[`semantic-release should return a config to publish to NPM 1`] = `
 Object {
   "branches": Array [
     "+([0-9])?(.{+([0-9]),x}).x",
@@ -29,7 +29,7 @@ Object {
 }
 `;
 
-exports[`semantic-release with options should return a default config 1`] = `
+exports[`semantic-release should return a default config 1`] = `
 Object {
   "branches": Array [
     "+([0-9])?(.{+([0-9]),x}).x",

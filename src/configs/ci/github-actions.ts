@@ -28,10 +28,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js v14
+      - name: Use Node.js v16
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -53,7 +53,9 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: $\\{{ secrets.GITHUB_TOKEN }}
+{{#if publish}}
           NPM_TOKEN: $\\{{ secrets.NPM_TOKEN }}
+{{/if}}
         run: yarn release
 {{/includes}}
 `;

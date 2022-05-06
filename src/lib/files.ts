@@ -17,8 +17,9 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
+import { omit } from 'lodash/fp';
 import { format, Options as PrettierConfig } from 'prettier';
-import pkgUp from 'pkg-up';
+import readPkgUp from 'read-pkg-up';
 
 import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
@@ -27,7 +28,7 @@ const writeFileAsync = promisify(fs.writeFile);
 
 export function formatContent(fileName: string, content: string): string {
   const configMap: { [key: string]: PrettierConfig } = {
-    '.js': prettierConfig({}, { parser: 'babel' }),
+    '.js': prettierConfig({ parser: 'babel' }),
     '.json': { parser: 'json' },
     '.yaml': { parser: 'yaml' },
   };
@@ -59,14 +60,6 @@ export function writeFile(
   return writeFileAsync(filePath, fileContent, { flag });
 }
 
-export async function findPackageJson(): Promise<string> {
-  const packagePath = await pkgUp();
-  if (!packagePath) {
-    throw new Error('Unable to find a "package.json" file.');
-  }
-  return packagePath;
-}
-
 export function addPackageScript(
   packageJson: PackageJson,
   name: string,
@@ -88,8 +81,22 @@ export function addPackageScript(
   return packageJson;
 }
 
-export async function savePackageJson(packageJson: PackageJson): Promise<void> {
-  const packagePath = await findPackageJson();
-  const content = `${JSON.stringify(packageJson, null, 2)}\n`;
-  return writeFileAsync(packagePath, content);
+export function readPackageJson(): PackageJson {
+  const pkg = readPkgUp.sync();
+
+  if (!pkg) {
+    throw new Error('Unable to find a "package.json" file');
+  }
+
+  return pkg.packageJson;
+}
+
+export async function savePackageJson(
+  packagePath: string,
+  packageJson: PackageJson,
+): Promise<void> {
+  // This property is added by `read-pkg-up`
+  const sanitizedPackageJson = omit('_id', packageJson);
+  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
+  return writeFileAsync(packagePath, content, { flag: 'w' });
 }

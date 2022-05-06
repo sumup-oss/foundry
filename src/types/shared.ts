@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
+import type { NormalizedPackageJson } from 'read-pkg-up';
+
 export enum Preset {
   LINT = 'lint',
   RELEASE = 'release',
-  TEMPLATES = 'templates',
   CI = 'ci',
 }
 
@@ -25,18 +26,13 @@ export enum Tool {
   PRETTIER = 'prettier',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
-  PLOP = 'plop',
   SEMANTIC_RELEASE = 'semantic-release',
   CI = 'ci',
 }
 
 export enum Prompt {
-  LANGUAGE = 'language',
-  ENVIRONMENTS = 'environments',
-  FRAMEWORKS = 'frameworks',
   OPEN_SOURCE = 'open-source',
   PUBLISH = 'publish',
-  CI = 'ci',
 }
 
 export enum Language {
@@ -51,25 +47,25 @@ export enum Environment {
 
 export enum Framework {
   REACT = 'React',
+  NEXT_JS = 'Next.js',
   EMOTION = 'Emotion',
   JEST = 'Jest',
-  CYPRESS = 'Cypress',
   TESTING_LIBRARY = 'Testing Library',
-}
-
-export enum CI {
-  GITHUB_ACTIONS = 'github-actions',
+  CYPRESS = 'Cypress',
+  PLAYWRIGHT = 'Playwright',
 }
 
 export interface Options {
-  presets: Preset[];
-  configDir: string;
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
-  ci?: CI;
   openSource?: boolean;
   publish?: boolean;
+}
+
+export interface InitOptions extends Options {
+  presets: Preset[];
+  configDir: string;
   overwrite?: boolean;
 }
 
@@ -86,12 +82,8 @@ export type Script = {
 };
 
 export interface ToolOptions {
-  files?: (options: Options) => File[];
-  scripts?: (options: Options) => Script[];
+  files?: (options: InitOptions) => File[];
+  scripts?: (options: InitOptions) => Script[];
 }
 
-export type PackageJson = {
-  scripts?: { [key: string]: string };
-  bin?: string;
-  [key: string]: Record<string, unknown> | string | undefined;
-};
+export type PackageJson = NormalizedPackageJson;

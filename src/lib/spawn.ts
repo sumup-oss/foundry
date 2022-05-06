@@ -48,7 +48,7 @@ export function spawn(
     });
 
     if (child.stdout) {
-      child.stdout.on('data', (chunk) => {
+      child.stdout.on('data', (chunk: Uint8Array) => {
         stdout.push(chunk);
       });
     }

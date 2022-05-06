@@ -22,15 +22,12 @@ import listrInquirer from 'listr-inquirer';
 import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
 import isCI from 'is-ci';
+import readPkgUp from 'read-pkg-up';
 
 import {
-  Options,
+  InitOptions,
   Preset,
   Prompt,
-  Language,
-  Environment,
-  Framework,
-  CI,
   Tool,
   ToolOptions,
   File,
@@ -38,13 +35,7 @@ import {
   PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
-import { enumToChoices } from '../lib/choices';
-import {
-  writeFile,
-  findPackageJson,
-  addPackageScript,
-  savePackageJson,
-} from '../lib/files';
+import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
 import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
@@ -53,19 +44,15 @@ import { DEFAULT_OPTIONS } from './defaults';
 export interface InitParams {
   configDir: string;
   presets?: Preset[];
-  language?: Language;
-  environments?: Environment[];
-  frameworks?: Framework[];
   openSource?: boolean;
-  ci?: CI;
-  overwrite?: boolean;
   publish?: boolean;
+  overwrite?: boolean;
   $0?: string;
   _?: string[];
 }
 
 export async function init({ $0, _, ...args }: InitParams): Promise<void> {
-  let options: Options;
+  let options: InitOptions;
 
   if (!isCI) {
     const initialAnswers = (await inquirer.prompt([
@@ -81,35 +68,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     ])) as { presets: Preset[] };
 
     const prompts = {
-      [Prompt.LANGUAGE]: {
-        type: 'list',
-        name: 'language',
-        message: 'Which programming language does the project use?',
-        choices: enumToChoices(Language),
-        default: DEFAULT_OPTIONS.language,
-        when: (): boolean => !args.language,
-      },
-      [Prompt.ENVIRONMENTS]: {
-        type: 'checkbox',
-        name: 'environments',
-        message: 'Which environment(s) will the code run in?',
-        choices: enumToChoices(Environment),
-        when: (): boolean => isEmpty(args.environments),
-      },
-      [Prompt.FRAMEWORKS]: {
-        type: 'checkbox',
-        name: 'frameworks',
-        message: 'Which framework(s) does the project use?',
-        choices: enumToChoices(Framework),
-        when: (): boolean => !args.frameworks,
-      },
-      [Prompt.CI]: {
-        type: 'checkbox',
-        name: 'ci',
-        message: 'Which CI platform would you like to use?',
-        choices: enumToChoices(CI),
-        when: (): boolean => isEmpty(args.ci),
-      },
       [Prompt.PUBLISH]: {
         type: 'confirm',
         name: 'publish',
@@ -120,7 +78,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
       [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
         name: 'openSource',
-        message: 'Do you plan to open-source this project?',
+        message: 'Do you intend to open-source this project?',
         default: DEFAULT_OPTIONS.openSource,
         when: (): boolean => typeof args.openSource === 'undefined',
       },
@@ -159,40 +117,44 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                 file.name,
                 file.content,
                 options.overwrite,
-              ).catch(() =>
+              ).catch(() => {
+                logger.debug(`File "${file.name}" already exists`);
+                if (isCI) {
+                  logger.debug('In a CI environment, skipping...');
+                  task.skip('Skipped');
+                  return undefined;
+                }
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                isCI
-                  ? task.skip('Skipped')
-                  : // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                    listrInquirer(
-                      [
-                        {
-                          type: 'confirm',
-                          name: 'overwrite',
-                          // eslint-disable-next-line max-len
-                          message: `"${file.name}" already exists. Would you like to replace it?`,
-                          default: false,
-                        },
-                      ],
-                      ({ overwrite }: { overwrite: boolean }) => {
-                        if (!overwrite) {
-                          task.skip('Skipped');
-                          return undefined;
-                        }
-                        return writeFile(
-                          options.configDir,
-                          file.name,
-                          file.content,
-                          true,
-                        );
-                      },
-                    ),
-              ),
+                return listrInquirer(
+                  [
+                    {
+                      type: 'confirm',
+                      name: 'overwrite',
+                      // eslint-disable-next-line max-len
+                      message: `"${file.name}" already exists. Would you like to replace it?`,
+                      default: false,
+                    },
+                  ],
+                  ({ overwrite }: { overwrite: boolean }) => {
+                    logger.debug(`Overwrite file: ${overwrite.toString()}`);
+                    if (!overwrite) {
+                      task.skip('Skipped');
+                      return undefined;
+                    }
+                    return writeFile(
+                      options.configDir,
+                      file.name,
+                      file.content,
+                      true,
+                    );
+                  },
+                );
+              }),
           })),
         ),
     },
     {
-      title: 'Adding scripts to package.json',
+      title: 'Updating package.json',
       // eslint-disable-next-line @typescript-eslint/require-await
       task: async (): Promise<Listr> => {
         type Context = {
@@ -203,13 +165,32 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Read package.json',
             task: async (ctx): Promise<void> => {
-              ctx.packagePath = await findPackageJson();
-              // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
-              ctx.packageJson = require(ctx.packagePath) as PackageJson;
+              const pkg = await readPkgUp();
+
+              if (!pkg) {
+                throw new Error('Unable to find a "package.json" file.');
+              }
+
+              ctx.packagePath = pkg.path;
+              ctx.packageJson = pkg.packageJson;
+            },
+          },
+          {
+            title: 'Add license field',
+            enabled: () => options.openSource === true,
+            task: (ctx): void => {
+              ctx.packageJson.license = 'Apache-2.0';
+            },
+          },
+          {
+            title: 'Add Foundry config',
+            enabled: () => options.presets.includes(Preset.RELEASE),
+            task: (ctx): void => {
+              ctx.packageJson.foundry = { publish: options.publish };
             },
           },
           ...scripts.map(({ name, command }) => ({
-            title: `Add "${name}"`,
+            title: `Add "${name}" script`,
             task: (
               ctx: Context,
               task: ListrTaskWrapper<Context>,
@@ -223,11 +204,12 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                 );
                 return undefined;
               } catch (error) {
+                logger.debug(`Script "${name}" already exists`);
                 if (isCI) {
+                  logger.debug('In a CI environment, skipping...');
                   task.skip('Skipped');
                   return undefined;
                 }
-
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
                 return listrInquirer(
                   [
@@ -239,8 +221,11 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                       default: false,
                     },
                   ],
-                  ({ overwrite }: { overwrite: boolean }) => {
-                    if (!overwrite) {
+                  ({ overwriteScript }: { overwriteScript: boolean }) => {
+                    logger.debug(
+                      `Overwrite script: ${overwriteScript.toString()}`,
+                    );
+                    if (!overwriteScript) {
                       task.skip('Skipped');
                       return;
                     }
@@ -252,7 +237,8 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           })),
           {
             title: 'Save package.json',
-            task: (ctx): Promise<void> => savePackageJson(ctx.packageJson),
+            task: (ctx): Promise<void> =>
+              savePackageJson(ctx.packagePath, ctx.packageJson),
           },
         ]);
       },
@@ -280,7 +266,7 @@ function getPromptsForPresets(
   prompts: { [key in Prompt]: Question },
 ): Question[] {
   return flow(
-    map((preset: Preset): Prompt[] => presets[preset].prompts),
+    map((preset: Preset) => presets[preset].prompts || []),
     flatten,
     uniq,
     map((prompt: Prompt) => prompts[prompt]),
@@ -297,7 +283,7 @@ function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
 }
 
 function getFilesForTools(
-  options: Options,
+  options: InitOptions,
   selectedTools: ToolOptions[],
 ): File[] {
   return selectedTools.reduce((allFiles: File[], tool) => {
@@ -310,7 +296,7 @@ function getFilesForTools(
 }
 
 function getScriptsForTools(
-  options: Options,
+  options: InitOptions,
   selectedTools: ToolOptions[],
 ): Script[] {
   return selectedTools.reduce((allScripts: Script[], tool) => {

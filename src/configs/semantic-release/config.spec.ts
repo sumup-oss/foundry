@@ -13,30 +13,34 @@
  * limitations under the License.
  */
 
+import { getOptions as getOptionsMock } from '../../lib/options';
+
 import { config } from './config';
 
-describe('semantic-release', () => {
-  describe('with options', () => {
-    it('should return a default config', () => {
-      const actual = config();
-      expect(actual).toMatchSnapshot();
-    });
+jest.mock('../../lib/options', () => ({
+  getOptions: jest.fn(() => ({})),
+}));
 
-    it('should return a config to publish to NPM', () => {
-      const options = { publish: true };
-      const actual = config(options);
-      expect(actual).toMatchSnapshot();
-    });
+const getOptions = getOptionsMock as jest.Mock;
+
+describe('semantic-release', () => {
+  it('should return a default config', () => {
+    const actual = config();
+    expect(actual).toMatchSnapshot();
   });
 
-  describe('with overrides', () => {
-    it('should override the default config', () => {
-      const options = undefined;
-      const overrides = {
-        branches: ['main'],
-      };
-      const actual = config(options, overrides);
-      expect(actual).toEqual(expect.objectContaining({ branches: ['main'] }));
-    });
+  it('should return a config to publish to NPM', () => {
+    const options = { publish: true };
+    getOptions.mockReturnValue(options);
+    const actual = config();
+    expect(actual).toMatchSnapshot();
+  });
+
+  it('should override the default config', () => {
+    const overrides = {
+      branches: ['main'],
+    };
+    const actual = config(overrides);
+    expect(actual).toEqual(expect.objectContaining({ branches: ['main'] }));
   });
 });
