@@ -277,6 +277,8 @@ function customizeFramework(frameworks?: Framework[]) {
       ],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
       rules: {
+        // The automatic JSX runtime handles the React import.
+        'react/react-in-jsx-scope': 'off',
         'react/display-name': 'off',
       },
       parserOptions: { ecmaFeatures: { jsx: true } },

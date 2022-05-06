@@ -808,6 +808,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -1873,6 +1874,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -3558,6 +3560,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -5442,6 +5445,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
