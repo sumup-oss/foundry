@@ -2304,6 +2304,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2574,6 +2575,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2834,6 +2836,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3135,6 +3138,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3438,6 +3442,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3705,6 +3710,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3968,6 +3974,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4239,6 +4246,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4511,6 +4519,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4773,6 +4782,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5076,6 +5086,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5381,6 +5392,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5650,6 +5662,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5915,6 +5928,7 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
