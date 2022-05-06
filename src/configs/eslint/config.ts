@@ -225,6 +225,14 @@ function customizeEnvironments(environments?: Environment[]) {
       extends: ['plugin:compat/recommended'],
       env: { browser: true },
       settings: { lintAllEsApis: true },
+      overrides: [
+        {
+          files: unitTestFiles,
+          rules: {
+            'compat/compat': 'off',
+          },
+        },
+      ],
     },
     [Environment.NODE]: {
       extends: ['plugin:node/recommended'],

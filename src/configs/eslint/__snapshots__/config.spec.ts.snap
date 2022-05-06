@@ -50,6 +50,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "env": Object {
         "cypress/globals": true,
       },
@@ -188,6 +202,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -315,6 +343,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
@@ -485,6 +527,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
   ],
@@ -660,6 +716,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "plugin:playwright/playwright-test",
       ],
@@ -795,6 +865,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -925,6 +1009,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
@@ -2315,6 +2413,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "env": Object {
         "cypress/globals": true,
       },
@@ -2570,6 +2682,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -2814,6 +2940,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
@@ -3101,6 +3241,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
   ],
@@ -3393,6 +3547,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "plugin:playwright/playwright-test",
       ],
@@ -3645,6 +3813,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -3892,6 +4074,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
