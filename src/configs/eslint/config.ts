@@ -74,6 +74,7 @@ const sharedRules = {
   'function-paren-newline': 'off',
   'operator-linebreak': 'off',
   'indent': 'off',
+  'no-void': ['error', { allowAsStatement: true }],
 };
 
 const sharedOverrides = [

@@ -113,6 +113,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -236,6 +242,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -399,6 +411,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -517,6 +535,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -644,6 +668,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -768,6 +798,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -906,6 +942,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -1053,6 +1095,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1192,6 +1240,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1371,6 +1425,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1505,6 +1565,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1648,6 +1714,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1788,6 +1860,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1942,6 +2020,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -2060,6 +2144,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2188,6 +2278,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2304,6 +2400,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2422,6 +2524,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2538,6 +2646,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2696,6 +2810,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2813,6 +2933,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2925,6 +3051,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3041,6 +3173,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3163,6 +3301,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3282,6 +3426,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3398,6 +3548,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3518,6 +3674,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3647,6 +3809,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3763,6 +3931,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3905,6 +4079,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4023,6 +4203,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4155,6 +4341,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4273,6 +4465,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4445,6 +4643,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4564,6 +4768,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4690,6 +4900,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4808,6 +5024,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4944,6 +5166,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -5065,6 +5293,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -5195,6 +5429,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -5317,6 +5557,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -5460,6 +5706,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -5550,6 +5802,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "notice/notice": Array [
       "error",
       Object {
