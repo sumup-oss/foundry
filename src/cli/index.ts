@@ -17,7 +17,7 @@
 
 import yargs from 'yargs';
 
-import { Preset, Language, Environment, Framework, CI } from '../types/shared';
+import { Preset } from '../types/shared';
 import { enumToChoices } from '../lib/choices';
 
 import { run, RunParams } from './run';
@@ -33,29 +33,8 @@ void yargs
       presets: {
         alias: 'p',
         desc: 'A preset configures a group of tools that solve a common problem',
-        choices: enumToChoices(Preset) as Preset[],
+        choices: enumToChoices(Preset),
         type: 'array',
-      },
-      language: {
-        alias: 'l',
-        desc: 'The programming language the project uses',
-        choices: enumToChoices(Language),
-      },
-      environments: {
-        alias: 'e',
-        desc: 'The environment(s) that the code runs in',
-        choices: enumToChoices(Environment),
-        type: 'array',
-      },
-      frameworks: {
-        alias: 'f',
-        desc: 'The frameworks the project uses',
-        choices: enumToChoices(Framework),
-        type: 'array',
-      },
-      ci: {
-        desc: 'The CI platform the project uses',
-        choices: enumToChoices(CI),
       },
       openSource: {
         alias: 'o',

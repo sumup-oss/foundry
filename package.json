@@ -26,17 +26,15 @@
     "release": "cd ./dist && semantic-release"
   },
   "engines": {
-    "node": ">=16 || ^14.17"
+    "node": "^14.17 || >=16"
   },
   "browserslist": [
-    "chrome >= 57",
-    "firefox >= 54",
-    "safari >= 10.3",
-    "edge >= 16",
-    "opera >= 44",
-    "samsung >= 6.2",
-    "supports css-grid and supports object-entries"
+    "node 14.17",
+    "node 16"
   ],
+  "foundry": {
+    "publish": true
+  },
   "dependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.14.3",

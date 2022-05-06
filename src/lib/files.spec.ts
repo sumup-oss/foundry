@@ -17,7 +17,7 @@ import fs from 'fs';
 
 import { PackageJson } from '../types/shared';
 
-import { writeFile, addPackageScript } from './files';
+import { writeFile, addPackageScript, savePackageJson } from './files';
 
 jest.mock('fs', () => ({
   ...jest.requireActual('fs'),
@@ -31,6 +31,12 @@ const content = 'module.exports = "Hello world"';
 const formattedContent = `module.exports = 'Hello world';
 `;
 
+const basePackageJson = {
+  name: 'name',
+  readme: 'README.md',
+  version: '0.0.0',
+  _id: 'id',
+};
 describe('files', () => {
   describe('writeFile', () => {
     it('should create the target folder if it does not exist', async () => {
@@ -161,6 +167,16 @@ describe('files', () => {
         scripts: { lint: 'foundry run eslint src' },
       };
       expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('savePackageJson', () => {
+    it('should save the package.json file to disk', async () => {
+      const path = 'package.json';
+
+      await savePackageJson(path, basePackageJson);
+
+      expect(fs.writeFile).toHaveBeenCalled();
     });
   });
 });

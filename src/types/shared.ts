@@ -31,12 +31,8 @@ export enum Tool {
 }
 
 export enum Prompt {
-  LANGUAGE = 'language',
-  ENVIRONMENTS = 'environments',
-  FRAMEWORKS = 'frameworks',
   OPEN_SOURCE = 'open-source',
   PUBLISH = 'publish',
-  CI = 'ci',
 }
 
 export enum Language {
@@ -59,19 +55,17 @@ export enum Framework {
   PLAYWRIGHT = 'Playwright',
 }
 
-export enum CI {
-  GITHUB_ACTIONS = 'github-actions',
-}
-
 export interface Options {
-  presets: Preset[];
-  configDir: string;
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
-  ci?: CI;
   openSource?: boolean;
   publish?: boolean;
+}
+
+export interface InitOptions extends Options {
+  presets: Preset[];
+  configDir: string;
   overwrite?: boolean;
 }
 
@@ -88,8 +82,8 @@ export type Script = {
 };
 
 export interface ToolOptions {
-  files?: (options: Options) => File[];
-  scripts?: (options: Options) => Script[];
+  files?: (options: InitOptions) => File[];
+  scripts?: (options: InitOptions) => Script[];
 }
 
 export type PackageJson = NormalizedPackageJson;

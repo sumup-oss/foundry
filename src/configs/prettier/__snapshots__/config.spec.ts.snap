@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prettier with options should return a config 1`] = `
+exports[`prettier should return a config 1`] = `
 Object {
   "arrowParens": "always",
   "bracketSameLine": false,
