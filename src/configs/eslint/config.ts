@@ -127,6 +127,16 @@ const base = {
   ],
 };
 
+const unitTestFiles = [
+  '**/*.spec.*',
+  '**/jest*',
+  '**/setupTests.*',
+  '**/test-utils.*',
+  '**/*Fixtures.*',
+  '**/__fixtures__/**/*',
+  '**/__mocks__/**/*',
+];
+
 function customizeLanguage(language?: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
@@ -287,17 +297,24 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.JEST]: {
       overrides: [
         {
-          files: [
-            '**/*.spec.*',
-            '**/jest*',
-            '**/setupTests.*',
-            '**/test-utils.*',
-            '**/*Fixtures.*',
-            '**/__fixtures__/**/*',
-            '**/__mocks__/**/*',
-          ],
+          files: unitTestFiles,
           extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
+          env: { 'jest/globals': true },
+          rules: {
+            'jest/unbound-method': 'error',
+          },
+        },
+        {
+          files: [
+            '**/*.spec.js',
+            '**/jest*.js',
+            '**/setupTests.js',
+            '**/test-utils.js',
+            '**/*Fixtures.js',
+            '**/__fixtures__/**/*.js',
+            '**/__mocks__/**/*.js',
+          ],
           globals: {
             render: true,
             create: true,
@@ -310,17 +327,13 @@ function customizeFramework(frameworks?: Framework[]) {
             renderHook: true,
             axe: true,
           },
-          env: { 'jest/globals': true },
-          rules: {
-            'jest/unbound-method': 'error',
-          },
         },
       ],
     },
     [Framework.TESTING_LIBRARY]: {
       overrides: [
         {
-          files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
+          files: unitTestFiles,
           extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
         },

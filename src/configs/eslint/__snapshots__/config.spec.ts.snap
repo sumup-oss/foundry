@@ -321,6 +321,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -332,12 +349,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -836,8 +847,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -1278,6 +1293,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -1289,12 +1321,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -1857,8 +1883,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -2588,6 +2618,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -2599,12 +2646,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -3547,8 +3588,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -4322,6 +4367,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -4333,12 +4395,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -5345,8 +5401,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
