@@ -229,7 +229,11 @@ function customizeEnvironments(environments?: Environment[]) {
     [Environment.BROWSER]: {
       extends: ['plugin:compat/recommended'],
       env: { browser: true },
-      settings: { lintAllEsApis: true },
+      settings: {
+        lintAllEsApis: true,
+        // This API produces a false positive
+        polyfill: ['document.body'],
+      },
       overrides: [
         {
           files: unitTestFiles,

@@ -149,6 +149,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -292,6 +295,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -475,6 +481,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -613,6 +622,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
     "polyfills": Array [
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
@@ -809,6 +821,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -955,6 +970,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
     "react": Object {
       "version": "detect",
     },
@@ -1112,6 +1130,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -2519,6 +2540,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -2786,6 +2810,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -3093,6 +3120,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -3355,6 +3385,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
     "polyfills": Array [
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
@@ -3675,6 +3708,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
@@ -3945,6 +3981,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
     "react": Object {
       "version": "detect",
     },
@@ -4226,6 +4265,9 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfill": Array [
+      "document.body",
+    ],
   },
 }
 `;
