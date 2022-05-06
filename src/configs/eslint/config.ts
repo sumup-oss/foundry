@@ -232,7 +232,7 @@ function customizeEnvironments(environments?: Environment[]) {
       settings: {
         lintAllEsApis: true,
         // This API produces a false positive
-        polyfill: ['document.body'],
+        polyfills: ['document.body'],
       },
       overrides: [
         {

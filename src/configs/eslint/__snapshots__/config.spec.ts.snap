@@ -149,7 +149,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -295,7 +295,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -481,7 +481,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -622,10 +622,8 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
-      "document.body",
-    ],
     "polyfills": Array [
+      "document.body",
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
       "Array.prototype.find",
@@ -821,7 +819,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -970,7 +968,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
     "react": Object {
@@ -1130,7 +1128,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -2540,7 +2538,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -2810,7 +2808,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -3120,7 +3118,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -3385,10 +3383,8 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
-      "document.body",
-    ],
     "polyfills": Array [
+      "document.body",
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
       "Array.prototype.find",
@@ -3708,7 +3704,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
@@ -3981,7 +3977,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
     "react": Object {
@@ -4265,7 +4261,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfill": Array [
+    "polyfills": Array [
       "document.body",
     ],
   },
