@@ -21,9 +21,9 @@ import { Language, Environment, Framework } from '../../types/shared';
 import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
 
-// NOTE: Using the Linter.Config interface from Eslint causes errors
+// NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
-type EslintConfig = unknown;
+type ESLintConfig = unknown;
 
 export const customizeConfig = mergeWith(customizer);
 
@@ -74,6 +74,7 @@ const sharedRules = {
   'function-paren-newline': 'off',
   'operator-linebreak': 'off',
   'indent': 'off',
+  'no-void': ['error', { allowAsStatement: true }],
 };
 
 const sharedOverrides = [
@@ -127,6 +128,16 @@ const base = {
   ],
 };
 
+const unitTestFiles = [
+  '**/*.spec.*',
+  '**/jest*',
+  '**/setupTests.*',
+  '**/test-utils.*',
+  '**/*Fixtures.*',
+  '**/__fixtures__/**/*',
+  '**/__mocks__/**/*',
+];
+
 function customizeLanguage(language?: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
@@ -158,6 +169,11 @@ function customizeLanguage(language?: Language) {
             ...sharedRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/indent': 'off',
+            '@typescript-eslint/no-unused-vars': 'error',
+            '@typescript-eslint/no-misused-promises': [
+              'error',
+              { checksVoidReturn: false },
+            ],
             '@typescript-eslint/no-use-before-define': [
               'error',
               { functions: false },
@@ -199,7 +215,7 @@ function customizeLanguage(language?: Language) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!language) {
       return config;
     }
@@ -208,12 +224,20 @@ function customizeLanguage(language?: Language) {
   };
 }
 
-function customizeEnv(environments?: Environment[]) {
+function customizeEnvironments(environments?: Environment[]) {
   const environmentMap = {
     [Environment.BROWSER]: {
       extends: ['plugin:compat/recommended'],
       env: { browser: true },
       settings: { lintAllEsApis: true },
+      overrides: [
+        {
+          files: unitTestFiles,
+          rules: {
+            'compat/compat': 'off',
+          },
+        },
+      ],
     },
     [Environment.NODE]: {
       extends: ['plugin:node/recommended'],
@@ -222,9 +246,9 @@ function customizeEnv(environments?: Environment[]) {
         // We don't know if the user's source code is using EJS or CJS.
         'node/no-unsupported-features/es-syntax': 'off',
         // This rule breaks when used in combination with TypeScript
-        // and is already covered by similar Eslint rules.
+        // and is already covered by similar ESLint rules.
         'node/no-missing-import': 'off',
-        // This rule is already covered by similar Eslint rules.
+        // This rule is already covered by similar ESLint rules.
         'node/no-extraneous-import': 'off',
       },
       overrides: [
@@ -245,7 +269,7 @@ function customizeEnv(environments?: Environment[]) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!environments || isEmpty(environments)) {
       return config;
     }
@@ -266,6 +290,8 @@ function customizeFramework(frameworks?: Framework[]) {
       ],
       plugins: ['react', 'react-hooks', 'jsx-a11y'],
       rules: {
+        // The automatic JSX runtime handles the React import.
+        'react/react-in-jsx-scope': 'off',
         'react/display-name': 'off',
       },
       parserOptions: { ecmaFeatures: { jsx: true } },
@@ -273,6 +299,59 @@ function customizeFramework(frameworks?: Framework[]) {
     },
     [Framework.NEXT_JS]: {
       extends: ['next'],
+      settings: {
+        // This is needed for eslint-plugin-compat: https://www.npmjs.com/package/eslint-plugin-compat#adding-polyfills
+        // The list is based on https://github.com/vercel/next.js/blob/canary/packages/next-polyfill-nomodule/src/index.js
+        polyfills: [
+          'Array.prototype.copyWithin',
+          'Array.prototype.fill',
+          'Array.prototype.find',
+          'Array.prototype.findIndex',
+          'Array.prototype.flagMap',
+          'Array.prototype.flat',
+          'Array.from',
+          'Array.prototype.includes',
+          'Array.of',
+          'Function.name',
+          'Map',
+          'Number.EPSILON',
+          'Number.isFinite',
+          'Number.isInteger',
+          'Number.isNaN',
+          'Number.isSafeInteger',
+          'Number.MAX_SAFE_INTEGER',
+          'Number.MIN_SAFE_INTEGER',
+          'Number.parseFloat',
+          'Number.parseInt',
+          'Object.assign',
+          'Object.entries',
+          'Object.getOwnPropertyDescriptors',
+          'Object.keys',
+          'Object.is',
+          'Object.values',
+          'Reflect',
+          'RegExp',
+          'Set',
+          'Symbol',
+          'String.prototype.codePointAt',
+          'String.prototype.endsWith',
+          'String.prototype.fromCodePoint',
+          'String.prototype.includes',
+          'String.prototype.padStart',
+          'String.prototype.padEnd',
+          'String.prototype.raw',
+          'String.prototype.repeat',
+          'String.prototype.startsWith',
+          'String.prototype.trimLeft',
+          'String.prototype.trimRight',
+          'URL',
+          'URLSearchParams',
+          'WeakMap',
+          'WeakSet',
+          'Promise',
+          'fetch',
+        ],
+      },
     },
     [Framework.EMOTION]: {
       plugins: ['@emotion'],
@@ -287,17 +366,24 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.JEST]: {
       overrides: [
         {
-          files: [
-            '**/*.spec.*',
-            '**/jest*',
-            '**/setupTests.*',
-            '**/test-utils.*',
-            '**/*Fixtures.*',
-            '**/__fixtures__/**/*',
-            '**/__mocks__/**/*',
-          ],
+          files: unitTestFiles,
           extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
+          env: { 'jest/globals': true },
+          rules: {
+            'jest/unbound-method': 'error',
+          },
+        },
+        {
+          files: [
+            '**/*.spec.js',
+            '**/jest*.js',
+            '**/setupTests.js',
+            '**/test-utils.js',
+            '**/*Fixtures.js',
+            '**/__fixtures__/**/*.js',
+            '**/__mocks__/**/*.js',
+          ],
           globals: {
             render: true,
             create: true,
@@ -310,17 +396,13 @@ function customizeFramework(frameworks?: Framework[]) {
             renderHook: true,
             axe: true,
           },
-          env: { 'jest/globals': true },
-          rules: {
-            'jest/unbound-method': 'error',
-          },
         },
       ],
     },
     [Framework.TESTING_LIBRARY]: {
       overrides: [
         {
-          files: ['**/*.spec.*', '**/setupTests.*', '**/test-utils.*'],
+          files: unitTestFiles,
           extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
         },
@@ -345,7 +427,7 @@ function customizeFramework(frameworks?: Framework[]) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!frameworks || isEmpty(frameworks)) {
       return config;
     }
@@ -371,7 +453,7 @@ function customizeFramework(frameworks?: Framework[]) {
 }
 
 function addCopyrightNotice(openSource?: boolean) {
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!openSource) {
       return config;
     }
@@ -408,17 +490,17 @@ function addCopyrightNotice(openSource?: boolean) {
   };
 }
 
-function applyOverrides(overrides: EslintConfig) {
-  return (config: EslintConfig): EslintConfig =>
+function applyOverrides(overrides: ESLintConfig) {
+  return (config: ESLintConfig): ESLintConfig =>
     customizeConfig(config, overrides);
 }
 
-export function createConfig(overrides: EslintConfig = {}): EslintConfig {
+export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
     customizeLanguage(options.language),
-    customizeEnv(options.environments),
+    customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),

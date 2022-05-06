@@ -50,6 +50,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "env": Object {
         "cypress/globals": true,
       },
@@ -113,6 +127,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -182,6 +202,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -236,6 +270,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -306,6 +346,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "env": Object {
         "jest/globals": true,
       },
@@ -321,6 +375,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -332,12 +403,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -388,6 +453,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -458,6 +529,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -506,6 +591,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -522,6 +613,55 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfills": Array [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -573,6 +713,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
@@ -633,6 +787,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -705,6 +865,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -757,10 +931,17 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -831,13 +1012,31 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "plugin:testing-library/react",
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -891,6 +1090,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -1038,6 +1243,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1177,6 +1388,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1278,6 +1495,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -1289,12 +1523,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -1345,6 +1573,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1479,6 +1713,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1497,6 +1737,55 @@ Object {
         ],
       },
     },
+    "polyfills": Array [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -1622,6 +1911,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1762,6 +2057,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1769,6 +2070,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -1857,8 +2159,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -1912,6 +2218,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -1992,6 +2304,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2030,6 +2349,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2092,6 +2417,20 @@ Object {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
       },
     },
     Object {
@@ -2158,6 +2497,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2236,6 +2581,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2274,6 +2626,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2338,6 +2696,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -2392,6 +2764,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2470,6 +2848,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2508,6 +2893,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2573,6 +2964,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "env": Object {
         "jest/globals": true,
       },
@@ -2588,6 +2993,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -2599,12 +3021,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -2655,6 +3071,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2734,6 +3156,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -2772,6 +3201,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -2836,6 +3271,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -2884,6 +3333,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -2900,6 +3355,55 @@ Object {
       },
     },
     "lintAllEsApis": true,
+    "polyfills": Array [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -2962,6 +3466,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3000,6 +3511,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3065,6 +3582,20 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "plugin:playwright/playwright-test",
       ],
@@ -3122,6 +3653,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3203,6 +3740,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3241,6 +3785,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3305,6 +3855,20 @@ Object {
         "react/prop-types": "off",
       },
     },
+    Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": Object {
@@ -3357,10 +3921,17 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -3439,6 +4010,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3477,6 +4055,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3542,13 +4126,31 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+      ],
+      "rules": Object {
+        "compat/compat": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "plugin:testing-library/react",
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -3602,6 +4204,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
@@ -3680,6 +4288,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3718,6 +4333,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -3860,6 +4481,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -3940,6 +4567,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -3978,6 +4612,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4110,6 +4750,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4190,6 +4836,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4228,6 +4881,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4322,6 +4981,23 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "plugins": Array [
+        "jest",
+      ],
+      "rules": Object {
+        "jest/unbound-method": "error",
+      },
+    },
+    Object {
+      "files": Array [
+        "**/*.spec.js",
+        "**/jest*.js",
+        "**/setupTests.js",
+        "**/test-utils.js",
+        "**/*Fixtures.js",
+        "**/__fixtures__/**/*.js",
+        "**/__mocks__/**/*.js",
+      ],
       "globals": Object {
         "act": true,
         "actHook": true,
@@ -4333,12 +5009,6 @@ Object {
         "renderToHtml": true,
         "userEvent": true,
         "wait": true,
-      },
-      "plugins": Array [
-        "jest",
-      ],
-      "rules": Object {
-        "jest/unbound-method": "error",
       },
     },
   ],
@@ -4389,6 +5059,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4470,6 +5146,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4508,6 +5191,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4634,6 +5323,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4652,6 +5347,55 @@ Object {
         ],
       },
     },
+    "polyfills": Array [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -4714,6 +5458,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -4752,6 +5503,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -4888,6 +5645,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -4971,6 +5734,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5009,6 +5779,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -5139,6 +5915,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -5146,6 +5928,7 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "settings": Object {
     "import/resolver": Object {
@@ -5223,6 +6006,13 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
           Object {
@@ -5261,6 +6051,12 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
+        "no-void": Array [
+          "error",
+          Object {
+            "allowAsStatement": true,
+          },
+        ],
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "quote-props": "off",
@@ -5345,8 +6141,12 @@ Object {
       ],
       "files": Array [
         "**/*.spec.*",
+        "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
       ],
       "plugins": Array [
         "testing-library",
@@ -5400,6 +6200,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
@@ -5490,6 +6296,12 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
+    "no-void": Array [
+      "error",
+      Object {
+        "allowAsStatement": true,
+      },
+    ],
     "notice/notice": Array [
       "error",
       Object {
