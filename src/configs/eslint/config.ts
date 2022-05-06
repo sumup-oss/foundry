@@ -21,9 +21,9 @@ import { Language, Environment, Framework } from '../../types/shared';
 import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
 
-// NOTE: Using the Linter.Config interface from Eslint causes errors
+// NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
-type EslintConfig = unknown;
+type ESLintConfig = unknown;
 
 export const customizeConfig = mergeWith(customizer);
 
@@ -199,7 +199,7 @@ function customizeLanguage(language?: Language) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!language) {
       return config;
     }
@@ -208,7 +208,7 @@ function customizeLanguage(language?: Language) {
   };
 }
 
-function customizeEnv(environments?: Environment[]) {
+function customizeEnvironments(environments?: Environment[]) {
   const environmentMap = {
     [Environment.BROWSER]: {
       extends: ['plugin:compat/recommended'],
@@ -222,9 +222,9 @@ function customizeEnv(environments?: Environment[]) {
         // We don't know if the user's source code is using EJS or CJS.
         'node/no-unsupported-features/es-syntax': 'off',
         // This rule breaks when used in combination with TypeScript
-        // and is already covered by similar Eslint rules.
+        // and is already covered by similar ESLint rules.
         'node/no-missing-import': 'off',
-        // This rule is already covered by similar Eslint rules.
+        // This rule is already covered by similar ESLint rules.
         'node/no-extraneous-import': 'off',
       },
       overrides: [
@@ -245,7 +245,7 @@ function customizeEnv(environments?: Environment[]) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!environments || isEmpty(environments)) {
       return config;
     }
@@ -345,7 +345,7 @@ function customizeFramework(frameworks?: Framework[]) {
       ],
     },
   };
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!frameworks || isEmpty(frameworks)) {
       return config;
     }
@@ -371,7 +371,7 @@ function customizeFramework(frameworks?: Framework[]) {
 }
 
 function addCopyrightNotice(openSource?: boolean) {
-  return (config: EslintConfig): EslintConfig => {
+  return (config: ESLintConfig): ESLintConfig => {
     if (!openSource) {
       return config;
     }
@@ -408,17 +408,17 @@ function addCopyrightNotice(openSource?: boolean) {
   };
 }
 
-function applyOverrides(overrides: EslintConfig) {
-  return (config: EslintConfig): EslintConfig =>
+function applyOverrides(overrides: ESLintConfig) {
+  return (config: ESLintConfig): ESLintConfig =>
     customizeConfig(config, overrides);
 }
 
-export function createConfig(overrides: EslintConfig = {}): EslintConfig {
+export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
     customizeLanguage(options.language),
-    customizeEnv(options.environments),
+    customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
