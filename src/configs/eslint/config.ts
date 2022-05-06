@@ -170,6 +170,10 @@ function customizeLanguage(language?: Language) {
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/indent': 'off',
             '@typescript-eslint/no-unused-vars': 'error',
+            '@typescript-eslint/no-misused-promises': [
+              'error',
+              { checksVoidReturn: false },
+            ],
             '@typescript-eslint/no-use-before-define': [
               'error',
               { functions: false },

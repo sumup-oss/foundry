@@ -2304,6 +2304,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -2575,6 +2581,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -2836,6 +2848,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -3138,6 +3156,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -3442,6 +3466,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -3710,6 +3740,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -3974,6 +4010,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -4246,6 +4288,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -4519,6 +4567,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -4782,6 +4836,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -5086,6 +5146,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -5392,6 +5458,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -5662,6 +5734,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
@@ -5928,6 +6006,12 @@ Object {
       "rules": Object {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": Array [
+          "error",
+          Object {
+            "checksVoidReturn": false,
+          },
+        ],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-use-before-define": Array [
           "error",
