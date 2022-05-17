@@ -78,7 +78,7 @@
     "prettier": "^2.6.2",
     "read-pkg-up": "^7.0.1",
     "semantic-release": "^19.0.2",
-    "yargs": "^17.4.1"
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
