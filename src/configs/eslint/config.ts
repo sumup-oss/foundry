@@ -138,6 +138,8 @@ const unitTestFiles = [
   '**/__mocks__/**/*',
 ];
 
+const nodeFiles = ['api/**/*', 'pages/api/**/*', 'src/pages/api/**/*'];
+
 function customizeLanguage(language?: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
@@ -236,7 +238,7 @@ function customizeEnvironments(environments?: Environment[]) {
       },
       overrides: [
         {
-          files: unitTestFiles,
+          files: [...unitTestFiles, ...nodeFiles],
           rules: {
             'compat/compat': 'off',
           },

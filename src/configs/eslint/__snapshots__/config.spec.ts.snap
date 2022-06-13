@@ -58,6 +58,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -214,6 +217,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -360,6 +366,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -547,6 +556,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -734,6 +746,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -887,6 +902,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -1036,6 +1054,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -2447,6 +2468,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -2727,6 +2751,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -2997,6 +3024,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3308,6 +3338,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3619,6 +3652,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3896,6 +3932,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -4169,6 +4208,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
