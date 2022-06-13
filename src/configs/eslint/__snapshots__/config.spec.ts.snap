@@ -29,6 +29,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -58,6 +68,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -185,6 +198,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -214,6 +237,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -331,6 +357,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -360,6 +396,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -518,6 +557,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -547,6 +596,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -705,6 +757,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -734,6 +796,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -858,6 +923,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -887,6 +962,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -1007,6 +1085,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -1036,6 +1124,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -1164,6 +1255,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -1319,6 +1420,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -1460,6 +1571,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -1646,6 +1767,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -1838,6 +1969,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -1990,6 +2131,16 @@ Object {
     },
     Object {
       "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
+      "files": Array [
         "**/*.{story,stories}.*",
       ],
       "rules": Object {
@@ -2134,6 +2285,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -2293,6 +2454,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2447,6 +2618,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -2573,6 +2747,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2727,6 +2911,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -2843,6 +3030,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -2997,6 +3194,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3154,6 +3354,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3308,6 +3518,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3465,6 +3678,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3619,6 +3842,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -3742,6 +3968,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -3896,6 +4132,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -4015,6 +4254,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -4169,6 +4418,9 @@ Object {
         "**/*Fixtures.*",
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
       ],
       "rules": Object {
         "compat/compat": "off",
@@ -4296,6 +4548,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -4575,6 +4837,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -4841,6 +5113,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -5151,6 +5433,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -5466,6 +5758,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -5742,6 +6044,16 @@ Object {
       },
     },
     Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
+      },
+    },
+    Object {
       "extends": Array [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -6011,6 +6323,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
     Object {
@@ -6283,6 +6605,16 @@ Object {
       ],
       "rules": Object {
         "notice/notice": "off",
+      },
+    },
+    Object {
+      "files": Array [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": Object {
+        "no-console": "off",
       },
     },
   ],
