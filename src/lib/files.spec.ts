@@ -20,7 +20,7 @@ import { PackageJson } from '../types/shared';
 import { writeFile, addPackageScript, savePackageJson } from './files';
 
 jest.mock('fs', () => ({
-  ...jest.requireActual('fs'),
+  ...jest.requireActual<typeof fs>('fs'),
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   writeFile: jest.fn((file, data, options, callback) => callback()),
   mkdirSync: jest.fn(),
