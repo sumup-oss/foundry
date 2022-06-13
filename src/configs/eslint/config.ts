@@ -45,6 +45,18 @@ function customizer(
   return undefined;
 }
 
+const UNIT_TEST_FILES = [
+  '**/*.spec.*',
+  '**/jest*',
+  '**/setupTests.*',
+  '**/test-utils.*',
+  '**/*Fixtures.*',
+  '**/__fixtures__/**/*',
+  '**/__mocks__/**/*',
+];
+
+const NODE_FILES = ['api/**/*', 'pages/api/**/*', 'src/pages/api/**/*'];
+
 const sharedRules = {
   'curly': ['error', 'all'],
   'no-use-before-define': 'off',
@@ -125,20 +137,14 @@ const base = {
         'notice/notice': 'off',
       },
     },
+    {
+      files: NODE_FILES,
+      rules: {
+        'no-console': 'off',
+      },
+    },
   ],
 };
-
-const unitTestFiles = [
-  '**/*.spec.*',
-  '**/jest*',
-  '**/setupTests.*',
-  '**/test-utils.*',
-  '**/*Fixtures.*',
-  '**/__fixtures__/**/*',
-  '**/__mocks__/**/*',
-];
-
-const nodeFiles = ['api/**/*', 'pages/api/**/*', 'src/pages/api/**/*'];
 
 function customizeLanguage(language?: Language) {
   const languageMap = {
@@ -238,7 +244,7 @@ function customizeEnvironments(environments?: Environment[]) {
       },
       overrides: [
         {
-          files: [...unitTestFiles, ...nodeFiles],
+          files: [...UNIT_TEST_FILES, ...NODE_FILES],
           rules: {
             'compat/compat': 'off',
           },
@@ -372,7 +378,7 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.JEST]: {
       overrides: [
         {
-          files: unitTestFiles,
+          files: UNIT_TEST_FILES,
           extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
           env: { 'jest/globals': true },
@@ -408,7 +414,7 @@ function customizeFramework(frameworks?: Framework[]) {
     [Framework.TESTING_LIBRARY]: {
       overrides: [
         {
-          files: unitTestFiles,
+          files: UNIT_TEST_FILES,
           extends: ['plugin:testing-library/react'],
           plugins: ['testing-library'],
         },
