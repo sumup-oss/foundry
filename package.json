@@ -36,14 +36,14 @@
     "publish": true
   },
   "dependencies": {
-    "@babel/core": "^7.18.2",
+    "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.2",
     "@emotion/eslint-plugin": "^11.7.0",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/github": "^8.0.4",
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "chalk": "^4.0.0",
     "cross-spawn": "^7.0.3",
@@ -75,7 +75,7 @@
     "listr": "^0.14.3",
     "listr-inquirer": "^0.1.0",
     "lodash": "^4.17.11",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.1",
     "read-pkg-up": "^7.0.1",
     "semantic-release": "^19.0.3",
     "yargs": "^17.5.1"
