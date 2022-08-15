@@ -57,7 +57,7 @@
     "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^26.8.0",
+    "eslint-plugin-jest": "^26.8.2",
     "eslint-plugin-json": "^3.0.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-node": "^11.0.0",
