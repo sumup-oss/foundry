@@ -36,7 +36,7 @@
     "publish": true
   },
   "dependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@babel/eslint-parser": "^7.18.9",
     "@emotion/eslint-plugin": "^11.10.0",
     "@semantic-release/commit-analyzer": "^9.0.2",
