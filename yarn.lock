@@ -3020,10 +3020,10 @@ eslint-plugin-notice@^0.9.10:
     lodash "^4.17.15"
     metric-lcs "^0.1.2"
 
-eslint-plugin-playwright@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.11.1.tgz#c3602e041ffe94d3014cff6f31b140f6815b854c"
-  integrity sha512-SFoz9Sh+FCUPaFrM2iEJ0gkQhx8pT8rNcVFZUsRJEhTxRigK1HHs7dQi30h1QOIoPHt3hpdFVslBPGfEY/mogQ==
+eslint-plugin-playwright@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.11.2.tgz#876057d4ab19d00b44bf004e27d5ace2c8bffada"
+  integrity sha512-uRLRLk7uTzc8NE6t4wBU8dijQwHvC66R/h7xwdM779jsJjMUtSmeaB8ayRkkpfwi+UU5BEfwvDANwmE+ccMVDw==
 
 eslint-plugin-prettier@^4.2.1:
   version "4.2.1"
