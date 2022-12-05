@@ -145,7 +145,7 @@ describe('files', () => {
       const actual = () =>
         addPackageScript(packageJson, name, command, shouldOverwrite);
 
-      expect(actual).toThrowError();
+      expect(actual).toThrow();
     });
 
     it('should overwrite the conflicting script', () => {
