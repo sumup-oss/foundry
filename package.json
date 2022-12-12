@@ -90,7 +90,7 @@
     "@types/lodash": "^4.14.190",
     "@types/node": "^16.4.13",
     "@types/prettier": "^2.7.1",
-    "@types/yargs": "^17.0.13",
+    "@types/yargs": "^17.0.17",
     "audit-ci": "^6.3.0",
     "codecov": "^3.1.0",
     "jest": "^28.1.3",
