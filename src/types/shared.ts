@@ -17,7 +17,6 @@ import type { NormalizedPackageJson } from 'read-pkg-up';
 
 export enum Preset {
   LINT = 'lint',
-  RELEASE = 'release',
   CI = 'ci',
 }
 
@@ -26,13 +25,11 @@ export enum Tool {
   PRETTIER = 'prettier',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
-  SEMANTIC_RELEASE = 'semantic-release',
   CI = 'ci',
 }
 
 export enum Prompt {
   OPEN_SOURCE = 'open-source',
-  PUBLISH = 'publish',
 }
 
 export enum Language {

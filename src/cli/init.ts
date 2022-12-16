@@ -68,13 +68,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     ])) as { presets: Preset[] };
 
     const prompts = {
-      [Prompt.PUBLISH]: {
-        type: 'confirm',
-        name: 'publish',
-        message: 'Would you like to publish your package to NPM?',
-        default: DEFAULT_OPTIONS.publish,
-        when: (): boolean => typeof args.publish === 'undefined',
-      },
       [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
         name: 'openSource',
@@ -180,13 +173,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
             enabled: () => options.openSource === true,
             task: (ctx): void => {
               ctx.packageJson.license = 'Apache-2.0';
-            },
-          },
-          {
-            title: 'Add Foundry config',
-            enabled: () => options.presets.includes(Preset.RELEASE),
-            task: (ctx): void => {
-              ctx.packageJson.foundry = { publish: options.publish };
             },
           },
           ...scripts.map(({ name, command }) => ({

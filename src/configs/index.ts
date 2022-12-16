@@ -19,7 +19,6 @@ import * as eslint from './eslint';
 import * as husky from './husky';
 import * as lintStaged from './lint-staged';
 import * as prettier from './prettier';
-import * as semanticRelease from './semantic-release';
 import * as ci from './ci';
 
 export const tools: { [key in Tool]?: ToolOptions } = {
@@ -27,6 +26,5 @@ export const tools: { [key in Tool]?: ToolOptions } = {
   [Tool.HUSKY]: husky,
   [Tool.LINT_STAGED]: lintStaged,
   [Tool.PRETTIER]: prettier,
-  [Tool.SEMANTIC_RELEASE]: semanticRelease,
   [Tool.CI]: ci,
 };

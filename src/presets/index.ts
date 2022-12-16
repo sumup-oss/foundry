@@ -36,17 +36,6 @@ const lint: PresetConfig = {
   prompts: [Prompt.OPEN_SOURCE],
 };
 
-const release: PresetConfig = {
-  name: formatName(
-    'Release',
-    'Automatically generate release notes and (optionally) publish to NPM',
-  ),
-  value: Preset.RELEASE,
-  short: 'Release',
-  tools: [Tool.SEMANTIC_RELEASE],
-  prompts: [Prompt.PUBLISH],
-};
-
 const ci: PresetConfig = {
   name: formatName(
     'Continuous Integration',
@@ -61,5 +50,5 @@ function formatName(name: string, description: string): string {
   return [`${chalk.bold(name)}:`, description].join(' ');
 }
 
-export const presets = { lint, release, ci };
-export const presetChoices = [lint, release, ci];
+export const presets = { lint, ci };
+export const presetChoices = [lint, ci];
