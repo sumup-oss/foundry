@@ -23,7 +23,7 @@
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
     "prerelease": "yarn build",
-    "release": "echo \"TODO\""
+    "release": "changeset publish"
   },
   "engines": {
     "node": "^14.17 || >=16"
@@ -76,6 +76,8 @@
     "yargs": "^17.6.2"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "^2.25.2",
     "@types/cross-spawn": "^6.0.2",
     "@types/dedent": "^0.7.0",
     "@types/inquirer": "^8.2.1",
