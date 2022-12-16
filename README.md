@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint), [🚀 releasing](#-release), and [🤖 continuous integration (CI)](#-continuous-integration-ci), and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint) and [🤖 continuous integration (CI)](#-continuous-integration-ci), and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -16,7 +16,6 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
   - [Configuration](#configuration)
 - [Presets](#presets)
   - [🔍 Lint](#-lint)
-  - [🚀 Release](#-release)
   - [🤖 Continuous Integration (CI)](#-continuous-integration-ci)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
@@ -57,7 +56,7 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 
 ```sh
   -p, --presets     A preset configures a group of tools that solve a common
-                    problem           [array] [choices: "lint", "release", "ci"]
+                    problem           [array] [choices: "lint", "ci"]
   -o, --openSource  Whether the project is open-source                 [boolean]
       --publish     Whether to publish to NPM                          [boolean]
   -c, --configDir   The directory to write configs to    [string] [default: "."]
@@ -123,16 +122,6 @@ The preset includes the following tools:
 - **[Prettier](https://prettier.io)** is our code formatter of choice. It makes all our code look the same after every save.
 - **[lint-staged](https://www.npmjs.com/package/lint-staged)** is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents problematic code from being committed.
 - **[Husky](https://github.com/typicode/husky)** makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
-
-### 🚀 Release
-
-Automatically generate release notes and (optionally) publish to NPM. The preset adds the following script to your `package.json`:
-
-- `release`: release and publish a new version
-
-The preset includes the following tools:
-
-- **[semantic-release](https://www.npmjs.com/package/semantic-release)** automates the whole package release workflow including determining the next version number, generating the release notes, and publishing the package.
 
 ### 🤖 Continuous Integration (CI)
 
