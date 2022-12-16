@@ -17,7 +17,6 @@ import type { NormalizedPackageJson } from 'read-pkg-up';
 
 export enum Preset {
   LINT = 'lint',
-  CI = 'ci',
 }
 
 export enum Tool {
@@ -25,7 +24,6 @@ export enum Tool {
   PRETTIER = 'prettier',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
-  CI = 'ci',
 }
 
 export enum Prompt {

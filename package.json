@@ -63,7 +63,6 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.9.1",
-    "handlebars": "^4.7.3",
     "husky": "^4.0.0",
     "inquirer": "^8.2.4",
     "is-ci": "^3.0.0",

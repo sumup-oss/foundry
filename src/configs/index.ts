@@ -19,12 +19,10 @@ import * as eslint from './eslint';
 import * as husky from './husky';
 import * as lintStaged from './lint-staged';
 import * as prettier from './prettier';
-import * as ci from './ci';
 
 export const tools: { [key in Tool]?: ToolOptions } = {
   [Tool.ESLINT]: eslint,
   [Tool.HUSKY]: husky,
   [Tool.LINT_STAGED]: lintStaged,
   [Tool.PRETTIER]: prettier,
-  [Tool.CI]: ci,
 };
