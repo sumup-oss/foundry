@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint) and [🤖 continuous integration (CI)](#-continuous-integration-ci), and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint) and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -16,7 +16,6 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
   - [Configuration](#configuration)
 - [Presets](#presets)
   - [🔍 Lint](#-lint)
-  - [🤖 Continuous Integration (CI)](#-continuous-integration-ci)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
@@ -122,12 +121,6 @@ The preset includes the following tools:
 - **[Prettier](https://prettier.io)** is our code formatter of choice. It makes all our code look the same after every save.
 - **[lint-staged](https://www.npmjs.com/package/lint-staged)** is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents problematic code from being committed.
 - **[Husky](https://github.com/typicode/husky)** makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
-
-### 🤖 Continuous Integration (CI)
-
-Validate the code on every push using the [🔍 linting](#-lint) preset (if configured). The supported CI providers are:
-
-- **[GitHub Actions](https://github.com/features/actions)** builds, tests, and publishes your code right from GitHub.
 
 ## Running a tool
 

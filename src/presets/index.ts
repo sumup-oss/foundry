@@ -36,19 +36,9 @@ const lint: PresetConfig = {
   prompts: [Prompt.OPEN_SOURCE],
 };
 
-const ci: PresetConfig = {
-  name: formatName(
-    'Continuous Integration',
-    'Validate the code on every push using the configured presets',
-  ),
-  value: Preset.CI,
-  short: 'CI',
-  tools: [Tool.CI],
-};
-
 function formatName(name: string, description: string): string {
   return [`${chalk.bold(name)}:`, description].join(' ');
 }
 
-export const presets = { lint, ci };
-export const presetChoices = [lint, ci];
+export const presets = { lint };
+export const presetChoices = [lint];
