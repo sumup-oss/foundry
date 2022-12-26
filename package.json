@@ -91,7 +91,7 @@
     "@types/node": "^16.4.13",
     "@types/prettier": "^2.7.1",
     "@types/yargs": "^17.0.17",
-    "audit-ci": "^6.3.0",
+    "audit-ci": "^6.4.1",
     "codecov": "^3.1.0",
     "jest": "^28.1.3",
     "jest-github-reporter": "^1.0.2",
