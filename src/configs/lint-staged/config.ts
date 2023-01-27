@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-import { getOptions } from '../../lib/options';
-import { Language } from '../../types/shared';
-
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;
 
@@ -23,22 +20,11 @@ interface LintStagedConfig {
   [key: string]: LinterCommand | LinterFn;
 }
 
-export const javascript: LintStagedConfig = {
-  '*.(js|jsx|json)': ['foundry run eslint --fix'],
-};
-
-export const typescript: LintStagedConfig = {
-  '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
+export const baseConfig: LintStagedConfig = {
+  '*.(ts|tsx|js|jsx|json)': ['foundry run eslint --fix'],
   '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
 };
 
-const LANGUAGES = {
-  [Language.JAVASCRIPT]: javascript,
-  [Language.TYPESCRIPT]: typescript,
-};
-
 export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
-  const options = getOptions();
-  const baseConfig = LANGUAGES[options.language];
   return { ...baseConfig, ...overrides };
 }

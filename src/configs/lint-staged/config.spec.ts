@@ -13,35 +13,19 @@
  * limitations under the License.
  */
 
-import { Language } from '../../types/shared';
-import { getAllChoiceCombinations } from '../../lib/choices';
-import { getOptions as getOptionsMock } from '../../lib/options';
-
 import { config } from './config';
 
-jest.mock('../../lib/options', () => ({
-  getOptions: jest.fn(() => ({})),
-}));
-
-const getOptions = getOptionsMock as jest.Mock;
-
 describe('lint-staged', () => {
-  describe('with options', () => {
-    const matrix = getAllChoiceCombinations({ language: Language });
-
-    it.each(matrix)('should return a config for %o', (options) => {
-      getOptions.mockReturnValue(options);
-      const actual = config();
-      expect(actual).toMatchSnapshot();
-    });
-  });
-
   it('should override the default config', () => {
     const overrides = {
-      '*.(js|jsx|json)': ['next lint'],
+      '*.(ts|tsx|js|jsx|json)': ['next lint'],
       '*.jsx?': ['custom command'],
     };
     const actual = config(overrides);
-    expect(actual).toMatchSnapshot();
+    expect(actual).toEqual({
+      '*.(ts|tsx|js|jsx|json)': ['next lint'],
+      '*.(ts|tsx)': expect.any(Function),
+      '*.jsx?': ['custom command'],
+    });
   });
 });
