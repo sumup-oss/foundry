@@ -13,25 +13,9 @@
  * limitations under the License.
  */
 
-import { Preset } from '../types/shared';
-
-import { validatePresets, validatePath } from './init';
+import { validatePath } from './init';
 
 describe('init command', () => {
-  describe('validatePresets', () => {
-    it('should return an error message when no presets were selected', () => {
-      const presets: Preset[] = [];
-      const actual = validatePresets(presets);
-      expect(typeof actual).toBe('string');
-    });
-
-    it('should return true otherwise', () => {
-      const presets = [Preset.LINT];
-      const actual = validatePresets(presets);
-      expect(actual).toBeTruthy();
-    });
-  });
-
   describe('validatePath', () => {
     it('should return false if no path was passed', () => {
       const actual = validatePath();

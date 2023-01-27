@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 
-import { InitOptions, Preset } from '../types/shared';
+import { InitOptions } from '../types/shared';
 
 export const DEFAULT_OPTIONS: InitOptions = {
-  presets: [Preset.LINT],
   configDir: '.',
   openSource: false,
-  publish: false,
   overwrite: false,
 };

@@ -44,7 +44,6 @@ export function getOptions(): Required<Options> {
     environments: pick(config.environments, detectEnvironments),
     frameworks: pick(config.frameworks, detectFrameworks),
     openSource: pick(config.openSource, detectOpenSource),
-    publish: Boolean(config.publish),
   };
 }
 

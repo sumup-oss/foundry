@@ -16,19 +16,15 @@
 import { existsSync } from 'fs';
 import { resolve } from 'path';
 
-import inquirer, { Question } from 'inquirer';
+import inquirer from 'inquirer';
 import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
-import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
 import isCI from 'is-ci';
 import readPkgUp from 'read-pkg-up';
 
 import {
   InitOptions,
-  Preset,
-  Prompt,
-  Tool,
   ToolOptions,
   File,
   Script,
@@ -36,16 +32,13 @@ import {
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
-import { presets, presetChoices } from '../presets';
 import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
 
 export interface InitParams {
   configDir: string;
-  presets?: Preset[];
   openSource?: boolean;
-  publish?: boolean;
   overwrite?: boolean;
   $0?: string;
   _?: string[];
@@ -55,35 +48,19 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   let options: InitOptions;
 
   if (!isCI) {
-    const initialAnswers = (await inquirer.prompt([
+    const prompts = [
       {
-        type: 'checkbox',
-        name: 'presets',
-        message: 'Which presets do you want to use?',
-        choices: presetChoices,
-        default: args.presets,
-        validate: validatePresets,
-        when: (): boolean => validatePresets(args.presets as Preset[]) !== true,
-      },
-    ])) as { presets: Preset[] };
-
-    const prompts = {
-      [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
         name: 'openSource',
         message: 'Do you intend to open-source this project?',
         default: DEFAULT_OPTIONS.openSource,
         when: (): boolean => typeof args.openSource === 'undefined',
       },
-    };
+    ];
 
-    const additionalPrompts = getPromptsForPresets(
-      initialAnswers.presets,
-      prompts,
-    );
-    const additionalAnswers = await inquirer.prompt(additionalPrompts);
+    const answers = (await inquirer.prompt(prompts)) as { openSource: boolean };
 
-    options = { ...args, ...initialAnswers, ...additionalAnswers };
+    options = { ...args, ...answers };
   } else {
     logger.empty();
     logger.info('Detected CI environment, falling back to default options.');
@@ -91,7 +68,8 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     options = { ...DEFAULT_OPTIONS, ...args };
   }
 
-  const selectedTools = getToolsForPresets(options.presets);
+  const selectedTools = Object.values(tools);
+
   const files = getFilesForTools(options, selectedTools);
   const scripts = getScriptsForTools(options, selectedTools);
 
@@ -247,27 +225,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     });
 }
 
-function getPromptsForPresets(
-  selectedPresets: Preset[],
-  prompts: { [key in Prompt]: Question },
-): Question[] {
-  return flow(
-    map((preset: Preset) => presets[preset].prompts || []),
-    flatten,
-    uniq,
-    map((prompt: Prompt) => prompts[prompt]),
-  )(selectedPresets);
-}
-
-function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
-  return flow(
-    map((preset: Preset): Tool[] => presets[preset].tools),
-    flatten,
-    uniq,
-    map((tool: Tool) => tools[tool]),
-  )(selectedPresets) as ToolOptions[];
-}
-
 function getFilesForTools(
   options: InitOptions,
   selectedTools: ToolOptions[],
@@ -292,14 +249,6 @@ function getScriptsForTools(
     }
     return allScripts;
   }, []);
-}
-
-export function validatePresets(selectedPresets: Preset[]): string | boolean {
-  if (isEmpty(selectedPresets)) {
-    return 'You must choose at least one preset.';
-  }
-
-  return true;
 }
 
 export function validatePath(path?: string): string | boolean {

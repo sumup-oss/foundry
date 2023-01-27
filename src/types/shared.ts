@@ -15,19 +15,11 @@
 
 import type { NormalizedPackageJson } from 'read-pkg-up';
 
-export enum Preset {
-  LINT = 'lint',
-}
-
 export enum Tool {
   ESLINT = 'eslint',
   PRETTIER = 'prettier',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
-}
-
-export enum Prompt {
-  OPEN_SOURCE = 'open-source',
 }
 
 export enum Language {
@@ -55,11 +47,9 @@ export interface Options {
   environments?: Environment[];
   frameworks?: Framework[];
   openSource?: boolean;
-  publish?: boolean;
 }
 
 export interface InitOptions extends Options {
-  presets: Preset[];
   configDir: string;
   overwrite?: boolean;
 }
