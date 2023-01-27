@@ -15,9 +15,7 @@
 
 import fs from 'fs';
 
-import { PackageJson } from '../types/shared';
-
-import { writeFile, addPackageScript, savePackageJson } from './files';
+import { writeFile } from './files';
 
 jest.mock('fs', () => ({
   ...jest.requireActual<typeof fs>('fs'),
@@ -31,12 +29,6 @@ const content = 'module.exports = "Hello world"';
 const formattedContent = `module.exports = 'Hello world';
 `;
 
-const basePackageJson = {
-  name: 'name',
-  readme: 'README.md',
-  version: '0.0.0',
-  _id: 'id',
-};
 describe('files', () => {
   describe('writeFile', () => {
     it('should create the target folder if it does not exist', async () => {
@@ -92,91 +84,6 @@ describe('files', () => {
         expect.any(Object),
         expect.any(Function),
       );
-    });
-  });
-
-  describe('addPackageScript', () => {
-    it('should add a script to the package.json file', () => {
-      const packageJson = { scripts: {} } as PackageJson;
-      const name = 'lint';
-      const command = 'foundry run eslint src';
-      const shouldOverwrite = false;
-
-      const actual = addPackageScript(
-        packageJson,
-        name,
-        command,
-        shouldOverwrite,
-      );
-
-      const expected = {
-        scripts: { lint: 'foundry run eslint src' },
-      };
-      expect(actual).toEqual(expected);
-    });
-
-    it('should initialize the scripts if they do not exist yet', () => {
-      const packageJson = {} as PackageJson;
-      const name = 'lint';
-      const command = 'foundry run eslint src';
-      const shouldOverwrite = false;
-
-      const actual = addPackageScript(
-        packageJson,
-        name,
-        command,
-        shouldOverwrite,
-      );
-
-      const expected = {
-        scripts: { lint: 'foundry run eslint src' },
-      };
-      expect(actual).toEqual(expected);
-    });
-
-    it('should throw an error if a conflicting script exists', () => {
-      const packageJson = {
-        scripts: { lint: 'eslint .' },
-      } as unknown as PackageJson;
-      const name = 'lint';
-      const command = 'foundry run eslint src';
-      const shouldOverwrite = false;
-
-      const actual = () =>
-        addPackageScript(packageJson, name, command, shouldOverwrite);
-
-      expect(actual).toThrow();
-    });
-
-    it('should overwrite the conflicting script', () => {
-      const packageJson = {
-        scripts: { lint: 'eslint .' },
-      } as unknown as PackageJson;
-      const name = 'lint';
-      const command = 'foundry run eslint src';
-      const shouldOverwrite = true;
-
-      const actual = addPackageScript(
-        packageJson,
-        name,
-        command,
-        shouldOverwrite,
-      );
-
-      const expected = {
-        scripts: { lint: 'foundry run eslint src' },
-      };
-      expect(actual).toEqual(expected);
-    });
-  });
-
-  describe('savePackageJson', () => {
-    it('should save the package.json file to disk', async () => {
-      const path = 'package.json';
-
-      await savePackageJson(path, basePackageJson);
-
-      expect(fs.writeFile).toHaveBeenCalled();
     });
   });
 });

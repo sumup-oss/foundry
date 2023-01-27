@@ -31,7 +31,8 @@ import {
   PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
-import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
+import { writeFile } from '../lib/files';
+import { addPackageScript, writePackageJson } from '../lib/package-json';
 import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
@@ -202,7 +203,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Save package.json',
             task: (ctx): Promise<void> =>
-              savePackageJson(ctx.packagePath, ctx.packageJson),
+              writePackageJson(ctx.packagePath, ctx.packageJson),
           },
         ]);
       },

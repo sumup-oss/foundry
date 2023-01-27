@@ -17,14 +17,11 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
-import { omit } from 'lodash/fp';
 import { format, Options as PrettierConfig } from 'prettier';
-import readPkgUp from 'read-pkg-up';
 
-import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
 
-const writeFileAsync = promisify(fs.writeFile);
+export const writeFileAsync = promisify(fs.writeFile);
 
 export function formatContent(fileName: string, content: string): string {
   const configMap: { [key: string]: PrettierConfig } = {
@@ -58,45 +55,4 @@ export function writeFile(
   const flag = shouldOverwrite ? 'w' : 'wx';
 
   return writeFileAsync(filePath, fileContent, { flag });
-}
-
-export function addPackageScript(
-  packageJson: PackageJson,
-  name: string,
-  command: string,
-  shouldOverwrite = false,
-): PackageJson {
-  if (!packageJson.scripts) {
-    // eslint-disable-next-line no-param-reassign
-    packageJson.scripts = { [name]: command };
-    return packageJson;
-  }
-
-  const hasConflict = Boolean(packageJson.scripts[name]);
-  if (hasConflict && !shouldOverwrite) {
-    throw new Error(`A script with the name "${name}" already exists.`);
-  }
-  // eslint-disable-next-line no-param-reassign
-  packageJson.scripts[name] = command;
-  return packageJson;
-}
-
-export function readPackageJson(): PackageJson {
-  const pkg = readPkgUp.sync();
-
-  if (!pkg) {
-    throw new Error('Unable to find a "package.json" file');
-  }
-
-  return pkg.packageJson;
-}
-
-export async function savePackageJson(
-  packagePath: string,
-  packageJson: PackageJson,
-): Promise<void> {
-  // This property is added by `read-pkg-up`
-  const sanitizedPackageJson = omit('_id', packageJson);
-  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
-  return writeFileAsync(packagePath, content, { flag: 'w' });
 }

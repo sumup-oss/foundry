@@ -21,7 +21,7 @@ import {
   PackageJson,
 } from '../types/shared';
 
-import { readPackageJson } from './files';
+import { readPackageJson } from './package-json';
 
 // These lists are not exhaustive and should be expanded if necessary.
 export const NODE_LIBRARIES = [
