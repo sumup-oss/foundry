@@ -88,7 +88,7 @@
     "@types/jest": "^28.1.7",
     "@types/listr": "^0.14.2",
     "@types/lodash": "^4.14.191",
-    "@types/node": "^16.4.13",
+    "@types/node": "^16.18.12",
     "@types/prettier": "^2.7.2",
     "@types/yargs": "^17.0.18",
     "audit-ci": "^6.6.0",
