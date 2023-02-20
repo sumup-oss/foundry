@@ -78,7 +78,7 @@
     "prettier": "^2.8.4",
     "read-pkg-up": "^7.0.1",
     "semantic-release": "^19.0.5",
-    "yargs": "^17.6.2"
+    "yargs": "^17.7.0"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
@@ -90,7 +90,7 @@
     "@types/lodash": "^4.14.191",
     "@types/node": "^16.18.12",
     "@types/prettier": "^2.7.2",
-    "@types/yargs": "^17.0.18",
+    "@types/yargs": "^17.0.22",
     "audit-ci": "^6.6.0",
     "codecov": "^3.1.0",
     "jest": "^28.1.3",
