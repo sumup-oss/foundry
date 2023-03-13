@@ -4719,13 +4719,14 @@ jest-get-type@^28.0.2:
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-28.0.2.tgz#34622e628e4fdcd793d46db8a242227901fcf203"
   integrity sha512-ioj2w9/DxSYHfOm5lJKCdcAmPJzQXmbM/Url3rhlghrPvT3tt+7a/+oXc9azkKmLvoiXjtV83bEWqi+vs5nlPA==
 
-jest-github-reporter@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/jest-github-reporter/-/jest-github-reporter-1.0.2.tgz#fa03d03cc04de1bcbe6e6e676dbaf965d55418a5"
-  integrity sha512-KQsamHTmXfiRC/7svab8istErS+xiSTfRNg7IGgmD0hMCEGVem1mUABUZrHWh498yOc9ZMy3busyRE1qoAgOqg==
+jest-github-reporter@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/jest-github-reporter/-/jest-github-reporter-1.1.1.tgz#352c5e6bfbd74dec9fc68cce6ac5657f0b28dd43"
+  integrity sha512-+Gvsu9TCQkvVZud29hqoOti8Uc1IDO+5pZzp7Hi8YkdwQGLsa0KuEvt7SdDwDDFmz9pPrv//97FEkcTy/3Fxbg==
   dependencies:
     "@octokit/rest" "^16.28.7"
     create-check "^0.6.40"
+    execa "^1.0.0"
     strip-ansi "^6.0.0"
 
 jest-haste-map@^28.1.3:

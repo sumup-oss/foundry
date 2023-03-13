@@ -94,7 +94,7 @@
     "audit-ci": "^6.6.1",
     "codecov": "^3.1.0",
     "jest": "^28.1.3",
-    "jest-github-reporter": "^1.0.2",
+    "jest-github-reporter": "^1.1.1",
     "license-checker": "^25.0.1",
     "rimraf": "^4.1.2",
     "ts-jest": "^28.0.8",
