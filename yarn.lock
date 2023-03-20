@@ -3026,13 +3026,14 @@ eslint-config-prettier@^8.7.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.7.0.tgz#f1cc58a8afebc50980bd53475451df146c13182d"
   integrity sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==
 
-eslint-formatter-github@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/eslint-formatter-github/-/eslint-formatter-github-1.0.11.tgz#383e2a6c61bb5dc336a8e049329af46b2d11ae17"
-  integrity sha512-xRuHyazNeWugWqTrgpeXtlduha0vBdARKy8oWh85c8K2W8gWaqtI0D79l8w7mC/UP0fFPrrBopfvntc52ZW5ng==
+eslint-formatter-github@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/eslint-formatter-github/-/eslint-formatter-github-1.1.3.tgz#f6c1562666b3451ab827a67222babcc334e615a6"
+  integrity sha512-r5aH/JNuN+HD5XlRyY1yc4p0nKSet/kZp5l7nizmjUwEfttqaY8mWUFrmramrEY2IY2XfEZw0gEKO5kyVsTWJg==
   dependencies:
     create-check "^0.6.0"
     eslint-formatter-pretty "^3.0.0"
+    execa "^1.0.0"
 
 eslint-formatter-pretty@^3.0.0:
   version "3.0.1"
