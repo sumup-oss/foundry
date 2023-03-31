@@ -25,16 +25,16 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 
 ### Installation
 
-Foundry needs to be installed as a dev-dependency via the [Yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://yarnpkg.com/en/docs/install). Foundry requires Node `^14.17 || >=16`.
+Foundry needs to be installed as a dev-dependency via the [npm](https://www.npmjs.com) or [Yarn](https://classic.yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://classic.yarnpkg.com/en/docs/install). Foundry requires Node `^14.17 || >=16`.
 
 Depending on your preference, run one of the following.
 
 ```sh
-# With Yarn
-$ yarn add --dev @sumup/foundry
-
 # With npm
 $ npm install --save-dev @sumup/foundry
+
+# With Yarn v1
+$ yarn add --dev @sumup/foundry
 ```
 
 ### Initialization
@@ -42,11 +42,11 @@ $ npm install --save-dev @sumup/foundry
 Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to initialize a configuration file for each tool you would like to use. This is done with the `init` command.
 
 ```sh
-# With Yarn
-$ yarn run foundry init
-
 # With npm
 $ npx foundry init
+
+# With Yarn v1
+$ yarn run foundry init
 ```
 
 Foundry will launch an interactive prompt to ask you questions about your project, such as whether you are planning to open source it. Once you have answered all questions, Foundry will write the config files (don't worry, it asks before overwriting existing files) and will add scripts to your `package.json` file to conveniently run the tools.
@@ -126,11 +126,11 @@ The preset includes the following tools:
 Foundry manages all supported tools for you and exposes them via the `run` command. As an example, to run ESLint through Foundry, execute:
 
 ```sh
-# With Yarn
-$ yarn foundry run eslint src
-
 # With npm
 $ npx foundry run eslint src
+
+# With Yarn v1
+$ yarn foundry run eslint src
 ```
 
 Here, `src` is the folder you want ESLint to check. Note that you can use any of the command-line flags and arguments supported by ESLint and other tools. Foundry forwards them so they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
