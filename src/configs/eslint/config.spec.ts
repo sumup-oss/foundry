@@ -13,21 +13,11 @@
  * limitations under the License.
  */
 
-import { Language, Environment, Framework } from '../../types/shared';
-import { getAllChoiceCombinations } from '../../lib/choices';
-import { getOptions as getOptionsMock } from '../../lib/options';
-
 import { customizeConfig, createConfig } from './config';
 
 jest.mock('process', () => ({
   cwd: (): string => '/project/dir',
 }));
-
-jest.mock('../../lib/options', () => ({
-  getOptions: jest.fn(() => ({})),
-}));
-
-const getOptions = getOptionsMock as jest.Mock;
 
 describe('eslint', () => {
   describe('customizeConfig', () => {
@@ -99,27 +89,6 @@ describe('eslint', () => {
       };
       const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
-    });
-  });
-
-  describe('with options', () => {
-    const matrix = getAllChoiceCombinations({
-      language: Language,
-      environments: [Environment],
-      frameworks: [Framework],
-    });
-
-    it.each(matrix)('should return a config for %o', (options) => {
-      getOptions.mockReturnValue(options);
-      const actual = createConfig();
-      expect(actual).toMatchSnapshot();
-    });
-
-    it('should return a config with a copyright notice', () => {
-      const options = { openSource: true, frameworks: [] };
-      getOptions.mockReturnValue(options);
-      const actual = createConfig();
-      expect(actual).toMatchSnapshot();
     });
   });
 

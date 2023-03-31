@@ -72,3 +72,18 @@ export interface ToolOptions {
 }
 
 export type PackageJson = NormalizedPackageJson;
+
+// NOTE: Using the Linter.Config interface from ESLint causes errors
+//       and I couldn't figure out how to fix them. — @connor_baer
+export type ESLintConfig = Record<string, unknown>;
+
+type Name = string;
+type Version = string;
+export type Dependencies = Record<Name, Version>;
+
+export type PluginConfig = {
+  devDependencies: Dependencies;
+  config: ESLintConfig;
+};
+
+export type GetPluginConfig = (packageJson: PackageJson) => PluginConfig | null;

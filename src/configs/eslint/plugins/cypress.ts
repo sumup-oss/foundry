@@ -1,5 +1,5 @@
 /**
- * Copyright 2020, SumUp Ltd.
+ * Copyright 2023, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,16 +13,25 @@
  * limitations under the License.
  */
 
-declare module 'listr-inquirer' {
-  type Question = {
-    type: 'confirm';
-    name: string;
-    message: string;
-    default: boolean;
-  };
+import { GetPluginConfig } from '../../../types/shared';
+import { hasDependency } from '../../../lib/package-json';
 
-  export default function listrInquirer(
-    questions: Question[],
-    done,
-  ): Observable;
-}
+export const getPluginConfig: GetPluginConfig = (packageJson) => {
+  if (!hasDependency(packageJson, 'cypress')) {
+    return null;
+  }
+
+  return {
+    devDependencies: {
+      'eslint-plugin-cypress': '^2.8.0',
+    },
+    config: {
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          extends: ['plugin:cypress/recommended'],
+        },
+      ],
+    },
+  };
+};

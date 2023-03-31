@@ -20,6 +20,26 @@ import { PackageJson } from '../types/shared';
 
 import { writeFileAsync } from './files';
 
+export function readPackageJson(): PackageJson {
+  const pkg = readPkgUp.sync();
+
+  if (!pkg) {
+    throw new Error('Unable to find a "package.json" file');
+  }
+
+  return pkg.packageJson;
+}
+
+export async function writePackageJson(
+  packagePath: string,
+  packageJson: PackageJson,
+): Promise<void> {
+  // These properties are added by `read-pkg-up`
+  const sanitizedPackageJson = omit(['_id', 'readme'], packageJson);
+  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
+  return writeFileAsync(packagePath, content, { flag: 'w' });
+}
+
 export function addPackageScript(
   packageJson: PackageJson,
   name: string,
@@ -41,22 +61,15 @@ export function addPackageScript(
   return packageJson;
 }
 
-export function readPackageJson(): PackageJson {
-  const pkg = readPkgUp.sync();
+export function getDependencyVersion(
+  packageJson: PackageJson,
+  name: string,
+): string {
+  const { dependencies = {}, devDependencies = {} } = packageJson;
 
-  if (!pkg) {
-    throw new Error('Unable to find a "package.json" file');
-  }
-
-  return pkg.packageJson;
+  return dependencies[name] || devDependencies[name];
 }
 
-export async function writePackageJson(
-  packagePath: string,
-  packageJson: PackageJson,
-): Promise<void> {
-  // These properties are added by `read-pkg-up`
-  const sanitizedPackageJson = omit(['_id', 'readme'], packageJson);
-  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
-  return writeFileAsync(packagePath, content, { flag: 'w' });
+export function hasDependency(packageJson: PackageJson, name: string): boolean {
+  return Boolean(getDependencyVersion(packageJson, name));
 }

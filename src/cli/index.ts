@@ -17,11 +17,12 @@
 
 import yargs from 'yargs';
 
+import * as logger from '../lib/logger';
+
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
 import { DEFAULT_OPTIONS } from './defaults';
 
-// eslint-disable-next-line no-void
 void yargs
   .command(
     'init',
@@ -54,7 +55,7 @@ void yargs
   .showHelpOnFail(true)
   .demandCommand(1, '')
   .help()
-  .version().argv;
+  .version();
 
 type CommandType = 'init' | 'run';
 
@@ -62,8 +63,12 @@ function execute(command: CommandType) {
   const commands = { run, init };
   const commandFn = commands[command];
 
-  return (args: unknown): void => {
-    // eslint-disable-next-line no-console
-    commandFn(args as RunParams & InitParams).catch(console.error);
+  return async (args: unknown): Promise<void> => {
+    try {
+      await commandFn(args as RunParams & InitParams);
+    } catch (error) {
+      logger.error(error as Error);
+      process.exit(1);
+    }
   };
 }

@@ -17,7 +17,11 @@ import fs from 'fs';
 
 import { PackageJson } from '../types/shared';
 
-import { addPackageScript, writePackageJson } from './package-json';
+import {
+  addPackageScript,
+  hasDependency,
+  writePackageJson,
+} from './package-json';
 
 jest.mock('fs', () => ({
   ...jest.requireActual<typeof fs>('fs'),
@@ -116,6 +120,37 @@ describe('Package.json', () => {
       await writePackageJson(path, basePackageJson);
 
       expect(fs.writeFile).toHaveBeenCalled();
+    });
+  });
+
+  describe('hasDependency', () => {
+    it('should return true if a package is listed in the dependencies', () => {
+      const packageJson = {
+        ...basePackageJson,
+        dependencies: { typescript: '^1.0.0' },
+      };
+      const name = 'typescript';
+      const actual = hasDependency(packageJson, name);
+
+      expect(actual).toBe(true);
+    });
+
+    it('should return true if a package is listed in the devDependencies', () => {
+      const packageJson = {
+        ...basePackageJson,
+        devDependencies: { typescript: '^1.0.0' },
+      };
+      const name = 'typescript';
+      const actual = hasDependency(packageJson, name);
+
+      expect(actual).toBe(true);
+    });
+
+    it('should return false otherwise', () => {
+      const name = 'typescript';
+      const actual = hasDependency(basePackageJson, name);
+
+      expect(actual).toBe(false);
     });
   });
 });
