@@ -54,9 +54,4 @@ export const scripts = (): Script[] => [
     command: 'yarn lint --fix',
     description: 'same as `lint`, but also try to fix the issues',
   },
-  {
-    name: 'lint:ci',
-    command: 'yarn lint --format github',
-    description: 'same as `lint`, but also save the report to a file',
-  },
 ];
