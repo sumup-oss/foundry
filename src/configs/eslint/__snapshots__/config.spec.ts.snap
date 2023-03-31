@@ -5,62 +5,62 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -72,64 +72,64 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "cypress/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:cypress/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "cypress",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -140,9 +140,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -150,10 +150,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -162,7 +162,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -174,62 +174,62 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -241,54 +241,54 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "@emotion",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "@emotion/import-from-emotion": "error",
     "@emotion/jsx-import": "off",
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -299,9 +299,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -309,10 +309,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -321,7 +321,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -333,62 +333,62 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -400,18 +400,18 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "jest/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -420,15 +420,15 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "jest/unbound-method": "error",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.js",
         "**/jest*.js",
         "**/setupTests.js",
@@ -437,7 +437,7 @@ Object {
         "**/__fixtures__/**/*.js",
         "**/__mocks__/**/*.js",
       ],
-      "globals": Object {
+      "globals": {
         "act": true,
         "actHook": true,
         "axe": true,
@@ -452,42 +452,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -498,9 +498,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -508,10 +508,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -520,7 +520,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -532,63 +532,63 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Next.js', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
     "next",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -600,48 +600,48 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -652,9 +652,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -662,10 +662,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -674,7 +674,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
@@ -733,62 +733,62 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Playwright', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -800,15 +800,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:playwright/playwright-test",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
@@ -816,42 +816,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -862,9 +862,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -872,10 +872,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -884,7 +884,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -896,11 +896,11 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
@@ -909,52 +909,52 @@ Object {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -966,15 +966,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "jsx": true,
       "modules": true,
@@ -982,36 +982,36 @@ Object {
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1022,9 +1022,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1034,10 +1034,10 @@ Object {
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1046,10 +1046,10 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
-    "react": Object {
+    "react": {
       "version": "detect",
     },
   },
@@ -1061,62 +1061,62 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -1128,15 +1128,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:testing-library/react",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -1145,48 +1145,48 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "testing-library",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1197,9 +1197,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1207,10 +1207,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1219,7 +1219,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -1231,128 +1231,128 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "cypress/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:cypress/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "cypress",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1363,9 +1363,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1376,10 +1376,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1396,68 +1396,68 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -1466,48 +1466,48 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "@emotion",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "@emotion/import-from-emotion": "error",
     "@emotion/jsx-import": "off",
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1518,9 +1518,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1531,10 +1531,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1551,82 +1551,82 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "jest/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -1635,15 +1635,15 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "jest/unbound-method": "error",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.js",
         "**/jest*.js",
         "**/setupTests.js",
@@ -1652,7 +1652,7 @@ Object {
         "**/__fixtures__/**/*.js",
         "**/__mocks__/**/*.js",
       ],
-      "globals": Object {
+      "globals": {
         "act": true,
         "actHook": true,
         "axe": true,
@@ -1667,42 +1667,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1713,9 +1713,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1726,10 +1726,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1746,69 +1746,69 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Next.js', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "next",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -1817,42 +1817,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -1863,9 +1863,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -1876,10 +1876,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -1887,7 +1887,7 @@ Object {
         ],
       },
     },
-    "polyfills": Array [
+    "polyfills": [
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
       "Array.prototype.find",
@@ -1945,79 +1945,79 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Playwright', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:playwright/playwright-test",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
@@ -2025,42 +2025,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -2071,9 +2071,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -2084,10 +2084,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -2104,11 +2104,11 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
@@ -2117,58 +2117,58 @@ Object {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -2177,9 +2177,9 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "jsx": true,
       "modules": true,
@@ -2187,36 +2187,36 @@ Object {
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -2227,9 +2227,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -2242,10 +2242,10 @@ Object {
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -2253,7 +2253,7 @@ Object {
         ],
       },
     },
-    "react": Object {
+    "react": {
       "version": "detect",
     },
   },
@@ -2265,79 +2265,79 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:testing-library/react",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -2346,48 +2346,48 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "testing-library",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -2398,9 +2398,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -2411,10 +2411,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -2431,104 +2431,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -2539,9 +2539,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -2551,14 +2551,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -2566,51 +2566,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -2622,64 +2622,64 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "cypress/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:cypress/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "cypress",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -2690,9 +2690,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -2700,10 +2700,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -2712,7 +2712,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -2724,104 +2724,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -2832,9 +2832,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -2844,14 +2844,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -2859,51 +2859,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -2915,54 +2915,54 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "@emotion",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "@emotion/import-from-emotion": "error",
     "@emotion/jsx-import": "off",
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -2973,9 +2973,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -2983,10 +2983,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -2995,7 +2995,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -3007,104 +3007,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -3115,9 +3115,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -3127,14 +3127,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -3142,51 +3142,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -3198,18 +3198,18 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "jest/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -3218,15 +3218,15 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "jest/unbound-method": "error",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.js",
         "**/jest*.js",
         "**/setupTests.js",
@@ -3235,7 +3235,7 @@ Object {
         "**/__fixtures__/**/*.js",
         "**/__mocks__/**/*.js",
       ],
-      "globals": Object {
+      "globals": {
         "act": true,
         "actHook": true,
         "axe": true,
@@ -3250,42 +3250,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -3296,9 +3296,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -3306,10 +3306,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -3318,7 +3318,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -3330,105 +3330,105 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Next.js', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
     "next",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -3439,9 +3439,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -3451,14 +3451,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -3466,51 +3466,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -3522,48 +3522,48 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -3574,9 +3574,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -3584,10 +3584,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -3596,7 +3596,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
@@ -3655,104 +3655,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Playwright', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -3763,9 +3763,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -3775,14 +3775,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -3790,51 +3790,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -3846,15 +3846,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:playwright/playwright-test",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
@@ -3862,42 +3862,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -3908,9 +3908,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -3918,10 +3918,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -3930,7 +3930,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -3942,11 +3942,11 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
@@ -3955,94 +3955,94 @@ Object {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -4053,9 +4053,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -4065,14 +4065,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -4080,51 +4080,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -4136,15 +4136,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "jsx": true,
       "modules": true,
@@ -4152,36 +4152,36 @@ Object {
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -4192,9 +4192,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -4204,10 +4204,10 @@ Object {
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -4216,10 +4216,10 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
-    "react": Object {
+    "react": {
       "version": "detect",
     },
   },
@@ -4231,104 +4231,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Browser', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "browser": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:compat/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -4339,9 +4339,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -4351,14 +4351,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -4366,51 +4366,51 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -4422,15 +4422,15 @@ Object {
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "compat/compat": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:testing-library/react",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -4439,48 +4439,48 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "testing-library",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -4491,9 +4491,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -4501,10 +4501,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -4513,7 +4513,7 @@ Object {
       },
     },
     "lintAllEsApis": true,
-    "polyfills": Array [
+    "polyfills": [
       "document.body",
     ],
   },
@@ -4525,104 +4525,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Cypress', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -4633,9 +4633,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -4645,14 +4645,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -4660,117 +4660,117 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "cypress/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:cypress/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "cypress",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -4781,9 +4781,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -4794,10 +4794,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -4814,104 +4814,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Emotion', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -4922,9 +4922,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -4934,14 +4934,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -4949,57 +4949,57 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -5008,48 +5008,48 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "@emotion",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "@emotion/import-from-emotion": "error",
     "@emotion/jsx-import": "off",
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -5060,9 +5060,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -5073,10 +5073,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -5093,104 +5093,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Jest', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -5201,9 +5201,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -5213,14 +5213,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -5228,71 +5228,71 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "env": Object {
+    {
+      "env": {
         "jest/globals": true,
       },
-      "extends": Array [
+      "extends": [
         "plugin:jest/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -5301,15 +5301,15 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "jest",
       ],
-      "rules": Object {
+      "rules": {
         "jest/unbound-method": "error",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.js",
         "**/jest*.js",
         "**/setupTests.js",
@@ -5318,7 +5318,7 @@ Object {
         "**/__fixtures__/**/*.js",
         "**/__mocks__/**/*.js",
       ],
-      "globals": Object {
+      "globals": {
         "act": true,
         "actHook": true,
         "axe": true,
@@ -5333,42 +5333,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -5379,9 +5379,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -5392,10 +5392,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -5412,105 +5412,105 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Next.js', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
     "next",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -5521,9 +5521,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -5533,14 +5533,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -5548,57 +5548,57 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -5607,42 +5607,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -5653,9 +5653,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -5666,10 +5666,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -5677,7 +5677,7 @@ Object {
         ],
       },
     },
-    "polyfills": Array [
+    "polyfills": [
       "Array.prototype.copyWithin",
       "Array.prototype.fill",
       "Array.prototype.find",
@@ -5735,104 +5735,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Playwright', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -5843,9 +5843,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -5855,14 +5855,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -5870,68 +5870,68 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:playwright/playwright-test",
       ],
-      "files": Array [
+      "files": [
         "**/*spec.*",
         "e2e/**/*",
         "tests/**/*",
@@ -5939,42 +5939,42 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -5985,9 +5985,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -5998,10 +5998,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -6018,11 +6018,11 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'React', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
@@ -6031,94 +6031,94 @@ Object {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -6129,9 +6129,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -6141,14 +6141,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -6156,57 +6156,57 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
@@ -6215,9 +6215,9 @@ Object {
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "jsx": true,
       "modules": true,
@@ -6225,36 +6225,36 @@ Object {
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -6265,9 +6265,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -6280,10 +6280,10 @@ Object {
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -6291,7 +6291,7 @@ Object {
         ],
       },
     },
-    "react": Object {
+    "react": {
       "version": "detect",
     },
   },
@@ -6303,104 +6303,104 @@ exports[`eslint with options should return a config for {
   environments: [ 'Node', [length]: 1 ],
   frameworks: [ 'Testing Library', [length]: 1 ]
 } 1`] = `
-Object {
-  "env": Object {
+{
+  "env": {
     "node": true,
   },
-  "extends": Array [
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      "files": Array [
+      "files": [
         "**/*.{ts,tsx}",
       ],
       "parser": "@typescript-eslint/parser",
-      "parserOptions": Object {
-        "ecmaFeatures": Object {
+      "parserOptions": {
+        "ecmaFeatures": {
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": Array [
+        "extraFileExtensions": [
           ".json",
         ],
-        "project": Array [
+        "project": [
           "./tsconfig.json",
         ],
         "sourceType": "module",
         "tsconfigRootDir": "/project/dir",
       },
-      "plugins": Array [
+      "plugins": [
         "@typescript-eslint",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-misused-promises": Array [
+        "@typescript-eslint/no-misused-promises": [
           "error",
-          Object {
+          {
             "checksVoidReturn": false,
           },
         ],
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-use-before-define": Array [
+        "@typescript-eslint/no-use-before-define": [
           "error",
-          Object {
+          {
             "functions": false,
           },
         ],
         "comma-dangle": "off",
-        "curly": Array [
+        "curly": [
           "error",
           "all",
         ],
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
-        "import/order": Array [
+        "import/order": [
           "error",
-          Object {
+          {
             "newlines-between": "always",
           },
         ],
         "import/prefer-default-export": "off",
         "indent": "off",
-        "max-len": Array [
+        "max-len": [
           "error",
-          Object {
+          {
             "code": 80,
             "ignoreComments": true,
-            "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
@@ -6411,9 +6411,9 @@ Object {
         "no-confusing-arrow": "off",
         "no-underscore-dangle": "error",
         "no-use-before-define": "off",
-        "no-void": Array [
+        "no-void": [
           "error",
-          Object {
+          {
             "allowAsStatement": true,
           },
         ],
@@ -6423,14 +6423,14 @@ Object {
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.d.ts",
       ],
-      "rules": Object {
-        "import/no-extraneous-dependencies": Array [
+      "rules": {
+        "import/no-extraneous-dependencies": [
           "error",
-          Object {
+          {
             "devDependencies": true,
           },
         ],
@@ -6438,68 +6438,68 @@ Object {
         "spaced-comment": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.{ts,tsx}",
         "**/setupTests.{ts,tsx}",
         "**/test-utils.{ts,tsx}",
       ],
-      "rules": Object {
+      "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.{story,stories}.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/display-name": "off",
         "react/prop-types": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
         "**/test-utils.*",
       ],
-      "rules": Object {
+      "rules": {
         "node/no-extraneous-require": "off",
         "node/no-missing-require": "off",
         "node/no-unpublished-import": "off",
         "node/no-unpublished-require": "off",
       },
     },
-    Object {
-      "extends": Array [
+    {
+      "extends": [
         "plugin:testing-library/react",
       ],
-      "files": Array [
+      "files": [
         "**/*.spec.*",
         "**/jest*",
         "**/setupTests.*",
@@ -6508,48 +6508,48 @@ Object {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
-      "plugins": Array [
+      "plugins": [
         "testing-library",
       ],
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -6560,9 +6560,9 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
@@ -6573,10 +6573,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -6589,73 +6589,73 @@ Object {
 `;
 
 exports[`eslint with options should return a config with a copyright notice 1`] = `
-Object {
-  "extends": Array [
+{
+  "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb-base",
   ],
-  "overrides": Array [
-    Object {
-      "extends": Array [
+  "overrides": [
+    {
+      "extends": [
         "plugin:json/recommended",
       ],
-      "files": Array [
+      "files": [
         "**/*.json",
       ],
-      "rules": Object {
+      "rules": {
         "notice/notice": "off",
       },
     },
-    Object {
-      "files": Array [
+    {
+      "files": [
         "api/**/*",
         "pages/api/**/*",
         "src/pages/api/**/*",
       ],
-      "rules": Object {
+      "rules": {
         "no-console": "off",
       },
     },
   ],
   "parser": "@babel/eslint-parser",
-  "parserOptions": Object {
+  "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": Object {
+    "ecmaFeatures": {
       "impliedStrict": true,
       "modules": true,
     },
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": Array [
+  "plugins": [
     "prettier",
     "notice",
   ],
   "root": true,
-  "rules": Object {
+  "rules": {
     "comma-dangle": "off",
-    "curly": Array [
+    "curly": [
       "error",
       "all",
     ],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
-    "import/order": Array [
+    "import/order": [
       "error",
-      Object {
+      {
         "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": "off",
     "indent": "off",
-    "max-len": Array [
+    "max-len": [
       "error",
-      Object {
+      {
         "code": 80,
         "ignoreComments": true,
-        "ignorePattern": "^(?:import\\\\s|export\\\\s|\\\\s*it(?:\\\\.(?:skip|only))?\\\\()",
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
         "ignoreRegExpLiterals": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
@@ -6666,36 +6666,36 @@ Object {
     "no-confusing-arrow": "off",
     "no-underscore-dangle": "error",
     "no-use-before-define": "off",
-    "no-void": Array [
+    "no-void": [
       "error",
-      Object {
+      {
         "allowAsStatement": true,
       },
     ],
-    "notice/notice": Array [
+    "notice/notice": [
       "error",
-      Object {
+      {
         "onNonMatchingHeader": "prepend",
         "template": "/**
  * Copyright <%= YEAR %>, <%= NAME %>
- * Licensed under the Apache License, Version 2.0 (the \\"License\\");
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an \\"AS IS\\" BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 
 ",
-        "templateVars": Object {
+        "templateVars": {
           "NAME": "SumUp Ltd.",
         },
-        "varRegexps": Object {
+        "varRegexps": {
           "NAME": /SumUp Ltd\\\\\\./,
         },
       },
@@ -6704,10 +6704,10 @@ Object {
     "operator-linebreak": "off",
     "quote-props": "off",
   },
-  "settings": Object {
-    "import/resolver": Object {
-      "node": Object {
-        "extensions": Array [
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
