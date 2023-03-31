@@ -113,7 +113,6 @@ Check code for syntax errors and format it automatically. The preset adds the fo
 
 - `lint`: check files for problematic patterns and report them
 - `lint:fix`: same as `lint`, but also try to fix the issues
-- `lint:ci`: same as `lint`, but also save the report to a file
 
 The preset includes the following tools:
 
