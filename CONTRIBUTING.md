@@ -76,7 +76,7 @@ To publish a pre-release version, check out on the branch for your release chann
 
 ```sh
 git checkout next # or `canary`
-npm run changeset pre enter next # or `canary`
+npx changeset pre enter next # or `canary`
 ```
 
 This will generate a `pre.json` file in the `.changeset` directory.
