@@ -2,17 +2,21 @@
   "name": "@sumup/foundry",
   "version": "6.0.0-next.0",
   "description": "A toolkit for JavaScript + TypeScript applications by SumUp.",
-  "main": "index.js",
   "repository": "https://github.com/sumup-oss/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",
   "license": "Apache-2.0",
-  "bin": "cli/index.js",
+  "bin": "dist/cli/index.js",
+  "exports": {
+    "eslint": "./dist/eslint.js",
+    "husky": "./dist/husky.js",
+    "lint-staged": "./dist/lint-staged.js",
+    "prettier": "./dist/prettier.js"
+  },
   "scripts": {
-    "build": "npm run cleanup && npm run copy && tsc && chmod +x dist/cli/index.js",
-    "dev": "npm run cleanup && npm run copy && tsc --watch",
+    "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js",
+    "dev": "npm run cleanup && tsc --watch",
     "start": "npm run dev",
     "cleanup": "rimraf ./dist && mkdir dist",
-    "copy": "cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
     "prelint": "npm run build",
     "lint": "eslint src --ext .js,.jsx,.json,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
@@ -31,9 +35,6 @@
     "node 14.17",
     "node 16"
   ],
-  "foundry": {
-    "publish": true
-  },
   "dependencies": {
     "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
