@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.0.0-next.3
+
+### Patch Changes
+
+- [#844](https://github.com/sumup-oss/foundry/pull/844) [`bcee0a8`](https://github.com/sumup-oss/foundry/commit/bcee0a8ef98c43af2f1e38574c5c16335814d912) Thanks [@connor-baer](https://github.com/connor-baer)! - Enabled type checking for unit test files to provide required type information to the `jest/unbound-method` rule.
+
 ## 6.0.0-next.2
 
 ### Patch Changes
