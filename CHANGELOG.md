@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.0.0-next.5
+
+### Patch Changes
+
+- [`d2a58ef`](https://github.com/sumup-oss/foundry/commit/d2a58ef41cb710399168ddf4809e6421bc0270f9) Thanks [@connor-baer](https://github.com/connor-baer)! - Downgraded `lint-staged` to restore compatibility with Node 16.x.
+
 ## 6.0.0-next.4
 
 ### Patch Changes
