@@ -375,6 +375,7 @@ function customizeFramework(frameworks?: Framework[]) {
         '@emotion/no-vanilla': 'error',
         '@emotion/pkg-renaming': 'error',
         '@emotion/styled-import': 'error',
+        'react/no-unknown-property': ['error', { ignore: ['css'] }],
       },
     },
     [Framework.JEST]: {
