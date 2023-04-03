@@ -308,6 +308,14 @@ exports[`eslint with options should return a config for {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "css",
+        ],
+      },
+    ],
   },
   "settings": {
     "import/resolver": {
@@ -1545,6 +1553,14 @@ exports[`eslint with options should return a config for {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "css",
+        ],
+      },
+    ],
   },
   "settings": {
     "import/resolver": {
@@ -3012,6 +3028,14 @@ exports[`eslint with options should return a config for {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "css",
+        ],
+      },
+    ],
   },
   "settings": {
     "import/resolver": {
@@ -5117,6 +5141,14 @@ exports[`eslint with options should return a config for {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quote-props": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "css",
+        ],
+      },
+    ],
   },
   "settings": {
     "import/resolver": {
