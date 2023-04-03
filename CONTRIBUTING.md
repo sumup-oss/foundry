@@ -20,7 +20,7 @@ If you feel another member of the community violated our CoC or you are experien
 
 ### Submitting a PR
 
-_Before you get started, make sure you have [Node](https://nodejs.org/en/) v16+ and the [Yarn CLI](https://yarnpkg.com/en/docs/install) installed on your computer._
+_Before you get started, make sure you have [Node](https://nodejs.org/en/) v18+ installed on your computer._
 
 1. Find an existing issue to work on or follow `Submitting an issue` to create one that you're also going to fix. Make sure to notify that you're working on a fix for the issue you picked.
 2. Branch out from latest `main`.
@@ -33,12 +33,12 @@ _Before you get started, make sure you have [Node](https://nodejs.org/en/) v16+ 
 
 For development and local testing we recommend the following.
 
-1. Run `yarn dev`. This will clean the `dist` folder and copy over all relevant files.
-2. Run `yarn` inside the `dist` folder. This will ensure all dependencies are present in the dist folder when linking.
-3. Inside the `dist` folder run `yarn link`. This will make the compiled version of Foundry available for linking in projects you want to test your changes in, for example changes to the ESLint config.
-4. Inside the project you want to test your local changes to Foundry, run `yarn link @sumup/foundry`.
+1. Run `npm run dev`. This will clean the `dist` folder and copy over all relevant files.
+2. Run `npm install` inside the `dist` folder. This will ensure all dependencies are present in the dist folder when linking.
+3. Inside the `dist` folder run `npm link`. This will make the compiled version of Foundry available for linking in projects you want to test your changes in, for example changes to the ESLint config.
+4. Inside the project you want to test your local changes to Foundry, run `npm link @sumup/foundry`.
 
-Refer to the [Yarn docs](https://classic.yarnpkg.com/en/docs/cli/link#search) to learn more about linking local dependencies.
+Refer to the [npm docs](https://docs.npmjs.com/cli/v9/commands/npm-link) to learn more about linking local dependencies.
 
 ## Release process
 
@@ -59,13 +59,13 @@ Refer to the [official documentation](https://github.com/atlassian/changesets/bl
 We have a couple of special branches that are used for stable releases and [pre-releases](#pre-releases).
 
 - **`main`** - The code in the `main` branch is stable and production-tested. When a PR is merged to `main` that contains a new changeset, `changesets` opens a PR and keeps it up to date with the latest changes. When the PR is merged, a new version is automatically published to NPM and the changesets since the last release are added to `CHANGELOG.md` files in GitHub.
-- **`canary`** - This is a branch you can use to publish a prerelease version if you need to deploy the changes somewhere to test them. `canary` is a throw-away branch that can be recreated from `main` at any time. **Hint**: If you only need to test your changes locally, you can use `yarn add ./path-to-foundry` to link the development version.
+- **`canary`** - This is a branch you can use to publish a prerelease version if you need to deploy the changes somewhere to test them. `canary` is a throw-away branch that can be recreated from `main` at any time. **Hint**: If you only need to test your changes locally, you can use `npm install ./path-to-foundry` to link the development version.
 - **`next`** — This branch is used to develop the next major version in parallel. It is the only branch that can contain breaking changes.
 
 To install the most recent version from a release channel in your project, run:
 
 ```sh
-yarn add @sumup/foundry@<release-channel>
+npm install --dev @sumup/foundry@<release-channel>
 ```
 
 #### Pre-releases
@@ -76,7 +76,7 @@ To publish a pre-release version, check out on the branch for your release chann
 
 ```sh
 git checkout next # or `canary`
-yarn changeset pre enter next # or `canary`
+npm run changeset pre enter next # or `canary`
 ```
 
 This will generate a `pre.json` file in the `.changeset` directory.
