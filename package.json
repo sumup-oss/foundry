@@ -5,6 +5,7 @@
   "repository": "https://github.com/sumup-oss/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",
   "license": "Apache-2.0",
+  "files": ["./dist", "./CHANGELOG.md", "./CONTRIBUTING.md"],
   "bin": "dist/cli/index.js",
   "exports": {
     "./eslint": "./dist/eslint.js",
