@@ -19,8 +19,8 @@ describe('husky', () => {
   it('should return a config', () => {
     const actual = config();
     expect(actual).toMatchInlineSnapshot(`
-      Object {
-        "hooks": Object {
+      {
+        "hooks": {
           "pre-commit": "foundry run lint-staged",
         },
       }
@@ -35,8 +35,8 @@ describe('husky', () => {
     };
     const actual = config(overrides);
     expect(actual).toMatchInlineSnapshot(`
-      Object {
-        "hooks": Object {
+      {
+        "hooks": {
           "pre-commit": "custom command",
         },
       }
