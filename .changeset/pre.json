@@ -5,6 +5,7 @@
     "@sumup/foundry": "5.1.0"
   },
   "changesets": [
+    "early-impalas-rhyme",
     "hip-poems-hope",
     "lovely-snakes-remain"
   ]

@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.0.0-next.1
+
+### Major Changes
+
+- [#841](https://github.com/sumup-oss/foundry/pull/841) [`286d98d`](https://github.com/sumup-oss/foundry/commit/286d98d5606b6e45efb75cf2ad41e61a974084d5) Thanks [@connor-baer](https://github.com/connor-baer)! - Changed the [package entry points](https://nodejs.org/api/packages.html#package-entry-points) to use the `exports` instead of the `main` field in the `package.json` file.
+
 ## 6.0.0-next.0
 
 ### Major Changes
