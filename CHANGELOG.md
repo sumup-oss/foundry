@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.0.0-next.4
+
+### Patch Changes
+
+- [#846](https://github.com/sumup-oss/foundry/pull/846) [`5c4d73c`](https://github.com/sumup-oss/foundry/commit/5c4d73cddc5a53532de8003dde6760baa1849882) Thanks [@connor-baer](https://github.com/connor-baer)! - Disabled the `react/no-unknown-property` rule for Emotion.js' `css` prop.
+
 ## 6.0.0-next.3
 
 ### Patch Changes
