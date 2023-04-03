@@ -4,5 +4,8 @@
   "initialVersions": {
     "@sumup/foundry": "5.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "hip-poems-hope",
+    "lovely-snakes-remain"
+  ]
 }
