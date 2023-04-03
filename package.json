@@ -7,10 +7,10 @@
   "license": "Apache-2.0",
   "bin": "dist/cli/index.js",
   "exports": {
-    "eslint": "./dist/eslint.js",
-    "husky": "./dist/husky.js",
-    "lint-staged": "./dist/lint-staged.js",
-    "prettier": "./dist/prettier.js"
+    "./eslint": "./dist/eslint.js",
+    "./husky": "./dist/husky.js",
+    "./lint-staged": "./dist/lint-staged.js",
+    "./prettier": "./dist/prettier.js"
   },
   "scripts": {
     "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js",
