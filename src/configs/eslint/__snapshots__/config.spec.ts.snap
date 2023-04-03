@@ -410,6 +410,7 @@ exports[`eslint with options should return a config for {
       },
       "extends": [
         "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended",
       ],
       "files": [
         "**/*.spec.*",
@@ -420,6 +421,20 @@ exports[`eslint with options should return a config for {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
       "plugins": [
         "jest",
       ],
@@ -1625,6 +1640,7 @@ exports[`eslint with options should return a config for {
       },
       "extends": [
         "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended",
       ],
       "files": [
         "**/*.spec.*",
@@ -1635,6 +1651,20 @@ exports[`eslint with options should return a config for {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
       "plugins": [
         "jest",
       ],
@@ -3208,6 +3238,7 @@ exports[`eslint with options should return a config for {
       },
       "extends": [
         "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended",
       ],
       "files": [
         "**/*.spec.*",
@@ -3218,6 +3249,20 @@ exports[`eslint with options should return a config for {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
       "plugins": [
         "jest",
       ],
@@ -5291,6 +5336,7 @@ exports[`eslint with options should return a config for {
       },
       "extends": [
         "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended",
       ],
       "files": [
         "**/*.spec.*",
@@ -5301,6 +5347,20 @@ exports[`eslint with options should return a config for {
         "**/__fixtures__/**/*",
         "**/__mocks__/**/*",
       ],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
       "plugins": [
         "jest",
       ],
