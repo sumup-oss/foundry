@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.0.0-next.2
+
+### Patch Changes
+
+- [`56b4235`](https://github.com/sumup-oss/foundry/commit/56b42352b8867e5530af6fe3acfd8edd2487402f) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed the `exports` paths.
+
 ## 6.0.0-next.1
 
 ### Major Changes
