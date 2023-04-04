@@ -95,6 +95,7 @@ const sharedOverrides = [
     files: ['**/*.{story,stories}.*'],
     rules: {
       'import/no-extraneous-dependencies': 'off',
+      'import/no-anonymous-default-export': 'off',
       'no-alert': 'off',
     },
   },

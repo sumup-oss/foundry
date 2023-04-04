@@ -42,6 +42,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -217,6 +218,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -390,6 +392,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -611,6 +614,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -817,6 +821,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -989,6 +994,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -1157,6 +1163,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -1333,6 +1340,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -1504,6 +1512,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -1673,6 +1682,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -1890,6 +1900,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -2094,6 +2105,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -2262,6 +2274,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -2426,6 +2439,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -2729,6 +2743,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -3035,6 +3050,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -3339,6 +3355,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -3691,6 +3708,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -4028,6 +4046,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -4331,6 +4350,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -4630,6 +4650,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -4937,6 +4958,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -5239,6 +5261,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -5539,6 +5562,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -5887,6 +5911,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -6222,6 +6247,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -6521,6 +6547,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
@@ -6816,6 +6843,7 @@ exports[`eslint with options should return a config for {
         "**/*.{story,stories}.*",
       ],
       "rules": {
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "no-alert": "off",
       },
