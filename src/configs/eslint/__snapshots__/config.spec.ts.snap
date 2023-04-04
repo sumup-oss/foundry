@@ -116,6 +116,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -275,6 +281,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -497,6 +509,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -651,6 +669,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -861,6 +885,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1021,6 +1051,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1196,6 +1232,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1362,6 +1404,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1517,6 +1565,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1735,6 +1789,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -1885,6 +1945,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -2093,6 +2159,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -2249,6 +2321,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -2420,6 +2498,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -2561,6 +2645,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -2627,6 +2717,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -2712,6 +2803,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -2854,6 +2951,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -2920,6 +3023,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -2995,6 +3099,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -3145,6 +3255,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -3211,6 +3327,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -3341,6 +3458,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -3484,6 +3607,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -3550,6 +3679,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -3619,6 +3749,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -3808,6 +3944,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -3874,6 +4016,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -3953,6 +4096,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -4098,6 +4247,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -4164,6 +4319,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -4237,6 +4393,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -4384,6 +4546,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -4450,6 +4618,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -4536,6 +4705,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -4678,6 +4853,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -4744,6 +4925,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -4826,6 +5008,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -4967,6 +5155,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -5033,6 +5227,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -5105,6 +5300,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -5254,6 +5455,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -5320,6 +5527,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -5447,6 +5655,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -5589,6 +5803,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -5655,6 +5875,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -5721,6 +5942,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -5911,6 +6138,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -5977,6 +6210,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -6053,6 +6287,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -6197,6 +6437,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -6263,6 +6509,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -6333,6 +6580,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -6479,6 +6732,12 @@ exports[`eslint with options should return a config for {
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
         "import/order": [
           "error",
           {
@@ -6545,6 +6804,7 @@ exports[`eslint with options should return a config for {
         "**/test-utils.{ts,tsx}",
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -6628,6 +6888,12 @@ exports[`eslint with options should return a config for {
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {
@@ -6734,6 +7000,12 @@ exports[`eslint with options should return a config with a copyright notice 1`] 
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
     "import/order": [
       "error",
       {

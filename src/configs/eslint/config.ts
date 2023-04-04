@@ -76,6 +76,7 @@ const sharedRules = {
   ],
   'no-underscore-dangle': 'error',
   'import/prefer-default-export': 'off',
+  'import/no-cycle': ['error', { maxDepth: 7 }],
   'import/order': ['error', { 'newlines-between': 'always' }],
   'import/extensions': 'off',
   // The rules below are already covered by prettier.
@@ -216,6 +217,7 @@ function customizeLanguage(language?: Language) {
           ],
           rules: {
             '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-empty-function': 'off',
             '@typescript-eslint/no-var-requires': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/unbound-method': 'off',
