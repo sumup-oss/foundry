@@ -23,7 +23,7 @@ import { getOptions } from '../../lib/options';
 
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
-type ESLintConfig = unknown;
+type ESLintConfig = Record<string, unknown>;
 
 export const customizeConfig = mergeWith(customizer);
 
@@ -157,7 +157,10 @@ const base = {
   ],
 };
 
-function customizeLanguage(language?: Language) {
+function customizeLanguage(
+  language: Language | undefined,
+  overrides: ESLintConfig,
+) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
       overrides: sharedOverrides,
@@ -174,7 +177,7 @@ function customizeLanguage(language?: Language) {
           ],
           plugins: ['@typescript-eslint'],
           parser: '@typescript-eslint/parser',
-          parserOptions: typeScriptParserOptions,
+          parserOptions: overrides.parserOptions || typeScriptParserOptions,
           rules: {
             ...sharedRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
@@ -229,12 +232,12 @@ function customizeLanguage(language?: Language) {
     if (!language) {
       return config;
     }
-    const overrides = languageMap[language];
-    return customizeConfig(config, overrides);
+    const languageOverrides = languageMap[language];
+    return customizeConfig(config, languageOverrides);
   };
 }
 
-function customizeEnvironments(environments?: Environment[]) {
+function customizeEnvironments(environments: Environment[] | undefined) {
   const environmentMap = {
     [Environment.BROWSER]: {
       extends: ['plugin:compat/recommended'],
@@ -294,7 +297,10 @@ function customizeEnvironments(environments?: Environment[]) {
   };
 }
 
-function customizeFramework(frameworks?: Framework[]) {
+function customizeFramework(
+  frameworks: Framework[] | undefined,
+  overrides: ESLintConfig,
+) {
   const frameworkMap = {
     [Framework.REACT]: {
       extends: [
@@ -390,7 +396,7 @@ function customizeFramework(frameworks?: Framework[]) {
           ],
           plugins: ['jest'],
           env: { 'jest/globals': true },
-          parserOptions: typeScriptParserOptions,
+          parserOptions: overrides.parserOptions || typeScriptParserOptions,
           rules: {
             'jest/unbound-method': 'error',
           },
@@ -467,8 +473,8 @@ function customizeFramework(frameworks?: Framework[]) {
     }
 
     return frameworks.reduce((acc, framework: Framework) => {
-      const overrides = frameworkMap[framework];
-      return customizeConfig(acc, overrides);
+      const frameworkOverrides = frameworkMap[framework];
+      return customizeConfig(acc, frameworkOverrides);
     }, config);
   };
 }
@@ -520,9 +526,9 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
-    customizeLanguage(options.language),
+    customizeLanguage(options.language, overrides),
     customizeEnvironments(options.environments),
-    customizeFramework(options.frameworks),
+    customizeFramework(options.frameworks, overrides),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
   )(base);

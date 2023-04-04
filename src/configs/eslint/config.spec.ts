@@ -137,4 +137,44 @@ describe('eslint', () => {
       }),
     );
   });
+
+  it('should customize the parserOptions', () => {
+    const options = { language: 'TypeScript', frameworks: ['Jest'] };
+    getOptions.mockReturnValue(options);
+    const overrides = {
+      parserOptions: {
+        project: ['../tsconfig.json'],
+      },
+    };
+    const actual = createConfig(overrides);
+    expect(actual).toEqual(
+      expect.objectContaining({
+        parserOptions: expect.objectContaining({
+          project: ['../tsconfig.json'],
+        }),
+        overrides: expect.arrayContaining([
+          expect.objectContaining({
+            files: ['**/*.{ts,tsx}'],
+            parserOptions: expect.objectContaining({
+              project: ['../tsconfig.json'],
+            }),
+          }),
+          expect.objectContaining({
+            files: [
+              '**/*.spec.*',
+              '**/jest*',
+              '**/setupTests.*',
+              '**/test-utils.*',
+              '**/*Fixtures.*',
+              '**/__fixtures__/**/*',
+              '**/__mocks__/**/*',
+            ],
+            parserOptions: expect.objectContaining({
+              project: ['../tsconfig.json'],
+            }),
+          }),
+        ]),
+      }),
+    );
+  });
 });
