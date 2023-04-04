@@ -109,17 +109,6 @@ const sharedOverrides = [
   },
 ];
 
-const typeScriptParserOptions = {
-  tsconfigRootDir: process.cwd(),
-  project: ['./tsconfig.json'],
-  extraFileExtensions: ['.json'],
-  sourceType: 'module',
-  ecmaVersion: 6,
-  ecmaFeatures: {
-    modules: true,
-  },
-};
-
 const base = {
   root: true,
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'airbnb-base'],
@@ -176,7 +165,16 @@ function customizeLanguage(language?: Language) {
           ],
           plugins: ['@typescript-eslint'],
           parser: '@typescript-eslint/parser',
-          parserOptions: typeScriptParserOptions,
+          parserOptions: {
+            tsconfigRootDir: process.cwd(),
+            project: ['./tsconfig.json'],
+            extraFileExtensions: ['.json'],
+            sourceType: 'module',
+            ecmaVersion: 6,
+            ecmaFeatures: {
+              modules: true,
+            },
+          },
           rules: {
             ...sharedRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
@@ -385,18 +383,9 @@ function customizeFramework(frameworks?: Framework[]) {
       overrides: [
         {
           files: UNIT_TEST_FILES,
-          extends: [
-            'plugin:jest/recommended',
-            // The `jest/unbound-method` rule requires type information, see
-            // https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-            'plugin:@typescript-eslint/recommended',
-          ],
+          extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
           env: { 'jest/globals': true },
-          parserOptions: typeScriptParserOptions,
-          rules: {
-            'jest/unbound-method': 'error',
-          },
         },
         {
           files: [
