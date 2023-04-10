@@ -43,7 +43,7 @@
     "@semantic-release/github": "^8.0.7",
     "@semantic-release/npm": "^9.0.2",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.54.0",
     "chalk": "^4.0.0",
     "cross-spawn": "^7.0.3",
