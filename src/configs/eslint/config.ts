@@ -76,6 +76,7 @@ const sharedRules = {
   ],
   'no-underscore-dangle': 'error',
   'import/prefer-default-export': 'off',
+  'import/no-cycle': ['error', { maxDepth: 7 }],
   'import/order': ['error', { 'newlines-between': 'always' }],
   'import/extensions': 'off',
   // The rules below are already covered by prettier.
@@ -94,6 +95,7 @@ const sharedOverrides = [
     files: ['**/*.{story,stories}.*'],
     rules: {
       'import/no-extraneous-dependencies': 'off',
+      'import/no-anonymous-default-export': 'off',
       'no-alert': 'off',
     },
   },
@@ -106,17 +108,6 @@ const sharedOverrides = [
     },
   },
 ];
-
-const typeScriptParserOptions = {
-  tsconfigRootDir: process.cwd(),
-  project: ['./tsconfig.json'],
-  extraFileExtensions: ['.json'],
-  sourceType: 'module',
-  ecmaVersion: 6,
-  ecmaFeatures: {
-    modules: true,
-  },
-};
 
 const base = {
   root: true,
@@ -174,7 +165,16 @@ function customizeLanguage(language?: Language) {
           ],
           plugins: ['@typescript-eslint'],
           parser: '@typescript-eslint/parser',
-          parserOptions: typeScriptParserOptions,
+          parserOptions: {
+            tsconfigRootDir: process.cwd(),
+            project: ['./tsconfig.json'],
+            extraFileExtensions: ['.json'],
+            sourceType: 'module',
+            ecmaVersion: 6,
+            ecmaFeatures: {
+              modules: true,
+            },
+          },
           rules: {
             ...sharedRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
@@ -216,6 +216,7 @@ function customizeLanguage(language?: Language) {
           ],
           rules: {
             '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-empty-function': 'off',
             '@typescript-eslint/no-var-requires': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
             '@typescript-eslint/unbound-method': 'off',
@@ -382,41 +383,9 @@ function customizeFramework(frameworks?: Framework[]) {
       overrides: [
         {
           files: UNIT_TEST_FILES,
-          extends: [
-            'plugin:jest/recommended',
-            // The `jest/unbound-method` rule requires type information, see
-            // https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-            'plugin:@typescript-eslint/recommended',
-          ],
+          extends: ['plugin:jest/recommended'],
           plugins: ['jest'],
           env: { 'jest/globals': true },
-          parserOptions: typeScriptParserOptions,
-          rules: {
-            'jest/unbound-method': 'error',
-          },
-        },
-        {
-          files: [
-            '**/*.spec.js',
-            '**/jest*.js',
-            '**/setupTests.js',
-            '**/test-utils.js',
-            '**/*Fixtures.js',
-            '**/__fixtures__/**/*.js',
-            '**/__mocks__/**/*.js',
-          ],
-          globals: {
-            render: true,
-            create: true,
-            renderToHtml: true,
-            fireEvent: true,
-            userEvent: true,
-            wait: true,
-            act: true,
-            actHook: true,
-            renderHook: true,
-            axe: true,
-          },
         },
       ],
     },
