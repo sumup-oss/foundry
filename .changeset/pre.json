@@ -5,13 +5,11 @@
     "@sumup/foundry": "5.1.0"
   },
   "changesets": [
-    "dull-apples-allow",
     "early-impalas-rhyme",
     "eleven-plants-sin",
     "hip-poems-hope",
     "lovely-snakes-remain",
     "mean-frogs-grin",
-    "odd-ways-cheer",
     "old-books-sit",
     "red-shoes-jam",
     "rotten-humans-jog"
