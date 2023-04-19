@@ -59,7 +59,6 @@ export interface Options {
 }
 
 export interface InitOptions extends Options {
-  presets: Preset[];
   configDir: string;
   overwrite?: boolean;
 }

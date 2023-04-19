@@ -41,4 +41,3 @@ function formatName(name: string, description: string): string {
 }
 
 export const presets = { lint };
-export const presetChoices = [lint];

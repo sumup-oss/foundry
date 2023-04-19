@@ -15,12 +15,6 @@
 
 import { isArray } from 'lodash/fp';
 
-export function enumToChoices<Enum = string>(enums: {
-  [key: string]: Enum;
-}): Enum[] {
-  return Object.values(enums);
-}
-
 type Enum = { [key: string]: string };
 type Choices = { [key: string]: Enum | Enum[] };
 type Combination = { [key: string]: string | string[] };

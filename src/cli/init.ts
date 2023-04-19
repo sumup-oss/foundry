@@ -19,7 +19,7 @@ import { resolve } from 'path';
 import inquirer, { Question } from 'inquirer';
 import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
-import { isEmpty, flow, map, flatten, uniq } from 'lodash/fp';
+import { flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
 import isCI from 'is-ci';
 import readPkgUp from 'read-pkg-up';
@@ -36,14 +36,13 @@ import {
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
-import { presets, presetChoices } from '../presets';
+import { presets } from '../presets';
 import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
 
 export interface InitParams {
   configDir: string;
-  presets?: Preset[];
   openSource?: boolean;
   publish?: boolean;
   overwrite?: boolean;
@@ -54,19 +53,9 @@ export interface InitParams {
 export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   let options: InitOptions;
 
-  if (!isCI) {
-    const initialAnswers = (await inquirer.prompt([
-      {
-        type: 'checkbox',
-        name: 'presets',
-        message: 'Which presets do you want to use?',
-        choices: presetChoices,
-        default: args.presets,
-        validate: validatePresets,
-        when: (): boolean => validatePresets(args.presets as Preset[]) !== true,
-      },
-    ])) as { presets: Preset[] };
+  const selectedPresets = [Preset.LINT];
 
+  if (!isCI) {
     const prompts = {
       [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
@@ -77,13 +66,10 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
       },
     };
 
-    const additionalPrompts = getPromptsForPresets(
-      initialAnswers.presets,
-      prompts,
-    );
+    const additionalPrompts = getPromptsForPresets(selectedPresets, prompts);
     const additionalAnswers = await inquirer.prompt(additionalPrompts);
 
-    options = { ...args, ...initialAnswers, ...additionalAnswers };
+    options = { ...args, ...additionalAnswers };
   } else {
     logger.empty();
     logger.info('Detected CI environment, falling back to default options.');
@@ -91,7 +77,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     options = { ...DEFAULT_OPTIONS, ...args };
   }
 
-  const selectedTools = getToolsForPresets(options.presets);
+  const selectedTools = getToolsForPresets(selectedPresets);
   const files = getFilesForTools(options, selectedTools);
   const scripts = getScriptsForTools(options, selectedTools);
 
@@ -292,14 +278,6 @@ function getScriptsForTools(
     }
     return allScripts;
   }, []);
-}
-
-export function validatePresets(selectedPresets: Preset[]): string | boolean {
-  if (isEmpty(selectedPresets)) {
-    return 'You must choose at least one preset.';
-  }
-
-  return true;
 }
 
 export function validatePath(path?: string): string | boolean {
