@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.1.0
+
+### Minor Changes
+
+- [#862](https://github.com/sumup-oss/foundry/pull/862) [`ab39701`](https://github.com/sumup-oss/foundry/commit/ab3970167451217b3ede70826c96f33ef8c7ac1b) Thanks [@connor-baer](https://github.com/connor-baer)! - Remove the `presets` CLI option. The only remaining preset is "lint" which is now selected by default.
+
 ## 6.0.0
 
 ### Major Changes
