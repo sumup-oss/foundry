@@ -17,9 +17,6 @@
 
 import yargs from 'yargs';
 
-import { Preset } from '../types/shared';
-import { enumToChoices } from '../lib/choices';
-
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
 import { DEFAULT_OPTIONS } from './defaults';
@@ -30,12 +27,6 @@ void yargs
     'init',
     "Initialize Foundry's tools in your project",
     {
-      presets: {
-        alias: 'p',
-        desc: 'A preset configures a group of tools that solve a common problem',
-        choices: enumToChoices(Preset),
-        type: 'array',
-      },
       openSource: {
         alias: 'o',
         desc: 'Whether the project is open-source',

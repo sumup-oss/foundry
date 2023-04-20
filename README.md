@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sumup/foundry)](https://www.npmjs.com/package/@sumup/foundry) [![Code coverage](https://img.shields.io/codecov/c/github/sumup-oss/foundry)](https://codecov.io/gh/sumup-oss/foundry) [![License](https://img.shields.io/github/license/sumup-oss/foundry)](https://github.com/sumup-oss/foundry/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has presets for [🔍 linting](#-lint) and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
+A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript applications. Foundry has tools for [🔍 linting](#lint-preset) and currently supports [Next.js](https://nextjs.org), [React](https://reactjs.org), [Emotion](https://emotion.sh/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/) and [Node](https://nodejs.org/en/).
 
 </div>
 
@@ -14,8 +14,7 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
   - [Installation](#installation)
   - [Initialization](#initialization)
   - [Configuration](#configuration)
-- [Presets](#presets)
-  - [🔍 Lint](#-lint)
+- [Lint preset](#lint-preset)
 - [Running a tool](#running-a-tool)
 - [Why?](#why)
 - [Code of conduct (CoC)](#code-of-conduct-coc)
@@ -39,7 +38,7 @@ $ yarn add --dev @sumup/foundry
 
 ### Initialization
 
-Foundry exposes customizable configuration presets for the CLI tools it supports. To make use of these presets, you need to initialize a configuration file for each tool you would like to use. This is done with the `init` command.
+Foundry exposes customizable configurations for the CLI tools it supports. Use the `init` command to initialize a configuration file for the tools you would like to use:
 
 ```sh
 # With npm
@@ -54,8 +53,6 @@ Foundry will launch an interactive prompt to ask you questions about your projec
 Alternatively, you can pass your answers to the `init` command directly as flags. This is useful for environments such as CI where interactive prompts cannot be used. Here is an overview of all available options (you can view this help menu by running `npx foundry init --help`):
 
 ```sh
-  -p, --presets     A preset configures a group of tools that solve a common
-                    problem           [array] [choices: "lint", "ci"]
   -o, --openSource  Whether the project is open-source                 [boolean]
       --publish     Whether to publish to NPM                          [boolean]
   -c, --configDir   The directory to write configs to    [string] [default: "."]
@@ -88,7 +85,7 @@ Foundry analyzes your project's `package.json` file to tailor the configurations
 // package.json
 {
   "foundry": {
-    "publish": true
+    "environments": ["Browser"]
   }
 }
 ```
@@ -101,13 +98,8 @@ The supported options are:
 | environments | array   | 'Browser', 'Node'                                                                 | _autodetected_ |
 | frameworks   | array   | 'React', 'Next.js', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | _autodetected_ |
 | openSource   | boolean | true, false                                                                       | _autodetected_ |
-| publish      | boolean | true, false                                                                       | false          |
 
-## Presets
-
-A preset includes the configurations and scripts that are needed for a certain task.
-
-### 🔍 Lint
+## Lint preset
 
 Check code for syntax errors and format it automatically. The preset adds the following scripts to your `package.json`:
 
