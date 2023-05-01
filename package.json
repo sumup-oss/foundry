@@ -76,7 +76,7 @@
     "lodash": "^4.17.21",
     "prettier": "^2.8.7",
     "read-pkg-up": "^7.0.1",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
