@@ -45,7 +45,7 @@
     "@babel/eslint-parser": "^7.21.8",
     "@emotion/eslint-plugin": "^11.10.0",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
+    "@typescript-eslint/parser": "^5.60.1",
     "chalk": "^4.0.0",
     "cross-spawn": "^7.0.3",
     "dedent": "^0.7.0",
