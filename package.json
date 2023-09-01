@@ -75,7 +75,7 @@
     "listr-inquirer": "^0.1.0",
     "lodash": "^4.17.21",
     "prettier": "^2.8.7",
-    "read-pkg-up": "^7.0.1",
+    "read-pkg-up": "^10.1.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
