@@ -1271,6 +1271,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -1443,6 +1444,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -1613,6 +1615,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -1789,6 +1792,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
     "next",
   ],
   "overrides": [
@@ -1995,6 +1999,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -2161,6 +2166,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -2329,6 +2335,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -4676,6 +4683,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -4979,6 +4987,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -5280,6 +5289,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -5587,6 +5597,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
     "next",
   ],
   "overrides": [
@@ -5924,6 +5935,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
@@ -6221,6 +6233,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -6520,6 +6533,7 @@ exports[`eslint with options should return a config for {
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
+    "plugin:security/recommended",
   ],
   "overrides": [
     {
