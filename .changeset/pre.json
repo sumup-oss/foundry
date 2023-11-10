@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@sumup/foundry": "6.1.0"
+  },
+  "changesets": []
+}
