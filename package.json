@@ -34,11 +34,11 @@
     "release": "changeset publish"
   },
   "engines": {
-    "node": "^14.17 || >=16"
+    "node": "^18.12 || >=20"
   },
   "browserslist": [
-    "node 14.17",
-    "node 16"
+    "node 18.12",
+    "node 20"
   ],
   "dependencies": {
     "@babel/core": "^7.23.5",
