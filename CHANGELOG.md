@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- [#911](https://github.com/sumup-oss/foundry/pull/911) [`9e9d2c2`](https://github.com/sumup-oss/foundry/commit/9e9d2c278ca3a949390090acbfedc78bcbdce5ae) Thanks [@connor-baer](https://github.com/connor-baer)! - Added [`eslint-plugin-storybook`](https://github.com/storybookjs/eslint-plugin-storybook)` for projects that use [Storybook](https://storybook.js.org/). This plugin helps conform to Storybook's best practices.
+- [#911](https://github.com/sumup-oss/foundry/pull/911) [`9e9d2c2`](https://github.com/sumup-oss/foundry/commit/9e9d2c278ca3a949390090acbfedc78bcbdce5ae) Thanks [@connor-baer](https://github.com/connor-baer)! - Added [`eslint-plugin-storybook`](https://github.com/storybookjs/eslint-plugin-storybook) for projects that use [Storybook](https://storybook.js.org/). This plugin helps conform to Storybook's best practices.
 
 - [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `@typescript-eslint/typescript-eslint` to v6. Read the [changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/CHANGELOG.md).
 
