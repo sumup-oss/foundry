@@ -4,5 +4,11 @@
   "initialVersions": {
     "@sumup/foundry": "6.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "empty-eagles-rule",
+    "fuzzy-bees-build",
+    "little-pants-attend",
+    "warm-apples-greet",
+    "wicked-trees-join"
+  ]
 }
