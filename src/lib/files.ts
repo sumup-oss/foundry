@@ -27,7 +27,10 @@ import prettierConfig from '../prettier';
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
 
-export function formatContent(fileName: string, content: string): string {
+export function formatContent(
+  fileName: string,
+  content: string,
+): Promise<string> {
   const configMap: { [key: string]: PrettierConfig } = {
     '.js': prettierConfig({ parser: 'babel' }),
     '.json': { parser: 'json' },
@@ -38,7 +41,7 @@ export function formatContent(fileName: string, content: string): string {
   const formatConfig = configMap[extension];
 
   if (!formatConfig) {
-    return content;
+    return Promise.resolve(content);
   }
 
   return format(content, formatConfig);
@@ -50,7 +53,7 @@ export async function writeFile(
   content: string,
   shouldOverwrite = false,
 ): Promise<void> {
-  const fileContent = formatContent(fileName, content);
+  const fileContent = await formatContent(fileName, content);
   const filePath = path.join(configDir, fileName);
   const directory = path.dirname(filePath);
   if (directory && directory !== '.') {
