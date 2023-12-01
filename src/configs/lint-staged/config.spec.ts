@@ -13,17 +13,19 @@
  * limitations under the License.
  */
 
+import { describe, expect, it, vi, Mock } from 'vitest';
+
 import { Language } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { config } from './config';
 
-jest.mock('../../lib/options', () => ({
-  getOptions: jest.fn(() => ({})),
+vi.mock('../../lib/options', () => ({
+  getOptions: vi.fn(() => ({})),
 }));
 
-const getOptions = getOptionsMock as jest.Mock;
+const getOptions = getOptionsMock as Mock;
 
 describe('lint-staged', () => {
   describe('with options', () => {

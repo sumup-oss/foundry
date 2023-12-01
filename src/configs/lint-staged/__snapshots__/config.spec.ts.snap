@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`lint-staged should override the default config 1`] = `
+exports[`lint-staged > should override the default config 1`] = `
 {
   "*.(js|jsx|json)": [
     "next lint",
@@ -11,7 +11,7 @@ exports[`lint-staged should override the default config 1`] = `
 }
 `;
 
-exports[`lint-staged with options should return a config for { language: 'JavaScript' } 1`] = `
+exports[`lint-staged > with options > should return a config for { language: 'JavaScript' } 1`] = `
 {
   "*.(js|jsx|json)": [
     "foundry run eslint --fix",
@@ -19,7 +19,7 @@ exports[`lint-staged with options should return a config for { language: 'JavaSc
 }
 `;
 
-exports[`lint-staged with options should return a config for { language: 'TypeScript' } 1`] = `
+exports[`lint-staged > with options > should return a config for { language: 'TypeScript' } 1`] = `
 {
   "*.(js|jsx|json|ts|tsx)": [
     "foundry run eslint --fix",

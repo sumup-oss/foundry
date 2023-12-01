@@ -1,10 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Cypress' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -176,11 +172,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Emotion' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -350,11 +342,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Jest' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -530,11 +518,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Next.js', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Next.js' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -738,11 +722,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Playwright', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Playwright' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -908,11 +888,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'React' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -1080,11 +1056,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Storybook', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Storybook' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -1241,11 +1213,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Testing Library' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -1418,11 +1386,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Cypress' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -1591,11 +1555,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Emotion' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -1762,11 +1722,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Jest' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -1939,11 +1895,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Next.js', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Next.js' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -2146,11 +2098,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Playwright', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Playwright' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -2313,11 +2261,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'React' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -2482,11 +2426,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Storybook', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Storybook' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -2640,11 +2580,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'JavaScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Testing Library' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -2814,11 +2750,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Cypress' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -2874,7 +2806,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3121,11 +3053,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Emotion' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -3181,7 +3109,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3426,11 +3354,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Jest' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -3486,7 +3410,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3737,11 +3661,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Next.js', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Next.js' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -3798,7 +3718,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4076,11 +3996,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Playwright', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Playwright' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -4136,7 +4052,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4377,11 +4293,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'React' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -4440,7 +4352,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4680,11 +4592,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Storybook', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Storybook' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -4741,7 +4649,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4972,11 +4880,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Browser', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Testing Library' ] } 1`] = `
 {
   "env": {
     "browser": true,
@@ -5032,7 +4936,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5280,11 +5184,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Cypress', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Cypress' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -5341,7 +5241,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5584,11 +5484,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Emotion', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Emotion' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -5645,7 +5541,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5886,11 +5782,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Jest', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Jest' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -5947,7 +5839,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6194,11 +6086,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Next.js', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Next.js' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -6256,7 +6144,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6532,11 +6420,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Playwright', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Playwright' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -6593,7 +6477,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6830,11 +6714,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'React', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'React' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -6894,7 +6774,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -7130,11 +7010,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Storybook', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Storybook' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -7192,7 +7068,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -7419,11 +7295,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config for {
-  language: 'TypeScript',
-  environments: [ 'Node', [length]: 1 ],
-  frameworks: [ 'Testing Library', [length]: 1 ]
-} 1`] = `
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Testing Library' ] } 1`] = `
 {
   "env": {
     "node": true,
@@ -7480,7 +7352,7 @@ exports[`eslint with options should return a config for {
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/project/dir",
+        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
       },
       "plugins": [
         "@typescript-eslint",
@@ -7724,7 +7596,7 @@ exports[`eslint with options should return a config for {
 }
 `;
 
-exports[`eslint with options should return a config with a copyright notice 1`] = `
+exports[`eslint > with options > should return a config with a copyright notice 1`] = `
 {
   "extends": [
     "eslint:recommended",
