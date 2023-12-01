@@ -4,15 +4,15 @@
 
 ### Major Changes
 
+- [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Raised the minimum Node version to ^18.12 || >=20 (i.e. Node 19 is not supported).
+
+- [#904](https://github.com/sumup-oss/foundry/pull/904) [`d937ac3`](https://github.com/sumup-oss/foundry/commit/d937ac3ed6782a2e86951f46eecda85e41ca2431) Thanks [@hilleer](https://github.com/hilleer)! - Added [`eslint-plugin-security`](https://github.com/eslint-community/eslint-plugin-security) for Node environments. This plugin helps identify potential security hotspots, but finds a lot of false positives which need triage by a human.
+
 - [#911](https://github.com/sumup-oss/foundry/pull/911) [`9e9d2c2`](https://github.com/sumup-oss/foundry/commit/9e9d2c278ca3a949390090acbfedc78bcbdce5ae) Thanks [@connor-baer](https://github.com/connor-baer)! - Added [`eslint-plugin-storybook`](https://github.com/storybookjs/eslint-plugin-storybook) for projects that use [Storybook](https://storybook.js.org/). This plugin helps conform to Storybook's best practices.
 
 - [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `@typescript-eslint/typescript-eslint` to v6. Read the [changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/CHANGELOG.md).
 
 - [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `eslint-plugin-testing-library` to v6. Read the [migration guide](https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/migration-guides/v6.md).
-
-- [#904](https://github.com/sumup-oss/foundry/pull/904) [`d937ac3`](https://github.com/sumup-oss/foundry/commit/d937ac3ed6782a2e86951f46eecda85e41ca2431) Thanks [@connor-baer](https://github.com/connor-baer)! - Added [`eslint-plugin-security`](https://github.com/eslint-community/eslint-plugin-security) for Node environments. This plugin helps identify potential security hotspots, but finds a lot of false positives which need triage by a human.
-
-- [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Raised the minimum Node version to ^18.12 || >=20 (i.e. Node 19 is not supported).
 
 ## 6.1.0
 
