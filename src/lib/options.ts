@@ -126,6 +126,10 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
     frameworks.push(Framework.PLAYWRIGHT);
   }
 
+  if (hasDependency(packageJson, 'storybook')) {
+    frameworks.push(Framework.STORYBOOK);
+  }
+
   return frameworks;
 }
 
