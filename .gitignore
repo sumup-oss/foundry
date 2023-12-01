@@ -5,6 +5,7 @@ dist
 public
 jest-test-results.json
 junit.xml
+coverage
 __coverage__
 __reports__
 .npm
