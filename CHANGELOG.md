@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.2.0
+
+### Minor Changes
+
+- [#916](https://github.com/sumup-oss/foundry/pull/916) [`b3b5cfe`](https://github.com/sumup-oss/foundry/commit/b3b5cfe3355493fb19cf4f74ac7213e56b61c971) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for linting CSS files with [Stylelint](https://stylelint.io/).
+
 ## 6.1.0
 
 ### Minor Changes
