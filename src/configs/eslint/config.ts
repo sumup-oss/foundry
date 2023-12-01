@@ -416,6 +416,9 @@ function customizeFramework(frameworks?: Framework[]) {
         },
       ],
     },
+    [Framework.STORYBOOK]: {
+      extends: ['plugin:storybook/recommended'],
+    },
   };
   return (config: ESLintConfig): ESLintConfig => {
     if (!frameworks || isEmpty(frameworks)) {

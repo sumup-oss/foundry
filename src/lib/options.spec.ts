@@ -162,6 +162,7 @@ describe('options', () => {
       ['@testing-library/react', Framework.TESTING_LIBRARY],
       ['cypress', Framework.CYPRESS],
       ['playwright', Framework.PLAYWRIGHT],
+      ['storybook', Framework.STORYBOOK],
     ])(
       'should, when `%s` is installed, include the `%s` preset',
       (library, preset) => {

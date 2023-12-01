@@ -48,6 +48,7 @@ export enum Framework {
   TESTING_LIBRARY = 'Testing Library',
   CYPRESS = 'Cypress',
   PLAYWRIGHT = 'Playwright',
+  STORYBOOK = 'Storybook',
 }
 
 export interface Options {
