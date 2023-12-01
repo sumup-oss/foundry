@@ -13,21 +13,23 @@
  * limitations under the License.
  */
 
+import { describe, expect, it, vi, Mock } from 'vitest';
+
 import { Language, Environment, Framework } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { customizeConfig, createConfig } from './config';
 
-jest.mock('process', () => ({
+vi.mock('process', () => ({
   cwd: (): string => '/project/dir',
 }));
 
-jest.mock('../../lib/options', () => ({
-  getOptions: jest.fn(() => ({})),
+vi.mock('../../lib/options', () => ({
+  getOptions: vi.fn(() => ({})),
 }));
 
-const getOptions = getOptionsMock as jest.Mock;
+const getOptions = getOptionsMock as Mock;
 
 describe('eslint', () => {
   describe('customizeConfig', () => {

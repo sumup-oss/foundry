@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import { describe, expect, it, vi } from 'vitest';
+
 import { Environment, Framework, Language } from '../types/shared';
 
 import {
@@ -38,7 +40,7 @@ describe('options', () => {
     it('should return the config value when defined', () => {
       const pickFn = pickConfigOrDetect(basePackageJson);
       const option = true;
-      const detectFn = jest.fn();
+      const detectFn = vi.fn();
       const actual = pickFn(option, detectFn);
 
       expect(actual).toBe(true);
@@ -48,7 +50,7 @@ describe('options', () => {
     it('should return the detected value otherwise', () => {
       const pickFn = pickConfigOrDetect(basePackageJson);
       const option = undefined;
-      const detectFn = jest.fn(() => false);
+      const detectFn = vi.fn(() => false);
       const actual = pickFn(option, detectFn);
 
       expect(actual).toBe(false);

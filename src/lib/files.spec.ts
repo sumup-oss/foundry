@@ -13,17 +13,19 @@
  * limitations under the License.
  */
 
-import fs from 'fs';
+import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'fs';
+
+import { describe, expect, it, vi } from 'vitest';
 
 import { PackageJson } from '../types/shared';
 
 import { writeFile, addPackageScript, savePackageJson } from './files';
 
-jest.mock('fs', () => ({
-  ...jest.requireActual<typeof fs>('fs'),
+vi.mock('fs', () => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-  writeFile: jest.fn((file, data, options, callback) => callback()),
-  mkdirSync: jest.fn(),
+  writeFile: vi.fn((_file, _data, _options, callback) => callback()),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  mkdir: vi.fn((_dir, _options, callback) => callback()),
 }));
 
 const content = 'module.exports = "Hello world"';
@@ -37,6 +39,7 @@ const basePackageJson = {
   version: '0.0.0',
   _id: 'id',
 };
+
 describe('files', () => {
   describe('writeFile', () => {
     it('should create the target folder if it does not exist', async () => {
@@ -46,7 +49,11 @@ describe('files', () => {
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
-      expect(fs.mkdirSync).toHaveBeenCalledWith('config', { recursive: true });
+      expect(fsMkdir).toHaveBeenCalledWith(
+        'config',
+        { recursive: true },
+        expect.any(Function),
+      );
     });
 
     it('should write the file to disk', async () => {
@@ -56,7 +63,7 @@ describe('files', () => {
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
-      expect(fs.writeFile).toHaveBeenCalledWith(
+      expect(fsWriteFile).toHaveBeenCalledWith(
         'config/.eslintrc.js',
         expect.any(String),
         { flag: 'wx' },
@@ -71,7 +78,7 @@ describe('files', () => {
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
-      expect(fs.writeFile).toHaveBeenCalledWith(
+      expect(fsWriteFile).toHaveBeenCalledWith(
         '.eslintrc.js',
         expect.any(String),
         { flag: 'w' },
@@ -86,7 +93,7 @@ describe('files', () => {
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
-      expect(fs.writeFile).toHaveBeenCalledWith(
+      expect(fsWriteFile).toHaveBeenCalledWith(
         expect.any(String),
         formattedContent,
         expect.any(Object),
@@ -176,7 +183,7 @@ describe('files', () => {
 
       await savePackageJson(path, basePackageJson);
 
-      expect(fs.writeFile).toHaveBeenCalled();
+      expect(fsWriteFile).toHaveBeenCalled();
     });
   });
 });

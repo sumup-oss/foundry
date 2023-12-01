@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import fs from 'fs';
+import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
@@ -24,7 +24,8 @@ import readPkgUp from 'read-pkg-up';
 import { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
 
-const writeFileAsync = promisify(fs.writeFile);
+const writeFileAsync = promisify(fsWriteFile);
+const mkdirAsync = promisify(fsMkdir);
 
 export function formatContent(fileName: string, content: string): string {
   const configMap: { [key: string]: PrettierConfig } = {
@@ -43,7 +44,7 @@ export function formatContent(fileName: string, content: string): string {
   return format(content, formatConfig);
 }
 
-export function writeFile(
+export async function writeFile(
   configDir: string,
   fileName: string,
   content: string,
@@ -53,7 +54,7 @@ export function writeFile(
   const filePath = path.join(configDir, fileName);
   const directory = path.dirname(filePath);
   if (directory && directory !== '.') {
-    fs.mkdirSync(directory, { recursive: true });
+    await mkdirAsync(directory, { recursive: true });
   }
   const flag = shouldOverwrite ? 'w' : 'wx';
 

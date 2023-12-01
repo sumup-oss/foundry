@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import process from 'process';
+import { cwd } from 'process';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
@@ -166,7 +166,7 @@ function customizeLanguage(language?: Language) {
           plugins: ['@typescript-eslint'],
           parser: '@typescript-eslint/parser',
           parserOptions: {
-            tsconfigRootDir: process.cwd(),
+            tsconfigRootDir: cwd(),
             project: ['./tsconfig.json'],
             extraFileExtensions: ['.json'],
             sourceType: 'module',
