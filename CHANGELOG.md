@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.0.0-next.1
+
+### Major Changes
+
+- [#912](https://github.com/sumup-oss/foundry/pull/912) [`df2477b`](https://github.com/sumup-oss/foundry/commit/df2477b745e71ded9bb6bc4abf7bcfe36a914f62) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to Prettier v3. [Read the release announcement](https://prettier.io/blog/2023/07/05/3.0.0.html).
+
 ## 7.0.0-next.0
 
 ### Major Changes
