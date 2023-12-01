@@ -2806,7 +2806,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3109,7 +3109,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3410,7 +3410,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -3718,7 +3718,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4052,7 +4052,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4352,7 +4352,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4649,7 +4649,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -4936,7 +4936,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5241,7 +5241,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5541,7 +5541,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -5839,7 +5839,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6144,7 +6144,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6477,7 +6477,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -6774,7 +6774,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -7068,7 +7068,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",
@@ -7352,7 +7352,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "./tsconfig.json",
         ],
         "sourceType": "module",
-        "tsconfigRootDir": "/Users/connorbar/Projects/github.com/sumup-oss/foundry",
+        "tsconfigRootDir": "/project/dir",
       },
       "plugins": [
         "@typescript-eslint",

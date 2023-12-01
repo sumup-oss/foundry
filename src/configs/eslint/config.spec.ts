@@ -21,13 +21,9 @@ import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { customizeConfig, createConfig } from './config';
 
-vi.mock('process', async () => {
-  const actual = await vi.importActual<typeof import('process')>('process');
-  return {
-    ...actual,
-    cwd: (): string => '/project/dir',
-  };
-});
+vi.mock('process', () => ({
+  cwd: (): string => '/project/dir',
+}));
 
 vi.mock('../../lib/options', () => ({
   getOptions: vi.fn(() => ({})),

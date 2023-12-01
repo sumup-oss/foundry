@@ -21,16 +21,12 @@ import { PackageJson } from '../types/shared';
 
 import { writeFile, addPackageScript, savePackageJson } from './files';
 
-vi.mock('fs', async () => {
-  const actual = await vi.importActual<typeof import('fs')>('fs');
-  return {
-    ...actual,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-    writeFile: vi.fn((_file, _data, _options, callback) => callback()),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-    mkdir: vi.fn((_dir, _options, callback) => callback()),
-  };
-});
+vi.mock('fs', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  writeFile: vi.fn((_file, _data, _options, callback) => callback()),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  mkdir: vi.fn((_dir, _options, callback) => callback()),
+}));
 
 const content = 'module.exports = "Hello world"';
 
