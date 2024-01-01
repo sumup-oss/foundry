@@ -42,7 +42,7 @@
     "node 16"
   ],
   "dependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.22.15",
     "@emotion/eslint-plugin": "^11.11.0",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
