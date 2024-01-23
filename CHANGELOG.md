@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.0.0-next.2
+
+### Major Changes
+
+- [#923](https://github.com/sumup-oss/foundry/pull/923) [`ea7c264`](https://github.com/sumup-oss/foundry/commit/ea7c264f9122f2ad44c5d83308f32c827768ac0f) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the ESLint plugins for Cypress, Emotion.js, Jest, Next.js, Playwright, Storybook, and Testing Library from the dependencies.
+
 ## 7.0.0-next.1
 
 ### Major Changes
