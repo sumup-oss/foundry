@@ -43,6 +43,10 @@ export enum Environment {
 export enum Framework {
   REACT = 'React',
   NEXT_JS = 'Next.js',
+}
+
+export enum Plugin {
+  NEXT_JS = 'Next.js',
   EMOTION = 'Emotion',
   JEST = 'Jest',
   TESTING_LIBRARY = 'Testing Library',
@@ -55,6 +59,7 @@ export interface Options {
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
+  plugins?: Plugin[];
   openSource?: boolean;
   publish?: boolean;
 }

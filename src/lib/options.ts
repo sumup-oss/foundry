@@ -13,15 +13,19 @@
  * limitations under the License.
  */
 
+import { intersects } from 'semver';
+
 import {
   Environment,
   Framework,
   Language,
   Options,
   PackageJson,
+  Plugin,
 } from '../types/shared';
 
 import { readPackageJson } from './files';
+import * as logger from './logger';
 
 // These lists are not exhaustive and should be expanded if necessary.
 export const NODE_LIBRARIES = [
@@ -33,9 +37,54 @@ export const NODE_LIBRARIES = [
 ];
 export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 
+const FRAMEWORK_PLUGINS = [
+  {
+    frameworkPackages: ['next'],
+    pluginPackage: 'eslint-config-next',
+    supportedRange: '>=10.0.0',
+  },
+  {
+    frameworkPackages: ['@emotion/react', '@emotion/styled'],
+    pluginPackage: '@emotion/eslint-plugin',
+    supportedRange: '^11.0.0',
+  },
+  {
+    frameworkPackages: ['jest'],
+    pluginPackage: 'eslint-plugin-jest',
+    supportedRange: '^27.0.0',
+  },
+  {
+    frameworkPackages: [
+      '@testing-library/dom',
+      '@testing-library/jest-dom',
+      '@testing-library/react',
+    ],
+    pluginPackage: 'eslint-plugin-testing-library',
+    supportedRange: '^6.0.0',
+  },
+  {
+    frameworkPackages: ['cypress'],
+    pluginPackage: 'eslint-plugin-cypress',
+    supportedRange: '^2.0.0',
+  },
+  {
+    frameworkPackages: ['@playwright/test'],
+    pluginPackage: 'eslint-plugin-playwright',
+    supportedRange: '>=0.17.0 <1.0.0',
+  },
+  {
+    frameworkPackages: ['storybook', '@storybook/react'],
+    pluginPackage: 'eslint-plugin-storybook',
+    supportedRange: '>=0.6.0 <1.0.0',
+  },
+];
+
 export function getOptions(): Required<Options> {
   const packageJson = readPackageJson();
   const config = (packageJson.foundry || {}) as Options;
+
+  warnAboutUnsupportedPlugins(packageJson);
+  warnAboutMissingPlugins(packageJson);
 
   const pick = pickConfigOrDetect(packageJson);
 
@@ -43,6 +92,7 @@ export function getOptions(): Required<Options> {
     language: pick(config.language, detectLanguage),
     environments: pick(config.environments, detectEnvironments),
     frameworks: pick(config.frameworks, detectFrameworks),
+    plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
     publish: Boolean(config.publish),
   };
@@ -55,10 +105,17 @@ export function pickConfigOrDetect(packageJson: PackageJson) {
   ) => (explicit !== undefined ? explicit : detectFn(packageJson));
 }
 
-export function hasDependency(packageJson: PackageJson, name: string): boolean {
+export function getDependencyVersion(
+  packageJson: PackageJson,
+  name: string,
+): string {
   const { dependencies = {}, devDependencies = {} } = packageJson;
 
-  return Boolean(dependencies[name] || devDependencies[name]);
+  return dependencies[name] || devDependencies[name];
+}
+
+export function hasDependency(packageJson: PackageJson, name: string): boolean {
+  return Boolean(getDependencyVersion(packageJson, name));
 }
 
 export function detectLanguage(packageJson: PackageJson): Language {
@@ -106,31 +163,73 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
     frameworks.push(Framework.REACT);
   }
 
-  if (hasDependency(packageJson, '@emotion/react')) {
-    frameworks.push(Framework.EMOTION);
-  }
-
-  if (hasDependency(packageJson, 'jest')) {
-    frameworks.push(Framework.JEST);
-  }
-
-  if (hasDependency(packageJson, '@testing-library/react')) {
-    frameworks.push(Framework.TESTING_LIBRARY);
-  }
-
-  if (hasDependency(packageJson, 'cypress')) {
-    frameworks.push(Framework.CYPRESS);
-  }
-
-  if (hasDependency(packageJson, 'playwright')) {
-    frameworks.push(Framework.PLAYWRIGHT);
-  }
-
-  if (hasDependency(packageJson, 'storybook')) {
-    frameworks.push(Framework.STORYBOOK);
-  }
-
   return frameworks;
+}
+
+export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
+  FRAMEWORK_PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
+    const version = getDependencyVersion(packageJson, pluginPackage);
+
+    if (!version) {
+      return;
+    }
+
+    const isSupported = intersects(version, supportedRange);
+
+    if (!isSupported) {
+      logger.warn(
+        `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not.`,
+      );
+    }
+  });
+}
+
+export function warnAboutMissingPlugins(packageJson: PackageJson): void {
+  FRAMEWORK_PLUGINS.forEach(({ frameworkPackages, pluginPackage }) => {
+    const installedPackage = frameworkPackages.find((pkg) =>
+      hasDependency(packageJson, pkg),
+    );
+
+    if (installedPackage && !hasDependency(packageJson, pluginPackage)) {
+      logger.warn(
+        `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${pluginPackage}".`,
+      );
+    }
+  });
+}
+
+export function detectPlugins(packageJson: PackageJson): Plugin[] {
+  const plugins: Plugin[] = [];
+
+  if (hasDependency(packageJson, 'eslint-config-next')) {
+    plugins.push(Plugin.NEXT_JS);
+  }
+
+  if (hasDependency(packageJson, '@emotion/eslint-plugin')) {
+    plugins.push(Plugin.EMOTION);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-jest')) {
+    plugins.push(Plugin.JEST);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-testing-library')) {
+    plugins.push(Plugin.TESTING_LIBRARY);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-cypress')) {
+    plugins.push(Plugin.CYPRESS);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-playwright')) {
+    plugins.push(Plugin.PLAYWRIGHT);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-storybook')) {
+    plugins.push(Plugin.STORYBOOK);
+  }
+
+  return plugins;
 }
 
 export function detectOpenSource(packageJson: PackageJson) {
