@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Environment, Framework, Language, Plugin } from '../types/shared';
 
@@ -27,6 +27,7 @@ import {
   detectOpenSource,
   detectPlugins,
   warnAboutMissingPlugins,
+  warnAboutUnsupportedPlugins,
   NODE_LIBRARIES,
   BROWSER_LIBRARIES,
 } from './options';
@@ -41,6 +42,10 @@ const basePackageJson = {
 vi.mock('./logger.ts');
 
 describe('options', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   describe('pickConfigOrDetect', () => {
     it('should return the config value when defined', () => {
       const pickFn = pickConfigOrDetect(basePackageJson);
@@ -210,6 +215,20 @@ describe('options', () => {
         expect(actual).toContain(preset);
       },
     );
+
+    it('should detect multiple libraries', () => {
+      const packageJson = {
+        ...basePackageJson,
+        dependencies: {
+          '@emotion/eslint-plugin': '^1.0.0',
+          'eslint-config-next': '^1.0.0',
+        },
+      };
+      const actual = detectPlugins(packageJson);
+
+      expect(actual).toContain(Plugin.EMOTION);
+      expect(actual).toContain(Plugin.NEXT_JS);
+    });
   });
 
   describe('detectOpenSource', () => {
@@ -240,19 +259,57 @@ describe('options', () => {
     });
   });
 
+  describe('warnAboutUnsupportedPlugins', () => {
+    it('should log a warning if a plugin is installed at a lower version than has been tested with Foundry', () => {
+      const packageJson = {
+        ...basePackageJson,
+        license: 'MIT',
+        dependencies: { 'eslint-config-next': '^9.0.0' },
+      };
+
+      warnAboutUnsupportedPlugins(packageJson);
+
+      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledWith(
+        '"eslint-config-next" is installed at version "^9.0.0". Foundry has only been tested with versions ">=10.0.0". You may find that it works just fine, or you may not.',
+      );
+    });
+
+    it('should log a warning if a plugin is installed at a higher version than has been tested with Foundry', () => {
+      const packageJson = {
+        ...basePackageJson,
+        license: 'MIT',
+        dependencies: { 'eslint-plugin-playwright': '^1.0.0' },
+      };
+
+      warnAboutUnsupportedPlugins(packageJson);
+
+      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledWith(
+        '"eslint-plugin-playwright" is installed at version "^1.0.0". Foundry has only been tested with versions ">=0.17.0 <1.0.0". You may find that it works just fine, or you may not.',
+      );
+    });
+  });
+
   describe('warnAboutMissingPlugins', () => {
     it('should log a warning if a framework is installed but not its corresponding ESLint plugin', () => {
       const packageJson = {
         ...basePackageJson,
         license: 'MIT',
-        dependencies: { next: '^1.0.0' },
+        dependencies: {
+          'next': '^1.0.0',
+          '@emotion/react': '^1.0.0',
+        },
       };
 
       warnAboutMissingPlugins(packageJson);
 
-      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledTimes(2);
       expect(logger.warn).toHaveBeenCalledWith(
         '"next" is installed but not the corresponding ESLint plugin. Please install "eslint-config-next".',
+      );
+      expect(logger.warn).toHaveBeenCalledWith(
+        '"@emotion/react" is installed but not the corresponding ESLint plugin. Please install "@emotion/eslint-plugin".',
       );
     });
   });
