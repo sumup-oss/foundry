@@ -19,6 +19,7 @@ import yargs from 'yargs';
 
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
+import { debug } from './debug';
 import { DEFAULT_OPTIONS } from './defaults';
 
 // eslint-disable-next-line no-void
@@ -55,19 +56,28 @@ void yargs
     'Run any of the bundled tools.',
     execute('run'),
   )
+  .command(
+    'debug',
+    'See which frameworks and plugins Foundry has detected in your project',
+    execute('debug'),
+  )
   .showHelpOnFail(true)
   .demandCommand(1, '')
   .help()
   .version().argv;
 
-type CommandType = 'init' | 'run';
+type CommandType = 'init' | 'run' | 'debug';
 
 function execute(command: CommandType) {
-  const commands = { run, init };
+  const commands = { run, init, debug };
   const commandFn = commands[command];
 
-  return (args: unknown): void => {
-    // eslint-disable-next-line no-console
-    commandFn(args as RunParams & InitParams).catch(console.error);
+  return async (args: unknown): Promise<void> => {
+    try {
+      await commandFn(args as RunParams & InitParams);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   };
 }
