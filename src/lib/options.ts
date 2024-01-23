@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import { intersects } from 'semver';
+
 import {
   Environment,
   Framework,
@@ -37,40 +39,43 @@ export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 
 const FRAMEWORK_PLUGINS = [
   {
-    packages: ['next'],
-    plugin: 'eslint-config-next',
+    frameworkPackages: ['next'],
+    pluginPackage: 'eslint-config-next',
+    supportedRange: '>=10.0.0',
   },
   {
-    packages: ['@emotion/react', '@emotion/styled'],
-    plugin: 'eslint-config-next',
+    frameworkPackages: ['@emotion/react', '@emotion/styled'],
+    pluginPackage: '@emotion/eslint-plugin',
+    supportedRange: '^11.0.0',
   },
   {
-    packages: ['@emotion/react', '@emotion/styled'],
-    plugin: '@emotion/eslint-plugin',
+    frameworkPackages: ['jest'],
+    pluginPackage: 'eslint-plugin-jest',
+    supportedRange: '^27.0.0',
   },
   {
-    packages: ['jest'],
-    plugin: 'eslint-plugin-jest',
-  },
-  {
-    packages: [
+    frameworkPackages: [
       '@testing-library/dom',
       '@testing-library/jest-dom',
       '@testing-library/react',
     ],
-    plugin: 'eslint-plugin-testing-library',
+    pluginPackage: 'eslint-plugin-testing-library',
+    supportedRange: '^6.0.0',
   },
   {
-    packages: ['cypress'],
-    plugin: 'eslint-plugin-cypress',
+    frameworkPackages: ['cypress'],
+    pluginPackage: 'eslint-plugin-cypress',
+    supportedRange: '^2.0.0',
   },
   {
-    packages: ['@playwright/test'],
-    plugin: 'eslint-plugin-playwright',
+    frameworkPackages: ['@playwright/test'],
+    pluginPackage: 'eslint-plugin-playwright',
+    supportedRange: '>=0.17.0 <1.0.0',
   },
   {
-    packages: ['storybook', '@storybook/react'],
-    plugin: 'eslint-plugin-storybook',
+    frameworkPackages: ['storybook', '@storybook/react'],
+    pluginPackage: 'eslint-plugin-storybook',
+    supportedRange: '>=0.6.0 <1.0.0',
   },
 ];
 
@@ -78,6 +83,7 @@ export function getOptions(): Required<Options> {
   const packageJson = readPackageJson();
   const config = (packageJson.foundry || {}) as Options;
 
+  warnAboutUnsupportedPlugins(packageJson);
   warnAboutMissingPlugins(packageJson);
 
   const pick = pickConfigOrDetect(packageJson);
@@ -99,10 +105,17 @@ export function pickConfigOrDetect(packageJson: PackageJson) {
   ) => (explicit !== undefined ? explicit : detectFn(packageJson));
 }
 
-export function hasDependency(packageJson: PackageJson, name: string): boolean {
+export function getDependencyVersion(
+  packageJson: PackageJson,
+  name: string,
+): string {
   const { dependencies = {}, devDependencies = {} } = packageJson;
 
-  return Boolean(dependencies[name] || devDependencies[name]);
+  return dependencies[name] || devDependencies[name];
+}
+
+export function hasDependency(packageJson: PackageJson, name: string): boolean {
+  return Boolean(getDependencyVersion(packageJson, name));
 }
 
 export function detectLanguage(packageJson: PackageJson): Language {
@@ -153,15 +166,33 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
   return frameworks;
 }
 
+export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
+  FRAMEWORK_PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
+    const version = getDependencyVersion(packageJson, pluginPackage);
+
+    if (!version) {
+      return;
+    }
+
+    const isSupported = intersects(version, supportedRange);
+
+    if (!isSupported) {
+      logger.warn(
+        `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with "${supportedRange}". You may find that it works just fine, or you may not.`,
+      );
+    }
+  });
+}
+
 export function warnAboutMissingPlugins(packageJson: PackageJson): void {
-  FRAMEWORK_PLUGINS.forEach(({ packages, plugin }) => {
-    const installedPackage = packages.find((pkg) =>
+  FRAMEWORK_PLUGINS.forEach(({ frameworkPackages, pluginPackage }) => {
+    const installedPackage = frameworkPackages.find((pkg) =>
       hasDependency(packageJson, pkg),
     );
 
-    if (installedPackage && !hasDependency(packageJson, plugin)) {
+    if (installedPackage && !hasDependency(packageJson, pluginPackage)) {
       logger.warn(
-        `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${plugin}".`,
+        `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${pluginPackage}".`,
       );
     }
   });
