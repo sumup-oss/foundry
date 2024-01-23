@@ -17,6 +17,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { Environment, Framework, Language, Plugin } from '../types/shared';
 
+import * as logger from './logger';
 import {
   pickConfigOrDetect,
   hasDependency,
@@ -24,9 +25,10 @@ import {
   detectEnvironments,
   detectFrameworks,
   detectOpenSource,
+  detectPlugins,
+  warnAboutMissingPlugins,
   NODE_LIBRARIES,
   BROWSER_LIBRARIES,
-  detectPlugins,
 } from './options';
 
 const basePackageJson = {
@@ -35,6 +37,8 @@ const basePackageJson = {
   version: '0.0.0',
   _id: 'id',
 };
+
+vi.mock('./logger.ts');
 
 describe('options', () => {
   describe('pickConfigOrDetect', () => {
@@ -233,6 +237,23 @@ describe('options', () => {
       const actual = detectOpenSource(basePackageJson);
 
       expect(actual).toBe(false);
+    });
+  });
+
+  describe('warnAboutMissingPlugins', () => {
+    it('should log a warning if a framework is installed but not its corresponding ESLint plugin', () => {
+      const packageJson = {
+        ...basePackageJson,
+        license: 'MIT',
+        dependencies: { next: '^1.0.0' },
+      };
+
+      warnAboutMissingPlugins(packageJson);
+
+      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledWith(
+        '"next" is installed but not the corresponding ESLint plugin. Please install "eslint-config-next".',
+      );
     });
   });
 });

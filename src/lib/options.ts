@@ -23,6 +23,7 @@ import {
 } from '../types/shared';
 
 import { readPackageJson } from './files';
+import * as logger from './logger';
 
 // These lists are not exhaustive and should be expanded if necessary.
 export const NODE_LIBRARIES = [
@@ -34,9 +35,50 @@ export const NODE_LIBRARIES = [
 ];
 export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 
+const FRAMEWORK_PLUGINS = [
+  {
+    packages: ['next'],
+    plugin: 'eslint-config-next',
+  },
+  {
+    packages: ['@emotion/react', '@emotion/styled'],
+    plugin: 'eslint-config-next',
+  },
+  {
+    packages: ['@emotion/react', '@emotion/styled'],
+    plugin: '@emotion/eslint-plugin',
+  },
+  {
+    packages: ['jest'],
+    plugin: 'eslint-plugin-jest',
+  },
+  {
+    packages: [
+      '@testing-library/dom',
+      '@testing-library/jest-dom',
+      '@testing-library/react',
+    ],
+    plugin: 'eslint-plugin-testing-library',
+  },
+  {
+    packages: ['cypress'],
+    plugin: 'eslint-plugin-cypress',
+  },
+  {
+    packages: ['@playwright/test'],
+    plugin: 'eslint-plugin-playwright',
+  },
+  {
+    packages: ['storybook', '@storybook/react'],
+    plugin: 'eslint-plugin-storybook',
+  },
+];
+
 export function getOptions(): Required<Options> {
   const packageJson = readPackageJson();
   const config = (packageJson.foundry || {}) as Options;
+
+  warnAboutMissingPlugins(packageJson);
 
   const pick = pickConfigOrDetect(packageJson);
 
@@ -109,6 +151,20 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
   }
 
   return frameworks;
+}
+
+export function warnAboutMissingPlugins(packageJson: PackageJson): void {
+  FRAMEWORK_PLUGINS.forEach(({ packages, plugin }) => {
+    const installedPackage = packages.find((pkg) =>
+      hasDependency(packageJson, pkg),
+    );
+
+    if (installedPackage && !hasDependency(packageJson, plugin)) {
+      logger.warn(
+        `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${plugin}".`,
+      );
+    }
+  });
 }
 
 export function detectPlugins(packageJson: PackageJson): Plugin[] {
