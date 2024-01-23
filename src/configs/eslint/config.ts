@@ -17,7 +17,7 @@ import { cwd } from 'process';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Language, Environment, Framework } from '../../types/shared';
+import { Language, Environment, Framework, Plugin } from '../../types/shared';
 import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
 
@@ -313,7 +313,6 @@ function customizeFramework(frameworks?: Framework[]) {
       settings: { react: { version: 'detect' } },
     },
     [Framework.NEXT_JS]: {
-      extends: ['next'],
       settings: {
         // This is needed for eslint-plugin-compat: https://www.npmjs.com/package/eslint-plugin-compat#adding-polyfills
         // The list is based on https://github.com/vercel/next.js/blob/canary/packages/next-polyfill-nomodule/src/index.js
@@ -368,57 +367,6 @@ function customizeFramework(frameworks?: Framework[]) {
         ],
       },
     },
-    [Framework.EMOTION]: {
-      plugins: ['@emotion'],
-      rules: {
-        '@emotion/import-from-emotion': 'error',
-        '@emotion/jsx-import': 'off',
-        '@emotion/no-vanilla': 'error',
-        '@emotion/pkg-renaming': 'error',
-        '@emotion/styled-import': 'error',
-        'react/no-unknown-property': ['error', { ignore: ['css'] }],
-      },
-    },
-    [Framework.JEST]: {
-      overrides: [
-        {
-          files: UNIT_TEST_FILES,
-          extends: ['plugin:jest/recommended'],
-          plugins: ['jest'],
-          env: { 'jest/globals': true },
-        },
-      ],
-    },
-    [Framework.TESTING_LIBRARY]: {
-      overrides: [
-        {
-          files: UNIT_TEST_FILES,
-          extends: ['plugin:testing-library/react'],
-          plugins: ['testing-library'],
-        },
-      ],
-    },
-    [Framework.CYPRESS]: {
-      overrides: [
-        {
-          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
-          extends: ['plugin:cypress/recommended'],
-          plugins: ['cypress'],
-          env: { 'cypress/globals': true },
-        },
-      ],
-    },
-    [Framework.PLAYWRIGHT]: {
-      overrides: [
-        {
-          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
-          extends: ['plugin:playwright/playwright-test'],
-        },
-      ],
-    },
-    [Framework.STORYBOOK]: {
-      extends: ['plugin:storybook/recommended'],
-    },
   };
   return (config: ESLintConfig): ESLintConfig => {
     if (!frameworks || isEmpty(frameworks)) {
@@ -440,6 +388,75 @@ function customizeFramework(frameworks?: Framework[]) {
 
     return frameworks.reduce((acc, framework: Framework) => {
       const overrides = frameworkMap[framework];
+      return customizeConfig(acc, overrides);
+    }, config);
+  };
+}
+
+function customizePlugin(plugins?: Plugin[]) {
+  const pluginMap = {
+    [Plugin.NEXT_JS]: {
+      extends: ['next'],
+    },
+    [Plugin.EMOTION]: {
+      plugins: ['@emotion'],
+      rules: {
+        '@emotion/import-from-emotion': 'error',
+        '@emotion/jsx-import': 'off',
+        '@emotion/no-vanilla': 'error',
+        '@emotion/pkg-renaming': 'error',
+        '@emotion/styled-import': 'error',
+        'react/no-unknown-property': ['error', { ignore: ['css'] }],
+      },
+    },
+    [Plugin.JEST]: {
+      overrides: [
+        {
+          files: UNIT_TEST_FILES,
+          extends: ['plugin:jest/recommended'],
+          plugins: ['jest'],
+          env: { 'jest/globals': true },
+        },
+      ],
+    },
+    [Plugin.TESTING_LIBRARY]: {
+      overrides: [
+        {
+          files: UNIT_TEST_FILES,
+          extends: ['plugin:testing-library/react'],
+          plugins: ['testing-library'],
+        },
+      ],
+    },
+    [Plugin.CYPRESS]: {
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          extends: ['plugin:cypress/recommended'],
+          plugins: ['cypress'],
+          env: { 'cypress/globals': true },
+        },
+      ],
+    },
+    [Plugin.PLAYWRIGHT]: {
+      overrides: [
+        {
+          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          extends: ['plugin:playwright/playwright-test'],
+        },
+      ],
+    },
+    [Plugin.STORYBOOK]: {
+      extends: ['plugin:storybook/recommended'],
+    },
+  };
+  return (config: ESLintConfig): ESLintConfig => {
+    if (!plugins || isEmpty(plugins)) {
+      return config;
+    }
+
+    return plugins.reduce((acc, plugin: Plugin) => {
+      const overrides = pluginMap[plugin];
       return customizeConfig(acc, overrides);
     }, config);
   };
@@ -495,6 +512,7 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
     customizeLanguage(options.language),
     customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
+    customizePlugin(options.plugins),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
   )(base);

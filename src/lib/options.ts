@@ -19,6 +19,7 @@ import {
   Language,
   Options,
   PackageJson,
+  Plugin,
 } from '../types/shared';
 
 import { readPackageJson } from './files';
@@ -43,6 +44,7 @@ export function getOptions(): Required<Options> {
     language: pick(config.language, detectLanguage),
     environments: pick(config.environments, detectEnvironments),
     frameworks: pick(config.frameworks, detectFrameworks),
+    plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
     publish: Boolean(config.publish),
   };
@@ -106,31 +108,41 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
     frameworks.push(Framework.REACT);
   }
 
-  if (hasDependency(packageJson, '@emotion/react')) {
-    frameworks.push(Framework.EMOTION);
-  }
-
-  if (hasDependency(packageJson, 'jest')) {
-    frameworks.push(Framework.JEST);
-  }
-
-  if (hasDependency(packageJson, '@testing-library/react')) {
-    frameworks.push(Framework.TESTING_LIBRARY);
-  }
-
-  if (hasDependency(packageJson, 'cypress')) {
-    frameworks.push(Framework.CYPRESS);
-  }
-
-  if (hasDependency(packageJson, 'playwright')) {
-    frameworks.push(Framework.PLAYWRIGHT);
-  }
-
-  if (hasDependency(packageJson, 'storybook')) {
-    frameworks.push(Framework.STORYBOOK);
-  }
-
   return frameworks;
+}
+
+export function detectPlugins(packageJson: PackageJson): Plugin[] {
+  const plugins: Plugin[] = [];
+
+  if (hasDependency(packageJson, 'eslint-config-next')) {
+    plugins.push(Plugin.NEXT_JS);
+  }
+
+  if (hasDependency(packageJson, '@emotion/eslint-plugin')) {
+    plugins.push(Plugin.EMOTION);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-jest')) {
+    plugins.push(Plugin.JEST);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-testing-library')) {
+    plugins.push(Plugin.TESTING_LIBRARY);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-cypress')) {
+    plugins.push(Plugin.CYPRESS);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-playwright')) {
+    plugins.push(Plugin.PLAYWRIGHT);
+  }
+
+  if (hasDependency(packageJson, 'eslint-plugin-storybook')) {
+    plugins.push(Plugin.STORYBOOK);
+  }
+
+  return plugins;
 }
 
 export function detectOpenSource(packageJson: PackageJson) {

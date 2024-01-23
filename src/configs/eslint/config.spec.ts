@@ -15,7 +15,7 @@
 
 import { describe, expect, it, vi, Mock } from 'vitest';
 
-import { Language, Environment, Framework } from '../../types/shared';
+import { Language, Environment, Framework, Plugin } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 import { getOptions as getOptionsMock } from '../../lib/options';
 
@@ -109,6 +109,7 @@ describe('eslint', () => {
       language: Language,
       environments: [Environment],
       frameworks: [Framework],
+      plugins: [Plugin],
     });
 
     it.each(matrix)('should return a config for %o', (options) => {

@@ -15,7 +15,7 @@
 
 import { describe, expect, it, vi } from 'vitest';
 
-import { Environment, Framework, Language } from '../types/shared';
+import { Environment, Framework, Language, Plugin } from '../types/shared';
 
 import {
   pickConfigOrDetect,
@@ -26,6 +26,7 @@ import {
   detectOpenSource,
   NODE_LIBRARIES,
   BROWSER_LIBRARIES,
+  detectPlugins,
 } from './options';
 
 const basePackageJson = {
@@ -159,12 +160,6 @@ describe('options', () => {
     it.each([
       ['next', Framework.NEXT_JS],
       ['react', Framework.REACT],
-      ['@emotion/react', Framework.EMOTION],
-      ['jest', Framework.JEST],
-      ['@testing-library/react', Framework.TESTING_LIBRARY],
-      ['cypress', Framework.CYPRESS],
-      ['playwright', Framework.PLAYWRIGHT],
-      ['storybook', Framework.STORYBOOK],
     ])(
       'should, when `%s` is installed, include the `%s` preset',
       (library, preset) => {
@@ -188,6 +183,29 @@ describe('options', () => {
       expect(actual).toContain(Framework.NEXT_JS);
       expect(actual).not.toContain(Framework.REACT);
     });
+  });
+
+  describe('detectPlugins', () => {
+    it.each([
+      ['eslint-config-next', Plugin.NEXT_JS],
+      ['@emotion/eslint-plugin', Plugin.EMOTION],
+      ['eslint-plugin-jest', Plugin.JEST],
+      ['eslint-plugin-testing-library', Plugin.TESTING_LIBRARY],
+      ['eslint-plugin-cypress', Plugin.CYPRESS],
+      ['eslint-plugin-playwright', Plugin.PLAYWRIGHT],
+      ['eslint-plugin-storybook', Plugin.STORYBOOK],
+    ])(
+      'should, when `%s` is installed, include the `%s` preset',
+      (library, preset) => {
+        const packageJson = {
+          ...basePackageJson,
+          dependencies: { [library]: '^1.0.0' },
+        };
+        const actual = detectPlugins(packageJson);
+
+        expect(actual).toContain(preset);
+      },
+    );
   });
 
   describe('detectOpenSource', () => {
