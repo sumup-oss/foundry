@@ -32,7 +32,13 @@ const lint: PresetConfig = {
   ),
   value: Preset.LINT,
   short: 'Lint',
-  tools: [Tool.ESLINT, Tool.PRETTIER, Tool.HUSKY, Tool.LINT_STAGED],
+  tools: [
+    Tool.ESLINT,
+    Tool.STYLELINT,
+    Tool.PRETTIER,
+    Tool.HUSKY,
+    Tool.LINT_STAGED,
+  ],
   prompts: [Prompt.OPEN_SOURCE],
 };
 

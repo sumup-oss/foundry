@@ -109,6 +109,7 @@ Check code for syntax errors and format it automatically. The preset adds the fo
 The preset includes the following tools:
 
 - **[ESLint](https://www.npmjs.com/package/eslint)** identifies and fixes problematic patterns in your code so you can spot mistakes early.
+- **[Stylelint](https://www.npmjs.com/package/stylelint)** identifies and fixes problematic patterns in your styles so you can spot mistakes early.
 - **[Prettier](https://prettier.io)** is our code formatter of choice. It makes all our code look the same after every save.
 - **[lint-staged](https://www.npmjs.com/package/lint-staged)** is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents problematic code from being committed.
 - **[Husky](https://github.com/typicode/husky)** makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.

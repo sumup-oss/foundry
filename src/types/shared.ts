@@ -21,6 +21,7 @@ export enum Preset {
 
 export enum Tool {
   ESLINT = 'eslint',
+  STYLELINT = 'stylelint',
   PRETTIER = 'prettier',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',

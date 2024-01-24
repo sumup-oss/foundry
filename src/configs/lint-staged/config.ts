@@ -25,11 +25,13 @@ interface LintStagedConfig {
 
 export const javascript: LintStagedConfig = {
   '*.(js|jsx|json)': ['foundry run eslint --fix'],
+  '*.css': ['foundry run stylelint --fix'],
 };
 
 export const typescript: LintStagedConfig = {
   '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
   '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
+  '*.css': ['foundry run stylelint --fix'],
 };
 
 const LANGUAGES = {

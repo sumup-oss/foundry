@@ -5,6 +5,9 @@ exports[`lint-staged > should override the default config 1`] = `
   "*.(js|jsx|json)": [
     "next lint",
   ],
+  "*.css": [
+    "foundry run stylelint --fix",
+  ],
   "*.jsx?": [
     "custom command",
   ],
@@ -16,6 +19,9 @@ exports[`lint-staged > with options > should return a config for { language: 'Ja
   "*.(js|jsx|json)": [
     "foundry run eslint --fix",
   ],
+  "*.css": [
+    "foundry run stylelint --fix",
+  ],
 }
 `;
 
@@ -25,5 +31,8 @@ exports[`lint-staged > with options > should return a config for { language: 'Ty
     "foundry run eslint --fix",
   ],
   "*.(ts|tsx)": [Function],
+  "*.css": [
+    "foundry run stylelint --fix",
+  ],
 }
 `;
