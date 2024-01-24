@@ -107,7 +107,6 @@ export function getOptions(): Required<Options> {
     frameworks: pick(config.frameworks, detectFrameworks),
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
-    publish: Boolean(config.publish),
   };
 }
 

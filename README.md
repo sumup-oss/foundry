@@ -44,7 +44,6 @@ Alternatively, you can pass your answers to the `init` command directly as flags
 
 ```sh
   -o, --openSource  Whether the project is open-source                 [boolean]
-      --publish     Whether to publish to NPM                          [boolean]
   -c, --configDir   The directory to write configs to    [string] [default: "."]
       --overwrite   Whether to overwrite existing config files
                                                       [boolean] [default: false]
