@@ -1,5 +1,19 @@
 # @sumup/foundry
 
+## 7.0.0-next.3
+
+### Major Changes
+
+- [#926](https://github.com/sumup-oss/foundry/pull/926) [`7a39c58`](https://github.com/sumup-oss/foundry/commit/7a39c58ceed4146b1858ebc997d8da9ba83735fc) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to [Stylelint 16](https://github.com/stylelint/stylelint/blob/main/CHANGELOG.md#1600). Refer to the [migration guide](https://github.com/stylelint/stylelint/blob/main/docs/migration-guide/to-16.md).
+
+### Minor Changes
+
+- [#931](https://github.com/sumup-oss/foundry/pull/931) [`39b28a8`](https://github.com/sumup-oss/foundry/commit/39b28a8abc9d634508e03b6db05c87da31b1d9bd) Thanks [@connor-baer](https://github.com/connor-baer)! - Added a new `debug` command to inspect the detected configuration options.
+
+- [#931](https://github.com/sumup-oss/foundry/pull/931) [`39b28a8`](https://github.com/sumup-oss/foundry/commit/39b28a8abc9d634508e03b6db05c87da31b1d9bd) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the obsolete `publish` option which hasn't been used since v6.
+
+- [#929](https://github.com/sumup-oss/foundry/pull/929) [`20d1be5`](https://github.com/sumup-oss/foundry/commit/20d1be5fab4de214ddfb33f5cd9a0ab3bbe51b51) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [`@sumup/eslint-plugin-circuit-ui`](https://circuit.sumup.com/?path=/docs/packages-eslint-plugin-circuit-ui--docs). This plugin helps help users follow best practices when using [Circuit UI](https://circuit.sumup.com/).
+
 ## 7.0.0-next.2
 
 ### Major Changes
