@@ -37,23 +37,33 @@ export const NODE_LIBRARIES = [
 ];
 export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 
-const FRAMEWORK_PLUGINS = [
+const PLUGINS = [
   {
+    name: Plugin.CIRCUIT_UI,
+    frameworkPackages: ['@sumup/circuit-ui', '@sumup/design-tokens'],
+    pluginPackage: '@sumup/eslint-plugin-circuit-ui',
+    supportedRange: '>=3.0.0 <5.0.0',
+  },
+  {
+    name: Plugin.NEXT_JS,
     frameworkPackages: ['next'],
     pluginPackage: 'eslint-config-next',
     supportedRange: '>=10.0.0',
   },
   {
+    name: Plugin.EMOTION,
     frameworkPackages: ['@emotion/react', '@emotion/styled'],
     pluginPackage: '@emotion/eslint-plugin',
     supportedRange: '^11.0.0',
   },
   {
+    name: Plugin.JEST,
     frameworkPackages: ['jest'],
     pluginPackage: 'eslint-plugin-jest',
     supportedRange: '^27.0.0',
   },
   {
+    name: Plugin.TESTING_LIBRARY,
     frameworkPackages: [
       '@testing-library/dom',
       '@testing-library/jest-dom',
@@ -63,16 +73,19 @@ const FRAMEWORK_PLUGINS = [
     supportedRange: '^6.0.0',
   },
   {
+    name: Plugin.CYPRESS,
     frameworkPackages: ['cypress'],
     pluginPackage: 'eslint-plugin-cypress',
     supportedRange: '^2.0.0',
   },
   {
+    name: Plugin.PLAYWRIGHT,
     frameworkPackages: ['@playwright/test'],
     pluginPackage: 'eslint-plugin-playwright',
     supportedRange: '>=0.17.0 <1.0.0',
   },
   {
+    name: Plugin.STORYBOOK,
     frameworkPackages: ['storybook', '@storybook/react'],
     pluginPackage: 'eslint-plugin-storybook',
     supportedRange: '>=0.6.0 <1.0.0',
@@ -167,7 +180,7 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
 }
 
 export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
-  FRAMEWORK_PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
+  PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
     const version = getDependencyVersion(packageJson, pluginPackage);
 
     if (!version) {
@@ -185,7 +198,7 @@ export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
 }
 
 export function warnAboutMissingPlugins(packageJson: PackageJson): void {
-  FRAMEWORK_PLUGINS.forEach(({ frameworkPackages, pluginPackage }) => {
+  PLUGINS.forEach(({ frameworkPackages, pluginPackage }) => {
     const installedPackage = frameworkPackages.find((pkg) =>
       hasDependency(packageJson, pkg),
     );
@@ -199,37 +212,12 @@ export function warnAboutMissingPlugins(packageJson: PackageJson): void {
 }
 
 export function detectPlugins(packageJson: PackageJson): Plugin[] {
-  const plugins: Plugin[] = [];
-
-  if (hasDependency(packageJson, 'eslint-config-next')) {
-    plugins.push(Plugin.NEXT_JS);
-  }
-
-  if (hasDependency(packageJson, '@emotion/eslint-plugin')) {
-    plugins.push(Plugin.EMOTION);
-  }
-
-  if (hasDependency(packageJson, 'eslint-plugin-jest')) {
-    plugins.push(Plugin.JEST);
-  }
-
-  if (hasDependency(packageJson, 'eslint-plugin-testing-library')) {
-    plugins.push(Plugin.TESTING_LIBRARY);
-  }
-
-  if (hasDependency(packageJson, 'eslint-plugin-cypress')) {
-    plugins.push(Plugin.CYPRESS);
-  }
-
-  if (hasDependency(packageJson, 'eslint-plugin-playwright')) {
-    plugins.push(Plugin.PLAYWRIGHT);
-  }
-
-  if (hasDependency(packageJson, 'eslint-plugin-storybook')) {
-    plugins.push(Plugin.STORYBOOK);
-  }
-
-  return plugins;
+  return PLUGINS.reduce((allPlugins, { pluginPackage, name }) => {
+    if (hasDependency(packageJson, pluginPackage)) {
+      allPlugins.push(name);
+    }
+    return allPlugins;
+  }, [] as Plugin[]);
 }
 
 export function detectOpenSource(packageJson: PackageJson) {

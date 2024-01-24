@@ -48,6 +48,7 @@ export enum Framework {
 
 export enum Plugin {
   NEXT_JS = 'Next.js',
+  CIRCUIT_UI = 'Circuit UI',
   EMOTION = 'Emotion',
   JEST = 'Jest',
   TESTING_LIBRARY = 'Testing Library',
