@@ -24,16 +24,10 @@ A toolkit that makes it a breeze to set up and maintain JavaScript + TypeScript 
 
 ### Installation
 
-Foundry needs to be installed as a dev-dependency via the [npm](https://www.npmjs.com) or [Yarn](https://classic.yarnpkg.com) package managers. The npm CLI ships with [Node](https://nodejs.org/en/). You can read how to install the Yarn CLI in [their documentation](https://classic.yarnpkg.com/en/docs/install). Foundry requires Node `^18.12 || >=20`.
-
-Depending on your preference, run one of the following.
+Foundry should be installed as a dev-dependency. Run the following command in your terminal:
 
 ```sh
-# With npm
-$ npm install --save-dev @sumup/foundry
-
-# With Yarn v1
-$ yarn add --dev @sumup/foundry
+npm install --save-dev @sumup/foundry
 ```
 
 ### Initialization
@@ -41,11 +35,7 @@ $ yarn add --dev @sumup/foundry
 Foundry exposes customizable configurations for the CLI tools it supports. Use the `init` command to initialize a configuration file for the tools you would like to use:
 
 ```sh
-# With npm
-$ npx foundry init
-
-# With Yarn v1
-$ yarn run foundry init
+npx foundry init
 ```
 
 Foundry will launch an interactive prompt to ask you questions about your project, such as whether you are planning to open source it. Once you have answered all questions, Foundry will write the config files (don't worry, it asks before overwriting existing files) and will add scripts to your `package.json` file to conveniently run the tools.
@@ -79,7 +69,13 @@ module.exports = require('@sumup/foundry/eslint')({
 
 The overrides are merged with Foundry's default configuration. The overrides follow each tool's configuration schema, please refer to their official documentation.
 
-Foundry analyzes your project's `package.json` file to tailor the configurations to your project. If the automatic detection is inaccurate, [please open an issue](https://github.com/sumup-oss/foundry/issues/new/choose) so we can improve it for everyone. Alternatively, you can explicitly set the options under the `foundry` property in your `package.json` file:
+Foundry analyzes your project's dependencies to tailor the configurations to your project. It detects which ESLint plugins are installed and enables & configures them automatically. Foundry will warn you if a framework is installed but not its corresponding ESLint plugin or if a version of a plugin is installed hasn't been tested with Foundry. Use the `debug` command to inspect the detected configuration:
+
+```sh
+npx foundry debug
+```
+
+If the automatic detection is inaccurate, [please open an issue](https://github.com/sumup-oss/foundry/issues/new/choose) so we can improve it for everyone. Alternatively, you can explicitly set the options under the `foundry` property in your `package.json` file:
 
 ```json
 // package.json
@@ -92,12 +88,13 @@ Foundry analyzes your project's `package.json` file to tailor the configurations
 
 The supported options are:
 
-| Name         | Type    | Options                                                                           | Default        |
-| ------------ | ------- | --------------------------------------------------------------------------------- | -------------- |
-| language     | string  | 'TypeScript', 'JavaScript'                                                        | _autodetected_ |
-| environments | array   | 'Browser', 'Node'                                                                 | _autodetected_ |
-| frameworks   | array   | 'React', 'Next.js', 'Emotion', 'Jest', 'Testing Library', 'Cypress', 'Playwright' | _autodetected_ |
-| openSource   | boolean | true, false                                                                       | _autodetected_ |
+| Name         | Type    | Options                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language     | string  | 'TypeScript', 'JavaScript'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| environments | array   | 'Browser', 'Node'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| plugins      | array   | ['Circuit UI'](https://www.npmjs.com/package/@sumup/eslint-plugin-circuit-ui), ['Cypress'](https://www.npmjs.com/package/eslint-plugin-cypress), ['Emotion'](https://www.npmjs.com/package/@emotion/eslint-plugin), ['Jest'](https://www.npmjs.com/package/eslint-plugin-jest), ['Next.js'](https://www.npmjs.com/package/eslint-config-next), ['Playwright'](https://www.npmjs.com/package/eslint-plugin-playwright), ['Storybook'](https://www.npmjs.com/package/eslint-plugin-storybook), ['Testing Library'](https://www.npmjs.com/package/eslint-plugin-testing-library) |
+| frameworks   | array   | 'Next.js', 'React'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| openSource   | boolean | true, false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## Lint preset
 
@@ -119,11 +116,7 @@ The preset includes the following tools:
 Foundry manages all supported tools for you and exposes them via the `run` command. As an example, to run ESLint through Foundry, execute:
 
 ```sh
-# With npm
-$ npx foundry run eslint src
-
-# With Yarn v1
-$ yarn foundry run eslint src
+npx foundry run eslint src
 ```
 
 Here, `src` is the folder you want ESLint to check. Note that you can use any of the command-line flags and arguments supported by ESLint and other tools. Foundry forwards them so they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.

@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- [#923](https://github.com/sumup-oss/foundry/pull/923) [`ea7c264`](https://github.com/sumup-oss/foundry/commit/ea7c264f9122f2ad44c5d83308f32c827768ac0f) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the ESLint plugins for Cypress, Emotion.js, Jest, Next.js, Playwright, Storybook, and Testing Library from the dependencies.
+- [#923](https://github.com/sumup-oss/foundry/pull/923) [`ea7c264`](https://github.com/sumup-oss/foundry/commit/ea7c264f9122f2ad44c5d83308f32c827768ac0f) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the ESLint plugins for [Cypress](https://www.npmjs.com/package/eslint-plugin-cypress), [Emotion](https://www.npmjs.com/package/@emotion/eslint-plugin), [Jest](https://www.npmjs.com/package/eslint-plugin-jest), [Next.js](https://www.npmjs.com/package/eslint-config-next), [Playwright](https://www.npmjs.com/package/eslint-plugin-playwright), [Storybook](https://www.npmjs.com/package/eslint-plugin-storybook), and [Testing Library](https://www.npmjs.com/package/eslint-plugin-testing-library) from the dependencies. Install the plugins as dev dependencies in your project. Foundry still enables and configures them automatically.
 
 ## 7.0.0-next.1
 
