@@ -47,14 +47,14 @@ export enum Framework {
 }
 
 export enum Plugin {
-  NEXT_JS = 'Next.js',
   CIRCUIT_UI = 'Circuit UI',
+  CYPRESS = 'Cypress',
   EMOTION = 'Emotion',
   JEST = 'Jest',
-  TESTING_LIBRARY = 'Testing Library',
-  CYPRESS = 'Cypress',
+  NEXT_JS = 'Next.js',
   PLAYWRIGHT = 'Playwright',
   STORYBOOK = 'Storybook',
+  TESTING_LIBRARY = 'Testing Library',
 }
 
 export interface Options {
