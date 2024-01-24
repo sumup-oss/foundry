@@ -265,6 +265,8 @@ function customizeEnvironments(environments?: Environment[]) {
         'node/no-missing-import': 'off',
         // This rule is already covered by similar ESLint rules.
         'node/no-extraneous-import': 'off',
+        // This rule produces too many false positives.
+        'security/detect-object-injection': 'off',
       },
       overrides: [
         {
