@@ -18,6 +18,5 @@ import { InitOptions } from '../types/shared';
 export const DEFAULT_OPTIONS: InitOptions = {
   configDir: '.',
   openSource: false,
-  publish: false,
   overwrite: false,
 };

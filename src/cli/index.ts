@@ -33,10 +33,6 @@ void yargs
         desc: 'Whether the project is open-source',
         type: 'boolean',
       },
-      publish: {
-        desc: 'Whether to publish to NPM',
-        type: 'boolean',
-      },
       configDir: {
         alias: 'c',
         desc: 'The directory to write configs to',

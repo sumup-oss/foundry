@@ -63,7 +63,6 @@ export interface Options {
   frameworks?: Framework[];
   plugins?: Plugin[];
   openSource?: boolean;
-  publish?: boolean;
 }
 
 export interface InitOptions extends Options {

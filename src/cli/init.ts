@@ -44,7 +44,6 @@ import { DEFAULT_OPTIONS } from './defaults';
 export interface InitParams {
   configDir: string;
   openSource?: boolean;
-  publish?: boolean;
   overwrite?: boolean;
   $0?: string;
   _?: string[];
