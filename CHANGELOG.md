@@ -12,7 +12,7 @@
 
 - [#931](https://github.com/sumup-oss/foundry/pull/931) [`39b28a8`](https://github.com/sumup-oss/foundry/commit/39b28a8abc9d634508e03b6db05c87da31b1d9bd) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the obsolete `publish` option which hasn't been used since v6.
 
-- [#929](https://github.com/sumup-oss/foundry/pull/929) [`20d1be5`](https://github.com/sumup-oss/foundry/commit/20d1be5fab4de214ddfb33f5cd9a0ab3bbe51b51) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [`@sumup/eslint-plugin-circuit-ui`](https://circuit.sumup.com/?path=/docs/packages-eslint-plugin-circuit-ui--docs). This plugin helps help users follow best practices when using [Circuit UI](https://circuit.sumup.com/).
+- [#929](https://github.com/sumup-oss/foundry/pull/929) [`20d1be5`](https://github.com/sumup-oss/foundry/commit/20d1be5fab4de214ddfb33f5cd9a0ab3bbe51b51) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [`@sumup/eslint-plugin-circuit-ui`](https://circuit.sumup.com/?path=/docs/packages-eslint-plugin-circuit-ui--docs). This plugin helps users follow best practices when using [Circuit UI](https://circuit.sumup.com/).
 
 ## 7.0.0-next.2
 
