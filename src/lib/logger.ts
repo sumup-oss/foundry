@@ -58,3 +58,7 @@ export const debug = (arg: LogMessage): void => {
 export const empty = (): void => {
   console.log('');
 };
+
+export const table = (obj: Record<string, unknown>): void => {
+  console.table(obj);
+};

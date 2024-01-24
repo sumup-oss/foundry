@@ -13,15 +13,20 @@
  * limitations under the License.
  */
 
-import { readPackageJson } from '../lib/files';
-import {
-  warnAboutMissingPlugins,
-  warnAboutUnsupportedPlugins,
-} from '../lib/options';
+import { isArray, isEmpty, mapValues } from 'lodash/fp';
+
+import { getOptions } from '../lib/options';
+import * as logger from '../lib/logger';
 
 export function debug(): void {
-  const packageJson = readPackageJson();
+  const options = getOptions();
 
-  warnAboutUnsupportedPlugins(packageJson);
-  warnAboutMissingPlugins(packageJson);
+  const stringifiedOptions = mapValues(
+    (value) => (isArray(value) && !isEmpty(value) ? value.join(', ') : value),
+    options,
+  );
+
+  logger.empty();
+  logger.info('Detected configuration:');
+  logger.table(stringifiedOptions);
 }
