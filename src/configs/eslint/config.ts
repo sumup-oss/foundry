@@ -443,7 +443,7 @@ function customizePlugin(plugins?: Plugin[]) {
     [Plugin.CYPRESS]: {
       overrides: [
         {
-          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          files: ['**/*spec.*', '**/e2e/**/*', '**/tests/**/*'],
           extends: ['plugin:cypress/recommended'],
           plugins: ['cypress'],
           env: { 'cypress/globals': true },
@@ -453,7 +453,7 @@ function customizePlugin(plugins?: Plugin[]) {
     [Plugin.PLAYWRIGHT]: {
       overrides: [
         {
-          files: ['**/*spec.*', 'e2e/**/*', 'tests/**/*'],
+          files: ['**/*spec.*', '**/e2e/**/*', '**/tests/**/*'],
           extends: ['plugin:playwright/playwright-test'],
         },
       ],

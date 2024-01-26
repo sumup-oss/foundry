@@ -291,8 +291,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -1151,8 +1151,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -1968,8 +1968,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -2688,8 +2688,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -3427,8 +3427,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -4287,8 +4287,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -5102,8 +5102,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -5814,8 +5814,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -6813,8 +6813,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -8197,8 +8197,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -9538,8 +9538,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -10782,8 +10782,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -12045,8 +12045,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -13429,8 +13429,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
@@ -14768,8 +14768,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
       "plugins": [
         "cypress",
@@ -16004,8 +16004,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "files": [
         "**/*spec.*",
-        "e2e/**/*",
-        "tests/**/*",
+        "**/e2e/**/*",
+        "**/tests/**/*",
       ],
     },
   ],
