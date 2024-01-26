@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.0.0-next.4
+
+### Minor Changes
+
+- [#932](https://github.com/sumup-oss/foundry/pull/932) [`85b5fbe`](https://github.com/sumup-oss/foundry/commit/85b5fbe1226065eab98795112b34dc35620c7fe5) Thanks [@connor-baer](https://github.com/connor-baer)! - Expanded the scope of the Cypress and Playwright plugins to account for end-to-end test in subdirectories.
+
 ## 7.0.0-next.3
 
 ### Major Changes
