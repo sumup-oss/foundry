@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.0.0-next.5
+
+### Patch Changes
+
+- [#934](https://github.com/sumup-oss/foundry/pull/934) [`1f3067e`](https://github.com/sumup-oss/foundry/commit/1f3067ea1553a78af6dd9ad130b8da837bb40afe) Thanks [@connor-baer](https://github.com/connor-baer)! - Improved package version detection to handle tarball URLs and fail gracefully.
+
 ## 7.0.0-next.4
 
 ### Minor Changes
