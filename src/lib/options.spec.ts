@@ -289,6 +289,39 @@ describe('options', () => {
         '"eslint-plugin-playwright" is installed at version "^1.0.0". Foundry has only been tested with versions ">=0.17.0 <1.0.0". You may find that it works just fine, or you may not.',
       );
     });
+
+    it('should extract the version if a plugin is installed from a tarball URL', () => {
+      const packageJson = {
+        ...basePackageJson,
+        license: 'MIT',
+        dependencies: {
+          '@sumup/eslint-plugin-circuit-ui':
+            'https://registry.npmjs.org/@sumup/eslint-plugin-circuit-ui/-/eslint-plugin-circuit-ui-1.0.0.tgz',
+        },
+      };
+
+      warnAboutUnsupportedPlugins(packageJson);
+
+      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledWith(
+        '"@sumup/eslint-plugin-circuit-ui" is installed at version "1.0.0". Foundry has only been tested with versions ">=3.0.0 <5.0.0". You may find that it works just fine, or you may not.',
+      );
+    });
+
+    it('should log a warning if the installed plugin version cannot be verified', () => {
+      const packageJson = {
+        ...basePackageJson,
+        license: 'MIT',
+        dependencies: { 'eslint-plugin-playwright': 'latest' },
+      };
+
+      warnAboutUnsupportedPlugins(packageJson);
+
+      expect(logger.warn).toHaveBeenCalledOnce();
+      expect(logger.warn).toHaveBeenCalledWith(
+        'Failed to verify whether "eslint-plugin-playwright" installed at version "latest" is supported. You may find that it works just fine, or you may not.',
+      );
+    });
   });
 
   describe('warnAboutMissingPlugins', () => {

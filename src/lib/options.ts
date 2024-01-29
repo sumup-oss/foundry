@@ -180,18 +180,35 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
 
 export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
   PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
-    const version = getDependencyVersion(packageJson, pluginPackage);
+    let version = getDependencyVersion(packageJson, pluginPackage);
 
     if (!version) {
       return;
     }
 
-    const isSupported = intersects(version, supportedRange);
+    try {
+      // Extract the version from tarball URLs
+      if (version.startsWith('https://')) {
+        const matches = version.match(/(\d\.\d\.\d.*)\.tgz/);
 
-    if (!isSupported) {
+        if (matches) {
+          // eslint-disable-next-line prefer-destructuring
+          version = matches[1];
+        }
+      }
+
+      const isSupported = intersects(version, supportedRange);
+
+      if (!isSupported) {
+        logger.warn(
+          `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not.`,
+        );
+      }
+    } catch (error) {
       logger.warn(
-        `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not.`,
+        `Failed to verify whether "${pluginPackage}" installed at version "${version}" is supported. You may find that it works just fine, or you may not.`,
       );
+      logger.debug((error as Error).message);
     }
   });
 }
