@@ -46,4 +46,4 @@ function formatName(name: string, description: string): string {
   return [`${chalk.bold(name)}:`, description].join(' ');
 }
 
-export const presets = { lint };
+export const presets: Record<Preset, PresetConfig> = { lint };
