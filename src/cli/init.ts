@@ -251,7 +251,7 @@ function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
     flatten,
     uniq,
     map((tool: Tool) => tools[tool]),
-  )(selectedPresets) as ToolOptions[];
+  )(selectedPresets);
 }
 
 function getFilesForTools(
