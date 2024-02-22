@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 6.2.1
+
+### Patch Changes
+
+- [#941](https://github.com/sumup-oss/foundry/pull/941) [`9a2ef74`](https://github.com/sumup-oss/foundry/commit/9a2ef7471b4802f13fca8b62f3b628af68c25409) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed initializing the Stylelint config files.
+
 ## 6.2.0
 
 ### Minor Changes
