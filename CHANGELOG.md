@@ -1,56 +1,10 @@
 # @sumup/foundry
 
-## 7.0.0-next.5
+## 6.2.1
 
 ### Patch Changes
 
-- [#934](https://github.com/sumup-oss/foundry/pull/934) [`1f3067e`](https://github.com/sumup-oss/foundry/commit/1f3067ea1553a78af6dd9ad130b8da837bb40afe) Thanks [@connor-baer](https://github.com/connor-baer)! - Improved package version detection to handle tarball URLs and fail gracefully.
-
-## 7.0.0-next.4
-
-### Minor Changes
-
-- [#932](https://github.com/sumup-oss/foundry/pull/932) [`85b5fbe`](https://github.com/sumup-oss/foundry/commit/85b5fbe1226065eab98795112b34dc35620c7fe5) Thanks [@connor-baer](https://github.com/connor-baer)! - Expanded the scope of the Cypress and Playwright plugins to account for end-to-end test in subdirectories.
-
-## 7.0.0-next.3
-
-### Major Changes
-
-- [#926](https://github.com/sumup-oss/foundry/pull/926) [`7a39c58`](https://github.com/sumup-oss/foundry/commit/7a39c58ceed4146b1858ebc997d8da9ba83735fc) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to [Stylelint 16](https://github.com/stylelint/stylelint/blob/main/CHANGELOG.md#1600). Refer to the [migration guide](https://github.com/stylelint/stylelint/blob/main/docs/migration-guide/to-16.md).
-
-### Minor Changes
-
-- [#931](https://github.com/sumup-oss/foundry/pull/931) [`39b28a8`](https://github.com/sumup-oss/foundry/commit/39b28a8abc9d634508e03b6db05c87da31b1d9bd) Thanks [@connor-baer](https://github.com/connor-baer)! - Added a new `debug` command to inspect the detected configuration options.
-
-- [#931](https://github.com/sumup-oss/foundry/pull/931) [`39b28a8`](https://github.com/sumup-oss/foundry/commit/39b28a8abc9d634508e03b6db05c87da31b1d9bd) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the obsolete `publish` option which hasn't been used since v6.
-
-- [#929](https://github.com/sumup-oss/foundry/pull/929) [`20d1be5`](https://github.com/sumup-oss/foundry/commit/20d1be5fab4de214ddfb33f5cd9a0ab3bbe51b51) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [`@sumup/eslint-plugin-circuit-ui`](https://circuit.sumup.com/?path=/docs/packages-eslint-plugin-circuit-ui--docs). This plugin helps users follow best practices when using [Circuit UI](https://circuit.sumup.com/).
-
-## 7.0.0-next.2
-
-### Major Changes
-
-- [#923](https://github.com/sumup-oss/foundry/pull/923) [`ea7c264`](https://github.com/sumup-oss/foundry/commit/ea7c264f9122f2ad44c5d83308f32c827768ac0f) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the ESLint plugins for [Cypress](https://www.npmjs.com/package/eslint-plugin-cypress), [Emotion](https://www.npmjs.com/package/@emotion/eslint-plugin), [Jest](https://www.npmjs.com/package/eslint-plugin-jest), [Next.js](https://www.npmjs.com/package/eslint-config-next), [Playwright](https://www.npmjs.com/package/eslint-plugin-playwright), [Storybook](https://www.npmjs.com/package/eslint-plugin-storybook), and [Testing Library](https://www.npmjs.com/package/eslint-plugin-testing-library) from the dependencies. Install the plugins as dev dependencies in your project. Foundry still enables and configures them automatically.
-
-## 7.0.0-next.1
-
-### Major Changes
-
-- [#912](https://github.com/sumup-oss/foundry/pull/912) [`df2477b`](https://github.com/sumup-oss/foundry/commit/df2477b745e71ded9bb6bc4abf7bcfe36a914f62) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to Prettier v3. [Read the release announcement](https://prettier.io/blog/2023/07/05/3.0.0.html).
-
-## 7.0.0-next.0
-
-### Major Changes
-
-- [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Raised the minimum Node version to ^18.12 || >=20 (i.e. Node 19 is not supported).
-
-- [#904](https://github.com/sumup-oss/foundry/pull/904) [`d937ac3`](https://github.com/sumup-oss/foundry/commit/d937ac3ed6782a2e86951f46eecda85e41ca2431) Thanks [@hilleer](https://github.com/hilleer)! - Added [`eslint-plugin-security`](https://github.com/eslint-community/eslint-plugin-security) for Node environments. This plugin helps identify potential security hotspots, but finds a lot of false positives which need triage by a human.
-
-- [#911](https://github.com/sumup-oss/foundry/pull/911) [`9e9d2c2`](https://github.com/sumup-oss/foundry/commit/9e9d2c278ca3a949390090acbfedc78bcbdce5ae) Thanks [@connor-baer](https://github.com/connor-baer)! - Added [`eslint-plugin-storybook`](https://github.com/storybookjs/eslint-plugin-storybook) for projects that use [Storybook](https://storybook.js.org/). This plugin helps conform to Storybook's best practices.
-
-- [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `@typescript-eslint/typescript-eslint` to v6. Read the [changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/CHANGELOG.md).
-
-- [#910](https://github.com/sumup-oss/foundry/pull/910) [`f392d28`](https://github.com/sumup-oss/foundry/commit/f392d28f9ab54dfe9eae203fdb8b4de4a3ede5a8) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `eslint-plugin-testing-library` to v6. Read the [migration guide](https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/migration-guides/v6.md).
+- [#941](https://github.com/sumup-oss/foundry/pull/941) [`9a2ef74`](https://github.com/sumup-oss/foundry/commit/9a2ef7471b4802f13fca8b62f3b628af68c25409) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed initializing the Stylelint config files.
 
 ## 6.2.0
 
