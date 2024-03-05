@@ -82,7 +82,7 @@ const PLUGINS = [
     name: Plugin.PLAYWRIGHT,
     frameworkPackages: ['@playwright/test'],
     pluginPackage: 'eslint-plugin-playwright',
-    supportedRange: '>=0.17.0 <1.0.0',
+    supportedRange: '>=0.17.0 <2.0.0',
   },
   {
     name: Plugin.STORYBOOK,
