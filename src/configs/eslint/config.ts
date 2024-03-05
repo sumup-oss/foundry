@@ -14,10 +14,17 @@
  */
 
 import { cwd } from 'process';
+import path from 'path';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
-import { Language, Environment, Framework, Plugin } from '../../types/shared';
+import {
+  Language,
+  Environment,
+  Framework,
+  Plugin,
+  Workspaces,
+} from '../../types/shared';
 import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
 
@@ -45,6 +52,20 @@ function customizer(
   return undefined;
 }
 
+export function getFileGlobsForWorkspaces(
+  workspaces: Workspaces,
+  fileGlobs: string[],
+) {
+  if (!workspaces) {
+    return fileGlobs;
+  }
+  return fileGlobs.concat(
+    workspaces.flatMap((workspace) =>
+      fileGlobs.map((fileGlob) => path.join(workspace, fileGlob)),
+    ),
+  );
+}
+
 const UNIT_TEST_FILES = [
   '**/*.spec.*',
   '**/jest*',
@@ -54,6 +75,8 @@ const UNIT_TEST_FILES = [
   '**/__fixtures__/**/*',
   '**/__mocks__/**/*',
 ];
+
+const INTEGRATION_TEST_FILES = ['e2e/**/*', 'tests/**/*'];
 
 const NODE_FILES = ['api/**/*', 'pages/api/**/*', 'src/pages/api/**/*'];
 
@@ -148,7 +171,7 @@ const base = {
   ],
 };
 
-function customizeLanguage(language?: Language) {
+function customizeLanguage(language: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
       overrides: sharedOverrides,
@@ -235,7 +258,7 @@ function customizeLanguage(language?: Language) {
   };
 }
 
-function customizeEnvironments(environments?: Environment[]) {
+function customizeEnvironments(environments: Environment[]) {
   const environmentMap = {
     [Environment.BROWSER]: {
       extends: ['plugin:compat/recommended'],
@@ -297,7 +320,7 @@ function customizeEnvironments(environments?: Environment[]) {
   };
 }
 
-function customizeFramework(frameworks?: Framework[]) {
+function customizeFramework(frameworks: Framework[]) {
   const frameworkMap = {
     [Framework.REACT]: {
       extends: [
@@ -395,7 +418,12 @@ function customizeFramework(frameworks?: Framework[]) {
   };
 }
 
-function customizePlugin(plugins?: Plugin[]) {
+function customizePlugin(plugins: Plugin[], workspaces: Workspaces) {
+  const integrationTestFiles = getFileGlobsForWorkspaces(
+    workspaces,
+    INTEGRATION_TEST_FILES,
+  );
+
   const pluginMap = {
     [Plugin.NEXT_JS]: {
       extends: ['next'],
@@ -443,7 +471,7 @@ function customizePlugin(plugins?: Plugin[]) {
     [Plugin.CYPRESS]: {
       overrides: [
         {
-          files: ['**/*spec.*', '**/e2e/**/*', '**/tests/**/*'],
+          files: integrationTestFiles,
           extends: ['plugin:cypress/recommended'],
           plugins: ['cypress'],
           env: { 'cypress/globals': true },
@@ -453,7 +481,7 @@ function customizePlugin(plugins?: Plugin[]) {
     [Plugin.PLAYWRIGHT]: {
       overrides: [
         {
-          files: ['**/*spec.*', '**/e2e/**/*', '**/tests/**/*'],
+          files: integrationTestFiles,
           extends: ['plugin:playwright/playwright-test'],
         },
       ],
@@ -474,7 +502,7 @@ function customizePlugin(plugins?: Plugin[]) {
   };
 }
 
-function addCopyrightNotice(openSource?: boolean) {
+function addCopyrightNotice(openSource: boolean) {
   return (config: ESLintConfig): ESLintConfig => {
     if (!openSource) {
       return config;
@@ -524,7 +552,7 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
     customizeLanguage(options.language),
     customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
-    customizePlugin(options.plugins),
+    customizePlugin(options.plugins, options.workspaces),
     addCopyrightNotice(options.openSource),
     applyOverrides(overrides),
   )(base);

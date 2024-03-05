@@ -57,12 +57,15 @@ export enum Plugin {
   TESTING_LIBRARY = 'Testing Library',
 }
 
+export type Workspaces = string[] | null;
+
 export interface Options {
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
   plugins?: Plugin[];
   openSource?: boolean;
+  workspaces?: Workspaces;
 }
 
 export interface InitOptions extends Options {
@@ -87,4 +90,6 @@ export interface ToolOptions {
   scripts?: (options: InitOptions) => Script[];
 }
 
-export type PackageJson = NormalizedPackageJson;
+export type PackageJson = NormalizedPackageJson & {
+  workspaces?: string[];
+};
