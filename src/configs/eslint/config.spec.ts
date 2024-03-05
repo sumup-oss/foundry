@@ -19,7 +19,11 @@ import { Language, Environment, Framework, Plugin } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';
 import { getOptions as getOptionsMock } from '../../lib/options';
 
-import { customizeConfig, createConfig } from './config';
+import {
+  customizeConfig,
+  createConfig,
+  getFileGlobsForWorkspaces,
+} from './config';
 
 vi.mock('process', () => ({
   cwd: (): string => '/project/dir',
@@ -101,6 +105,29 @@ describe('eslint', () => {
       };
       const actual = customizeConfig(base, custom);
       expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('getFileGlobsForWorkspaces', () => {
+    const files = ['e2e/**/*', '*.spec.*'];
+
+    it('should return the file globs unchanged when the workspaces are null', () => {
+      const workspaces = null;
+      const actual = getFileGlobsForWorkspaces(workspaces, files);
+      expect(actual).toEqual(files);
+    });
+
+    it('should return the file globs raw and prefixed with each workspace', () => {
+      const workspaces = ['packages/*', 'docs'];
+      const actual = getFileGlobsForWorkspaces(workspaces, files);
+      expect(actual).toEqual([
+        'e2e/**/*',
+        '*.spec.*',
+        'packages/*/e2e/**/*',
+        'packages/*/*.spec.*',
+        'docs/e2e/**/*',
+        'docs/*.spec.*',
+      ]);
     });
   });
 
