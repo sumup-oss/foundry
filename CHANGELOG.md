@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.0.1
+
+### Patch Changes
+
+- [#952](https://github.com/sumup-oss/foundry/pull/952) [`2cc9640`](https://github.com/sumup-oss/foundry/commit/2cc96407b5dfe31b8a729d5e0ec9af700db9b023) Thanks [@connor-baer](https://github.com/connor-baer)! - Reduced the scope of the integration test file globs to prevent false positive lint issues in unit test files. Integration tests must be located in the `e2e/` or `tests/` folders in the repo or [workspace](https://docs.npmjs.com/cli/v7/using-npm/workspaces) root directories.
+
 ## 7.0.0
 
 ### Major Changes
