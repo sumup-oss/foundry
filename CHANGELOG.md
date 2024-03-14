@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.1.1
+
+### Patch Changes
+
+- [`b9544b3`](https://github.com/sumup-oss/foundry/commit/b9544b370940d0c8c798fca1e0e6a430b28de876) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed the config for Circuit UI's Stylelint plugin.
+
 ## 7.1.0
 
 ### Minor Changes
