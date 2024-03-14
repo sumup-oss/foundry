@@ -14,7 +14,10 @@
  */
 
 import { Config as StylelintConfig } from 'stylelint';
-import { mergeWith, isArray, isObject, uniq } from 'lodash/fp';
+import { flow, mergeWith, isArray, isObject, uniq, isEmpty } from 'lodash/fp';
+
+import { getOptions } from '../../lib/options';
+import { Plugin } from '../../types/shared';
 
 export const customizeConfig = mergeWith(customizer);
 
@@ -60,6 +63,42 @@ const base: StylelintConfig = {
   reportNeedlessDisables: true,
 };
 
+function customizePlugin(plugins: Plugin[]) {
+  const pluginMap: { [key in Plugin]?: StylelintConfig } = {
+    [Plugin.CIRCUIT_UI]: {
+      plugins: ['@sumup/circuit-ui'],
+      rules: {
+        '@sumup/circuit-ui/component-lifecycle-imports': 'error',
+        '@sumup/circuit-ui/no-invalid-custom-properties': 'error',
+        '@sumup/circuit-ui/no-renamed-props': 'error',
+        '@sumup/circuit-ui/no-deprecated-props': 'warn',
+        '@sumup/circuit-ui/no-deprecated-components': 'warn',
+      },
+    },
+  };
+
+  return (config: StylelintConfig): StylelintConfig => {
+    if (!plugins || isEmpty(plugins)) {
+      return config;
+    }
+
+    return plugins.reduce((acc, plugin: Plugin) => {
+      const overrides = pluginMap[plugin];
+      return customizeConfig(acc, overrides);
+    }, config);
+  };
+}
+
+function applyOverrides(overrides: StylelintConfig) {
+  return (config: StylelintConfig): StylelintConfig =>
+    customizeConfig(config, overrides);
+}
+
 export function createConfig(overrides: StylelintConfig = {}): StylelintConfig {
-  return customizeConfig(base, overrides);
+  const options = getOptions();
+
+  return flow(
+    customizePlugin(options.plugins),
+    applyOverrides(overrides),
+  )(base);
 }

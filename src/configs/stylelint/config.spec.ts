@@ -13,9 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi, type Mock } from 'vitest';
+
+import { Plugin } from '../../types/shared';
+import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { customizeConfig, createConfig } from './config';
+
+vi.mock('../../lib/options', () => ({
+  getOptions: vi.fn(() => ({})),
+}));
+
+const getOptions = getOptionsMock as Mock;
 
 describe('stylelint', () => {
   describe('customizeConfig', () => {
@@ -104,6 +113,14 @@ describe('stylelint', () => {
           ]),
         }),
       );
+    });
+  });
+
+  describe('with options', () => {
+    it("should return a config for { plugins: ['Circuit UI'] }", () => {
+      getOptions.mockReturnValue({ plugins: [Plugin.CIRCUIT_UI] });
+      const actual = createConfig();
+      expect(actual).toMatchSnapshot();
     });
   });
 });
