@@ -82,7 +82,7 @@ const PLUGINS = [
     name: Plugin.PLAYWRIGHT,
     frameworkPackages: ['@playwright/test'],
     pluginPackage: 'eslint-plugin-playwright',
-    supportedRange: '>=0.17.0 <1.0.0',
+    supportedRange: '>=0.17.0 <2.0.0',
   },
   {
     name: Plugin.STORYBOOK,
@@ -202,7 +202,7 @@ export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
 
       if (!isSupported) {
         logger.warn(
-          `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not.`,
+          `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not. Pull requests welcome!`,
         );
       }
     } catch (error) {

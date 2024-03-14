@@ -271,7 +271,7 @@ describe('options', () => {
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"eslint-config-next" is installed at version "^9.0.0". Foundry has only been tested with versions ">=10.0.0". You may find that it works just fine, or you may not.',
+        '"eslint-config-next" is installed at version "^9.0.0". Foundry has only been tested with versions ">=10.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -279,14 +279,14 @@ describe('options', () => {
       const packageJson = {
         ...basePackageJson,
         license: 'MIT',
-        dependencies: { 'eslint-plugin-playwright': '^1.0.0' },
+        dependencies: { 'eslint-plugin-playwright': '^2.0.0' },
       };
 
       warnAboutUnsupportedPlugins(packageJson);
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"eslint-plugin-playwright" is installed at version "^1.0.0". Foundry has only been tested with versions ">=0.17.0 <1.0.0". You may find that it works just fine, or you may not.',
+        '"eslint-plugin-playwright" is installed at version "^2.0.0". Foundry has only been tested with versions ">=0.17.0 <2.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -304,7 +304,7 @@ describe('options', () => {
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"@sumup/eslint-plugin-circuit-ui" is installed at version "1.0.0". Foundry has only been tested with versions ">=3.0.0 <5.0.0". You may find that it works just fine, or you may not.',
+        '"@sumup/eslint-plugin-circuit-ui" is installed at version "1.0.0". Foundry has only been tested with versions ">=3.0.0 <5.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
