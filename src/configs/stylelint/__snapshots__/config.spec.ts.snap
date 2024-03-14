@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`stylelint > with options > should return a config for { plugins: ['Circuit UI'] } 1`] = `
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+  ],
+  "plugins": [
+    "stylelint-no-unsupported-browser-features",
+    "@sumup/circuit-ui",
+  ],
+  "reportDescriptionlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "rules": {
+    "@sumup/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup/circuit-ui/no-deprecated-components": "warn",
+    "@sumup/circuit-ui/no-deprecated-props": "warn",
+    "@sumup/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup/circuit-ui/no-renamed-props": "error",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "media-feature-range-notation": [
+      "prefix",
+    ],
+    "no-descending-specificity": null,
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "ignorePartialSupport": true,
+        "severity": "warning",
+      },
+    ],
+    "selector-class-pattern": null,
+    "selector-not-notation": [
+      "simple",
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global",
+        ],
+      },
+    ],
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true,
+      },
+    ],
+  },
+}
+`;
