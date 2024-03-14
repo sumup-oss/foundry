@@ -1,5 +1,13 @@
 # @sumup/foundry
 
+## 7.1.0
+
+### Minor Changes
+
+- [#954](https://github.com/sumup-oss/foundry/pull/954) [`08122eb`](https://github.com/sumup-oss/foundry/commit/08122eb1d6b4f9a9dbf4292001bc83d1eaec16fe) Thanks [@connor-baer](https://github.com/connor-baer)! - Extended the supported version range for `eslint-plugin-playwright` to include v1.x.
+
+- [#956](https://github.com/sumup-oss/foundry/pull/956) [`1855159`](https://github.com/sumup-oss/foundry/commit/18551591bfd030c47ad0ace8d07adf499c88ebb9) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [Circuit UI's Stylelint plugin](https://circuit.sumup.com/?path=/docs/packages-stylelint-plugin-circuit-ui--docs).
+
 ## 7.0.1
 
 ### Patch Changes
