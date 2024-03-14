@@ -41,26 +41,33 @@ const PLUGINS = [
   {
     name: Plugin.CIRCUIT_UI,
     frameworkPackages: ['@sumup/circuit-ui', '@sumup/design-tokens'],
-    pluginPackage: '@sumup/eslint-plugin-circuit-ui',
-    supportedRange: '>=3.0.0 <5.0.0',
+    eslintPlugins: {
+      '@sumup/eslint-plugin-circuit-ui': '>=3.0.0 <5.0.0',
+    },
+    stylelintPlugins: {
+      '@sumup/stylelint-plugin-circuit-ui': '>=1.0.0 <3.0.0',
+    },
   },
   {
     name: Plugin.NEXT_JS,
     frameworkPackages: ['next'],
-    pluginPackage: 'eslint-config-next',
-    supportedRange: '>=10.0.0',
+    eslintPlugins: {
+      'eslint-config-next': '>=10.0.0',
+    },
   },
   {
     name: Plugin.EMOTION,
     frameworkPackages: ['@emotion/react', '@emotion/styled'],
-    pluginPackage: '@emotion/eslint-plugin',
-    supportedRange: '^11.0.0',
+    eslintPlugins: {
+      '@emotion/eslint-plugin': '^11.0.0',
+    },
   },
   {
     name: Plugin.JEST,
     frameworkPackages: ['jest'],
-    pluginPackage: 'eslint-plugin-jest',
-    supportedRange: '^27.0.0',
+    eslintPlugins: {
+      'eslint-plugin-jest': '^27.0.0',
+    },
   },
   {
     name: Plugin.TESTING_LIBRARY,
@@ -69,26 +76,30 @@ const PLUGINS = [
       '@testing-library/jest-dom',
       '@testing-library/react',
     ],
-    pluginPackage: 'eslint-plugin-testing-library',
-    supportedRange: '^6.0.0',
+    eslintPlugins: {
+      'eslint-plugin-testing-library': '^6.0.0',
+    },
   },
   {
     name: Plugin.CYPRESS,
     frameworkPackages: ['cypress'],
-    pluginPackage: 'eslint-plugin-cypress',
-    supportedRange: '^2.0.0',
+    eslintPlugins: {
+      'eslint-plugin-cypress': '^2.0.0',
+    },
   },
   {
     name: Plugin.PLAYWRIGHT,
     frameworkPackages: ['@playwright/test'],
-    pluginPackage: 'eslint-plugin-playwright',
-    supportedRange: '>=0.17.0 <2.0.0',
+    eslintPlugins: {
+      'eslint-plugin-playwright': '>=0.17.0 <2.0.0',
+    },
   },
   {
     name: Plugin.STORYBOOK,
     frameworkPackages: ['storybook', '@storybook/react'],
-    pluginPackage: 'eslint-plugin-storybook',
-    supportedRange: '>=0.6.0 <1.0.0',
+    eslintPlugins: {
+      'eslint-plugin-storybook': '>=0.6.0 <1.0.0',
+    },
   },
 ];
 
@@ -105,6 +116,7 @@ export function getOptions(): Required<Options> {
     language: pick(config.language, detectLanguage),
     environments: pick(config.environments, detectEnvironments),
     frameworks: pick(config.frameworks, detectFrameworks),
+    // TODO: Differentiate between ESLint and Stylelint plugins
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
     workspaces: packageJson.workspaces || null,
@@ -180,61 +192,79 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
 }
 
 export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
-  PLUGINS.forEach(({ pluginPackage, supportedRange }) => {
-    let version = getDependencyVersion(packageJson, pluginPackage);
+  PLUGINS.forEach(({ eslintPlugins, stylelintPlugins = {} }) => {
+    Object.entries({ ...eslintPlugins, ...stylelintPlugins }).forEach(
+      ([pluginPackage, supportedRange]: [string, string]) => {
+        let version = getDependencyVersion(packageJson, pluginPackage);
 
-    if (!version) {
-      return;
-    }
-
-    try {
-      // Extract the version from tarball URLs
-      if (version.startsWith('https://')) {
-        const matches = version.match(/(\d\.\d\.\d.*)\.tgz/);
-
-        if (matches) {
-          // eslint-disable-next-line prefer-destructuring
-          version = matches[1];
+        if (!version) {
+          return;
         }
-      }
 
-      const isSupported = intersects(version, supportedRange);
+        try {
+          // Extract the version from tarball URLs
+          if (version.startsWith('https://')) {
+            const matches = version.match(/(\d\.\d\.\d.*)\.tgz/);
 
-      if (!isSupported) {
-        logger.warn(
-          `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not. Pull requests welcome!`,
-        );
-      }
-    } catch (error) {
-      logger.warn(
-        `Failed to verify whether "${pluginPackage}" installed at version "${version}" is supported. You may find that it works just fine, or you may not.`,
-      );
-      logger.debug((error as Error).message);
-    }
+            if (matches) {
+              // eslint-disable-next-line prefer-destructuring
+              version = matches[1];
+            }
+          }
+
+          const isSupported = intersects(version, supportedRange);
+
+          if (!isSupported) {
+            logger.warn(
+              `"${pluginPackage}" is installed at version "${version}". Foundry has only been tested with versions "${supportedRange}". You may find that it works just fine, or you may not. Pull requests welcome!`,
+            );
+          }
+        } catch (error) {
+          logger.warn(
+            `Failed to verify whether "${pluginPackage}" installed at version "${version}" is supported. You may find that it works just fine, or you may not.`,
+          );
+          logger.debug((error as Error).message);
+        }
+      },
+    );
   });
 }
 
 export function warnAboutMissingPlugins(packageJson: PackageJson): void {
-  PLUGINS.forEach(({ frameworkPackages, pluginPackage }) => {
+  PLUGINS.forEach(({ frameworkPackages, eslintPlugins, stylelintPlugins }) => {
     const installedPackage = frameworkPackages.find((pkg) =>
       hasDependency(packageJson, pkg),
     );
 
-    if (installedPackage && !hasDependency(packageJson, pluginPackage)) {
-      logger.warn(
-        `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${pluginPackage}".`,
-      );
-    }
+    Object.keys({ ...eslintPlugins, ...stylelintPlugins }).forEach(
+      (pluginPackage) => {
+        if (installedPackage && !hasDependency(packageJson, pluginPackage)) {
+          logger.warn(
+            `"${installedPackage}" is installed but not the corresponding ESLint plugin. Please install "${pluginPackage}".`,
+          );
+        }
+      },
+    );
   });
 }
 
 export function detectPlugins(packageJson: PackageJson): Plugin[] {
-  return PLUGINS.reduce((allPlugins, { pluginPackage, name }) => {
-    if (hasDependency(packageJson, pluginPackage)) {
-      allPlugins.push(name);
-    }
-    return allPlugins;
-  }, [] as Plugin[]);
+  const pluginSet = PLUGINS.reduce(
+    (allPlugins, { name, eslintPlugins, stylelintPlugins }) => {
+      const plugins = Object.keys({ ...eslintPlugins, ...stylelintPlugins });
+
+      plugins.forEach((pluginPackage) => {
+        if (hasDependency(packageJson, pluginPackage)) {
+          allPlugins.add(name);
+        }
+      });
+
+      return allPlugins;
+    },
+    new Set<Plugin>(),
+  );
+
+  return Array.from(pluginSet);
 }
 
 export function detectOpenSource(packageJson: PackageJson) {
