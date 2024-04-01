@@ -91,7 +91,7 @@
     "@types/node": "^18.19.0",
     "@types/prettier": "^2.7.3",
     "@types/yargs": "^17.0.32",
-    "@vitest/coverage-v8": "^1.2.1",
+    "@vitest/coverage-v8": "^1.4.0",
     "audit-ci": "^6.6.1",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
