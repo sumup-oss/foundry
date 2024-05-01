@@ -48,7 +48,7 @@
     "@typescript-eslint/parser": "^6.19.1",
     "chalk": "^4.1.2",
     "cross-spawn": "^7.0.3",
-    "dedent": "^0.7.0",
+    "dedent": "^1.5.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
