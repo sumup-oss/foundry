@@ -1,8 +1,8 @@
 # Contributing
 
-## Contributor License Agreement (CLA)
+## Don't work at SumUp?
 
-To start contributing to SumUp Open Source projects, [please accept our Contributor License Agreement](https://opensource.sumup.com/cla). Should you have any questions or concerns, please get in touch with [opensource@sumup.com](mailto:opensource@sumup.com).
+In an effort to give back to the community from which we learn so much, our documentation and code are public. However, the intended use case for Foundry is internal, so please treat this as a read-only project and inspiration only.
 
 ## Code of Conduct (CoC)
 
