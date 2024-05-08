@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-import { existsSync } from 'fs';
-import { resolve } from 'path';
-
 import inquirer, { Question } from 'inquirer';
 import Listr, { ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
@@ -277,18 +274,4 @@ function getScriptsForTools(
     }
     return allScripts;
   }, []);
-}
-
-export function validatePath(path?: string): string | boolean {
-  if (!path) {
-    return false;
-  }
-
-  const resolvedPath = resolve(path);
-
-  if (!existsSync(resolvedPath)) {
-    return `The path "${resolvedPath}" doesn't exist. Please try another one.`;
-  }
-
-  return true;
 }
