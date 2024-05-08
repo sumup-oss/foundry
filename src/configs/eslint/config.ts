@@ -278,7 +278,10 @@ function customizeEnvironments(environments: Environment[]) {
       ],
     },
     [Environment.NODE]: {
-      extends: ['plugin:node/recommended', 'plugin:security/recommended'],
+      extends: [
+        'plugin:node/recommended',
+        'plugin:security/recommended-legacy',
+      ],
       env: { node: true },
       rules: {
         // We don't know if the user's source code is using EJS or CJS.
