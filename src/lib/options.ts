@@ -66,7 +66,7 @@ const PLUGINS = [
     name: Plugin.JEST,
     frameworkPackages: ['jest'],
     eslintPlugins: {
-      'eslint-plugin-jest': '^27.0.0',
+      'eslint-plugin-jest': '>=27.0.0 <29.0.0',
     },
   },
   {
