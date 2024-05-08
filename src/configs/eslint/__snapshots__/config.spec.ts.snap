@@ -3144,7 +3144,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -3353,7 +3353,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -3571,7 +3571,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -3788,7 +3788,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -4011,7 +4011,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "next",
   ],
   "overrides": [
@@ -4215,7 +4215,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -4427,7 +4427,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
   ],
   "overrides": [
@@ -4631,7 +4631,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -4851,7 +4851,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5023,7 +5023,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5204,7 +5204,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5384,7 +5384,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5570,7 +5570,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5737,7 +5737,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -5912,7 +5912,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -6079,7 +6079,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -11492,7 +11492,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -11832,7 +11832,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -12181,7 +12181,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -12529,7 +12529,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -12883,7 +12883,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "next",
   ],
   "overrides": [
@@ -13218,7 +13218,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -13561,7 +13561,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
   ],
   "overrides": [
@@ -13896,7 +13896,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
   ],
   "overrides": [
     {
@@ -14247,7 +14247,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -14550,7 +14550,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -14862,7 +14862,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -15173,7 +15173,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -15490,7 +15490,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -15788,7 +15788,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -16094,7 +16094,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
@@ -16392,7 +16392,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "plugin:prettier/recommended",
     "airbnb-base",
     "plugin:node/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
