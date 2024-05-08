@@ -18,6 +18,6 @@ import { File } from '../../types/shared';
 export const files = (): File[] => [
   {
     name: '.huskyrc.js',
-    content: "module.exports = require('@sumup/foundry/husky')()",
+    content: "module.exports = require('@sumup-oss/foundry/husky')()",
   },
 ];

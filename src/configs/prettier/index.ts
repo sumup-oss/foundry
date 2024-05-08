@@ -21,7 +21,7 @@ export const files = (): File[] => [
   {
     name: 'prettier.config.js',
     content: `
-    module.exports = require('@sumup/foundry/prettier')()`,
+    module.exports = require('@sumup-oss/foundry/prettier')()`,
   },
   {
     name: '.prettierignore',

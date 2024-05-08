@@ -1,4 +1,4 @@
-# @sumup/foundry
+# @sumup-oss/foundry
 
 ## 7.2.0
 

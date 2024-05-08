@@ -25,7 +25,7 @@ import { debug } from './debug';
 import { DEFAULT_OPTIONS } from './defaults';
 
 logger.warn(
-  '`@sumup/foundry` has been renamed to `@sumup-oss/foundry`. Update the package name in your `package.json` file.',
+  '`@sumup-oss/foundry` has been renamed to `@sumup-oss/foundry`. Update the package name in your `package.json` file.',
 );
 
 // eslint-disable-next-line no-void

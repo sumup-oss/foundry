@@ -21,7 +21,7 @@ export const files = (): File[] => [
   {
     name: '.stylelintrc.js',
     content: `
-    module.exports = require('@sumup/foundry/stylelint')()`,
+    module.exports = require('@sumup-oss/foundry/stylelint')()`,
   },
   {
     name: '.stylelintignore',
