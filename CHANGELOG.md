@@ -1,5 +1,11 @@
 # @sumup/foundry
 
+## 7.2.0
+
+### Minor Changes
+
+- [#970](https://github.com/sumup-oss/foundry/pull/970) [`07cd253`](https://github.com/sumup-oss/foundry/commit/07cd2534800e8acd9325c8581d05540a4f4f7957) Thanks [@connor-baer](https://github.com/connor-baer)! - Extended the supported version range for `eslint-plugin-jest` to include v28.x.
+
 ## 7.1.1
 
 ### Patch Changes
