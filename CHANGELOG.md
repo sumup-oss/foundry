@@ -1,5 +1,19 @@
 # @sumup-oss/foundry
 
+## 8.0.0
+
+### Major Changes
+
+- [#974](https://github.com/sumup-oss/foundry/pull/974) [`1018616`](https://github.com/sumup-oss/foundry/commit/10186164db60df7aec124208e173bffd3fc9278a) Thanks [@connor-baer](https://github.com/connor-baer)! - Renamed the package from `@sumup/foundry` to `@sumup-oss/foundry`. Update the name in your `package.json` and tooling config files. We recommend running a global search-and-replace in your project.
+
+- [#973](https://github.com/sumup-oss/foundry/pull/973) [`bf86e86`](https://github.com/sumup-oss/foundry/commit/bf86e86cb8730d0f0b8e69611350bf518288b138) Thanks [@connor-baer](https://github.com/connor-baer)! - Raised the minimum Node version to ^18.18 || ^20.9 || >=22.
+
+- [#963](https://github.com/sumup-oss/foundry/pull/963) [`46a67f9`](https://github.com/sumup-oss/foundry/commit/46a67f927dcfc415ebc72869dfead6d342136b84) Thanks [@davilima6](https://github.com/davilima6)! - Upgraded `@typescript-eslint/*` to v7. Read the [changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/CHANGELOG.md).
+
+- [#963](https://github.com/sumup-oss/foundry/pull/963) [`46a67f9`](https://github.com/sumup-oss/foundry/commit/46a67f927dcfc415ebc72869dfead6d342136b84) Thanks [@davilima6](https://github.com/davilima6)! - Upgraded `eslint-config-airbnb-typescript` to v18. Read the [release notes](https://github.com/iamturns/eslint-config-airbnb-typescript/releases/tag/v18.0.0).
+
+- [#973](https://github.com/sumup-oss/foundry/pull/973) [`bf86e86`](https://github.com/sumup-oss/foundry/commit/bf86e86cb8730d0f0b8e69611350bf518288b138) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded `eslint-plugin-security` to v3. Read the [changelog](https://github.com/eslint-community/eslint-plugin-security/blob/main/CHANGELOG.md).
+
 ## 7.2.0
 
 ### Minor Changes
