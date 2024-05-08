@@ -17,16 +17,10 @@
 
 import yargs from 'yargs';
 
-import * as logger from '../lib/logger';
-
 import { run, RunParams } from './run';
 import { init, InitParams } from './init';
 import { debug } from './debug';
 import { DEFAULT_OPTIONS } from './defaults';
-
-logger.warn(
-  '`@sumup/foundry` has been renamed to `@sumup-oss/foundry`. Update the package name in your `package.json` file.',
-);
 
 // eslint-disable-next-line no-void
 void yargs

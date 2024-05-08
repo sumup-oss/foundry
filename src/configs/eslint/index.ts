@@ -21,7 +21,7 @@ export const files = (): File[] => [
   {
     name: '.eslintrc.js',
     content: `
-    module.exports = require('@sumup/foundry/eslint')()`,
+    module.exports = require('@sumup-oss/foundry/eslint')()`,
   },
   {
     name: '.eslintignore',

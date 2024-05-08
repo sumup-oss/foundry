@@ -36,7 +36,7 @@ For development and local testing we recommend the following.
 1. Run `npm run dev`. This will clean the `dist` folder and copy over all relevant files.
 2. Run `npm install` inside the `dist` folder. This will ensure all dependencies are present in the dist folder when linking.
 3. Inside the `dist` folder run `npm link`. This will make the compiled version of Foundry available for linking in projects you want to test your changes in, for example changes to the ESLint config.
-4. Inside the project you want to test your local changes to Foundry, run `npm link @sumup/foundry`.
+4. Inside the project you want to test your local changes to Foundry, run `npm link @sumup-oss/foundry`.
 
 Refer to the [npm docs](https://docs.npmjs.com/cli/v9/commands/npm-link) to learn more about linking local dependencies.
 
@@ -65,7 +65,7 @@ We have a couple of special branches that are used for stable releases and [pre-
 To install the most recent version from a release channel in your project, run:
 
 ```sh
-npm install --dev @sumup/foundry@<release-channel>
+npm install --dev @sumup-oss/foundry@<release-channel>
 ```
 
 #### Pre-releases
