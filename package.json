@@ -74,7 +74,7 @@
     "prettier": "^3.2.5",
     "read-pkg-up": "^7.0.1",
     "semver": "^7.6.1",
-    "stylelint": "^16.5.0",
+    "stylelint": "^16.6.1",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-no-unsupported-browser-features": "^8.0.1",
