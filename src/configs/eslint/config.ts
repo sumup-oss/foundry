@@ -102,14 +102,6 @@ const sharedRules = {
   'import/no-cycle': ['error', { maxDepth: 7 }],
   'import/order': ['error', { 'newlines-between': 'always' }],
   'import/extensions': 'off',
-  // The rules below are already covered by prettier.
-  'quote-props': 'off',
-  'comma-dangle': 'off',
-  'object-curly-newline': 'off',
-  'implicit-arrow-linebreak': 'off',
-  'function-paren-newline': 'off',
-  'operator-linebreak': 'off',
-  'indent': 'off',
   'no-void': ['error', { allowAsStatement: true }],
 };
 
@@ -134,8 +126,7 @@ const sharedOverrides = [
 
 const base = {
   root: true,
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'airbnb-base'],
-  plugins: ['prettier'],
+  extends: ['eslint:recommended', 'airbnb-base', 'plugin:prettier/recommended'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',

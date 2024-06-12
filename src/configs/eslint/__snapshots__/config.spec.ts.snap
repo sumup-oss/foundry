@@ -7,8 +7,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -85,7 +85,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@sumup/circuit-ui",
   ],
   "root": true,
@@ -95,13 +94,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -116,7 +112,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -139,9 +134,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -216,8 +208,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -308,18 +300,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -334,7 +320,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -357,9 +342,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -434,8 +416,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -512,7 +494,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@emotion",
   ],
   "root": true,
@@ -522,13 +503,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -543,7 +521,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -566,9 +543,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/no-unknown-property": [
       "error",
       {
@@ -651,8 +625,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -748,18 +722,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -774,7 +742,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -797,9 +764,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -874,8 +838,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "next",
   ],
@@ -952,18 +916,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -978,7 +936,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -1001,9 +958,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -1078,8 +1032,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -1164,18 +1118,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -1190,7 +1138,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -1213,9 +1160,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -1290,8 +1234,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:storybook/recommended",
   ],
@@ -1368,18 +1312,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -1394,7 +1332,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -1417,9 +1354,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -1494,8 +1428,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -1588,18 +1522,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -1614,7 +1542,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -1637,9 +1564,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -1714,8 +1638,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -1796,7 +1720,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -1809,13 +1732,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -1830,7 +1750,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -1853,9 +1772,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -1888,8 +1804,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -1985,20 +1901,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2013,7 +1925,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2036,9 +1947,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -2071,8 +1979,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2153,7 +2061,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -2166,13 +2073,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2187,7 +2091,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2210,9 +2113,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/no-unknown-property": [
       "error",
@@ -2253,8 +2153,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2355,20 +2255,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2383,7 +2279,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2406,9 +2301,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -2441,8 +2333,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2524,20 +2416,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2552,7 +2440,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2575,9 +2462,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -2610,8 +2494,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2701,20 +2585,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2729,7 +2609,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2752,9 +2631,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -2787,8 +2663,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2870,20 +2746,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -2898,7 +2770,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -2921,9 +2792,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -2956,8 +2824,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -3055,20 +2923,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -3083,7 +2947,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -3106,9 +2969,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -3141,8 +3001,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3217,7 +3077,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@sumup/circuit-ui",
   ],
   "root": true,
@@ -3227,13 +3086,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -3248,7 +3104,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -3274,9 +3129,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -3350,8 +3202,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3440,18 +3292,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -3466,7 +3312,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -3492,9 +3337,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -3568,8 +3410,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3644,7 +3486,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@emotion",
   ],
   "root": true,
@@ -3654,13 +3495,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -3675,7 +3513,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -3701,9 +3538,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/no-unknown-property": [
       "error",
       {
@@ -3785,8 +3619,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3880,18 +3714,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -3906,7 +3734,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -3932,9 +3759,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -4008,8 +3832,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "next",
@@ -4084,18 +3908,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -4110,7 +3928,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -4136,9 +3953,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -4212,8 +4026,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -4296,18 +4110,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -4322,7 +4130,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -4348,9 +4155,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -4424,8 +4228,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
@@ -4500,18 +4304,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -4526,7 +4324,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -4552,9 +4349,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -4628,8 +4422,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -4720,18 +4514,12 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -4746,7 +4534,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -4772,9 +4559,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -4848,8 +4632,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -4928,7 +4712,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -4941,13 +4724,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -4962,7 +4742,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -4988,9 +4767,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -5020,8 +4796,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5115,20 +4891,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -5143,7 +4915,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -5169,9 +4940,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -5201,8 +4969,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5281,7 +5049,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -5294,13 +5061,10 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -5315,7 +5079,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -5341,9 +5104,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/no-unknown-property": [
       "error",
@@ -5381,8 +5141,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5481,20 +5241,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -5509,7 +5265,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -5535,9 +5290,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -5567,8 +5319,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5648,20 +5400,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -5676,7 +5424,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -5702,9 +5449,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -5734,8 +5478,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5823,20 +5567,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -5851,7 +5591,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -5877,9 +5616,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -5909,8 +5645,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5990,20 +5726,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -6018,7 +5750,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -6044,9 +5775,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -6076,8 +5804,8 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -6173,20 +5901,16 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -6201,7 +5925,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -6227,9 +5950,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -6259,8 +5979,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -6329,13 +6049,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -6350,7 +6067,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -6373,9 +6089,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -6468,7 +6181,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@sumup/circuit-ui",
   ],
   "root": true,
@@ -6478,13 +6190,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -6499,7 +6208,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -6522,9 +6230,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -6599,8 +6304,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -6669,13 +6374,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -6690,7 +6392,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -6713,9 +6414,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -6822,18 +6520,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -6848,7 +6540,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -6871,9 +6562,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -6948,8 +6636,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -7018,13 +6706,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -7039,7 +6724,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -7062,9 +6746,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -7157,7 +6838,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@emotion",
   ],
   "root": true,
@@ -7167,13 +6847,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -7188,7 +6865,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -7211,9 +6887,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/no-unknown-property": [
       "error",
       {
@@ -7296,8 +6969,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -7366,13 +7039,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -7387,7 +7057,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -7410,9 +7079,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -7524,18 +7190,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -7550,7 +7210,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -7573,9 +7232,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -7650,8 +7306,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "next",
   ],
@@ -7721,13 +7377,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -7742,7 +7395,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -7765,9 +7417,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -7859,18 +7508,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -7885,7 +7528,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -7908,9 +7550,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -7985,8 +7624,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -8055,13 +7694,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -8076,7 +7712,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -8099,9 +7734,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -8202,18 +7834,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -8228,7 +7854,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -8251,9 +7876,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -8328,8 +7950,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:storybook/recommended",
   ],
@@ -8399,13 +8021,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -8420,7 +8039,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -8443,9 +8061,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -8537,18 +8152,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -8563,7 +8172,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -8586,9 +8194,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -8663,8 +8268,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -8733,13 +8338,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -8754,7 +8356,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -8777,9 +8378,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -8888,18 +8486,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -8914,7 +8506,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -8937,9 +8528,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
@@ -9014,8 +8602,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -9087,13 +8675,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -9108,7 +8693,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -9131,9 +8715,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -9227,7 +8808,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -9240,13 +8820,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -9261,7 +8838,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -9284,9 +8860,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -9319,8 +8892,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -9392,13 +8965,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -9413,7 +8983,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -9436,9 +9005,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -9547,20 +9113,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -9575,7 +9137,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -9598,9 +9159,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -9633,8 +9191,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -9706,13 +9264,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -9727,7 +9282,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -9750,9 +9304,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -9846,7 +9397,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -9859,13 +9409,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -9880,7 +9427,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -9903,9 +9449,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/no-unknown-property": [
       "error",
@@ -9946,8 +9489,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10019,13 +9562,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -10040,7 +9580,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -10063,9 +9602,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -10179,20 +9715,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -10207,7 +9739,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -10230,9 +9761,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -10265,8 +9793,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10339,13 +9867,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -10360,7 +9885,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -10383,9 +9907,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -10479,20 +10000,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -10507,7 +10024,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -10530,9 +10046,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -10565,8 +10078,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10638,13 +10151,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -10659,7 +10169,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -10682,9 +10191,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -10787,20 +10293,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -10815,7 +10317,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -10838,9 +10339,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -10873,8 +10371,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10947,13 +10445,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -10968,7 +10463,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -10991,9 +10485,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -11087,20 +10578,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -11115,7 +10602,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -11138,9 +10624,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -11173,8 +10656,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -11246,13 +10729,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -11267,7 +10747,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -11290,9 +10769,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -11403,20 +10879,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -11431,7 +10903,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -11454,9 +10925,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
         "allowAsStatement": true,
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
   },
@@ -11489,8 +10957,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -11560,13 +11028,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -11581,7 +11046,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -11604,9 +11068,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -11696,7 +11157,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@sumup/circuit-ui",
   ],
   "root": true,
@@ -11706,13 +11166,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -11727,7 +11184,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -11753,9 +11209,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -11829,8 +11282,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -11900,13 +11353,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -11921,7 +11371,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -11944,9 +11393,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -12050,18 +11496,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -12076,7 +11516,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -12102,9 +11541,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -12178,8 +11614,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -12249,13 +11685,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -12270,7 +11703,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -12293,9 +11725,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -12385,7 +11814,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "@emotion",
   ],
   "root": true,
@@ -12395,13 +11823,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -12416,7 +11841,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -12442,9 +11866,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/no-unknown-property": [
       "error",
       {
@@ -12526,8 +11947,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -12597,13 +12018,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -12618,7 +12036,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -12641,9 +12058,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -12752,18 +12166,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -12778,7 +12186,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -12804,9 +12211,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -12880,8 +12284,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "next",
@@ -12952,13 +12356,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -12973,7 +12374,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -12996,9 +12396,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -13087,18 +12484,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -13113,7 +12504,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -13139,9 +12529,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -13215,8 +12602,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -13286,13 +12673,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -13307,7 +12691,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -13330,9 +12713,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -13430,18 +12810,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -13456,7 +12830,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -13482,9 +12855,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -13558,8 +12928,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
@@ -13630,13 +13000,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -13651,7 +13018,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -13674,9 +13040,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -13765,18 +13128,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -13791,7 +13148,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -13817,9 +13173,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -13893,8 +13246,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -13964,13 +13317,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -13985,7 +13335,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -14008,9 +13357,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -14116,18 +13462,12 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "ecmaVersion": 6,
     "sourceType": "module",
   },
-  "plugins": [
-    "prettier",
-  ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -14142,7 +13482,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -14168,9 +13507,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "security/detect-object-injection": "off",
   },
   "settings": {
@@ -14244,8 +13580,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -14318,13 +13654,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -14339,7 +13672,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -14362,9 +13694,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -14455,7 +13784,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -14468,13 +13796,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@sumup/circuit-ui/no-deprecated-props": "warn",
     "@sumup/circuit-ui/no-invalid-custom-properties": "error",
     "@sumup/circuit-ui/no-renamed-props": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -14489,7 +13814,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -14515,9 +13839,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -14547,8 +13868,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -14621,13 +13942,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -14642,7 +13960,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -14665,9 +13982,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -14773,20 +14087,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -14801,7 +14111,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -14827,9 +14136,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -14859,8 +14165,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -14933,13 +14239,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -14954,7 +14257,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -14977,9 +14279,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -15070,7 +14369,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
@@ -15083,13 +14381,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "@emotion/no-vanilla": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/styled-import": "error",
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -15104,7 +14399,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -15130,9 +14424,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/no-unknown-property": [
       "error",
@@ -15170,8 +14461,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15244,13 +14535,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -15265,7 +14553,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -15288,9 +14575,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -15401,20 +14685,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -15429,7 +14709,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -15455,9 +14734,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -15487,8 +14763,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15562,13 +14838,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -15583,7 +14856,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -15606,9 +14878,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -15699,20 +14968,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -15727,7 +14992,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -15753,9 +15017,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -15785,8 +15046,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15859,13 +15120,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -15880,7 +15138,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -15903,9 +15160,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -16005,20 +15259,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -16033,7 +15283,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -16059,9 +15308,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -16091,8 +15337,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -16166,13 +15412,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -16187,7 +15430,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -16210,9 +15452,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -16303,20 +15542,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -16331,7 +15566,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -16357,9 +15591,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -16389,8 +15620,8 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -16463,13 +15694,10 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "functions": false,
           },
         ],
-        "comma-dangle": "off",
         "curly": [
           "error",
           "all",
         ],
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
         "import/extensions": "off",
         "import/no-cycle": [
           "error",
@@ -16484,7 +15712,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           },
         ],
         "import/prefer-default-export": "off",
-        "indent": "off",
         "max-len": [
           "error",
           {
@@ -16507,9 +15734,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
             "allowAsStatement": true,
           },
         ],
-        "object-curly-newline": "off",
-        "operator-linebreak": "off",
-        "quote-props": "off",
         "react/prop-types": "off",
       },
     },
@@ -16617,20 +15841,16 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
     "jsx-a11y",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -16645,7 +15865,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -16671,9 +15890,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "node/no-extraneous-import": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "security/detect-object-injection": "off",
@@ -16700,8 +15916,8 @@ exports[`eslint > with options > should return a config with a copyright notice 
 {
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "airbnb-base",
+    "plugin:prettier/recommended",
   ],
   "overrides": [
     {
@@ -16737,18 +15953,14 @@ exports[`eslint > with options > should return a config with a copyright notice 
     "sourceType": "module",
   },
   "plugins": [
-    "prettier",
     "notice",
   ],
   "root": true,
   "rules": {
-    "comma-dangle": "off",
     "curly": [
       "error",
       "all",
     ],
-    "function-paren-newline": "off",
-    "implicit-arrow-linebreak": "off",
     "import/extensions": "off",
     "import/no-cycle": [
       "error",
@@ -16763,7 +15975,6 @@ exports[`eslint > with options > should return a config with a copyright notice 
       },
     ],
     "import/prefer-default-export": "off",
-    "indent": "off",
     "max-len": [
       "error",
       {
@@ -16814,9 +16025,6 @@ exports[`eslint > with options > should return a config with a copyright notice 
         },
       },
     ],
-    "object-curly-newline": "off",
-    "operator-linebreak": "off",
-    "quote-props": "off",
   },
   "settings": {
     "import/resolver": {
