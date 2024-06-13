@@ -1,6 +1,6 @@
 {
   "name": "@sumup-oss/foundry",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "A toolkit for JavaScript + TypeScript applications by SumUp.",
   "repository": "https://github.com/sumup-oss/foundry",
   "author": "Felix Jung <felix.jung@sumup.com>, Connor Bär <connor.baer@sumup.com>",

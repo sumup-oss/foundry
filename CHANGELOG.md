@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.0.1
+
+### Patch Changes
+
+- [#980](https://github.com/sumup-oss/foundry/pull/980) [`6fdbb2b`](https://github.com/sumup-oss/foundry/commit/6fdbb2bedcf1c5066b110631d8fdf44239b67073) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed conflicts between Prettier and ESLint formatting rules.
+
 ## 8.0.0
 
 ### Major Changes
