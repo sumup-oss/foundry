@@ -151,6 +151,13 @@ describe('eslint', () => {
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
+
+    it('should return a config when using Biome', () => {
+      const options = { useBiome: true, frameworks: [] };
+      getOptions.mockReturnValue(options);
+      const actual = createConfig();
+      expect(actual).toMatchSnapshot();
+    });
   });
 
   it('should merge with the default config', () => {
@@ -161,7 +168,7 @@ describe('eslint', () => {
     expect(actual).toEqual(
       expect.objectContaining({
         extends: expect.arrayContaining([
-          'plugin:prettier/recommended',
+          'eslint:recommended',
           'prettier/react',
         ]),
       }),
