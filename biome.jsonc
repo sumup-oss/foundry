@@ -1,7 +1,11 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
-  "extends": ["./src/configs/biome/biome.jsonc"],
-  "organizeImports": { "enabled": false },
+  "extends": [
+    "./src/configs/biome/biome.jsonc"
+  ],
+  "organizeImports": {
+    "enabled": false
+  },
   "linter": {
     "rules": {
       "style": {
@@ -10,7 +14,9 @@
           "level": "error",
           "options": {
             "requireAscii": true,
-            "filenameCases": ["kebab-case"]
+            "filenameCases": [
+              "kebab-case"
+            ]
           }
         }
       },
@@ -21,16 +27,9 @@
   },
   "overrides": [
     {
-      // Workaround to match the format that npm uses
-      "include": ["package.json"],
-      "json": {
-        "formatter": {
-          "lineWidth": 1
-        }
-      }
-    },
-    {
-      "include": ["src/lib/logger.ts"],
+      "include": [
+        "src/lib/logger.ts"
+      ],
       "linter": {
         "rules": {
           "suspicious": {

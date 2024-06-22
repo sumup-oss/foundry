@@ -9,7 +9,9 @@
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
-    "ignore": ["dist/**"]
+    "ignore": [
+      "dist/**"
+    ]
   },
   "linter": {
     "enabled": true,
@@ -30,7 +32,7 @@
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
         "useArrayLiterals": "error",
-        "useExhaustiveDependencies": "warn",
+        "useExhaustiveDependencies": "error",
         "useHookAtTopLevel": "error"
       },
       "performance": {
@@ -54,12 +56,20 @@
         "noSkippedTests": "error"
       }
     },
-    "ignore": ["dist/**"]
+    "ignore": [
+      "dist/**"
+    ]
   },
   "javascript": {
     "formatter": {
       "quoteProperties": "preserve",
       "quoteStyle": "single"
+    }
+  },
+  "json": {
+    "formatter": {
+      // Workaround to force array items onto multiple lines
+      "lineWidth": 1
     }
   }
 }
