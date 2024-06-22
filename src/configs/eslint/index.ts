@@ -15,7 +15,7 @@
 
 import dedent from 'dedent';
 
-import { Script, File } from '../../types/shared';
+import type { Script, File } from '../../types/shared';
 
 export const files = (): File[] => [
   {

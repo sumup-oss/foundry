@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Tool, ToolOptions } from '../types/shared';
+import { Tool, type ToolOptions } from '../types/shared';
 
 import * as eslint from './eslint';
 import * as husky from './husky';

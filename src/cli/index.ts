@@ -17,8 +17,8 @@
 
 import yargs from 'yargs';
 
-import { run, RunParams } from './run';
-import { init, InitParams } from './init';
+import { run, type RunParams } from './run';
+import { init, type InitParams } from './init';
 import { debug } from './debug';
 import { DEFAULT_OPTIONS } from './defaults';
 

@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'fs';
-import path from 'path';
-import { promisify } from 'util';
+import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
+import path from 'node:path';
+import { promisify } from 'node:util';
 
 import { omit } from 'lodash/fp';
-import { format, Options as PrettierConfig } from 'prettier';
+import { format, type Options as PrettierConfig } from 'prettier';
 import readPkgUp from 'read-pkg-up';
 
-import { PackageJson } from '../types/shared';
+import type { PackageJson } from '../types/shared';
 import prettierConfig from '../prettier';
 
 const writeFileAsync = promisify(fsWriteFile);

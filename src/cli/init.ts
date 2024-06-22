@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import inquirer, { Question } from 'inquirer';
-import Listr, { ListrTaskWrapper } from 'listr';
+import inquirer, { type Question } from 'inquirer';
+import Listr, { type ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
@@ -22,14 +22,14 @@ import isCI from 'is-ci';
 import readPkgUp from 'read-pkg-up';
 
 import {
-  InitOptions,
   Preset,
   Prompt,
-  Tool,
-  ToolOptions,
-  File,
-  Script,
-  PackageJson,
+  type InitOptions,
+  type Tool,
+  type ToolOptions,
+  type File,
+  type Script,
+  type PackageJson,
 } from '../types/shared';
 import * as logger from '../lib/logger';
 import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
@@ -51,7 +51,12 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
   const selectedPresets = [Preset.LINT];
 
-  if (!isCI) {
+  if (isCI) {
+    logger.empty();
+    logger.info('Detected CI environment, falling back to default options.');
+
+    options = { ...DEFAULT_OPTIONS, ...args };
+  } else {
     const prompts = {
       [Prompt.OPEN_SOURCE]: {
         type: 'confirm',
@@ -66,11 +71,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     const additionalAnswers = await inquirer.prompt(additionalPrompts);
 
     options = { ...args, ...additionalAnswers };
-  } else {
-    logger.empty();
-    logger.info('Detected CI environment, falling back to default options.');
-
-    options = { ...DEFAULT_OPTIONS, ...args };
   }
 
   const selectedTools = getToolsForPresets(selectedPresets);
@@ -86,7 +86,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
         new Listr(
           files.map((file) => ({
             title: `Write "${file.name}"`,
-            task: (ctx: never, task): Promise<unknown> =>
+            task: (_ctx: never, task): Promise<unknown> =>
               writeFile(
                 options.configDir,
                 file.name,
@@ -171,7 +171,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                   options.overwrite,
                 );
                 return undefined;
-              } catch (error) {
+              } catch (_error) {
                 logger.debug(`Script "${name}" already exists`);
                 if (isCI) {
                   logger.debug('In a CI environment, skipping...');
@@ -270,7 +270,8 @@ function getScriptsForTools(
   return selectedTools.reduce((allScripts: Script[], tool) => {
     if (tool.scripts) {
       const scriptsForTool = tool.scripts(options);
-      return [...allScripts, ...scriptsForTool];
+      allScripts.push(...scriptsForTool);
+      return allScripts;
     }
     return allScripts;
   }, []);

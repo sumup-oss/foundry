@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi, Mock } from 'vitest';
+import { describe, expect, it, vi, type Mock } from 'vitest';
 
 import { Language } from '../../types/shared';
 import { getAllChoiceCombinations } from '../../lib/choices';

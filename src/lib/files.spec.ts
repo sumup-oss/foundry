@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'fs';
+import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
 
 import { describe, expect, it, vi } from 'vitest';
 
-import { PackageJson } from '../types/shared';
+import type { PackageJson } from '../types/shared';
 
 import { writeFile, addPackageScript, savePackageJson } from './files';
 

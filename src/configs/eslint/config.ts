@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { cwd } from 'process';
-import path from 'path';
+import { cwd } from 'node:process';
+import path from 'node:path';
 
 import { flow, mergeWith, isArray, isObject, isEmpty, uniq } from 'lodash/fp';
 
@@ -23,7 +23,7 @@ import {
   Environment,
   Framework,
   Plugin,
-  Workspaces,
+  type Workspaces,
 } from '../../types/shared';
 import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
@@ -126,6 +126,7 @@ const sharedOverrides = [
 
 const base = {
   root: true,
+  // TODO: Remove prettier
   extends: ['eslint:recommended', 'airbnb-base', 'plugin:prettier/recommended'],
   parser: '@babel/eslint-parser',
   parserOptions: {
@@ -146,6 +147,7 @@ const base = {
   },
   rules: sharedRules,
   overrides: [
+    // TODO: Remove json handling
     {
       files: ['**/*.json'],
       extends: ['plugin:json/recommended'],
@@ -400,6 +402,7 @@ function customizeFramework(frameworks: Framework[]) {
         `The '${Framework.NEXT_JS}' framework includes React-specific rules. Please remove the '${Framework.REACT}' framework to avoid conflicts.`,
       );
       // eslint-disable-next-line no-param-reassign
+      // biome-ignore lint/style/noParameterAssign:
       frameworks = frameworks.filter(
         (framework) => framework !== Framework.REACT,
       );
