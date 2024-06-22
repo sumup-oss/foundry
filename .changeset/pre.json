@@ -1,0 +1,8 @@
+{
+	"mode": "pre",
+	"tag": "canary",
+	"initialVersions": {
+		"@sumup-oss/foundry": "8.0.1"
+	},
+	"changesets": []
+}
