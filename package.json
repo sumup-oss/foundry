@@ -24,7 +24,6 @@
     "dev": "npm run cleanup && tsc --watch",
     "start": "npm run dev",
     "cleanup": "rimraf ./dist && mkdir dist",
-    "prelint": "npm run build",
     "lint": "biome check && eslint src --ext .js,.jsx,.json,.ts,.tsx",
     "lint:fix": "biome check --write && eslint src --ext .js,.jsx,.json,.ts,.tsx --fix",
     "lint:ci": "biome ci && eslint src --ext .js,.jsx,.json,.ts,.tsx",
@@ -33,7 +32,6 @@
     "codecov": "codecov",
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
-    "prerelease": "npm run build",
     "release": "changeset publish"
   },
   "engines": {
