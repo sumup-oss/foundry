@@ -1,0 +1,102 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "ignore": ["dist/**"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "warn",
+        "useButtonType": "warn"
+      },
+      "complexity": {
+        "noForEach": "off"
+      },
+      "correctness": {
+        "noConstantMathMinMaxClamp": "error",
+        "noNewSymbol": "error",
+        "noUndeclaredVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedPrivateClassMembers": "error",
+        "noUnusedVariables": "error",
+        "useArrayLiterals": "error",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
+      },
+      "performance": {
+        "noReExportAll": "error"
+      },
+      "style": {
+        "noDefaultExport": "off",
+        "noNamespace": "error",
+        "noNegationElse": "error",
+        "noShoutyConstants": "error",
+        "useBlockStatements": "error",
+        "useCollapsedElseIf": "error",
+        "useConsistentArrayType": "error",
+        "useEnumInitializers": "warn",
+        "useForOf": "error",
+        "useShorthandAssign": "error",
+        "useShorthandArrayType": "error",
+        "useSingleCaseStatement": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "noAssignInExpressions": "warn",
+        "noConsoleLog": "error",
+        "noExplicitAny": "off",
+        "noSkippedTests": "error"
+      }
+    },
+    "ignore": ["dist/**"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteProperties": "preserve",
+      "quoteStyle": "single"
+    }
+  },
+  "overrides": [
+    {
+      // Workaround to match the format that npm uses
+      "include": ["package.json"],
+      "json": {
+        "formatter": {
+          "lineWidth": 1
+        }
+      }
+    },
+    {
+      "include": ["*.css"],
+      "css": {
+        "formatter": {
+          "enabled": true,
+          "indentStyle": "space",
+          "quoteStyle": "double"
+        },
+        "linter": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "include": ["*.module.css"],
+      "css": { "parser": { "cssModules": true } }
+    },
+    {
+      "include": ["**/*spec.*", "**/setupTests.*", "**/test-utils.*"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noGlobalAssign": "off"
+          }
+        }
+      }
+    }
+  ]
+}
