@@ -37,7 +37,6 @@
         "noReExportAll": "error"
       },
       "style": {
-        "noDefaultExport": "off",
         "noNamespace": "error",
         "noNegationElse": "error",
         "noShoutyConstants": "error",
@@ -51,10 +50,7 @@
         "useSingleCaseStatement": "error"
       },
       "suspicious": {
-        "noArrayIndexKey": "warn",
-        "noAssignInExpressions": "warn",
         "noConsoleLog": "error",
-        "noExplicitAny": "off",
         "noSkippedTests": "error"
       }
     },
