@@ -4,5 +4,7 @@
   "initialVersions": {
     "@sumup-oss/foundry": "8.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "rude-pandas-yawn"
+  ]
 }
