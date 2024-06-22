@@ -19,9 +19,9 @@ import {
   Environment,
   Framework,
   Language,
-  Options,
-  PackageJson,
   Plugin,
+  type Options,
+  type PackageJson,
 } from '../types/shared';
 
 import { readPackageJson } from './files';
@@ -120,6 +120,7 @@ export function getOptions(): Required<Options> {
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
     workspaces: packageJson.workspaces || null,
+    useBiome: hasDependency(packageJson, '@biomejs/biome'),
   };
 }
 

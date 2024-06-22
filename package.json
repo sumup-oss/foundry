@@ -16,22 +16,22 @@
     "./husky": "./dist/husky.js",
     "./lint-staged": "./dist/lint-staged.js",
     "./prettier": "./dist/prettier.js",
-    "./stylelint": "./dist/stylelint.js"
+    "./stylelint": "./dist/stylelint.js",
+    "./biome": "./dist/biome.jsonc"
   },
   "scripts": {
-    "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js",
+    "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js && cp src/configs/biome/biome.jsonc dist/biome.jsonc",
     "dev": "npm run cleanup && tsc --watch",
     "start": "npm run dev",
     "cleanup": "rimraf ./dist && mkdir dist",
-    "prelint": "npm run build",
-    "lint": "eslint src --ext .js,.jsx,.json,.ts,.tsx",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "biome check && eslint src --ext .js,.jsx,.json,.ts,.tsx",
+    "lint:fix": "biome check --write && eslint src --ext .js,.jsx,.json,.ts,.tsx --fix",
+    "lint:ci": "biome ci && eslint src --ext .js,.jsx,.json,.ts,.tsx",
     "test": "vitest",
     "test:ci": "vitest run --coverage",
     "codecov": "codecov",
     "check:security": "audit-ci --critical",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
-    "prerelease": "npm run build",
     "release": "changeset publish"
   },
   "engines": {
@@ -81,6 +81,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.2",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "@types/cross-spawn": "^6.0.6",

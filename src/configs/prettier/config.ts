@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Options as PrettierConfig } from 'prettier';
+import type { Options as PrettierConfig } from 'prettier';
 
 export function config(overrides: PrettierConfig = {}): PrettierConfig {
   const base: PrettierConfig = {
