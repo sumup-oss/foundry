@@ -153,7 +153,11 @@ describe('eslint', () => {
     });
 
     it('should return a config when using Biome', () => {
-      const options = { useBiome: true, frameworks: [] };
+      const options = {
+        useBiome: true,
+        language: [Language.TYPESCRIPT],
+        frameworks: [],
+      };
       getOptions.mockReturnValue(options);
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
