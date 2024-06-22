@@ -7,7 +7,11 @@
     "useIgnoreFile": true
   },
   "organizeImports": { "enabled": false },
+  "formatter": {
+    "enabled": true
+  },
   "linter": {
+    "enabled": true,
     "rules": {
       "style": {
         "noDefaultExport": "error",
@@ -25,6 +29,15 @@
     }
   },
   "overrides": [
+    {
+      // Workaround to match the format that npm uses
+      "include": ["package.json"],
+      "json": {
+        "formatter": {
+          "lineWidth": 1
+        }
+      }
+    },
     {
       "include": ["src/lib/logger.ts"],
       "linter": {

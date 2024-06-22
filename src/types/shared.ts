@@ -66,6 +66,7 @@ export interface Options {
   plugins?: Plugin[];
   openSource?: boolean;
   workspaces?: Workspaces;
+  useBiome?: boolean;
 }
 
 export interface InitOptions extends Options {

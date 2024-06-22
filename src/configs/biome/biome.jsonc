@@ -1,13 +1,11 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
   "formatter": {
-    "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "ignore": ["dist/**"]
   },
   "linter": {
-    "enabled": true,
     "rules": {
       "recommended": true,
       "a11y": {
@@ -60,43 +58,5 @@
       "quoteProperties": "preserve",
       "quoteStyle": "single"
     }
-  },
-  "overrides": [
-    {
-      // Workaround to match the format that npm uses
-      "include": ["package.json"],
-      "json": {
-        "formatter": {
-          "lineWidth": 1
-        }
-      }
-    },
-    {
-      "include": ["*.css"],
-      "css": {
-        "formatter": {
-          "enabled": true,
-          "indentStyle": "space",
-          "quoteStyle": "double"
-        },
-        "linter": {
-          "enabled": true
-        }
-      }
-    },
-    {
-      "include": ["*.module.css"],
-      "css": { "parser": { "cssModules": true } }
-    },
-    {
-      "include": ["**/*spec.*", "**/setupTests.*", "**/test-utils.*"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noGlobalAssign": "off"
-          }
-        }
-      }
-    }
-  ]
+  }
 }

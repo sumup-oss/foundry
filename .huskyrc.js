@@ -18,6 +18,6 @@
 //       run their own binaries.
 module.exports = {
   hooks: {
-    'pre-commit': 'lint-staged'
-  }
+    'pre-commit': 'lint-staged',
+  },
 };
