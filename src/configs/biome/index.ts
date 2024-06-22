@@ -13,11 +13,18 @@
  * limitations under the License.
  */
 
-import * as biome from './biome';
-import * as eslint from './eslint';
-import * as husky from './husky';
-import * as lintStaged from './lint-staged';
-import * as prettier from './prettier';
-import * as stylelint from './stylelint';
+import dedent from 'dedent';
 
-export { biome, eslint, husky, lintStaged, prettier, stylelint };
+import type { File } from '../../types/shared';
+
+export const files = (): File[] => [
+  {
+    name: 'biome.jsonc',
+    content: `${dedent`
+      {
+        "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+        "extends": ["@sumup-oss/foundry/biome"],
+      }
+    `}\n`,
+  },
+];

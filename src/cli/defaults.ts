@@ -19,4 +19,5 @@ export const DEFAULT_OPTIONS: InitOptions = {
   configDir: '.',
   openSource: false,
   overwrite: false,
+  useBiome: true,
 };

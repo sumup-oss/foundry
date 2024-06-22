@@ -16,31 +16,27 @@
 import inquirer, { type Question } from 'inquirer';
 import Listr, { type ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
-import { flow, map, flatten, uniq } from 'lodash/fp';
 import chalk from 'chalk';
 import isCI from 'is-ci';
 import readPkgUp from 'read-pkg-up';
 
-import {
-  Preset,
-  Prompt,
-  type InitOptions,
-  type Tool,
-  type ToolOptions,
-  type File,
-  type Script,
-  type PackageJson,
+import type {
+  InitOptions,
+  ToolOptions,
+  File,
+  PackageJson,
+  Script,
 } from '../types/shared';
+import * as tools from '../configs';
 import * as logger from '../lib/logger';
 import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
-import { presets } from '../presets';
-import { tools } from '../configs';
 
 import { DEFAULT_OPTIONS } from './defaults';
 
 export interface InitParams {
   configDir: string;
   openSource?: boolean;
+  useBiome?: boolean;
   overwrite?: boolean;
   $0?: string;
   _?: string[];
@@ -49,33 +45,37 @@ export interface InitParams {
 export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   let options: InitOptions;
 
-  const selectedPresets = [Preset.LINT];
-
   if (isCI) {
     logger.empty();
     logger.info('Detected CI environment, falling back to default options.');
 
     options = { ...DEFAULT_OPTIONS, ...args };
   } else {
-    const prompts = {
-      [Prompt.OPEN_SOURCE]: {
+    const prompts: Question[] = [
+      {
+        type: 'confirm',
+        name: 'useBiome',
+        message: 'Do you want to use Biome instead of Prettier to format code?',
+        default: DEFAULT_OPTIONS.useBiome,
+        when: (): boolean => typeof args.useBiome === 'undefined',
+      },
+      {
         type: 'confirm',
         name: 'openSource',
         message: 'Do you intend to open-source this project?',
         default: DEFAULT_OPTIONS.openSource,
         when: (): boolean => typeof args.openSource === 'undefined',
       },
-    };
+    ];
 
-    const additionalPrompts = getPromptsForPresets(selectedPresets, prompts);
-    const additionalAnswers = await inquirer.prompt(additionalPrompts);
+    const answers = await inquirer.prompt(prompts);
 
-    options = { ...args, ...additionalAnswers };
+    options = { ...args, ...answers };
   }
 
-  const selectedTools = getToolsForPresets(selectedPresets);
-  const files = getFilesForTools(options, selectedTools);
-  const scripts = getScriptsForTools(options, selectedTools);
+  const files = getFilesForTools(options, tools);
+
+  const scripts = getScripts(options);
 
   logger.empty();
 
@@ -229,32 +229,11 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     });
 }
 
-function getPromptsForPresets(
-  selectedPresets: Preset[],
-  prompts: { [key in Prompt]: Question },
-): Question[] {
-  return flow(
-    map((preset: Preset) => presets[preset].prompts || []),
-    flatten,
-    uniq,
-    map((prompt: Prompt) => prompts[prompt]),
-  )(selectedPresets);
-}
-
-function getToolsForPresets(selectedPresets: Preset[]): ToolOptions[] {
-  return flow(
-    map((preset: Preset): Tool[] => presets[preset].tools),
-    flatten,
-    uniq,
-    map((tool: Tool) => tools[tool]),
-  )(selectedPresets);
-}
-
 function getFilesForTools(
   options: InitOptions,
-  selectedTools: ToolOptions[],
+  selectedTools: Record<string, ToolOptions>,
 ): File[] {
-  return selectedTools.reduce((allFiles: File[], tool) => {
+  return Object.values(selectedTools).reduce((allFiles: File[], tool) => {
     if (tool.files) {
       const filesForTool = tool.files(options);
       allFiles.push(...filesForTool);
@@ -263,16 +242,59 @@ function getFilesForTools(
   }, []);
 }
 
-function getScriptsForTools(
-  options: InitOptions,
-  selectedTools: ToolOptions[],
-): Script[] {
-  return selectedTools.reduce((allScripts: Script[], tool) => {
-    if (tool.scripts) {
-      const scriptsForTool = tool.scripts(options);
-      allScripts.push(...scriptsForTool);
-      return allScripts;
-    }
-    return allScripts;
-  }, []);
+function getScripts(options: InitOptions) {
+  const scripts: Script[] = [];
+
+  if (options.useBiome) {
+    scripts.push(
+      ...[
+        {
+          name: 'lint',
+          command:
+            'biome check && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+          description: 'check files for problematic patterns and report them',
+        },
+        {
+          name: 'lint:fix',
+          command:
+            'biome check --write && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx --fix',
+          description: 'same as `lint` and also try to fix the issues',
+        },
+        {
+          name: 'lint:ci',
+          command:
+            'biome ci && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+          description: 'lint files in a continuous integration workflow',
+        },
+      ],
+    );
+  } else {
+    scripts.push(
+      ...[
+        {
+          name: 'lint',
+          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+          description: 'check files for problematic patterns and report them',
+        },
+        {
+          name: 'lint:fix',
+          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx --fix',
+          description: 'same as `lint` and also try to fix the issues',
+        },
+        {
+          name: 'lint:ci',
+          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+          description: 'lint files in a continuous integration workflow',
+        },
+      ],
+    );
+  }
+
+  scripts.push({
+    name: 'lint:css',
+    command: "foundry run stylelint '**/*.css'",
+    description: 'check CSS files for problematic patterns and report them',
+  });
+
+  return scripts;
 }
