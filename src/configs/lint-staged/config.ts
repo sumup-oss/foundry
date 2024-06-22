@@ -14,7 +14,6 @@
  */
 
 import { getOptions } from '../../lib/options';
-import { Language } from '../../types/shared';
 
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;
@@ -23,24 +22,24 @@ interface LintStagedConfig {
   [key: string]: LinterCommand | LinterFn;
 }
 
-export const javascript: LintStagedConfig = {
-  '*.(js|jsx|json)': ['foundry run eslint --fix'],
-  '*.css': ['foundry run stylelint --fix'],
-};
-
-export const typescript: LintStagedConfig = {
-  '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
-  '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-  '*.css': ['foundry run stylelint --fix'],
-};
-
-const LANGUAGES = {
-  [Language.JAVASCRIPT]: javascript,
-  [Language.TYPESCRIPT]: typescript,
-};
-
 export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
   const options = getOptions();
-  const baseConfig = LANGUAGES[options.language];
-  return { ...baseConfig, ...overrides };
+
+  if (options.useBiome) {
+    return {
+      '*': [
+        'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
+      ],
+      '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
+      '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
+      '*.css': ['foundry run stylelint --fix'],
+      ...overrides,
+    };
+  }
+  return {
+    '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
+    '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
+    '*.css': ['foundry run stylelint --fix'],
+    ...overrides,
+  };
 }
