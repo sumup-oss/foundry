@@ -1,11 +1,18 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "formatter": {
+    "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "ignore": ["dist/**"]
   },
   "linter": {
+    "enabled": true,
     "rules": {
       "recommended": true,
       "a11y": {
