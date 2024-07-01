@@ -14,7 +14,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -215,7 +215,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -423,7 +423,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -632,7 +632,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -846,7 +846,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1039,7 +1039,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1242,7 +1242,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1435,7 +1435,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1648,7 +1648,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1814,7 +1814,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -1989,7 +1989,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -2163,7 +2163,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -2344,7 +2344,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -2504,7 +2504,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -2674,7 +2674,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -2834,7 +2834,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -3009,7 +3009,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -3210,7 +3210,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -3418,7 +3418,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -3627,7 +3627,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -3841,7 +3841,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4034,7 +4034,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4237,7 +4237,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4430,7 +4430,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4643,7 +4643,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4807,7 +4807,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -4980,7 +4980,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5152,7 +5152,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5331,7 +5331,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5489,7 +5489,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5657,7 +5657,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5815,7 +5815,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -5986,7 +5986,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -6311,7 +6311,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -6643,7 +6643,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -6976,7 +6976,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -7314,7 +7314,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -7631,7 +7631,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -7958,7 +7958,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -8275,7 +8275,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -8612,7 +8612,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -8902,7 +8902,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -9201,7 +9201,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -9499,7 +9499,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -9804,7 +9804,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -10088,7 +10088,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -10382,7 +10382,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -10666,7 +10666,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -10965,7 +10965,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -11290,7 +11290,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -11622,7 +11622,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -11955,7 +11955,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -12293,7 +12293,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -12610,7 +12610,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -12937,7 +12937,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -13254,7 +13254,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -13591,7 +13591,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -13879,7 +13879,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -14176,7 +14176,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -14472,7 +14472,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -14775,7 +14775,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -15057,7 +15057,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -15349,7 +15349,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -15631,7 +15631,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",
@@ -15922,7 +15922,7 @@ exports[`eslint > with options > should return a config with a copyright notice 
   "overrides": [
     {
       "extends": [
-        "plugin:json/recommended",
+        "plugin:json/recommended-legacy",
       ],
       "files": [
         "**/*.json",

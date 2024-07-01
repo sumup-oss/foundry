@@ -148,7 +148,7 @@ const base = {
   overrides: [
     {
       files: ['**/*.json'],
-      extends: ['plugin:json/recommended'],
+      extends: ['plugin:json/recommended-legacy'],
       rules: {
         'notice/notice': 'off',
       },
