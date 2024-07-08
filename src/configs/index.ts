@@ -13,18 +13,11 @@
  * limitations under the License.
  */
 
-import { Tool, ToolOptions } from '../types/shared';
-
+import * as biome from './biome';
 import * as eslint from './eslint';
 import * as husky from './husky';
 import * as lintStaged from './lint-staged';
 import * as prettier from './prettier';
 import * as stylelint from './stylelint';
 
-export const tools: Record<Tool, ToolOptions> = {
-  [Tool.ESLINT]: eslint,
-  [Tool.HUSKY]: husky,
-  [Tool.LINT_STAGED]: lintStaged,
-  [Tool.PRETTIER]: prettier,
-  [Tool.STYLELINT]: stylelint,
-};
+export { biome, eslint, husky, lintStaged, prettier, stylelint };

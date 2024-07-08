@@ -15,20 +15,13 @@
 
 import type { NormalizedPackageJson } from 'read-pkg-up';
 
-export enum Preset {
-  LINT = 'lint',
-}
-
 export enum Tool {
   ESLINT = 'eslint',
   STYLELINT = 'stylelint',
   PRETTIER = 'prettier',
+  BIOME = 'biome',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
-}
-
-export enum Prompt {
-  OPEN_SOURCE = 'open-source',
 }
 
 export enum Language {
@@ -66,6 +59,7 @@ export interface Options {
   plugins?: Plugin[];
   openSource?: boolean;
   workspaces?: Workspaces;
+  useBiome?: boolean;
 }
 
 export interface InitOptions extends Options {
@@ -87,7 +81,6 @@ export type Script = {
 
 export interface ToolOptions {
   files?: (options: InitOptions) => File[];
-  scripts?: (options: InitOptions) => Script[];
 }
 
 export type PackageJson = NormalizedPackageJson & {

@@ -15,7 +15,7 @@
 
 import dedent from 'dedent';
 
-import { Script, File } from '../../types/shared';
+import type { File } from '../../types/shared';
 
 export const files = (): File[] => [
   {
@@ -37,13 +37,5 @@ export const files = (): File[] => [
       __coverage__/
       __reports__/
     `}\n`,
-  },
-];
-
-export const scripts = (): Script[] => [
-  {
-    name: 'lint:css',
-    command: "foundry run stylelint '**/*.css'",
-    description: 'check files for problematic patterns and report them',
   },
 ];

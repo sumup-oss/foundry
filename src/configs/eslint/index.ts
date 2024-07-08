@@ -15,7 +15,7 @@
 
 import dedent from 'dedent';
 
-import { Script, File } from '../../types/shared';
+import type { File } from '../../types/shared';
 
 export const files = (): File[] => [
   {
@@ -40,18 +40,5 @@ export const files = (): File[] => [
       /*rc.js
       tsconfig.json
     `}\n`,
-  },
-];
-
-export const scripts = (): Script[] => [
-  {
-    name: 'lint',
-    command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
-    description: 'check files for problematic patterns and report them',
-  },
-  {
-    name: 'lint:fix',
-    command: 'npm run lint -- --fix',
-    description: 'same as `lint`, but also try to fix the issues',
   },
 ];

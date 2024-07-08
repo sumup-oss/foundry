@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Config as StylelintConfig } from 'stylelint';
+import type { Config as StylelintConfig } from 'stylelint';
 import { flow, mergeWith, isArray, isObject, uniq, isEmpty } from 'lodash/fp';
 
 import { getOptions } from '../../lib/options';

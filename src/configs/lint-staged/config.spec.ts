@@ -13,10 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi, Mock } from 'vitest';
+import { describe, expect, it, vi, type Mock } from 'vitest';
 
-import { Language } from '../../types/shared';
-import { getAllChoiceCombinations } from '../../lib/choices';
 import { getOptions as getOptionsMock } from '../../lib/options';
 
 import { config } from './config';
@@ -29,7 +27,7 @@ const getOptions = getOptionsMock as Mock;
 
 describe('lint-staged', () => {
   describe('with options', () => {
-    const matrix = getAllChoiceCombinations({ language: Language });
+    const matrix = [{ useBiome: true }, { useBiome: false }];
 
     it.each(matrix)('should return a config for %o', (options) => {
       getOptions.mockReturnValue(options);

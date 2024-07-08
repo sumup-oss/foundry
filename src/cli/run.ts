@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { dirname, resolve, join, relative } from 'path';
-import { access, readFile } from 'fs';
-import { promisify } from 'util';
+import { dirname, resolve, join, relative } from 'node:path';
+import { access, readFile } from 'node:fs';
+import { promisify } from 'node:util';
 
 import { isString } from 'lodash/fp';
 
-import { PackageJson } from '../types/shared';
+import type { PackageJson } from '../types/shared';
 import { spawn } from '../lib/spawn';
 import * as logger from '../lib/logger';
 
@@ -40,7 +40,7 @@ async function resolveTo(path: string, name: string): Promise<string> {
   try {
     await accessAsync(packageJsonPath);
     return packageJsonPath;
-  } catch (err) {
+  } catch (_error) {
     const parentPath = resolve(path, '..');
     return resolveTo(parentPath, name);
   }
@@ -68,7 +68,7 @@ async function loadJson(path: string): Promise<PackageJson> {
   try {
     const data = await readFileAsync(path);
     return JSON.parse(data.toString()) as PackageJson;
-  } catch (err) {
+  } catch (_error) {
     throw new Error(`Path does not exist. ${path}`);
   }
 }
@@ -94,7 +94,7 @@ async function resolveBinaryPath(
     }
 
     return resolve(dirname(packageJsonPath), binaryPath);
-  } catch (err) {
+  } catch (_error) {
     return null;
   }
 }
