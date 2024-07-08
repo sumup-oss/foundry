@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.1.0
+
+### Minor Changes
+
+- [#982](https://github.com/sumup-oss/foundry/pull/982) [`c2d2d68`](https://github.com/sumup-oss/foundry/commit/c2d2d68995ece4cd893eb10333a37b5b77453b2e) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for [Biome](https://biomejs.dev/) to replace Prettier for formatting code and to supplement ESLint for linting code. Written in Rust, Biome is orders of magnitude faster, however, it doesn't support as many rules or plugins yet.
+
 ## 8.1.0-canary.0
 
 ### Minor Changes
