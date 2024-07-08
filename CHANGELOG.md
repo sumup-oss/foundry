@@ -1,5 +1,13 @@
 # @sumup-oss/foundry
 
+## 8.1.1
+
+### Patch Changes
+
+- [`67a89d2`](https://github.com/sumup-oss/foundry/commit/67a89d299cea7f2b15abb8f3bea031ffb8931025) Thanks [@connor-baer](https://github.com/connor-baer)! - Skipped initializing the Prettier config when using Biome.
+
+- [`6b53cfb`](https://github.com/sumup-oss/foundry/commit/6b53cfbb221304094b0a6f623b9641b65a12af65) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed extraneous properties when updating the `package.json` file.
+
 ## 8.1.0
 
 ### Minor Changes
