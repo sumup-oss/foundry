@@ -340,6 +340,7 @@ const biomeRules = {
   '@typescript-eslint/prefer-literal-enum-member': 'off',
   '@typescript-eslint/prefer-namespace-keyword': 'off',
   '@typescript-eslint/prefer-optional-chain': 'off',
+  '@typescript-eslint/quotes': 'off',
   '@typescript-eslint/require-await': 'off',
 };
 

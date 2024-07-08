@@ -38,7 +38,6 @@
       },
       "style": {
         "noNamespace": "error",
-        "noNegationElse": "error",
         "noShoutyConstants": "error",
         "useBlockStatements": "error",
         "useCollapsedElseIf": "error",
