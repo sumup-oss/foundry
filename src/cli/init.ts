@@ -73,7 +73,14 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     options = { ...args, ...answers };
   }
 
-  const files = getFilesForTools(options, tools);
+  const selectedTools: Record<string, ToolOptions> = tools;
+
+  if (options.useBiome) {
+    // biome-ignore lint/performance/noDelete:
+    delete selectedTools.prettier;
+  }
+
+  const files = getFilesForTools(options, selectedTools);
 
   const scripts = getScripts(options);
 
@@ -251,19 +258,18 @@ function getScripts(options: InitOptions) {
         {
           name: 'lint',
           command:
-            'biome check && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+            'biome check && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
           description: 'check files for problematic patterns and report them',
         },
         {
           name: 'lint:fix',
           command:
-            'biome check --write && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx --fix',
+            'biome check --write && foundry run eslint . --ext .js,.jsx,.ts,.tsx --fix',
           description: 'same as `lint` and also try to fix the issues',
         },
         {
           name: 'lint:ci',
-          command:
-            'biome ci && foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
+          command: 'biome ci && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
           description: 'lint files in a continuous integration workflow',
         },
       ],
