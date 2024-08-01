@@ -93,12 +93,12 @@
     "@types/node": "^18.19.0",
     "@types/prettier": "^3.0.0",
     "@types/yargs": "^17.0.32",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "^2.0.5",
     "audit-ci": "^6.6.1",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
     "rimraf": "^5.0.7",
     "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.5"
   }
 }
