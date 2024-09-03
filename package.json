@@ -73,7 +73,7 @@
     "lodash": "^4.17.21",
     "prettier": "^3.3.3",
     "read-pkg-up": "^7.0.1",
-    "semver": "^7.6.1",
+    "semver": "^7.6.3",
     "stylelint": "^16.9.0",
     "stylelint-config-recess-order": "^5.1.0",
     "stylelint-config-standard": "^36.0.1",
