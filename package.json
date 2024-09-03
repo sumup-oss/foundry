@@ -67,7 +67,7 @@
     "husky": "^4.3.8",
     "inquirer": "^8.2.6",
     "is-ci": "^3.0.1",
-    "lint-staged": "15.2.7",
+    "lint-staged": "15.2.10",
     "listr": "^0.14.3",
     "listr-inquirer": "^0.1.0",
     "lodash": "^4.17.21",
