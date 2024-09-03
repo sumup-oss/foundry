@@ -94,7 +94,7 @@
     "@types/prettier": "^3.0.0",
     "@types/yargs": "^17.0.32",
     "@vitest/coverage-v8": "^2.0.5",
-    "audit-ci": "^6.6.1",
+    "audit-ci": "^7.1.0",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
     "rimraf": "^5.0.7",
