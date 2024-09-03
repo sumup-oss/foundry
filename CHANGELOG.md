@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.2.0
+
+### Minor Changes
+
+- [`ae59351`](https://github.com/sumup-oss/foundry/commit/ae59351572a22cce1e47bee34b9730de5c284a5b) Thanks [@connor-baer](https://github.com/connor-baer)! - Updated all dependencies to their latest minor, most notably [`eslint-plugin-import` v2.30](https://github.com/import-js/eslint-plugin-import/releases/tag/v2.30.0) which should drastically improve the performance of the `import/no-cycle` rule.
+
 ## 8.1.1
 
 ### Patch Changes
