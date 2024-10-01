@@ -61,7 +61,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-notice": "^1.0.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-security": "^3.0.1",
     "husky": "^4.3.8",
