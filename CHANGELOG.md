@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.3.0
+
+### Minor Changes
+
+- [#1032](https://github.com/sumup-oss/foundry/pull/1032) [`ebcfdf8`](https://github.com/sumup-oss/foundry/commit/ebcfdf8df48580fde60c8a88671da0d3d584cef9) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for the Circuit UI plugins under the new `@sumup/oss` package scope.
+
 ## 8.2.0
 
 ### Minor Changes
