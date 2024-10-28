@@ -1,5 +1,207 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Next.js' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "compat/compat": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "lintAllEsApis": true,
+    "polyfills": [
+      "document.body",
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
+  },
+}
+`;
+
 exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'Next.js' ], plugins: [ 'Circuit UI' ] } 1`] = `
 {
   "env": {
@@ -1631,6 +1833,173 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
 }
 `;
 
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "compat/compat": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "lintAllEsApis": true,
+    "polyfills": [
+      "document.body",
+    ],
+    "react": {
+      "version": "detect",
+    },
+  },
+}
+`;
+
 exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Browser' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI' ] } 1`] = `
 {
   "env": {
@@ -2990,6 +3359,208 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "react": {
       "version": "detect",
     },
+  },
+}
+`;
+
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'Next.js' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "node": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:security/recommended-legacy",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "security/detect-object-injection": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "polyfills": [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -4625,6 +5196,171 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
 }
 `;
 
+exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "node": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:security/recommended-legacy",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    "security/detect-object-injection": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "react": {
+      "version": "detect",
+    },
+  },
+}
+`;
+
 exports[`eslint > with options > should return a config for { language: 'JavaScript', environments: [ 'Node' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI' ] } 1`] = `
 {
   "env": {
@@ -5968,6 +6704,332 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
     "react": {
       "version": "detect",
     },
+  },
+}
+`;
+
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'Next.js' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "extends": [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": [
+        "**/*.{ts,tsx}",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": [
+        "@typescript-eslint",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+          },
+        ],
+        "curly": [
+          "error",
+          "all",
+        ],
+        "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "no-void": [
+          "error",
+          {
+            "allowAsStatement": true,
+          },
+        ],
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.d.ts",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "compat/compat": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "lintAllEsApis": true,
+    "polyfills": [
+      "document.body",
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -8595,6 +9657,297 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
 }
 `;
 
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "extends": [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": [
+        "**/*.{ts,tsx}",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": [
+        "@typescript-eslint",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+          },
+        ],
+        "curly": [
+          "error",
+          "all",
+        ],
+        "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "no-void": [
+          "error",
+          {
+            "allowAsStatement": true,
+          },
+        ],
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.d.ts",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+        "**/*Fixtures.*",
+        "**/__fixtures__/**/*",
+        "**/__mocks__/**/*",
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "compat/compat": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "lintAllEsApis": true,
+    "polyfills": [
+      "document.body",
+    ],
+    "react": {
+      "version": "detect",
+    },
+  },
+}
+`;
+
 exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Browser' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI' ] } 1`] = `
 {
   "env": {
@@ -10946,6 +12299,332 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     "react": {
       "version": "detect",
     },
+  },
+}
+`;
+
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'Next.js' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "node": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:security/recommended-legacy",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "extends": [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": [
+        "**/*.{ts,tsx}",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": [
+        "@typescript-eslint",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+          },
+        ],
+        "curly": [
+          "error",
+          "all",
+        ],
+        "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "no-void": [
+          "error",
+          {
+            "allowAsStatement": true,
+          },
+        ],
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.d.ts",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "security/detect-object-injection": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "polyfills": [
+      "Array.prototype.copyWithin",
+      "Array.prototype.fill",
+      "Array.prototype.find",
+      "Array.prototype.findIndex",
+      "Array.prototype.flagMap",
+      "Array.prototype.flat",
+      "Array.from",
+      "Array.prototype.includes",
+      "Array.of",
+      "Function.name",
+      "Map",
+      "Number.EPSILON",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.isNaN",
+      "Number.isSafeInteger",
+      "Number.MAX_SAFE_INTEGER",
+      "Number.MIN_SAFE_INTEGER",
+      "Number.parseFloat",
+      "Number.parseInt",
+      "Object.assign",
+      "Object.entries",
+      "Object.getOwnPropertyDescriptors",
+      "Object.keys",
+      "Object.is",
+      "Object.values",
+      "Reflect",
+      "RegExp",
+      "Set",
+      "Symbol",
+      "String.prototype.codePointAt",
+      "String.prototype.endsWith",
+      "String.prototype.fromCodePoint",
+      "String.prototype.includes",
+      "String.prototype.padStart",
+      "String.prototype.padEnd",
+      "String.prototype.raw",
+      "String.prototype.repeat",
+      "String.prototype.startsWith",
+      "String.prototype.trimLeft",
+      "String.prototype.trimRight",
+      "URL",
+      "URLSearchParams",
+      "WeakMap",
+      "WeakSet",
+      "Promise",
+      "fetch",
+    ],
   },
 }
 `;
@@ -13569,6 +15248,295 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       "Promise",
       "fetch",
     ],
+  },
+}
+`;
+
+exports[`eslint > with options > should return a config for { language: 'TypeScript', environments: [ 'Node' ], frameworks: [ 'React' ], plugins: [ 'Circuit UI (OSS scope)' ] } 1`] = `
+{
+  "env": {
+    "node": true,
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:security/recommended-legacy",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  "overrides": [
+    {
+      "files": [
+        "api/**/*",
+        "pages/api/**/*",
+        "src/pages/api/**/*",
+      ],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+    {
+      "extends": [
+        "plugin:json/recommended-legacy",
+      ],
+      "files": [
+        "**/*.json",
+      ],
+      "rules": {
+        "notice/notice": "off",
+      },
+    },
+    {
+      "extends": [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+      "files": [
+        "**/*.{ts,tsx}",
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "modules": true,
+        },
+        "ecmaVersion": 6,
+        "extraFileExtensions": [
+          ".json",
+        ],
+        "project": [
+          "./tsconfig.json",
+        ],
+        "sourceType": "module",
+        "tsconfigRootDir": "/project/dir",
+      },
+      "plugins": [
+        "@typescript-eslint",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          {
+            "checksVoidReturn": false,
+          },
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+          },
+        ],
+        "curly": [
+          "error",
+          "all",
+        ],
+        "import/extensions": "off",
+        "import/no-cycle": [
+          "error",
+          {
+            "maxDepth": 7,
+          },
+        ],
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+          },
+        ],
+        "import/prefer-default-export": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "ignoreComments": true,
+            "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreUrls": true,
+            "tabWidth": 2,
+          },
+        ],
+        "no-confusing-arrow": "off",
+        "no-underscore-dangle": "error",
+        "no-use-before-define": "off",
+        "no-void": [
+          "error",
+          {
+            "allowAsStatement": true,
+          },
+        ],
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.d.ts",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+        "node/no-extraneous-import": "off",
+        "spaced-comment": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.{ts,tsx}",
+        "**/setupTests.{ts,tsx}",
+        "**/test-utils.{ts,tsx}",
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.{story,stories}.*",
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-alert": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.spec.*",
+        "**/jest*",
+        "**/setupTests.*",
+        "**/test-utils.*",
+      ],
+      "rules": {
+        "node/no-extraneous-require": "off",
+        "node/no-missing-require": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-unpublished-require": "off",
+      },
+    },
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true,
+      "modules": true,
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@sumup-oss/circuit-ui",
+  ],
+  "root": true,
+  "rules": {
+    "@sumup-oss/circuit-ui/component-lifecycle-imports": "error",
+    "@sumup-oss/circuit-ui/no-deprecated-components": "warn",
+    "@sumup-oss/circuit-ui/no-deprecated-props": "warn",
+    "@sumup-oss/circuit-ui/no-invalid-custom-properties": "error",
+    "@sumup-oss/circuit-ui/no-renamed-props": "error",
+    "@sumup-oss/circuit-ui/renamed-package-scope": "error",
+    "curly": [
+      "error",
+      "all",
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 7,
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignorePattern": "^(?:import\\s|export\\s|\\s*it(?:\\.(?:skip|only))?\\()",
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+      },
+    ],
+    "no-confusing-arrow": "off",
+    "no-underscore-dangle": "error",
+    "no-use-before-define": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true,
+      },
+    ],
+    "node/no-extraneous-import": "off",
+    "node/no-missing-import": "off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    "security/detect-object-injection": "off",
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ],
+      },
+    },
+    "react": {
+      "version": "detect",
+    },
   },
 }
 `;

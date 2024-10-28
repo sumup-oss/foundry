@@ -41,6 +41,7 @@ export enum Framework {
 
 export enum Plugin {
   CIRCUIT_UI = 'Circuit UI',
+  CIRCUIT_UI_OSS = 'Circuit UI (OSS scope)',
   CYPRESS = 'Cypress',
   EMOTION = 'Emotion',
   JEST = 'Jest',

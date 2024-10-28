@@ -71,6 +71,13 @@ function customizePlugin(plugins: Plugin[]) {
         'circuit-ui/no-invalid-custom-properties': true,
       },
     },
+    [Plugin.CIRCUIT_UI_OSS]: {
+      plugins: ['@sumup-oss/stylelint-plugin-circuit-ui'],
+      rules: {
+        'circuit-ui/no-invalid-custom-properties': true,
+        'circuit-ui/no-deprecated-custom-properties': true,
+      },
+    },
   };
 
   return (config: StylelintConfig): StylelintConfig => {
