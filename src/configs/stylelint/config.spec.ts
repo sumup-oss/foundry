@@ -122,5 +122,11 @@ describe('stylelint', () => {
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
+
+    it("should return a config for { plugins: ['Circuit UI (OSS scope)'] }", () => {
+      getOptions.mockReturnValue({ plugins: [Plugin.CIRCUIT_UI_OSS] });
+      const actual = createConfig();
+      expect(actual).toMatchSnapshot();
+    });
   });
 });

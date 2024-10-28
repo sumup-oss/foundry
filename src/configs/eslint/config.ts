@@ -639,6 +639,17 @@ function customizePlugin(plugins: Plugin[], workspaces: Workspaces) {
         '@sumup/circuit-ui/no-deprecated-components': 'warn',
       },
     },
+    [Plugin.CIRCUIT_UI_OSS]: {
+      plugins: ['@sumup-oss/circuit-ui'],
+      rules: {
+        '@sumup-oss/circuit-ui/component-lifecycle-imports': 'error',
+        '@sumup-oss/circuit-ui/no-invalid-custom-properties': 'error',
+        '@sumup-oss/circuit-ui/no-renamed-props': 'error',
+        '@sumup-oss/circuit-ui/no-deprecated-props': 'warn',
+        '@sumup-oss/circuit-ui/no-deprecated-components': 'warn',
+        '@sumup-oss/circuit-ui/renamed-package-scope': 'error',
+      },
+    },
     [Plugin.EMOTION]: {
       plugins: ['@emotion'],
       rules: {

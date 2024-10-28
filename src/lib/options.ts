@@ -49,6 +49,16 @@ const PLUGINS = [
     },
   },
   {
+    name: Plugin.CIRCUIT_UI_OSS,
+    frameworkPackages: ['@sumup-oss/circuit-ui', '@sumup-oss/design-tokens'],
+    eslintPlugins: {
+      '@sumup-oss/eslint-plugin-circuit-ui': '>=5.0.0 <6.0.0',
+    },
+    stylelintPlugins: {
+      '@sumup-oss/stylelint-plugin-circuit-ui': '>=3.0.0 <4.0.0',
+    },
+  },
+  {
     name: Plugin.NEXT_JS,
     frameworkPackages: ['next'],
     eslintPlugins: {
