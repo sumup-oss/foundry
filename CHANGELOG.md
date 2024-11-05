@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.4.0
+
+### Minor Changes
+
+- [#1038](https://github.com/sumup-oss/foundry/pull/1038) [`54fb731`](https://github.com/sumup-oss/foundry/commit/54fb7319e6d7932178bbd43fbe6e5a4a121979f8) Thanks [@connor-baer](https://github.com/connor-baer)! - Updated all dependencies to their latest minor.
+
 ## 8.3.0
 
 ### Minor Changes
