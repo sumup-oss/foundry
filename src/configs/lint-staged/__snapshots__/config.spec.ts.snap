@@ -10,7 +10,7 @@ exports[`lint-staged > should override the default config 1`] = `
   ],
   "*.(ts|tsx)": [Function],
   "*.css": [
-    "foundry run stylelint --fix",
+    "foundry run stylelint --fix --allow-empty-input",
   ],
   "*.jsx?": [
     "custom command",
@@ -25,7 +25,7 @@ exports[`lint-staged > with options > should return a config for { useBiome: fal
   ],
   "*.(ts|tsx)": [Function],
   "*.css": [
-    "foundry run stylelint --fix",
+    "foundry run stylelint --fix --allow-empty-input",
   ],
 }
 `;
@@ -40,7 +40,7 @@ exports[`lint-staged > with options > should return a config for { useBiome: tru
   ],
   "*.(ts|tsx)": [Function],
   "*.css": [
-    "foundry run stylelint --fix",
+    "foundry run stylelint --fix --allow-empty-input",
   ],
 }
 `;
