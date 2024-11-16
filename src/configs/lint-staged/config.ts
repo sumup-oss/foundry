@@ -32,14 +32,14 @@ export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
       ],
       '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
       '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-      '*.css': ['foundry run stylelint --fix'],
+      '*.css': ['foundry run stylelint --fix --allow-empty-input'],
       ...overrides,
     };
   }
   return {
     '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
     '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-    '*.css': ['foundry run stylelint --fix'],
+    '*.css': ['foundry run stylelint --fix --allow-empty-input'],
     ...overrides,
   };
 }
