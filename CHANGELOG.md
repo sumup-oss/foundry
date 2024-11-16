@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 8.4.1
+
+### Patch Changes
+
+- [#1040](https://github.com/sumup-oss/foundry/pull/1040) [`650a2c6`](https://github.com/sumup-oss/foundry/commit/650a2c687376df68c116ed404c87778047128b2e) Thanks [@connor-baer](https://github.com/connor-baer)! - Prevented Styleling from throwing an error when all matched input files are ignored during a pre-commit check.
+
 ## 8.4.0
 
 ### Minor Changes
