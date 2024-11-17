@@ -55,7 +55,8 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
       {
         type: 'confirm',
         name: 'useBiome',
-        message: 'Do you want to use Biome instead of Prettier to format code?',
+        message:
+          'Do you want to use Biome in addition to ESLint to lint code faster?',
         default: DEFAULT_OPTIONS.useBiome,
         when: (): boolean => typeof args.useBiome === 'undefined',
       },
@@ -74,11 +75,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   }
 
   const selectedTools: Record<string, ToolOptions> = tools;
-
-  if (options.useBiome) {
-    // biome-ignore lint/performance/noDelete:
-    delete selectedTools.prettier;
-  }
 
   const files = getFilesForTools(options, selectedTools);
 
