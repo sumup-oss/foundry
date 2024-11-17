@@ -371,7 +371,6 @@ function customizeLanguage(language: Language, useBiome: boolean) {
           parserOptions: {
             tsconfigRootDir: cwd(),
             project: ['./tsconfig.json'],
-            extraFileExtensions: ['.json'],
             sourceType: 'module',
             ecmaVersion: 6,
             ecmaFeatures: {
