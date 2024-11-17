@@ -6350,9 +6350,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -6665,9 +6662,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -6979,9 +6973,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7300,9 +7291,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7622,9 +7610,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7949,9 +7934,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8255,9 +8237,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8571,9 +8550,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8877,9 +8853,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9203,9 +9176,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9483,9 +9453,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9762,9 +9729,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10050,9 +10014,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10337,9 +10298,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10631,9 +10589,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10904,9 +10859,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11187,9 +11139,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11460,9 +11409,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11748,9 +11694,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12063,9 +12006,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12377,9 +12317,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12698,9 +12635,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13020,9 +12954,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13347,9 +13278,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13653,9 +13581,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13969,9 +13894,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14275,9 +14197,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14601,9 +14520,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14879,9 +14795,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15156,9 +15069,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15442,9 +15352,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15727,9 +15634,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16019,9 +15923,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16290,9 +16191,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16571,9 +16469,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16842,9 +16737,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -17122,9 +17014,6 @@ exports[`eslint > with options > should return a config when using Biome 1`] = `
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
