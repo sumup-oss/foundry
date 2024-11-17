@@ -8,7 +8,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -20,17 +20,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -210,7 +199,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -222,17 +211,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -411,7 +389,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -423,17 +401,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -619,7 +586,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -631,17 +598,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -828,7 +784,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -840,17 +796,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -1041,7 +986,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "next",
   ],
@@ -1054,17 +999,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -1235,7 +1169,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -1247,17 +1181,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -1437,7 +1360,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:storybook/recommended",
   ],
@@ -1450,17 +1373,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -1631,7 +1543,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -1643,17 +1555,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -1841,7 +1742,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -1856,17 +1757,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2008,7 +1898,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2023,17 +1913,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2174,7 +2053,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2189,17 +2068,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2349,7 +2217,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2364,17 +2232,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2523,7 +2380,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2538,17 +2395,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2703,7 +2549,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2719,17 +2565,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -2864,7 +2699,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -2879,17 +2714,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3033,7 +2857,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -3049,17 +2873,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3194,7 +3007,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -3209,17 +3022,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3371,7 +3173,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3384,17 +3186,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3573,7 +3364,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3586,17 +3377,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3774,7 +3554,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3787,17 +3567,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -3982,7 +3751,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -3995,17 +3764,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -4191,7 +3949,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -4204,17 +3962,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -4404,7 +4151,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "next",
@@ -4418,17 +4165,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -4598,7 +4334,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -4611,17 +4347,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -4800,7 +4525,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
@@ -4814,17 +4539,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -4994,7 +4708,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -5007,17 +4721,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -5204,7 +4907,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5220,17 +4923,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -5369,7 +5061,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5385,17 +5077,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -5533,7 +5214,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5549,17 +5230,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -5706,7 +5376,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5722,17 +5392,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -5878,7 +5537,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -5894,17 +5553,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6056,7 +5704,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -6073,17 +5721,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6215,7 +5852,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -6231,17 +5868,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6382,7 +6008,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -6399,17 +6025,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6541,7 +6156,7 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -6557,17 +6172,6 @@ exports[`eslint > with options > should return a config for { language: 'JavaScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6716,7 +6320,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -6728,17 +6332,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -6757,9 +6350,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7042,7 +6632,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -7054,17 +6644,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -7083,9 +6662,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7367,7 +6943,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -7379,17 +6955,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -7408,9 +6973,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -7699,7 +7261,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -7711,17 +7273,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -7740,9 +7291,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8032,7 +7580,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -8044,17 +7592,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -8073,9 +7610,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8369,7 +7903,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "next",
   ],
@@ -8382,17 +7916,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -8411,9 +7934,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -8687,7 +8207,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -8699,17 +8219,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -8728,9 +8237,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9013,7 +8519,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:storybook/recommended",
   ],
@@ -9026,17 +8532,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -9055,9 +8550,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9331,7 +8823,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
   ],
   "overrides": [
@@ -9343,17 +8835,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -9372,9 +8853,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9665,7 +9143,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -9684,17 +9162,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -9709,9 +9176,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -9956,7 +9420,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -9975,17 +9439,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -10000,9 +9453,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10246,7 +9696,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10265,17 +9715,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -10290,9 +9729,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10545,7 +9981,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10564,17 +10000,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -10589,9 +10014,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -10843,7 +10265,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -10862,17 +10284,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -10887,9 +10298,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11147,7 +10555,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -11167,17 +10575,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -11192,9 +10589,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11432,7 +10826,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -11451,17 +10845,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -11476,9 +10859,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -11725,7 +11105,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -11745,17 +11125,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -11770,9 +11139,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12010,7 +11376,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:compat/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -12029,17 +11395,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -12054,9 +11409,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12311,7 +11663,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -12324,17 +11676,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -12353,9 +11694,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12637,7 +11975,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -12650,17 +11988,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -12679,9 +12006,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -12962,7 +12286,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -12975,17 +12299,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -13004,9 +12317,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13294,7 +12604,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -13307,17 +12617,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -13336,9 +12635,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13627,7 +12923,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -13640,17 +12936,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -13669,9 +12954,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -13964,7 +13246,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "next",
@@ -13978,17 +13260,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -14007,9 +13278,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14282,7 +13550,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -14295,17 +13563,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -14324,9 +13581,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14608,7 +13862,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:storybook/recommended",
@@ -14622,17 +13876,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -14651,9 +13894,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -14926,7 +14166,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
   ],
@@ -14939,17 +14179,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
     {
@@ -14968,9 +14197,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15260,7 +14486,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15280,17 +14506,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -15305,9 +14520,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15549,7 +14761,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15569,17 +14781,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -15594,9 +14795,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -15837,7 +15035,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -15857,17 +15055,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -15882,9 +15069,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16134,7 +15318,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -16154,17 +15338,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -16179,9 +15352,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16430,7 +15600,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -16450,17 +15620,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -16475,9 +15634,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -16732,7 +15888,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -16753,17 +15909,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -16778,9 +15923,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -17015,7 +16157,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -17035,17 +16177,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -17060,9 +16191,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -17306,7 +16434,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -17327,17 +16455,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -17352,9 +16469,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -17589,7 +16703,7 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:node/recommended",
     "plugin:security/recommended-legacy",
     "plugin:react/recommended",
@@ -17609,17 +16723,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
     },
     {
       "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
-      },
-    },
-    {
-      "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -17634,9 +16737,6 @@ exports[`eslint > with options > should return a config for { language: 'TypeScr
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -17914,9 +17014,6 @@ exports[`eslint > with options > should return a config when using Biome 1`] = `
           "modules": true,
         },
         "ecmaVersion": 6,
-        "extraFileExtensions": [
-          ".json",
-        ],
         "project": [
           "./tsconfig.json",
         ],
@@ -18467,7 +17564,7 @@ exports[`eslint > with options > should return a config with a copyright notice 
   "extends": [
     "eslint:recommended",
     "airbnb-base",
-    "plugin:prettier/recommended",
+    "prettier",
   ],
   "overrides": [
     {
@@ -18478,17 +17575,6 @@ exports[`eslint > with options > should return a config with a copyright notice 
       ],
       "rules": {
         "no-console": "off",
-      },
-    },
-    {
-      "extends": [
-        "plugin:json/recommended-legacy",
-      ],
-      "files": [
-        "**/*.json",
-      ],
-      "rules": {
-        "notice/notice": "off",
       },
     },
   ],

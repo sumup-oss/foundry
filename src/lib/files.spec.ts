@@ -21,7 +21,7 @@ import type { PackageJson } from '../types/shared';
 
 import { writeFile, addPackageScript, savePackageJson } from './files';
 
-vi.mock('fs', () => ({
+vi.mock('node:fs', () => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   writeFile: vi.fn((_file, _data, _options, callback) => callback()),
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
