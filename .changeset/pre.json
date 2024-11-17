@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@sumup-oss/foundry": "8.4.1"
+  },
+  "changesets": []
+}
