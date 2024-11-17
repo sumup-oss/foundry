@@ -121,7 +121,8 @@ const sharedOverrides = [
 
 const base = {
   root: true,
-  extends: ['eslint:recommended', 'airbnb-base'],
+  // eslint-config-prettier disables ESLint's stylistic rules which are covered by Biome
+  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
@@ -339,26 +340,13 @@ const biomeRules = {
   '@typescript-eslint/require-await': 'off',
 };
 
-function customizeFormatter(useBiome: boolean) {
+function customizeLinter(useBiome: boolean) {
   return (config: ESLintConfig): ESLintConfig => {
-    if (useBiome) {
-      return customizeConfig(config, {
-        // eslint-config-prettier disables ESLint's stylistic rules which are also covered by Biome
-        extends: ['prettier'],
-        rules: biomeRules,
-      });
+    if (!useBiome) {
+      return config;
     }
     return customizeConfig(config, {
-      extends: ['plugin:prettier/recommended'],
-      overrides: [
-        {
-          files: ['**/*.json'],
-          extends: ['plugin:json/recommended-legacy'],
-          rules: {
-            'notice/notice': 'off',
-          },
-        },
-      ],
+      rules: biomeRules,
     });
   };
 }
@@ -756,7 +744,7 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
-    customizeFormatter(options.useBiome),
+    customizeLinter(options.useBiome),
     customizeLanguage(options.language, options.useBiome),
     customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),

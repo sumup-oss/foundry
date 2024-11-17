@@ -17,33 +17,34 @@ import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
-import { format, type Options as PrettierConfig } from 'prettier';
+import { Biome, Distribution } from '@biomejs/js-api';
 import readPkgUp from 'read-pkg-up';
 
 import type { PackageJson } from '../types/shared';
-import prettierConfig from '../prettier';
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
 
-export function formatContent(
+export async function formatContent(
   fileName: string,
   content: string,
 ): Promise<string> {
-  const configMap: { [key: string]: PrettierConfig } = {
-    '.js': prettierConfig({ parser: 'babel' }),
-    '.json': { parser: 'json' },
-    '.yaml': { parser: 'yaml' },
-  };
+  const biome = await Biome.create({
+    distribution: Distribution.NODE,
+  });
 
-  const extension = path.extname(fileName);
-  const formatConfig = configMap[extension];
+  // TODO: Import the Biome config once the projected has been migrated to ESM to support import assertions.
+  biome.applyConfiguration({
+    'javascript': {
+      'formatter': {
+        'quoteProperties': 'preserve',
+        'quoteStyle': 'single',
+      },
+    },
+  });
 
-  if (!formatConfig) {
-    return Promise.resolve(content);
-  }
-
-  return format(content, formatConfig);
+  const formatted = biome.formatContent(content, { filePath: fileName });
+  return formatted.content;
 }
 
 export async function writeFile(

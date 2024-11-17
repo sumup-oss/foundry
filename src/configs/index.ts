@@ -17,7 +17,6 @@ import * as biome from './biome';
 import * as eslint from './eslint';
 import * as husky from './husky';
 import * as lintStaged from './lint-staged';
-import * as prettier from './prettier';
 import * as stylelint from './stylelint';
 
-export { biome, eslint, husky, lintStaged, prettier, stylelint };
+export { biome, eslint, husky, lintStaged, stylelint };

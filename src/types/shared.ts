@@ -18,7 +18,6 @@ import type { NormalizedPackageJson } from 'read-pkg-up';
 export enum Tool {
   ESLINT = 'eslint',
   STYLELINT = 'stylelint',
-  PRETTIER = 'prettier',
   BIOME = 'biome',
   HUSKY = 'husky',
   LINT_STAGED = 'lint-staged',
