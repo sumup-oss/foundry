@@ -14,30 +14,25 @@
  */
 
 import type { Config as StylelintConfig } from 'stylelint';
-import { flow, mergeWith, isArray, isObject, uniq, isEmpty } from 'lodash/fp';
+import { deepmergeCustom } from 'deepmerge-ts';
 
 import { getOptions } from '../../lib/options';
+import { isEmpty, flow, uniq } from '../../lib/helpers';
 import { Plugin } from '../../types/shared';
 
-export const customizeConfig = mergeWith(customizer);
-
-function isArrayTypeGuard(array: unknown): array is unknown[] {
-  return isArray(array);
-}
-
-function customizer(
-  objValue: unknown,
-  srcValue: unknown,
-  key: string,
-): unknown {
-  if (isArrayTypeGuard(objValue) && isArrayTypeGuard(srcValue)) {
-    return uniq([...objValue, ...srcValue]);
-  }
-  if (isObject(objValue) && isObject(srcValue)) {
-    return key === 'rules' ? { ...objValue, ...srcValue } : undefined;
-  }
-  return undefined;
-}
+export const customizeConfig = deepmergeCustom({
+  mergeArrays: (values) => {
+    const [baseValue, sourceValue] = values;
+    return uniq([...baseValue, ...sourceValue]);
+  },
+  mergeRecords: (values, utils, meta) => {
+    const [baseValue, sourceValue] = values;
+    if (meta?.key === 'rules') {
+      return { ...baseValue, ...sourceValue };
+    }
+    return utils.actions.defaultMerge;
+  },
+});
 
 const base: StylelintConfig = {
   extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
@@ -87,7 +82,7 @@ function customizePlugin(plugins: Plugin[]) {
 
     return plugins.reduce((acc, plugin: Plugin) => {
       const overrides = pluginMap[plugin];
-      return customizeConfig(acc, overrides);
+      return overrides ? customizeConfig(acc, overrides) : config;
     }, config);
   };
 }

@@ -16,13 +16,15 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 
+import { isArray } from './type-check';
+
 type LogMessage = string | string[];
 
 const IS_DEBUG =
   process.argv.includes('--debug') || process.env.NODE_ENV === 'DEBUG';
 
 const getMessage = (arg: LogMessage): string => {
-  const message = Array.isArray(arg) ? arg.join('\n') : arg;
+  const message = isArray(arg) ? arg.join('\n') : arg;
   return message;
 };
 

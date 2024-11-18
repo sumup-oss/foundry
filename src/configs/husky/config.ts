@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { merge } from 'lodash/fp';
+import { deepmerge } from 'deepmerge-ts';
 
 interface HuskyConfig {
   skipCI?: boolean;
@@ -27,5 +27,5 @@ export const base: HuskyConfig = {
 };
 
 export function config(overrides: HuskyConfig = {}): HuskyConfig {
-  return merge(base, overrides);
+  return deepmerge(base, overrides);
 }
