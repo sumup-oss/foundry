@@ -16,6 +16,7 @@
  */
 
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import { run, type RunParams } from './run.js';
 import { init, type InitParams } from './init.js';
@@ -23,7 +24,7 @@ import { debug } from './debug.js';
 import { DEFAULT_OPTIONS } from './defaults.js';
 
 // eslint-disable-next-line no-void
-void yargs
+void yargs(hideBin(process.argv))
   .command(
     'init',
     "Initialize Foundry's tools in your project",
