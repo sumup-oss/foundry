@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { getOptions } from '../lib/options';
-import * as logger from '../lib/logger';
-import { isArray } from '../lib/type-check';
-import { isEmpty } from '../lib/helpers';
+import { getOptions } from '../lib/options.js';
+import * as logger from '../lib/logger.js';
+import { isArray } from '../lib/type-check.js';
+import { isEmpty } from '../lib/helpers.js';
 
 export function debug(): void {
   const options = getOptions();

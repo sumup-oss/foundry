@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import * as biome from './biome';
-import * as editorconfig from './editorconfig';
-import * as eslint from './eslint';
-import * as husky from './husky';
-import * as lintStaged from './lint-staged';
-import * as stylelint from './stylelint';
+import * as biome from './biome/index.js';
+import * as editorconfig from './editorconfig/index.js';
+import * as eslint from './eslint/index.js';
+import * as husky from './husky/index.js';
+import * as lintStaged from './lint-staged/index.js';
+import * as stylelint from './stylelint/index.js';
 
 export { biome, editorconfig, eslint, husky, lintStaged, stylelint };

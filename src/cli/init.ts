@@ -25,12 +25,12 @@ import type {
   ToolOptions,
   File,
   PackageJson,
-} from '../types/shared';
-import * as tools from '../configs';
-import * as logger from '../lib/logger';
-import { writeFile, addPackageScript, savePackageJson } from '../lib/files';
+} from '../types/shared.js';
+import * as tools from '../configs/index.js';
+import * as logger from '../lib/logger.js';
+import { writeFile, addPackageScript, savePackageJson } from '../lib/files.js';
 
-import { DEFAULT_OPTIONS } from './defaults';
+import { DEFAULT_OPTIONS } from './defaults.js';
 
 export interface InitParams {
   configDir: string;

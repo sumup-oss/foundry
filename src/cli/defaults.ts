@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import type { InitOptions } from '../types/shared';
+import type { InitOptions } from '../types/shared.js';
 
 export const DEFAULT_OPTIONS: InitOptions = {
   configDir: '.',

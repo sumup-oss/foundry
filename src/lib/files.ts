@@ -20,7 +20,7 @@ import { promisify } from 'node:util';
 import { Biome, Distribution } from '@biomejs/js-api';
 import readPkgUp from 'read-pkg-up';
 
-import type { PackageJson } from '../types/shared';
+import type { PackageJson } from '../types/shared.js';
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);

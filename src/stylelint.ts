@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-import { createConfig } from './configs/stylelint/config';
+import { createConfig } from './configs/stylelint/config.js';
 
 export = createConfig;
