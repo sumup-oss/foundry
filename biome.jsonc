@@ -5,7 +5,6 @@
   "linter": {
     "rules": {
       "style": {
-        "noDefaultExport": "error",
         "useFilenamingConvention": {
           "level": "error",
           "options": {
