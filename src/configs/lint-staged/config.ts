@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { getOptions } from '../../lib/options';
+import { getOptions } from '../../lib/options.js';
 
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;

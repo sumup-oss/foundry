@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { isArray, isObject, isString } from './type-check';
+import { isArray, isObject, isString } from './type-check.js';
 
 export function isEmpty(value: unknown): boolean {
   if (!value) {

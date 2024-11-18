@@ -16,7 +16,7 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 
-import { isArray } from './type-check';
+import { isArray } from './type-check.js';
 
 type LogMessage = string | string[];
 

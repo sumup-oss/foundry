@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import type { File } from '../../types/shared';
+import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {

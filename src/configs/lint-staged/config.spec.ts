@@ -15,9 +15,9 @@
 
 import { describe, expect, it, vi, type Mock } from 'vitest';
 
-import { getOptions as getOptionsMock } from '../../lib/options';
+import { getOptions as getOptionsMock } from '../../lib/options.js';
 
-import { config } from './config';
+import { config } from './config.js';
 
 vi.mock('../../lib/options', () => ({
   getOptions: vi.fn(() => ({})),

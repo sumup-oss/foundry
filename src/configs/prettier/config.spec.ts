@@ -15,7 +15,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { config } from './config';
+import { config } from './config.js';
 
 describe('prettier', () => {
   it('should return a config', () => {

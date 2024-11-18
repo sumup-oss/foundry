@@ -24,10 +24,10 @@ import {
   Framework,
   Plugin,
   type Workspaces,
-} from '../../types/shared';
-import * as logger from '../../lib/logger';
-import { getOptions } from '../../lib/options';
-import { isEmpty, flow, uniq } from '../../lib/helpers';
+} from '../../types/shared.js';
+import * as logger from '../../lib/logger.js';
+import { getOptions } from '../../lib/options.js';
+import { isEmpty, flow, uniq } from '../../lib/helpers.js';
 
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer

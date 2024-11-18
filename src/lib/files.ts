@@ -20,8 +20,8 @@ import { promisify } from 'node:util';
 import { format, type Options as PrettierConfig } from 'prettier';
 import readPkgUp from 'read-pkg-up';
 
-import type { PackageJson } from '../types/shared';
-import prettierConfig from '../prettier';
+import type { PackageJson } from '../types/shared.js';
+import prettierConfig from '../prettier.js';
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);

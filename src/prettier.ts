@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-import { config } from './configs/prettier/config';
+import { config } from './configs/prettier/config.js';
 
 export = config;

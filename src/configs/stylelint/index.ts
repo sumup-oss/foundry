@@ -15,7 +15,7 @@
 
 import dedent from 'dedent';
 
-import type { File } from '../../types/shared';
+import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {
