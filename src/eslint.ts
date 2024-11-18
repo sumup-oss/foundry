@@ -15,4 +15,4 @@
 
 import { createConfig } from './configs/eslint/config.js';
 
-export = createConfig;
+export default createConfig;

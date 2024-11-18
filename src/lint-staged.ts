@@ -15,4 +15,4 @@
 
 import { config } from './configs/lint-staged/config.js';
 
-export = config;
+export default config;

@@ -15,4 +15,4 @@
 
 import { config } from './configs/prettier/config.js';
 
-export = config;
+export default config;
