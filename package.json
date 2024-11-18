@@ -11,6 +11,7 @@
     "./CONTRIBUTING.md"
   ],
   "bin": "dist/cli/index.js",
+  "type": "module",
   "exports": {
     "./eslint": "./dist/eslint.js",
     "./husky": "./dist/husky.js",
