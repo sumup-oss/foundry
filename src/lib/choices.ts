@@ -13,28 +13,24 @@
  * limitations under the License.
  */
 
-import { isArray } from 'lodash/fp';
+import { isArray } from './type-check';
 
 type Enum = { [key: string]: string };
 type Choices = { [key: string]: Enum | Enum[] };
 type Combination = { [key: string]: string | string[] };
-
-function isArrayTypeGuard(array: unknown): array is unknown[] {
-  return isArray(array);
-}
 
 export function getAllChoiceCombinations(
   possibleChoices: Choices,
 ): Combination[] {
   return Object.entries(possibleChoices).reduce(
     (acc, [optionName, choices]) => {
-      const choiceEnum = isArrayTypeGuard(choices) ? choices[0] : choices;
+      const choiceEnum = isArray(choices) ? choices[0] : choices;
       const choicesForOption = Object.values(choiceEnum);
       const allCombinations: Combination[] = [];
 
       acc.forEach((combination: Combination) => {
         choicesForOption.forEach((value) => {
-          const choice = isArrayTypeGuard(choices) ? [value] : value;
+          const choice = isArray(choices) ? [value] : value;
           allCombinations.push({
             ...combination,
             [optionName]: choice,

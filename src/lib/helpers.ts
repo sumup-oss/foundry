@@ -13,23 +13,27 @@
  * limitations under the License.
  */
 
-import { getOptions } from '../lib/options';
-import * as logger from '../lib/logger';
-import { isArray } from '../lib/type-check';
-import { isEmpty } from '../lib/helpers';
+import { isArray, isObject, isString } from './type-check';
 
-export function debug(): void {
-  const options = getOptions();
+export function isEmpty(value: unknown): boolean {
+  if (!value) {
+    return true;
+  }
+  if (isString(value) || isArray(value)) {
+    return !value.length;
+  }
+  if (isObject(value)) {
+    return !Object.keys(value).length;
+  }
+  return false;
+}
 
-  const stringifiedOptions = Object.entries(options).reduce(
-    (acc, [key, value]) => {
-      acc[key] = isArray(value) && !isEmpty(value) ? value.join(', ') : value;
-      return acc;
-    },
-    {} as Record<string, unknown>,
-  );
+export function flow<T>(...fns: ((value: T) => T)[]) {
+  return (value: T) =>
+    fns.reduce((currentValue, fn) => fn(currentValue), value);
+}
 
-  logger.empty();
-  logger.info('Detected configuration:');
-  logger.table(stringifiedOptions);
+export function uniq<T>(values: T[]): T[] {
+  const set = new Set(values);
+  return Array.from(set);
 }
