@@ -94,7 +94,7 @@
     "@types/prettier": "^3.0.0",
     "@types/semver": "^7.5.8",
     "@types/yargs": "^17.0.33",
-    "@vitest/coverage-v8": "^2.1.4",
+    "@vitest/coverage-v8": "^2.1.6",
     "audit-ci": "^7.1.0",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
