@@ -1,5 +1,5 @@
 /**
- * Copyright 2020, SumUp Ltd.
+ * Copyright 2025, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,11 +13,20 @@
  * limitations under the License.
  */
 
-import * as biome from './biome';
-import * as editorconfig from './editorconfig';
-import * as eslint from './eslint';
-import * as husky from './husky';
-import * as lintStaged from './lint-staged';
-import * as stylelint from './stylelint';
+import dedent from 'dedent';
 
-export { biome, editorconfig, eslint, husky, lintStaged, stylelint };
+import type { File } from '../../types/shared';
+
+export const files = (): File[] => [
+  {
+    name: '.editorconfig',
+    content: `${dedent`
+      [*]
+      charset = utf-8
+      end_of_line = lf
+      insert_final_newline = true
+      indent_style = space
+      indent_size = 2
+    `}\n`,
+  },
+];

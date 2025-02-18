@@ -15,14 +15,6 @@
 
 import type { NormalizedPackageJson } from 'read-pkg-up';
 
-export enum Tool {
-  ESLINT = 'eslint',
-  STYLELINT = 'stylelint',
-  BIOME = 'biome',
-  HUSKY = 'husky',
-  LINT_STAGED = 'lint-staged',
-}
-
 export enum Language {
   TYPESCRIPT = 'TypeScript',
   JAVASCRIPT = 'JavaScript',
