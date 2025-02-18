@@ -340,18 +340,14 @@ const biomeRules = {
   '@typescript-eslint/require-await': 'off',
 };
 
-function customizeLinter(useBiome: boolean) {
-  return (config: ESLintConfig): ESLintConfig => {
-    if (!useBiome) {
-      return config;
-    }
-    return customizeConfig(config, {
+function customizeLinter() {
+  return (config: ESLintConfig): ESLintConfig =>
+    customizeConfig(config, {
       rules: biomeRules,
     });
-  };
 }
 
-function customizeLanguage(language: Language, useBiome: boolean) {
+function customizeLanguage(language: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
       overrides: sharedOverrides,
@@ -379,7 +375,7 @@ function customizeLanguage(language: Language, useBiome: boolean) {
           },
           rules: {
             ...sharedRules,
-            ...(useBiome ? biomeRules : {}),
+            ...biomeRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/indent': 'off',
             '@typescript-eslint/no-unused-vars': 'error',
@@ -743,8 +739,8 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
-    customizeLinter(options.useBiome),
-    customizeLanguage(options.language, options.useBiome),
+    customizeLinter(),
+    customizeLanguage(options.language),
     customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
     customizePlugin(options.plugins, options.workspaces),

@@ -2,10 +2,13 @@
 
 exports[`lint-staged > should override the default config 1`] = `
 {
+  "*": [
+    "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true",
+  ],
   "*.(js|jsx|json)": [
     "next lint",
   ],
-  "*.(js|jsx|json|ts|tsx)": [
+  "*.(js|jsx|ts|tsx)": [
     "foundry run eslint --fix",
   ],
   "*.(ts|tsx)": [Function],
@@ -14,33 +17,6 @@ exports[`lint-staged > should override the default config 1`] = `
   ],
   "*.jsx?": [
     "custom command",
-  ],
-}
-`;
-
-exports[`lint-staged > with options > should return a config for { useBiome: false } 1`] = `
-{
-  "*.(js|jsx|json|ts|tsx)": [
-    "foundry run eslint --fix",
-  ],
-  "*.(ts|tsx)": [Function],
-  "*.css": [
-    "foundry run stylelint --fix --allow-empty-input",
-  ],
-}
-`;
-
-exports[`lint-staged > with options > should return a config for { useBiome: true } 1`] = `
-{
-  "*": [
-    "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true",
-  ],
-  "*.(js|jsx|ts|tsx)": [
-    "foundry run eslint --fix",
-  ],
-  "*.(ts|tsx)": [Function],
-  "*.css": [
-    "foundry run stylelint --fix --allow-empty-input",
   ],
 }
 `;

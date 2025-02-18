@@ -151,17 +151,6 @@ describe('eslint', () => {
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
-
-    it('should return a config when using Biome', () => {
-      const options = {
-        useBiome: true,
-        language: [Language.TYPESCRIPT],
-        frameworks: [],
-      };
-      getOptions.mockReturnValue(options);
-      const actual = createConfig();
-      expect(actual).toMatchSnapshot();
-    });
   });
 
   it('should merge with the default config', () => {

@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import { getOptions } from '../../lib/options';
-
 type LinterCommand = string | string[];
 type LinterFn = (filenames: string[]) => LinterCommand;
 
@@ -23,21 +21,11 @@ interface LintStagedConfig {
 }
 
 export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
-  const options = getOptions();
-
-  if (options.useBiome) {
-    return {
-      '*': [
-        'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
-      ],
-      '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
-      '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-      '*.css': ['foundry run stylelint --fix --allow-empty-input'],
-      ...overrides,
-    };
-  }
   return {
-    '*.(js|jsx|json|ts|tsx)': ['foundry run eslint --fix'],
+    '*': [
+      'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
+    ],
+    '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
     '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
     '*.css': ['foundry run stylelint --fix --allow-empty-input'],
     ...overrides,

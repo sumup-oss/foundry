@@ -13,29 +13,11 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi, type Mock } from 'vitest';
-
-import { getOptions as getOptionsMock } from '../../lib/options';
+import { describe, expect, it } from 'vitest';
 
 import { config } from './config';
 
-vi.mock('../../lib/options', () => ({
-  getOptions: vi.fn(() => ({})),
-}));
-
-const getOptions = getOptionsMock as Mock;
-
 describe('lint-staged', () => {
-  describe('with options', () => {
-    const matrix = [{ useBiome: true }, { useBiome: false }];
-
-    it.each(matrix)('should return a config for %o', (options) => {
-      getOptions.mockReturnValue(options);
-      const actual = config();
-      expect(actual).toMatchSnapshot();
-    });
-  });
-
   it('should override the default config', () => {
     const overrides = {
       '*.(js|jsx|json)': ['next lint'],
