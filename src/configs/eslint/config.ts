@@ -419,7 +419,7 @@ function customizeLanguage(language: Language) {
           files: ['**/*.d.ts'],
           rules: {
             'spaced-comment': 'off',
-            'node/no-extraneous-import': 'off',
+            // 'node/no-extraneous-import': 'off',
             'import/no-extraneous-dependencies': [
               'error',
               { devDependencies: true },
@@ -479,38 +479,35 @@ function customizeEnvironments(environments: Environment[]) {
       ],
     },
     [Environment.NODE]: {
-      extends: [
-        'plugin:node/recommended',
-        'plugin:security/recommended-legacy',
-      ],
+      extends: ['plugin:security/recommended-legacy'],
       env: { node: true },
       rules: {
         // We don't know if the user's source code is using EJS or CJS.
-        'node/no-unsupported-features/es-syntax': 'off',
+        // 'node/no-unsupported-features/es-syntax': 'off',
         // This rule breaks when used in combination with TypeScript
         // and is already covered by similar ESLint rules.
-        'node/no-missing-import': 'off',
+        // 'node/no-missing-import': 'off',
         // This rule is already covered by similar ESLint rules.
-        'node/no-extraneous-import': 'off',
+        // 'node/no-extraneous-import': 'off',
         // This rule produces too many false positives.
         'security/detect-object-injection': 'off',
       },
-      overrides: [
-        {
-          files: [
-            '**/*.spec.*',
-            '**/jest*',
-            '**/setupTests.*',
-            '**/test-utils.*',
-          ],
-          rules: {
-            'node/no-unpublished-import': 'off',
-            'node/no-unpublished-require': 'off',
-            'node/no-missing-require': 'off',
-            'node/no-extraneous-require': 'off',
-          },
-        },
-      ],
+      // overrides: [
+      //   {
+      //     files: [
+      //       '**/*.spec.*',
+      //       '**/jest*',
+      //       '**/setupTests.*',
+      //       '**/test-utils.*',
+      //     ],
+      //     rules: {
+      //       'node/no-unpublished-import': 'off',
+      //       'node/no-unpublished-require': 'off',
+      //       'node/no-missing-require': 'off',
+      //       'node/no-extraneous-require': 'off',
+      //     },
+      //   },
+      // ],
     },
   };
   return (config: ESLintConfig): ESLintConfig => {
