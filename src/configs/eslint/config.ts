@@ -37,6 +37,7 @@ import { variables } from './rules/variables';
 import { es6 } from './rules/es6';
 import { imports } from './rules/imports';
 import { strict } from './rules/strict';
+import { typescript } from './rules/typescript';
 
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
@@ -378,10 +379,10 @@ function customizeLanguage(language: Language) {
     },
     [Language.TYPESCRIPT]: {
       overrides: [
-        {
+        // TODO: Reorganize
+        customizeConfig<Record<string, unknown>[]>(typescript, {
           files: ['**/*.{ts,tsx}'],
           extends: [
-            'airbnb-typescript/base',
             'plugin:@typescript-eslint/eslint-recommended',
             'plugin:@typescript-eslint/recommended',
             'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -413,7 +414,7 @@ function customizeLanguage(language: Language) {
             ],
             'react/prop-types': 'off',
           },
-        },
+        }),
         {
           files: ['**/*.d.ts'],
           rules: {

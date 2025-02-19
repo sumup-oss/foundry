@@ -54,7 +54,6 @@
     "dedent": "^0.7.0",
     "deepmerge-ts": "^7.1.3",
     "eslint": "^8.57.0",
-    "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-import": "^2.31.0",
