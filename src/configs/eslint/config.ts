@@ -29,6 +29,15 @@ import * as logger from '../../lib/logger';
 import { getOptions } from '../../lib/options';
 import { isEmpty, flow, uniq } from '../../lib/helpers';
 
+import { bestPractices } from './rules/best-practices';
+import { errors } from './rules/errors';
+import { node } from './rules/node';
+import { style } from './rules/style';
+import { variables } from './rules/variables';
+import { es6 } from './rules/es6';
+import { imports } from './rules/imports';
+import { strict } from './rules/strict';
+
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
 type ESLintConfig = unknown;
@@ -119,10 +128,11 @@ const sharedOverrides = [
   },
 ];
 
-const base = {
+// TODO: Reorganize or give better name
+const sumup = {
   root: true,
   // eslint-config-prettier disables ESLint's stylistic rules which are covered by Biome
-  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
+  extends: ['eslint:recommended', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
@@ -151,9 +161,23 @@ const base = {
   ],
 };
 
+const base = flow(
+  (config) => customizeConfig(config, bestPractices),
+  (config) => customizeConfig(config, errors),
+  (config) => customizeConfig(config, node),
+  (config) => customizeConfig(config, style),
+  (config) => customizeConfig(config, variables),
+  (config) => customizeConfig(config, es6),
+  (config) => customizeConfig(config, imports),
+  (config) => customizeConfig(config, strict),
+  (config) => customizeConfig(config, sumup),
+)({
+  extends: ['eslint:recommended'],
+});
+
 const biomeRules = {
   'constructor-super': 'off',
-  'curly': 'off',
+  curly: 'off',
   'default-case': 'off',
   'default-case-last': 'off',
   'default-param-last': 'off',
