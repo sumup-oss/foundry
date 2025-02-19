@@ -35,7 +35,7 @@ import { node } from './rules/node';
 import { style } from './rules/style';
 import { variables } from './rules/variables';
 import { es6 } from './rules/es6';
-import { imports } from './rules/imports';
+// import { imports } from './rules/imports';
 import { strict } from './rules/strict';
 import { typescript } from './rules/typescript';
 
@@ -103,10 +103,10 @@ const sharedRules = {
     },
   ],
   'no-underscore-dangle': 'error',
-  'import/prefer-default-export': 'off',
-  'import/no-cycle': ['error', { maxDepth: 7 }],
-  'import/order': ['error', { 'newlines-between': 'always' }],
-  'import/extensions': 'off',
+  // 'import/prefer-default-export': 'off',
+  // 'import/no-cycle': ['error', { maxDepth: 7 }],
+  // 'import/order': ['error', { 'newlines-between': 'always' }],
+  // 'import/extensions': 'off',
   'no-void': ['error', { allowAsStatement: true }],
 };
 
@@ -114,15 +114,15 @@ const sharedOverrides = [
   {
     files: ['**/*.{story,stories}.*'],
     rules: {
-      'import/no-extraneous-dependencies': 'off',
-      'import/no-anonymous-default-export': 'off',
+      // 'import/no-extraneous-dependencies': 'off',
+      // 'import/no-anonymous-default-export': 'off',
       'no-alert': 'off',
     },
   },
   {
     files: ['**/*spec.*', '**/jest*', '**/setupTests.*', '**/test-utils.*'],
     rules: {
-      'import/no-extraneous-dependencies': 'off',
+      // 'import/no-extraneous-dependencies': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
     },
@@ -144,13 +144,13 @@ const sumup = {
     },
     allowImportExportEverywhere: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
+  // settings: {
+  //   'import/resolver': {
+  //     node: {
+  //       extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  //     },
+  //   },
+  // },
   rules: sharedRules,
   overrides: [
     {
@@ -169,7 +169,7 @@ const base = flow(
   (config) => customizeConfig(config, style),
   (config) => customizeConfig(config, variables),
   (config) => customizeConfig(config, es6),
-  (config) => customizeConfig(config, imports),
+  // (config) => customizeConfig(config, imports),
   (config) => customizeConfig(config, strict),
   (config) => customizeConfig(config, sumup),
 )({
@@ -420,10 +420,10 @@ function customizeLanguage(language: Language) {
           rules: {
             'spaced-comment': 'off',
             // 'node/no-extraneous-import': 'off',
-            'import/no-extraneous-dependencies': [
-              'error',
-              { devDependencies: true },
-            ],
+            // 'import/no-extraneous-dependencies': [
+            //   'error',
+            //   { devDependencies: true },
+            // ],
           },
         },
         {
