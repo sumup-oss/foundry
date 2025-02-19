@@ -25,7 +25,6 @@ import type {
   ToolOptions,
   File,
   PackageJson,
-  Script,
 } from '../types/shared';
 import * as tools from '../configs';
 import * as logger from '../lib/logger';
@@ -36,7 +35,6 @@ import { DEFAULT_OPTIONS } from './defaults';
 export interface InitParams {
   configDir: string;
   openSource?: boolean;
-  useBiome?: boolean;
   overwrite?: boolean;
   $0?: string;
   _?: string[];
@@ -54,13 +52,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     const prompts: Question[] = [
       {
         type: 'confirm',
-        name: 'useBiome',
-        message: 'Do you want to use Biome instead of Prettier to format code?',
-        default: DEFAULT_OPTIONS.useBiome,
-        when: (): boolean => typeof args.useBiome === 'undefined',
-      },
-      {
-        type: 'confirm',
         name: 'openSource',
         message: 'Do you intend to open-source this project?',
         default: DEFAULT_OPTIONS.openSource,
@@ -75,14 +66,31 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
   const selectedTools: Record<string, ToolOptions> = tools;
 
-  if (options.useBiome) {
-    // biome-ignore lint/performance/noDelete:
-    delete selectedTools.prettier;
-  }
-
   const files = getFilesForTools(options, selectedTools);
 
-  const scripts = getScripts(options);
+  const scripts = [
+    {
+      name: 'lint',
+      command: 'biome check && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
+      description: 'check files for problematic patterns and report them',
+    },
+    {
+      name: 'lint:fix',
+      command:
+        'biome check --write && foundry run eslint . --ext .js,.jsx,.ts,.tsx --fix',
+      description: 'same as `lint` and also try to fix the issues',
+    },
+    {
+      name: 'lint:ci',
+      command: 'biome ci && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
+      description: 'lint files in a continuous integration workflow',
+    },
+    {
+      name: 'lint:css',
+      command: "foundry run stylelint '**/*.css'",
+      description: 'check CSS files for problematic patterns and report them',
+    },
+  ];
 
   logger.empty();
 
@@ -247,60 +255,4 @@ function getFilesForTools(
     }
     return allFiles;
   }, []);
-}
-
-function getScripts(options: InitOptions) {
-  const scripts: Script[] = [];
-
-  if (options.useBiome) {
-    scripts.push(
-      ...[
-        {
-          name: 'lint',
-          command:
-            'biome check && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
-          description: 'check files for problematic patterns and report them',
-        },
-        {
-          name: 'lint:fix',
-          command:
-            'biome check --write && foundry run eslint . --ext .js,.jsx,.ts,.tsx --fix',
-          description: 'same as `lint` and also try to fix the issues',
-        },
-        {
-          name: 'lint:ci',
-          command: 'biome ci && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
-          description: 'lint files in a continuous integration workflow',
-        },
-      ],
-    );
-  } else {
-    scripts.push(
-      ...[
-        {
-          name: 'lint',
-          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
-          description: 'check files for problematic patterns and report them',
-        },
-        {
-          name: 'lint:fix',
-          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx --fix',
-          description: 'same as `lint` and also try to fix the issues',
-        },
-        {
-          name: 'lint:ci',
-          command: 'foundry run eslint . --ext .js,.jsx,.json,.ts,.tsx',
-          description: 'lint files in a continuous integration workflow',
-        },
-      ],
-    );
-  }
-
-  scripts.push({
-    name: 'lint:css',
-    command: "foundry run stylelint '**/*.css'",
-    description: 'check CSS files for problematic patterns and report them',
-  });
-
-  return scripts;
 }

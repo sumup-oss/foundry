@@ -14,10 +14,10 @@
  */
 
 import * as biome from './biome';
+import * as editorconfig from './editorconfig';
 import * as eslint from './eslint';
 import * as husky from './husky';
 import * as lintStaged from './lint-staged';
-import * as prettier from './prettier';
 import * as stylelint from './stylelint';
 
-export { biome, eslint, husky, lintStaged, prettier, stylelint };
+export { biome, editorconfig, eslint, husky, lintStaged, stylelint };

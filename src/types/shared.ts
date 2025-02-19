@@ -15,15 +15,6 @@
 
 import type { NormalizedPackageJson } from 'read-pkg-up';
 
-export enum Tool {
-  ESLINT = 'eslint',
-  STYLELINT = 'stylelint',
-  PRETTIER = 'prettier',
-  BIOME = 'biome',
-  HUSKY = 'husky',
-  LINT_STAGED = 'lint-staged',
-}
-
 export enum Language {
   TYPESCRIPT = 'TypeScript',
   JAVASCRIPT = 'JavaScript',
@@ -60,7 +51,6 @@ export interface Options {
   plugins?: Plugin[];
   openSource?: boolean;
   workspaces?: Workspaces;
-  useBiome?: boolean;
 }
 
 export interface InitOptions extends Options {

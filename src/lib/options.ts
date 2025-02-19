@@ -130,7 +130,6 @@ export function getOptions(): Required<Options> {
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
     workspaces: packageJson.workspaces || null,
-    useBiome: hasDependency(packageJson, '@biomejs/biome'),
   };
 }
 

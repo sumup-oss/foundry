@@ -1,5 +1,5 @@
 /**
- * Copyright 2020, SumUp Ltd.
+ * Copyright 2025, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,15 +19,14 @@ import type { File } from '../../types/shared';
 
 export const files = (): File[] => [
   {
-    name: 'prettier.config.js',
-    content: `
-    module.exports = require('@sumup-oss/foundry/prettier')()`,
-  },
-  {
-    name: '.prettierignore',
+    name: '.editorconfig',
     content: `${dedent`
-      node_modules/
-      package.json
+      [*]
+      charset = utf-8
+      end_of_line = lf
+      insert_final_newline = true
+      indent_style = space
+      indent_size = 2
     `}\n`,
   },
 ];

@@ -121,7 +121,8 @@ const sharedOverrides = [
 
 const base = {
   root: true,
-  extends: ['eslint:recommended', 'airbnb-base'],
+  // eslint-config-prettier disables ESLint's stylistic rules which are covered by Biome
+  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
@@ -339,31 +340,14 @@ const biomeRules = {
   '@typescript-eslint/require-await': 'off',
 };
 
-function customizeFormatter(useBiome: boolean) {
-  return (config: ESLintConfig): ESLintConfig => {
-    if (useBiome) {
-      return customizeConfig(config, {
-        // eslint-config-prettier disables ESLint's stylistic rules which are also covered by Biome
-        extends: ['prettier'],
-        rules: biomeRules,
-      });
-    }
-    return customizeConfig(config, {
-      extends: ['plugin:prettier/recommended'],
-      overrides: [
-        {
-          files: ['**/*.json'],
-          extends: ['plugin:json/recommended-legacy'],
-          rules: {
-            'notice/notice': 'off',
-          },
-        },
-      ],
+function customizeLinter() {
+  return (config: ESLintConfig): ESLintConfig =>
+    customizeConfig(config, {
+      rules: biomeRules,
     });
-  };
 }
 
-function customizeLanguage(language: Language, useBiome: boolean) {
+function customizeLanguage(language: Language) {
   const languageMap = {
     [Language.JAVASCRIPT]: {
       overrides: sharedOverrides,
@@ -383,7 +367,6 @@ function customizeLanguage(language: Language, useBiome: boolean) {
           parserOptions: {
             tsconfigRootDir: cwd(),
             project: ['./tsconfig.json'],
-            extraFileExtensions: ['.json'],
             sourceType: 'module',
             ecmaVersion: 6,
             ecmaFeatures: {
@@ -392,7 +375,7 @@ function customizeLanguage(language: Language, useBiome: boolean) {
           },
           rules: {
             ...sharedRules,
-            ...(useBiome ? biomeRules : {}),
+            ...biomeRules,
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/indent': 'off',
             '@typescript-eslint/no-unused-vars': 'error',
@@ -756,8 +739,8 @@ export function createConfig(overrides: ESLintConfig = {}): ESLintConfig {
   const options = getOptions();
 
   return flow(
-    customizeFormatter(options.useBiome),
-    customizeLanguage(options.language, options.useBiome),
+    customizeLinter(),
+    customizeLanguage(options.language),
     customizeEnvironments(options.environments),
     customizeFramework(options.frameworks),
     customizePlugin(options.plugins, options.workspaces),
