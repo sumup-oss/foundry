@@ -4,5 +4,8 @@
   "initialVersions": {
     "@sumup-oss/foundry": "8.4.1"
   },
-  "changesets": []
+  "changesets": [
+    "orange-mangos-fix",
+    "polite-planets-bow"
+  ]
 }
