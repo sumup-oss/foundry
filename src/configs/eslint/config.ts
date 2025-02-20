@@ -35,7 +35,7 @@ import { node } from './rules/node';
 import { style } from './rules/style';
 import { variables } from './rules/variables';
 import { es6 } from './rules/es6';
-import { imports } from './rules/imports';
+// import { imports } from './rules/imports';
 import { strict } from './rules/strict';
 import { typescript } from './rules/typescript';
 
@@ -103,10 +103,10 @@ const sharedRules = {
     },
   ],
   'no-underscore-dangle': 'error',
-  'import/prefer-default-export': 'off',
-  'import/no-cycle': ['error', { maxDepth: 7 }],
-  'import/order': ['error', { 'newlines-between': 'always' }],
-  'import/extensions': 'off',
+  // 'import/prefer-default-export': 'off',
+  // 'import/no-cycle': ['error', { maxDepth: 7 }],
+  // 'import/order': ['error', { 'newlines-between': 'always' }],
+  // 'import/extensions': 'off',
   'no-void': ['error', { allowAsStatement: true }],
 };
 
@@ -114,15 +114,15 @@ const sharedOverrides = [
   {
     files: ['**/*.{story,stories}.*'],
     rules: {
-      'import/no-extraneous-dependencies': 'off',
-      'import/no-anonymous-default-export': 'off',
+      // 'import/no-extraneous-dependencies': 'off',
+      // 'import/no-anonymous-default-export': 'off',
       'no-alert': 'off',
     },
   },
   {
     files: ['**/*spec.*', '**/jest*', '**/setupTests.*', '**/test-utils.*'],
     rules: {
-      'import/no-extraneous-dependencies': 'off',
+      // 'import/no-extraneous-dependencies': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
     },
@@ -144,13 +144,13 @@ const sumup = {
     },
     allowImportExportEverywhere: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
+  // settings: {
+  //   'import/resolver': {
+  //     node: {
+  //       extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  //     },
+  //   },
+  // },
   rules: sharedRules,
   overrides: [
     {
@@ -169,7 +169,7 @@ const base = flow(
   (config) => customizeConfig(config, style),
   (config) => customizeConfig(config, variables),
   (config) => customizeConfig(config, es6),
-  (config) => customizeConfig(config, imports),
+  // (config) => customizeConfig(config, imports),
   (config) => customizeConfig(config, strict),
   (config) => customizeConfig(config, sumup),
 )({
@@ -419,11 +419,11 @@ function customizeLanguage(language: Language) {
           files: ['**/*.d.ts'],
           rules: {
             'spaced-comment': 'off',
-            'node/no-extraneous-import': 'off',
-            'import/no-extraneous-dependencies': [
-              'error',
-              { devDependencies: true },
-            ],
+            // 'node/no-extraneous-import': 'off',
+            // 'import/no-extraneous-dependencies': [
+            //   'error',
+            //   { devDependencies: true },
+            // ],
           },
         },
         {
@@ -479,38 +479,35 @@ function customizeEnvironments(environments: Environment[]) {
       ],
     },
     [Environment.NODE]: {
-      extends: [
-        'plugin:node/recommended',
-        'plugin:security/recommended-legacy',
-      ],
+      extends: ['plugin:security/recommended-legacy'],
       env: { node: true },
       rules: {
         // We don't know if the user's source code is using EJS or CJS.
-        'node/no-unsupported-features/es-syntax': 'off',
+        // 'node/no-unsupported-features/es-syntax': 'off',
         // This rule breaks when used in combination with TypeScript
         // and is already covered by similar ESLint rules.
-        'node/no-missing-import': 'off',
+        // 'node/no-missing-import': 'off',
         // This rule is already covered by similar ESLint rules.
-        'node/no-extraneous-import': 'off',
+        // 'node/no-extraneous-import': 'off',
         // This rule produces too many false positives.
         'security/detect-object-injection': 'off',
       },
-      overrides: [
-        {
-          files: [
-            '**/*.spec.*',
-            '**/jest*',
-            '**/setupTests.*',
-            '**/test-utils.*',
-          ],
-          rules: {
-            'node/no-unpublished-import': 'off',
-            'node/no-unpublished-require': 'off',
-            'node/no-missing-require': 'off',
-            'node/no-extraneous-require': 'off',
-          },
-        },
-      ],
+      // overrides: [
+      //   {
+      //     files: [
+      //       '**/*.spec.*',
+      //       '**/jest*',
+      //       '**/setupTests.*',
+      //       '**/test-utils.*',
+      //     ],
+      //     rules: {
+      //       'node/no-unpublished-import': 'off',
+      //       'node/no-unpublished-require': 'off',
+      //       'node/no-missing-require': 'off',
+      //       'node/no-extraneous-require': 'off',
+      //     },
+      //   },
+      // ],
     },
   };
   return (config: ESLintConfig): ESLintConfig => {

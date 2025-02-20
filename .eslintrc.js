@@ -13,17 +13,8 @@
  * limitations under the License.
  */
 
-// eslint-disable-next-line node/no-unpublished-require
 module.exports = require('./dist/eslint')({
   rules: {
     'no-process-exit': 'off',
   },
-  overrides: [
-    {
-      files: ['src/cli/index.ts'],
-      rules: {
-        'node/shebang': 'off',
-      },
-    },
-  ],
 });
