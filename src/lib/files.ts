@@ -18,7 +18,7 @@ import path from 'node:path';
 import { promisify } from 'node:util';
 
 import { Biome, Distribution } from '@biomejs/js-api';
-import readPkgUp from 'read-pkg-up';
+import { readPackageUpSync } from 'read-package-up';
 
 import type { PackageJson } from '../types/shared.js';
 
@@ -86,7 +86,7 @@ export function addPackageScript(
 }
 
 export function readPackageJson(): PackageJson {
-  const pkg = readPkgUp.sync();
+  const pkg = readPackageUpSync({ normalize: false });
 
   if (!pkg) {
     throw new Error('Unable to find a "package.json" file');
@@ -99,25 +99,6 @@ export async function savePackageJson(
   packagePath: string,
   packageJson: PackageJson,
 ): Promise<void> {
-  const sanitizedPackageJson = packageJson;
-
-  /* eslint-disable no-underscore-dangle */
-  // @ts-expect-error The `_id` property is added by `read-pkg-up`
-  // biome-ignore lint/performance/noDelete:
-  delete sanitizedPackageJson._id;
-
-  if (!sanitizedPackageJson.version) {
-    // @ts-expect-error The `version` property might be empty for the root `package.json` file in a monorepo
-    // biome-ignore lint/performance/noDelete:
-    delete sanitizedPackageJson.version;
-  }
-
-  if (sanitizedPackageJson.readme === 'ERROR: No README data found!') {
-    // @ts-expect-error The faulty `readme` property is added by `read-pkg-up`
-    // biome-ignore lint/performance/noDelete:
-    delete sanitizedPackageJson.readme;
-  }
-
-  const content = `${JSON.stringify(sanitizedPackageJson, null, 2)}\n`;
+  const content = `${JSON.stringify(packageJson, null, 2)}\n`;
   return writeFileAsync(packagePath, content, { flag: 'w' });
 }

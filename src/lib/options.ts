@@ -143,7 +143,7 @@ export function pickConfigOrDetect(packageJson: PackageJson) {
 export function getDependencyVersion(
   packageJson: PackageJson,
   name: string,
-): string {
+): string | undefined {
   const { dependencies = {}, devDependencies = {} } = packageJson;
 
   return dependencies[name] || devDependencies[name];

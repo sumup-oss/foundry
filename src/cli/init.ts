@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import inquirer, { type Question } from 'inquirer';
+import inquirer from 'inquirer';
 import Listr, { type ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import chalk from 'chalk';
 import isCI from 'is-ci';
-import readPkgUp from 'read-pkg-up';
+import { readPackageUp } from 'read-package-up';
 
 import type {
   InitOptions,
@@ -49,17 +49,13 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
     options = { ...DEFAULT_OPTIONS, ...args };
   } else {
-    const prompts: Question[] = [
-      {
-        type: 'confirm',
-        name: 'openSource',
-        message: 'Do you intend to open-source this project?',
-        default: DEFAULT_OPTIONS.openSource,
-        when: (): boolean => typeof args.openSource === 'undefined',
-      },
-    ];
-
-    const answers = await inquirer.prompt(prompts);
+    const answers = await inquirer.prompt({
+      type: 'confirm',
+      name: 'openSource',
+      message: 'Do you intend to open-source this project?',
+      default: DEFAULT_OPTIONS.openSource,
+      when: (): boolean => typeof args.openSource === 'undefined',
+    });
 
     options = { ...args, ...answers };
   }
@@ -155,7 +151,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Read package.json',
             task: async (ctx): Promise<void> => {
-              const pkg = await readPkgUp();
+              const pkg = await readPackageUp({ normalize: false });
 
               if (!pkg) {
                 throw new Error('Unable to find a "package.json" file.');

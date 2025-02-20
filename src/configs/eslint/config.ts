@@ -61,7 +61,7 @@ export function getFileGlobsForWorkspaces(
   workspaces: Workspaces,
   fileGlobs: string[],
 ) {
-  if (!workspaces) {
+  if (!workspaces || !Array.isArray(workspaces)) {
     return fileGlobs;
   }
   return fileGlobs.concat(
