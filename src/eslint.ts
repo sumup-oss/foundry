@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-import { createConfig } from './configs/eslint/config';
+import { createConfig } from './configs/eslint/config.js';
 
-export = createConfig;
+export default createConfig;

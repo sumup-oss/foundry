@@ -22,10 +22,10 @@ import {
   Plugin,
   type Options,
   type PackageJson,
-} from '../types/shared';
+} from '../types/shared.js';
 
-import { readPackageJson } from './files';
-import * as logger from './logger';
+import { readPackageJson } from './files.js';
+import * as logger from './logger.js';
 
 // These lists are not exhaustive and should be expanded if necessary.
 export const NODE_LIBRARIES = [
@@ -143,7 +143,7 @@ export function pickConfigOrDetect(packageJson: PackageJson) {
 export function getDependencyVersion(
   packageJson: PackageJson,
   name: string,
-): string {
+): string | undefined {
   const { dependencies = {}, devDependencies = {} } = packageJson;
 
   return dependencies[name] || devDependencies[name];

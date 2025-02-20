@@ -16,9 +16,9 @@
 import type { Config as StylelintConfig } from 'stylelint';
 import { deepmergeCustom } from 'deepmerge-ts';
 
-import { getOptions } from '../../lib/options';
-import { isEmpty, flow, uniq } from '../../lib/helpers';
-import { Plugin } from '../../types/shared';
+import { getOptions } from '../../lib/options.js';
+import { isEmpty, flow, uniq } from '../../lib/helpers.js';
+import { Plugin } from '../../types/shared.js';
 
 export const customizeConfig = deepmergeCustom({
   mergeArrays: (values) => {

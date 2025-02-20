@@ -17,10 +17,10 @@ import { dirname, resolve, join, relative } from 'node:path';
 import { access, readFile } from 'node:fs';
 import { promisify } from 'node:util';
 
-import type { PackageJson } from '../types/shared';
-import { spawn } from '../lib/spawn';
-import * as logger from '../lib/logger';
-import { isString } from '../lib/type-check';
+import type { PackageJson } from '../types/shared.js';
+import { spawn } from '../lib/spawn.js';
+import * as logger from '../lib/logger.js';
+import { isString } from '../lib/type-check.js';
 
 const readFileAsync = promisify(readFile);
 const accessAsync = promisify(access);

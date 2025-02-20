@@ -15,15 +15,20 @@
 
 import { describe, expect, it, vi, type Mock } from 'vitest';
 
-import { Language, Environment, Framework, Plugin } from '../../types/shared';
-import { getAllChoiceCombinations } from '../../lib/choices';
-import { getOptions as getOptionsMock } from '../../lib/options';
+import {
+  Language,
+  Environment,
+  Framework,
+  Plugin,
+} from '../../types/shared.js';
+import { getAllChoiceCombinations } from '../../lib/choices.js';
+import { getOptions as getOptionsMock } from '../../lib/options.js';
 
 import {
   customizeConfig,
   createConfig,
   getFileGlobsForWorkspaces,
-} from './config';
+} from './config.js';
 
 vi.mock('process', () => ({
   cwd: (): string => '/project/dir',

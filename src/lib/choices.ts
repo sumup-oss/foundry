@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { isArray } from './type-check';
+import { isArray } from './type-check.js';
 
 type Enum = { [key: string]: string };
 type Choices = { [key: string]: Enum | Enum[] };

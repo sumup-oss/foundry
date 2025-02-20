@@ -15,7 +15,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { config } from './config';
+import { config } from './config.js';
 
 describe('lint-staged', () => {
   it('should override the default config', () => {

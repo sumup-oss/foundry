@@ -15,9 +15,9 @@
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { Environment, Framework, Language, Plugin } from '../types/shared';
+import { Environment, Framework, Language, Plugin } from '../types/shared.js';
 
-import * as logger from './logger';
+import * as logger from './logger.js';
 import {
   pickConfigOrDetect,
   hasDependency,
@@ -30,7 +30,7 @@ import {
   warnAboutUnsupportedPlugins,
   NODE_LIBRARIES,
   BROWSER_LIBRARIES,
-} from './options';
+} from './options.js';
 
 const basePackageJson = {
   name: 'name',

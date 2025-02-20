@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { confusingBrowserGlobals } from '../utils/confusing-browser-globals';
+import { confusingBrowserGlobals } from '../utils/confusing-browser-globals.js';
 
 export const variables = {
   rules: {

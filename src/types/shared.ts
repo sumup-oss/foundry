@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
-import type { NormalizedPackageJson } from 'read-pkg-up';
+import type { PackageJson } from 'read-package-up';
+
+export type { PackageJson };
 
 export enum Language {
   TYPESCRIPT = 'TypeScript',
@@ -42,7 +44,7 @@ export enum Plugin {
   TESTING_LIBRARY = 'Testing Library',
 }
 
-export type Workspaces = string[] | null;
+export type Workspaces = PackageJson['workspaces'] | null;
 
 export interface Options {
   language?: Language;
@@ -73,7 +75,3 @@ export type Script = {
 export interface ToolOptions {
   files?: (options: InitOptions) => File[];
 }
-
-export type PackageJson = NormalizedPackageJson & {
-  workspaces?: string[];
-};

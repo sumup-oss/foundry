@@ -24,20 +24,20 @@ import {
   Framework,
   Plugin,
   type Workspaces,
-} from '../../types/shared';
-import * as logger from '../../lib/logger';
-import { getOptions } from '../../lib/options';
-import { isEmpty, flow, uniq } from '../../lib/helpers';
+} from '../../types/shared.js';
+import * as logger from '../../lib/logger.js';
+import { getOptions } from '../../lib/options.js';
+import { isEmpty, flow, uniq } from '../../lib/helpers.js';
 
-import { bestPractices } from './rules/best-practices';
-import { errors } from './rules/errors';
-import { node } from './rules/node';
-import { style } from './rules/style';
-import { variables } from './rules/variables';
-import { es6 } from './rules/es6';
-// import { imports } from './rules/imports';
-import { strict } from './rules/strict';
-import { typescript } from './rules/typescript';
+import { bestPractices } from './rules/best-practices.js';
+import { errors } from './rules/errors.js';
+import { node } from './rules/node.js';
+import { style } from './rules/style.js';
+import { variables } from './rules/variables.js';
+import { es6 } from './rules/es6.js';
+// import { imports } from './rules/imports.js';
+import { strict } from './rules/strict.js';
+import { typescript } from './rules/typescript.js';
 
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
@@ -61,7 +61,7 @@ export function getFileGlobsForWorkspaces(
   workspaces: Workspaces,
   fileGlobs: string[],
 ) {
-  if (!workspaces) {
+  if (!workspaces || !Array.isArray(workspaces)) {
     return fileGlobs;
   }
   return fileGlobs.concat(

@@ -16,7 +16,7 @@
 // NOTE: Unfortunately, we can't use the config exported by Foundry itself,
 //       since it tries to run a command through Foundry. Packages cannot
 //       run their own binaries.
-module.exports = {
+export default {
   '*': [
     'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
   ],
