@@ -1,5 +1,15 @@
 # @sumup-oss/foundry
 
+## 9.0.0-next.0
+
+### Major Changes
+
+- [#1043](https://github.com/sumup-oss/foundry/pull/1043) [`904b0e8`](https://github.com/sumup-oss/foundry/commit/904b0e8916d269513295d27a56b330e3d49fd873) Thanks [@connor-baer](https://github.com/connor-baer)! - Replaced Prettier with Biome as the code formatter. Remove the `prettier.config.js` and `.prettierignore` files from your project.
+
+### Minor Changes
+
+- [#1043](https://github.com/sumup-oss/foundry/pull/1043) [`904b0e8`](https://github.com/sumup-oss/foundry/commit/904b0e8916d269513295d27a56b330e3d49fd873) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for generating an `.editorconfig` file when running `foundry init` to ensure consistent code formatting across many supported code editors and file types.
+
 ## 8.4.1
 
 ### Patch Changes
