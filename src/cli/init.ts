@@ -67,18 +67,17 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   const scripts = [
     {
       name: 'lint',
-      command: 'biome check && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
+      command: 'biome check && foundry run eslint .',
       description: 'check files for problematic patterns and report them',
     },
     {
       name: 'lint:fix',
-      command:
-        'biome check --write && foundry run eslint . --ext .js,.jsx,.ts,.tsx --fix',
+      command: 'biome check --write && foundry run eslint . --fix',
       description: 'same as `lint` and also try to fix the issues',
     },
     {
       name: 'lint:ci',
-      command: 'biome ci && foundry run eslint . --ext .js,.jsx,.ts,.tsx',
+      command: 'biome ci && foundry run eslint .',
       description: 'lint files in a continuous integration workflow',
     },
     {
