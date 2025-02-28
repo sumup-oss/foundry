@@ -13,19 +13,24 @@
  * limitations under the License.
  */
 
-export const errors = {
-  rules: {
-    // Disallow returning values from Promise executor functions
-    // https://eslint.org/docs/rules/no-promise-executor-return
-    'no-promise-executor-return': 'error',
+import { configs } from './dist/eslint.js';
 
-    // Disallow loops with a body that allows only one iteration
-    // https://eslint.org/docs/rules/no-unreachable-loop
-    'no-unreachable-loop': [
-      'error',
-      {
-        ignore: [], // WhileStatement, DoWhileStatement, ForStatement, ForInStatement, ForOfStatement
+export default [
+  configs.ignore,
+  configs.javascript,
+  configs.typescript,
+  configs.node,
+  // configs.openSource,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
-    ],
+    },
+    rules: {
+      'n/no-process-exit': 'off',
+      'n/hashbang': 'off',
+    },
   },
-} as const;
+];

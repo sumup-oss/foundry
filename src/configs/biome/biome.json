@@ -74,6 +74,43 @@
         "useRegexLiterals": "error"
       },
       "correctness": {
+        "noUndeclaredDependencies": {
+          "level": "error",
+          "options": {
+            "devDependencies": [
+              "**/*.d.ts",
+              "test/**",
+              "tests/**",
+              "spec/**",
+              "**/__tests__/**",
+              "**/__mocks__/**",
+              "test.*",
+              "test-*.*",
+              "**/*{.,_}{test,spec}.*",
+              "**/jest.config.*",
+              "**/jest.setup.*",
+              "**/setupTests.*",
+              "**/test-utils.*",
+              "**/vite.config.*",
+              "**/vitest.config.*",
+              "**/vitest.workspace.*",
+              "**/*.{story,stories}.*",
+              "**/.eslintrc.*",
+              "**/eslint.config.*",
+              "**/.huskyrc.*",
+              "**/.stylelintrc.*",
+              "**/lint-staged.config.*",
+              "**/vue.config.js",
+              "**/webpack.config.*)",
+              "**/rollup.config.*",
+              "**/gulpfile.*",
+              "**/Gruntfile{,.js}",
+              "**/protractor.conf.*",
+              "**/karma.conf.*"
+            ],
+            "optionalDependencies": false
+          }
+        },
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedVariables": "error"

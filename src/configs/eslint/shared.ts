@@ -13,23 +13,13 @@
  * limitations under the License.
  */
 
-export const node = {
-  env: {
-    node: true,
-  },
+export const JAVASCRIPT_EXTENSIONS = ['.js', '.jsx', '.cjs', '.mjs'];
+export const TYPESCRIPT_EXTENSIONS = ['.ts', '.tsx', '.cts', '.mts'];
+export const ALL_EXTENSIONS = [
+  ...JAVASCRIPT_EXTENSIONS,
+  ...TYPESCRIPT_EXTENSIONS,
+];
 
-  rules: {
-    // TODO: Cross reference with eslint-plugin-n (recommended)
-
-    // disallow use of the Buffer() constructor
-    // https://eslint.org/docs/rules/no-buffer-constructor
-    'n/no-buffer-constructor': 'error',
-
-    // disallow use of new operator with the require function
-    'no-new-require': 'error',
-
-    // disallow string concatenation with __dirname and __filename
-    // https://eslint.org/docs/rules/no-path-concat
-    'no-path-concat': 'error',
-  },
-} as const;
+export function toGlobPattern(extensions: string[]) {
+  return extensions.map((extension) => `**/*${extension}`);
+}

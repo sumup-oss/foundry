@@ -13,9 +13,24 @@
  * limitations under the License.
  */
 
-export const variables = {
-  rules: {
-    // disallow declaration of variables already declared in the outer scope
-    'no-shadow': 'error',
+import type { Linter } from 'eslint';
+import globals from 'globals';
+import compat from 'eslint-plugin-compat';
+
+export const browser = {
+  name: 'foundry/browser',
+  // TODO:
+  // files: [],
+  languageOptions: {
+    globals: globals.browser,
   },
-} as const;
+  settings: {
+    lintAllEsApis: true,
+    // This API produces a false positive
+    polyfills: ['document.body'],
+  },
+  plugins: { compat },
+  rules: {
+    'compat/compat': 'error',
+  },
+} satisfies Linter.Config;
