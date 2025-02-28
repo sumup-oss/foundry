@@ -107,6 +107,7 @@ describe('stylelint', () => {
       const actual = createConfig(overrides);
       expect(actual).toEqual(
         expect.objectContaining({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           extends: expect.arrayContaining([
             'stylelint-config-standard',
             'stylelint-config-styled-components',
@@ -118,13 +119,13 @@ describe('stylelint', () => {
 
   describe('with options', () => {
     it("should return a config for { plugins: ['Circuit UI'] }", () => {
-      getOptions.mockReturnValue({ plugins: [Plugin.CIRCUIT_UI] });
+      getOptions.mockReturnValue({ plugins: [Plugin.CircuitUI] });
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });
 
     it("should return a config for { plugins: ['Circuit UI (OSS scope)'] }", () => {
-      getOptions.mockReturnValue({ plugins: [Plugin.CIRCUIT_UI_OSS] });
+      getOptions.mockReturnValue({ plugins: [Plugin.CircuitUIOSS] });
       const actual = createConfig();
       expect(actual).toMatchSnapshot();
     });

@@ -65,7 +65,6 @@ export function addPackageScript(
   shouldOverwrite = false,
 ): PackageJson {
   if (!packageJson.scripts) {
-    // eslint-disable-next-line no-param-reassign
     packageJson.scripts = { [name]: command };
     return packageJson;
   }
@@ -74,7 +73,7 @@ export function addPackageScript(
   if (hasConflict && !shouldOverwrite) {
     throw new Error(`A script with the name "${name}" already exists.`);
   }
-  // eslint-disable-next-line no-param-reassign
+
   packageJson.scripts[name] = command;
   return packageJson;
 }

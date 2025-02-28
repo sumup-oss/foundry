@@ -50,7 +50,7 @@ describe('options', () => {
     it('should return the config value when defined', () => {
       const pickFn = pickConfigOrDetect(basePackageJson);
       const option = true;
-      const detectFn = vi.fn();
+      const detectFn: () => boolean = vi.fn();
       const actual = pickFn(option, detectFn);
 
       expect(actual).toBe(true);
@@ -107,13 +107,13 @@ describe('options', () => {
       };
       const actual = detectLanguage(packageJson);
 
-      expect(actual).toBe(Language.TYPESCRIPT);
+      expect(actual).toBe(Language.TypeScript);
     });
 
     it('should return `JavaScript` otherwise', () => {
       const actual = detectLanguage(basePackageJson);
 
-      expect(actual).toBe(Language.JAVASCRIPT);
+      expect(actual).toBe(Language.JavaScript);
     });
   });
 
@@ -127,7 +127,7 @@ describe('options', () => {
         };
         const actual = detectEnvironments(packageJson);
 
-        expect(actual).toContain(Environment.NODE);
+        expect(actual).toContain(Environment.Node);
       },
     );
 
@@ -140,7 +140,7 @@ describe('options', () => {
         };
         const actual = detectEnvironments(packageJson);
 
-        expect(actual).toContain(Environment.BROWSER);
+        expect(actual).toContain(Environment.Browser);
       },
     );
 
@@ -151,7 +151,7 @@ describe('options', () => {
       };
       const actual = detectEnvironments(packageJson);
 
-      expect(actual).toContain(Environment.NODE);
+      expect(actual).toContain(Environment.Node);
     });
 
     it('should include `Browser` for a browser library', () => {
@@ -161,14 +161,14 @@ describe('options', () => {
       };
       const actual = detectEnvironments(packageJson);
 
-      expect(actual).toContain(Environment.BROWSER);
+      expect(actual).toContain(Environment.Browser);
     });
   });
 
   describe('detectFrameworks', () => {
     it.each([
-      ['next', Framework.NEXT_JS],
-      ['react', Framework.REACT],
+      ['next', Framework.Nextjs],
+      ['react', Framework.React],
     ])(
       'should, when `%s` is installed, include the `%s` preset',
       (library, preset) => {
@@ -189,20 +189,20 @@ describe('options', () => {
       };
       const actual = detectFrameworks(packageJson);
 
-      expect(actual).toContain(Framework.NEXT_JS);
-      expect(actual).not.toContain(Framework.REACT);
+      expect(actual).toContain(Framework.Nextjs);
+      expect(actual).not.toContain(Framework.React);
     });
   });
 
   describe('detectPlugins', () => {
     it.each([
-      ['eslint-config-next', Plugin.NEXT_JS],
-      ['@emotion/eslint-plugin', Plugin.EMOTION],
-      ['eslint-plugin-jest', Plugin.JEST],
-      ['eslint-plugin-testing-library', Plugin.TESTING_LIBRARY],
-      ['eslint-plugin-cypress', Plugin.CYPRESS],
-      ['eslint-plugin-playwright', Plugin.PLAYWRIGHT],
-      ['eslint-plugin-storybook', Plugin.STORYBOOK],
+      ['eslint-config-next', Plugin.Nextjs],
+      ['@emotion/eslint-plugin', Plugin.Emotion],
+      ['eslint-plugin-jest', Plugin.Jest],
+      ['eslint-plugin-testing-library', Plugin.TestingLibrary],
+      ['eslint-plugin-cypress', Plugin.Cypress],
+      ['eslint-plugin-playwright', Plugin.Playwright],
+      ['eslint-plugin-storybook', Plugin.Storybook],
     ])(
       'should, when `%s` is installed, include the `%s` preset',
       (library, preset) => {
@@ -226,8 +226,8 @@ describe('options', () => {
       };
       const actual = detectPlugins(packageJson);
 
-      expect(actual).toContain(Plugin.EMOTION);
-      expect(actual).toContain(Plugin.NEXT_JS);
+      expect(actual).toContain(Plugin.Emotion);
+      expect(actual).toContain(Plugin.Nextjs);
     });
   });
 

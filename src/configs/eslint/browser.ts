@@ -14,8 +14,8 @@
  */
 
 import type { Linter } from 'eslint';
-import globals from 'globals';
 import compat from 'eslint-plugin-compat';
+import globals from 'globals';
 
 export const browser = {
   name: 'foundry/browser',

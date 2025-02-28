@@ -101,9 +101,9 @@ async function resolveBinaryPath(
 function getToolArguments(): string[] {
   // The standard 2 indicating node binary, executing script, and
   // the run command and the tool argument.
-  const SKIP_COUNT = 4;
+  const skipCount = 4;
   const { argv } = process;
-  return argv.slice(SKIP_COUNT);
+  return argv.slice(skipCount);
 }
 
 async function executeBinary(path: string, args: string[]): Promise<string> {
