@@ -23,7 +23,6 @@ import { init, type InitParams } from './init.js';
 import { debug } from './debug.js';
 import { DEFAULT_OPTIONS } from './defaults.js';
 
-// eslint-disable-next-line no-void
 void yargs(hideBin(process.argv))
   .command(
     'init',
@@ -73,7 +72,6 @@ function execute(command: CommandType) {
     try {
       await commandFn(args as RunParams & InitParams);
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error(error);
     }
   };

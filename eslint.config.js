@@ -20,7 +20,7 @@ export default [
   configs.javascript,
   configs.typescript,
   configs.node,
-  // configs.openSource,
+  configs.openSource,
   {
     languageOptions: {
       parserOptions: {

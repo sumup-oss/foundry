@@ -39,7 +39,7 @@ export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 
 const PLUGINS = [
   {
-    name: Plugin.CIRCUIT_UI,
+    name: Plugin.CircuitUI,
     frameworkPackages: ['@sumup/circuit-ui', '@sumup/design-tokens'],
     eslintPlugins: {
       '@sumup/eslint-plugin-circuit-ui': '>=3.0.0 <5.0.0',
@@ -49,7 +49,7 @@ const PLUGINS = [
     },
   },
   {
-    name: Plugin.CIRCUIT_UI_OSS,
+    name: Plugin.CircuitUIOSS,
     frameworkPackages: ['@sumup-oss/circuit-ui', '@sumup-oss/design-tokens'],
     eslintPlugins: {
       '@sumup-oss/eslint-plugin-circuit-ui': '>=5.0.0 <6.0.0',
@@ -59,28 +59,28 @@ const PLUGINS = [
     },
   },
   {
-    name: Plugin.NEXT_JS,
+    name: Plugin.Nextjs,
     frameworkPackages: ['next'],
     eslintPlugins: {
       'eslint-config-next': '>=10.0.0',
     },
   },
   {
-    name: Plugin.EMOTION,
+    name: Plugin.Emotion,
     frameworkPackages: ['@emotion/react', '@emotion/styled'],
     eslintPlugins: {
       '@emotion/eslint-plugin': '^11.0.0',
     },
   },
   {
-    name: Plugin.JEST,
+    name: Plugin.Jest,
     frameworkPackages: ['jest'],
     eslintPlugins: {
       'eslint-plugin-jest': '>=27.0.0 <29.0.0',
     },
   },
   {
-    name: Plugin.TESTING_LIBRARY,
+    name: Plugin.TestingLibrary,
     frameworkPackages: [
       '@testing-library/dom',
       '@testing-library/jest-dom',
@@ -91,21 +91,21 @@ const PLUGINS = [
     },
   },
   {
-    name: Plugin.CYPRESS,
+    name: Plugin.Cypress,
     frameworkPackages: ['cypress'],
     eslintPlugins: {
       'eslint-plugin-cypress': '^2.0.0',
     },
   },
   {
-    name: Plugin.PLAYWRIGHT,
+    name: Plugin.Playwright,
     frameworkPackages: ['@playwright/test'],
     eslintPlugins: {
       'eslint-plugin-playwright': '>=0.17.0 <2.0.0',
     },
   },
   {
-    name: Plugin.STORYBOOK,
+    name: Plugin.Storybook,
     frameworkPackages: ['storybook', '@storybook/react'],
     eslintPlugins: {
       'eslint-plugin-storybook': '>=0.6.0 <1.0.0',
@@ -155,8 +155,8 @@ export function hasDependency(packageJson: PackageJson, name: string): boolean {
 
 export function detectLanguage(packageJson: PackageJson): Language {
   return hasDependency(packageJson, 'typescript')
-    ? Language.TYPESCRIPT
-    : Language.JAVASCRIPT;
+    ? Language.TypeScript
+    : Language.JavaScript;
 }
 
 export function detectEnvironments(packageJson: PackageJson): Environment[] {
@@ -174,11 +174,11 @@ export function detectEnvironments(packageJson: PackageJson): Environment[] {
   const environments: Environment[] = [];
 
   if (hasServerLibraries || isCLI) {
-    environments.push(Environment.NODE);
+    environments.push(Environment.Node);
   }
 
   if (hasClientLibraries || isBrowser) {
-    environments.push(Environment.BROWSER);
+    environments.push(Environment.Browser);
   }
 
   return environments;
@@ -188,14 +188,14 @@ export function detectFrameworks(packageJson: PackageJson): Framework[] {
   const frameworks: Framework[] = [];
 
   if (hasDependency(packageJson, 'next')) {
-    frameworks.push(Framework.NEXT_JS);
+    frameworks.push(Framework.Nextjs);
   }
 
   if (
     !hasDependency(packageJson, 'next') &&
     hasDependency(packageJson, 'react')
   ) {
-    frameworks.push(Framework.REACT);
+    frameworks.push(Framework.React);
   }
 
   return frameworks;
@@ -214,11 +214,10 @@ export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
         try {
           // Extract the version from tarball URLs
           if (version.startsWith('https://')) {
-            const matches = version.match(/(\d\.\d\.\d.*)\.tgz/);
+            const matches = version.match(/(?<version>\d\.\d\.\d.*)\.tgz/);
 
-            if (matches) {
-              // eslint-disable-next-line prefer-destructuring
-              version = matches[1];
+            if (matches?.groups?.version) {
+              version = matches.groups.version;
             }
           }
 
