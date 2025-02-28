@@ -10,6 +10,7 @@
     "enabled": true,
     "includes": ["**", "!**/dist", "!**/.changeset"],
     "formatWithErrors": false,
+    "useEditorconfig": true,
     "indentStyle": "space"
   },
   "assist": {
@@ -202,6 +203,13 @@
         "useEnumInitializers": "warn",
         "useForOf": "error",
         "useGroupedAccessorPairs": "error",
+        "useNamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": false,
+            "requireAscii": true
+          }
+        },
         "useObjectSpread": "error",
         "useSelfClosingElements": "on",
         "useShorthandAssign": "on",
