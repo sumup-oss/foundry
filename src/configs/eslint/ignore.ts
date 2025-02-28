@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-export const strict = {
-  rules: {
-    // babel inserts `'use strict';` for us
-    strict: ['error', 'never'],
-  },
-} as const;
+export const ignore = {
+  ignores: ['node_modules/**', 'dist/**', '__reports__/**'],
+};

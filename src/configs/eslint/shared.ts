@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2025, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,8 +13,13 @@
  * limitations under the License.
  */
 
-import { createConfig, configs } from './configs/eslint/config.js';
+export const JAVASCRIPT_EXTENSIONS = ['.js', '.jsx', '.cjs', '.mjs'];
+export const TYPESCRIPT_EXTENSIONS = ['.ts', '.tsx', '.cts', '.mts'];
+export const ALL_EXTENSIONS = [
+  ...JAVASCRIPT_EXTENSIONS,
+  ...TYPESCRIPT_EXTENSIONS,
+];
 
-export { configs };
-
-export default createConfig;
+export function toGlobPattern(extensions: string[]) {
+  return extensions.map((extension) => `**/*${extension}`);
+}
