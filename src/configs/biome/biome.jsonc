@@ -8,6 +8,7 @@
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
+    "useEditorconfig": true,
     "indentStyle": "space",
     "ignore": ["dist/**", ".changeset/**"]
   },
@@ -44,6 +45,13 @@
         "useConsistentArrayType": "error",
         "useEnumInitializers": "warn",
         "useForOf": "error",
+        "useNamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": false,
+            "requireAscii": true
+          }
+        },
         "useShorthandAssign": "error",
         "useShorthandArrayType": "error",
         "useSingleCaseStatement": "error"
