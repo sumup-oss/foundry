@@ -100,6 +100,6 @@
     "license-checker": "^25.0.1",
     "rimraf": "^5.0.7",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.4"
+    "vitest": "^3.0.7"
   }
 }
