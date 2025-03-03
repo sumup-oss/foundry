@@ -27,8 +27,9 @@ import { node } from './node.js';
 import { openSource } from './open-source.js';
 import { react } from './react.js';
 import { typescript } from './typescript.js';
+import { storybook } from './storybook.js';
 
-// TODO:
+// TODO: rename to defineConfig
 export function createConfig(
   config: { plugins: Record<string, ESLint.Plugin> },
   overrides: Linter.Config = {},
@@ -52,4 +53,5 @@ export const configs = {
   openSource,
   react,
   typescript,
+  storybook,
 };
