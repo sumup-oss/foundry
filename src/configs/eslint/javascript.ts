@@ -546,13 +546,11 @@ export const javascript = {
           'test.*', // repos with a single test file
           'test-*.*', // repos with multiple top-level test files
           '**/*{.,_}{test,spec}.*', // tests where the extension or filename suffix denotes that it is a test
-          '**/jest.config.*', // jest config
-          '**/jest.setup.*', // jest setup
+          '**/jest.*', // jest config and setup
+          '**/vite.config.*', // vite config
+          '**/vitest.*', // vitest config and setup
           '**/setupTests.*', // test setup
           '**/test-utils.*', // test utils
-          '**/vite.config.*', // vite config
-          '**/vitest.config.*', // vitest config
-          '**/vitest.workspace.*', // vitest workspace config
           '**/*.{story,stories}.*', // storybook stories
           '**/.eslintrc.*', // eslint config
           '**/eslint.config.*', // eslint config
@@ -562,6 +560,7 @@ export const javascript = {
           '**/vue.config.js', // vue-cli config
           '**/webpack.config.*)', // webpack config
           '**/rollup.config.*', // rollup config
+          '**/svgo.config.*', // svgo config
           '**/gulpfile.*', // gulp config
           '**/Gruntfile{,.js}', // grunt config
           '**/protractor.conf.*', // protractor config
