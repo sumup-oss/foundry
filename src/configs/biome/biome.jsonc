@@ -45,13 +45,6 @@
         "useConsistentArrayType": "error",
         "useEnumInitializers": "warn",
         "useForOf": "error",
-        "useNamingConvention": {
-          "level": "warn",
-          "options": {
-            "strictCase": false,
-            "requireAscii": true
-          }
-        },
         "useShorthandAssign": "error",
         "useShorthandArrayType": "error",
         "useSingleCaseStatement": "error"

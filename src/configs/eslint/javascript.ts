@@ -384,12 +384,10 @@ export const javascript = {
     'prefer-destructuring': [
       'error',
       {
-        // biome-ignore lint/style/useNamingConvention:
         VariableDeclarator: {
           array: false,
           object: true,
         },
-        // biome-ignore lint/style/useNamingConvention:
         AssignmentExpression: {
           array: true,
           object: false,
