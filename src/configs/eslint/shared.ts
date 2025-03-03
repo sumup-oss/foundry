@@ -15,10 +15,6 @@
 
 export const JAVASCRIPT_EXTENSIONS = ['.js', '.jsx', '.cjs', '.mjs'];
 export const TYPESCRIPT_EXTENSIONS = ['.ts', '.tsx', '.cts', '.mts'];
-export const ALL_EXTENSIONS = [
-  ...JAVASCRIPT_EXTENSIONS,
-  ...TYPESCRIPT_EXTENSIONS,
-];
 
 export function toGlobPattern(extensions: string[]) {
   return extensions.map((extension) => `**/*${extension}`);
