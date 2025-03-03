@@ -17,12 +17,13 @@ import type { Linter } from 'eslint';
 import nodePlugin from 'eslint-plugin-n';
 import securityPlugin from 'eslint-plugin-security';
 
+import { files } from './files.js';
+
 const nodeRecommended = nodePlugin.configs['flat/recommended'];
 
 export const node = {
   name: 'foundry/node',
-  // TODO:
-  // files: [],
+  files: [...files.javascript, ...files.typescript],
   languageOptions: nodeRecommended.languageOptions,
   plugins: { n: nodePlugin, security: securityPlugin },
   rules: {

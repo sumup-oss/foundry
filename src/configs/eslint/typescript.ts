@@ -17,7 +17,7 @@ import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 
 import { javascript } from './javascript.js';
-import { toGlobPattern, TYPESCRIPT_EXTENSIONS } from './shared.js';
+import { extensions, files } from './files.js';
 
 // TODO: Assert array length
 const [base, eslintRecommended, typeChecked] =
@@ -26,11 +26,11 @@ const [base, eslintRecommended, typeChecked] =
 export const typescript = {
   ...base,
   name: 'foundry/typescript',
-  files: toGlobPattern(TYPESCRIPT_EXTENSIONS),
+  files: files.typescript,
   settings: {
     'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import-x/parsers': {
-      '@typescript-eslint/parser': TYPESCRIPT_EXTENSIONS,
+      '@typescript-eslint/parser': extensions.typescript,
     },
   },
   plugins: base.plugins,

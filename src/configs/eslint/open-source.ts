@@ -15,15 +15,12 @@
 
 import type { Linter } from 'eslint';
 import noticePlugin from 'eslint-plugin-notice';
-import {
-  JAVASCRIPT_EXTENSIONS,
-  TYPESCRIPT_EXTENSIONS,
-  toGlobPattern,
-} from './shared.js';
+
+import { files } from './files.js';
 
 export const openSource = {
   name: 'foundry/open-source',
-  files: toGlobPattern([...JAVASCRIPT_EXTENSIONS, ...TYPESCRIPT_EXTENSIONS]),
+  files: [...files.javascript, ...files.typescript],
   plugins: {
     notice: noticePlugin,
   },

@@ -16,14 +16,15 @@
 import type { ESLint, Linter } from 'eslint';
 import { fixupPluginRules } from '@eslint/compat';
 
+import { files } from './files.js';
+
 /**
  * @deprecated Emotion.js should be replaced in favor of CSS Modules.
  */
 export function emotion({ plugins }: { plugins: { emotion: ESLint.Plugin } }) {
   return {
     name: 'foundry/emotion',
-    // TODO:
-    // files: [],
+    files: [...files.javascript, ...files.typescript],
     plugins: { '@emotion': fixupPluginRules(plugins.emotion) },
     rules: {
       '@emotion/import-from-emotion': 'error',
