@@ -33,6 +33,7 @@ export const typescript = {
       '@typescript-eslint/parser': TYPESCRIPT_EXTENSIONS,
     },
   },
+  plugins: base.plugins,
   rules: {
     ...eslintRecommended.rules,
     ...typeChecked.rules,
