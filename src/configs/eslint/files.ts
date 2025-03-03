@@ -13,9 +13,25 @@
  * limitations under the License.
  */
 
-export const JAVASCRIPT_EXTENSIONS = ['.js', '.jsx', '.cjs', '.mjs'];
-export const TYPESCRIPT_EXTENSIONS = ['.ts', '.tsx', '.cts', '.mts'];
+export const extensions = {
+  javascript: ['.js', '.jsx', '.cjs', '.mjs'],
+  typescript: ['.ts', '.tsx', '.cts', '.mts'],
+};
 
-export function toGlobPattern(extensions: string[]) {
-  return extensions.map((extension) => `**/*${extension}`);
+export const files = {
+  javascript: toGlobPattern(extensions.javascript),
+  typescript: toGlobPattern(extensions.typescript),
+  tests: [
+    '**/*.spec.*',
+    '**/jest*',
+    '**/setupTests.*',
+    '**/test-utils.*',
+    '**/*Fixtures.*',
+    '**/__fixtures__/**/*',
+    '**/__mocks__/**/*',
+  ],
+};
+
+function toGlobPattern(exts: string[]) {
+  return exts.map((extension) => `**/*${extension}`);
 }

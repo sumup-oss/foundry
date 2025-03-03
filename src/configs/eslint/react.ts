@@ -17,10 +17,11 @@ import type { Linter } from 'eslint';
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
 
+import { files } from './files.js';
+
 export const react = {
   name: 'foundry/react',
-  // TODO:
-  // files: [],
+  files: [...files.javascript, ...files.typescript],
   languageOptions: {
     parserOptions: {
       ecmaFeatures: {

@@ -17,10 +17,11 @@ import type { Linter } from 'eslint';
 import compat from 'eslint-plugin-compat';
 import globals from 'globals';
 
+import { files } from './files.js';
+
 export const browser = {
   name: 'foundry/browser',
-  // TODO:
-  // files: [],
+  files: [...files.javascript, ...files.typescript],
   languageOptions: {
     globals: globals.browser,
   },

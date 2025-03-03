@@ -18,11 +18,7 @@ import type { ESLint, Linter } from 'eslint';
 import { createOxcImportResolver } from 'eslint-import-resolver-oxc';
 import importX from 'eslint-plugin-import-x';
 
-import {
-  JAVASCRIPT_EXTENSIONS,
-  TYPESCRIPT_EXTENSIONS,
-  toGlobPattern,
-} from './shared.js';
+import { extensions, files } from './files.js';
 
 // Adapted from https://github.com/9romise/eslint-import-resolver-oxc/blob/main/src/typings.ts
 type ImportResolver = {
@@ -39,7 +35,7 @@ type ImportResolver = {
 
 export const javascript = {
   name: 'foundry/javascript',
-  files: toGlobPattern(JAVASCRIPT_EXTENSIONS),
+  files: [...files.javascript, ...files.typescript],
   languageOptions: {
     parserOptions: {
       ecmaFeatures: {
@@ -49,7 +45,7 @@ export const javascript = {
   },
   settings: {
     'import-x/resolver-next': [createOxcImportResolver() as ImportResolver],
-    'import-x/extensions': [...JAVASCRIPT_EXTENSIONS, ...TYPESCRIPT_EXTENSIONS],
+    'import-x/extensions': [...extensions.javascript, ...extensions.typescript],
     'import-x/ignore': [
       'node_modules',
       '\\.(coffee|scss|css|less|hbs|svg|json)$',

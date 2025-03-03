@@ -15,11 +15,12 @@
 
 import type { ESLint, Linter } from 'eslint';
 
+import { files } from './files.js';
+
 export function next({ plugins }: { plugins: { next: ESLint.Plugin } }) {
   return {
     name: 'foundry/next',
-    // TODO:
-    // files: [],
+    files: [...files.javascript, ...files.typescript],
     plugins,
     settings: {
       // This is needed for eslint-plugin-compat: https://www.npmjs.com/package/eslint-plugin-compat#adding-polyfills

@@ -16,6 +16,8 @@
 import type { Linter } from 'eslint';
 import globals from 'globals';
 
+import { files } from './files.js';
+
 // Adapted from https://github.com/jest-community/eslint-plugin-jest/blob/main/index.d.ts
 type JestPlugin = {
   environments: {
@@ -35,15 +37,7 @@ type JestPlugin = {
 export function tests({ plugins }: { plugins: { jest: JestPlugin } }) {
   return {
     name: 'foundry/tests',
-    files: [
-      '**/*.spec.*',
-      '**/jest*',
-      '**/setupTests.*',
-      '**/test-utils.*',
-      '**/*Fixtures.*',
-      '**/__fixtures__/**/*',
-      '**/__mocks__/**/*',
-    ],
+    files: files.tests,
     languageOptions: {
       globals: {
         ...globals.node,
