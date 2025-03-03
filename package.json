@@ -43,8 +43,6 @@
     "node 22"
   ],
   "dependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/eslint-parser": "^7.25.9",
     "@biomejs/biome": "1.9.4",
     "@biomejs/js-api": "^0.7.1",
     "@biomejs/wasm-nodejs": "^1.9.4",
