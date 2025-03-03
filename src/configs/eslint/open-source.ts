@@ -47,9 +47,7 @@ export const openSource = {
  */
 
 `,
-        // biome-ignore lint/style/useNamingConvention:
         templateVars: { NAME: 'SumUp Ltd.' },
-        // biome-ignore lint/style/useNamingConvention:
         varRegexps: { NAME: /SumUp Ltd\./ },
         onNonMatchingHeader: 'prepend',
       },
