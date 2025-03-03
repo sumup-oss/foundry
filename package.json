@@ -13,11 +13,39 @@
   "bin": "./dist/cli/index.js",
   "type": "module",
   "exports": {
-    "./eslint": "./dist/eslint.js",
-    "./husky": "./dist/husky.js",
-    "./lint-staged": "./dist/lint-staged.js",
-    "./stylelint": "./dist/stylelint.js",
+    "./eslint": {
+      "types": "./dist/eslint.d.ts",
+      "default": "./dist/eslint.js"
+    },
+    "./husky": {
+      "types": "./dist/husky.d.ts",
+      "default": "./dist/husky.js"
+    },
+    "./lint-staged": {
+      "types": "./dist/lint-staged.d.ts",
+      "default": "./dist/lint-staged.js"
+    },
+    "./stylelint": {
+      "types": "./dist/stylelint.d.ts",
+      "default": "./dist/stylelint.js"
+    },
     "./biome": "./dist/biome.json"
+  },
+  "typesVersions": {
+    "*": {
+      "eslint": [
+        "./dist/eslint.d.ts"
+      ],
+      "husky": [
+        "./dist/husky.d.ts"
+      ],
+      "lint-staged": [
+        "./dist/lint-staged.d.ts"
+      ],
+      "stylelint": [
+        "./dist/stylelint.d.ts"
+      ]
+    }
   },
   "scripts": {
     "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js && cp src/configs/biome/biome.json dist/biome.json",
