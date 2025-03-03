@@ -19,7 +19,7 @@ import globals from 'globals';
 import { files } from './files.js';
 
 // Adapted from https://github.com/jest-community/eslint-plugin-jest/blob/main/index.d.ts
-type JestPlugin = {
+export type JestPlugin = {
   environments: {
     globals: {
       globals: {
@@ -34,19 +34,33 @@ type JestPlugin = {
   };
 };
 
-export function tests({ plugins }: { plugins: { jest: JestPlugin } }) {
+export type VitestPlugin = {
+  configs: {
+    'recommended': Linter.Config;
+  };
+};
+
+export function tests({
+  plugins,
+}: {
+  plugins?: {
+    jest?: JestPlugin;
+    vitest?: VitestPlugin;
+  };
+}) {
   return {
     name: 'foundry/tests',
     files: files.tests,
     languageOptions: {
       globals: {
         ...globals.node,
-        ...plugins.jest.environments.globals.globals,
+        ...plugins?.jest?.environments?.globals?.globals,
       },
     },
     plugins,
     rules: {
-      ...plugins.jest.configs['flat/recommended'].rules,
+      ...plugins?.jest?.configs?.['flat/recommended']?.rules,
+      ...plugins?.vitest?.configs?.recommended?.rules,
 
       // Covered by Biome
       'jest/max-nested-describe': 'off',
