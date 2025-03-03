@@ -35,6 +35,7 @@ export function storybook({
       'no-alert': 'off',
       'import-x/no-anonymous-default-export': 'off',
       'import-x/no-extraneous-dependencies': 'off',
+      'import-x/no-relative-packages': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
   } satisfies Linter.Config;

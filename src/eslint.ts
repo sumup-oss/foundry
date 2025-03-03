@@ -16,7 +16,6 @@
 import { configs, createConfig } from './configs/eslint/config.js';
 import { extensions, files } from './configs/eslint/files.js';
 
-export { files, extensions };
-export { configs };
+export { configs, files, extensions };
 
 export default createConfig;
