@@ -538,19 +538,20 @@ export const javascript = {
       {
         devDependencies: [
           '**/*.d.ts', // type declaration files
-          'test/**', // tape, common npm pattern
-          'tests/**', // also common npm pattern
-          'spec/**', // mocha, rspec-like pattern
+          '**/test/**', // tape, common npm pattern
+          '**/tests/**', // also common npm pattern
+          '**/spec/**', // mocha, rspec-like pattern
           '**/__tests__/**', // jest pattern
           '**/__mocks__/**', // jest pattern
-          'test.*', // repos with a single test file
-          'test-*.*', // repos with multiple top-level test files
+          '**/test.*', // repos with a single test file
+          '**/test-*.*', // repos with multiple top-level test files
           '**/*{.,_}{test,spec}.*', // tests where the extension or filename suffix denotes that it is a test
           '**/jest.*', // jest config and setup
           '**/vite.config.*', // vite config
           '**/vitest.*', // vitest config and setup
           '**/setupTests.*', // test setup
           '**/test-utils.*', // test utils
+          '**/.storybook/**/*', // storybook config
           '**/*.{story,stories}.*', // storybook stories
           '**/.eslintrc.*', // eslint config
           '**/eslint.config.*', // eslint config
