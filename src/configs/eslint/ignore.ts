@@ -14,5 +14,10 @@
  */
 
 export const ignore = {
-  ignores: ['node_modules/**', 'dist/**', '__reports__/**'],
+  ignores: [
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/__reports__/**',
+    '**/*.snap',
+  ],
 };
