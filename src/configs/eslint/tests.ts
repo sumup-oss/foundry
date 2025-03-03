@@ -39,13 +39,20 @@ export type VitestPlugin = {
     'recommended': Linter.Config;
   };
 };
+export type TestingLibraryPlugin = {
+  configs: {
+    'flat/dom': Linter.Config;
+    'flat/react': Linter.Config;
+  };
+};
 
 export function tests({
   plugins,
 }: {
   plugins?: {
-    jest?: JestPlugin;
-    vitest?: VitestPlugin;
+    'jest'?: JestPlugin;
+    'vitest'?: VitestPlugin;
+    'testing-library'?: TestingLibraryPlugin;
   };
 }) {
   return {
@@ -61,6 +68,8 @@ export function tests({
     rules: {
       ...plugins?.jest?.configs?.['flat/recommended']?.rules,
       ...plugins?.vitest?.configs?.recommended?.rules,
+      ...plugins?.['testing-library']?.configs?.['flat/dom']?.rules,
+      ...plugins?.['testing-library']?.configs?.['flat/react']?.rules,
 
       // Covered by Biome
       'jest/max-nested-describe': 'off',
