@@ -16,7 +16,7 @@
 import { configs } from './dist/eslint.js';
 
 export default [
-  configs.ignore,
+  configs.ignores,
   configs.javascript,
   configs.typescript,
   configs.node,
