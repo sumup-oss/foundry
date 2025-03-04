@@ -18,30 +18,30 @@ import type { PackageJson } from 'read-package-up';
 export type { PackageJson };
 
 export enum Language {
-  TYPESCRIPT = 'TypeScript',
-  JAVASCRIPT = 'JavaScript',
+  TypeScript = 'TypeScript',
+  JavaScript = 'JavaScript',
 }
 
 export enum Environment {
-  NODE = 'Node',
-  BROWSER = 'Browser',
+  Node = 'Node',
+  Browser = 'Browser',
 }
 
 export enum Framework {
-  REACT = 'React',
-  NEXT_JS = 'Next.js',
+  React = 'React',
+  Nextjs = 'Next.js',
 }
 
 export enum Plugin {
-  CIRCUIT_UI = 'Circuit UI',
-  CIRCUIT_UI_OSS = 'Circuit UI (OSS scope)',
-  CYPRESS = 'Cypress',
-  EMOTION = 'Emotion',
-  JEST = 'Jest',
-  NEXT_JS = 'Next.js',
-  PLAYWRIGHT = 'Playwright',
-  STORYBOOK = 'Storybook',
-  TESTING_LIBRARY = 'Testing Library',
+  CircuitUI = 'Circuit UI',
+  CircuitUIOSS = 'Circuit UI (OSS scope)',
+  Cypress = 'Cypress',
+  Emotion = 'Emotion',
+  Jest = 'Jest',
+  Nextjs = 'Next.js',
+  Playwright = 'Playwright',
+  Storybook = 'Storybook',
+  TestingLibrary = 'Testing Library',
 }
 
 export type Workspaces = PackageJson['workspaces'] | null;

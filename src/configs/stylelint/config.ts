@@ -59,14 +59,14 @@ const base: StylelintConfig = {
 };
 
 function customizePlugin(plugins: Plugin[]) {
-  const pluginMap: { [key in Plugin]?: StylelintConfig } = {
-    [Plugin.CIRCUIT_UI]: {
+  const pluginMap: { [Key in Plugin]?: StylelintConfig } = {
+    [Plugin.CircuitUI]: {
       plugins: ['@sumup/stylelint-plugin-circuit-ui'],
       rules: {
         'circuit-ui/no-invalid-custom-properties': true,
       },
     },
-    [Plugin.CIRCUIT_UI_OSS]: {
+    [Plugin.CircuitUIOSS]: {
       plugins: ['@sumup-oss/stylelint-plugin-circuit-ui'],
       rules: {
         'circuit-ui/no-invalid-custom-properties': true,

@@ -8,6 +8,7 @@
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
+    "useEditorconfig": true,
     "indentStyle": "space",
     "ignore": ["dist/**", ".changeset/**"]
   },

@@ -13,9 +13,24 @@
  * limitations under the License.
  */
 
-export const strict = {
-  rules: {
-    // babel inserts `'use strict';` for us
-    strict: ['error', 'never'],
+import { configs } from './dist/eslint.js';
+
+export default [
+  configs.ignore,
+  configs.javascript,
+  configs.typescript,
+  configs.node,
+  configs.openSource,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      'n/no-process-exit': 'off',
+      'n/hashbang': 'off',
+    },
   },
-} as const;
+];

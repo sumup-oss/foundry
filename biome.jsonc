@@ -12,9 +12,6 @@
             "filenameCases": ["kebab-case"]
           }
         }
-      },
-      "suspicious": {
-        "noExplicitAny": "off"
       }
     }
   },

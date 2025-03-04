@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2025, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,22 @@
  * limitations under the License.
  */
 
-import { createConfig, configs } from './configs/eslint/config.js';
-import { files, extensions } from './configs/eslint/files.js';
+import type { Linter } from 'eslint';
+import globals from 'globals';
 
-export { configs, files, extensions };
+import { files } from './files.js';
 
-export default createConfig;
+export const tests = {
+  name: 'foundry/tests',
+  files: files.tests,
+  languageOptions: {
+    globals: globals.node,
+  },
+  rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+  },
+} satisfies Linter.Config;
