@@ -74,7 +74,6 @@
     "@biomejs/biome": "1.9.4",
     "@biomejs/js-api": "^0.7.1",
     "@biomejs/wasm-nodejs": "^1.9.4",
-    "@eslint/compat": "^1.2.7",
     "@eslint/js": "^9.20.0",
     "chalk": "^5.4.1",
     "cross-spawn": "^7.0.6",
