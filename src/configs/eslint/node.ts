@@ -27,10 +27,6 @@ export const node = {
   languageOptions: nodeRecommended.languageOptions,
   plugins: { n: nodePlugin, security: securityPlugin },
   rules: {
-    // allow use of console on the server
-    // https://eslint.org/docs/latest/rules/no-console
-    'no-console': 'off',
-
     // require all requires be top-level
     // https://eslint.org/docs/latest/rules/global-require
     'global-require': 'error',

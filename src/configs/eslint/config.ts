@@ -18,7 +18,7 @@ import type { ESLint, Linter } from 'eslint';
 import { getOptions } from '../../lib/options.js';
 
 import { browser } from './browser.js';
-import { ignore } from './ignore.js';
+import { ignores } from './ignores.js';
 import { javascript } from './javascript.js';
 import { next } from './next.js';
 import { node } from './node.js';
@@ -43,7 +43,7 @@ export function createConfig(
 
 export const configs = {
   browser,
-  ignore,
+  ignores,
   javascript,
   next,
   node,

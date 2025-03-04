@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-export const ignore = {
+export const ignores = {
   ignores: [
     '**/node_modules/**', // dependencies
     '**/dist/**', // generated assets
