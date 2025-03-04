@@ -537,35 +537,10 @@ export const javascript = {
       'error',
       {
         devDependencies: [
-          '**/*.d.ts', // type declaration files
-          '**/test/**', // tape, common npm pattern
-          '**/tests/**', // also common npm pattern
-          '**/spec/**', // mocha, rspec-like pattern
-          '**/__tests__/**', // jest pattern
-          '**/__mocks__/**', // jest pattern
-          '**/test.*', // repos with a single test file
-          '**/test-*.*', // repos with multiple top-level test files
-          '**/*{.,_}{test,spec}.*', // tests where the extension or filename suffix denotes that it is a test
-          '**/jest.*', // jest config and setup
-          '**/vite.config.*', // vite config
-          '**/vitest.*', // vitest config and setup
-          '**/setupTests.*', // test setup
-          '**/test-utils.*', // test utils
-          '**/.storybook/**/*', // storybook config
-          '**/*.{story,stories}.*', // storybook stories
-          '**/.eslintrc.*', // eslint config
-          '**/eslint.config.*', // eslint config
-          '**/.huskyrc.*', // husky config
-          '**/.stylelintrc.*', // stylelint config
-          '**/lint-staged.config.*', // lint-staged config
-          '**/vue.config.js', // vue-cli config
-          '**/webpack.config.*)', // webpack config
-          '**/rollup.config.*', // rollup config
-          '**/svgo.config.*', // svgo config
-          '**/gulpfile.*', // gulp config
-          '**/Gruntfile{,.js}', // grunt config
-          '**/protractor.conf.*', // protractor config
-          '**/karma.conf.*', // karma config
+          ...files.configs,
+          ...files.stories,
+          ...files.tests,
+          ...files.types,
         ],
         optionalDependencies: false,
       },
@@ -632,10 +607,6 @@ export const javascript = {
     // prevent importing the default as if it were named
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-named-default.md
     'import-x/no-named-default': 'error',
-
-    // reports if a module's default export is unnamed
-    // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-anonymous-default-export.md
-    'import-x/no-anonymous-default-export': 'warn',
 
     // forbid a module from importing itself
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-self-import.md
