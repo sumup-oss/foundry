@@ -14,7 +14,7 @@
  */
 
 import { access, readFile } from 'node:fs';
-import { dirname, join, relative, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { promisify } from 'node:util';
 
 import * as logger from '../lib/logger.js';
@@ -45,13 +45,9 @@ async function resolveTo(path: string, name: string): Promise<string> {
   }
 }
 
-async function getPackageJsonPath(
-  name: string,
-  useRelative = false,
-): Promise<string> {
+async function getPackageJsonPath(name: string): Promise<string> {
   const pathMain: string = require.resolve(name);
-  const pathPackage: string = await resolveTo(pathMain, 'package.json');
-  return useRelative ? relative(__dirname, pathPackage) : pathPackage;
+  return resolveTo(pathMain, 'package.json');
 }
 
 function isRelativePath(path: string): boolean {
@@ -72,14 +68,11 @@ async function loadJson(path: string): Promise<PackageJson> {
   }
 }
 
-async function resolveBinaryPath(
-  name: string,
-  useRelative = false,
-): Promise<string | null> {
+async function resolveBinaryPath(name: string): Promise<string | null> {
   try {
     // This could potentially break, if the name of a binary (name) is different
     // from the name of the package.
-    const packageJsonPath = await getPackageJsonPath(name, useRelative);
+    const packageJsonPath = await getPackageJsonPath(name);
     const { bin: packageBin } = await loadJson(packageJsonPath);
 
     if (!packageBin) {

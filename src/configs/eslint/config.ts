@@ -18,16 +18,15 @@ import type { ESLint, Linter } from 'eslint';
 import { getOptions } from '../../lib/options.js';
 
 import { browser } from './browser.js';
-import { emotion } from './emotion.js';
 import { ignore } from './ignore.js';
 import { javascript } from './javascript.js';
 import { next } from './next.js';
 import { node } from './node.js';
 import { openSource } from './open-source.js';
 import { react } from './react.js';
+import { stories } from './stories.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
-import { storybook } from './storybook.js';
 
 // TODO: rename to defineConfig
 export function createConfig(
@@ -44,14 +43,13 @@ export function createConfig(
 
 export const configs = {
   browser,
-  emotion,
   ignore,
   javascript,
-  tests,
   next,
   node,
   openSource,
   react,
+  stories,
+  tests,
   typescript,
-  storybook,
 };

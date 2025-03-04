@@ -16,22 +16,59 @@
 export const extensions = {
   javascript: ['.js', '.jsx', '.cjs', '.mjs'],
   typescript: ['.ts', '.tsx', '.cts', '.mts'],
-};
+} satisfies Record<string, string[]>;
 
 export const files = {
-  javascript: toGlobPattern(extensions.javascript),
-  typescript: toGlobPattern(extensions.typescript),
-  tests: [
-    '**/*.spec.*',
-    '**/jest*',
-    '**/setupTests.*',
-    '**/test-utils.*',
-    '**/*Fixtures.*',
-    '**/__fixtures__/**/*',
-    '**/__mocks__/**/*',
+  javascript: [toGlobPattern('**/*', extensions.javascript)],
+  typescript: [toGlobPattern('**/*', extensions.typescript)],
+  configs: [
+    '**/jest.config.*', // jest config and setup
+    '**/vite.config.*', // vite config
+    '**/vitest.config*', // vitest config and setup
+    '**/.storybook/**/*', // storybook config
+    '**/.eslintrc.*', // eslint config
+    '**/eslint.config.*', // eslint config
+    '**/.huskyrc.*', // husky config
+    '**/.stylelintrc.*', // stylelint config
+    '**/lint-staged.config.*', // lint-staged config
+    '**/vue.config.js', // vue-cli config
+    '**/webpack.config.*)', // webpack config
+    '**/rollup.config.*', // rollup config
+    '**/svgo.config.*', // svgo config
+    '**/gulpfile.*', // gulp config
+    '**/Gruntfile{,.js}', // grunt config
+    '**/protractor.conf.*', // protractor config
+    '**/karma.conf.*', // karma config
   ],
-};
+  stories: [
+    '**/.storybook/**/*', // storybook config
+    '**/*.{story,stories}.*', // storybook stories
+  ],
+  tests: [
+    '**/test/**', // tape, common npm pattern
+    '**/tests/**', // also common npm pattern
+    '**/spec/**', // mocha, rspec-like pattern
+    '**/__tests__/**', // jest pattern
+    '**/__mocks__/**', // jest pattern
+    '**/__fixtures__/**/*', // jest pattern
+    '**/*Fixtures.*', // pattern at SumUp
+    '**/test.*', // repos with a single test file
+    '**/test-*.*', // repos with multiple top-level test files
+    '**/*{.,_}{test,spec}.*', // tests where the extension or filename suffix denotes that it is a test
+    '**/jest.*', // jest config and setup
+    '**/vite.*', // vite config
+    '**/vitest.*', // vitest config and setup
+    '**/setupTests.*', // test setup
+    '**/test-utils.*', // test utils
+  ],
+  types: [
+    '**/*.d.ts', // type declaration files
+  ],
+} satisfies Record<string, string[]>;
 
-function toGlobPattern(exts: string[]) {
-  return exts.map((extension) => `**/*${extension}`);
+function toGlobPattern(prefix: string, exts: string[]) {
+  const patterns = exts
+    .map((extension) => extension.replace(/^\./, ''))
+    .join(',');
+  return `${prefix.replace(/$\./, '')}.{${patterns}}`;
 }

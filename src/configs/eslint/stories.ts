@@ -14,30 +14,16 @@
  */
 
 import type { Linter } from 'eslint';
-import globals from 'globals';
 
 import { files } from './files.js';
 
-export const tests = {
-  name: 'foundry/tests',
-  files: files.tests,
-  languageOptions: {
-    globals: globals.node,
-  },
+export const stories = {
+  name: 'foundry/stories',
+  files: files.stories,
   rules: {
-    // Covered by Biome
-    'jest/max-nested-describe': 'off',
-    'jest/no-disabled-tests': 'off',
-    'jest/no-done-callback': 'off',
-    'jest/no-duplicate-hooks': 'off',
-    'jest/no-export': 'off',
-    'jest/no-focused-tests': 'off',
-    'jest/no-standalone-expect': 'off',
-
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/unbound-method': 'off',
+    'no-alert': 'off',
+    'import-x/no-extraneous-dependencies': 'off',
+    'import-x/no-relative-packages': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 } satisfies Linter.Config;

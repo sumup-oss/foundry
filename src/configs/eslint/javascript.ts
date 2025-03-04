@@ -540,10 +540,6 @@ export const javascript = {
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-named-default.md
     'import-x/no-named-default': 'error',
 
-    // reports if a module's default export is unnamed
-    // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-anonymous-default-export.md
-    'import-x/no-anonymous-default-export': 'warn',
-
     // forbid a module from importing itself
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-self-import.md
     'import-x/no-self-import': 'error',
