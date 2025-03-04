@@ -15,9 +15,15 @@
 
 export const ignore = {
   ignores: [
-    '**/node_modules/**',
-    '**/dist/**',
-    '**/__reports__/**',
-    '**/*.snap',
+    '**/node_modules/**', // dependencies
+    '**/dist/**', // generated assets
+    '**/.next/**', // generated assets (Next.js)
+    '**/build/**', // generated assets (create-react-app, Remix)
+    '**/storybook-static/**', // generated assets (Storybook)
+    '**/public/**', // (generated) assets
+    '**/vendor/**', // third-party assets
+    '**/__reports__/**', // coverage reports
+    '**/__coverage__/**', // coverage reports
+    '**/*.snap', // snapshot files
   ],
 };
