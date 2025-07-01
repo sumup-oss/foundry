@@ -90,7 +90,7 @@
     "@types/is-ci": "^3.0.4",
     "@types/listr": "^0.14.9",
     "@types/lodash": "^4.17.17",
-    "@types/node": "^18.19.0",
+    "@types/node": "^24.0.8",
     "@types/prettier": "^3.0.0",
     "@types/semver": "^7.5.8",
     "@types/yargs": "^17.0.33",
