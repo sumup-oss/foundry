@@ -102,18 +102,15 @@ export async function savePackageJson(
 
   /* eslint-disable no-underscore-dangle */
   // @ts-expect-error The `_id` property is added by `read-pkg-up`
-  // biome-ignore lint/performance/noDelete:
   delete sanitizedPackageJson._id;
 
   if (!sanitizedPackageJson.version) {
     // @ts-expect-error The `version` property might be empty for the root `package.json` file in a monorepo
-    // biome-ignore lint/performance/noDelete:
     delete sanitizedPackageJson.version;
   }
 
   if (sanitizedPackageJson.readme === 'ERROR: No README data found!') {
     // @ts-expect-error The faulty `readme` property is added by `read-pkg-up`
-    // biome-ignore lint/performance/noDelete:
     delete sanitizedPackageJson.readme;
   }
 

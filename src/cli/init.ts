@@ -76,7 +76,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   const selectedTools: Record<string, ToolOptions> = tools;
 
   if (options.useBiome) {
-    // biome-ignore lint/performance/noDelete:
     delete selectedTools.prettier;
   }
 
