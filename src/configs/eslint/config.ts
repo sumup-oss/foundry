@@ -606,7 +606,6 @@ function customizeFramework(frameworks: Framework[]) {
       logger.warn(
         `The '${Framework.NEXT_JS}' framework includes React-specific rules. Please remove the '${Framework.REACT}' framework to avoid conflicts.`,
       );
-      // biome-ignore lint/style/noParameterAssign:
       frameworks = frameworks.filter(
         (framework) => framework !== Framework.REACT,
       );
