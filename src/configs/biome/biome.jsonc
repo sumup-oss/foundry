@@ -1,5 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -9,7 +10,7 @@
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
-    "ignore": ["dist/**", ".changeset/**"]
+    "includes": ["**", "!**/dist/**", "!**/.changeset/**"]
   },
   "linter": {
     "enabled": true,
@@ -24,14 +25,14 @@
       },
       "correctness": {
         "noConstantMathMinMaxClamp": "error",
-        "noNewSymbol": "error",
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "useArrayLiterals": "error",
         "useExhaustiveDependencies": "warn",
-        "useHookAtTopLevel": "error"
+        "useHookAtTopLevel": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "noSwitchDeclarations": "error"
       },
       "performance": {
         "noReExportAll": "error"
@@ -45,15 +46,14 @@
         "useEnumInitializers": "warn",
         "useForOf": "error",
         "useShorthandAssign": "error",
-        "useShorthandArrayType": "error",
-        "useSingleCaseStatement": "error"
+        "useArrayLiterals": "error"
       },
       "suspicious": {
-        "noConsoleLog": "error",
-        "noSkippedTests": "error"
+        "noSkippedTests": "error",
+        "noConsole": { "level": "error", "options": { "allow": ["log"] } }
       }
     },
-    "ignore": ["dist/**"]
+    "includes": ["**", "!**/dist/**"]
   },
   "javascript": {
     "formatter": {

@@ -73,6 +73,7 @@ function execute(command: CommandType) {
       await commandFn(args as RunParams & InitParams);
     } catch (error) {
       // eslint-disable-next-line no-console
+      // biome-ignore lint/suspicious/noConsole: Console is fine in scripts
       console.error(error);
     }
   };
