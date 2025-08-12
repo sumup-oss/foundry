@@ -19,9 +19,9 @@ import {
   Environment,
   Framework,
   Language,
-  Plugin,
   type Options,
   type PackageJson,
+  Plugin,
 } from '../types/shared.js';
 
 import { readPackageJson } from './files.js';

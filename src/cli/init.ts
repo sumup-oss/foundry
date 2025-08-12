@@ -13,22 +13,21 @@
  * limitations under the License.
  */
 
+import chalk from 'chalk';
 import inquirer from 'inquirer';
+import isCI from 'is-ci';
 import Listr, { type ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
-import chalk from 'chalk';
-import isCI from 'is-ci';
 import { readPackageUp } from 'read-package-up';
-
-import type {
-  InitOptions,
-  ToolOptions,
-  File,
-  PackageJson,
-} from '../types/shared.js';
 import * as tools from '../configs/index.js';
+import { addPackageScript, savePackageJson, writeFile } from '../lib/files.js';
 import * as logger from '../lib/logger.js';
-import { writeFile, addPackageScript, savePackageJson } from '../lib/files.js';
+import type {
+  File,
+  InitOptions,
+  PackageJson,
+  ToolOptions,
+} from '../types/shared.js';
 
 import { DEFAULT_OPTIONS } from './defaults.js';
 

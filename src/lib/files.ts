@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
+import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 import path from 'node:path';
 import { promisify } from 'node:util';
 

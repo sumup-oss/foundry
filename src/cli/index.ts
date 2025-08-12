@@ -17,11 +17,10 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-
-import { run, type RunParams } from './run.js';
-import { init, type InitParams } from './init.js';
 import { debug } from './debug.js';
 import { DEFAULT_OPTIONS } from './defaults.js';
+import { type InitParams, init } from './init.js';
+import { type RunParams, run } from './run.js';
 
 // eslint-disable-next-line no-void
 void yargs(hideBin(process.argv))
@@ -73,7 +72,7 @@ function execute(command: CommandType) {
     try {
       await commandFn(args as RunParams & InitParams);
     } catch (error) {
-      // eslint-disable-next-line no-console
+      // biome-ignore lint/suspicious/noConsole: Can't use custom logger for error objects
       console.error(error);
     }
   };

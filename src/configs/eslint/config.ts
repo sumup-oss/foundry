@@ -13,31 +13,30 @@
  * limitations under the License.
  */
 
-import { cwd } from 'node:process';
 import path from 'node:path';
+import { cwd } from 'node:process';
 
 import { deepmergeCustom } from 'deepmerge-ts';
-
+import { flow, isEmpty, uniq } from '../../lib/helpers.js';
+import * as logger from '../../lib/logger.js';
+import { getOptions } from '../../lib/options.js';
 import {
-  Language,
   Environment,
   Framework,
+  Language,
   Plugin,
   type Workspaces,
 } from '../../types/shared.js';
-import * as logger from '../../lib/logger.js';
-import { getOptions } from '../../lib/options.js';
-import { isEmpty, flow, uniq } from '../../lib/helpers.js';
 
 import { bestPractices } from './rules/best-practices.js';
 import { errors } from './rules/errors.js';
-import { node } from './rules/node.js';
-import { style } from './rules/style.js';
-import { variables } from './rules/variables.js';
 import { es6 } from './rules/es6.js';
+import { node } from './rules/node.js';
 // import { imports } from './rules/imports.js';
 import { strict } from './rules/strict.js';
+import { style } from './rules/style.js';
 import { typescript } from './rules/typescript.js';
+import { variables } from './rules/variables.js';
 
 // NOTE: Using the Linter.Config interface from ESLint causes errors
 //       and I couldn't figure out how to fix them. — @connor_baer
