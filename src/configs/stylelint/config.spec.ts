@@ -14,6 +14,7 @@
  */
 
 import { describe, expect, it, type Mock, vi } from 'vitest';
+
 import { getOptions as getOptionsMock } from '../../lib/options.js';
 import { Plugin } from '../../types/shared.js';
 

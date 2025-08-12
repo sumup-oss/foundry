@@ -19,6 +19,7 @@ import isCI from 'is-ci';
 import Listr, { type ListrTaskWrapper } from 'listr';
 import listrInquirer from 'listr-inquirer';
 import { readPackageUp } from 'read-package-up';
+
 import * as tools from '../configs/index.js';
 import { addPackageScript, savePackageJson, writeFile } from '../lib/files.js';
 import * as logger from '../lib/logger.js';
