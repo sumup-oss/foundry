@@ -20,7 +20,7 @@ If you feel another member of the community violated our CoC or you are experien
 
 ### Submitting a PR
 
-_Before you get started, make sure you have [Node](https://nodejs.org/en/) v18+ installed on your computer._
+_Before you get started, make sure you have [Node](https://nodejs.org/en/) v22+ installed on your computer._
 
 1. Find an existing issue to work on or follow `Submitting an issue` to create one that you're also going to fix. Make sure to notify that you're working on a fix for the issue you picked.
 2. Branch out from latest `main`.

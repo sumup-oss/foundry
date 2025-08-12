@@ -35,10 +35,9 @@
     "release": "changeset publish"
   },
   "engines": {
-    "node": "^18.18 || ^20.9 || >=22"
+    "node": "^20.9 || >=22"
   },
   "browserslist": [
-    "node 18.18",
     "node 20.9",
     "node 22"
   ],
@@ -84,7 +83,7 @@
     "@types/inquirer": "^9.0.9",
     "@types/is-ci": "^3.0.4",
     "@types/listr": "^0.14.9",
-    "@types/node": "^18.19.0",
+    "@types/node": "^20.9.0",
     "@types/semver": "^7.7.0",
     "@types/yargs": "^17.0.33",
     "@vitest/coverage-v8": "^3.2.4",
