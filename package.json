@@ -43,8 +43,8 @@
     "node 22"
   ],
   "dependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/eslint-parser": "^7.25.9",
+    "@babel/core": "^7.28.0",
+    "@babel/eslint-parser": "^7.28.0",
     "@biomejs/biome": "1.9.4",
     "@biomejs/js-api": "^0.7.1",
     "@biomejs/wasm-nodejs": "^1.9.4",
@@ -59,7 +59,7 @@
     "eslint-plugin-compat": "^6.0.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-notice": "^1.0.0",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-security": "^3.0.1",
     "husky": "^4.3.8",
@@ -69,8 +69,8 @@
     "listr": "^0.14.3",
     "listr-inquirer": "^0.1.0",
     "read-package-up": "^11.0.0",
-    "semver": "^7.6.3",
-    "stylelint": "^16.12.0",
+    "semver": "^7.7.2",
+    "stylelint": "^16.21.0",
     "stylelint-config-recess-order": "^5.1.1",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-no-unsupported-browser-features": "^8.0.2",
@@ -85,14 +85,14 @@
     "@types/is-ci": "^3.0.4",
     "@types/listr": "^0.14.9",
     "@types/node": "^18.19.0",
-    "@types/semver": "^7.5.8",
+    "@types/semver": "^7.7.0",
     "@types/yargs": "^17.0.33",
-    "@vitest/coverage-v8": "^2.1.6",
+    "@vitest/coverage-v8": "^3.2.4",
     "audit-ci": "^7.1.0",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
     "rimraf": "^6.0.1",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.4"
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
   }
 }
