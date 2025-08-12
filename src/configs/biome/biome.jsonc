@@ -8,9 +8,9 @@
   },
   "formatter": {
     "enabled": true,
+    "includes": ["**", "!**/dist", "!**/.changeset"],
     "formatWithErrors": false,
-    "indentStyle": "space",
-    "includes": ["**", "!**/dist/**", "!**/.changeset/**"]
+    "indentStyle": "space"
   },
   "assist": {
     "actions": {
@@ -38,6 +38,7 @@
   },
   "linter": {
     "enabled": true,
+    "includes": ["**", "!**/dist"],
     "rules": {
       "recommended": true,
       "a11y": {
@@ -48,36 +49,31 @@
         "noForEach": "off"
       },
       "correctness": {
-        "noConstantMathMinMaxClamp": "error",
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
-        "noUnusedVariables": "error",
-        "useExhaustiveDependencies": "warn",
-        "useHookAtTopLevel": "error",
-        "noInvalidBuiltinInstantiation": "error",
-        "noSwitchDeclarations": "error"
+        "noUnusedVariables": "error"
       },
       "performance": {
         "noReExportAll": "error"
       },
       "style": {
         "noNamespace": "error",
-        "noShoutyConstants": "error",
+        "noShoutyConstants": "on",
         "useBlockStatements": "error",
-        "useCollapsedElseIf": "error",
+        "useCollapsedIf": "on",
+        "useCollapsedElseIf": "on",
         "useConsistentArrayType": "error",
         "useEnumInitializers": "warn",
         "useForOf": "error",
-        "useShorthandAssign": "error",
+        "useShorthandAssign": "on",
         "useArrayLiterals": "error"
       },
       "suspicious": {
         "noSkippedTests": "error",
-        "noConsole": { "level": "error", "options": { "allow": ["log"] } }
+        "noConsole": "error"
       }
-    },
-    "includes": ["**", "!**/dist/**"]
+    }
   },
   "javascript": {
     "formatter": {
@@ -87,7 +83,7 @@
   },
   "overrides": [
     {
-      "includes": ["*.svelte", "*.astro", "*.vue"],
+      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
       "linter": {
         "rules": {
           "style": {

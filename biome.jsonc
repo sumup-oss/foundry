@@ -20,20 +20,11 @@
   },
   "overrides": [
     {
-      // Workaround to match the format that npm uses
-      "includes": ["**/package.json"],
-      "json": {
-        "formatter": {
-          "lineWidth": 1
-        }
-      }
-    },
-    {
-      "includes": ["**/src/lib/logger.ts"],
+      "includes": ["src/lib/logger.ts"],
       "linter": {
         "rules": {
           "suspicious": {
-            "noConsole": { "level": "off", "options": { "allow": ["log"] } }
+            "noConsole": "off"
           }
         }
       }
