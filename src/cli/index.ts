@@ -23,6 +23,7 @@ import { DEFAULT_OPTIONS } from './defaults.js';
 import { type InitParams, init } from './init.js';
 import { type RunParams, run } from './run.js';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs(hideBin(process.argv))
   .command(
     'init',
