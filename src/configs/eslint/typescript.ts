@@ -78,6 +78,7 @@ export const typescript = {
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-type-constraint': 'off',
     '@typescript-eslint/no-unsafe-declaration-merging': 'off',
+    '@typescript-eslint/no-unsafe-function-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-useless-constructor': 'off',

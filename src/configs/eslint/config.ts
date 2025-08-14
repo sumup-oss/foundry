@@ -36,6 +36,7 @@ export function createConfig(
   const options = getOptions();
 
   // TODO: Validate plugins, warn on missing ones
+  // biome-ignore lint/suspicious/noConsole: For testing only
   console.info(options, config);
 
   return [overrides, javascript, typescript];
