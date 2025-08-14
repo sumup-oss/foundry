@@ -20,9 +20,8 @@ import { promisify } from 'node:util';
 import { Biome, type Configuration } from '@biomejs/js-api/nodejs';
 import { readPackageUpSync } from 'read-package-up';
 
-import type { PackageJson } from '../types/shared.js';
-
 import config from '../configs/biome/biome.json' with { type: 'json' };
+import type { PackageJson } from '../types/shared.js';
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
