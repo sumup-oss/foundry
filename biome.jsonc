@@ -1,6 +1,6 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-  "extends": ["./src/configs/biome/biome.jsonc"],
+  "extends": ["./src/configs/biome/biome.json"],
   "assist": { "actions": { "source": { "organizeImports": "off" } } },
   "linter": {
     "rules": {

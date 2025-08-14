@@ -22,7 +22,7 @@ export const files = (): File[] => [
     name: 'biome.jsonc',
     content: `${dedent`
       {
-        "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+        "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
         "extends": ["@sumup-oss/foundry/biome"],
       }
     `}\n`,
