@@ -63,10 +63,10 @@
     "release": "changeset publish"
   },
   "engines": {
-    "node": "^20.9 || >=22"
+    "node": "^20.11 || >=22"
   },
   "browserslist": [
-    "node 20.9",
+    "node 20.11",
     "node 22"
   ],
   "dependencies": {
