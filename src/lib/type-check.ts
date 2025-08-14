@@ -29,7 +29,8 @@ export function isArray<T>(value?: unknown): value is T[] {
 export function isObject<T extends Record<string, unknown>>(
   value: unknown,
 ): value is T {
-  return value === new Object(value) && !isArray(value) && !isFunction(value);
+  // biome-ignore lint/style/useConsistentBuiltinInstantiation: A newly constructed object can never be equal
+  return value === Object(value) && !isArray(value) && !isFunction(value);
 }
 
 export function isNil(value?: unknown): value is null | undefined {
