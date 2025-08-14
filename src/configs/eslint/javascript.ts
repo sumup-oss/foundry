@@ -514,7 +514,7 @@ export const javascript = {
 
     // ensure absolute imports are above relative imports and that unassigned imports are ignored
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/order.md
-    'import-x/order': ['error', { 'newlines-between': 'always' }],
+    'import-x/order': 'off',
 
     // require a newline after the last import/require in a group
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/newline-after-import.md
