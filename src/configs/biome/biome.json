@@ -39,6 +39,9 @@
   "linter": {
     "enabled": true,
     "includes": ["**", "!**/dist"],
+    "domains": {
+      "project": "recommended"
+    },
     "rules": {
       "recommended": true,
       "nursery": {
