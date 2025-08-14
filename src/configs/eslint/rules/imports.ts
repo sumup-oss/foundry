@@ -256,10 +256,6 @@ export const imports = {
     // https://github.com/import-js/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
     'import/no-self-import': 'error',
 
-    // Forbid cyclical dependencies between modules
-    // https://github.com/import-js/eslint-plugin-import/blob/d81f48a2506182738409805f5272eff4d77c9348/docs/rules/no-cycle.md
-    'import/no-cycle': ['error', { maxDepth: '∞' }],
-
     // Ensures that there are no useless path segments
     // https://github.com/import-js/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/no-useless-path-segments.md
     'import/no-useless-path-segments': ['error', { commonjs: true }],

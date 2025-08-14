@@ -23,8 +23,7 @@ import { DEFAULT_OPTIONS } from './defaults.js';
 import { type InitParams, init } from './init.js';
 import { type RunParams, run } from './run.js';
 
-// eslint-disable-next-line no-void
-void yargs(hideBin(process.argv))
+yargs(hideBin(process.argv))
   .command(
     'init',
     "Initialize Foundry's tools in your project",
