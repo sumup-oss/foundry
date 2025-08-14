@@ -17,10 +17,10 @@
     "./husky": "./dist/husky.js",
     "./lint-staged": "./dist/lint-staged.js",
     "./stylelint": "./dist/stylelint.js",
-    "./biome": "./dist/biome.jsonc"
+    "./biome": "./dist/biome.json"
   },
   "scripts": {
-    "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js && cp src/configs/biome/biome.jsonc dist/biome.jsonc",
+    "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js && cp src/configs/biome/biome.json dist/biome.json",
     "dev": "npm run cleanup && tsc --watch",
     "start": "npm run dev",
     "cleanup": "rimraf ./dist && mkdir dist",
@@ -44,9 +44,9 @@
   "dependencies": {
     "@babel/core": "^7.28.0",
     "@babel/eslint-parser": "^7.28.0",
-    "@biomejs/biome": "1.9.4",
-    "@biomejs/js-api": "^0.7.1",
-    "@biomejs/wasm-nodejs": "^1.9.4",
+    "@biomejs/biome": "2.2.0",
+    "@biomejs/js-api": "^3.0.0",
+    "@biomejs/wasm-nodejs": "^2.2.0",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.1",
     "chalk": "^5.5.0",

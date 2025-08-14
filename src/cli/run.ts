@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-import { dirname, resolve, join, relative } from 'node:path';
 import { access, readFile } from 'node:fs';
+import { dirname, join, relative, resolve } from 'node:path';
 import { promisify } from 'node:util';
 
-import type { PackageJson } from '../types/shared.js';
-import { spawn } from '../lib/spawn.js';
 import * as logger from '../lib/logger.js';
+import { spawn } from '../lib/spawn.js';
 import { isString } from '../lib/type-check.js';
+import type { PackageJson } from '../types/shared.js';
 
 const readFileAsync = promisify(readFile);
 const accessAsync = promisify(access);

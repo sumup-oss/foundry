@@ -1,0 +1,211 @@
+{
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "formatter": {
+    "enabled": true,
+    "includes": ["**", "!**/dist", "!**/.changeset"],
+    "formatWithErrors": false,
+    "indentStyle": "space"
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":URL:",
+              ":BLANK_LINE:",
+              [":BUN:", ":NODE:", ":PACKAGE_WITH_PROTOCOL:"],
+              ":BLANK_LINE:",
+              ":PACKAGE:",
+              ":BLANK_LINE:",
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              "../**",
+              ":BLANK_LINE:",
+              "./**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "includes": ["**", "!**/dist"],
+    "domains": {
+      "project": "recommended"
+    },
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "noImportCycles": "error",
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error",
+        "noNonNullAssertedOptionalChain": "error",
+        "noUnnecessaryConditions": "warn"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "warn",
+        "useButtonType": "warn"
+      },
+      "complexity": {
+        "noAdjacentSpacesInRegex": "error",
+        "noArguments": "error",
+        "noExtraBooleanCast": "error",
+        "noForEach": "off",
+        "noUselessCatch": "error",
+        "noUselessConstructor": "error",
+        "noUselessEscapeInRegex": "error",
+        "noUselessRename": "error",
+        "noUselessStringConcat": "error",
+        "noUselessTernary": "error",
+        "noUselessUndefinedInitialization": "error",
+        "noVoid": "error",
+        "useArrowFunction": "error",
+        "useLiteralKeys": "error",
+        "useNumericLiterals": "error",
+        "useRegexLiterals": "error"
+      },
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+      "performance": {
+        "noReExportAll": "error"
+      },
+      "style": {
+        "noCommonJs": "error",
+        "noNamespace": "error",
+        "noNestedTernary": "error",
+        "noParameterAssign": "error",
+        "noRestrictedGlobals": {
+          "level": "error",
+          "options": {
+            "deniedGlobals": {
+              "addEventListener": "Use window.addEventListener instead.",
+              "blur": "Use window.blur instead.",
+              "close": "Use window.close instead.",
+              "closed": "Use window.closed instead.",
+              "confirm": "Use window.confirm instead.",
+              "defaultStatus": "Use window.defaultStatus instead.",
+              "defaultstatus": "Use window.defaultstatus instead.",
+              "event": "Use window.event instead.",
+              "external": "Use window.external instead.",
+              "find": "Use window.find instead.",
+              "focus": "Use window.focus instead.",
+              "frameElement": "Use window.frameElement instead.",
+              "frames": "Use window.frames instead.",
+              "history": "Use window.history instead.",
+              "innerHeight": "Use window.innerHeight instead.",
+              "innerWidth": "Use window.innerWidth instead.",
+              "length": "Use window.length instead.",
+              "location": "Use window.location instead.",
+              "locationbar": "Use window.locationbar instead.",
+              "menubar": "Use window.menubar instead.",
+              "moveBy": "Use window.moveBy instead.",
+              "moveTo": "Use window.moveTo instead.",
+              "name": "Use window.name instead.",
+              "onblur": "Use window.onblur instead.",
+              "onerror": "Use window.onerror instead.",
+              "onfocus": "Use window.onfocus instead.",
+              "onload": "Use window.onload instead.",
+              "onresize": "Use window.onresize instead.",
+              "onunload": "Use window.onunload instead.",
+              "open": "Use window.open instead.",
+              "opener": "Use window.opener instead.",
+              "opera": "Use window.opera instead.",
+              "outerHeight": "Use window.outerHeight instead.",
+              "outerWidth": "Use window.outerWidth instead.",
+              "pageXOffset": "Use window.pageXOffset instead.",
+              "pageYOffset": "Use window.pageYOffset instead.",
+              "parent": "Use window.parent instead.",
+              "print": "Use window.print instead.",
+              "removeEventListener": "Use window.removeEventListener instead.",
+              "resizeBy": "Use window.resizeBy instead.",
+              "resizeTo": "Use window.resizeTo instead.",
+              "screen": "Use window.screen instead.",
+              "screenLeft": "Use window.screenLeft instead.",
+              "screenTop": "Use window.screenTop instead.",
+              "screenX": "Use window.screenX instead.",
+              "screenY": "Use window.screenY instead.",
+              "scroll": "Use window.scroll instead.",
+              "scrollbars": "Use window.scrollbars instead.",
+              "scrollBy": "Use window.scrollBy instead.",
+              "scrollTo": "Use window.scrollTo instead.",
+              "scrollX": "Use window.scrollX instead.",
+              "scrollY": "Use window.scrollY instead.",
+              "self": "Use window.self instead.",
+              "status": "Use window.status instead.",
+              "statusbar": "Use window.statusbar instead.",
+              "stop": "Use window.stop instead.",
+              "toolbar": "Use window.toolbar instead.",
+              "top": "Use window.top instead."
+            }
+          }
+        },
+        "noShoutyConstants": "on",
+        "noUselessElse": "error",
+        "noYodaExpression": "error",
+        "useArrayLiterals": "error",
+        "useBlockStatements": "error",
+        "useCollapsedElseIf": "error",
+        "useCollapsedIf": "on",
+        "useConsistentArrayType": "error",
+        "useConsistentBuiltinInstantiation": "error",
+        "useConsistentObjectDefinitions": "error",
+        "useConst": "error",
+        "useEnumInitializers": "warn",
+        "useForOf": "error",
+        "useGroupedAccessorPairs": "error",
+        "useObjectSpread": "error",
+        "useSelfClosingElements": "on",
+        "useShorthandAssign": "on",
+        "useSymbolDescription": "error",
+        "useTemplate": "error",
+        "useThrowOnlyError": "error"
+      },
+      "suspicious": {
+        "noAlert": "error",
+        "noBitwiseOperators": "error",
+        "noConsole": "error",
+        "noCatchAssign": "error",
+        "noEmptyBlockStatements": "error",
+        "noIrregularWhitespace": "error",
+        "noPrototypeBuiltins": "error",
+        "noSkippedTests": "error",
+        "noTemplateCurlyInString": "error",
+        "noTsIgnore": "error",
+        "noUselessRegexBackrefs": "error",
+        "noVar": "error",
+        "useGuardForIn": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteProperties": "preserve",
+      "quoteStyle": "single"
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
+}

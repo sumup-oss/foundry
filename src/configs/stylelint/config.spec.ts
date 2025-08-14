@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi, type Mock } from 'vitest';
+import { describe, expect, it, type Mock, vi } from 'vitest';
 
-import { Plugin } from '../../types/shared.js';
 import { getOptions as getOptionsMock } from '../../lib/options.js';
+import { Plugin } from '../../types/shared.js';
 
-import { customizeConfig, createConfig } from './config.js';
+import { createConfig, customizeConfig } from './config.js';
 
 vi.mock('../../lib/options', () => ({
   getOptions: vi.fn(() => ({})),

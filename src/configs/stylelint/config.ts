@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import type { Config as StylelintConfig } from 'stylelint';
 import { deepmergeCustom } from 'deepmerge-ts';
+import type { Config as StylelintConfig } from 'stylelint';
 
+import { flow, isEmpty, uniq } from '../../lib/helpers.js';
 import { getOptions } from '../../lib/options.js';
-import { isEmpty, flow, uniq } from '../../lib/helpers.js';
 import { Plugin } from '../../types/shared.js';
 
 export const customizeConfig = deepmergeCustom({

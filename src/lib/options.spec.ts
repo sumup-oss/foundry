@@ -19,17 +19,17 @@ import { Environment, Framework, Language, Plugin } from '../types/shared.js';
 
 import * as logger from './logger.js';
 import {
-  pickConfigOrDetect,
-  hasDependency,
-  detectLanguage,
+  BROWSER_LIBRARIES,
   detectEnvironments,
   detectFrameworks,
+  detectLanguage,
   detectOpenSource,
   detectPlugins,
+  hasDependency,
+  NODE_LIBRARIES,
+  pickConfigOrDetect,
   warnAboutMissingPlugins,
   warnAboutUnsupportedPlugins,
-  NODE_LIBRARIES,
-  BROWSER_LIBRARIES,
 } from './options.js';
 
 const basePackageJson = {

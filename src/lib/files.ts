@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
+import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
-import { Biome, Distribution } from '@biomejs/js-api';
+import { Biome, type Configuration } from '@biomejs/js-api/nodejs';
 import { readPackageUpSync } from 'read-package-up';
 
+import config from '../configs/biome/biome.json' with { type: 'json' };
 import type { PackageJson } from '../types/shared.js';
 
 const writeFileAsync = promisify(fsWriteFile);
@@ -29,21 +30,14 @@ export async function formatContent(
   fileName: string,
   content: string,
 ): Promise<string> {
-  const biome = await Biome.create({
-    distribution: Distribution.NODE,
-  });
+  const biome = new Biome();
+  const { projectKey } = biome.openProject();
 
-  // TODO: Import the Biome config once the projected has been migrated to ESM to support import assertions.
-  biome.applyConfiguration({
-    'javascript': {
-      'formatter': {
-        'quoteProperties': 'preserve',
-        'quoteStyle': 'single',
-      },
-    },
-  });
+  biome.applyConfiguration(projectKey, config as Configuration);
 
-  const formatted = biome.formatContent(content, { filePath: fileName });
+  const formatted = biome.formatContent(projectKey, content, {
+    filePath: fileName,
+  });
   return formatted.content;
 }
 

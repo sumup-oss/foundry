@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { writeFile as fsWriteFile, mkdir as fsMkdir } from 'node:fs';
+import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 
 import { describe, expect, it, vi } from 'vitest';
 
 import type { PackageJson } from '../types/shared.js';
 
-import { writeFile, addPackageScript, savePackageJson } from './files.js';
+import { addPackageScript, savePackageJson, writeFile } from './files.js';
 
 vi.mock('node:fs', () => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call

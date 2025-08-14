@@ -13,20 +13,20 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, vi, type Mock } from 'vitest';
+import { describe, expect, it, type Mock, vi } from 'vitest';
 
-import {
-  Language,
-  Environment,
-  Framework,
-  Plugin,
-} from '../../types/shared.js';
 import { getAllChoiceCombinations } from '../../lib/choices.js';
 import { getOptions as getOptionsMock } from '../../lib/options.js';
+import {
+  Environment,
+  Framework,
+  Language,
+  Plugin,
+} from '../../types/shared.js';
 
 import {
-  customizeConfig,
   createConfig,
+  customizeConfig,
   getFileGlobsForWorkspaces,
 } from './config.js';
 
