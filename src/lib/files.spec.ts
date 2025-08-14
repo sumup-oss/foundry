@@ -28,9 +28,9 @@ vi.mock('node:fs', () => ({
   mkdir: vi.fn((_dir, _options, callback) => callback()),
 }));
 
-const content = 'module.exports = "Hello world"';
+const content = 'export const foo = "Hello world"';
 
-const formattedContent = `module.exports = 'Hello world';
+const formattedContent = `export const foo = 'Hello world';
 `;
 
 const basePackageJson = {
@@ -44,7 +44,7 @@ describe('files', () => {
   describe('writeFile', () => {
     it('should create the target folder if it does not exist', async () => {
       const configDir = './config';
-      const filename = '.eslintrc.js';
+      const filename = 'eslint.config.js';
       const shouldOverwrite = false;
 
       await writeFile(configDir, filename, content, shouldOverwrite);
@@ -58,13 +58,13 @@ describe('files', () => {
 
     it('should write the file to disk', async () => {
       const configDir = './config';
-      const filename = '.eslintrc.js';
+      const filename = 'eslint.config.js';
       const shouldOverwrite = false;
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fsWriteFile).toHaveBeenCalledWith(
-        'config/.eslintrc.js',
+        'config/eslint.config.js',
         expect.any(String),
         { flag: 'wx' },
         expect.any(Function),
@@ -73,13 +73,13 @@ describe('files', () => {
 
     it('should overwrite the file if it already exists', async () => {
       const configDir = '.';
-      const filename = '.eslintrc.js';
+      const filename = 'eslint.config.js';
       const shouldOverwrite = true;
 
       await writeFile(configDir, filename, content, shouldOverwrite);
 
       expect(fsWriteFile).toHaveBeenCalledWith(
-        '.eslintrc.js',
+        'eslint.config.js',
         expect.any(String),
         { flag: 'w' },
         expect.any(Function),
@@ -88,7 +88,7 @@ describe('files', () => {
 
     it('should format the file contents', async () => {
       const configDir = '.';
-      const filename = '.eslintrc.js';
+      const filename = 'eslint.config.js';
       const shouldOverwrite = true;
 
       await writeFile(configDir, filename, content, shouldOverwrite);

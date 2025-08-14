@@ -33,7 +33,10 @@ export async function formatContent(
   const biome = new Biome();
   const { projectKey } = biome.openProject();
 
-  biome.applyConfiguration(projectKey, config as Configuration);
+  biome.applyConfiguration(projectKey, {
+    formatter: config.formatter,
+    javascript: config.javascript,
+  } as Configuration);
 
   const formatted = biome.formatContent(projectKey, content, {
     filePath: fileName,
