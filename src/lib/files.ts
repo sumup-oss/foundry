@@ -17,10 +17,12 @@ import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
-import { Biome } from '@biomejs/js-api/nodejs';
+import { Biome, type Configuration } from '@biomejs/js-api/nodejs';
 import { readPackageUpSync } from 'read-package-up';
 
 import type { PackageJson } from '../types/shared.js';
+
+import config from '../configs/biome/biome.json' with { type: 'json' };
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
@@ -32,15 +34,7 @@ export async function formatContent(
   const biome = new Biome();
   const { projectKey } = biome.openProject();
 
-  // TODO: Import the Biome config once the projected has been migrated to ESM to support import assertions.
-  biome.applyConfiguration(projectKey, {
-    'javascript': {
-      'formatter': {
-        'quoteProperties': 'preserve',
-        'quoteStyle': 'single',
-      },
-    },
-  });
+  biome.applyConfiguration(projectKey, config as Configuration);
 
   const formatted = biome.formatContent(projectKey, content, {
     filePath: fileName,

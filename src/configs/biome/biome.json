@@ -172,7 +172,6 @@
       "suspicious": {
         "noAlert": "error",
         "noBitwiseOperators": "error",
-        // TODO: ESLint used warn
         "noConsole": "error",
         "noCatchAssign": "error",
         "noEmptyBlockStatements": "error",
