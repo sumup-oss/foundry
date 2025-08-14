@@ -1,5 +1,5 @@
 ---
-"@sumup-oss/foundry": major
+'@sumup-oss/foundry': major
 ---
 
-Bumped biome to v2 which raises the minimum version in repositories that rely on `@sumup-oss/foundry/biome` to v2 as well.
+Upgraded to Biome v2.2. [Biome v2](https://biomejs.dev/blog/biome-v2/) added type-aware linting rules, monorepo support, and plugins powered by GritQL.
