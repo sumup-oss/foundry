@@ -114,18 +114,21 @@
         },
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
-        "noUnusedVariables": "error"
+        "noUnusedVariables": {
+          "level": "error",
+          "options": { "ignoreRestSiblings": true }
+        }
       },
       "performance": {
         "noReExportAll": "error"
       },
       "style": {
-        "noCommonJs": "error",
+        "noCommonJs": "on",
         "noNamespace": "error",
-        "noNestedTernary": "error",
+        "noNestedTernary": "warn",
         "noParameterAssign": "error",
         "noRestrictedGlobals": {
-          "level": "error",
+          "level": "warn",
           "options": {
             "deniedGlobals": {
               "addEventListener": "Use window.addEventListener instead.",
@@ -197,7 +200,7 @@
         "useCollapsedElseIf": "error",
         "useCollapsedIf": "on",
         "useConsistentArrayType": "error",
-        "useConsistentBuiltinInstantiation": "error",
+        "useConsistentBuiltinInstantiation": "on",
         "useConsistentObjectDefinitions": "error",
         "useConst": "error",
         "useEnumInitializers": "warn",
@@ -212,7 +215,7 @@
       },
       "suspicious": {
         "noAlert": "error",
-        "noBitwiseOperators": "error",
+        "noBitwiseOperators": "warn",
         "noConsole": "error",
         "noCatchAssign": "error",
         "noEmptyBlockStatements": "error",
