@@ -18,7 +18,7 @@ import { describe, expect, it, type Mock, vi } from 'vitest';
 import { getOptions as getOptionsMock } from '../../lib/options.js';
 import { Plugin } from '../../types/shared.js';
 
-import { createConfig, customizeConfig } from './config.js';
+import { customizeConfig, defineConfig } from './config.js';
 
 vi.mock('../../lib/options', () => ({
   getOptions: vi.fn(() => ({})),
@@ -104,7 +104,7 @@ describe('stylelint', () => {
       const overrides = {
         extends: ['stylelint-config-styled-components'],
       };
-      const actual = createConfig(overrides);
+      const actual = defineConfig(overrides);
       expect(actual).toEqual(
         expect.objectContaining({
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -120,13 +120,13 @@ describe('stylelint', () => {
   describe('with options', () => {
     it("should return a config for { plugins: ['Circuit UI'] }", () => {
       getOptions.mockReturnValue({ plugins: [Plugin.CircuitUI] });
-      const actual = createConfig();
+      const actual = defineConfig();
       expect(actual).toMatchSnapshot();
     });
 
     it("should return a config for { plugins: ['Circuit UI (OSS scope)'] }", () => {
       getOptions.mockReturnValue({ plugins: [Plugin.CircuitUIOSS] });
-      const actual = createConfig();
+      const actual = defineConfig();
       expect(actual).toMatchSnapshot();
     });
   });

@@ -19,26 +19,11 @@ import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {
-    name: '.eslintrc.js',
-    content: `
-    module.exports = require('@sumup-oss/foundry/eslint')()`,
-  },
-  {
-    name: '.eslintignore',
-    content: `${dedent`
-      node_modules/
-      build/
-      dist/
-      .next/
-      .out/
-      static/
-      public/
-      coverage/
-      __coverage__/
-      __reports__/
-      /*.config.js
-      /*rc.js
-      tsconfig.json
-    `}\n`,
+    name: 'eslint.config.mjs',
+    content: dedent`
+      import { defineConfig } from '@sumup-oss/foundry/eslint');
+
+      export default defineConfig();
+    `,
   },
 ];

@@ -19,9 +19,12 @@ import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {
-    name: '.stylelintrc.js',
-    content: `
-    module.exports = require('@sumup-oss/foundry/stylelint')()`,
+    name: 'stylelint.config.mjs',
+    content: dedent`
+      import { defineConfig } from '@sumup-oss/foundry/stylelint');
+
+      export default defineConfig();
+    `,
   },
   {
     name: '.stylelintignore',

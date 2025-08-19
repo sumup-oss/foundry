@@ -13,11 +13,16 @@
  * limitations under the License.
  */
 
+import dedent from 'dedent';
+
 import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {
-    name: '.huskyrc.js',
-    content: "module.exports = require('@sumup-oss/foundry/husky')()",
+    name: 'husky.config.cjs',
+    content: dedent`
+      const { defineConfig } = require('@sumup-oss/foundry/husky');
+      module.exports = defineConfig();
+    `,
   },
 ];

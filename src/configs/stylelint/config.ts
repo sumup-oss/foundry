@@ -92,7 +92,7 @@ function applyOverrides(overrides: StylelintConfig) {
     customizeConfig(config, overrides);
 }
 
-export function createConfig(overrides: StylelintConfig = {}): StylelintConfig {
+export function defineConfig(overrides: StylelintConfig = {}): StylelintConfig {
   const options = getOptions();
 
   return flow(

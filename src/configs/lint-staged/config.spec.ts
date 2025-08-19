@@ -15,7 +15,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { config } from './config.js';
+import { defineConfig } from './config.js';
 
 describe('lint-staged', () => {
   it('should override the default config', () => {
@@ -23,7 +23,7 @@ describe('lint-staged', () => {
       '*.(js|jsx|json)': ['next lint'],
       '*.jsx?': ['custom command'],
     };
-    const actual = config(overrides);
+    const actual = defineConfig(overrides);
     expect(actual).toMatchSnapshot();
   });
 });

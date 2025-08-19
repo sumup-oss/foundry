@@ -26,6 +26,6 @@ export const base: HuskyConfig = {
   },
 };
 
-export function config(overrides: HuskyConfig = {}): HuskyConfig {
+export function defineConfig(overrides: HuskyConfig = {}): HuskyConfig {
   return deepmerge(base, overrides);
 }

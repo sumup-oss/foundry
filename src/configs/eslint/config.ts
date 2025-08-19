@@ -28,8 +28,7 @@ import { stories } from './stories.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
-// TODO: rename to defineConfig
-export function createConfig(
+export function defineConfig(
   config: { plugins: Record<string, ESLint.Plugin> },
   overrides: Linter.Config = {},
 ): Linter.Config[] {
