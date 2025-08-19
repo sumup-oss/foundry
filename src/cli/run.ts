@@ -13,79 +13,32 @@
  * limitations under the License.
  */
 
-import { access, readFile } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
-import { promisify } from 'node:util';
+import { dirname, resolve } from 'node:path';
+
+import { readPackageUp } from 'read-package-up';
 
 import * as logger from '../lib/logger.js';
 import { spawn } from '../lib/spawn.js';
-import { isString } from '../lib/type-check.js';
-import type { PackageJson } from '../types/shared.js';
-
-const readFileAsync = promisify(readFile);
-const accessAsync = promisify(access);
-
-function shouldStopRecursion(path: string): boolean {
-  return !/^.+node_modules/.test(path);
-}
-
-async function resolveTo(path: string, name: string): Promise<string> {
-  if (shouldStopRecursion(path)) {
-    return '';
-  }
-
-  const packageJsonPath = join(path, name);
-
-  try {
-    await accessAsync(packageJsonPath);
-    return packageJsonPath;
-  } catch (_error) {
-    const parentPath = resolve(path, '..');
-    return resolveTo(parentPath, name);
-  }
-}
-
-async function getPackageJsonPath(name: string): Promise<string> {
-  const pathMain: string = require.resolve(name);
-  return resolveTo(pathMain, 'package.json');
-}
-
-function isRelativePath(path: string): boolean {
-  const firstChar = path.split('')[0];
-  return firstChar === '.';
-}
-
-async function loadJson(path: string): Promise<PackageJson> {
-  const isRelative = isRelativePath(path);
-  if (isRelative) {
-    throw new TypeError(`Relative paths are not supported: ${path}`);
-  }
-  try {
-    const data = await readFileAsync(path);
-    return JSON.parse(data.toString()) as PackageJson;
-  } catch (_error) {
-    throw new Error(`Path does not exist. ${path}`);
-  }
-}
 
 async function resolveBinaryPath(name: string): Promise<string | null> {
   try {
     // This could potentially break, if the name of a binary (name) is different
     // from the name of the package.
-    const packageJsonPath = await getPackageJsonPath(name);
-    const { bin: packageBin } = await loadJson(packageJsonPath);
+    const mainUrl = import.meta.resolve(name);
+    const mainPath = mainUrl.replace(/^file:\/\//, '');
+    const pkg = await readPackageUp({ cwd: mainPath });
 
-    if (!packageBin) {
+    if (!pkg) {
       return null;
     }
 
-    const binaryPath = isString(packageBin) ? packageBin : packageBin[name];
+    const binaryPath = pkg.packageJson.bin?.[name];
 
     if (!binaryPath) {
       return null;
     }
 
-    return resolve(dirname(packageJsonPath), binaryPath);
+    return resolve(dirname(pkg.path), binaryPath);
   } catch (_error) {
     return null;
   }
