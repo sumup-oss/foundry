@@ -38,7 +38,7 @@ export function defineConfig(
   // biome-ignore lint/suspicious/noConsole: For testing only
   console.info(options, config);
 
-  return [overrides, javascript, typescript];
+  return [overrides, javascript, typescript, ignores];
 }
 
 export const configs = {

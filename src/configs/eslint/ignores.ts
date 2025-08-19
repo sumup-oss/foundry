@@ -17,6 +17,7 @@ export const ignores = {
   ignores: [
     '**/node_modules/**', // dependencies
     '**/dist/**', // generated assets
+    '**/.astro/**', // generated assets (Astro)
     '**/.next/**', // generated assets (Next.js)
     '**/build/**', // generated assets (create-react-app, Remix)
     '**/storybook-static/**', // generated assets (Storybook)
