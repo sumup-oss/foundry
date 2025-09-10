@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { configs } from './dist/eslint.js';
+import { configs, defineConfig } from './dist/eslint.js';
 
-export default [
+export default defineConfig([
   configs.ignores,
   configs.javascript,
   configs.typescript,
@@ -33,4 +33,4 @@ export default [
       'n/hashbang': 'off',
     },
   },
-];
+]);
