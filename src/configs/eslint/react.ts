@@ -14,7 +14,6 @@
  */
 
 import type { Linter } from 'eslint';
-import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
 
 import { files } from './files.js';
@@ -34,15 +33,8 @@ export const react = {
   settings: {
     react: { version: 'detect' },
   },
-  plugins: { react: reactPlugin },
   rules: {
-    /**
-     * React
-     */
-    ...reactPlugin.configs.recommended.rules,
-    ...reactPlugin.configs['jsx-runtime'].rules,
-
-    // while display names are useful in component stack traces,
+    // while display names are useful in component stacktraces,
     // they increase the bundle size and can hinder tree-shaking
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/display-name.md
     'react/display-name': 'off',
