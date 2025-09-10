@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import type { ESLint, Linter } from 'eslint';
+import { defineConfig as defineESLintConfig } from 'eslint/config';
 
 import { getOptions } from '../../lib/options.js';
 
@@ -28,18 +28,15 @@ import { stories } from './stories.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
-export function defineConfig(
-  config: { plugins: Record<string, ESLint.Plugin> },
-  overrides: Linter.Config = {},
-): Linter.Config[] {
+export const defineConfig: typeof defineESLintConfig = (...args) => {
   const options = getOptions();
 
   // TODO: Validate plugins, warn on missing ones
   // biome-ignore lint/suspicious/noConsole: For testing only
-  console.info(options, config);
+  console.info(options);
 
-  return [overrides, javascript, typescript, ignores];
-}
+  return defineESLintConfig(...args);
+};
 
 export const configs = {
   browser,
