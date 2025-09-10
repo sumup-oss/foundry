@@ -14328,6 +14328,7 @@ exports[`eslint > configs > should match the snapshot for the tests preset 1`] =
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/unbound-method": "off",
+    "compat/compat": "off",
     "jest/max-nested-describe": "off",
     "jest/no-disabled-tests": "off",
     "jest/no-done-callback": "off",

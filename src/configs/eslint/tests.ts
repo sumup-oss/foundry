@@ -25,6 +25,8 @@ export const tests = {
     globals: globals.node,
   },
   rules: {
+    'compat/compat': 'off',
+
     // Covered by Biome
     'jest/max-nested-describe': 'off',
     'jest/no-disabled-tests': 'off',
