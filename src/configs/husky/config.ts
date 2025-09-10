@@ -20,7 +20,7 @@ interface HuskyConfig {
   hooks?: { [key: string]: string };
 }
 
-export const base: HuskyConfig = {
+const base: HuskyConfig = {
   hooks: {
     'pre-commit': 'foundry run lint-staged',
   },

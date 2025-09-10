@@ -113,6 +113,19 @@ const PLUGINS = [
   },
 ];
 
+export function getPlugins(): Plugin[] {
+  const packageJson = readPackageJson();
+  const config = (packageJson.foundry || {}) as Options;
+
+  warnAboutUnsupportedPlugins(packageJson);
+  warnAboutMissingPlugins(packageJson);
+
+  const pick = pickConfigOrDetect(packageJson);
+
+  // TODO: Differentiate between ESLint and Stylelint plugins
+  return pick(config.plugins, detectPlugins);
+}
+
 export function getOptions(): Required<Options> {
   const packageJson = readPackageJson();
   const config = (packageJson.foundry || {}) as Options;
@@ -140,7 +153,7 @@ export function pickConfigOrDetect(packageJson: PackageJson) {
   ) => (explicit !== undefined ? explicit : detectFn(packageJson));
 }
 
-export function getDependencyVersion(
+function getDependencyVersion(
   packageJson: PackageJson,
   name: string,
 ): string | undefined {

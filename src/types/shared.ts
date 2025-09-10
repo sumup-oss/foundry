@@ -44,7 +44,7 @@ export enum Plugin {
   TestingLibrary = 'Testing Library',
 }
 
-export type Workspaces = PackageJson['workspaces'] | null;
+type Workspaces = PackageJson['workspaces'] | null;
 
 export interface Options {
   language?: Language;
@@ -64,12 +64,6 @@ export type File = {
   name: string;
   content: string;
   overwrite?: boolean;
-};
-
-export type Script = {
-  name: string;
-  command: string;
-  description: string;
 };
 
 export interface ToolOptions {

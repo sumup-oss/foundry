@@ -17,7 +17,7 @@ import { deepmergeCustom } from 'deepmerge-ts';
 import type { Config as StylelintConfig } from 'stylelint';
 
 import { flow, isEmpty, uniq } from '../../lib/helpers.js';
-import { getOptions } from '../../lib/options.js';
+import { getPlugins } from '../../lib/options.js';
 import { Plugin } from '../../types/shared.js';
 
 export const customizeConfig = deepmergeCustom({
@@ -93,10 +93,7 @@ function applyOverrides(overrides: StylelintConfig) {
 }
 
 export function defineConfig(overrides: StylelintConfig = {}): StylelintConfig {
-  const options = getOptions();
+  const plugins = getPlugins();
 
-  return flow(
-    customizePlugin(options.plugins),
-    applyOverrides(overrides),
-  )(base);
+  return flow(customizePlugin(plugins), applyOverrides(overrides))(base);
 }

@@ -15,7 +15,11 @@
 
 import { defineConfig as defineESLintConfig } from 'eslint/config';
 
-import { getOptions } from '../../lib/options.js';
+import { readPackageJson } from '../../lib/files.js';
+import {
+  warnAboutMissingPlugins,
+  warnAboutUnsupportedPlugins,
+} from '../../lib/options.js';
 
 import { browser } from './browser.js';
 import { ignores } from './ignores.js';
@@ -29,11 +33,10 @@ import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
 export const defineConfig: typeof defineESLintConfig = (...args) => {
-  const options = getOptions();
+  const packageJson = readPackageJson();
 
-  // TODO: Validate plugins, warn on missing ones
-  // biome-ignore lint/suspicious/noConsole: For testing only
-  console.info(options);
+  warnAboutUnsupportedPlugins(packageJson);
+  warnAboutMissingPlugins(packageJson);
 
   return defineESLintConfig(...args);
 };

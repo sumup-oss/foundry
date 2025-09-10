@@ -26,7 +26,7 @@ import type { PackageJson } from '../types/shared.js';
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
 
-export async function formatContent(
+async function formatContent(
   fileName: string,
   content: string,
 ): Promise<string> {

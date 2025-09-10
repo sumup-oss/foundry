@@ -15,16 +15,16 @@
 
 import { describe, expect, it, type Mock, vi } from 'vitest';
 
-import { getOptions as getOptionsMock } from '../../lib/options.js';
+import { getPlugins as getPluginsMock } from '../../lib/options.js';
 import { Plugin } from '../../types/shared.js';
 
 import { customizeConfig, defineConfig } from './config.js';
 
 vi.mock('../../lib/options', () => ({
-  getOptions: vi.fn(() => ({})),
+  getPlugins: vi.fn(() => []),
 }));
 
-const getOptions = getOptionsMock as Mock;
+const getPlugins = getPluginsMock as Mock;
 
 describe('stylelint', () => {
   describe('customizeConfig', () => {
@@ -119,13 +119,13 @@ describe('stylelint', () => {
 
   describe('with options', () => {
     it("should return a config for { plugins: ['Circuit UI'] }", () => {
-      getOptions.mockReturnValue({ plugins: [Plugin.CircuitUI] });
+      getPlugins.mockReturnValue([Plugin.CircuitUI]);
       const actual = defineConfig();
       expect(actual).toMatchSnapshot();
     });
 
     it("should return a config for { plugins: ['Circuit UI (OSS scope)'] }", () => {
-      getOptions.mockReturnValue({ plugins: [Plugin.CircuitUIOSS] });
+      getPlugins.mockReturnValue([Plugin.CircuitUIOSS]);
       const actual = defineConfig();
       expect(actual).toMatchSnapshot();
     });
