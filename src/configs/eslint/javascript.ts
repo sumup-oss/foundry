@@ -52,12 +52,11 @@ export const javascript = {
     ],
   },
   plugins: {
-    // FIXME: ?
     'import-x': importX as unknown as ESLint.Plugin,
   },
   rules: {
     ...js.configs.recommended.rules,
-    // ...importX.configs.recommended.rules,
+    ...importX.configs.recommended.rules,
 
     // Covered by Biome
     'array-callback-return': 'off',
