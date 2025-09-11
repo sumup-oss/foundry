@@ -21,7 +21,7 @@ exports[`eslint > files > should match the snapshot for complete options 1`] = `
 import react from 'eslint-plugin-react'
 
 export default defineConfig([
-  configs.ignores, configs.javascript, configs.typescript, configs.browser, configs.node, configs.openSource, { extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}, configs.next, configs.tests, configs.stories
+  configs.ignores, configs.javascript, configs.typescript, configs.browser, configs.node, configs.openSource, { extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}, configs.tests, configs.stories
 ]);",
     "name": "eslint.config.mjs",
   },

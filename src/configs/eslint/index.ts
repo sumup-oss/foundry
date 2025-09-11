@@ -53,14 +53,9 @@ export const files = (options: InitOptions): File[] => {
     configs.push('configs.openSource');
   }
 
-  // TODO: Check how this was handled before. Are next and react mutually exclusive?
   if (options.frameworks?.includes(Framework.Nextjs)) {
-    // TODO: Import next plugin
-    imports.push("import react from 'eslint-plugin-react'");
-    configs.push(
-      "{ extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}",
-      'configs.next',
-    );
+    // TODO: Add support for Next.js' ESLint plugin?
+    configs.push('configs.next');
   } else if (options.frameworks?.includes(Framework.React)) {
     imports.push("import react from 'eslint-plugin-react'");
     configs.push(
@@ -69,12 +64,12 @@ export const files = (options: InitOptions): File[] => {
   }
 
   if (options.plugins?.some((plugin) => testPlugins.includes(plugin))) {
-    // TODO: import any plugins?
+    // TODO: Add built-in support for plugin-specific ESLint plugins (e.g. eslint-plugin-jest)?
     configs.push('configs.tests');
   }
 
   if (options.plugins?.includes(Plugin.Storybook)) {
-    // TODO: import any plugins?
+    // TODO: Add built-in support for Storybook's ESLint plugin?
     configs.push('configs.stories');
   }
 

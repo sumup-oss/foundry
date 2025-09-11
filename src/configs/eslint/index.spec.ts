@@ -37,7 +37,7 @@ describe('eslint', () => {
         configDir: '.',
         language: Language.TypeScript,
         environments: [Environment.Browser, Environment.Node],
-        frameworks: [Framework.Nextjs, Framework.React],
+        frameworks: [Framework.React],
         plugins: [Plugin.Jest, Plugin.Storybook],
         openSource: true,
       };
