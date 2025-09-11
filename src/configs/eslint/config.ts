@@ -32,6 +32,14 @@ import { stories } from './stories.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
+/**
+ * Helper function to define a config array and validate that all plugins
+ * relevant to the project have been installed.
+ *
+ * @param args The arguments to the function.
+ * @returns The config array.
+ * @throws {TypeError} If no arguments are provided or if an argument is not an object.
+ */
 export const defineConfig: typeof defineESLintConfig = (...args) => {
   const packageJson = readPackageJson();
 
