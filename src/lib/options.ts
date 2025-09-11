@@ -142,7 +142,6 @@ export function getOptions(): Required<Options> {
     // TODO: Differentiate between ESLint and Stylelint plugins
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
-    workspaces: packageJson.workspaces || null,
   };
 }
 

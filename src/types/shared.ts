@@ -44,15 +44,12 @@ export enum Plugin {
   TestingLibrary = 'Testing Library',
 }
 
-type Workspaces = PackageJson['workspaces'] | null;
-
 export interface Options {
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
   plugins?: Plugin[];
   openSource?: boolean;
-  workspaces?: Workspaces;
 }
 
 export interface InitOptions extends Options {
