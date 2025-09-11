@@ -19,7 +19,15 @@ import tseslint from 'typescript-eslint';
 import { extensions, files } from './files.js';
 import { javascript } from './javascript.js';
 
-// TODO: Assert array length
+if (
+  !Array.isArray(tseslint.configs.recommendedTypeChecked) ||
+  tseslint.configs.recommendedTypeChecked.length !== 3
+) {
+  throw new Error(
+    'The typescript-eslint config shape has changed. Please file an issue at https://github.com/sumup-oss/foundry/issues/new/choose.',
+  );
+}
+
 const [base, eslintRecommended, typeChecked] =
   tseslint.configs.recommendedTypeChecked;
 
@@ -28,13 +36,14 @@ export const typescript = {
   name: 'foundry/typescript',
   files: files.typescript,
   settings: {
+    ...base.settings,
     'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import-x/parsers': {
       '@typescript-eslint/parser': extensions.typescript,
     },
   },
-  plugins: base.plugins,
   rules: {
+    ...base.rules,
     ...eslintRecommended.rules,
     ...typeChecked.rules,
 
