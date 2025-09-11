@@ -21,14 +21,14 @@ export const files = (): File[] => [
   {
     name: 'stylelint.config.mjs',
     content: dedent`
-      import { defineConfig } from '@sumup-oss/foundry/stylelint');
+      import { defineConfig } from '@sumup-oss/foundry/stylelint';
 
       export default defineConfig();
     `,
   },
   {
     name: '.stylelintignore',
-    content: `${dedent`
+    content: dedent`
       node_modules/
       build/
       dist/
@@ -39,6 +39,6 @@ export const files = (): File[] => [
       coverage/
       __coverage__/
       __reports__/
-    `}\n`,
+    `,
   },
 ];

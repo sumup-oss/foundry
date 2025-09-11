@@ -15,15 +15,80 @@
 
 import dedent from 'dedent';
 
-import type { File } from '../../types/shared.js';
+import {
+  Environment,
+  type File,
+  Framework,
+  type InitOptions,
+  Language,
+  Plugin,
+} from '../../types/shared.js';
 
-export const files = (): File[] => [
-  {
-    name: 'eslint.config.mjs',
-    content: dedent`
-      import { defineConfig } from '@sumup-oss/foundry/eslint');
+const environmentConfigMap = {
+  [Environment.Browser]: 'configs.browser',
+  [Environment.Node]: 'configs.node',
+};
 
-      export default defineConfig();
-    `,
-  },
+const testPlugins = [
+  Plugin.Cypress,
+  Plugin.Jest,
+  Plugin.Playwright,
+  Plugin.TestingLibrary,
 ];
+
+export const files = (options: InitOptions): File[] => {
+  const configs = ['configs.ignores', 'configs.javascript'];
+  const imports = [];
+
+  if (options.language === Language.TypeScript) {
+    configs.push('configs.typescript');
+  }
+
+  options.environments?.forEach((environment) => {
+    const config = environmentConfigMap[environment];
+    configs.push(config);
+  });
+
+  if (options.openSource) {
+    configs.push('configs.openSource');
+  }
+
+  // TODO: Check how this was handled before. Are next and react mutually exclusive?
+  if (options.frameworks?.includes(Framework.Nextjs)) {
+    // TODO: Import next plugin
+    imports.push("import react from 'eslint-plugin-react'");
+    configs.push(
+      "{ extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}",
+      'configs.next',
+    );
+  } else if (options.frameworks?.includes(Framework.React)) {
+    imports.push("import react from 'eslint-plugin-react'");
+    configs.push(
+      "{ extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}",
+    );
+  }
+
+  if (options.plugins?.some((plugin) => testPlugins.includes(plugin))) {
+    // TODO: import any plugins?
+    configs.push('configs.tests');
+  }
+
+  if (options.plugins?.includes(Plugin.Storybook)) {
+    // TODO: import any plugins?
+    configs.push('configs.stories');
+  }
+
+  return [
+    {
+      name: 'eslint.config.mjs',
+      content: dedent`
+      import { configs, defineConfig } from '@sumup-oss/foundry/eslint';
+      ${imports.join('')}
+
+      export default defineConfig([
+        ${configs.join(', ')}
+      ]);
+    `,
+    },
+  ];
+};

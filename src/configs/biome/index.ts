@@ -20,11 +20,11 @@ import type { File } from '../../types/shared.js';
 export const files = (): File[] => [
   {
     name: 'biome.jsonc',
-    content: `${dedent`
+    content: dedent`
       {
         "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
         "extends": ["@sumup-oss/foundry/biome"],
       }
-    `}\n`,
+    `,
   },
 ];

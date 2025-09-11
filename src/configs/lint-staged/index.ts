@@ -21,7 +21,7 @@ export const files = (): File[] => [
   {
     name: 'lint-staged.config.mjs',
     content: dedent`
-      import { defineConfig } from '@sumup-oss/foundry/lint-staged');
+      import { defineConfig } from '@sumup-oss/foundry/lint-staged';
 
       export default defineConfig();
     `,
