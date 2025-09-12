@@ -24729,6 +24729,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "PascalCase",
           "UPPER_CASE",
         ],
+        "leadingUnderscore": "allow",
         "selector": "variable",
       },
       {
