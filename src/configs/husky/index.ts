@@ -22,6 +22,7 @@ export const files = (): File[] => [
     name: 'husky.config.cjs',
     content: dedent`
       const { defineConfig } = require('@sumup-oss/foundry/husky');
+
       module.exports = defineConfig();
     `,
   },

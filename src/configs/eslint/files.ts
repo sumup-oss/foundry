@@ -32,7 +32,7 @@ export const files = {
     '**/.stylelintrc.*', // stylelint config
     '**/lint-staged.config.*', // lint-staged config
     '**/vue.config.js', // vue-cli config
-    '**/webpack.config.*)', // webpack config
+    '**/webpack.config.*', // webpack config
     '**/rollup.config.*', // rollup config
     '**/svgo.config.*', // svgo config
     '**/gulpfile.*', // gulp config
