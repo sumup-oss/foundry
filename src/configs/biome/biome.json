@@ -109,6 +109,7 @@
               "**/protractor.conf.*",
               "**/karma.conf.*"
             ],
+            "peerDependencies": false,
             "optionalDependencies": false
           }
         },
@@ -117,37 +118,6 @@
         "noUnusedVariables": {
           "level": "error",
           "options": { "ignoreRestSiblings": true }
-        },
-        "noUndeclaredDependencies": {
-          "level": "error",
-          "options": {
-            "devDependencies": [
-              "**/*.d.ts",
-              "**/spec/**",
-              "**/test/**",
-              "**/tests/**",
-              "**/__tests__/**",
-              "**/__mocks__/**",
-              "**/*.spec.*",
-              "**/*.test.*",
-              "**/test.*",
-              "**/test-*.*",
-              "**/jest.*",
-              "**/vitest.*",
-              "**/setupTests.*",
-              "**/test-utils.*",
-              "**/*.story.*",
-              "**/*.stories.*",
-              "**/.storybook/**",
-              "**/*.config.*",
-              "**/*.conf.*",
-              "**/.eslintrc.*",
-              "**/.huskyrc.*",
-              "**/.stylelintrc.*"
-            ],
-            "peerDependencies": false,
-            "optionalDependencies": true
-          }
         }
       },
       "performance": {
