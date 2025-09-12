@@ -6013,7 +6013,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
         "newIsCapExceptions": [],
       },
     ],
-    "no-alert": "error",
+    "no-alert": "off",
     "no-array-constructor": "off",
     "no-async-promise-executor": "off",
     "no-await-in-loop": "error",
@@ -14219,7 +14219,6 @@ exports[`eslint > configs > should match the snapshot for the stories preset 1`]
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import-x/no-extraneous-dependencies": "off",
     "import-x/no-relative-packages": "off",
-    "no-alert": "off",
   },
 }
 `;

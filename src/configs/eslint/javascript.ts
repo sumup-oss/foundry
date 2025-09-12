@@ -71,6 +71,7 @@ export const javascript = {
     'getter-return': 'off',
     'grouped-accessor-pairs': 'off',
     'guard-for-in': 'off',
+    'no-alert': 'off',
     'no-array-constructor': 'off',
     'no-async-promise-executor': 'off',
     'no-bitwise': 'off',
@@ -194,10 +195,6 @@ export const javascript = {
     // enforce a maximum number of classes per file
     // https://eslint.org/docs/latest/rules/max-classes-per-file
     'max-classes-per-file': ['error', 1],
-
-    // disallow the use of alert, confirm, and prompt
-    // https://eslint.org/docs/latest/rules/no-alert
-    'no-alert': 'error',
 
     // disallow use of arguments.caller or arguments.callee
     // https://eslint.org/docs/latest/rules/no-caller
