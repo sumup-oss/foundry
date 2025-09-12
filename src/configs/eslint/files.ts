@@ -29,7 +29,9 @@ export const files = {
     '**/.eslintrc.*', // eslint config
     '**/eslint.config.*', // eslint config
     '**/.huskyrc.*', // husky config
+    '**/husky.config.*', // husky config
     '**/.stylelintrc.*', // stylelint config
+    '**/stylelint.config.*', // stylelint config
     '**/lint-staged.config.*', // lint-staged config
     '**/vue.config.js', // vue-cli config
     '**/webpack.config.*', // webpack config
