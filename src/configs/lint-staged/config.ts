@@ -20,7 +20,9 @@ interface LintStagedConfig {
   [key: string]: LinterCommand | LinterFn;
 }
 
-export function config(overrides: LintStagedConfig = {}): LintStagedConfig {
+export function defineConfig(
+  overrides: LintStagedConfig = {},
+): LintStagedConfig {
   return {
     '*': [
       'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',

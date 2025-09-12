@@ -15,11 +15,11 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { config } from './config.js';
+import { defineConfig } from './config.js';
 
 describe('husky', () => {
   it('should return a config', () => {
-    const actual = config();
+    const actual = defineConfig();
     expect(actual).toMatchInlineSnapshot(`
       {
         "hooks": {
@@ -35,7 +35,7 @@ describe('husky', () => {
         'pre-commit': 'custom command',
       },
     };
-    const actual = config(overrides);
+    const actual = defineConfig(overrides);
     expect(actual).toMatchInlineSnapshot(`
       {
         "hooks": {

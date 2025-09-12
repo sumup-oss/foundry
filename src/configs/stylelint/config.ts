@@ -17,7 +17,7 @@ import { deepmergeCustom } from 'deepmerge-ts';
 import type { Config as StylelintConfig } from 'stylelint';
 
 import { flow, isEmpty, uniq } from '../../lib/helpers.js';
-import { getOptions } from '../../lib/options.js';
+import { getPlugins } from '../../lib/options.js';
 import { Plugin } from '../../types/shared.js';
 
 export const customizeConfig = deepmergeCustom({
@@ -59,14 +59,14 @@ const base: StylelintConfig = {
 };
 
 function customizePlugin(plugins: Plugin[]) {
-  const pluginMap: { [key in Plugin]?: StylelintConfig } = {
-    [Plugin.CIRCUIT_UI]: {
+  const pluginMap: { [Key in Plugin]?: StylelintConfig } = {
+    [Plugin.CircuitUI]: {
       plugins: ['@sumup/stylelint-plugin-circuit-ui'],
       rules: {
         'circuit-ui/no-invalid-custom-properties': true,
       },
     },
-    [Plugin.CIRCUIT_UI_OSS]: {
+    [Plugin.CircuitUIOSS]: {
       plugins: ['@sumup-oss/stylelint-plugin-circuit-ui'],
       rules: {
         'circuit-ui/no-invalid-custom-properties': true,
@@ -92,11 +92,8 @@ function applyOverrides(overrides: StylelintConfig) {
     customizeConfig(config, overrides);
 }
 
-export function createConfig(overrides: StylelintConfig = {}): StylelintConfig {
-  const options = getOptions();
+export function defineConfig(overrides: StylelintConfig = {}): StylelintConfig {
+  const plugins = getPlugins();
 
-  return flow(
-    customizePlugin(options.plugins),
-    applyOverrides(overrides),
-  )(base);
+  return flow(customizePlugin(plugins), applyOverrides(overrides))(base);
 }

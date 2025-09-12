@@ -13,9 +13,24 @@
  * limitations under the License.
  */
 
-export const variables = {
-  rules: {
-    // disallow declaration of variables already declared in the outer scope
-    'no-shadow': 'error',
+import { configs, defineConfig } from './dist/eslint.js';
+
+export default defineConfig([
+  configs.ignores,
+  configs.javascript,
+  configs.typescript,
+  configs.node,
+  configs.openSource,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      'n/no-process-exit': 'off',
+      'n/hashbang': 'off',
+    },
   },
-} as const;
+]);

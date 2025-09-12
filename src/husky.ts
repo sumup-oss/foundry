@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-import { config } from './configs/husky/config.js';
+import { defineConfig } from './configs/husky/config.js';
 
-export default config;
+export { defineConfig };

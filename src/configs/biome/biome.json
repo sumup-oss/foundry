@@ -10,6 +10,7 @@
     "enabled": true,
     "includes": ["**", "!**/dist", "!**/.changeset"],
     "formatWithErrors": false,
+    "useEditorconfig": true,
     "indentStyle": "space"
   },
   "assist": {
@@ -74,6 +75,43 @@
         "useRegexLiterals": "error"
       },
       "correctness": {
+        "noUndeclaredDependencies": {
+          "level": "error",
+          "options": {
+            "devDependencies": [
+              "**/*.d.ts",
+              "**/test/**",
+              "**/tests/**",
+              "**/spec/**",
+              "**/__tests__/**",
+              "**/__mocks__/**",
+              "**/test.*",
+              "**/test-*.*",
+              "**/*{.,_}{test,spec}.*",
+              "**/jest.*",
+              "**/vite.config.*",
+              "**/vitest.*",
+              "**/setupTests.*",
+              "**/test-utils.*",
+              "**/.storybook/**/*",
+              "**/*.{story,stories}.*",
+              "**/.eslintrc.*",
+              "**/eslint.config.*",
+              "**/.huskyrc.*",
+              "**/.stylelintrc.*",
+              "**/lint-staged.config.*",
+              "**/vue.config.js",
+              "**/webpack.config.*)",
+              "**/rollup.config.*",
+              "**/svgo.config.*",
+              "**/gulpfile.*",
+              "**/Gruntfile{,.js}",
+              "**/protractor.conf.*",
+              "**/karma.conf.*"
+            ],
+            "optionalDependencies": false
+          }
+        },
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedVariables": "error"
@@ -198,8 +236,19 @@
   "overrides": [
     {
       "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      },
       "linter": {
         "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
           "style": {
             "useConst": "off",
             "useImportType": "off"

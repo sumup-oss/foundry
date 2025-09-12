@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-import { createConfig } from './configs/stylelint/config.js';
+import { defineConfig } from './configs/stylelint/config.js';
 
-export default createConfig;
+export { defineConfig };

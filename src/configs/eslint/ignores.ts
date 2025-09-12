@@ -13,19 +13,18 @@
  * limitations under the License.
  */
 
-export const errors = {
-  rules: {
-    // Disallow returning values from Promise executor functions
-    // https://eslint.org/docs/rules/no-promise-executor-return
-    'no-promise-executor-return': 'error',
-
-    // Disallow loops with a body that allows only one iteration
-    // https://eslint.org/docs/rules/no-unreachable-loop
-    'no-unreachable-loop': [
-      'error',
-      {
-        ignore: [], // WhileStatement, DoWhileStatement, ForStatement, ForInStatement, ForOfStatement
-      },
-    ],
-  },
-} as const;
+export const ignores = {
+  ignores: [
+    '**/node_modules/**', // dependencies
+    '**/dist/**', // generated assets
+    '**/.astro/**', // generated assets (Astro)
+    '**/.next/**', // generated assets (Next.js)
+    '**/build/**', // generated assets (create-react-app, Remix)
+    '**/storybook-static/**', // generated assets (Storybook)
+    '**/public/**', // (generated) assets
+    '**/vendor/**', // third-party assets
+    '**/__reports__/**', // coverage reports
+    '**/__coverage__/**', // coverage reports
+    '**/*.snap', // snapshot files
+  ],
+};

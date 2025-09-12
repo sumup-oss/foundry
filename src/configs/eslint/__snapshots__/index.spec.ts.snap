@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`eslint > files > should match the snapshot for basic options 1`] = `
+[
+  {
+    "content": "import { configs, defineConfig } from '@sumup-oss/foundry/eslint';
+
+
+export default defineConfig([
+  configs.ignores, configs.javascript
+]);",
+    "name": "eslint.config.mjs",
+  },
+]
+`;
+
+exports[`eslint > files > should match the snapshot for complete options 1`] = `
+[
+  {
+    "content": "import { configs, defineConfig } from '@sumup-oss/foundry/eslint';
+import react from 'eslint-plugin-react'
+
+export default defineConfig([
+  configs.ignores, configs.javascript, configs.typescript, configs.browser, configs.node, configs.openSource, { extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}, configs.tests, configs.stories
+]);",
+    "name": "eslint.config.mjs",
+  },
+]
+`;

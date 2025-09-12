@@ -13,23 +13,17 @@
  * limitations under the License.
  */
 
-export const node = {
-  env: {
-    node: true,
-  },
+import type { Linter } from 'eslint';
 
+import { files } from './files.js';
+
+export const stories = {
+  name: 'foundry/stories',
+  files: files.stories,
   rules: {
-    // TODO: Cross reference with eslint-plugin-n (recommended)
-
-    // disallow use of the Buffer() constructor
-    // https://eslint.org/docs/rules/no-buffer-constructor
-    'n/no-buffer-constructor': 'error',
-
-    // disallow use of new operator with the require function
-    'no-new-require': 'error',
-
-    // disallow string concatenation with __dirname and __filename
-    // https://eslint.org/docs/rules/no-path-concat
-    'no-path-concat': 'error',
+    'no-alert': 'off',
+    'import-x/no-extraneous-dependencies': 'off',
+    'import-x/no-relative-packages': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
-} as const;
+} satisfies Linter.Config;

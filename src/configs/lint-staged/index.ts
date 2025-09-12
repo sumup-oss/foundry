@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
+import dedent from 'dedent';
+
 import type { File } from '../../types/shared.js';
 
 export const files = (): File[] => [
   {
-    name: 'lint-staged.config.js',
-    content: `
-    module.exports = require('@sumup-oss/foundry/lint-staged')()`,
+    name: 'lint-staged.config.mjs',
+    content: dedent`
+      import { defineConfig } from '@sumup-oss/foundry/lint-staged';
+
+      export default defineConfig();
+    `,
   },
 ];

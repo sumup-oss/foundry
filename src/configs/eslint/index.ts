@@ -15,30 +15,75 @@
 
 import dedent from 'dedent';
 
-import type { File } from '../../types/shared.js';
+import {
+  Environment,
+  type File,
+  Framework,
+  type InitOptions,
+  Language,
+  Plugin,
+} from '../../types/shared.js';
 
-export const files = (): File[] => [
-  {
-    name: '.eslintrc.js',
-    content: `
-    module.exports = require('@sumup-oss/foundry/eslint')()`,
-  },
-  {
-    name: '.eslintignore',
-    content: `${dedent`
-      node_modules/
-      build/
-      dist/
-      .next/
-      .out/
-      static/
-      public/
-      coverage/
-      __coverage__/
-      __reports__/
-      /*.config.js
-      /*rc.js
-      tsconfig.json
-    `}\n`,
-  },
+const environmentConfigMap = {
+  [Environment.Browser]: 'configs.browser',
+  [Environment.Node]: 'configs.node',
+};
+
+const testPlugins = [
+  Plugin.Cypress,
+  Plugin.Jest,
+  Plugin.Playwright,
+  Plugin.TestingLibrary,
 ];
+
+export const files = (options: InitOptions): File[] => {
+  const configs = ['configs.ignores', 'configs.javascript'];
+  const imports = [];
+
+  if (options.language === Language.TypeScript) {
+    configs.push('configs.typescript');
+  }
+
+  options.environments?.forEach((environment) => {
+    const config = environmentConfigMap[environment];
+    configs.push(config);
+  });
+
+  if (options.openSource) {
+    configs.push('configs.openSource');
+  }
+
+  if (options.frameworks?.includes(Framework.Nextjs)) {
+    // TODO: Add support for Next.js' ESLint plugin?
+    configs.push('configs.next');
+  } else if (options.frameworks?.includes(Framework.React)) {
+    imports.push("import react from 'eslint-plugin-react'");
+    configs.push(
+      "{ extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}",
+    );
+  }
+
+  if (options.plugins?.some((plugin) => testPlugins.includes(plugin))) {
+    // TODO: Add built-in support for plugin-specific ESLint plugins (e.g. eslint-plugin-jest)?
+    configs.push('configs.tests');
+  }
+
+  if (options.plugins?.includes(Plugin.Storybook)) {
+    // TODO: Add built-in support for Storybook's ESLint plugin?
+    configs.push('configs.stories');
+  }
+
+  return [
+    {
+      name: 'eslint.config.mjs',
+      content: dedent`
+      import { configs, defineConfig } from '@sumup-oss/foundry/eslint';
+      ${imports.join('')}
+
+      export default defineConfig([
+        ${configs.join(', ')}
+      ]);
+    `,
+    },
+  ];
+};

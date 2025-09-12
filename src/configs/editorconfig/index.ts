@@ -20,13 +20,13 @@ import type { File } from '../../types/shared.js';
 export const files = (): File[] => [
   {
     name: '.editorconfig',
-    content: `${dedent`
+    content: dedent`
       [*]
       charset = utf-8
       end_of_line = lf
       insert_final_newline = true
       indent_style = space
       indent_size = 2
-    `}\n`,
+    `,
   },
 ];

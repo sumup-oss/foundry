@@ -115,7 +115,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                     {
                       type: 'confirm',
                       name: 'overwrite',
-                      // eslint-disable-next-line max-len
                       message: `"${file.name}" already exists. Would you like to replace it?`,
                       default: false,
                     },
@@ -140,7 +139,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     },
     {
       title: 'Updating package.json',
-      // eslint-disable-next-line @typescript-eslint/require-await
       task: async (): Promise<Listr> => {
         type Context = {
           packagePath: string;
@@ -194,7 +192,6 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                     {
                       type: 'confirm',
                       name: 'overwriteScript',
-                      // eslint-disable-next-line max-len
                       message: `"${name}" already exists. Would you like to replace it?`,
                       default: false,
                     },

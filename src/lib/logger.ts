@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-/* eslint-disable no-console */
 import chalk from 'chalk';
 
 import { isArray } from './type-check.js';

@@ -26,14 +26,17 @@ import type { PackageJson } from '../types/shared.js';
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
 
-export async function formatContent(
+async function formatContent(
   fileName: string,
   content: string,
 ): Promise<string> {
   const biome = new Biome();
   const { projectKey } = biome.openProject();
 
-  biome.applyConfiguration(projectKey, config as Configuration);
+  biome.applyConfiguration(projectKey, {
+    formatter: config.formatter,
+    javascript: config.javascript,
+  } as Configuration);
 
   const formatted = biome.formatContent(projectKey, content, {
     filePath: fileName,
@@ -65,7 +68,6 @@ export function addPackageScript(
   shouldOverwrite = false,
 ): PackageJson {
   if (!packageJson.scripts) {
-    // eslint-disable-next-line no-param-reassign
     packageJson.scripts = { [name]: command };
     return packageJson;
   }
@@ -74,7 +76,7 @@ export function addPackageScript(
   if (hasConflict && !shouldOverwrite) {
     throw new Error(`A script with the name "${name}" already exists.`);
   }
-  // eslint-disable-next-line no-param-reassign
+
   packageJson.scripts[name] = command;
   return packageJson;
 }

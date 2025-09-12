@@ -10,14 +10,42 @@
     "./CHANGELOG.md",
     "./CONTRIBUTING.md"
   ],
-  "bin": "dist/cli/index.js",
+  "bin": "./dist/cli/index.js",
   "type": "module",
   "exports": {
-    "./eslint": "./dist/eslint.js",
-    "./husky": "./dist/husky.js",
-    "./lint-staged": "./dist/lint-staged.js",
-    "./stylelint": "./dist/stylelint.js",
+    "./eslint": {
+      "types": "./dist/eslint.d.ts",
+      "default": "./dist/eslint.js"
+    },
+    "./husky": {
+      "types": "./dist/husky.d.ts",
+      "default": "./dist/husky.js"
+    },
+    "./lint-staged": {
+      "types": "./dist/lint-staged.d.ts",
+      "default": "./dist/lint-staged.js"
+    },
+    "./stylelint": {
+      "types": "./dist/stylelint.d.ts",
+      "default": "./dist/stylelint.js"
+    },
     "./biome": "./dist/biome.json"
+  },
+  "typesVersions": {
+    "*": {
+      "eslint": [
+        "./dist/eslint.d.ts"
+      ],
+      "husky": [
+        "./dist/husky.d.ts"
+      ],
+      "lint-staged": [
+        "./dist/lint-staged.d.ts"
+      ],
+      "stylelint": [
+        "./dist/stylelint.d.ts"
+      ]
+    }
   },
   "scripts": {
     "build": "npm run cleanup && tsc && chmod +x dist/cli/index.js && cp src/configs/biome/biome.json dist/biome.json",
@@ -35,18 +63,17 @@
     "release": "changeset publish"
   },
   "engines": {
-    "node": "^20.9 || >=22"
+    "node": "^20.11 || >=22"
   },
   "browserslist": [
-    "node 20.9",
+    "node 20.11",
     "node 22"
   ],
   "dependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/eslint-parser": "^7.28.0",
     "@biomejs/biome": "2.2.0",
     "@biomejs/js-api": "^3.0.0",
     "@biomejs/wasm-nodejs": "^2.2.0",
+    "@eslint/js": "^9.33.0",
     "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.1",
     "chalk": "^5.5.0",
@@ -54,13 +81,13 @@
     "dedent": "^1.6.0",
     "deepmerge-ts": "^7.1.5",
     "eslint": "^9.33.0",
-    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-oxc": "^0.15.0",
     "eslint-plugin-compat": "^6.0.2",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-notice": "^1.0.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-n": "^17.21.3",
+    "eslint-plugin-notice": "^1.1.0-rc1",
     "eslint-plugin-security": "^3.0.1",
+    "globals": "^16.3.0",
     "husky": "^4.3.8",
     "inquirer": "^12.9.1",
     "is-ci": "^4.1.0",
@@ -74,15 +101,14 @@
     "stylelint-config-standard": "^39.0.0",
     "stylelint-no-unsupported-browser-features": "^8.0.4",
     "stylelint-order": "^7.0.0",
+    "typescript-eslint": "^8.39.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.5",
     "@types/cross-spawn": "^6.0.6",
-    "@types/dedent": "^0.7.2",
-    "@types/inquirer": "^9.0.9",
-    "@types/is-ci": "^3.0.4",
+    "@types/eslint-plugin-security": "^3.0.0",
     "@types/listr": "^0.14.9",
     "@types/node": "^20.9.0",
     "@types/semver": "^7.7.0",

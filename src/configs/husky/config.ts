@@ -20,12 +20,12 @@ interface HuskyConfig {
   hooks?: { [key: string]: string };
 }
 
-export const base: HuskyConfig = {
+const base: HuskyConfig = {
   hooks: {
     'pre-commit': 'foundry run lint-staged',
   },
 };
 
-export function config(overrides: HuskyConfig = {}): HuskyConfig {
+export function defineConfig(overrides: HuskyConfig = {}): HuskyConfig {
   return deepmerge(base, overrides);
 }
