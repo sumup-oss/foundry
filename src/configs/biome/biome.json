@@ -111,7 +111,7 @@
               "**/protractor.conf.*",
               "**/karma.conf.*"
             ],
-            "peerDependencies": false,
+            "peerDependencies": true,
             "optionalDependencies": false
           }
         },
