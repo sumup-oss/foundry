@@ -68,7 +68,6 @@
         "noUselessStringConcat": "error",
         "noUselessTernary": "error",
         "noUselessUndefinedInitialization": "error",
-        "noVoid": "error",
         "useArrowFunction": "error",
         "useLiteralKeys": "error",
         "useNumericLiterals": "error",
