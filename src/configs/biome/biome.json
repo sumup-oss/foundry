@@ -220,7 +220,6 @@
         "noBitwiseOperators": "warn",
         "noConsole": "error",
         "noCatchAssign": "error",
-        "noEmptyBlockStatements": "error",
         "noIrregularWhitespace": "error",
         "noPrototypeBuiltins": "error",
         "noSkippedTests": "error",
