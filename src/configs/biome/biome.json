@@ -6,16 +6,11 @@
     "clientKind": "git",
     "useIgnoreFile": true
   },
+  "files": {
+    "includes": ["**", "!**/public", "!**/vendor"]
+  },
   "formatter": {
     "enabled": true,
-    "includes": [
-      "**",
-      "!**/*.astro",
-      "!**/*.svelte",
-      "!**/*.vue",
-      "!**/public",
-      "!**/vendor"
-    ],
     "formatWithErrors": false,
     "useEditorconfig": true,
     "indentStyle": "space"
@@ -46,7 +41,6 @@
   },
   "linter": {
     "enabled": true,
-    "includes": ["**", "!**/public", "!**/vendor"],
     "domains": {
       "project": "recommended"
     },
