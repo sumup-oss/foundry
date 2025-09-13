@@ -15,7 +15,7 @@
 
 import { deepmerge } from 'deepmerge-ts';
 
-interface HuskyConfig {
+export interface HuskyConfig {
   skipCI?: boolean;
   hooks?: { [key: string]: string };
 }
