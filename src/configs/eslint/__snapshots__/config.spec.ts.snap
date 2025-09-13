@@ -3571,6 +3571,7 @@ exports[`eslint > configs > should match the snapshot for the ignores preset 1`]
     "**/dist/**",
     "**/.astro/**",
     "**/.next/**",
+    "**/next-env.d.ts",
     "**/build/**",
     "**/storybook-static/**",
     "**/public/**",
