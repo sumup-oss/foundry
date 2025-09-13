@@ -8,6 +8,14 @@
   },
   "formatter": {
     "enabled": true,
+    "includes": [
+      "**",
+      "!**/*.astro",
+      "!**/*.svelte",
+      "!**/*.vue",
+      "!**/public",
+      "!**/vendor"
+    ],
     "formatWithErrors": false,
     "useEditorconfig": true,
     "indentStyle": "space"
@@ -38,6 +46,7 @@
   },
   "linter": {
     "enabled": true,
+    "includes": ["**", "!**/public", "!**/vendor"],
     "domains": {
       "project": "recommended"
     },
@@ -237,7 +246,7 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
       "assist": {
         "actions": {
           "source": {
