@@ -8,7 +8,6 @@
   },
   "formatter": {
     "enabled": true,
-    "includes": ["**", "!**/dist", "!**/.changeset"],
     "formatWithErrors": false,
     "useEditorconfig": true,
     "indentStyle": "space"
@@ -39,7 +38,6 @@
   },
   "linter": {
     "enabled": true,
-    "includes": ["**", "!**/dist"],
     "domains": {
       "project": "recommended"
     },
