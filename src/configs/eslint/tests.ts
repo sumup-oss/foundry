@@ -26,6 +26,7 @@ export const tests = {
   },
   rules: {
     'compat/compat': 'off',
+    'import-x/no-extraneous-dependencies': 'off',
 
     // Covered by Biome
     'jest/max-nested-describe': 'off',
