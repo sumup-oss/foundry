@@ -106,7 +106,7 @@ describe('files', () => {
     it('should add a script to the package.json file', () => {
       const packageJson = { scripts: {} } as PackageJson;
       const name = 'lint';
-      const command = 'foundry run eslint src';
+      const command = 'eslint .';
       const shouldOverwrite = false;
 
       const actual = addPackageScript(
@@ -117,7 +117,7 @@ describe('files', () => {
       );
 
       const expected = {
-        scripts: { lint: 'foundry run eslint src' },
+        scripts: { lint: 'eslint .' },
       };
       expect(actual).toEqual(expected);
     });
@@ -125,7 +125,7 @@ describe('files', () => {
     it('should initialize the scripts if they do not exist yet', () => {
       const packageJson = {} as PackageJson;
       const name = 'lint';
-      const command = 'foundry run eslint src';
+      const command = 'eslint .';
       const shouldOverwrite = false;
 
       const actual = addPackageScript(
@@ -136,7 +136,7 @@ describe('files', () => {
       );
 
       const expected = {
-        scripts: { lint: 'foundry run eslint src' },
+        scripts: { lint: 'eslint .' },
       };
       expect(actual).toEqual(expected);
     });
@@ -146,7 +146,7 @@ describe('files', () => {
         scripts: { lint: 'eslint .' },
       } as unknown as PackageJson;
       const name = 'lint';
-      const command = 'foundry run eslint src';
+      const command = 'eslint .';
       const shouldOverwrite = false;
 
       const actual = () =>
@@ -160,7 +160,7 @@ describe('files', () => {
         scripts: { lint: 'eslint .' },
       } as unknown as PackageJson;
       const name = 'lint';
-      const command = 'foundry run eslint src';
+      const command = 'eslint .';
       const shouldOverwrite = true;
 
       const actual = addPackageScript(
@@ -171,7 +171,7 @@ describe('files', () => {
       );
 
       const expected = {
-        scripts: { lint: 'foundry run eslint src' },
+        scripts: { lint: 'eslint .' },
       };
       expect(actual).toEqual(expected);
     });

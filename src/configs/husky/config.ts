@@ -22,7 +22,7 @@ interface HuskyConfig {
 
 const base: HuskyConfig = {
   hooks: {
-    'pre-commit': 'foundry run lint-staged',
+    'pre-commit': 'lint-staged',
   },
 };
 

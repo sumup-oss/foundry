@@ -27,9 +27,9 @@ export function defineConfig(
     '*': [
       'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
     ],
-    '*.(js|jsx|ts|tsx)': ['foundry run eslint --fix'],
+    '*.(js|jsx|ts|tsx)': ['eslint --fix --no-warn-ignored'],
     '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-    '*.css': ['foundry run stylelint --fix --allow-empty-input'],
+    '*.css': ['stylelint --fix --allow-empty-input'],
     ...overrides,
   };
 }

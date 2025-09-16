@@ -23,7 +23,7 @@ describe('husky', () => {
     expect(actual).toMatchInlineSnapshot(`
       {
         "hooks": {
-          "pre-commit": "foundry run lint-staged",
+          "pre-commit": "lint-staged",
         },
       }
     `);
