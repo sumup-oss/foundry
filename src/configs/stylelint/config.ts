@@ -35,7 +35,7 @@ export const customizeConfig = deepmergeCustom({
 });
 
 const base: StylelintConfig = {
-  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+  extends: ['stylelint-config-standard'],
   plugins: ['stylelint-no-unsupported-browser-features'],
   rules: {
     'declaration-block-no-redundant-longhand-properties': null,

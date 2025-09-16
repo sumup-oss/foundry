@@ -4,7 +4,6 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recess-order",
   ],
   "plugins": [
     "stylelint-no-unsupported-browser-features",
@@ -77,7 +76,6 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recess-order",
   ],
   "plugins": [
     "stylelint-no-unsupported-browser-features",
