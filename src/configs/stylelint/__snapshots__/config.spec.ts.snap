@@ -45,7 +45,7 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         "severity": "warning",
       },
     ],
-    "property-no-unknown": "null",
+    "property-no-unknown": null,
     "selector-anb-no-unmatchable": null,
     "selector-class-pattern": null,
     "selector-not-notation": [
@@ -116,7 +116,7 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         "severity": "warning",
       },
     ],
-    "property-no-unknown": "null",
+    "property-no-unknown": null,
     "selector-anb-no-unmatchable": null,
     "selector-class-pattern": null,
     "selector-not-notation": [

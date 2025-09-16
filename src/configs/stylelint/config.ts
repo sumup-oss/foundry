@@ -72,7 +72,7 @@ const base: StylelintConfig = {
     'no-duplicate-at-import-rules': null,
     'no-invalid-position-at-import-rule': null,
     'no-irregular-whitespace': null,
-    'property-no-unknown': 'null',
+    'property-no-unknown': null,
     'selector-anb-no-unmatchable': null,
     'selector-pseudo-element-no-unknown': null,
     'selector-type-no-unknown': null,
