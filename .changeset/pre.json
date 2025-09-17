@@ -4,5 +4,16 @@
   "initialVersions": {
     "@sumup-oss/foundry": "8.4.1"
   },
-  "changesets": []
+  "changesets": [
+    "clean-dogs-end",
+    "little-dogs-cheer",
+    "orange-mangos-fix",
+    "polite-paths-vanish",
+    "polite-planets-bow",
+    "rich-pens-drum",
+    "thick-heads-lay",
+    "tired-mugs-slide",
+    "twelve-kings-find",
+    "twelve-views-speak"
+  ]
 }
