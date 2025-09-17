@@ -35,7 +35,7 @@ export const customizeConfig = deepmergeCustom({
 });
 
 const base: StylelintConfig = {
-  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+  extends: ['stylelint-config-standard'],
   plugins: ['stylelint-no-unsupported-browser-features'],
   rules: {
     'declaration-block-no-redundant-longhand-properties': null,
@@ -52,6 +52,31 @@ const base: StylelintConfig = {
       true,
       { severity: 'warning', ignorePartialSupport: true },
     ],
+
+    // Covered by Biome
+    'at-rule-no-unknown': null,
+    'block-no-empty': null,
+    'custom-property-no-missing-var-function': null,
+    'declaration-block-no-duplicate-custom-properties': null,
+    'declaration-block-no-duplicate-properties': null,
+    'declaration-block-no-shorthand-property-overrides': null,
+    'declaration-no-important': null,
+    'font-family-no-duplicate-names': null,
+    'font-family-no-missing-generic-family-keyword': null,
+    'function-linear-gradient-no-nonstandard-direction': null,
+    'function-no-unknown': null,
+    'keyframe-block-no-duplicate-selectors': null,
+    'keyframe-declaration-no-important': null,
+    'media-feature-name-no-unknown': null,
+    'named-grid-areas-no-invalid': null,
+    'no-duplicate-at-import-rules': null,
+    'no-invalid-position-at-import-rule': null,
+    'no-irregular-whitespace': null,
+    'property-no-unknown': null,
+    'selector-anb-no-unmatchable': null,
+    'selector-pseudo-element-no-unknown': null,
+    'selector-type-no-unknown': null,
+    'unit-no-unknown': null,
   },
   reportDescriptionlessDisables: true,
   reportInvalidScopeDisables: true,

@@ -35,7 +35,8 @@
               "./**"
             ]
           }
-        }
+        },
+        "useSortedProperties": "on"
       }
     }
   },
@@ -197,6 +198,7 @@
         },
         "noShoutyConstants": "on",
         "noUselessElse": "error",
+        "noValueAtRule": "error",
         "noYodaExpression": "error",
         "useArrayLiterals": "error",
         "useBlockStatements": "error",

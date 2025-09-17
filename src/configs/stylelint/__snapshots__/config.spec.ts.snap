@@ -4,7 +4,6 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recess-order",
   ],
   "plugins": [
     "stylelint-no-unsupported-browser-features",
@@ -14,13 +13,31 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
   "reportInvalidScopeDisables": true,
   "reportNeedlessDisables": true,
   "rules": {
+    "at-rule-no-unknown": null,
+    "block-no-empty": null,
     "circuit-ui/no-deprecated-custom-properties": true,
     "circuit-ui/no-invalid-custom-properties": true,
+    "custom-property-no-missing-var-function": null,
+    "declaration-block-no-duplicate-custom-properties": null,
+    "declaration-block-no-duplicate-properties": null,
     "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "declaration-no-important": null,
+    "font-family-no-duplicate-names": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "function-linear-gradient-no-nonstandard-direction": null,
+    "function-no-unknown": null,
+    "keyframe-block-no-duplicate-selectors": null,
+    "keyframe-declaration-no-important": null,
+    "media-feature-name-no-unknown": null,
     "media-feature-range-notation": [
       "prefix",
     ],
+    "named-grid-areas-no-invalid": null,
     "no-descending-specificity": null,
+    "no-duplicate-at-import-rules": null,
+    "no-invalid-position-at-import-rule": null,
+    "no-irregular-whitespace": null,
     "plugin/no-unsupported-browser-features": [
       true,
       {
@@ -28,6 +45,8 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         "severity": "warning",
       },
     ],
+    "property-no-unknown": null,
+    "selector-anb-no-unmatchable": null,
     "selector-class-pattern": null,
     "selector-not-notation": [
       "simple",
@@ -40,6 +59,9 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         ],
       },
     ],
+    "selector-pseudo-element-no-unknown": null,
+    "selector-type-no-unknown": null,
+    "unit-no-unknown": null,
     "value-keyword-case": [
       "lower",
       {
@@ -54,7 +76,6 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recess-order",
   ],
   "plugins": [
     "stylelint-no-unsupported-browser-features",
@@ -64,12 +85,30 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
   "reportInvalidScopeDisables": true,
   "reportNeedlessDisables": true,
   "rules": {
+    "at-rule-no-unknown": null,
+    "block-no-empty": null,
     "circuit-ui/no-invalid-custom-properties": true,
+    "custom-property-no-missing-var-function": null,
+    "declaration-block-no-duplicate-custom-properties": null,
+    "declaration-block-no-duplicate-properties": null,
     "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "declaration-no-important": null,
+    "font-family-no-duplicate-names": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "function-linear-gradient-no-nonstandard-direction": null,
+    "function-no-unknown": null,
+    "keyframe-block-no-duplicate-selectors": null,
+    "keyframe-declaration-no-important": null,
+    "media-feature-name-no-unknown": null,
     "media-feature-range-notation": [
       "prefix",
     ],
+    "named-grid-areas-no-invalid": null,
     "no-descending-specificity": null,
+    "no-duplicate-at-import-rules": null,
+    "no-invalid-position-at-import-rule": null,
+    "no-irregular-whitespace": null,
     "plugin/no-unsupported-browser-features": [
       true,
       {
@@ -77,6 +116,8 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         "severity": "warning",
       },
     ],
+    "property-no-unknown": null,
+    "selector-anb-no-unmatchable": null,
     "selector-class-pattern": null,
     "selector-not-notation": [
       "simple",
@@ -89,6 +130,9 @@ exports[`stylelint > with options > should return a config for { plugins: ['Circ
         ],
       },
     ],
+    "selector-pseudo-element-no-unknown": null,
+    "selector-type-no-unknown": null,
+    "unit-no-unknown": null,
     "value-keyword-case": [
       "lower",
       {
