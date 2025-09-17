@@ -67,22 +67,25 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
   const scripts = [
     {
       name: 'lint',
-      command: 'biome check && foundry run eslint .',
+      command:
+        'biome check --diagnostic-level=error && eslint . --quiet --concurrency=auto',
       description: 'check files for problematic patterns and report them',
     },
     {
       name: 'lint:fix',
-      command: 'biome check --write && foundry run eslint . --fix',
+      command:
+        'biome check --write --diagnostic-level=error && eslint . --fix --quiet --concurrency=auto',
       description: 'same as `lint` and also try to fix the issues',
     },
     {
       name: 'lint:ci',
-      command: 'biome ci && foundry run eslint .',
+      command:
+        'biome ci --diagnostic-level=error && eslint . --quiet --concurrency=auto',
       description: 'lint files in a continuous integration workflow',
     },
     {
       name: 'lint:css',
-      command: "foundry run stylelint '**/*.css'",
+      command: "stylelint '**/*.css'",
       description: 'check CSS files for problematic patterns and report them',
     },
   ];

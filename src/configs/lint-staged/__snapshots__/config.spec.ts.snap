@@ -9,11 +9,11 @@ exports[`lint-staged > should override the default config 1`] = `
     "next lint",
   ],
   "*.(js|jsx|ts|tsx)": [
-    "foundry run eslint --fix",
+    "eslint --fix --no-warn-ignored",
   ],
   "*.(ts|tsx)": [Function],
   "*.css": [
-    "foundry run stylelint --fix --allow-empty-input",
+    "stylelint --fix --allow-empty-input",
   ],
   "*.jsx?": [
     "custom command",

@@ -105,16 +105,6 @@ The preset includes the following tools:
 - **[lint-staged](https://www.npmjs.com/package/lint-staged)** is a tool for running linters on files staged for your next commit in git. Together with Husky (see below) it prevents problematic code from being committed.
 - **[Husky](https://github.com/typicode/husky)** makes setting up git hooks very easy. Whenever someone installs your project, Husky will automatically set up git hooks as part of its `postinstall` script.
 
-## Running a tool
-
-Foundry manages all supported tools for you and exposes them via the `run` command. As an example, to run ESLint through Foundry, execute:
-
-```sh
-npx foundry run eslint src
-```
-
-Here, `src` is the folder you want ESLint to check. Note that you can use any of the command-line flags and arguments supported by ESLint and other tools. Foundry forwards them so they get handled by the tool. For example, to have ESLint fix your linting errors, run `npx foundry run eslint --fix src`.
-
 ## Why?
 
 > ##### TL;DR

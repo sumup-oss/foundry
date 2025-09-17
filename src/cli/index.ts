@@ -21,7 +21,6 @@ import { hideBin } from 'yargs/helpers';
 import { debug } from './debug.js';
 import { DEFAULT_OPTIONS } from './defaults.js';
 import { type InitParams, init } from './init.js';
-import { type RunParams, run } from './run.js';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs(hideBin(process.argv))
@@ -49,11 +48,6 @@ yargs(hideBin(process.argv))
     execute('init'),
   )
   .command(
-    'run <tool> [...tool options]',
-    'Run any of the bundled tools.',
-    execute('run'),
-  )
-  .command(
     'debug',
     'See which frameworks and plugins Foundry has detected in your project',
     execute('debug'),
@@ -63,15 +57,15 @@ yargs(hideBin(process.argv))
   .help()
   .version().argv;
 
-type CommandType = 'init' | 'run' | 'debug';
+type CommandType = 'init' | 'debug';
 
 function execute(command: CommandType) {
-  const commands = { run, init, debug };
+  const commands = { init, debug };
   const commandFn = commands[command];
 
   return async (args: unknown): Promise<void> => {
     try {
-      await commandFn(args as RunParams & InitParams);
+      await commandFn(args as InitParams);
     } catch (error) {
       // biome-ignore lint/suspicious/noConsole: Can't use custom logger for error objects
       console.error(error);
