@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-type LinterCommand = string | string[];
-type LinterFn = (filenames: string[]) => LinterCommand;
+export type LinterCommand = string | string[];
+export type LinterFn = (filenames: string[]) => LinterCommand;
 
-interface LintStagedConfig {
+export interface LintStagedConfig {
   [key: string]: LinterCommand | LinterFn;
 }
 

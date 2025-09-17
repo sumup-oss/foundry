@@ -1,14 +1,16 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
+  "files": {
+    "includes": ["**", "!**/public", "!**/vendor"]
+  },
   "formatter": {
     "enabled": true,
-    "includes": ["**", "!**/dist", "!**/.changeset"],
     "formatWithErrors": false,
     "useEditorconfig": true,
     "indentStyle": "space"
@@ -39,7 +41,6 @@
   },
   "linter": {
     "enabled": true,
-    "includes": ["**", "!**/dist"],
     "domains": {
       "project": "recommended"
     },
@@ -68,7 +69,6 @@
         "noUselessStringConcat": "error",
         "noUselessTernary": "error",
         "noUselessUndefinedInitialization": "error",
-        "noVoid": "error",
         "useArrowFunction": "error",
         "useLiteralKeys": "error",
         "useNumericLiterals": "error",
@@ -98,7 +98,9 @@
               "**/.eslintrc.*",
               "**/eslint.config.*",
               "**/.huskyrc.*",
+              "**/husky.config.*",
               "**/.stylelintrc.*",
+              "**/stylelint.config.*",
               "**/lint-staged.config.*",
               "**/vue.config.js",
               "**/webpack.config.*)",
@@ -109,23 +111,27 @@
               "**/protractor.conf.*",
               "**/karma.conf.*"
             ],
+            "peerDependencies": true,
             "optionalDependencies": false
           }
         },
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
-        "noUnusedVariables": "error"
+        "noUnusedVariables": {
+          "level": "error",
+          "options": { "ignoreRestSiblings": true }
+        }
       },
       "performance": {
         "noReExportAll": "error"
       },
       "style": {
-        "noCommonJs": "error",
+        "noCommonJs": "on",
         "noNamespace": "error",
-        "noNestedTernary": "error",
+        "noNestedTernary": "warn",
         "noParameterAssign": "error",
         "noRestrictedGlobals": {
-          "level": "error",
+          "level": "warn",
           "options": {
             "deniedGlobals": {
               "addEventListener": "Use window.addEventListener instead.",
@@ -197,7 +203,7 @@
         "useCollapsedElseIf": "error",
         "useCollapsedIf": "on",
         "useConsistentArrayType": "error",
-        "useConsistentBuiltinInstantiation": "error",
+        "useConsistentBuiltinInstantiation": "on",
         "useConsistentObjectDefinitions": "error",
         "useConst": "error",
         "useEnumInitializers": "warn",
@@ -212,10 +218,9 @@
       },
       "suspicious": {
         "noAlert": "error",
-        "noBitwiseOperators": "error",
+        "noBitwiseOperators": "warn",
         "noConsole": "error",
         "noCatchAssign": "error",
-        "noEmptyBlockStatements": "error",
         "noIrregularWhitespace": "error",
         "noPrototypeBuiltins": "error",
         "noSkippedTests": "error",
@@ -235,7 +240,7 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
       "assist": {
         "actions": {
           "source": {

@@ -21,7 +21,6 @@ export const stories = {
   name: 'foundry/stories',
   files: files.stories,
   rules: {
-    'no-alert': 'off',
     'import-x/no-extraneous-dependencies': 'off',
     'import-x/no-relative-packages': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',

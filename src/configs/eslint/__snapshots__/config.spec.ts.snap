@@ -3571,6 +3571,7 @@ exports[`eslint > configs > should match the snapshot for the ignores preset 1`]
     "**/dist/**",
     "**/.astro/**",
     "**/.next/**",
+    "**/next-env.d.ts",
     "**/build/**",
     "**/storybook-static/**",
     "**/public/**",
@@ -6013,7 +6014,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
         "newIsCapExceptions": [],
       },
     ],
-    "no-alert": "error",
+    "no-alert": "off",
     "no-array-constructor": "off",
     "no-async-promise-executor": "off",
     "no-await-in-loop": "error",
@@ -14219,7 +14220,6 @@ exports[`eslint > configs > should match the snapshot for the stories preset 1`]
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import-x/no-extraneous-dependencies": "off",
     "import-x/no-relative-packages": "off",
-    "no-alert": "off",
   },
 }
 `;
@@ -14333,6 +14333,7 @@ exports[`eslint > configs > should match the snapshot for the tests preset 1`] =
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/unbound-method": "off",
     "compat/compat": "off",
+    "import-x/no-extraneous-dependencies": "off",
     "jest/max-nested-describe": "off",
     "jest/no-disabled-tests": "off",
     "jest/no-done-callback": "off",
@@ -24730,6 +24731,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "PascalCase",
           "UPPER_CASE",
         ],
+        "leadingUnderscore": "allow",
         "selector": "variable",
       },
       {

@@ -60,7 +60,6 @@ export const typescript = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    // '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-array-constructor': 'off',
     '@typescript-eslint/no-dupe-class-members': 'off',
     '@typescript-eslint/no-empty-function': 'off',
@@ -121,6 +120,7 @@ export const typescript = {
       {
         selector: 'variable',
         format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
       },
       // Allow camelCase functions (23.2), and PascalCase functions (23.8)
       {
