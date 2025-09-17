@@ -1,5 +1,74 @@
 # @sumup-oss/foundry
 
+## 9.0.0-next.0
+
+### Major Changes
+
+- [#1066](https://github.com/sumup-oss/foundry/pull/1066) [`abc85b1`](https://github.com/sumup-oss/foundry/commit/abc85b1439a0b299a22bde43a25ca93bb31612f7) Thanks [@connor-baer](https://github.com/connor-baer)! - Migrated to [ESLint's new flat config](https://eslint.org/blog/2022/08/new-config-system-part-2/). Foundry now exports language, environment, and framework-specific configs that can be combined and customized using ESLint's default config format:
+
+  **Before**
+
+  ```js
+  // .eslintrc.js
+  module.exports = require("@sumup-oss/foundry/eslint")({
+    /* custom overrides */
+  });
+  ```
+
+  **After**
+
+  ```js
+  // eslint.config.mjs
+  import { defineConfig, configs, files } from "@sumup-oss/foundry/eslint";
+  import react from 'eslint-plugin-react';
+
+  export default defineConfig([
+  	configs.ignores,
+  	configs.javascript.
+  	// Extend a config to override the files and/or rules
+  	{
+  		files: [...files.typescript, /* custom file glob */],
+  		extends: [configs.typescript],
+  		rules: { /* custom rules */ }
+  	},
+  	// Framework-specific ESLint plugins aren't bundled with Foundry.
+  	// Import and extend them manually, placing the Foundry config last.
+  	{
+  		extends: [
+  			react.configs.recommended,
+  			react.configs['jsx-runtime'],
+  			configs.react
+  		],
+  		plugins: { react },
+  	},
+  ]);
+  ```
+
+- [#1116](https://github.com/sumup-oss/foundry/pull/1116) [`e313ea4`](https://github.com/sumup-oss/foundry/commit/e313ea43dfaaf840d4356a541c0f6da33e6d8764) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to Biome v2.2. [Biome v2](https://biomejs.dev/blog/biome-v2/) added type-aware linting rules, monorepo support, and plugins powered by GritQL.
+
+- [#1134](https://github.com/sumup-oss/foundry/pull/1134) [`0a11c3e`](https://github.com/sumup-oss/foundry/commit/0a11c3ec91b5ca3f06f7b0da18492fc792461463) Thanks [@connor-baer](https://github.com/connor-baer)! - Updated the supported ESLint and Stylelint plugin version ranges to drop support for plugins that don't support ESLint's new flat config and declare support for the latest plugin versions.
+
+- [#1043](https://github.com/sumup-oss/foundry/pull/1043) [`904b0e8`](https://github.com/sumup-oss/foundry/commit/904b0e8916d269513295d27a56b330e3d49fd873) Thanks [@connor-baer](https://github.com/connor-baer)! - Replaced Prettier with Biome as the code formatter. Remove the `prettier.config.js` and `.prettierignore` files from your project.
+
+- [#1133](https://github.com/sumup-oss/foundry/pull/1133) [`ed35ec2`](https://github.com/sumup-oss/foundry/commit/ed35ec2e8a07b02b5410bd500547f239173f0cde) Thanks [@connor-baer](https://github.com/connor-baer)! - Switched from `stylelint-config-recess-order` to Biome's CSS property sorting.
+
+- [#1116](https://github.com/sumup-oss/foundry/pull/1116) [`e313ea4`](https://github.com/sumup-oss/foundry/commit/e313ea43dfaaf840d4356a541c0f6da33e6d8764) Thanks [@connor-baer](https://github.com/connor-baer)! - Replaced many ESLint rules with their Biome equivalents. Biome implements some rules with slight differences or different configuration options which may lead to different lint results.
+
+- [#1116](https://github.com/sumup-oss/foundry/pull/1116) [`e313ea4`](https://github.com/sumup-oss/foundry/commit/e313ea43dfaaf840d4356a541c0f6da33e6d8764) Thanks [@connor-baer](https://github.com/connor-baer)! - Enabled Biome's import sorting assist. Imports are sorted by their proximity to the current file, with absolute imports preceding relative ones.
+
+- [#1132](https://github.com/sumup-oss/foundry/pull/1132) [`dc35606`](https://github.com/sumup-oss/foundry/commit/dc35606f0ea3dcd2fb258d21abcd45951532a49e) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed the `foundry run` command. Instead, call tools like Biome, ESLint, and Stylelint directly. For example:
+
+  ```diff
+  -foundry run eslint . --fix
+  +eslint . --fix
+  ```
+
+- [#1115](https://github.com/sumup-oss/foundry/pull/1115) [`711986c`](https://github.com/sumup-oss/foundry/commit/711986c66eca7b3d08e563d74f64a0524a6be57d) Thanks [@connor-baer](https://github.com/connor-baer)! - Dropped support for Node 18. The supported versions are `^20.11 || >=22`.
+
+### Minor Changes
+
+- [#1043](https://github.com/sumup-oss/foundry/pull/1043) [`904b0e8`](https://github.com/sumup-oss/foundry/commit/904b0e8916d269513295d27a56b330e3d49fd873) Thanks [@connor-baer](https://github.com/connor-baer)! - Added support for generating an `.editorconfig` file when running `foundry init` to ensure consistent code formatting across many supported code editors and file types.
+
 ## 8.4.1
 
 ### Patch Changes
