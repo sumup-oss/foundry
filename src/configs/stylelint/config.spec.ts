@@ -123,11 +123,5 @@ describe('stylelint', () => {
       const actual = defineConfig();
       expect(actual).toMatchSnapshot();
     });
-
-    it("should return a config for { plugins: ['Circuit UI (OSS scope)'] }", () => {
-      getPlugins.mockReturnValue([Plugin.CircuitUIOSS]);
-      const actual = defineConfig();
-      expect(actual).toMatchSnapshot();
-    });
   });
 });

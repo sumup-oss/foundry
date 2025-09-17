@@ -40,16 +40,6 @@ export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 const PLUGINS = [
   {
     name: Plugin.CircuitUI,
-    frameworkPackages: ['@sumup/circuit-ui', '@sumup/design-tokens'],
-    eslintPlugins: {
-      '@sumup/eslint-plugin-circuit-ui': '>=3.0.0 <5.0.0',
-    },
-    stylelintPlugins: {
-      '@sumup/stylelint-plugin-circuit-ui': '>=1.0.0 <3.0.0',
-    },
-  },
-  {
-    name: Plugin.CircuitUIOSS,
     frameworkPackages: ['@sumup-oss/circuit-ui', '@sumup-oss/design-tokens'],
     eslintPlugins: {
       '@sumup-oss/eslint-plugin-circuit-ui': '>=5.0.0 <6.0.0',
