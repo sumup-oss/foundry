@@ -40,43 +40,26 @@ export const BROWSER_LIBRARIES = ['next', 'react', 'preact', 'svelte', 'vue'];
 const PLUGINS = [
   {
     name: Plugin.CircuitUI,
-    frameworkPackages: ['@sumup/circuit-ui', '@sumup/design-tokens'],
-    eslintPlugins: {
-      '@sumup/eslint-plugin-circuit-ui': '>=3.0.0 <5.0.0',
-    },
-    stylelintPlugins: {
-      '@sumup/stylelint-plugin-circuit-ui': '>=1.0.0 <3.0.0',
-    },
-  },
-  {
-    name: Plugin.CircuitUIOSS,
     frameworkPackages: ['@sumup-oss/circuit-ui', '@sumup-oss/design-tokens'],
     eslintPlugins: {
-      '@sumup-oss/eslint-plugin-circuit-ui': '>=5.0.0 <6.0.0',
+      '@sumup-oss/eslint-plugin-circuit-ui': '>=7.0.0 <8.0.0',
     },
     stylelintPlugins: {
-      '@sumup-oss/stylelint-plugin-circuit-ui': '>=3.0.0 <4.0.0',
+      '@sumup-oss/stylelint-plugin-circuit-ui': '>=3.0.0 <5.0.0',
     },
   },
   {
     name: Plugin.Nextjs,
     frameworkPackages: ['next'],
     eslintPlugins: {
-      'eslint-config-next': '>=10.0.0',
-    },
-  },
-  {
-    name: Plugin.Emotion,
-    frameworkPackages: ['@emotion/react', '@emotion/styled'],
-    eslintPlugins: {
-      '@emotion/eslint-plugin': '^11.0.0',
+      'eslint-config-next': '>=14.0.0',
     },
   },
   {
     name: Plugin.Jest,
     frameworkPackages: ['jest'],
     eslintPlugins: {
-      'eslint-plugin-jest': '>=27.0.0 <29.0.0',
+      'eslint-plugin-jest': '>=29.0.0 <30.0.0',
     },
   },
   {
@@ -87,28 +70,28 @@ const PLUGINS = [
       '@testing-library/react',
     ],
     eslintPlugins: {
-      'eslint-plugin-testing-library': '^6.0.0',
+      'eslint-plugin-testing-library': '>=7.0.0 <8.0.0',
     },
   },
   {
     name: Plugin.Cypress,
     frameworkPackages: ['cypress'],
     eslintPlugins: {
-      'eslint-plugin-cypress': '^2.0.0',
+      'eslint-plugin-cypress': '>=4.0.0 <6.0.0',
     },
   },
   {
     name: Plugin.Playwright,
     frameworkPackages: ['@playwright/test'],
     eslintPlugins: {
-      'eslint-plugin-playwright': '>=0.17.0 <2.0.0',
+      'eslint-plugin-playwright': '>=2.0.0 <3.0.0',
     },
   },
   {
     name: Plugin.Storybook,
     frameworkPackages: ['storybook', '@storybook/react'],
     eslintPlugins: {
-      'eslint-plugin-storybook': '>=0.6.0 <1.0.0',
+      'eslint-plugin-storybook': '>=9.0.0 <10.0.0',
     },
   },
 ];

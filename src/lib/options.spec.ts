@@ -197,7 +197,6 @@ describe('options', () => {
   describe('detectPlugins', () => {
     it.each([
       ['eslint-config-next', Plugin.Nextjs],
-      ['@emotion/eslint-plugin', Plugin.Emotion],
       ['eslint-plugin-jest', Plugin.Jest],
       ['eslint-plugin-testing-library', Plugin.TestingLibrary],
       ['eslint-plugin-cypress', Plugin.Cypress],
@@ -220,13 +219,13 @@ describe('options', () => {
       const packageJson = {
         ...basePackageJson,
         dependencies: {
-          '@emotion/eslint-plugin': '^1.0.0',
+          '@sumup-oss/eslint-plugin-circuit-ui': '^6.0.0',
           'eslint-config-next': '^1.0.0',
         },
       };
       const actual = detectPlugins(packageJson);
 
-      expect(actual).toContain(Plugin.Emotion);
+      expect(actual).toContain(Plugin.CircuitUI);
       expect(actual).toContain(Plugin.Nextjs);
     });
   });
@@ -264,14 +263,14 @@ describe('options', () => {
       const packageJson = {
         ...basePackageJson,
         license: 'MIT',
-        dependencies: { 'eslint-config-next': '^9.0.0' },
+        dependencies: { 'eslint-config-next': '^13.0.0' },
       };
 
       warnAboutUnsupportedPlugins(packageJson);
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"eslint-config-next" is installed at version "^9.0.0". Foundry has only been tested with versions ">=10.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
+        '"eslint-config-next" is installed at version "^13.0.0". Foundry has only been tested with versions ">=14.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -279,14 +278,14 @@ describe('options', () => {
       const packageJson = {
         ...basePackageJson,
         license: 'MIT',
-        dependencies: { 'eslint-plugin-playwright': '^2.0.0' },
+        dependencies: { 'eslint-plugin-playwright': '^3.0.0' },
       };
 
       warnAboutUnsupportedPlugins(packageJson);
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"eslint-plugin-playwright" is installed at version "^2.0.0". Foundry has only been tested with versions ">=0.17.0 <2.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
+        '"eslint-plugin-playwright" is installed at version "^3.0.0". Foundry has only been tested with versions ">=2.0.0 <3.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -295,8 +294,8 @@ describe('options', () => {
         ...basePackageJson,
         license: 'MIT',
         dependencies: {
-          '@sumup/eslint-plugin-circuit-ui':
-            'https://registry.npmjs.org/@sumup/eslint-plugin-circuit-ui/-/eslint-plugin-circuit-ui-1.0.0.tgz',
+          '@sumup-oss/eslint-plugin-circuit-ui':
+            'https://registry.npmjs.org/@sumup-oss/eslint-plugin-circuit-ui/-/eslint-plugin-circuit-ui-5.0.0.tgz',
         },
       };
 
@@ -304,7 +303,7 @@ describe('options', () => {
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"@sumup/eslint-plugin-circuit-ui" is installed at version "1.0.0". Foundry has only been tested with versions ">=3.0.0 <5.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
+        '"@sumup-oss/eslint-plugin-circuit-ui" is installed at version "5.0.0". Foundry has only been tested with versions ">=7.0.0 <8.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -331,7 +330,7 @@ describe('options', () => {
         license: 'MIT',
         dependencies: {
           'next': '^1.0.0',
-          '@emotion/react': '^1.0.0',
+          '@playwright/test': '^10.0.0',
         },
       };
 
@@ -342,7 +341,7 @@ describe('options', () => {
         '"next" is installed but not the corresponding ESLint plugin. Please install "eslint-config-next".',
       );
       expect(logger.warn).toHaveBeenCalledWith(
-        '"@emotion/react" is installed but not the corresponding ESLint plugin. Please install "@emotion/eslint-plugin".',
+        '"@playwright/test" is installed but not the corresponding ESLint plugin. Please install "eslint-plugin-playwright".',
       );
     });
   });
