@@ -85,7 +85,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
     },
     {
       name: 'lint:css',
-      command: "stylelint '**/*.css'",
+      command: "stylelint '**/*.css' --quiet",
       description: 'check CSS files for problematic patterns and report them',
     },
   ];
