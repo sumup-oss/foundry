@@ -39,8 +39,13 @@ const base: StylelintConfig = {
   plugins: ['stylelint-no-unsupported-browser-features'],
   rules: {
     'declaration-block-no-redundant-longhand-properties': null,
+    'declaration-property-value-keyword-no-deprecated': [
+      true,
+      { 'ignoreKeywords': ['break-word'] },
+    ],
     'media-feature-range-notation': ['prefix'],
     'no-descending-specificity': null,
+    'property-no-deprecated': [true, { 'ignoreProperties': ['clip'] }],
     'selector-class-pattern': null,
     'selector-not-notation': ['simple'],
     'selector-pseudo-class-no-unknown': [
@@ -50,7 +55,11 @@ const base: StylelintConfig = {
     'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
     'plugin/no-unsupported-browser-features': [
       true,
-      { severity: 'warning', ignorePartialSupport: true },
+      {
+        severity: 'warning',
+        ignorePartialSupport: true,
+        ignore: ['flexbox-gap'],
+      },
     ],
 
     // Covered by Biome
