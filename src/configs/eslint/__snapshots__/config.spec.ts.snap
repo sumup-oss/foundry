@@ -24756,7 +24756,13 @@ If your function does not access \`this\`, you can annotate it with \`this: void
     "@typescript-eslint/no-duplicate-type-constituents": "error",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-empty-object-type": "error",
+    "@typescript-eslint/no-empty-object-type": [
+      "error",
+      {
+        "allowInterfaces": "with-single-extends",
+        "allowObjectTypes": "never",
+      },
+    ],
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-extra-non-null-assertion": "off",
     "@typescript-eslint/no-extraneous-class": "off",

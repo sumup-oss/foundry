@@ -47,6 +47,11 @@ export const typescript = {
     ...eslintRecommended.rules,
     ...typeChecked.rules,
 
+    '@typescript-eslint/no-empty-object-type': [
+      'error',
+      { allowInterfaces: 'with-single-extends', allowObjectTypes: 'never' },
+    ],
+
     //  Covered by Biome
     '@typescript-eslint/adjacent-overload-signatures': 'off',
     '@typescript-eslint/array-type': 'off',
