@@ -203,7 +203,7 @@
         "useArrayLiterals": "error",
         "useBlockStatements": "error",
         "useCollapsedElseIf": "error",
-        "useCollapsedIf": "on",
+        "useCollapsedIf": "off",
         "useConsistentArrayType": "error",
         "useConsistentBuiltinInstantiation": "on",
         "useConsistentObjectDefinitions": "error",
@@ -240,7 +240,20 @@
       "quoteStyle": "single"
     }
   },
+  "css": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
   "overrides": [
+    {
+      "includes": ["**/*.module.css"],
+      "css": {
+        "parser": {
+          "cssModules": true
+        }
+      }
+    },
     {
       "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
       "assist": {
