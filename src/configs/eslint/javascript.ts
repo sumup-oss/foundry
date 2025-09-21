@@ -50,6 +50,9 @@ export const javascript = {
       'node_modules',
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
+    'import-x/parsers': {
+      '@typescript-eslint/parser': extensions.typescript,
+    },
   },
   plugins: {
     'import-x': importX as unknown as ESLint.Plugin,

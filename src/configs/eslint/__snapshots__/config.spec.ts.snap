@@ -6256,6 +6256,14 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
       "node_modules",
       "\\.(coffee|scss|css|less|hbs|svg|json)$",
     ],
+    "import-x/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx",
+        ".cts",
+        ".mts",
+      ],
+    },
     "import-x/resolver-next": [
       {
         "interfaceVersion": 3,
