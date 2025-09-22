@@ -3587,7 +3587,6 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
 {
   "files": [
     "**/*.{js,jsx,cjs,mjs}",
-    "**/*.{ts,tsx,cts,mts}",
   ],
   "languageOptions": {
     "parserOptions": {
@@ -15560,6 +15559,7 @@ exports[`eslint > configs > should match the snapshot for the tests preset 1`] =
 exports[`eslint > configs > should match the snapshot for the typescript preset 1`] = `
 {
   "files": [
+    "**/*.{js,jsx,cjs,mjs}",
     "**/*.{ts,tsx,cts,mts}",
   ],
   "languageOptions": {
@@ -15569,6 +15569,11 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
         "version": "8.39.1",
       },
       "parseForESLint": [Function],
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "impliedStrict": true,
+      },
     },
     "sourceType": "module",
   },
@@ -16267,7 +16272,9 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "sourceType": "module",
             },
             "name": "typescript-eslint/base",
-            "plugins": [Circular],
+            "plugins": {
+              "@typescript-eslint": [Circular],
+            },
           },
           {
             "files": [
@@ -25920,6 +25927,2320 @@ If your function does not access \`this\`, you can annotate it with \`this: void
         },
       },
     },
+    "import-x": {
+      "cjsRequire": [Function],
+      "configs": {
+        "electron": {
+          "settings": {
+            "import-x/core-modules": [
+              "electron",
+            ],
+          },
+        },
+        "errors": {
+          "plugins": [
+            "import-x",
+          ],
+          "rules": {
+            "import-x/default": 2,
+            "import-x/export": 2,
+            "import-x/named": 2,
+            "import-x/namespace": 2,
+            "import-x/no-unresolved": 2,
+          },
+        },
+        "flat/electron": {
+          "name": "import-x/electron",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/core-modules": [
+              "electron",
+            ],
+          },
+        },
+        "flat/errors": {
+          "name": "import-x/errors",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/default": 2,
+            "import-x/export": 2,
+            "import-x/named": 2,
+            "import-x/namespace": 2,
+            "import-x/no-unresolved": 2,
+          },
+        },
+        "flat/react": {
+          "languageOptions": {
+            "parserOptions": {
+              "ecmaFeatures": {
+                "jsx": true,
+              },
+            },
+          },
+          "name": "import-x/react",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".js",
+              ".jsx",
+              ".mjs",
+              ".cjs",
+            ],
+          },
+        },
+        "flat/react-native": {
+          "name": "import-x/react-native",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/resolver": {
+              "node": {
+                "extensions": [
+                  ".js",
+                  ".web.js",
+                  ".ios.js",
+                  ".android.js",
+                ],
+              },
+            },
+          },
+        },
+        "flat/recommended": {
+          "name": "import-x/recommended",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/default": "error",
+            "import-x/export": "error",
+            "import-x/named": "error",
+            "import-x/namespace": "error",
+            "import-x/no-duplicates": "warn",
+            "import-x/no-named-as-default": "warn",
+            "import-x/no-named-as-default-member": "warn",
+            "import-x/no-unresolved": "error",
+          },
+        },
+        "flat/stage-0": {
+          "name": "import-x/stage-0",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/no-deprecated": 1,
+          },
+        },
+        "flat/typescript": {
+          "name": "import-x/typescript",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/named": "off",
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".ts",
+              ".tsx",
+              ".cts",
+              ".mts",
+              ".js",
+              ".jsx",
+              ".cjs",
+              ".mjs",
+            ],
+            "import-x/external-module-folders": [
+              "node_modules",
+              "node_modules/@types",
+            ],
+            "import-x/parsers": {
+              "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx",
+                ".cts",
+                ".mts",
+              ],
+            },
+            "import-x/resolver": {
+              "typescript": true,
+            },
+          },
+        },
+        "flat/warnings": {
+          "name": "import-x/warnings",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/no-duplicates": 1,
+            "import-x/no-named-as-default": 1,
+            "import-x/no-named-as-default-member": 1,
+            "import-x/no-rename-default": 1,
+          },
+        },
+        "react": {
+          "parserOptions": {
+            "ecmaFeatures": {
+              "jsx": true,
+            },
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".js",
+              ".jsx",
+            ],
+          },
+        },
+        "react-native": {
+          "settings": {
+            "import-x/resolver": {
+              "node": {
+                "extensions": [
+                  ".js",
+                  ".web.js",
+                  ".ios.js",
+                  ".android.js",
+                ],
+              },
+            },
+          },
+        },
+        "recommended": {
+          "parserOptions": {
+            "ecmaVersion": 2018,
+            "sourceType": "module",
+          },
+          "plugins": [
+            "import-x",
+          ],
+          "rules": {
+            "import-x/default": "error",
+            "import-x/export": "error",
+            "import-x/named": "error",
+            "import-x/namespace": "error",
+            "import-x/no-duplicates": "warn",
+            "import-x/no-named-as-default": "warn",
+            "import-x/no-named-as-default-member": "warn",
+            "import-x/no-unresolved": "error",
+          },
+        },
+        "stage-0": {
+          "plugins": [
+            "import-x",
+          ],
+          "rules": {
+            "import-x/no-deprecated": 1,
+          },
+        },
+        "typescript": {
+          "rules": {
+            "import-x/named": "off",
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".ts",
+              ".tsx",
+              ".cts",
+              ".mts",
+              ".js",
+              ".jsx",
+              ".cjs",
+              ".mjs",
+            ],
+            "import-x/external-module-folders": [
+              "node_modules",
+              "node_modules/@types",
+            ],
+            "import-x/parsers": {
+              "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx",
+                ".cts",
+                ".mts",
+              ],
+            },
+            "import-x/resolver": {
+              "typescript": true,
+            },
+          },
+        },
+        "warnings": {
+          "plugins": [
+            "import-x",
+          ],
+          "rules": {
+            "import-x/no-duplicates": 1,
+            "import-x/no-named-as-default": 1,
+            "import-x/no-named-as-default-member": 1,
+            "import-x/no-rename-default": 1,
+          },
+        },
+      },
+      "createNodeResolver": [Function],
+      "flatConfigs": {
+        "electron": {
+          "name": "import-x/electron",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/core-modules": [
+              "electron",
+            ],
+          },
+        },
+        "errors": {
+          "name": "import-x/errors",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/default": 2,
+            "import-x/export": 2,
+            "import-x/named": 2,
+            "import-x/namespace": 2,
+            "import-x/no-unresolved": 2,
+          },
+        },
+        "react": {
+          "languageOptions": {
+            "parserOptions": {
+              "ecmaFeatures": {
+                "jsx": true,
+              },
+            },
+          },
+          "name": "import-x/react",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".js",
+              ".jsx",
+              ".mjs",
+              ".cjs",
+            ],
+          },
+        },
+        "react-native": {
+          "name": "import-x/react-native",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "settings": {
+            "import-x/resolver": {
+              "node": {
+                "extensions": [
+                  ".js",
+                  ".web.js",
+                  ".ios.js",
+                  ".android.js",
+                ],
+              },
+            },
+          },
+        },
+        "recommended": {
+          "name": "import-x/recommended",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/default": "error",
+            "import-x/export": "error",
+            "import-x/named": "error",
+            "import-x/namespace": "error",
+            "import-x/no-duplicates": "warn",
+            "import-x/no-named-as-default": "warn",
+            "import-x/no-named-as-default-member": "warn",
+            "import-x/no-unresolved": "error",
+          },
+        },
+        "stage-0": {
+          "name": "import-x/stage-0",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/no-deprecated": 1,
+          },
+        },
+        "typescript": {
+          "name": "import-x/typescript",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/named": "off",
+          },
+          "settings": {
+            "import-x/extensions": [
+              ".ts",
+              ".tsx",
+              ".cts",
+              ".mts",
+              ".js",
+              ".jsx",
+              ".cjs",
+              ".mjs",
+            ],
+            "import-x/external-module-folders": [
+              "node_modules",
+              "node_modules/@types",
+            ],
+            "import-x/parsers": {
+              "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx",
+                ".cts",
+                ".mts",
+              ],
+            },
+            "import-x/resolver": {
+              "typescript": true,
+            },
+          },
+        },
+        "warnings": {
+          "name": "import-x/warnings",
+          "plugins": {
+            "import-x": [Circular],
+          },
+          "rules": {
+            "import-x/no-duplicates": 1,
+            "import-x/no-named-as-default": 1,
+            "import-x/no-named-as-default-member": 1,
+            "import-x/no-rename-default": 1,
+          },
+        },
+      },
+      "importXResolverCompat": [Function],
+      "meta": {
+        "name": "eslint-plugin-import-x",
+        "version": "4.16.1",
+      },
+      "rules": {
+        "consistent-type-specifier-style": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce or ban the use of inline type-only markers for named imports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/consistent-type-specifier-style.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "inline": "Prefer using inline {{kind}} specifiers instead of a top-level {{kind}}-only import.",
+              "topLevel": "Prefer using a top-level {{kind}}-only import instead of inline {{kind}} specifiers.",
+            },
+            "schema": [
+              {
+                "default": "prefer-top-level",
+                "enum": [
+                  "prefer-top-level",
+                  "prefer-inline",
+                ],
+                "type": "string",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "default": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Ensure a default export is present, given a default import.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/default.md",
+            },
+            "messages": {
+              "noDefaultExport": "No default export found in imported module "{{module}}".",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+        },
+        "dynamic-import-chunkname": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce a leading comment with the webpackChunkName for dynamic imports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/dynamic-import-chunkname.md",
+            },
+            "hasSuggestions": true,
+            "messages": {
+              "blockComment": "dynamic imports require a /* foo */ style comment, not a // foo comment",
+              "chunknameFormat": "dynamic imports require a leading comment in the form /* {{format}} */",
+              "leadingComment": "dynamic imports require a leading comment with the webpack chunkname",
+              "paddedSpaces": "dynamic imports require a block comment padded with spaces - /* foo */",
+              "webpackComment": "dynamic imports require a "webpack" comment with valid syntax",
+              "webpackEagerModeNoChunkName": "dynamic imports using eager mode do not need a webpackChunkName",
+              "webpackRemoveChunkName": "Remove webpackChunkName",
+              "webpackRemoveEagerMode": "Remove webpackMode",
+            },
+            "schema": [
+              {
+                "properties": {
+                  "allowEmpty": {
+                    "type": "boolean",
+                  },
+                  "importFunctions": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                  "webpackChunknameFormat": {
+                    "type": "string",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "export": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid any invalid exports, i.e. re-export of the same name.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/export.md",
+            },
+            "messages": {
+              "multiDefault": "Multiple default exports.",
+              "multiNamed": "Multiple exports of name '{{name}}'.",
+              "noNamed": "No named exports found in module '{{module}}'.",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+        },
+        "exports-last": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Ensure all exports appear after other statements.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/exports-last.md",
+            },
+            "messages": {
+              "end": "Export statements should appear at the end of the file",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "extensions": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Ensure consistent use of file extension within the import path.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/extensions.md",
+            },
+            "fixable": "code",
+            "hasSuggestions": true,
+            "messages": {
+              "addMissing": "Add "{{extension}}" file extension from "{{importPath}}" into "{{fixedImportPath}}"",
+              "missing": "Missing file extension for "{{importPath}}"",
+              "missingKnown": "Missing file extension "{{extension}}" for "{{importPath}}"",
+              "removeUnexpected": "Remove unexpected "{{extension}}" file extension from "{{importPath}}" into "{{fixedImportPath}}"",
+              "unexpected": "Unexpected use of file extension "{{extension}}" for "{{importPath}}"",
+            },
+            "schema": {
+              "anyOf": [
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "enum": [
+                        "always",
+                        "ignorePackages",
+                        "never",
+                      ],
+                      "type": "string",
+                    },
+                  ],
+                  "type": "array",
+                },
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "enum": [
+                        "always",
+                        "ignorePackages",
+                        "never",
+                      ],
+                      "type": "string",
+                    },
+                    {
+                      "properties": {
+                        "checkTypeImports": {
+                          "type": "boolean",
+                        },
+                        "fix": {
+                          "type": "boolean",
+                        },
+                        "ignorePackages": {
+                          "type": "boolean",
+                        },
+                        "pathGroupOverrides": {
+                          "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "action": {
+                                "enum": [
+                                  "enforce",
+                                  "ignore",
+                                ],
+                                "type": "string",
+                              },
+                              "pattern": {
+                                "type": "string",
+                              },
+                              "patternOptions": {
+                                "type": "object",
+                              },
+                            },
+                            "required": [
+                              "pattern",
+                              "action",
+                            ],
+                            "type": "object",
+                          },
+                          "type": "array",
+                        },
+                        "pattern": {
+                          "patternProperties": {
+                            ".*": {
+                              "enum": [
+                                "always",
+                                "ignorePackages",
+                                "never",
+                              ],
+                              "type": "string",
+                            },
+                          },
+                          "type": "object",
+                        },
+                      },
+                      "type": "object",
+                    },
+                  ],
+                  "type": "array",
+                },
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "properties": {
+                        "checkTypeImports": {
+                          "type": "boolean",
+                        },
+                        "fix": {
+                          "type": "boolean",
+                        },
+                        "ignorePackages": {
+                          "type": "boolean",
+                        },
+                        "pathGroupOverrides": {
+                          "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "action": {
+                                "enum": [
+                                  "enforce",
+                                  "ignore",
+                                ],
+                                "type": "string",
+                              },
+                              "pattern": {
+                                "type": "string",
+                              },
+                              "patternOptions": {
+                                "type": "object",
+                              },
+                            },
+                            "required": [
+                              "pattern",
+                              "action",
+                            ],
+                            "type": "object",
+                          },
+                          "type": "array",
+                        },
+                        "pattern": {
+                          "patternProperties": {
+                            ".*": {
+                              "enum": [
+                                "always",
+                                "ignorePackages",
+                                "never",
+                              ],
+                              "type": "string",
+                            },
+                          },
+                          "type": "object",
+                        },
+                      },
+                      "type": "object",
+                    },
+                  ],
+                  "type": "array",
+                },
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "enum": [
+                        "always",
+                        "ignorePackages",
+                        "never",
+                      ],
+                      "type": "string",
+                    },
+                    {
+                      "patternProperties": {
+                        ".*": {
+                          "enum": [
+                            "always",
+                            "ignorePackages",
+                            "never",
+                          ],
+                          "type": "string",
+                        },
+                      },
+                      "type": "object",
+                    },
+                  ],
+                  "type": "array",
+                },
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "patternProperties": {
+                        ".*": {
+                          "enum": [
+                            "always",
+                            "ignorePackages",
+                            "never",
+                          ],
+                          "type": "string",
+                        },
+                      },
+                      "type": "object",
+                    },
+                  ],
+                  "type": "array",
+                },
+              ],
+            },
+            "type": "suggestion",
+          },
+        },
+        "first": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Ensure all imports appear before other statements.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "absolute": "Absolute imports should come before relative imports.",
+              "order": "Import in body of module; reorder to top.",
+            },
+            "schema": [
+              {
+                "enum": [
+                  "absolute-first",
+                  "disable-absolute-first",
+                ],
+                "type": "string",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "group-exports": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Prefer named exports to be grouped together in a single export declaration.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/group-exports.md",
+            },
+            "messages": {
+              "AssignmentExpression": "Multiple CommonJS exports; consolidate all exports into a single assignment to \`module.exports\`",
+              "ExportNamedDeclaration": "Multiple named export declarations; consolidate all named exports into a single export declaration",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "imports-first": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "deprecated": {
+              "deprecatedSince": "2.0.0",
+              "message": "Replaced by \`import-x/first\`.",
+              "replacedBy": [
+                {
+                  "message": "Replaced by \`import-x/first\`.",
+                  "rule": {
+                    "name": "first",
+                    "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+                  },
+                },
+              ],
+              "url": "https://github.com/import-js/eslint-plugin-import/blob/main/CHANGELOG.md#changed-24",
+            },
+            "docs": {
+              "category": "Style guide",
+              "description": "Replaced by \`import-x/first\`.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/imports-first.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "absolute": "Absolute imports should come before relative imports.",
+              "order": "Import in body of module; reorder to top.",
+            },
+            "schema": [
+              {
+                "enum": [
+                  "absolute-first",
+                  "disable-absolute-first",
+                ],
+                "type": "string",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "max-dependencies": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce the maximum number of dependencies a module can have.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/max-dependencies.md",
+            },
+            "messages": {
+              "max": "Maximum number of dependencies ({{max}}) exceeded.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "ignoreTypeImports": {
+                    "type": "boolean",
+                  },
+                  "max": {
+                    "type": "number",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "named": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Ensure named imports correspond to a named export in the remote file.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/named.md",
+            },
+            "messages": {
+              "notFound": "{{name}} not found in '{{path}}'",
+              "notFoundDeep": "{{name}} not found via {{deepPath}}",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "namespace": {
+          "create": [Function],
+          "defaultOptions": [
+            {
+              "allowComputed": false,
+            },
+          ],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/namespace.md",
+            },
+            "messages": {
+              "computedReference": "Unable to validate computed reference to imported namespace '{{namespace}}'.",
+              "namespaceMember": "Assignment to member of namespace '{{namespace}}'.",
+              "noNamesFound": "No exported names found in module '{{module}}'.",
+              "notFoundInNamespace": "'{{name}}' not found in imported namespace '{{namepath}}'.",
+              "notFoundInNamespaceDeep": "'{{name}}' not found in deeply imported namespace '{{namepath}}'.",
+              "topLevelNames": "Only destructure top-level names.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allowComputed": {
+                    "default": false,
+                    "description": "If \`false\`, will report computed (and thus, un-lintable) references to namespace members.",
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "newline-after-import": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce a newline after import statements.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/newline-after-import.md",
+            },
+            "fixable": "whitespace",
+            "messages": {
+              "newline": "Expected {{count}} empty line{{lineSuffix}} after {{type}} statement not followed by another {{type}}.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "considerComments": {
+                    "type": "boolean",
+                  },
+                  "count": {
+                    "minimum": 1,
+                    "type": "integer",
+                  },
+                  "exactCount": {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "layout",
+          },
+        },
+        "no-absolute-path": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid import of modules using absolute paths.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-absolute-path.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "absolute": "Do not import modules using an absolute path",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "amd": {
+                    "type": "boolean",
+                  },
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-amd": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Module systems",
+              "description": "Forbid AMD \`require\` and \`define\` calls.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-amd.md",
+            },
+            "messages": {
+              "amd": "Expected imports instead of AMD {{type}}().",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-anonymous-default-export": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid anonymous values as default exports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-anonymous-default-export.md",
+            },
+            "messages": {
+              "anonymous": "Unexpected default export of anonymous {{type}}",
+              "assign": "Assign {{type}} to a variable before exporting as module default",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allowAnonymousClass": {
+                    "description": "If \`false\`, will report default export of an anonymous class",
+                    "type": "boolean",
+                  },
+                  "allowAnonymousFunction": {
+                    "description": "If \`false\`, will report default export of an anonymous function",
+                    "type": "boolean",
+                  },
+                  "allowArray": {
+                    "description": "If \`false\`, will report default export of an array",
+                    "type": "boolean",
+                  },
+                  "allowArrowFunction": {
+                    "description": "If \`false\`, will report default export of an arrow function",
+                    "type": "boolean",
+                  },
+                  "allowCallExpression": {
+                    "description": "If \`false\`, will report default export of a function call",
+                    "type": "boolean",
+                  },
+                  "allowLiteral": {
+                    "description": "If \`false\`, will report default export of a literal",
+                    "type": "boolean",
+                  },
+                  "allowNew": {
+                    "description": "If \`false\`, will report default export of a class instantiation",
+                    "type": "boolean",
+                  },
+                  "allowObject": {
+                    "description": "If \`false\`, will report default export of an object expression",
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-commonjs": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Module systems",
+              "description": "Forbid CommonJS \`require\` calls and \`module.exports\` or \`exports.*\`.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-commonjs.md",
+            },
+            "messages": {
+              "export": "Expected "export" or "export default"",
+              "import": "Expected "import" instead of "require()"",
+            },
+            "schema": {
+              "anyOf": [
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "enum": [
+                        "allow-primitive-modules",
+                      ],
+                      "type": "string",
+                    },
+                  ],
+                  "type": "array",
+                },
+                {
+                  "additionalItems": false,
+                  "items": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "allowConditionalRequire": {
+                          "type": "boolean",
+                        },
+                        "allowPrimitiveModules": {
+                          "type": "boolean",
+                        },
+                        "allowRequire": {
+                          "type": "boolean",
+                        },
+                      },
+                      "type": "object",
+                    },
+                  ],
+                  "type": "array",
+                },
+              ],
+            },
+            "type": "suggestion",
+          },
+        },
+        "no-cycle": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid a module from importing a module with a dependency path back to itself.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-cycle.md",
+            },
+            "messages": {
+              "cycle": "Dependency cycle detected",
+              "cycleSource": "Dependency cycle via "{{source}}"",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allowUnsafeDynamicCyclicDependency": {
+                    "default": false,
+                    "description": "Allow cyclic dependency if there is at least one dynamic import in the chain",
+                    "type": "boolean",
+                  },
+                  "amd": {
+                    "type": "boolean",
+                  },
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                  "ignoreExternal": {
+                    "default": false,
+                    "description": "ignore external modules",
+                    "type": "boolean",
+                  },
+                  "maxDepth": {
+                    "anyOf": [
+                      {
+                        "description": "maximum dependency depth to traverse",
+                        "minimum": 1,
+                        "type": "integer",
+                      },
+                      {
+                        "enum": [
+                          "∞",
+                        ],
+                        "type": "string",
+                      },
+                    ],
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-default-export": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid default exports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-default-export.md",
+            },
+            "messages": {
+              "noAliasDefault": "Do not alias \`{{local}}\` as \`default\`. Just export \`{{local}}\` itself instead.",
+              "preferNamed": "Prefer named exports.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-deprecated": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid imported names marked with \`@deprecated\` documentation tag.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-deprecated.md",
+            },
+            "messages": {
+              "deprecated": "Deprecated: consider to find an alternative.",
+              "deprecatedDesc": "Deprecated: {{description}}",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-duplicates": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid repeated import of the same module in multiple places.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-duplicates.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "duplicate": "'{{module}}' imported multiple times.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "considerQueryString": {
+                    "type": "boolean",
+                  },
+                  "prefer-inline": {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "no-dynamic-require": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid \`require()\` calls with expressions.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-dynamic-require.md",
+            },
+            "messages": {
+              "import": "Calls to import() should use string literals",
+              "require": "Calls to require() should use string literals",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-empty-named-blocks": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid empty named import blocks.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-empty-named-blocks.md",
+            },
+            "fixable": "code",
+            "hasSuggestions": true,
+            "messages": {
+              "emptyImport": "Remove empty import block",
+              "emptyNamed": "Unexpected empty named import block",
+              "unused": "Remove unused import",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-extraneous-dependencies": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid the use of extraneous packages.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-extraneous-dependencies.md",
+            },
+            "messages": {
+              "devDep": "'{{packageName}}' should be listed in the project's dependencies, not devDependencies.",
+              "missing": "'{{packageName}}' should be listed in the project's dependencies. Run 'npm i {{packageName}}' to add it",
+              "optDep": "'{{packageName}}' should be listed in the project's dependencies, not optionalDependencies.",
+              "pkgNotFound": "The package.json file could not be found.",
+              "pkgUnparsable": "The package.json file could not be parsed: {{error}}",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "bundledDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "devDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "includeInternal": {
+                    "type": [
+                      "boolean",
+                    ],
+                  },
+                  "includeTypes": {
+                    "type": [
+                      "boolean",
+                    ],
+                  },
+                  "optionalDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "packageDir": {
+                    "type": [
+                      "string",
+                      "array",
+                    ],
+                  },
+                  "peerDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "whitelist": {
+                    "type": [
+                      "array",
+                    ],
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "no-import-module-exports": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Module systems",
+              "description": "Forbid import statements with CommonJS module.exports.",
+              "recommended": true,
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-import-module-exports.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "notAllowed": "Cannot use import declarations in modules that export using CommonJS (module.exports = 'foo' or exports.bar = 'hi')",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "exceptions": {
+                    "type": "array",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "no-internal-modules": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid importing the submodules of other modules.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-internal-modules.md",
+            },
+            "messages": {
+              "noAllowed": "Reaching to "{{importPath}}" is not allowed.",
+            },
+            "schema": [
+              {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "allow": {
+                        "items": {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                    },
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "forbid": {
+                        "items": {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                    },
+                    "type": "object",
+                  },
+                ],
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-mutable-exports": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid the use of mutable exports with \`var\` or \`let\`.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-mutable-exports.md",
+            },
+            "messages": {
+              "noMutable": "Exporting mutable '{{kind}}' binding, use 'const' instead.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-named-as-default": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid use of exported name as identifier of default export.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default.md",
+            },
+            "messages": {
+              "default": "Using exported name '{{name}}' as identifier for default export.",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+        },
+        "no-named-as-default-member": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid use of exported name as property of default export.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default-member.md",
+            },
+            "messages": {
+              "member": "Caution: \`{{objectName}}\` also has a named export \`{{propName}}\`. Check if you meant to write \`import {{{propName}}} from '{{sourcePath}}'\` instead.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-named-default": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid named default exports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-default.md",
+            },
+            "messages": {
+              "default": "Use default import syntax to import '{{importName}}'.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-named-export": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid named exports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-export.md",
+            },
+            "messages": {
+              "noAllowed": "Named exports are not allowed.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+        "no-namespace": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid namespace (a.k.a. "wildcard" \`*\`) imports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-namespace.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "noNamespace": "Unexpected namespace import.",
+            },
+            "schema": [
+              {
+                "properties": {
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-nodejs-modules": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Module systems",
+              "description": "Forbid Node.js builtin modules.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-nodejs-modules.md",
+            },
+            "messages": {
+              "builtin": "Do not import Node.js builtin module "{{moduleName}}"",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allow": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-relative-packages": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid importing packages through relative paths.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-packages.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "noAllowed": "Relative import from another package is not allowed. Use \`{{properImport}}\` instead of \`{{importPath}}\`",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "amd": {
+                    "type": "boolean",
+                  },
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-relative-parent-imports": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid importing modules from parent directories.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-parent-imports.md",
+            },
+            "messages": {
+              "noAllowed": "Relative imports from parent directories are not allowed. Please either pass what you're importing through at runtime (dependency injection), move \`{{filename}}\` to same directory as \`{{depPath}}\` or consider making \`{{depPath}}\` a package.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "amd": {
+                    "type": "boolean",
+                  },
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-rename-default": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid importing a default export by a different name.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-rename-default.md",
+            },
+            "messages": {
+              "renameDefault": "Caution: \`{{importBasename}}\` has a default export \`{{defaultExportName}}\`. This {{requiresOrImports}} \`{{defaultExportName}}\` as \`{{importName}}\`. Check if you meant to write \`{{suggestion}}\` instead.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "commonjs": {
+                    "default": false,
+                    "type": "boolean",
+                  },
+                  "preventRenamingBindings": {
+                    "default": true,
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-restricted-paths": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Enforce which files can be imported in a given folder.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-restricted-paths.md",
+            },
+            "messages": {
+              "glob": "Restricted path exceptions must be glob patterns when \`from\` contains glob patterns",
+              "mixedGlob": "Restricted path \`from\` must contain either only glob patterns or none",
+              "path": "Restricted path exceptions must be descendants of the configured \`from\` path for that zone.",
+              "zone": "Unexpected path "{{importPath}}" imported in restricted zone.{{extra}}",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "basePath": {
+                    "type": "string",
+                  },
+                  "zones": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "except": {
+                          "items": {
+                            "type": "string",
+                          },
+                          "type": "array",
+                          "uniqueItems": true,
+                        },
+                        "from": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                            },
+                            {
+                              "items": {
+                                "type": "string",
+                              },
+                              "minItems": 1,
+                              "type": "array",
+                              "uniqueItems": true,
+                            },
+                          ],
+                        },
+                        "message": {
+                          "type": "string",
+                        },
+                        "target": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                            },
+                            {
+                              "items": {
+                                "type": "string",
+                              },
+                              "minItems": 1,
+                              "type": "array",
+                              "uniqueItems": true,
+                            },
+                          ],
+                        },
+                      },
+                      "type": "object",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "no-self-import": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid a module from importing itself.",
+              "recommended": true,
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-self-import.md",
+            },
+            "messages": {
+              "self": "Module imports itself.",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+        },
+        "no-unassigned-import": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Forbid unassigned imports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unassigned-import.md",
+            },
+            "messages": {
+              "unassigned": "Imported module should be assigned",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allow": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "devDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "optionalDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                  "peerDependencies": {
+                    "type": [
+                      "boolean",
+                      "array",
+                    ],
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-unresolved": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Ensure imports point to a file/module that can be resolved.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unresolved.md",
+            },
+            "messages": {
+              "casingMismatch": "Casing of {{module}} does not match the underlying filesystem.",
+              "unresolved": "Unable to resolve path to module '{{module}}'.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "amd": {
+                    "type": "boolean",
+                  },
+                  "caseSensitive": {
+                    "default": true,
+                    "type": "boolean",
+                  },
+                  "caseSensitiveStrict": {
+                    "type": "boolean",
+                  },
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "esmodule": {
+                    "type": "boolean",
+                  },
+                  "ignore": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "no-unused-modules": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Helpful warnings",
+              "description": "Forbid modules without exports, or exports without matching import in another module.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unused-modules.md",
+            },
+            "messages": {
+              "notFound": "No exports found",
+              "unused": "exported declaration '{{value}}' not used within other modules",
+            },
+            "schema": [
+              {
+                "anyOf": [
+                  {
+                    "properties": {
+                      "src": {
+                        "minItems": 1,
+                        "type": "array",
+                      },
+                      "unusedExports": {
+                        "enum": [
+                          true,
+                        ],
+                        "type": "boolean",
+                      },
+                    },
+                    "required": [
+                      "unusedExports",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "properties": {
+                      "missingExports": {
+                        "enum": [
+                          true,
+                        ],
+                        "type": "boolean",
+                      },
+                    },
+                    "required": [
+                      "missingExports",
+                    ],
+                    "type": "object",
+                  },
+                ],
+                "properties": {
+                  "ignoreExports": {
+                    "description": "files/paths for which unused exports will not be reported (e.g module entry points)",
+                    "items": {
+                      "minLength": 1,
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                  "ignoreUnusedTypeExports": {
+                    "description": "ignore type exports without any usage",
+                    "type": "boolean",
+                  },
+                  "missingExports": {
+                    "description": "report modules without any exports",
+                    "type": "boolean",
+                  },
+                  "src": {
+                    "description": "files/paths to be analyzed (only for unused exports)",
+                    "items": {
+                      "minLength": 1,
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                  "unusedExports": {
+                    "description": "report exports without any usage",
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-useless-path-segments": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid unnecessary path segments in import and require statements.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-useless-path-segments.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "useless": "Useless path segments for "{{importPath}}", should be "{{proposedPath}}"",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "commonjs": {
+                    "type": "boolean",
+                  },
+                  "noUselessIndex": {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "no-webpack-loader-syntax": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Static analysis",
+              "description": "Forbid webpack loader syntax in imports.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-webpack-loader-syntax.md",
+            },
+            "messages": {
+              "unexpected": "Unexpected '!' in '{{name}}'. Do not use import syntax to configure webpack loaders.",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+        },
+        "order": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce a convention in module import order.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/order.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "error": "{{error}}",
+              "noLineBetweenGroups": "There should be no empty line between import groups",
+              "noLineBetweenSingleLineImport": "There should be no empty lines between this single-line import and the single-line import that follows it",
+              "noLineWithinGroup": "There should be no empty line within import group",
+              "oneLineBetweenGroups": "There should be at least one empty line between import groups",
+              "oneLineBetweenTheMultiLineImport": "There should be at least one empty line between this import and the multi-line import that follows it",
+              "oneLineBetweenThisMultiLineImport": "There should be at least one empty line between this multi-line import and the import that follows it",
+              "order": "{{secondImport}} should occur {{order}} {{firstImport}}",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "dependencies": {
+                  "consolidateIslands": {
+                    "anyOf": [
+                      {
+                        "properties": {
+                          "newlines-between": {
+                            "enum": [
+                              "always-and-inside-groups",
+                            ],
+                            "type": "string",
+                          },
+                        },
+                        "required": [
+                          "newlines-between",
+                        ],
+                        "type": "object",
+                      },
+                      {
+                        "properties": {
+                          "newlines-between-types": {
+                            "enum": [
+                              "always-and-inside-groups",
+                            ],
+                            "type": "string",
+                          },
+                        },
+                        "required": [
+                          "newlines-between-types",
+                        ],
+                        "type": "object",
+                      },
+                    ],
+                  },
+                  "newlines-between-types": {
+                    "properties": {
+                      "sortTypesGroup": {
+                        "enum": [
+                          true,
+                        ],
+                        "type": "boolean",
+                      },
+                    },
+                    "required": [
+                      "sortTypesGroup",
+                    ],
+                    "type": "object",
+                  },
+                },
+                "properties": {
+                  "alphabetize": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "caseInsensitive": {
+                        "default": false,
+                        "type": "boolean",
+                      },
+                      "order": {
+                        "default": "ignore",
+                        "enum": [
+                          "ignore",
+                          "asc",
+                          "desc",
+                        ],
+                        "type": "string",
+                      },
+                      "orderImportKind": {
+                        "default": "ignore",
+                        "enum": [
+                          "ignore",
+                          "asc",
+                          "desc",
+                        ],
+                        "type": "string",
+                      },
+                    },
+                    "type": "object",
+                  },
+                  "consolidateIslands": {
+                    "enum": [
+                      "inside-groups",
+                      "never",
+                    ],
+                    "type": "string",
+                  },
+                  "distinctGroup": {
+                    "default": true,
+                    "type": "boolean",
+                  },
+                  "groups": {
+                    "type": "array",
+                  },
+                  "named": {
+                    "default": false,
+                    "oneOf": [
+                      {
+                        "type": "boolean",
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "cjsExports": {
+                            "type": "boolean",
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                          },
+                          "export": {
+                            "type": "boolean",
+                          },
+                          "import": {
+                            "type": "boolean",
+                          },
+                          "require": {
+                            "type": "boolean",
+                          },
+                          "types": {
+                            "enum": [
+                              "mixed",
+                              "types-first",
+                              "types-last",
+                            ],
+                            "type": "string",
+                          },
+                        },
+                        "type": "object",
+                      },
+                    ],
+                  },
+                  "newlines-between": {
+                    "enum": [
+                      "ignore",
+                      "always",
+                      "always-and-inside-groups",
+                      "never",
+                    ],
+                    "type": "string",
+                  },
+                  "newlines-between-types": {
+                    "enum": [
+                      "ignore",
+                      "always",
+                      "always-and-inside-groups",
+                      "never",
+                    ],
+                    "type": "string",
+                  },
+                  "pathGroups": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "group": {
+                          "enum": [
+                            "builtin",
+                            "external",
+                            "internal",
+                            "unknown",
+                            "parent",
+                            "sibling",
+                            "index",
+                            "object",
+                            "type",
+                          ],
+                          "type": "string",
+                        },
+                        "pattern": {
+                          "type": "string",
+                        },
+                        "patternOptions": {
+                          "type": "object",
+                        },
+                        "position": {
+                          "enum": [
+                            "after",
+                            "before",
+                          ],
+                          "type": "string",
+                        },
+                      },
+                      "required": [
+                        "pattern",
+                        "group",
+                      ],
+                      "type": "object",
+                    },
+                    "type": "array",
+                  },
+                  "pathGroupsExcludedImportTypes": {
+                    "type": "array",
+                  },
+                  "sortTypesGroup": {
+                    "default": false,
+                    "type": "boolean",
+                  },
+                  "warnOnUnassignedImports": {
+                    "default": false,
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "prefer-default-export": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Prefer a default export if module exports a single name or multiple names.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-default-export.md",
+            },
+            "messages": {
+              "any": "Prefer default export to be present on every file that has export.",
+              "single": "Prefer default export on a file with single export.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "target": {
+                    "default": "single",
+                    "enum": [
+                      "single",
+                      "any",
+                    ],
+                    "type": "string",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "prefer-namespace-import": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Style guide",
+              "description": "Enforce using namespace imports for specific modules, like \`react\`/\`react-dom\`, etc.",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-namespace-import.md",
+            },
+            "fixable": "code",
+            "messages": {
+              "preferNamespaceImport": "Prefer importing {{specifier}} as 'import * as {{specifier}} from "{{source}}"';",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "type": "string",
+                    },
+                    "type": "array",
+                    "uniqueItems": true,
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+        },
+        "unambiguous": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "category": "Module systems",
+              "description": "Forbid potentially ambiguous parse goal (\`script\` vs. \`module\`).",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/unambiguous.md",
+            },
+            "messages": {
+              "module": "This module could be parsed as a valid script.",
+            },
+            "schema": [],
+            "type": "suggestion",
+          },
+        },
+      },
+    },
   },
   "rules": {
     "@typescript-eslint/adjacent-overload-signatures": "off",
@@ -26043,48 +28364,327 @@ If your function does not access \`this\`, you can annotate it with \`this: void
     "@typescript-eslint/triple-slash-reference": "error",
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "off",
+    "array-callback-return": "off",
+    "arrow-body-style": [
+      "error",
+      "as-needed",
+      {
+        "requireReturnForObjectLiteral": false,
+      },
+    ],
+    "block-scoped-var": "error",
     "camelcase": "off",
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [],
+      },
+    ],
+    "consistent-return": "error",
     "constructor-super": "off",
+    "curly": "off",
+    "default-case": "off",
+    "default-case-last": "off",
+    "default-param-last": "off",
+    "dot-notation": "off",
+    "eqeqeq": "off",
+    "for-direction": "off",
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        "allowArrowFunctions": true,
+        "allowTypeAnnotation": true,
+      },
+    ],
     "getter-return": "off",
+    "grouped-accessor-pairs": "off",
+    "guard-for-in": "off",
+    "import-x/default": "error",
+    "import-x/export": "error",
+    "import-x/extensions": "off",
+    "import-x/first": "error",
     "import-x/named": "off",
+    "import-x/namespace": "error",
+    "import-x/newline-after-import": "error",
+    "import-x/no-absolute-path": "error",
+    "import-x/no-amd": "error",
+    "import-x/no-deprecated": "warn",
+    "import-x/no-duplicates": "error",
+    "import-x/no-dynamic-require": "error",
+    "import-x/no-empty-named-blocks": "error",
+    "import-x/no-import-module-exports": [
+      "error",
+      {
+        "exceptions": [],
+      },
+    ],
+    "import-x/no-mutable-exports": "error",
+    "import-x/no-named-as-default": "error",
     "import-x/no-named-as-default-member": "off",
+    "import-x/no-named-default": "error",
+    "import-x/no-relative-packages": "error",
+    "import-x/no-self-import": "error",
     "import-x/no-unresolved": "off",
+    "import-x/no-useless-path-segments": [
+      "error",
+      {
+        "commonjs": true,
+      },
+    ],
+    "import-x/no-webpack-loader-syntax": "error",
+    "import-x/order": "off",
+    "import-x/prefer-default-export": "off",
+    "max-classes-per-file": [
+      "error",
+      1,
+    ],
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false,
+        "capIsNewExceptions": [
+          "Immutable.Map",
+          "Immutable.Set",
+          "Immutable.List",
+        ],
+        "newIsCap": true,
+        "newIsCapExceptions": [],
+      },
+    ],
+    "no-alert": "off",
     "no-array-constructor": "off",
+    "no-async-promise-executor": "off",
+    "no-await-in-loop": "error",
+    "no-bitwise": "off",
+    "no-caller": "error",
+    "no-case-declarations": "off",
     "no-class-assign": "off",
+    "no-compare-neg-zero": "off",
+    "no-cond-assign": "off",
+    "no-console": "off",
     "no-const-assign": "off",
+    "no-constant-binary-expression": "error",
+    "no-constant-condition": "off",
+    "no-constructor-return": "off",
+    "no-continue": "error",
+    "no-control-regex": "off",
+    "no-debugger": "off",
+    "no-delete-var": "error",
     "no-dupe-args": "off",
     "no-dupe-class-members": "off",
+    "no-dupe-else-if": "off",
     "no-dupe-keys": "off",
+    "no-duplicate-case": "off",
+    "no-else-return": "off",
+    "no-empty": "off",
+    "no-empty-character-class": "off",
+    "no-empty-function": "off",
+    "no-empty-pattern": "off",
+    "no-empty-static-block": "off",
+    "no-eval": "off",
+    "no-ex-assign": "off",
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-extra-boolean-cast": "off",
+    "no-extra-label": "off",
+    "no-fallthrough": "off",
     "no-func-assign": "off",
+    "no-global-assign": "off",
+    "no-implicit-coercion": "off",
     "no-implied-eval": "off",
     "no-import-assign": "off",
+    "no-inner-declarations": "off",
+    "no-invalid-regexp": "error",
+    "no-irregular-whitespace": "off",
+    "no-iterator": "error",
+    "no-label-var": "off",
+    "no-labels": "off",
+    "no-lone-blocks": "off",
+    "no-lonely-if": "off",
     "no-loop-func": "off",
+    "no-loss-of-precision": "off",
+    "no-misleading-character-class": "off",
+    "no-multi-assign": "error",
+    "no-multi-str": "error",
+    "no-negated-condition": "off",
+    "no-nested-ternary": "off",
+    "no-new": "error",
     "no-new-func": "off",
     "no-new-native-nonconstructor": "off",
+    "no-new-object": "error",
     "no-new-symbol": "off",
+    "no-new-wrappers": "off",
+    "no-nonoctal-decimal-escape": "off",
     "no-obj-calls": "off",
+    "no-object-constructor": "error",
+    "no-octal": "error",
+    "no-octal-escape": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "error",
+    "no-promise-executor-return": "error",
+    "no-proto": "error",
+    "no-prototype-builtins": "off",
     "no-redeclare": "off",
+    "no-regex-spaces": "off",
+    "no-restricted-exports": [
+      "error",
+      {
+        "restrictedNamedExports": [
+          "default",
+          "then",
+        ],
+      },
+    ],
+    "no-restricted-globals": "off",
+    "no-restricted-imports": "off",
+    "no-restricted-properties": [
+      "error",
+      {
+        "message": "Please use \`Object.defineProperty\` instead.",
+        "property": "__defineGetter__",
+      },
+      {
+        "message": "Please use \`Object.defineProperty\` instead.",
+        "property": "__defineSetter__",
+      },
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
+        "selector": "ForInStatement",
+      },
+      {
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
+        "selector": "LabeledStatement",
+      },
+      {
+        "message": "\`with\` is disallowed in strict mode because it makes code impossible to predict and optimize.",
+        "selector": "WithStatement",
+      },
+    ],
+    "no-return-assign": [
+      "error",
+      "always",
+    ],
+    "no-script-url": "error",
+    "no-self-assign": "off",
+    "no-self-compare": "off",
+    "no-sequences": "off",
     "no-setter-return": "off",
     "no-shadow": "off",
+    "no-shadow-restricted-names": "off",
+    "no-sparse-array": "off",
+    "no-sparse-arrays": "error",
+    "no-template-curly-in-string": "off",
     "no-this-before-super": "off",
     "no-throw-literal": "off",
     "no-undef": "off",
+    "no-undef-init": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [],
+        "allowAfterSuper": false,
+        "allowAfterThis": false,
+        "enforceInMethodNames": true,
+      },
+    ],
+    "no-unexpected-multiline": "error",
+    "no-unneeded-ternary": "off",
     "no-unreachable": "off",
+    "no-unreachable-loop": [
+      "error",
+      {
+        "ignore": [],
+      },
+    ],
+    "no-unsafe-finally": "off",
     "no-unsafe-negation": "off",
+    "no-unsafe-optional-chaining": "off",
     "no-unused-expressions": "off",
+    "no-unused-labels": "off",
+    "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "no-useless-backreference": "off",
+    "no-useless-catch": "off",
+    "no-useless-computed-key": "off",
+    "no-useless-concat": "off",
+    "no-useless-constructor": "off",
+    "no-useless-escape": "off",
+    "no-useless-rename": "off",
+    "no-useless-return": "error",
     "no-var": "error",
+    "no-void": "off",
     "no-with": "off",
+    "object-shorthand": "off",
+    "one-var": "off",
+    "operator-assignment": "off",
+    "prefer-arrow-callback": "off",
     "prefer-const": "error",
+    "prefer-destructuring": [
+      "error",
+      {
+        "AssignmentExpression": {
+          "array": true,
+          "object": false,
+        },
+        "VariableDeclarator": {
+          "array": false,
+          "object": true,
+        },
+      },
+      {
+        "enforceForRenamedProperties": false,
+      },
+    ],
+    "prefer-exponentiation-operator": "off",
+    "prefer-named-capture-group": "warn",
+    "prefer-numeric-literals": "off",
+    "prefer-object-has-own": "off",
+    "prefer-object-spread": "off",
     "prefer-promise-reject-errors": "off",
+    "prefer-regex-literals": "off",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
+    "prefer-template": "off",
+    "radix": "error",
     "require-await": "off",
+    "require-yield": "off",
+    "strict": [
+      "error",
+      "never",
+    ],
+    "symbol-description": "off",
+    "unicode-bom": [
+      "error",
+      "never",
+    ],
+    "use-isnan": "off",
+    "valid-typeof": "off",
+    "vars-on-top": "error",
+    "yoda": "off",
   },
   "settings": {
+    "import-x/extensions": [
+      ".js",
+      ".jsx",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".tsx",
+      ".cts",
+      ".mts",
+    ],
     "import-x/external-module-folders": [
       "node_modules",
       "node_modules/@types",
+    ],
+    "import-x/ignore": [
+      "node_modules",
+      "\\.(coffee|scss|css|less|hbs|svg|json)$",
     ],
     "import-x/parsers": {
       "@typescript-eslint/parser": [
@@ -26094,6 +28694,13 @@ If your function does not access \`this\`, you can annotate it with \`this: void
         ".mts",
       ],
     },
+    "import-x/resolver-next": [
+      {
+        "interfaceVersion": 3,
+        "name": "eslint-import-resolver-oxc",
+        "resolve": [Function],
+      },
+    ],
   },
 }
 `;

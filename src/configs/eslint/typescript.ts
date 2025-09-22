@@ -32,24 +32,37 @@ const [base, eslintRecommended, typeChecked] =
   tseslint.configs.recommendedTypeChecked;
 
 export const typescript = {
-  ...base,
   name: 'foundry/typescript',
-  files: files.typescript,
+  files: [...files.javascript, ...files.typescript],
+  plugins: {
+    ...javascript.plugins,
+    ...base.plugins,
+  },
   settings: {
+    ...javascript.settings,
     ...base.settings,
     'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import-x/parsers': {
       '@typescript-eslint/parser': extensions.typescript,
     },
   },
+  languageOptions: {
+    ...javascript.languageOptions,
+    ...base.languageOptions,
+  },
   rules: {
+    ...javascript.rules,
+
     ...base.rules,
     ...eslintRecommended.rules,
     ...typeChecked.rules,
 
     '@typescript-eslint/no-empty-object-type': [
       'error',
-      { allowInterfaces: 'with-single-extends', allowObjectTypes: 'never' },
+      {
+        allowInterfaces: 'with-single-extends',
+        allowObjectTypes: 'never',
+      },
     ],
 
     //  Covered by Biome
