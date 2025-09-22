@@ -16,11 +16,13 @@
 import type { Linter } from 'eslint';
 
 import { files } from './files.js';
+import { react } from './react.js';
 
 export const next = {
   name: 'foundry/next',
   files: [...files.javascript, ...files.typescript],
   settings: {
+    ...react.settings,
     // This is needed for eslint-plugin-compat: https://www.npmjs.com/package/eslint-plugin-compat#adding-polyfills
     // The list is based on https://github.com/vercel/next.js/blob/canary/packages/next-polyfill-nomodule/src/index.js
     polyfills: [
@@ -73,4 +75,6 @@ export const next = {
       'fetch',
     ],
   },
+  languageOptions: react.languageOptions,
+  rules: react.rules,
 } satisfies Linter.Config;

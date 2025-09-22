@@ -35,13 +35,9 @@ type ImportResolver = {
 
 export const javascript = {
   name: 'foundry/javascript',
-  files: [...files.javascript, ...files.typescript],
-  languageOptions: {
-    parserOptions: {
-      ecmaFeatures: {
-        impliedStrict: true,
-      },
-    },
+  files: files.javascript,
+  plugins: {
+    'import-x': importX as unknown as ESLint.Plugin,
   },
   settings: {
     'import-x/resolver-next': [createOxcImportResolver() as ImportResolver],
@@ -50,9 +46,16 @@ export const javascript = {
       'node_modules',
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
+    'import-x/parsers': {
+      '@typescript-eslint/parser': extensions.typescript,
+    },
   },
-  plugins: {
-    'import-x': importX as unknown as ESLint.Plugin,
+  languageOptions: {
+    parserOptions: {
+      ecmaFeatures: {
+        impliedStrict: true,
+      },
+    },
   },
   rules: {
     ...js.configs.recommended.rules,
