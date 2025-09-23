@@ -15429,6 +15429,7 @@ exports[`eslint > configs > should match the snapshot for the stories preset 1`]
   "name": "foundry/stories",
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import-x/no-anonymous-default-export": "off",
     "import-x/no-extraneous-dependencies": "off",
     "import-x/no-relative-packages": "off",
   },
