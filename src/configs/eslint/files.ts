@@ -42,7 +42,7 @@ export const files = {
     '**/protractor.conf.*', // protractor config
     '**/karma.conf.*', // karma config
   ],
-  stories: [
+  storybook: [
     '**/.storybook/**/*', // storybook config
     '**/*.{story,stories}.*', // storybook stories
   ],

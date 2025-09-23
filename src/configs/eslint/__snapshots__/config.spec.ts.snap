@@ -15567,13 +15567,13 @@ exports[`eslint > configs > should match the snapshot for the react preset 1`] =
 }
 `;
 
-exports[`eslint > configs > should match the snapshot for the stories preset 1`] = `
+exports[`eslint > configs > should match the snapshot for the storybook preset 1`] = `
 {
   "files": [
     "**/.storybook/**/*",
     "**/*.{story,stories}.*",
   ],
-  "name": "foundry/stories",
+  "name": "foundry/storybook",
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import-x/no-anonymous-default-export": "off",
