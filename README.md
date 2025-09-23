@@ -13,10 +13,11 @@ A toolkit that makes it a breeze to format and lint JavaScript, TypeScript, CSS,
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Initialization](#initialization)
-  - [Configuration](#configuration)
+- [Scripts](#scripts)
+- [Configuration](#configuration)
 - [Tools](#tools)
 - [Why?](#why)
-- [Code of conduct (CoC)](#code-of-conduct-coc)
+- [Code of conduct](#code-of-conduct)
 - [About SumUp](#about-sumup)
 
 ## Getting Started
