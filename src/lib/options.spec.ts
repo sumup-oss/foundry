@@ -196,7 +196,7 @@ describe('options', () => {
 
   describe('detectPlugins', () => {
     it.each([
-      ['eslint-config-next', Plugin.Nextjs],
+      ['@next/eslint-plugin-next', Plugin.Nextjs],
       ['eslint-plugin-jest', Plugin.Jest],
       ['eslint-plugin-testing-library', Plugin.TestingLibrary],
       ['eslint-plugin-cypress', Plugin.Cypress],
@@ -220,7 +220,7 @@ describe('options', () => {
         ...basePackageJson,
         dependencies: {
           '@sumup-oss/eslint-plugin-circuit-ui': '^6.0.0',
-          'eslint-config-next': '^1.0.0',
+          '@next/eslint-plugin-next': '^1.0.0',
         },
       };
       const actual = detectPlugins(packageJson);
@@ -263,14 +263,14 @@ describe('options', () => {
       const packageJson = {
         ...basePackageJson,
         license: 'MIT',
-        dependencies: { 'eslint-config-next': '^13.0.0' },
+        dependencies: { '@next/eslint-plugin-next': '^14.0.0' },
       };
 
       warnAboutUnsupportedPlugins(packageJson);
 
       expect(logger.warn).toHaveBeenCalledOnce();
       expect(logger.warn).toHaveBeenCalledWith(
-        '"eslint-config-next" is installed at version "^13.0.0". Foundry has only been tested with versions ">=14.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
+        '"@next/eslint-plugin-next" is installed at version "^14.0.0". Foundry has only been tested with versions ">=15.0.0". You may find that it works just fine, or you may not. Pull requests welcome!',
       );
     });
 
@@ -338,7 +338,7 @@ describe('options', () => {
 
       expect(logger.warn).toHaveBeenCalledTimes(2);
       expect(logger.warn).toHaveBeenCalledWith(
-        '"next" is installed but not the corresponding ESLint plugin. Please install "eslint-config-next".',
+        '"next" is installed but not the corresponding ESLint plugin. Please install "@next/eslint-plugin-next".',
       );
       expect(logger.warn).toHaveBeenCalledWith(
         '"@playwright/test" is installed but not the corresponding ESLint plugin. Please install "eslint-plugin-playwright".',

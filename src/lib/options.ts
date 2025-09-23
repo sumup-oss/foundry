@@ -52,7 +52,7 @@ const PLUGINS = [
     name: Plugin.Nextjs,
     frameworkPackages: ['next'],
     eslintPlugins: {
-      'eslint-config-next': '>=14.0.0',
+      '@next/eslint-plugin-next': '>=15.0.0',
     },
   },
   {
