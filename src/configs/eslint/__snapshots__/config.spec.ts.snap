@@ -3579,6 +3579,7 @@ exports[`eslint > configs > should match the snapshot for the ignores preset 1`]
     "**/__reports__/**",
     "**/__coverage__/**",
     "**/*.snap",
+    "**/*.css",
   ],
 }
 `;

@@ -27,5 +27,6 @@ export const ignores = {
     '**/__reports__/**', // coverage reports
     '**/__coverage__/**', // coverage reports
     '**/*.snap', // snapshot files
+    '**/*.css', // CSS files
   ],
 };
