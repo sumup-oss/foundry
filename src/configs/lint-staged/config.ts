@@ -13,16 +13,9 @@
  * limitations under the License.
  */
 
-export type LinterCommand = string | string[];
-export type LinterFn = (filenames: string[]) => LinterCommand;
+import type { Configuration } from 'lint-staged';
 
-export interface LintStagedConfig {
-  [key: string]: LinterCommand | LinterFn;
-}
-
-export function defineConfig(
-  overrides: LintStagedConfig = {},
-): LintStagedConfig {
+export function defineConfig(overrides: Configuration = {}): Configuration {
   return {
     '*': [
       'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
