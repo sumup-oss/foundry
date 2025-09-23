@@ -2,4 +2,4 @@
 "@sumup-oss/foundry": patch
 ---
 
-Relaxed some CSS lint rules"
+Relaxed some CSS lint rules.
