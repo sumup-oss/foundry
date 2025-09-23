@@ -28,8 +28,8 @@ if (
   );
 }
 
-const [base, eslintRecommended, typeChecked] =
-  tseslint.configs.recommendedTypeChecked;
+const [base, eslintRecommended, typeChecked] = tseslint.configs
+  .recommendedTypeChecked as Linter.Config[];
 
 export const typescript = {
   name: 'foundry/typescript',
