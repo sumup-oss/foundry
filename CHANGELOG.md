@@ -1,5 +1,15 @@
 # @sumup-oss/foundry
 
+## 9.0.0-next.1
+
+### Patch Changes
+
+- [#1135](https://github.com/sumup-oss/foundry/pull/1135) [`95ec974`](https://github.com/sumup-oss/foundry/commit/95ec974a85f7e05c303b079c94eaeb35f80d85ab) Thanks [@connor-baer](https://github.com/connor-baer)! - Relaxed some CSS lint rules.
+
+- [#1136](https://github.com/sumup-oss/foundry/pull/1136) [`ef2aee5`](https://github.com/sumup-oss/foundry/commit/ef2aee51a23f864ea440f3357e687a2d51630e2d) Thanks [@connor-baer](https://github.com/connor-baer)! - Included the JavaScript lint config in the TypeScript lint config.
+
+- [#1136](https://github.com/sumup-oss/foundry/pull/1136) [`ef2aee5`](https://github.com/sumup-oss/foundry/commit/ef2aee51a23f864ea440f3357e687a2d51630e2d) Thanks [@connor-baer](https://github.com/connor-baer)! - Included the React lint config in the Next.js lint config.
+
 ## 9.0.0-next.0
 
 ### Major Changes

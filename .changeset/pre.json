@@ -5,15 +5,18 @@
     "@sumup-oss/foundry": "8.4.1"
   },
   "changesets": [
+    "blue-crews-buy",
     "clean-dogs-end",
     "little-dogs-cheer",
     "orange-mangos-fix",
     "polite-paths-vanish",
     "polite-planets-bow",
     "rich-pens-drum",
+    "smooth-toes-write",
     "thick-heads-lay",
     "tired-mugs-slide",
     "twelve-kings-find",
-    "twelve-views-speak"
+    "twelve-views-speak",
+    "young-plants-mix"
   ]
 }
