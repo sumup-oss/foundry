@@ -22,44 +22,59 @@ export const files = {
   javascript: [toGlobPattern('**/*', extensions.javascript)],
   typescript: [toGlobPattern('**/*', extensions.typescript)],
   configs: [
-    '**/jest.config.*', // jest config and setup
-    '**/vite.config.*', // vite config
-    '**/vitest.config*', // vitest config and setup
-    '**/.storybook/**/*', // storybook config
-    '**/.eslintrc.*', // eslint config
-    '**/eslint.config.*', // eslint config
-    '**/.huskyrc.*', // husky config
-    '**/husky.config.*', // husky config
-    '**/.stylelintrc.*', // stylelint config
-    '**/stylelint.config.*', // stylelint config
+    '**/jest.config.*', // Jest config and setup
+    '**/vite.config.*', // Vite config
+    '**/vitest.config*', // Vitest config and setup
+    '**/.storybook/**/*', // Storybook config
+    '**/.eslintrc.*', // ESLint config
+    '**/eslint.config.*', // ESLint config
+    '**/.huskyrc.*', // Husky config
+    '**/husky.config.*', // Husky config
+    '**/.stylelintrc.*', // Stylelint config
+    '**/stylelint.config.*', // Stylelint config
     '**/lint-staged.config.*', // lint-staged config
-    '**/vue.config.js', // vue-cli config
-    '**/webpack.config.*', // webpack config
-    '**/rollup.config.*', // rollup config
-    '**/svgo.config.*', // svgo config
-    '**/gulpfile.*', // gulp config
-    '**/Gruntfile{,.js}', // grunt config
-    '**/protractor.conf.*', // protractor config
-    '**/karma.conf.*', // karma config
+    '**/vue.config.js', // Vue-CLI config
+    '**/webpack.config.*', // Webpack config
+    '**/rollup.config.*', // Rollup config
+    '**/svgo.config.*', // SVGO config
+    '**/gulpfile.*', // Gulp config
+    '**/Gruntfile{,.js}', // Grunt config
+    '**/protractor.conf.*', // Protractor config
+    '**/karma.conf.*', // Karma config
+  ],
+  ignores: [
+    '**/node_modules/**', // dependencies
+    '**/dist/**', // generated assets
+    '**/.astro/**', // generated assets (Astro)
+    '**/.next/**', // generated assets (Next.js)
+    '**/next-env.d.ts', // generated types (Next.js)
+    '**/build/**', // generated assets (create-react-app, Remix)
+    '**/storybook-static/**', // generated assets (Storybook)
+    '**/public/**', // (generated) assets
+    '**/vendor/**', // third-party assets
+    '**/__reports__/**', // coverage reports
+    '**/__coverage__/**', // coverage reports
+    '**/*.snap', // snapshot files
+    '**/*.css', // CSS files
   ],
   storybook: [
-    '**/.storybook/**/*', // storybook config
-    '**/*.{story,stories}.*', // storybook stories
+    '**/.storybook/**/*', // Storybook config
+    '**/*.{story,stories}.*', // Storybook stories
   ],
   tests: [
     '**/test/**', // tape, common npm pattern
     '**/tests/**', // also common npm pattern
     '**/spec/**', // mocha, rspec-like pattern
-    '**/__tests__/**', // jest pattern
-    '**/__mocks__/**', // jest pattern
-    '**/__fixtures__/**/*', // jest pattern
+    '**/__tests__/**', // Jest pattern
+    '**/__mocks__/**', // Jest pattern
+    '**/__fixtures__/**/*', // Jest pattern
     '**/*Fixtures.*', // pattern at SumUp
     '**/test.*', // repos with a single test file
     '**/test-*.*', // repos with multiple top-level test files
     '**/*{.,_}{test,spec}.*', // tests where the extension or filename suffix denotes that it is a test
-    '**/jest.*', // jest config and setup
-    '**/vite.*', // vite config
-    '**/vitest.*', // vitest config and setup
+    '**/jest.*', // Jest config and setup
+    '**/vite.*', // Vite config
+    '**/vitest.*', // Vitest config and setup
     '**/setupTests.*', // test setup
     '**/test-utils.*', // test utils
   ],
