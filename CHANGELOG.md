@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.1
+
+### Patch Changes
+
+- [#1143](https://github.com/sumup-oss/foundry/pull/1143) [`290bca4`](https://github.com/sumup-oss/foundry/commit/290bca4a592609dea3709d812cca31b2e7e71d35) Thanks [@connor-baer](https://github.com/connor-baer)! - Migrated to `listr2` internally to remove vulnerable sub-dependencies.
+
 ## 9.0.0
 
 ### Major Changes
@@ -12,7 +18,7 @@
 
   ```js
   // .eslintrc.js
-  module.exports = require('@sumup-oss/foundry/eslint')({
+  module.exports = require("@sumup-oss/foundry/eslint")({
     /* custom overrides */
   });
   ```
