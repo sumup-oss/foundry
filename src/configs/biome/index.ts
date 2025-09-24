@@ -17,14 +17,16 @@ import dedent from 'dedent';
 
 import type { File } from '../../types/shared.js';
 
-export const files = (): File[] => [
-  {
-    name: 'biome.jsonc',
-    content: dedent`
+export function files(): File[] {
+  return [
+    {
+      name: 'biome.jsonc',
+      content: dedent`
       {
         "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
         "extends": ["@sumup-oss/foundry/biome"],
       }
     `,
-  },
-];
+    },
+  ];
+}

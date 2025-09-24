@@ -17,10 +17,11 @@ import dedent from 'dedent';
 
 import type { File } from '../../types/shared.js';
 
-export const files = (): File[] => [
-  {
-    name: '.editorconfig',
-    content: dedent`
+export function files(): File[] {
+  return [
+    {
+      name: '.editorconfig',
+      content: dedent`
       [*]
       charset = utf-8
       end_of_line = lf
@@ -28,5 +29,6 @@ export const files = (): File[] => [
       indent_style = space
       indent_size = 2
     `,
-  },
-];
+    },
+  ];
+}

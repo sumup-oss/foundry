@@ -17,18 +17,19 @@ import dedent from 'dedent';
 
 import type { File } from '../../types/shared.js';
 
-export const files = (): File[] => [
-  {
-    name: 'stylelint.config.mjs',
-    content: dedent`
+export function files(): File[] {
+  return [
+    {
+      name: 'stylelint.config.mjs',
+      content: dedent`
       import { defineConfig } from '@sumup-oss/foundry/stylelint';
 
       export default defineConfig();
     `,
-  },
-  {
-    name: '.stylelintignore',
-    content: dedent`
+    },
+    {
+      name: '.stylelintignore',
+      content: dedent`
       node_modules/
       build/
       dist/
@@ -40,5 +41,6 @@ export const files = (): File[] => [
       __coverage__/
       __reports__/
     `,
-  },
-];
+    },
+  ];
+}

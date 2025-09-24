@@ -13,13 +13,6 @@
  * limitations under the License.
  */
 
-// NOTE: Unfortunately, we can't use the config exported by Foundry itself,
-//       since it tries to run a command through Foundry. Packages cannot
-//       run their own binaries.
-export default {
-  '*': [
-    'biome check --write --no-errors-on-unmatched --files-ignore-unknown=true',
-  ],
-  '*.(js|jsx|ts|tsx)': ['eslint --fix'],
-  '*.(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-};
+import { defineConfig } from '@sumup-oss/foundry/lint-staged';
+
+export default defineConfig();

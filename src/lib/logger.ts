@@ -22,44 +22,44 @@ type LogMessage = string | string[];
 const IS_DEBUG =
   process.argv.includes('--debug') || process.env.NODE_ENV === 'DEBUG';
 
-const getMessage = (arg: LogMessage): string => {
+function getMessage(arg: LogMessage): string {
   const message = isArray(arg) ? arg.join('\n') : arg;
-  return `[Foundry] ${message}`;
-};
+  return message;
+}
 
-export const error = (arg: LogMessage): void => {
+export function error(arg: LogMessage): void {
   const msg = getMessage(arg);
   console.error(`🚨 ${chalk.red(msg)}`);
-};
+}
 
-export const warn = (arg: LogMessage): void => {
+export function warn(arg: LogMessage): void {
   const msg = getMessage(arg);
   console.warn(`⚠️ ${chalk.yellow(msg)}`);
-};
+}
 
-export const log = (arg: LogMessage): void => {
+export function log(arg: LogMessage): void {
   const msg = getMessage(arg);
   console.log(msg);
-};
+}
 
-export const info = (arg: LogMessage): void => {
+export function info(arg: LogMessage): void {
   const msg = getMessage(arg);
   console.log(`ℹ️ ${msg}`);
-};
+}
 
-export const debug = (arg: LogMessage): void => {
+export function debug(arg: LogMessage): void {
   if (!IS_DEBUG) {
     return;
   }
 
   const msg = getMessage(arg);
   console.debug(`🛠️ ${chalk.cyan(msg)}`);
-};
+}
 
-export const empty = (): void => {
+export function empty(): void {
   console.log('');
-};
+}
 
-export const table = (obj: Record<string, unknown>): void => {
+export function table(obj: Record<string, unknown>): void {
   console.table(obj);
-};
+}

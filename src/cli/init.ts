@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
+import confirm from '@inquirer/confirm';
+import { ListrInquirerPromptAdapter } from '@listr2/prompt-adapter-inquirer';
 import chalk from 'chalk';
-import inquirer from 'inquirer';
 import isCI from 'is-ci';
-import Listr, { type ListrTaskWrapper } from 'listr';
-import listrInquirer from 'listr-inquirer';
+import { Listr, type ListrTask } from 'listr2';
 import { readPackageUp } from 'read-package-up';
 
 import * as tools from '../configs/index.js';
@@ -49,15 +49,14 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
     options = { ...DEFAULT_OPTIONS, ...args };
   } else {
-    const answers = await inquirer.prompt({
-      type: 'confirm',
-      name: 'openSource',
-      message: 'Do you intend to open-source this project?',
-      default: DEFAULT_OPTIONS.openSource,
-      when: (): boolean => typeof args.openSource === 'undefined',
-    });
+    const openSource =
+      args.openSource ??
+      (await confirm({
+        message: 'Do you intend to open-source this project?',
+        default: DEFAULT_OPTIONS.openSource,
+      }));
 
-    options = { ...args, ...answers };
+    options = { ...args, openSource };
   }
 
   const selectedTools: Record<string, ToolOptions> = tools;
@@ -92,65 +91,67 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 
   logger.empty();
 
-  const tasks = new Listr([
+  type Context = {
+    packagePath: string;
+    packageJson: PackageJson;
+  };
+
+  const tasks = new Listr<Context>([
     {
       title: 'Writing config files',
-      task: (): Listr<never> =>
-        new Listr(
+      task: (_ctx, task) =>
+        task.newListr(
           files.map((file) => ({
             title: `Write "${file.name}"`,
-            task: (_ctx: never, task): Promise<unknown> =>
-              writeFile(
-                options.configDir,
-                file.name,
-                file.content,
-                options.overwrite,
-              ).catch(() => {
+            task: async (_subctx, subtask): Promise<void> => {
+              try {
+                await writeFile(
+                  options.configDir,
+                  file.name,
+                  file.content,
+                  options.overwrite,
+                );
+              } catch {
                 logger.debug(`File "${file.name}" already exists`);
+
                 if (isCI) {
                   logger.debug('In a CI environment, skipping...');
-                  task.skip('Skipped');
-                  return undefined;
+                  subtask.skip('Skipped');
+                  return;
                 }
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                return listrInquirer(
-                  [
-                    {
-                      type: 'confirm',
-                      name: 'overwrite',
-                      message: `"${file.name}" already exists. Would you like to replace it?`,
-                      default: false,
-                    },
-                  ],
-                  ({ overwrite }: { overwrite: boolean }) => {
-                    logger.debug(`Overwrite file: ${overwrite.toString()}`);
-                    if (!overwrite) {
-                      task.skip('Skipped');
-                      return undefined;
-                    }
-                    return writeFile(
-                      options.configDir,
-                      file.name,
-                      file.content,
-                      true,
-                    );
-                  },
+
+                const overwrite = await subtask
+                  .prompt(ListrInquirerPromptAdapter)
+                  .run(confirm, {
+                    message: `"${file.name}" already exists. Would you like to replace it?`,
+                    default: false,
+                  });
+
+                logger.debug(`Overwrite file: ${overwrite}`);
+
+                if (!overwrite) {
+                  subtask.skip('Skipped');
+                  return;
+                }
+
+                await writeFile(
+                  options.configDir,
+                  file.name,
+                  file.content,
+                  true,
                 );
-              }),
+              }
+            },
           })),
         ),
     },
     {
       title: 'Updating package.json',
-      task: async (): Promise<Listr> => {
-        type Context = {
-          packagePath: string;
-          packageJson: PackageJson;
-        };
-        return new Listr<Context>([
+      task: async (_ctx, task) =>
+        task.newListr([
           {
             title: 'Read package.json',
-            task: async (ctx): Promise<void> => {
+            task: async (ctx) => {
               const pkg = await readPackageUp({ normalize: false });
 
               if (!pkg) {
@@ -164,62 +165,50 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Add license field',
             enabled: () => options.openSource === true,
-            task: (ctx): void => {
+            task: (ctx) => {
               ctx.packageJson.license = 'Apache-2.0';
             },
           },
-          ...scripts.map(({ name, command }) => ({
-            title: `Add "${name}" script`,
-            task: (
-              ctx: Context,
-              task: ListrTaskWrapper<Context>,
-            ): undefined | Promise<void> => {
-              try {
-                addPackageScript(
-                  ctx.packageJson,
-                  name,
-                  command,
-                  options.overwrite,
-                );
-                return undefined;
-              } catch (_error) {
-                logger.debug(`Script "${name}" already exists`);
-                if (isCI) {
-                  logger.debug('In a CI environment, skipping...');
-                  task.skip('Skipped');
-                  return undefined;
-                }
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-                return listrInquirer(
-                  [
-                    {
-                      type: 'confirm',
-                      name: 'overwriteScript',
+          ...scripts.map(
+            ({ name, command }): ListrTask<Context> => ({
+              title: `Add "${name}" script`,
+              task: async (ctx, subtask) => {
+                try {
+                  addPackageScript(
+                    ctx.packageJson,
+                    name,
+                    command,
+                    options.overwrite,
+                  );
+                } catch {
+                  logger.debug(`Script "${name}" already exists`);
+                  if (isCI) {
+                    logger.debug('In a CI environment, skipping...');
+                    subtask.skip('Skipped');
+                    return;
+                  }
+                  const overwrite = await subtask
+                    .prompt(ListrInquirerPromptAdapter)
+                    .run(confirm, {
                       message: `"${name}" already exists. Would you like to replace it?`,
                       default: false,
-                    },
-                  ],
-                  ({ overwriteScript }: { overwriteScript: boolean }) => {
-                    logger.debug(
-                      `Overwrite script: ${overwriteScript.toString()}`,
-                    );
-                    if (!overwriteScript) {
-                      task.skip('Skipped');
-                      return;
-                    }
-                    addPackageScript(ctx.packageJson, name, command, true);
-                  },
-                );
-              }
-            },
-          })),
+                    });
+                  logger.debug(`Overwrite script: ${overwrite}`);
+                  if (!overwrite) {
+                    subtask.skip('Skipped');
+                    return;
+                  }
+                  addPackageScript(ctx.packageJson, name, command, true);
+                }
+              },
+            }),
+          ),
           {
             title: 'Save package.json',
             task: (ctx): Promise<void> =>
               savePackageJson(ctx.packagePath, ctx.packageJson),
           },
-        ]);
-      },
+        ]),
     },
   ]);
 

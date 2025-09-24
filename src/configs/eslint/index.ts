@@ -36,7 +36,7 @@ const testPlugins = [
   Plugin.TestingLibrary,
 ];
 
-export const files = (options: InitOptions): File[] => {
+export function files(options: InitOptions): File[] {
   const configs = ['configs.ignores', 'configs.javascript'];
   const imports = [];
 
@@ -86,4 +86,4 @@ export const files = (options: InitOptions): File[] => {
     `,
     },
   ];
-};
+}

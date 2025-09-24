@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-// NOTE: Unfortunately, we can't use the config exported by Foundry itself,
-//       since it tries to run a command through Foundry. Packages cannot
-//       run their own binaries.
-module.exports = {
-  hooks: {
-    'pre-commit': 'lint-staged',
-  },
-};
+const { defineConfig } = require('@sumup-oss/foundry/husky');
+
+module.exports = defineConfig();
