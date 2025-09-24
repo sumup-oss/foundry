@@ -24,7 +24,7 @@ const IS_DEBUG =
 
 const getMessage = (arg: LogMessage): string => {
   const message = isArray(arg) ? arg.join('\n') : arg;
-  return message;
+  return `[Foundry] ${message}`;
 };
 
 export const error = (arg: LogMessage): void => {
