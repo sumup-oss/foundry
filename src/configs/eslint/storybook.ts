@@ -17,9 +17,9 @@ import type { Linter } from 'eslint';
 
 import { files } from './files.js';
 
-export const stories = {
-  name: 'foundry/stories',
-  files: files.stories,
+export const storybook = {
+  name: 'foundry/storybook',
+  files: files.storybook,
   rules: {
     'import-x/no-anonymous-default-export': 'off',
     'import-x/no-extraneous-dependencies': 'off',

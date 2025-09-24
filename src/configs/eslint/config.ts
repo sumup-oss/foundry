@@ -28,7 +28,7 @@ import { next } from './next.js';
 import { node } from './node.js';
 import { openSource } from './open-source.js';
 import { react } from './react.js';
-import { stories } from './stories.js';
+import { storybook } from './storybook.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
@@ -57,7 +57,7 @@ export const configs = {
   node,
   openSource,
   react,
-  stories,
+  storybook,
   tests,
   typescript,
 };

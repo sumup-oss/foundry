@@ -13,20 +13,8 @@
  * limitations under the License.
  */
 
+import { files } from './files.js';
+
 export const ignores = {
-  ignores: [
-    '**/node_modules/**', // dependencies
-    '**/dist/**', // generated assets
-    '**/.astro/**', // generated assets (Astro)
-    '**/.next/**', // generated assets (Next.js)
-    '**/next-env.d.ts', // generated types (Next.js)
-    '**/build/**', // generated assets (create-react-app, Remix)
-    '**/storybook-static/**', // generated assets (Storybook)
-    '**/public/**', // (generated) assets
-    '**/vendor/**', // third-party assets
-    '**/__reports__/**', // coverage reports
-    '**/__coverage__/**', // coverage reports
-    '**/*.snap', // snapshot files
-    '**/*.css', // CSS files
-  ],
+  ignores: files.ignores,
 };
