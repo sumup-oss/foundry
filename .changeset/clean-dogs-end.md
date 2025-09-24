@@ -27,17 +27,18 @@ export default defineConfig([
 	{
 		files: [...files.typescript, /* custom file glob */],
 		extends: [configs.typescript],
+		languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
 		rules: { /* custom rules */ }
 	},
 	// Framework-specific ESLint plugins aren't bundled with Foundry.
 	// Import and extend them manually, placing the Foundry config last.
 	{
-		extends: [
-			react.configs.recommended,
-			react.configs['jsx-runtime'],
-			configs.react
-		],
-		plugins: { react },
+		extends: [react.configs.recommended, configs.react],
 	},
 ]);
 ```
