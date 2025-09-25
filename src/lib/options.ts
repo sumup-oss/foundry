@@ -17,7 +17,6 @@ import { intersects } from 'semver';
 
 import {
   Environment,
-  Framework,
   Language,
   type Options,
   type PackageJson,
@@ -121,7 +120,6 @@ export function getOptions(): Required<Options> {
   return {
     language: pick(config.language, detectLanguage),
     environments: pick(config.environments, detectEnvironments),
-    frameworks: pick(config.frameworks, detectFrameworks),
     // TODO: Differentiate between ESLint and Stylelint plugins
     plugins: pick(config.plugins, detectPlugins),
     openSource: pick(config.openSource, detectOpenSource),
@@ -177,23 +175,6 @@ export function detectEnvironments(packageJson: PackageJson): Environment[] {
   }
 
   return environments;
-}
-
-export function detectFrameworks(packageJson: PackageJson): Framework[] {
-  const frameworks: Framework[] = [];
-
-  if (hasDependency(packageJson, 'next')) {
-    frameworks.push(Framework.Nextjs);
-  }
-
-  if (
-    !hasDependency(packageJson, 'next') &&
-    hasDependency(packageJson, 'react')
-  ) {
-    frameworks.push(Framework.React);
-  }
-
-  return frameworks;
 }
 
 export function warnAboutUnsupportedPlugins(packageJson: PackageJson): void {
