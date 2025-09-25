@@ -19,8 +19,8 @@ import {
   Environment,
   type File,
   Framework,
-  type InitOptions,
   Language,
+  type Options,
   Plugin,
 } from '../../types/shared.js';
 
@@ -36,7 +36,7 @@ const testPlugins = [
   Plugin.TestingLibrary,
 ];
 
-export function files(options: InitOptions): File[] {
+export function files(options: Options): File[] {
   const configs = ['configs.ignores', 'configs.javascript'];
   const imports = [];
 

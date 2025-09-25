@@ -43,12 +43,10 @@ Foundry will launch an interactive prompt to ask you questions about your projec
 Alternatively, you can pass your answers to the `init` command directly as flags. This is useful for environments such as CI where interactive prompts cannot be used. Here is an overview of all available options (you can view this help menu by running `npx foundry init --help`):
 
 ```sh
-  -o, --openSource  Whether the project is open-source                 [boolean]
-  -c, --configDir   The directory to write configs to    [string] [default: "."]
-      --overwrite   Whether to overwrite existing config files
-                                                      [boolean] [default: false]
-      --version     Show version number                                [boolean]
-      --help        Show this help menu                                [boolean]
+  --configDir  The directory to write configs to         [string] [default: "."]
+  --overwrite  Whether to overwrite existing configs  [boolean] [default: false]
+  --version    Show version number                                     [boolean]
+  --help       Show this help menu                                     [boolean]
 ```
 
 ## Scripts

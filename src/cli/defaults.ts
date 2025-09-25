@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import type { InitOptions } from '../types/shared.js';
+import type { InitArgs } from '../types/shared.js';
 
-export const DEFAULT_OPTIONS: InitOptions = {
+export const DEFAULT_ARGS: InitArgs = {
   configDir: '.',
-  openSource: false,
   overwrite: false,
 };
