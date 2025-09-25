@@ -13,14 +13,6 @@
  * limitations under the License.
  */
 
-import { defineConfig as defineESLintConfig } from 'eslint/config';
-
-import { readPackageJson } from '../../lib/files.js';
-import {
-  warnAboutMissingPlugins,
-  warnAboutUnsupportedPlugins,
-} from '../../lib/options.js';
-
 import { browser } from './browser.js';
 import { ignores } from './ignores.js';
 import { javascript } from './javascript.js';
@@ -32,22 +24,7 @@ import { storybook } from './storybook.js';
 import { tests } from './tests.js';
 import { typescript } from './typescript.js';
 
-/**
- * Helper function to define a config array and validate that all plugins
- * relevant to the project have been installed.
- *
- * @param args The arguments to the function.
- * @returns The config array.
- * @throws {TypeError} If no arguments are provided or if an argument is not an object.
- */
-export const defineConfig: typeof defineESLintConfig = (...args) => {
-  const packageJson = readPackageJson();
-
-  warnAboutUnsupportedPlugins(packageJson);
-  warnAboutMissingPlugins(packageJson);
-
-  return defineESLintConfig(...args);
-};
+export { defineConfig } from 'eslint/config';
 
 export const configs = {
   browser,
