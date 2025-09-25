@@ -27,11 +27,6 @@ export enum Environment {
   Browser = 'Browser',
 }
 
-export enum Framework {
-  React = 'React',
-  Nextjs = 'Next.js',
-}
-
 export enum Plugin {
   CircuitUI = 'Circuit UI',
   Cypress = 'Cypress',
@@ -39,6 +34,7 @@ export enum Plugin {
   Jest = 'Jest',
   Nextjs = 'Next.js',
   Playwright = 'Playwright',
+  React = 'React',
   Storybook = 'Storybook',
   TestingLibrary = 'Testing Library',
 }
@@ -49,7 +45,6 @@ export interface Options {
   packageType?: ModuleType;
   language?: Language;
   environments?: Environment[];
-  frameworks?: Framework[];
   plugins?: Plugin[];
   openSource?: boolean;
 }

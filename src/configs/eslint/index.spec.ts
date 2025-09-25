@@ -15,12 +15,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import {
-  Environment,
-  Framework,
-  Language,
-  Plugin,
-} from '../../types/shared.js';
+import { Environment, Language, Plugin } from '../../types/shared.js';
 
 import { files } from './index.js';
 
@@ -43,8 +38,7 @@ describe('eslint', () => {
         packageType: 'module',
         language: Language.TypeScript,
         environments: [Environment.Browser, Environment.Node],
-        frameworks: [Framework.React],
-        plugins: [Plugin.Jest, Plugin.Storybook],
+        plugins: [Plugin.React, Plugin.Jest, Plugin.Storybook],
         openSource: true,
       });
       expect(actual).toMatchSnapshot();
