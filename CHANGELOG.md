@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.2
+
+### Patch Changes
+
+- [#1146](https://github.com/sumup-oss/foundry/pull/1146) [`05f6b5c`](https://github.com/sumup-oss/foundry/commit/05f6b5c59545fe29103f1a38b48035b5f49161dd) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed reading the options when running `foundry init`.
+
 ## 9.0.1
 
 ### Patch Changes
