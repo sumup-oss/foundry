@@ -51,9 +51,9 @@ export interface Options {
   openSource?: boolean;
 }
 
-export interface InitOptions extends Options {
+export interface InitArgs {
   configDir: string;
-  overwrite?: boolean;
+  overwrite: boolean;
 }
 
 export type File = {
@@ -63,5 +63,5 @@ export type File = {
 };
 
 export interface ToolOptions {
-  files?: (options: InitOptions) => File[];
+  files?: (options: Options) => File[];
 }

@@ -27,7 +27,7 @@ import { files } from './index.js';
 describe('eslint', () => {
   describe('files', () => {
     it('should match the snapshot for basic options', () => {
-      const options = { configDir: '.' };
+      const options = {};
       const actual = files(options);
       expect(actual).toMatchSnapshot();
     });

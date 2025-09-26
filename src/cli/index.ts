@@ -19,7 +19,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { debug } from './debug.js';
-import { DEFAULT_OPTIONS } from './defaults.js';
+import { DEFAULT_ARGS } from './defaults.js';
 import { type InitParams, init } from './init.js';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -28,21 +28,15 @@ yargs(hideBin(process.argv))
     'init',
     "Initialize Foundry's tools in your project",
     {
-      openSource: {
-        alias: 'o',
-        desc: 'Whether the project is open-source',
-        type: 'boolean',
-      },
       configDir: {
-        alias: 'c',
         desc: 'The directory to write configs to',
         type: 'string',
-        default: DEFAULT_OPTIONS.configDir,
+        default: DEFAULT_ARGS.configDir,
       },
       overwrite: {
-        desc: 'Whether to overwrite existing config files',
+        desc: 'Whether to overwrite existing configs',
         type: 'boolean',
-        default: DEFAULT_OPTIONS.overwrite,
+        default: DEFAULT_ARGS.overwrite,
       },
     },
     execute('init'),

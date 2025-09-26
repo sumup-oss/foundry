@@ -118,5 +118,17 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@sumup-oss/stylelint-plugin-circuit-ui": ">=3.0.0 <5.0.0",
+    "eslint-plugin-react": "^7.35.0"
+  },
+  "peerDependenciesMeta": {
+    "@sumup-oss/stylelint-plugin-circuit-ui": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    }
   }
 }

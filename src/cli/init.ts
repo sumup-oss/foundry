@@ -23,40 +23,34 @@ import { readPackageUp } from 'read-package-up';
 import * as tools from '../configs/index.js';
 import { addPackageScript, savePackageJson, writeFile } from '../lib/files.js';
 import * as logger from '../lib/logger.js';
+import { getOptions } from '../lib/options.js';
 import type {
   File,
-  InitOptions,
+  InitArgs,
+  Options,
   PackageJson,
   ToolOptions,
 } from '../types/shared.js';
 
-import { DEFAULT_OPTIONS } from './defaults.js';
+import { DEFAULT_ARGS } from './defaults.js';
 
-export interface InitParams {
-  configDir: string;
-  openSource?: boolean;
-  overwrite?: boolean;
+export interface InitParams extends InitArgs {
   $0?: string;
   _?: string[];
 }
 
 export async function init({ $0, _, ...args }: InitParams): Promise<void> {
-  let options: InitOptions;
+  const options = getOptions();
 
   if (isCI) {
     logger.empty();
     logger.info('Detected CI environment, falling back to default options.');
 
-    options = { ...DEFAULT_OPTIONS, ...args };
-  } else {
-    const openSource =
-      args.openSource ??
-      (await confirm({
-        message: 'Do you intend to open-source this project?',
-        default: DEFAULT_OPTIONS.openSource,
-      }));
-
-    options = { ...args, openSource };
+    Object.assign(args, DEFAULT_ARGS);
+  } else if (typeof options.openSource !== 'boolean') {
+    options.openSource = await confirm({
+      message: 'Do you intend to open-source this project?',
+    });
   }
 
   const selectedTools: Record<string, ToolOptions> = tools;
@@ -106,10 +100,10 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
             task: async (_subctx, subtask): Promise<void> => {
               try {
                 await writeFile(
-                  options.configDir,
+                  args.configDir,
                   file.name,
                   file.content,
-                  options.overwrite,
+                  args.overwrite,
                 );
               } catch {
                 logger.debug(`File "${file.name}" already exists`);
@@ -134,12 +128,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                   return;
                 }
 
-                await writeFile(
-                  options.configDir,
-                  file.name,
-                  file.content,
-                  true,
-                );
+                await writeFile(args.configDir, file.name, file.content, true);
               }
             },
           })),
@@ -164,7 +153,8 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           },
           {
             title: 'Add license field',
-            enabled: () => options.openSource === true,
+            enabled: (ctx) =>
+              options.openSource === true && !ctx.packageJson.license,
             task: (ctx) => {
               ctx.packageJson.license = 'Apache-2.0';
             },
@@ -178,7 +168,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
                     ctx.packageJson,
                     name,
                     command,
-                    options.overwrite,
+                    args.overwrite,
                   );
                 } catch {
                   logger.debug(`Script "${name}" already exists`);
@@ -229,7 +219,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 }
 
 function getFilesForTools(
-  options: InitOptions,
+  options: Options,
   selectedTools: Record<string, ToolOptions>,
 ): File[] {
   return Object.values(selectedTools).reduce((allFiles: File[], tool) => {
