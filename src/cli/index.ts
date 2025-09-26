@@ -43,7 +43,7 @@ yargs(hideBin(process.argv))
   )
   .command(
     'debug',
-    'See which frameworks and plugins Foundry has detected in your project',
+    'See which packages and plugins Foundry has detected in your project',
     execute('debug'),
   )
   .showHelpOnFail(true)
