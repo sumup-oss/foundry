@@ -18,7 +18,6 @@ import dedent from 'dedent';
 import {
   Environment,
   type File,
-  Framework,
   Language,
   type Options,
   Plugin,
@@ -53,10 +52,10 @@ export function files(options: Options): File[] {
     configs.push('configs.openSource');
   }
 
-  if (options.frameworks?.includes(Framework.Nextjs)) {
+  if (options.plugins?.includes(Plugin.Nextjs)) {
     // TODO: Add support for Next.js' ESLint plugin?
     configs.push('configs.next');
-  } else if (options.frameworks?.includes(Framework.React)) {
+  } else if (options.plugins?.includes(Plugin.React)) {
     imports.push("import react from 'eslint-plugin-react'");
     configs.push(
       "{ extends: [ react.configs.recommended, react.configs['jsx-runtime'], configs.react], plugins: { react }}",
