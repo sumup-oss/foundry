@@ -84,7 +84,7 @@ Foundry exposes a number ESLint configs to be composed together based on the lan
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
 
 export default defineConfig([
   configs.ignores,
@@ -113,7 +113,7 @@ Note that the `typescript` config includes the `javascript` config, so it doesn'
 
 ```js
 // eslint.config.js
-import { defineConfig, configs, files } from '@sumup-oss/foundry/eslint';
+import { defineConfig, configs, files } from "@sumup-oss/foundry/eslint";
 
 export default defineConfig([
   configs.ignores,
@@ -130,11 +130,11 @@ export default defineConfig([
   {
     files: files.javascript,
     rules: {
-      '@typescript-eslint/no-unsafe-argument': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
     },
   },
 ]);
@@ -151,17 +151,17 @@ export default defineConfig([
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
 
 export default defineConfig([
   configs.ignores,
   {
     extends: [configs.node],
     // Specify which files are executed in Node
-    files: ['src/app/**/*', 'src/pages/api/**/*', '**/server/**/*'],
+    files: ["src/app/**/*", "src/pages/api/**/*", "**/server/**/*"],
     // Optionally, customize the lint rules
     rules: {
-      'no-console': 'off',
+      "no-console": "off",
     },
   },
 ]);
@@ -180,8 +180,8 @@ Note that the `next` config includes the `react` config, so it doesn't need to b
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import next from '@next/eslint-plugin-next';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import next from "@next/eslint-plugin-next";
 
 export default defineConfig([
   configs.ignores,
@@ -202,8 +202,8 @@ export default defineConfig([
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import react from 'eslint-plugin-react';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import react from "eslint-plugin-react";
 
 export default defineConfig([
   configs.ignores,
@@ -219,17 +219,14 @@ export default defineConfig([
 <details>
 <summary>
 
-<details>
-<summary>
-
 **Circuit UI**
 
 </summary>
 
 ```js
 // eslint.config.js
-import { defineConfig, configs, files } from '@sumup-oss/foundry/eslint';
-import circuitUI from '@sumup-oss/eslint-plugin-circuit-ui';
+import { defineConfig, configs, files } from "@sumup-oss/foundry/eslint";
+import circuitUI from "@sumup-oss/eslint-plugin-circuit-ui";
 
 export default defineConfig([
   configs.ignores,
@@ -243,19 +240,22 @@ export default defineConfig([
 
 </details>
 
+<details>
+<summary>
+
 **Storybook**
 
 </summary>
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import storybook from 'eslint-plugin-storybook';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import storybook from "eslint-plugin-storybook";
 
 export default defineConfig([
   configs.ignores,
   {
-    extends: [storybook.configs['flat/recommended'], configs.stories],
+    extends: [storybook.configs["flat/recommended"], configs.stories],
   },
 ]);
 ```
@@ -271,13 +271,13 @@ export default defineConfig([
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import jest from 'eslint-plugin-jest';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import jest from "eslint-plugin-jest";
 
 export default defineConfig([
   configs.ignores,
   {
-    extends: [jest.configs['flat/recommended'], configs.tests],
+    extends: [jest.configs["flat/recommended"], configs.tests],
   },
 ]);
 ```
@@ -293,8 +293,8 @@ export default defineConfig([
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import vitest from '@vitest/eslint-plugin';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import vitest from "@vitest/eslint-plugin";
 
 export default defineConfig([
   configs.ignores,
@@ -315,16 +315,16 @@ export default defineConfig([
 
 ```js
 // eslint.config.js
-import { defineConfig, configs } from '@sumup-oss/foundry/eslint';
-import testingLibrary from 'eslint-plugin-testing-library';
+import { defineConfig, configs } from "@sumup-oss/foundry/eslint";
+import testingLibrary from "eslint-plugin-testing-library";
 
 export default defineConfig([
   configs.ignores,
   {
-    extends: [testingLibrary.configs['flat/react'], configs.tests],
+    extends: [testingLibrary.configs["flat/react"], configs.tests],
     // Optionally, configure a custom test utils file
     settings: {
-      'testing-library/utils-module': 'test-utils',
+      "testing-library/utils-module": "test-utils",
     },
   },
 ]);
@@ -340,7 +340,7 @@ Foundry exposes a default Stylelint config that can be extended and overridden. 
 
 ```js
 // stylelint.config.js
-import { defineConfig } from '@sumup-oss/foundry/stylelint';
+import { defineConfig } from "@sumup-oss/foundry/stylelint";
 
 export default defineConfig();
 ```
@@ -354,10 +354,10 @@ export default defineConfig();
 
 ```js
 // stylelint.config.js
-import { defineConfig } from '@sumup-oss/foundry/stylelint';
+import { defineConfig } from "@sumup-oss/foundry/stylelint";
 
 export default defineConfig({
-  extends: ['stylelint-config-css-modules'],
+  extends: ["stylelint-config-css-modules"],
 });
 ```
 
@@ -371,7 +371,7 @@ Foundry exposes a default lint-staged config that can be extended and overridden
 
 ```js
 // lint-staged.config.js
-import { defineConfig } from '@sumup-oss/foundry/lint-staged';
+import { defineConfig } from "@sumup-oss/foundry/lint-staged";
 
 export default defineConfig();
 ```
@@ -384,10 +384,10 @@ export default defineConfig();
 </summary>
 
 ```js
-import { defineConfig } from '@sumup-oss/foundry/lint-staged';
+import { defineConfig } from "@sumup-oss/foundry/lint-staged";
 
 export default defineConfig({
-  '*.svg': ['svgo --config svgo.config.js --pretty'],
+  "*.svg": ["svgo --config svgo.config.js --pretty"],
 });
 ```
 
@@ -401,7 +401,7 @@ Note that Foundry uses Husky v4, the last version to support a JavaScript config
 
 ```js
 // husky.config.cjs
-const { defineConfig } = require('@sumup-oss/foundry/husky');
+const { defineConfig } = require("@sumup-oss/foundry/husky");
 
 module.exports = defineConfig();
 ```
