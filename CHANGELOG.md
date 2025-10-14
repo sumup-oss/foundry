@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.3
+
+### Patch Changes
+
+- [#1156](https://github.com/sumup-oss/foundry/pull/1156) [`12e2ef7`](https://github.com/sumup-oss/foundry/commit/12e2ef7ca76a285314e92e047c9df760832cebce) Thanks [@connor-baer](https://github.com/connor-baer)! - Fixed creating hidden files when initializing Foundry config files.
+
 ## 9.0.2
 
 ### Patch Changes
