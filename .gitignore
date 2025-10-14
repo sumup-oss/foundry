@@ -31,7 +31,6 @@ __reports__
 
 *.sublime-workspace
 *.sublime-project
-*.editorconfig
 *.swp
 .idea
 .vscode

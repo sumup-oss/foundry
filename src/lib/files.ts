@@ -30,6 +30,11 @@ async function formatContent(
   fileName: string,
   content: string,
 ): Promise<string> {
+  // Biome can't format hidden files
+  if (fileName.startsWith('.')) {
+    return content;
+  }
+
   const biome = new Biome();
   const { projectKey } = biome.openProject();
 

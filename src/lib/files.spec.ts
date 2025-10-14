@@ -15,6 +15,7 @@
 
 import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 
+import dedent from 'dedent';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { PackageJson } from '../types/shared.js';
@@ -96,6 +97,29 @@ describe('files', () => {
       expect(fsWriteFile).toHaveBeenCalledWith(
         expect.any(String),
         formattedContent,
+        expect.any(Object),
+        expect.any(Function),
+      );
+    });
+
+    it('should not format hidden file contents', async () => {
+      const configDir = '.';
+      const editorconfig = dedent`
+        [*]
+        charset = utf-8
+        end_of_line = lf
+        insert_final_newline = true
+        indent_style = space
+        indent_size = 2
+      `;
+      const filename = '.editorconfig';
+      const shouldOverwrite = true;
+
+      await writeFile(configDir, filename, editorconfig, shouldOverwrite);
+
+      expect(fsWriteFile).toHaveBeenCalledWith(
+        filename,
+        editorconfig,
         expect.any(Object),
         expect.any(Function),
       );
