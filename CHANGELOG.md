@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.4
+
+### Patch Changes
+
+- [#1158](https://github.com/sumup-oss/foundry/pull/1158) [`a0d4974`](https://github.com/sumup-oss/foundry/commit/a0d4974bf9968e4bf68a034e05b2d46a9bc86201) Thanks [@connor-baer](https://github.com/connor-baer)! - Fail on unknown commands and show a helpful error message for the removed `foundry run` command.
+
 ## 9.0.3
 
 ### Patch Changes
