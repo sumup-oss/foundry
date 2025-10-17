@@ -15,12 +15,13 @@
 
 import dedent from 'dedent';
 
-import type { File } from '../../types/shared.js';
+import { getFileExtension } from '../../lib/files.js';
+import type { File, Options } from '../../types/shared.js';
 
-export function files(): File[] {
+export function files(options: Required<Options>): File[] {
   return [
     {
-      name: 'husky.config.cjs',
+      name: getFileExtension('husky.config', 'commonjs', options.packageType),
       content: dedent`
       const { defineConfig } = require('@sumup-oss/foundry/husky');
 

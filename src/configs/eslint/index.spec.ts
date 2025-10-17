@@ -27,21 +27,26 @@ import { files } from './index.js';
 describe('eslint', () => {
   describe('files', () => {
     it('should match the snapshot for basic options', () => {
-      const options = {};
-      const actual = files(options);
+      const actual = files({
+        packageType: 'commonjs',
+        language: Language.JavaScript,
+        environments: [],
+        frameworks: [],
+        plugins: [],
+        openSource: false,
+      });
       expect(actual).toMatchSnapshot();
     });
 
     it('should match the snapshot for complete options', () => {
-      const options = {
-        configDir: '.',
+      const actual = files({
+        packageType: 'module',
         language: Language.TypeScript,
         environments: [Environment.Browser, Environment.Node],
         frameworks: [Framework.React],
         plugins: [Plugin.Jest, Plugin.Storybook],
         openSource: true,
-      };
-      const actual = files(options);
+      });
       expect(actual).toMatchSnapshot();
     });
   });

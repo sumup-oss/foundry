@@ -18,9 +18,14 @@ import { mkdir as fsMkdir, writeFile as fsWriteFile } from 'node:fs';
 import dedent from 'dedent';
 import { describe, expect, it, vi } from 'vitest';
 
-import type { PackageJson } from '../types/shared.js';
+import type { ModuleType, PackageJson } from '../types/shared.js';
 
-import { addPackageScript, savePackageJson, writeFile } from './files.js';
+import {
+  addPackageScript,
+  getFileExtension,
+  savePackageJson,
+  writeFile,
+} from './files.js';
 
 vi.mock('node:fs', () => ({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
@@ -209,5 +214,21 @@ describe('files', () => {
 
       expect(fsWriteFile).toHaveBeenCalled();
     });
+  });
+
+  describe('getFileExtension', () => {
+    it.each<[ModuleType, ModuleType, string]>([
+      ['module', 'module', 'js'],
+      ['module', 'commonjs', 'cjs'],
+      ['commonjs', 'module', 'mjs'],
+      ['commonjs', 'commonjs', 'js'],
+    ])(
+      'should return the file name for a %s file in a %s package',
+      (packageType, fileType, extension) => {
+        const file = 'file';
+        const fileName = getFileExtension(file, fileType, packageType);
+        expect(fileName).toBe(`${file}.${extension}`);
+      },
+    );
   });
 });

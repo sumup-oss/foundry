@@ -219,7 +219,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
 }
 
 function getFilesForTools(
-  options: Options,
+  options: Required<Options>,
   selectedTools: Record<string, ToolOptions>,
 ): File[] {
   return Object.values(selectedTools).reduce((allFiles: File[], tool) => {

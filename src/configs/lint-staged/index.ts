@@ -15,12 +15,17 @@
 
 import dedent from 'dedent';
 
-import type { File } from '../../types/shared.js';
+import { getFileExtension } from '../../lib/files.js';
+import type { File, Options } from '../../types/shared.js';
 
-export function files(): File[] {
+export function files(options: Required<Options>): File[] {
   return [
     {
-      name: 'lint-staged.config.mjs',
+      name: getFileExtension(
+        'lint-staged.config',
+        'module',
+        options.packageType,
+      ),
       content: dedent`
       import { defineConfig } from '@sumup-oss/foundry/lint-staged';
 
