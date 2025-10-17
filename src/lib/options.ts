@@ -119,6 +119,7 @@ export function getOptions(): Required<Options> {
   const pick = pickConfigOrDetect(packageJson);
 
   return {
+    packageType: packageJson.type || 'commonjs',
     language: pick(config.language, detectLanguage),
     environments: pick(config.environments, detectEnvironments),
     frameworks: pick(config.frameworks, detectFrameworks),

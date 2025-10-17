@@ -21,7 +21,7 @@ import { Biome, type Configuration } from '@biomejs/js-api/nodejs';
 import { readPackageUpSync } from 'read-package-up';
 
 import config from '../configs/biome/biome.json' with { type: 'json' };
-import type { PackageJson } from '../types/shared.js';
+import type { ModuleType, PackageJson } from '../types/shared.js';
 
 const writeFileAsync = promisify(fsWriteFile);
 const mkdirAsync = promisify(fsMkdir);
@@ -102,4 +102,23 @@ export async function savePackageJson(
 ): Promise<void> {
   const content = `${JSON.stringify(packageJson, null, 2)}\n`;
   return writeFileAsync(packagePath, content, { flag: 'w' });
+}
+
+export function getFileExtension(
+  fileName: string,
+  fileType: ModuleType,
+  packageType: ModuleType,
+) {
+  const extensionMap = {
+    module: {
+      module: 'js',
+      commonjs: 'cjs',
+    },
+    commonjs: {
+      module: 'mjs',
+      commonjs: 'js',
+    },
+  };
+  const extension = extensionMap[packageType][fileType];
+  return `${fileName}.${extension}`;
 }

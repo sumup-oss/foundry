@@ -43,7 +43,10 @@ export enum Plugin {
   TestingLibrary = 'Testing Library',
 }
 
+export type ModuleType = 'module' | 'commonjs';
+
 export interface Options {
+  packageType?: ModuleType;
   language?: Language;
   environments?: Environment[];
   frameworks?: Framework[];
@@ -63,5 +66,5 @@ export type File = {
 };
 
 export interface ToolOptions {
-  files?: (options: Options) => File[];
+  files?: (options: Required<Options>) => File[];
 }
