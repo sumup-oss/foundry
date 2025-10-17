@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.5
+
+### Patch Changes
+
+- [#1160](https://github.com/sumup-oss/foundry/pull/1160) [`e94fb2c`](https://github.com/sumup-oss/foundry/commit/e94fb2ca79c6a73884969373c0632f002396efab) Thanks [@connor-baer](https://github.com/connor-baer)! - Respect the [package's module type](https://nodejs.org/api/packages.html#type) to determine the config file extensions during `foundry init`.
+
 ## 9.0.4
 
 ### Patch Changes
