@@ -22,7 +22,6 @@ import { debug } from './debug.js';
 import { DEFAULT_ARGS } from './defaults.js';
 import { type InitParams, init } from './init.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs(hideBin(process.argv))
   .command(
     'init',
@@ -46,10 +45,12 @@ yargs(hideBin(process.argv))
     'See which frameworks and plugins Foundry has detected in your project',
     execute('debug'),
   )
-  .showHelpOnFail(true)
+  .strictCommands()
   .demandCommand(1, '')
+  .showHelpOnFail(true)
   .help()
-  .version().argv;
+  .version()
+  .parse();
 
 type CommandType = 'init' | 'debug';
 
