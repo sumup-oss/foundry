@@ -21,6 +21,7 @@ import { hideBin } from 'yargs/helpers';
 import { debug } from './debug.js';
 import { DEFAULT_ARGS } from './defaults.js';
 import { type InitParams, init } from './init.js';
+import { run } from './run.js';
 
 yargs(hideBin(process.argv))
   .command(
@@ -45,6 +46,11 @@ yargs(hideBin(process.argv))
     'See which frameworks and plugins Foundry has detected in your project',
     execute('debug'),
   )
+  .command(
+    'run',
+    'The `run` command has been removed. Instead, call tools like Biome, ESLint, and Stylelint directly.',
+    execute('run'),
+  )
   .strictCommands()
   .demandCommand(1, '')
   .showHelpOnFail(true)
@@ -52,10 +58,10 @@ yargs(hideBin(process.argv))
   .version()
   .parse();
 
-type CommandType = 'init' | 'debug';
+type CommandType = 'init' | 'debug' | 'run';
 
 function execute(command: CommandType) {
-  const commands = { init, debug };
+  const commands = { init, debug, run };
   const commandFn = commands[command];
 
   return async (args: unknown): Promise<void> => {
