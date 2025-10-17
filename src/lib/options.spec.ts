@@ -15,13 +15,12 @@
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { Environment, Framework, Language, Plugin } from '../types/shared.js';
+import { Environment, Language, Plugin } from '../types/shared.js';
 
 import * as logger from './logger.js';
 import {
   BROWSER_LIBRARIES,
   detectEnvironments,
-  detectFrameworks,
   detectLanguage,
   detectOpenSource,
   detectPlugins,
@@ -162,35 +161,6 @@ describe('options', () => {
       const actual = detectEnvironments(packageJson);
 
       expect(actual).toContain(Environment.Browser);
-    });
-  });
-
-  describe('detectFrameworks', () => {
-    it.each([
-      ['next', Framework.Nextjs],
-      ['react', Framework.React],
-    ])(
-      'should, when `%s` is installed, include the `%s` preset',
-      (library, preset) => {
-        const packageJson = {
-          ...basePackageJson,
-          dependencies: { [library]: '^1.0.0' },
-        };
-        const actual = detectFrameworks(packageJson);
-
-        expect(actual).toContain(preset);
-      },
-    );
-
-    it('should not include the `React` preset when `next` is installed', () => {
-      const packageJson = {
-        ...basePackageJson,
-        dependencies: { next: '^1.0.0', react: '^1.0.0' },
-      };
-      const actual = detectFrameworks(packageJson);
-
-      expect(actual).toContain(Framework.Nextjs);
-      expect(actual).not.toContain(Framework.React);
     });
   });
 
