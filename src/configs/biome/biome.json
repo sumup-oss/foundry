@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -51,7 +51,6 @@
         "noImportCycles": "error",
         "noFloatingPromises": "error",
         "noMisusedPromises": "error",
-        "noNonNullAssertedOptionalChain": "error",
         "noUnnecessaryConditions": "warn"
       },
       "a11y": {
@@ -256,13 +255,6 @@
     },
     {
       "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
-      "assist": {
-        "actions": {
-          "source": {
-            "organizeImports": "off"
-          }
-        }
-      },
       "linter": {
         "rules": {
           "correctness": {

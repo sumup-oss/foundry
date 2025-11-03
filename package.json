@@ -70,9 +70,9 @@
     "node 22"
   ],
   "dependencies": {
-    "@biomejs/biome": "2.2.4",
-    "@biomejs/js-api": "^3.0.0",
-    "@biomejs/wasm-nodejs": "2.2.4",
+    "@biomejs/biome": "2.3.2",
+    "@biomejs/js-api": "^4.0.0",
+    "@biomejs/wasm-nodejs": "2.3.2",
     "@eslint/js": "^9.36.0",
     "@inquirer/confirm": "^5.1.18",
     "@listr2/prompt-adapter-inquirer": "^3.0.4",
