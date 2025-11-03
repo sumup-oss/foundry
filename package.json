@@ -111,13 +111,13 @@
     "@types/node": "^24.6.1",
     "@types/semver": "^7.7.1",
     "@types/yargs": "^17.0.34",
-    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/coverage-v8": "^4.0.6",
     "audit-ci": "^7.1.0",
     "codecov": "^3.8.3",
     "license-checker": "^25.0.1",
     "rimraf": "^6.1.0",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.6"
   },
   "peerDependencies": {
     "@sumup-oss/stylelint-plugin-circuit-ui": ">=3.0.0 <5.0.0",

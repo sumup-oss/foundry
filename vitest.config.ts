@@ -13,27 +13,10 @@
  * limitations under the License.
  */
 
-import { configs, defineConfig } from './dist/eslint.js';
+import { configDefaults, defineConfig } from 'vitest/config';
 
-export default defineConfig([
-  configs.ignores,
-  configs.javascript,
-  configs.typescript,
-  configs.node,
-  configs.openSource,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.js', '*.ts'],
-        },
-        // eslint-disable-next-line n/no-unsupported-features/node-builtins
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-    rules: {
-      'n/no-process-exit': 'off',
-      'n/hashbang': 'off',
-    },
+export default defineConfig({
+  test: {
+    exclude: [...configDefaults.exclude, 'dist/**'],
   },
-]);
+});
