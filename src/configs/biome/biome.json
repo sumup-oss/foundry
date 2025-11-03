@@ -252,28 +252,6 @@
           "cssModules": true
         }
       }
-    },
-    {
-      "includes": ["**/*.astro", "**/*.svelte", "**/*.vue"],
-      "assist": {
-        "actions": {
-          "source": {
-            "organizeImports": "off"
-          }
-        }
-      },
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "off",
-            "noUnusedVariables": "off"
-          },
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          }
-        }
-      }
     }
   ]
 }
