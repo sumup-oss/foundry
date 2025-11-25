@@ -117,7 +117,7 @@
     "license-checker": "^25.0.1",
     "rimraf": "^6.1.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.10"
   },
   "peerDependencies": {
     "@sumup-oss/stylelint-plugin-circuit-ui": ">=3.0.0 <5.0.0",
