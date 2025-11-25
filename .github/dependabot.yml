@@ -3,13 +3,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: 'monthly'
+      interval: "monthly"
+    cooldown:
+      default-days: 7
     versioning-strategy: increase
     groups:
       typescript-eslint:
         patterns:
-          - 'typescript-eslint'
-          - '@typescript-eslint/*'
+          - "typescript-eslint"
+          - "@typescript-eslint/*"
