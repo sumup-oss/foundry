@@ -15714,7 +15714,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
     "parser": {
       "meta": {
         "name": "typescript-eslint/parser",
-        "version": "8.46.2",
+        "version": "8.47.0",
       },
       "parseForESLint": [Function],
     },
@@ -15820,6 +15820,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-unsafe-type-assertion": "error",
             "@typescript-eslint/no-unsafe-unary-minus": "error",
             "@typescript-eslint/no-unused-expressions": "error",
+            "@typescript-eslint/no-unused-private-class-members": "error",
             "@typescript-eslint/no-unused-vars": "error",
             "@typescript-eslint/no-use-before-define": "error",
             "@typescript-eslint/no-useless-constructor": "error",
@@ -15878,6 +15879,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "no-shadow": "off",
             "no-throw-literal": "off",
             "no-unused-expressions": "off",
+            "no-unused-private-class-members": "off",
             "no-unused-vars": "off",
             "no-use-before-define": "off",
             "no-useless-constructor": "off",
@@ -16006,7 +16008,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16139,6 +16141,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/no-unsafe-type-assertion": "error",
               "@typescript-eslint/no-unsafe-unary-minus": "error",
               "@typescript-eslint/no-unused-expressions": "error",
+              "@typescript-eslint/no-unused-private-class-members": "error",
               "@typescript-eslint/no-unused-vars": "error",
               "@typescript-eslint/no-use-before-define": "error",
               "@typescript-eslint/no-useless-constructor": "error",
@@ -16197,6 +16200,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "no-shadow": "off",
               "no-throw-literal": "off",
               "no-unused-expressions": "off",
+              "no-unused-private-class-members": "off",
               "no-unused-vars": "off",
               "no-use-before-define": "off",
               "no-useless-constructor": "off",
@@ -16211,7 +16215,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "parser": {
               "meta": {
                 "name": "typescript-eslint/parser",
-                "version": "8.46.2",
+                "version": "8.47.0",
               },
               "parseForESLint": [Function],
             },
@@ -16333,7 +16337,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16413,7 +16417,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16520,7 +16524,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16604,7 +16608,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16698,7 +16702,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16858,7 +16862,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16981,7 +16985,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17052,7 +17056,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17132,7 +17136,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.46.2",
+                  "version": "8.47.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17677,7 +17681,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
       },
       "meta": {
         "name": "@typescript-eslint/eslint-plugin",
-        "version": "8.46.2",
+        "version": "8.47.0",
       },
       "rules": {
         "adjacent-overload-signatures": {
@@ -22461,7 +22465,7 @@ You must still type the parameters of the function.",
             "messages": {
               "conditional": "Expected non-Promise value in a boolean conditional.",
               "predicate": "Expected a non-Promise value to be returned.",
-              "spread": "Expected a non-Promise value to be spreaded in an object.",
+              "spread": "Expected a non-Promise value to be spread in an object.",
               "voidReturnArgument": "Promise returned in function argument where a void return was expected.",
               "voidReturnAttribute": "Promise-returning function provided to attribute where a void return was expected.",
               "voidReturnInheritedMethod": "Promise-returning method provided where a void return was expected by extended/implemented type '{{ heritageTypeName }}'.",
@@ -23911,6 +23915,23 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
               },
             ],
             "type": "suggestion",
+          },
+        },
+        "no-unused-private-class-members": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "description": "Disallow unused private class members",
+              "extendsBaseRule": true,
+              "requiresTypeChecking": false,
+              "url": "https://typescript-eslint.io/rules/no-unused-private-class-members",
+            },
+            "messages": {
+              "unusedPrivateClassMember": "Private class member '{{classMemberName}}' is defined but never used.",
+            },
+            "schema": [],
+            "type": "problem",
           },
         },
         "no-unused-vars": {
