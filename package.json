@@ -93,7 +93,7 @@
     "husky": "^4.3.8",
     "is-ci": "^4.1.0",
     "lint-staged": "16.2.3",
-    "listr2": "^9.0.4",
+    "listr2": "^9.0.5",
     "read-package-up": "^11.0.0",
     "semver": "^7.7.2",
     "stylelint": "^16.24.0",
