@@ -130,5 +130,8 @@
     "eslint-plugin-react": {
       "optional": true
     }
+  },
+  "overrides": {
+    "@inquirer/type": "^4.0.0"
   }
 }
