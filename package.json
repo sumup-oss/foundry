@@ -108,7 +108,7 @@
     "@changesets/cli": "^2.29.7",
     "@types/cross-spawn": "^6.0.6",
     "@types/eslint-plugin-security": "^3.0.0",
-    "@types/node": "^24.6.1",
+    "@types/node": "^24.10.1",
     "@types/semver": "^7.7.1",
     "@types/yargs": "^17.0.35",
     "@vitest/coverage-v8": "^4.0.10",
