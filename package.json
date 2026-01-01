@@ -89,7 +89,7 @@
     "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-notice": "^1.1.0-rc1",
     "eslint-plugin-security": "^3.0.1",
-    "globals": "^16.4.0",
+    "globals": "^16.5.0",
     "husky": "^4.3.8",
     "is-ci": "^4.1.0",
     "lint-staged": "16.2.7",
