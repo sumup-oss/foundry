@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 9.0.6
+
+### Patch Changes
+
+- [#1181](https://github.com/sumup-oss/foundry/pull/1181) [`a47f744`](https://github.com/sumup-oss/foundry/commit/a47f7445734708486c0a0db4ed9a268c5097ccd1) Thanks [@connor-baer](https://github.com/connor-baer)! - Included prerelease versions of Circuit UI's Stylelint plugin in the peer dependency range."
+
 ## 9.0.5
 
 ### Patch Changes
