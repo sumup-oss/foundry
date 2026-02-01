@@ -95,7 +95,7 @@
     "lint-staged": "16.2.7",
     "listr2": "^9.0.5",
     "read-package-up": "^11.0.0",
-    "semver": "^7.7.2",
+    "semver": "^7.7.3",
     "stylelint": "^16.24.0",
     "stylelint-config-standard": "^39.0.0",
     "stylelint-no-unsupported-browser-features": "^8.0.4",
