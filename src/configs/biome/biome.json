@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -48,10 +48,8 @@
     "rules": {
       "recommended": true,
       "nursery": {
-        "noImportCycles": "error",
         "noFloatingPromises": "error",
         "noMisusedPromises": "error",
-        "noNonNullAssertedOptionalChain": "error",
         "noUnnecessaryConditions": "warn"
       },
       "a11y": {
@@ -230,7 +228,9 @@
         "noTsIgnore": "error",
         "noUselessRegexBackrefs": "error",
         "noVar": "error",
-        "useGuardForIn": "error"
+        "useGuardForIn": "error",
+        "noImportCycles": "error",
+        "noNonNullAssertedOptionalChain": "error"
       }
     }
   },

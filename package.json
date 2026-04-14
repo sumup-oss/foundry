@@ -70,7 +70,7 @@
     "node 22"
   ],
   "dependencies": {
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.4.10",
     "@biomejs/js-api": "^3.0.0",
     "@biomejs/wasm-nodejs": "2.2.4",
     "@eslint/js": "^9.39.2",
