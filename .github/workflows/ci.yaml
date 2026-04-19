@@ -22,9 +22,6 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: "npm"
 
-      - name: Update npm
-        run: npm update -g npm
-
       - name: Install dependencies
         run: npm ci
 
