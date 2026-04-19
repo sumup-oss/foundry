@@ -63,11 +63,10 @@
     "release": "changeset publish"
   },
   "engines": {
-    "node": "^20.19 || >=22"
+    "node": ">=24"
   },
   "browserslist": [
-    "node 20.19",
-    "node 22"
+    "node 24"
   ],
   "dependencies": {
     "@biomejs/biome": "2.2.4",
