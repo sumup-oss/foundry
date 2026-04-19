@@ -228,6 +228,7 @@
         "noSkippedTests": "error",
         "noTemplateCurlyInString": "error",
         "noTsIgnore": "error",
+        "noUnassignedVariables": "error",
         "noUselessRegexBackrefs": "error",
         "noVar": "error",
         "useGuardForIn": "error"
