@@ -4,5 +4,10 @@
   "initialVersions": {
     "@sumup-oss/foundry": "9.0.6"
   },
-  "changesets": []
+  "changesets": [
+    "brave-cloths-type",
+    "giant-plants-relate",
+    "green-bears-taste",
+    "plenty-trains-write"
+  ]
 }
