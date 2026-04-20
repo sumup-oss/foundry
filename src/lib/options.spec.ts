@@ -250,6 +250,7 @@ describe('options', () => {
     });
   });
 
+  // biome-ignore lint/security/noSecrets: False positive
   describe('warnAboutUnsupportedPlugins', () => {
     it('should log a warning if a plugin is installed at a lower version than has been tested with Foundry', () => {
       const packageJson = {

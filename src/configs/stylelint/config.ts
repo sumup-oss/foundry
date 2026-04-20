@@ -14,6 +14,7 @@
  */
 
 import { deepmergeCustom } from 'deepmerge-ts';
+// biome-ignore lint/correctness/noUnresolvedImports: False positive on a type export
 import type { Config as StylelintConfig } from 'stylelint';
 
 import { flow, isEmpty, uniq } from '../../lib/helpers.js';
