@@ -118,31 +118,29 @@ describe('options', () => {
   });
 
   describe('detectEnvironments', () => {
-    it.each(NODE_LIBRARIES)(
-      'should include `Node` when `%s` is installed',
-      (library) => {
-        const packageJson = {
-          ...basePackageJson,
-          devDependencies: { [library]: '^1.0.0' },
-        };
-        const actual = detectEnvironments(packageJson);
+    it.each(
+      NODE_LIBRARIES,
+    )('should include `Node` when `%s` is installed', (library) => {
+      const packageJson = {
+        ...basePackageJson,
+        devDependencies: { [library]: '^1.0.0' },
+      };
+      const actual = detectEnvironments(packageJson);
 
-        expect(actual).toContain(Environment.Node);
-      },
-    );
+      expect(actual).toContain(Environment.Node);
+    });
 
-    it.each(BROWSER_LIBRARIES)(
-      'should include `Browser` when `%s` is installed',
-      (library) => {
-        const packageJson = {
-          ...basePackageJson,
-          devDependencies: { [library]: '^1.0.0' },
-        };
-        const actual = detectEnvironments(packageJson);
+    it.each(
+      BROWSER_LIBRARIES,
+    )('should include `Browser` when `%s` is installed', (library) => {
+      const packageJson = {
+        ...basePackageJson,
+        devDependencies: { [library]: '^1.0.0' },
+      };
+      const actual = detectEnvironments(packageJson);
 
-        expect(actual).toContain(Environment.Browser);
-      },
-    );
+      expect(actual).toContain(Environment.Browser);
+    });
 
     it('should include `Node` for a CLI package', () => {
       const packageJson = {
@@ -169,18 +167,15 @@ describe('options', () => {
     it.each([
       ['next', Framework.Nextjs],
       ['react', Framework.React],
-    ])(
-      'should, when `%s` is installed, include the `%s` preset',
-      (library, preset) => {
-        const packageJson = {
-          ...basePackageJson,
-          dependencies: { [library]: '^1.0.0' },
-        };
-        const actual = detectFrameworks(packageJson);
+    ])('should, when `%s` is installed, include the `%s` preset', (library, preset) => {
+      const packageJson = {
+        ...basePackageJson,
+        dependencies: { [library]: '^1.0.0' },
+      };
+      const actual = detectFrameworks(packageJson);
 
-        expect(actual).toContain(preset);
-      },
-    );
+      expect(actual).toContain(preset);
+    });
 
     it('should not include the `React` preset when `next` is installed', () => {
       const packageJson = {
@@ -202,18 +197,15 @@ describe('options', () => {
       ['eslint-plugin-cypress', Plugin.Cypress],
       ['eslint-plugin-playwright', Plugin.Playwright],
       ['eslint-plugin-storybook', Plugin.Storybook],
-    ])(
-      'should, when `%s` is installed, include the `%s` preset',
-      (library, preset) => {
-        const packageJson = {
-          ...basePackageJson,
-          dependencies: { [library]: '^1.0.0' },
-        };
-        const actual = detectPlugins(packageJson);
+    ])('should, when `%s` is installed, include the `%s` preset', (library, preset) => {
+      const packageJson = {
+        ...basePackageJson,
+        dependencies: { [library]: '^1.0.0' },
+      };
+      const actual = detectPlugins(packageJson);
 
-        expect(actual).toContain(preset);
-      },
-    );
+      expect(actual).toContain(preset);
+    });
 
     it('should detect multiple libraries', () => {
       const packageJson = {

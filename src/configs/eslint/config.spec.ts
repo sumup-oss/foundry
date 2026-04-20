@@ -20,11 +20,10 @@ import { configs } from './config.js';
 describe('eslint', () => {
   describe('configs', () => {
     const configCases = Object.entries(configs);
-    it.each(configCases)(
-      'should match the snapshot for the %s preset',
-      (_name, config) => {
-        expect(config).toMatchSnapshot();
-      },
-    );
+    it.each(
+      configCases,
+    )('should match the snapshot for the %s preset', (_name, config) => {
+      expect(config).toMatchSnapshot();
+    });
   });
 });

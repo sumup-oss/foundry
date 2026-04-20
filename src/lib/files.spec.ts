@@ -222,13 +222,10 @@ describe('files', () => {
       ['module', 'commonjs', 'cjs'],
       ['commonjs', 'module', 'mjs'],
       ['commonjs', 'commonjs', 'js'],
-    ])(
-      'should return the file name for a %s file in a %s package',
-      (packageType, fileType, extension) => {
-        const file = 'file';
-        const fileName = getFileExtension(file, fileType, packageType);
-        expect(fileName).toBe(`${file}.${extension}`);
-      },
-    );
+    ])('should return the file name for a %s file in a %s package', (packageType, fileType, extension) => {
+      const file = 'file';
+      const fileName = getFileExtension(file, fileType, packageType);
+      expect(fileName).toBe(`${file}.${extension}`);
+    });
   });
 });
