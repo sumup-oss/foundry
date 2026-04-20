@@ -50,7 +50,8 @@
       "nursery": {
         "noFloatingPromises": "error",
         "noMisusedPromises": "error",
-        "noUnnecessaryConditions": "warn"
+        "noUnnecessaryConditions": "warn",
+        "useErrorCause": "warn"
       },
       "a11y": {
         "noSvgWithoutTitle": "warn",
@@ -115,6 +116,7 @@
           }
         },
         "noUndeclaredVariables": "error",
+        "noUnresolvedImports": "error",
         "noUnusedImports": "error",
         "noUnusedVariables": {
           "level": "error",
@@ -203,6 +205,7 @@
         "useCollapsedElseIf": "error",
         "useCollapsedIf": "off",
         "useConsistentArrayType": "error",
+        "useConsistentArrowReturn": "error",
         "useConsistentBuiltinInstantiation": "on",
         "useConsistentObjectDefinitions": "error",
         "useConst": "error",
@@ -229,7 +232,9 @@
         "noUselessRegexBackrefs": "error",
         "noVar": "error",
         "useGuardForIn": "error",
+        "noDeprecatedImports": "warn",
         "noImportCycles": "error",
+        "noUnusedExpressions": "error",
         "noNonNullAssertedOptionalChain": "error"
       }
     }

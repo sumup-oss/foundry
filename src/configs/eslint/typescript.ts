@@ -105,6 +105,7 @@ export const typescript = {
     '@typescript-eslint/no-unnecessary-type-constraint': 'off',
     '@typescript-eslint/no-unsafe-declaration-merging': 'off',
     '@typescript-eslint/no-unsafe-function-type': 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-useless-constructor': 'off',
@@ -168,19 +169,12 @@ export const typescript = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': javascript.rules['no-shadow'],
 
-    // Replace ESLint 'no-unused-expressions' rule with '@typescript-eslint' version
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md
-    //   'no-unused-expressions': 'off',
-    '@typescript-eslint/no-unused-expressions':
-      javascript.rules['no-unused-expressions'],
-
     /**
      * Imports
      */
 
     // These rules are recommended to be disabled within TypeScript projects as TypeScript provides the same checks as part of standard type checking.
     // See https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
-    'import-x/named': 'off',
     'import-x/no-named-as-default-member': 'off',
     'import-x/no-unresolved': 'off',
   },

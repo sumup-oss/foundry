@@ -63,6 +63,7 @@ export const javascript = {
 
     // Covered by Biome
     'array-callback-return': 'off',
+    'arrow-body-style': 'off',
     'constructor-super': 'off',
     'curly': 'off',
     'default-case-last': 'off',
@@ -146,6 +147,7 @@ export const javascript = {
     'no-unsafe-finally': 'off',
     'no-unsafe-negation': 'off',
     'no-unsafe-optional-chaining': 'off',
+    'no-unused-expressions': 'off',
     'no-unused-labels': 'off',
     'no-unused-private-class-members': 'off',
     'no-unused-vars': 'off',
@@ -178,6 +180,10 @@ export const javascript = {
     'use-isnan': 'off',
     'valid-typeof': 'off',
     'yoda': 'off',
+
+    'import-x/named': 'off',
+    'import-x/no-cycle': 'off',
+    'import-x/no-deprecated': 'off',
 
     /**
      * Best practices
@@ -265,17 +271,6 @@ export const javascript = {
     // https://eslint.org/docs/latest/rules/no-script-url
     'no-script-url': 'error',
 
-    // disallow usage of expressions in statement position
-    // https://eslint.org/docs/latest/rules/no-unused-expressions
-    'no-unused-expressions': [
-      'error',
-      {
-        allowShortCircuit: false,
-        allowTernary: false,
-        allowTaggedTemplates: false,
-      },
-    ],
-
     // disallow redundant return; keywords
     // https://eslint.org/docs/latest/rules/no-useless-return
     'no-useless-return': 'error',
@@ -320,15 +315,6 @@ export const javascript = {
     /**
      * ES6
      */
-
-    // enforces no braces where they can be omitted
-    // https://eslint.org/docs/latest/rules/arrow-body-style
-    // TODO: enable requireReturnForObjectLiteral?
-    'arrow-body-style': [
-      'error',
-      'as-needed',
-      { requireReturnForObjectLiteral: false },
-    ],
 
     // disallow specified names in exports
     // https://eslint.org/docs/latest/rules/no-restricted-exports
@@ -486,10 +472,6 @@ export const javascript = {
     // warn on accessing default export property names that are also named exports
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-named-as-default-member.md
     'import-x/no-named-as-default-member': 'error',
-
-    // disallow use of jsdoc-marked-deprecated imports
-    // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md
-    'import-x/no-deprecated': 'warn',
 
     // forbid mutable exports
     // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-mutable-exports.md
