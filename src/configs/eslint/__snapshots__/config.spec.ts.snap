@@ -5967,7 +5967,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "import-x/export": "error",
     "import-x/extensions": "off",
     "import-x/first": "error",
-    "import-x/named": "off",
+    "import-x/named": "error",
     "import-x/namespace": "error",
     "import-x/newline-after-import": "error",
     "import-x/no-absolute-path": "error",

@@ -15,7 +15,6 @@
 
 import type { Linter } from 'eslint';
 import nodePlugin from 'eslint-plugin-n';
-// biome-ignore lint/correctness/noUnresolvedImports: Incompatibility between CJS and ESM
 import securityPlugin from 'eslint-plugin-security';
 
 import { files } from './files.js';

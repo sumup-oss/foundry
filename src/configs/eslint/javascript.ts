@@ -181,7 +181,6 @@ export const javascript = {
     'valid-typeof': 'off',
     'yoda': 'off',
 
-    'import-x/named': 'off',
     'import-x/no-cycle': 'off',
     'import-x/no-deprecated': 'off',
 

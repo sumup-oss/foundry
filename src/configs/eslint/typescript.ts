@@ -175,6 +175,7 @@ export const typescript = {
 
     // These rules are recommended to be disabled within TypeScript projects as TypeScript provides the same checks as part of standard type checking.
     // See https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+    'import-x/named': 'off',
     'import-x/no-named-as-default-member': 'off',
     'import-x/no-unresolved': 'off',
   },

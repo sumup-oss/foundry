@@ -14,7 +14,6 @@
  */
 
 import type { Linter } from 'eslint';
-// biome-ignore lint/correctness/noUnresolvedImports: False positive, the package is definitely installed
 import compat from 'eslint-plugin-compat';
 import globals from 'globals';
 
