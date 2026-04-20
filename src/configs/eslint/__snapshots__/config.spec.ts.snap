@@ -5928,13 +5928,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
   },
   "rules": {
     "array-callback-return": "off",
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      {
-        "requireReturnForObjectLiteral": false,
-      },
-    ],
+    "arrow-body-style": "off",
     "block-scoped-var": "error",
     "camelcase": [
       "error",
@@ -5978,7 +5972,8 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "import-x/newline-after-import": "error",
     "import-x/no-absolute-path": "error",
     "import-x/no-amd": "error",
-    "import-x/no-deprecated": "warn",
+    "import-x/no-cycle": "off",
+    "import-x/no-deprecated": "off",
     "import-x/no-duplicates": "error",
     "import-x/no-dynamic-require": "error",
     "import-x/no-empty-named-blocks": "error",
@@ -6178,14 +6173,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "no-unsafe-finally": "off",
     "no-unsafe-negation": "off",
     "no-unsafe-optional-chaining": "off",
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowShortCircuit": false,
-        "allowTaggedTemplates": false,
-        "allowTernary": false,
-      },
-    ],
+    "no-unused-expressions": "off",
     "no-unused-labels": "off",
     "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
@@ -28596,14 +28584,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "@typescript-eslint/no-unsafe-member-access": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unsafe-unary-minus": "error",
-    "@typescript-eslint/no-unused-expressions": [
-      "error",
-      {
-        "allowShortCircuit": false,
-        "allowTaggedTemplates": false,
-        "allowTernary": false,
-      },
-    ],
+    "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-useless-constructor": "off",
@@ -28629,13 +28610,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "off",
     "array-callback-return": "off",
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      {
-        "requireReturnForObjectLiteral": false,
-      },
-    ],
+    "arrow-body-style": "off",
     "block-scoped-var": "error",
     "camelcase": "off",
     "class-methods-use-this": [
@@ -28673,7 +28648,8 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "import-x/newline-after-import": "error",
     "import-x/no-absolute-path": "error",
     "import-x/no-amd": "error",
-    "import-x/no-deprecated": "warn",
+    "import-x/no-cycle": "off",
+    "import-x/no-deprecated": "off",
     "import-x/no-duplicates": "error",
     "import-x/no-dynamic-require": "error",
     "import-x/no-empty-named-blocks": "error",

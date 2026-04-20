@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -48,11 +48,10 @@
     "rules": {
       "recommended": true,
       "nursery": {
-        "noImportCycles": "error",
         "noFloatingPromises": "error",
         "noMisusedPromises": "error",
-        "noNonNullAssertedOptionalChain": "error",
-        "noUnnecessaryConditions": "warn"
+        "noUnnecessaryConditions": "warn",
+        "useErrorCause": "warn"
       },
       "a11y": {
         "noSvgWithoutTitle": "warn",
@@ -205,6 +204,7 @@
         "useCollapsedElseIf": "error",
         "useCollapsedIf": "off",
         "useConsistentArrayType": "error",
+        "useConsistentArrowReturn": "error",
         "useConsistentBuiltinInstantiation": "on",
         "useConsistentObjectDefinitions": "error",
         "useConst": "error",
@@ -230,7 +230,11 @@
         "noTsIgnore": "error",
         "noUselessRegexBackrefs": "error",
         "noVar": "error",
-        "useGuardForIn": "error"
+        "useGuardForIn": "error",
+        "noDeprecatedImports": "warn",
+        "noImportCycles": "error",
+        "noUnusedExpressions": "error",
+        "noNonNullAssertedOptionalChain": "error"
       }
     }
   },
