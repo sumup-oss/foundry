@@ -126,6 +126,9 @@
       "performance": {
         "noReExportAll": "error"
       },
+      "security": {
+        "noSecrets": "error"
+      },
       "style": {
         "noCommonJs": "on",
         "noNamespace": "error",
