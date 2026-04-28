@@ -31,9 +31,9 @@ export default {
           onNonMatchingHeader,
           nonMatchingTolerance,
           messages,
-        } = resolveOptions(context.options[0], context.getFilename());
+        } = resolveOptions(context.options[0], context.filename);
 
-        const sourceCode = context.getSourceCode();
+        const { sourceCode } = context;
         const text = sourceCode.getText().substring(0, chars);
         const firstComment = sourceCode.getAllComments()[0];
         return {
