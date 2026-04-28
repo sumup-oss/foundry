@@ -20,19 +20,6 @@ import importX from 'eslint-plugin-import-x';
 
 import { extensions, files } from './files.js';
 
-// Adapted from https://github.com/9romise/eslint-import-resolver-oxc/blob/main/src/typings.ts
-type ImportResolver = {
-  interfaceVersion: 3;
-  name: string;
-  resolve: (
-    source: string,
-    file: string,
-  ) => {
-    found: boolean;
-    path: string | null | undefined;
-  };
-};
-
 export const javascript = {
   name: 'foundry/javascript',
   files: files.javascript,
@@ -40,7 +27,7 @@ export const javascript = {
     'import-x': importX as unknown as ESLint.Plugin,
   },
   settings: {
-    'import-x/resolver-next': [createOxcImportResolver() as ImportResolver],
+    'import-x/resolver-next': [createOxcImportResolver()],
     'import-x/extensions': [...extensions.javascript, ...extensions.typescript],
     'import-x/ignore': [
       'node_modules',
