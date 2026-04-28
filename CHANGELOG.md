@@ -4,33 +4,15 @@
 
 ### Major Changes
 
-- [#1203](https://github.com/sumup-oss/foundry/pull/1203) [`1243441`](https://github.com/sumup-oss/foundry/commit/12434415189720d3b3012c86ef0c57449535729c) Thanks [@hilleer](https://github.com/hilleer)! - Replaced the `arrow-body-style`, `no-unused-expressions`, `import-x/no-cycle`, and `import-x/no-deprecated` ESLint rules with their Biome equivalents.
-
-- [#1207](https://github.com/sumup-oss/foundry/pull/1207) [`730cac2`](https://github.com/sumup-oss/foundry/commit/730cac229266ac95f54ca87b453435aa400a3f58) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to ESLint 10. We expect that most users should be able to upgrade without any changes, but the [migration guide](https://eslint.org/docs/latest/use/migrate-to-10.0.0) should be a useful resource if you encounter problems.
-
 - [#1205](https://github.com/sumup-oss/foundry/pull/1205) [`b0f581d`](https://github.com/sumup-oss/foundry/commit/b0f581de074dff37aed14adc49d1959f2376028e) Thanks [@connor-baer](https://github.com/connor-baer)! - Dropped support for Node <24.
-
-- [#1203](https://github.com/sumup-oss/foundry/pull/1203) [`1243441`](https://github.com/sumup-oss/foundry/commit/12434415189720d3b3012c86ef0c57449535729c) Thanks [@hilleer](https://github.com/hilleer)! - Upgraded to Biome 2.4. Run `biome migrate --write` to migrate your `biome.jsonc` config file.
 
 - [#1206](https://github.com/sumup-oss/foundry/pull/1206) [`7ee1259`](https://github.com/sumup-oss/foundry/commit/7ee1259610c87ae0c2d7af9a7d4d54625febccfa) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to Stylelint 17. We expect that most users should be able to upgrade without any changes, but the [migration guide](https://stylelint.io/migration-guide/to-17) should be a useful resource if you encounter problems.
 
-### Minor Changes
-
-- [#1145](https://github.com/sumup-oss/foundry/pull/1145) [`77bb7ae`](https://github.com/sumup-oss/foundry/commit/77bb7ae7c24c31784da692fb0dc2f10d44bfd66f) Thanks [@connor-baer](https://github.com/connor-baer)! - Removed warnings about missing or unsupported ESLint plugins to speed up linting.
-
-## 10.0.0-next.0
-
-### Major Changes
-
-- [#1203](https://github.com/sumup-oss/foundry/pull/1203) [`1243441`](https://github.com/sumup-oss/foundry/commit/12434415189720d3b3012c86ef0c57449535729c) Thanks [@hilleer](https://github.com/hilleer)! - Replaced the `arrow-body-style`, `no-unused-expressions`, `import-x/no-cycle`, and `import-x/no-deprecated` ESLint rules with their Biome equivalents.
-
 - [#1207](https://github.com/sumup-oss/foundry/pull/1207) [`730cac2`](https://github.com/sumup-oss/foundry/commit/730cac229266ac95f54ca87b453435aa400a3f58) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to ESLint 10. We expect that most users should be able to upgrade without any changes, but the [migration guide](https://eslint.org/docs/latest/use/migrate-to-10.0.0) should be a useful resource if you encounter problems.
-
-- [#1205](https://github.com/sumup-oss/foundry/pull/1205) [`b0f581d`](https://github.com/sumup-oss/foundry/commit/b0f581de074dff37aed14adc49d1959f2376028e) Thanks [@connor-baer](https://github.com/connor-baer)! - Dropped support for Node <24.
 
 - [#1203](https://github.com/sumup-oss/foundry/pull/1203) [`1243441`](https://github.com/sumup-oss/foundry/commit/12434415189720d3b3012c86ef0c57449535729c) Thanks [@hilleer](https://github.com/hilleer)! - Upgraded to Biome 2.4. Run `biome migrate --write` to migrate your `biome.jsonc` config file.
 
-- [#1206](https://github.com/sumup-oss/foundry/pull/1206) [`7ee1259`](https://github.com/sumup-oss/foundry/commit/7ee1259610c87ae0c2d7af9a7d4d54625febccfa) Thanks [@connor-baer](https://github.com/connor-baer)! - Upgraded to Stylelint 17. We expect that most users should be able to upgrade without any changes, but the [migration guide](https://stylelint.io/migration-guide/to-17) should be a useful resource if you encounter problems.
+- [#1203](https://github.com/sumup-oss/foundry/pull/1203) [`1243441`](https://github.com/sumup-oss/foundry/commit/12434415189720d3b3012c86ef0c57449535729c) Thanks [@hilleer](https://github.com/hilleer)! - Replaced the `arrow-body-style`, `no-unused-expressions`, `import-x/no-cycle`, and `import-x/no-deprecated` ESLint rules with their Biome equivalents.
 
 ### Minor Changes
 
