@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-import type { Linter } from 'eslint';
-import noticePlugin from 'eslint-plugin-notice';
+import type { ESLint, Linter } from 'eslint';
 
 import { files } from './files.js';
+import noticePlugin from './plugins/eslint-plugin-notice/index.js';
 
 export const openSource = {
   name: 'foundry/open-source',
   files: [...files.javascript, ...files.typescript],
   plugins: {
-    notice: noticePlugin,
+    notice: noticePlugin as ESLint.Plugin,
   },
   rules: {
     'notice/notice': [

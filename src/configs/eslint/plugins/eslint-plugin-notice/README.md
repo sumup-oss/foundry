@@ -1,3 +1,7 @@
+Adapted from [eslint-plugin-notice](https://github.com/nickdeis/eslint-plugin-notice) to add [support for ESLint v10](https://github.com/nickdeis/eslint-plugin-notice/issues/35). Original README below.
+
+---
+
 [![Build Status](https://github.com/nickdeis/eslint-plugin-notice/actions/workflows/main.yml/badge.svg)](https://github.com/nickdeis/eslint-plugin-notice/actions/workflows/main.yml/badge.svg)
 
 # eslint-plugin-notice

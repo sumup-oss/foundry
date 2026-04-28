@@ -3,29 +3,25 @@
  * @author Nick Deis
  */
 
-"use strict";
+import metriclcs from 'metric-lcs';
 
-const fs = require("fs"),
-  _ = require("lodash"),
-  utils = require("./utils"),
-  metriclcs = require("metric-lcs");
+import { createFixer, resolveOptions } from './utils.js';
 
-const {  resolveOptions, createFixer } = utils;
-
-module.exports = {
+export default {
   meta: {
-    name: "eslint-plugin-notice",
-    version: "1.0.0"
+    name: 'eslint-plugin-notice',
+    version: '1.0.0',
   },
   rules: {
     notice: {
       meta: {
         docs: {
-          description: "An eslint rule that checks the top of files and --fix them too!",
-          category: "Stylistic Issues"
+          description:
+            'An eslint rule that checks the top of files and --fix them too!',
+          category: 'Stylistic Issues',
         },
-        fixable: "code",
-        schema: false
+        fixable: 'code',
+        schema: false,
       },
       create(context) {
         const {
@@ -34,7 +30,7 @@ module.exports = {
           chars,
           onNonMatchingHeader,
           nonMatchingTolerance,
-          messages
+          messages,
         } = resolveOptions(context.options[0], context.getFilename());
 
         const sourceCode = context.getSourceCode();
@@ -54,48 +50,70 @@ module.exports = {
             }
             let headerMatches = false;
             if (!headerMatches && mustMatch && text) {
-              headerMatches = !!(String(text).replace(/\r\n/g, "\n")).match(mustMatch);
+              headerMatches = !!String(text)
+                .replace(/\r\n/g, '\n')
+                .match(mustMatch);
               //If the header matches, return early
-              if (headerMatches) return;
+              if (headerMatches) {
+                return;
+              }
             }
             //If chars doesn't match, a header comment/template exists and nonMatchingTolerance is set, try calculating string distance
-            if (!headerMatches && hasHeaderComment && resolvedTemplate && _.isNumber(nonMatchingTolerance)) {
+            if (
+              !headerMatches &&
+              hasHeaderComment &&
+              resolvedTemplate &&
+              typeof nonMatchingTolerance === 'number'
+            ) {
               const dist = metriclcs(resolvedTemplate, firstComment.value);
               //Return early, mark as true for future work if needed
               if (nonMatchingTolerance <= dist) {
                 headerMatches = true;
                 return;
-              } else {
-                const fix = createFixer({ resolvedTemplate, hasHeaderComment, topNode, onNonMatchingHeader });
-                const report = {
-                  node,
-                  message: messages.whenOutsideTolerance,
-                  fix,
-                  data: { similarity: Math.round(dist * 1000) / 1000 }
-                };
-                context.report(report);
-                return;
               }
-            }
-            //report and skip
-            if (hasHeaderComment && onNonMatchingHeader === "report" && !headerMatches) {
+              const fix = createFixer({
+                resolvedTemplate,
+                hasHeaderComment,
+                topNode,
+                onNonMatchingHeader,
+              });
               const report = {
                 node,
-                message: messages.reportAndSkip
+                message: messages.whenOutsideTolerance,
+                fix,
+                data: { similarity: Math.round(dist * 1000) / 1000 },
+              };
+              context.report(report);
+              return;
+            }
+            //report and skip
+            if (
+              hasHeaderComment &&
+              onNonMatchingHeader === 'report' &&
+              !headerMatches
+            ) {
+              const report = {
+                node,
+                message: messages.reportAndSkip,
               };
               context.report(report);
               return;
             }
             //Select fixer based off onNonMatchingHeader
-            const fix = createFixer({ resolvedTemplate, hasHeaderComment, topNode, onNonMatchingHeader });
+            const fix = createFixer({
+              resolvedTemplate,
+              hasHeaderComment,
+              topNode,
+              onNonMatchingHeader,
+            });
             if (!headerMatches) {
               const report = { node, message: messages.whenFailedToMatch, fix };
               context.report(report);
               return;
             }
-          }
+          },
         };
-      }
-    }
-  }
+      },
+    },
+  },
 };
