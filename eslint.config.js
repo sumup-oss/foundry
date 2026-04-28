@@ -16,7 +16,9 @@
 import { configs, defineConfig } from './dist/eslint.js';
 
 export default defineConfig([
-  configs.ignores,
+  {
+    ignores: [...configs.ignores.ignores, './src/configs/eslint/plugins'],
+  },
   configs.javascript,
   configs.typescript,
   configs.node,
@@ -27,7 +29,7 @@ export default defineConfig([
         projectService: {
           allowDefaultProject: ['*.js', '*.ts'],
         },
-        // eslint-disable-next-line n/no-unsupported-features/node-builtins
+
         tsconfigRootDir: import.meta.dirname,
       },
     },

@@ -2322,7 +2322,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
               "configs": [Circular],
               "meta": {
                 "name": "eslint-plugin-compat",
-                "version": "6.0.2",
+                "version": "7.0.1",
               },
               "rules": {
                 "compat": {
@@ -2332,7 +2332,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
                       "category": "Compatibility",
                       "description": "Ensure cross-browser API compatibility",
                       "recommended": true,
-                      "url": "https://github.com/amilajack/eslint-plugin-compat/blob/master/docs/rules/compat.md",
+                      "url": "https://github.com/amilajack/eslint-plugin-compat/blob/main/docs/rules/compat.md",
                     },
                     "schema": [
                       {
@@ -3501,7 +3501,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
               "configs": [Circular],
               "meta": {
                 "name": "eslint-plugin-compat",
-                "version": "6.0.2",
+                "version": "7.0.1",
               },
               "rules": {
                 "compat": {
@@ -3511,7 +3511,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
                       "category": "Compatibility",
                       "description": "Ensure cross-browser API compatibility",
                       "recommended": true,
-                      "url": "https://github.com/amilajack/eslint-plugin-compat/blob/master/docs/rules/compat.md",
+                      "url": "https://github.com/amilajack/eslint-plugin-compat/blob/main/docs/rules/compat.md",
                     },
                     "schema": [
                       {
@@ -3542,7 +3542,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
       },
       "meta": {
         "name": "eslint-plugin-compat",
-        "version": "6.0.2",
+        "version": "7.0.1",
       },
       "rules": {
         "compat": {
@@ -3552,7 +3552,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
               "category": "Compatibility",
               "description": "Ensure cross-browser API compatibility",
               "recommended": true,
-              "url": "https://github.com/amilajack/eslint-plugin-compat/blob/master/docs/rules/compat.md",
+              "url": "https://github.com/amilajack/eslint-plugin-compat/blob/main/docs/rules/compat.md",
             },
             "schema": [
               {
@@ -4009,7 +4009,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
       "importXResolverCompat": [Function],
       "meta": {
         "name": "eslint-plugin-import-x",
-        "version": "4.16.1",
+        "version": "4.16.2",
       },
       "rules": {
         "consistent-type-specifier-style": {
@@ -4019,7 +4019,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce or ban the use of inline type-only markers for named imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/consistent-type-specifier-style.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/consistent-type-specifier-style.md",
             },
             "fixable": "code",
             "messages": {
@@ -4046,7 +4046,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Ensure a default export is present, given a default import.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/default.md",
             },
             "messages": {
               "noDefaultExport": "No default export found in imported module "{{module}}".",
@@ -4062,7 +4062,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce a leading comment with the webpackChunkName for dynamic imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/dynamic-import-chunkname.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/dynamic-import-chunkname.md",
             },
             "hasSuggestions": true,
             "messages": {
@@ -4105,7 +4105,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid any invalid exports, i.e. re-export of the same name.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/export.md",
             },
             "messages": {
               "multiDefault": "Multiple default exports.",
@@ -4123,7 +4123,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Ensure all exports appear after other statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/exports-last.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/exports-last.md",
             },
             "messages": {
               "end": "Export statements should appear at the end of the file",
@@ -4139,7 +4139,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Ensure consistent use of file extension within the import path.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/extensions.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/extensions.md",
             },
             "fixable": "code",
             "hasSuggestions": true,
@@ -4350,7 +4350,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Ensure all imports appear before other statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/first.md",
             },
             "fixable": "code",
             "messages": {
@@ -4376,7 +4376,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Prefer named exports to be grouped together in a single export declaration.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/group-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/group-exports.md",
             },
             "messages": {
               "AssignmentExpression": "Multiple CommonJS exports; consolidate all exports into a single assignment to \`module.exports\`",
@@ -4398,7 +4398,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
                   "message": "Replaced by \`import-x/first\`.",
                   "rule": {
                     "name": "first",
-                    "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+                    "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/first.md",
                   },
                 },
               ],
@@ -4407,7 +4407,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Replaced by \`import-x/first\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/imports-first.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/imports-first.md",
             },
             "fixable": "code",
             "messages": {
@@ -4433,7 +4433,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce the maximum number of dependencies a module can have.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/max-dependencies.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/max-dependencies.md",
             },
             "messages": {
               "max": "Maximum number of dependencies ({{max}}) exceeded.",
@@ -4462,7 +4462,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Ensure named imports correspond to a named export in the remote file.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/named.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/named.md",
             },
             "messages": {
               "notFound": "{{name}} not found in '{{path}}'",
@@ -4493,7 +4493,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/namespace.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/namespace.md",
             },
             "messages": {
               "computedReference": "Unable to validate computed reference to imported namespace '{{namespace}}'.",
@@ -4526,7 +4526,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce a newline after import statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/newline-after-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/newline-after-import.md",
             },
             "fixable": "whitespace",
             "messages": {
@@ -4560,7 +4560,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid import of modules using absolute paths.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-absolute-path.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-absolute-path.md",
             },
             "fixable": "code",
             "messages": {
@@ -4601,7 +4601,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Module systems",
               "description": "Forbid AMD \`require\` and \`define\` calls.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-amd.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-amd.md",
             },
             "messages": {
               "amd": "Expected imports instead of AMD {{type}}().",
@@ -4617,7 +4617,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid anonymous values as default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-anonymous-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-anonymous-default-export.md",
             },
             "messages": {
               "anonymous": "Unexpected default export of anonymous {{type}}",
@@ -4673,7 +4673,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Module systems",
               "description": "Forbid CommonJS \`require\` calls and \`module.exports\` or \`exports.*\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-commonjs.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-commonjs.md",
             },
             "messages": {
               "export": "Expected "export" or "export default"",
@@ -4726,7 +4726,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid a module from importing a module with a dependency path back to itself.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-cycle.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-cycle.md",
             },
             "messages": {
               "cycle": "Dependency cycle detected",
@@ -4792,7 +4792,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-default-export.md",
             },
             "messages": {
               "noAliasDefault": "Do not alias \`{{local}}\` as \`default\`. Just export \`{{local}}\` itself instead.",
@@ -4809,7 +4809,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid imported names marked with \`@deprecated\` documentation tag.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-deprecated.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-deprecated.md",
             },
             "messages": {
               "deprecated": "Deprecated: consider to find an alternative.",
@@ -4826,7 +4826,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid repeated import of the same module in multiple places.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-duplicates.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-duplicates.md",
             },
             "fixable": "code",
             "messages": {
@@ -4856,7 +4856,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid \`require()\` calls with expressions.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-dynamic-require.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-dynamic-require.md",
             },
             "messages": {
               "import": "Calls to import() should use string literals",
@@ -4883,7 +4883,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid empty named import blocks.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-empty-named-blocks.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-empty-named-blocks.md",
             },
             "fixable": "code",
             "hasSuggestions": true,
@@ -4903,7 +4903,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid the use of extraneous packages.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-extraneous-dependencies.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-extraneous-dependencies.md",
             },
             "messages": {
               "devDep": "'{{packageName}}' should be listed in the project's dependencies, not devDependencies.",
@@ -4976,7 +4976,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
               "category": "Module systems",
               "description": "Forbid import statements with CommonJS module.exports.",
               "recommended": true,
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-import-module-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-import-module-exports.md",
             },
             "fixable": "code",
             "messages": {
@@ -5003,7 +5003,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing the submodules of other modules.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-internal-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-internal-modules.md",
             },
             "messages": {
               "noAllowed": "Reaching to "{{importPath}}" is not allowed.",
@@ -5048,7 +5048,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid the use of mutable exports with \`var\` or \`let\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-mutable-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-mutable-exports.md",
             },
             "messages": {
               "noMutable": "Exporting mutable '{{kind}}' binding, use 'const' instead.",
@@ -5064,7 +5064,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid use of exported name as identifier of default export.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-as-default.md",
             },
             "messages": {
               "default": "Using exported name '{{name}}' as identifier for default export.",
@@ -5080,7 +5080,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid use of exported name as property of default export.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default-member.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-as-default-member.md",
             },
             "messages": {
               "member": "Caution: \`{{objectName}}\` also has a named export \`{{propName}}\`. Check if you meant to write \`import {{{propName}}} from '{{sourcePath}}'\` instead.",
@@ -5096,7 +5096,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid named default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-default.md",
             },
             "messages": {
               "default": "Use default import syntax to import '{{importName}}'.",
@@ -5112,7 +5112,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid named exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-export.md",
             },
             "messages": {
               "noAllowed": "Named exports are not allowed.",
@@ -5128,7 +5128,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid namespace (a.k.a. "wildcard" \`*\`) imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-namespace.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-namespace.md",
             },
             "fixable": "code",
             "messages": {
@@ -5158,7 +5158,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Module systems",
               "description": "Forbid Node.js builtin modules.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-nodejs-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-nodejs-modules.md",
             },
             "messages": {
               "builtin": "Do not import Node.js builtin module "{{moduleName}}"",
@@ -5188,7 +5188,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing packages through relative paths.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-packages.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-relative-packages.md",
             },
             "fixable": "code",
             "messages": {
@@ -5229,7 +5229,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing modules from parent directories.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-parent-imports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-relative-parent-imports.md",
             },
             "messages": {
               "noAllowed": "Relative imports from parent directories are not allowed. Please either pass what you're importing through at runtime (dependency injection), move \`{{filename}}\` to same directory as \`{{depPath}}\` or consider making \`{{depPath}}\` a package.",
@@ -5269,7 +5269,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid importing a default export by a different name.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-rename-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-rename-default.md",
             },
             "messages": {
               "renameDefault": "Caution: \`{{importBasename}}\` has a default export \`{{defaultExportName}}\`. This {{requiresOrImports}} \`{{defaultExportName}}\` as \`{{importName}}\`. Check if you meant to write \`{{suggestion}}\` instead.",
@@ -5300,7 +5300,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Enforce which files can be imported in a given folder.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-restricted-paths.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-restricted-paths.md",
             },
             "messages": {
               "glob": "Restricted path exceptions must be glob patterns when \`from\` contains glob patterns",
@@ -5380,7 +5380,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
               "category": "Static analysis",
               "description": "Forbid a module from importing itself.",
               "recommended": true,
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-self-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-self-import.md",
             },
             "messages": {
               "self": "Module imports itself.",
@@ -5396,7 +5396,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Forbid unassigned imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unassigned-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unassigned-import.md",
             },
             "messages": {
               "unassigned": "Imported module should be assigned",
@@ -5443,7 +5443,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Ensure imports point to a file/module that can be resolved.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unresolved.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unresolved.md",
             },
             "messages": {
               "casingMismatch": "Casing of {{module}} does not match the underlying filesystem.",
@@ -5491,7 +5491,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid modules without exports, or exports without matching import in another module.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unused-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unused-modules.md",
             },
             "messages": {
               "notFound": "No exports found",
@@ -5560,6 +5560,10 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
                     "type": "array",
                     "uniqueItems": true,
                   },
+                  "suppressMissingFileEnumeratorAPIWarning": {
+                    "description": "ESLint 10 and later versions remove the FileEnumerator API, which is required by the "no-unused-modules" rule. Therefore a warning message will be logged before an alternative is implemented. You can suppress the warning with this option",
+                    "type": "boolean",
+                  },
                   "unusedExports": {
                     "description": "report exports without any usage",
                     "type": "boolean",
@@ -5578,7 +5582,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid unnecessary path segments in import and require statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-useless-path-segments.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-useless-path-segments.md",
             },
             "fixable": "code",
             "messages": {
@@ -5608,7 +5612,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Static analysis",
               "description": "Forbid webpack loader syntax in imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-webpack-loader-syntax.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-webpack-loader-syntax.md",
             },
             "messages": {
               "unexpected": "Unexpected '!' in '{{name}}'. Do not use import syntax to configure webpack loaders.",
@@ -5624,7 +5628,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce a convention in module import order.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/order.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/order.md",
             },
             "fixable": "code",
             "messages": {
@@ -5851,7 +5855,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Prefer a default export if module exports a single name or multiple names.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/prefer-default-export.md",
             },
             "messages": {
               "any": "Prefer default export to be present on every file that has export.",
@@ -5883,7 +5887,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Style guide",
               "description": "Enforce using namespace imports for specific modules, like \`react\`/\`react-dom\`, etc.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-namespace-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/prefer-namespace-import.md",
             },
             "fixable": "code",
             "messages": {
@@ -5914,7 +5918,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
             "docs": {
               "category": "Module systems",
               "description": "Forbid potentially ambiguous parse goal (\`script\` vs. \`module\`).",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/unambiguous.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/unambiguous.md",
             },
             "messages": {
               "module": "This module could be parsed as a valid script.",
@@ -6150,6 +6154,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "no-template-curly-in-string": "off",
     "no-this-before-super": "off",
     "no-throw-literal": "off",
+    "no-unassigned-vars": "off",
     "no-undef": "off",
     "no-undef-init": "off",
     "no-underscore-dangle": [
@@ -6178,6 +6183,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
+    "no-useless-assignment": "error",
     "no-useless-backreference": "off",
     "no-useless-catch": "off",
     "no-useless-computed-key": "off",
@@ -6225,6 +6231,7 @@ exports[`eslint > configs > should match the snapshot for the javascript preset 
     "prefer-rest-params": "off",
     "prefer-spread": "error",
     "prefer-template": "off",
+    "preserve-caught-error": "off",
     "radix": "error",
     "require-await": "off",
     "require-yield": "off",
@@ -7878,9 +7885,11 @@ exports[`eslint > configs > should match the snapshot for the node preset 1`] = 
             "n/no-unsupported-features/node-builtins": "error",
             "n/prefer-global/buffer": "error",
             "n/prefer-global/console": "error",
+            "n/prefer-global/crypto": "error",
             "n/prefer-global/process": "error",
             "n/prefer-global/text-decoder": "error",
             "n/prefer-global/text-encoder": "error",
+            "n/prefer-global/timers": "error",
             "n/prefer-global/url": "error",
             "n/prefer-global/url-search-params": "error",
             "n/prefer-node-protocol": "error",
@@ -9443,7 +9452,7 @@ exports[`eslint > configs > should match the snapshot for the node preset 1`] = 
       },
       "meta": {
         "name": "eslint-plugin-n",
-        "version": "17.23.1",
+        "version": "17.24.0",
       },
       "rules": {
         "callback-return": {
@@ -13663,6 +13672,30 @@ exports[`eslint > configs > should match the snapshot for the node preset 1`] = 
             "type": "suggestion",
           },
         },
+        "prefer-global/crypto": {
+          "create": [Function],
+          "meta": {
+            "docs": {
+              "description": "enforce either \`crypto\` or \`require("crypto").webcrypto\`",
+              "recommended": false,
+              "url": "https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/docs/rules/prefer-global/crypto.md",
+            },
+            "fixable": null,
+            "messages": {
+              "preferGlobal": "Unexpected use of 'require("crypto").webcrypto'. Use the global variable 'crypto' instead.",
+              "preferModule": "Unexpected use of the global variable 'crypto'. Use 'require("crypto").webcrypto' instead.",
+            },
+            "schema": [
+              {
+                "enum": [
+                  "always",
+                  "never",
+                ],
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
         "prefer-global/process": {
           "create": [Function],
           "meta": {
@@ -13723,6 +13756,30 @@ exports[`eslint > configs > should match the snapshot for the node preset 1`] = 
             "messages": {
               "preferGlobal": "Unexpected use of 'require("util").TextEncoder'. Use the global variable 'TextEncoder' instead.",
               "preferModule": "Unexpected use of the global variable 'TextEncoder'. Use 'require("util").TextEncoder' instead.",
+            },
+            "schema": [
+              {
+                "enum": [
+                  "always",
+                  "never",
+                ],
+              },
+            ],
+            "type": "suggestion",
+          },
+        },
+        "prefer-global/timers": {
+          "create": [Function],
+          "meta": {
+            "docs": {
+              "description": "enforce either global timer functions or \`require("timers")\`",
+              "recommended": false,
+              "url": "https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/docs/rules/prefer-global/timers.md",
+            },
+            "fixable": null,
+            "messages": {
+              "preferGlobal": "Unexpected use of 'require("timers").*'. Use the global variable instead.",
+              "preferModule": "Unexpected use of the global variable. Use 'require("timers").*' instead.",
             },
             "schema": [
               {
@@ -14011,7 +14068,7 @@ exports[`eslint > configs > should match the snapshot for the node preset 1`] = 
       },
       "meta": {
         "name": "eslint-plugin-security",
-        "version": "3.0.1",
+        "version": "4.0.0",
       },
       "rules": {
         "detect-bidi-characters": {
@@ -15721,7 +15778,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
     "parser": {
       "meta": {
         "name": "typescript-eslint/parser",
-        "version": "8.50.1",
+        "version": "8.59.1",
       },
       "parseForESLint": [Function],
     },
@@ -15863,6 +15920,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/restrict-template-expressions": "error",
             "@typescript-eslint/return-await": "error",
             "@typescript-eslint/strict-boolean-expressions": "error",
+            "@typescript-eslint/strict-void-return": "error",
             "@typescript-eslint/switch-exhaustiveness-check": "error",
             "@typescript-eslint/triple-slash-reference": "error",
             "@typescript-eslint/unbound-method": "error",
@@ -15969,6 +16027,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/restrict-template-expressions": "off",
             "@typescript-eslint/return-await": "off",
             "@typescript-eslint/strict-boolean-expressions": "off",
+            "@typescript-eslint/strict-void-return": "off",
             "@typescript-eslint/switch-exhaustiveness-check": "off",
             "@typescript-eslint/unbound-method": "off",
             "@typescript-eslint/use-unknown-in-catch-callback-variable": "off",
@@ -16017,7 +16076,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16186,6 +16245,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/restrict-template-expressions": "error",
               "@typescript-eslint/return-await": "error",
               "@typescript-eslint/strict-boolean-expressions": "error",
+              "@typescript-eslint/strict-void-return": "error",
               "@typescript-eslint/switch-exhaustiveness-check": "error",
               "@typescript-eslint/triple-slash-reference": "error",
               "@typescript-eslint/unbound-method": "error",
@@ -16225,7 +16285,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "parser": {
               "meta": {
                 "name": "typescript-eslint/parser",
-                "version": "8.50.1",
+                "version": "8.59.1",
               },
               "parseForESLint": [Function],
             },
@@ -16303,6 +16363,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/restrict-template-expressions": "off",
             "@typescript-eslint/return-await": "off",
             "@typescript-eslint/strict-boolean-expressions": "off",
+            "@typescript-eslint/strict-void-return": "off",
             "@typescript-eslint/switch-exhaustiveness-check": "off",
             "@typescript-eslint/unbound-method": "off",
             "@typescript-eslint/use-unknown-in-catch-callback-variable": "off",
@@ -16348,7 +16409,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16428,7 +16489,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16535,7 +16596,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16619,7 +16680,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16713,7 +16774,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16874,7 +16935,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -16998,7 +17059,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -17069,7 +17130,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -17149,7 +17210,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.50.1",
+                  "version": "8.59.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -17696,7 +17757,8 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
       },
       "meta": {
         "name": "@typescript-eslint/eslint-plugin",
-        "version": "8.50.1",
+        "namespace": "@typescript-eslint",
+        "version": "8.59.1",
       },
       "rules": {
         "adjacent-overload-signatures": {
@@ -17714,6 +17776,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "schema": [],
             "type": "suggestion",
           },
+          "name": "adjacent-overload-signatures",
         },
         "array-type": {
           "create": [Function],
@@ -17765,6 +17828,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "array-type",
         },
         "await-thenable": {
           "create": [Function],
@@ -17788,6 +17852,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "schema": [],
             "type": "problem",
           },
+          "name": "await-thenable",
         },
         "ban-ts-comment": {
           "create": [Function],
@@ -17876,6 +17941,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "problem",
           },
+          "name": "ban-ts-comment",
         },
         "ban-tslint-comment": {
           "create": [Function],
@@ -17893,6 +17959,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "schema": [],
             "type": "suggestion",
           },
+          "name": "ban-tslint-comment",
         },
         "class-literal-property-style": {
           "create": [Function],
@@ -17924,6 +17991,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "problem",
           },
+          "name": "class-literal-property-style",
         },
         "class-methods-use-this": {
           "create": [Function],
@@ -17986,6 +18054,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "class-methods-use-this",
         },
         "consistent-generic-constructors": {
           "create": [Function],
@@ -18015,6 +18084,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-generic-constructors",
         },
         "consistent-indexed-object-style": {
           "create": [Function],
@@ -18046,6 +18116,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-indexed-object-style",
         },
         "consistent-return": {
           "create": [Function],
@@ -18085,6 +18156,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-return",
         },
         "consistent-type-assertions": {
           "create": [Function],
@@ -18170,6 +18242,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-type-assertions",
         },
         "consistent-type-definitions": {
           "create": [Function],
@@ -18199,6 +18272,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-type-definitions",
         },
         "consistent-type-exports": {
           "create": [Function],
@@ -18233,6 +18307,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-type-exports",
         },
         "consistent-type-imports": {
           "create": [Function],
@@ -18285,6 +18360,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "consistent-type-imports",
         },
         "default-param-last": {
           "create": [Function],
@@ -18302,6 +18378,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "schema": [],
             "type": "suggestion",
           },
+          "name": "default-param-last",
         },
         "dot-notation": {
           "create": [Function],
@@ -18368,6 +18445,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "suggestion",
           },
+          "name": "dot-notation",
         },
         "explicit-function-return-type": {
           "create": [Function],
@@ -18436,6 +18514,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "problem",
           },
+          "name": "explicit-function-return-type",
         },
         "explicit-member-accessibility": {
           "create": [Function],
@@ -18531,6 +18610,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             ],
             "type": "problem",
           },
+          "name": "explicit-member-accessibility",
         },
         "explicit-module-boundary-types": {
           "create": [Function],
@@ -18595,6 +18675,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "explicit-module-boundary-types",
         },
         "init-declarations": {
           "create": [Function],
@@ -18652,6 +18733,7 @@ You must still type the parameters of the function.",
             },
             "type": "suggestion",
           },
+          "name": "init-declarations",
         },
         "max-params": {
           "create": [Function],
@@ -18694,6 +18776,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "max-params",
         },
         "member-ordering": {
           "create": [Function],
@@ -19179,6 +19262,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "member-ordering",
         },
         "method-signature-style": {
           "create": [Function],
@@ -19207,6 +19291,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "method-signature-style",
         },
         "naming-convention": {
           "create": [Function],
@@ -21157,6 +21242,7 @@ You must still type the parameters of the function.",
             },
             "type": "suggestion",
           },
+          "name": "naming-convention",
         },
         "no-array-constructor": {
           "create": [Function],
@@ -21175,6 +21261,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-array-constructor",
         },
         "no-array-delete": {
           "create": [Function],
@@ -21194,6 +21281,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-array-delete",
         },
         "no-base-to-string": {
           "create": [Function],
@@ -21240,6 +21328,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-base-to-string",
         },
         "no-confusing-non-null-assertion": {
           "create": [Function],
@@ -21263,6 +21352,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-confusing-non-null-assertion",
         },
         "no-confusing-void-expression": {
           "create": [Function],
@@ -21314,6 +21404,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "no-confusing-void-expression",
         },
         "no-deprecated": {
           "create": [Function],
@@ -21454,6 +21545,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "no-deprecated",
         },
         "no-dupe-class-members": {
           "create": [Function],
@@ -21471,6 +21563,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-dupe-class-members",
         },
         "no-duplicate-enum-values": {
           "create": [Function],
@@ -21488,6 +21581,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-duplicate-enum-values",
         },
         "no-duplicate-type-constituents": {
           "create": [Function],
@@ -21527,6 +21621,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-duplicate-type-constituents",
         },
         "no-dynamic-delete": {
           "create": [Function],
@@ -21537,13 +21632,13 @@ You must still type the parameters of the function.",
               "recommended": "strict",
               "url": "https://typescript-eslint.io/rules/no-dynamic-delete",
             },
-            "fixable": "code",
             "messages": {
               "dynamicDelete": "Do not delete dynamically computed property keys.",
             },
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-dynamic-delete",
         },
         "no-empty-function": {
           "create": [Function],
@@ -21603,6 +21698,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-empty-function",
         },
         "no-empty-interface": {
           "create": [Function],
@@ -21651,6 +21747,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-empty-interface",
         },
         "no-empty-object-type": {
           "create": [Function],
@@ -21712,6 +21809,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-empty-object-type",
         },
         "no-explicit-any": {
           "create": [Function],
@@ -21753,6 +21851,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-explicit-any",
         },
         "no-extra-non-null-assertion": {
           "create": [Function],
@@ -21770,6 +21869,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-extra-non-null-assertion",
         },
         "no-extraneous-class": {
           "create": [Function],
@@ -21818,6 +21918,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-extraneous-class",
         },
         "no-floating-promises": {
           "create": [Function],
@@ -22092,6 +22193,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "no-floating-promises",
         },
         "no-for-in-array": {
           "create": [Function],
@@ -22109,6 +22211,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-for-in-array",
         },
         "no-implied-eval": {
           "create": [Function],
@@ -22128,6 +22231,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-implied-eval",
         },
         "no-import-type-side-effects": {
           "create": [Function],
@@ -22144,6 +22248,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-import-type-side-effects",
         },
         "no-inferrable-types": {
           "create": [Function],
@@ -22181,6 +22286,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-inferrable-types",
         },
         "no-invalid-this": {
           "create": [Function],
@@ -22217,6 +22323,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-invalid-this",
         },
         "no-invalid-void-type": {
           "create": [Function],
@@ -22271,6 +22378,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "no-invalid-void-type",
         },
         "no-loop-func": {
           "create": [Function],
@@ -22288,6 +22396,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-loop-func",
         },
         "no-loss-of-precision": {
           "create": [Function],
@@ -22317,6 +22426,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-loss-of-precision",
         },
         "no-magic-numbers": {
           "create": [Function],
@@ -22408,6 +22518,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-magic-numbers",
         },
         "no-meaningless-void-operator": {
           "create": [Function],
@@ -22443,6 +22554,7 @@ You must still type the parameters of the function.",
             ],
             "type": "suggestion",
           },
+          "name": "no-meaningless-void-operator",
         },
         "no-misused-new": {
           "create": [Function],
@@ -22460,6 +22572,7 @@ You must still type the parameters of the function.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-misused-new",
         },
         "no-misused-promises": {
           "create": [Function],
@@ -22546,6 +22659,7 @@ You must still type the parameters of the function.",
             ],
             "type": "problem",
           },
+          "name": "no-misused-promises",
         },
         "no-misused-spread": {
           "create": [Function],
@@ -22699,6 +22813,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "problem",
           },
+          "name": "no-misused-spread",
         },
         "no-mixed-enums": {
           "create": [Function],
@@ -22716,6 +22831,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-mixed-enums",
         },
         "no-namespace": {
           "create": [Function],
@@ -22752,6 +22868,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-namespace",
         },
         "no-non-null-asserted-nullish-coalescing": {
           "create": [Function],
@@ -22770,6 +22887,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-non-null-asserted-nullish-coalescing",
         },
         "no-non-null-asserted-optional-chain": {
           "create": [Function],
@@ -22788,6 +22906,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-non-null-asserted-optional-chain",
         },
         "no-non-null-assertion": {
           "create": [Function],
@@ -22806,6 +22925,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-non-null-assertion",
         },
         "no-redeclare": {
           "create": [Function],
@@ -22844,6 +22964,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-redeclare",
         },
         "no-redundant-type-constituents": {
           "create": [Function],
@@ -22865,6 +22986,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-redundant-type-constituents",
         },
         "no-require-imports": {
           "create": [Function],
@@ -22904,6 +23026,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "problem",
           },
+          "name": "no-require-imports",
         },
         "no-restricted-imports": {
           "create": [Function],
@@ -22916,22 +23039,22 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             },
             "fixable": undefined,
             "messages": {
-              "allowedImportName": "'{{importName}}' import from '{{importSource}}' is restricted because only '{{allowedImportNames}}' import(s) is/are allowed.",
+              "allowedImportName": "'{{importName}}' import from '{{importSource}}' is restricted because only {{allowedImportNames}} {{isOrAre}} allowed.",
               "allowedImportNamePattern": "'{{importName}}' import from '{{importSource}}' is restricted because only imports that match the pattern '{{allowedImportNamePattern}}' are allowed from '{{importSource}}'.",
               "allowedImportNamePatternWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted because only imports that match the pattern '{{allowedImportNamePattern}}' are allowed from '{{importSource}}'. {{customMessage}}",
-              "allowedImportNameWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted because only '{{allowedImportNames}}' import(s) is/are allowed. {{customMessage}}",
-              "everything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted.",
-              "everythingWithAllowImportNames": "* import is invalid because only '{{allowedImportNames}}' from '{{importSource}}' is/are allowed.",
-              "everythingWithAllowImportNamesAndCustomMessage": "* import is invalid because only '{{allowedImportNames}}' from '{{importSource}}' is/are allowed. {{customMessage}}",
+              "allowedImportNameWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted because only {{allowedImportNames}} {{isOrAre}} allowed. {{customMessage}}",
+              "everything": "* import is invalid because {{importNames}} from '{{importSource}}' {{isOrAre}} restricted.",
+              "everythingWithAllowImportNames": "* import is invalid because only {{allowedImportNames}} from '{{importSource}}' {{isOrAre}} allowed.",
+              "everythingWithAllowImportNamesAndCustomMessage": "* import is invalid because only {{allowedImportNames}} from '{{importSource}}' {{isOrAre}} allowed. {{customMessage}}",
               "everythingWithAllowedImportNamePattern": "* import is invalid because only imports that match the pattern '{{allowedImportNamePattern}}' from '{{importSource}}' are allowed.",
               "everythingWithAllowedImportNamePatternWithCustomMessage": "* import is invalid because only imports that match the pattern '{{allowedImportNamePattern}}' from '{{importSource}}' are allowed. {{customMessage}}",
-              "everythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted. {{customMessage}}",
+              "everythingWithCustomMessage": "* import is invalid because {{importNames}} from '{{importSource}}' {{isOrAre}} restricted. {{customMessage}}",
               "importName": "'{{importName}}' import from '{{importSource}}' is restricted.",
               "importNameWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted. {{customMessage}}",
               "path": "'{{importSource}}' import is restricted from being used.",
               "pathWithCustomMessage": "'{{importSource}}' import is restricted from being used. {{customMessage}}",
-              "patternAndEverything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern.",
-              "patternAndEverythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern. {{customMessage}}",
+              "patternAndEverything": "* import is invalid because {{importNames}} from '{{importSource}}' {{isOrAre}} restricted from being used by a pattern.",
+              "patternAndEverythingWithCustomMessage": "* import is invalid because {{importNames}} from '{{importSource}}' {{isOrAre}} restricted from being used by a pattern. {{customMessage}}",
               "patternAndEverythingWithRegexImportName": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used.",
               "patternAndEverythingWithRegexImportNameAndCustomMessage": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used. {{customMessage}}",
               "patternAndImportName": "'{{importName}}' import from '{{importSource}}' is restricted from being used by a pattern.",
@@ -23109,6 +23232,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             },
             "type": "suggestion",
           },
+          "name": "no-restricted-imports",
         },
         "no-restricted-types": {
           "create": [Function],
@@ -23182,6 +23306,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-restricted-types",
         },
         "no-shadow": {
           "create": [Function],
@@ -23249,6 +23374,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-shadow",
         },
         "no-this-alias": {
           "create": [Function],
@@ -23289,6 +23415,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-this-alias",
         },
         "no-type-alias": {
           "create": [Function],
@@ -23386,6 +23513,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-type-alias",
         },
         "no-unnecessary-boolean-literal-compare": {
           "create": [Function],
@@ -23434,6 +23562,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-boolean-literal-compare",
         },
         "no-unnecessary-condition": {
           "create": [Function],
@@ -23503,6 +23632,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-condition",
         },
         "no-unnecessary-parameter-property-assignment": {
           "create": [Function],
@@ -23518,6 +23648,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-parameter-property-assignment",
         },
         "no-unnecessary-qualifier": {
           "create": [Function],
@@ -23535,6 +23666,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-qualifier",
         },
         "no-unnecessary-template-expression": {
           "create": [Function],
@@ -23553,6 +23685,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-template-expression",
         },
         "no-unnecessary-type-arguments": {
           "create": [Function],
@@ -23571,6 +23704,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-type-arguments",
         },
         "no-unnecessary-type-assertion": {
           "create": [Function],
@@ -23610,6 +23744,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             ],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-type-assertion",
         },
         "no-unnecessary-type-constraint": {
           "create": [Function],
@@ -23628,6 +23763,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-type-constraint",
         },
         "no-unnecessary-type-conversion": {
           "create": [Function],
@@ -23648,6 +23784,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unnecessary-type-conversion",
         },
         "no-unnecessary-type-parameters": {
           "create": [Function],
@@ -23667,6 +23804,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unnecessary-type-parameters",
         },
         "no-unsafe-argument": {
           "create": [Function],
@@ -23687,6 +23825,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-argument",
         },
         "no-unsafe-assignment": {
           "create": [Function],
@@ -23711,6 +23850,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-assignment",
         },
         "no-unsafe-call": {
           "create": [Function],
@@ -23723,15 +23863,20 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
               "url": "https://typescript-eslint.io/rules/no-unsafe-call",
             },
             "messages": {
-              "unsafeCall": "Unsafe call of a(n) {{type}} typed value.",
-              "unsafeCallThis": "Unsafe call of a(n) {{type}} typed value. \`this\` is typed as {{type}}.
+              "errorCall": "Unsafe call of a type that could not be resolved.",
+              "errorCallThis": "Unsafe call of a \`this\` type that could not be resolved.",
+              "errorNew": "Unsafe construction of a type that could not be resolved.",
+              "errorTemplateTag": "Unsafe use of a template tag whose type could not be resolved.",
+              "unsafeCall": "Unsafe call of {{type}} typed value.",
+              "unsafeCallThis": "Unsafe call of {{type}} typed value. \`this\` is typed as {{type}}.
 You can try to fix this by turning on the \`noImplicitThis\` compiler option, or adding a \`this\` parameter to the function.",
-              "unsafeNew": "Unsafe construction of a(n) {{type}} typed value.",
-              "unsafeTemplateTag": "Unsafe use of a(n) {{type}} typed template tag.",
+              "unsafeNew": "Unsafe construction of {{type}} typed value.",
+              "unsafeTemplateTag": "Unsafe use of {{type}} typed template tag.",
             },
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-call",
         },
         "no-unsafe-declaration-merging": {
           "create": [Function],
@@ -23749,6 +23894,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-declaration-merging",
         },
         "no-unsafe-enum-comparison": {
           "create": [Function],
@@ -23769,6 +23915,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-unsafe-enum-comparison",
         },
         "no-unsafe-function-type": {
           "create": [Function],
@@ -23786,6 +23933,7 @@ Prefer explicitly defining any function parameters and return type.",
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-function-type",
         },
         "no-unsafe-member-access": {
           "create": [Function],
@@ -23802,8 +23950,12 @@ Prefer explicitly defining any function parameters and return type.",
               "url": "https://typescript-eslint.io/rules/no-unsafe-member-access",
             },
             "messages": {
-              "unsafeComputedMemberAccess": "Computed name {{property}} resolves to an {{type}} value.",
-              "unsafeMemberExpression": "Unsafe member access {{property}} on an {{type}} value.",
+              "errorComputedMemberAccess": "The type of computed name {{property}} cannot be resolved.",
+              "errorMemberExpression": "Unsafe member access {{property}} on a type that cannot be resolved.",
+              "errorThisMemberExpression": "Unsafe member access {{property}}. The type of \`this\` cannot be resolved.
+You can try to fix this by turning on the \`noImplicitThis\` compiler option, or adding a \`this\` parameter to the function.",
+              "unsafeComputedMemberAccess": "Computed name {{property}} resolves to an \`any\` value.",
+              "unsafeMemberExpression": "Unsafe member access {{property}} on an \`any\` value.",
               "unsafeThisMemberExpression": "Unsafe member access {{property}} on an \`any\` value. \`this\` is typed as \`any\`.
 You can try to fix this by turning on the \`noImplicitThis\` compiler option, or adding a \`this\` parameter to the function.",
             },
@@ -23821,6 +23973,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "no-unsafe-member-access",
         },
         "no-unsafe-return": {
           "create": [Function],
@@ -23841,6 +23994,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-return",
         },
         "no-unsafe-type-assertion": {
           "create": [Function],
@@ -23861,6 +24015,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-type-assertion",
         },
         "no-unsafe-unary-minus": {
           "create": [Function],
@@ -23878,6 +24033,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unsafe-unary-minus",
         },
         "no-unused-expressions": {
           "create": [Function],
@@ -23931,6 +24087,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "no-unused-expressions",
         },
         "no-unused-private-class-members": {
           "create": [Function],
@@ -23948,6 +24105,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-unused-private-class-members",
         },
         "no-unused-vars": {
           "create": [Function],
@@ -23961,7 +24119,11 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
               "recommended": "recommended",
               "url": "https://typescript-eslint.io/rules/no-unused-vars",
             },
+            "fixable": "code",
+            "hasSuggestions": true,
             "messages": {
+              "removeUnusedImportDeclaration": "Remove unused import declaration.",
+              "removeUnusedVar": "Remove unused variable "{{varName}}".",
               "unusedVar": "'{{varName}}' is {{action}} but never used{{additional}}.",
               "usedIgnoredVar": "'{{varName}}' is marked as ignored but is used{{additional}}.",
               "usedOnlyAsType": "'{{varName}}' is {{action}} but only used as a type{{additional}}.",
@@ -24009,6 +24171,17 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
                         "description": "Regular expressions of destructured array variable names to not check for usage.",
                         "type": "string",
                       },
+                      "enableAutofixRemoval": {
+                        "additionalProperties": false,
+                        "description": "Configurable automatic fixes for different types of unused variables.",
+                        "properties": {
+                          "imports": {
+                            "description": "Whether to enable automatic removal of unused imports.",
+                            "type": "boolean",
+                          },
+                        },
+                        "type": "object",
+                      },
                       "ignoreClassWithStaticInitBlock": {
                         "description": "Whether to ignore classes with at least one static initialization block.",
                         "type": "boolean",
@@ -24045,6 +24218,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "no-unused-vars",
         },
         "no-use-before-define": {
           "create": [Function],
@@ -24117,6 +24291,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "no-use-before-define",
         },
         "no-useless-constructor": {
           "create": [Function],
@@ -24136,10 +24311,15 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-useless-constructor",
         },
         "no-useless-default-assignment": {
           "create": [Function],
-          "defaultOptions": [],
+          "defaultOptions": [
+            {
+              "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false,
+            },
+          ],
           "meta": {
             "docs": {
               "description": "Disallow default values that will never be used",
@@ -24149,12 +24329,26 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             },
             "fixable": "code",
             "messages": {
+              "noStrictNullCheck": "This rule requires the \`strictNullChecks\` compiler option to be turned on to function correctly.",
+              "preferOptionalSyntax": "Using \`= undefined\` to make a parameter optional adds unnecessary runtime logic. Use the \`?\` optional syntax instead.",
               "uselessDefaultAssignment": "Default value is useless because the {{ type }} is not optional.",
               "uselessUndefined": "Default value is useless because it is undefined. Optional {{ type }}s are already undefined by default.",
             },
-            "schema": [],
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": {
+                    "description": "Unless this is set to \`true\`, the rule will error on every file whose \`tsconfig.json\` does _not_ have the \`strictNullChecks\` compiler option (or \`strict\`) set to \`true\`.",
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
             "type": "suggestion",
           },
+          "name": "no-useless-default-assignment",
         },
         "no-useless-empty-export": {
           "create": [Function],
@@ -24172,6 +24366,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "no-useless-empty-export",
         },
         "no-var-requires": {
           "create": [Function],
@@ -24220,6 +24415,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "no-var-requires",
         },
         "no-wrapper-object-types": {
           "create": [Function],
@@ -24237,6 +24433,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "no-wrapper-object-types",
         },
         "non-nullable-type-assertion-style": {
           "create": [Function],
@@ -24255,6 +24452,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "non-nullable-type-assertion-style",
         },
         "only-throw-error": {
           "create": [Function],
@@ -24411,6 +24609,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "only-throw-error",
         },
         "parameter-properties": {
           "create": [Function],
@@ -24468,6 +24667,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "parameter-properties",
         },
         "prefer-as-const": {
           "create": [Function],
@@ -24488,6 +24688,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-as-const",
         },
         "prefer-destructuring": {
           "create": [Function],
@@ -24581,6 +24782,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-destructuring",
         },
         "prefer-enum-initializers": {
           "create": [Function],
@@ -24598,6 +24800,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-enum-initializers",
         },
         "prefer-find": {
           "create": [Function],
@@ -24617,6 +24820,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-find",
         },
         "prefer-for-of": {
           "create": [Function],
@@ -24633,6 +24837,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-for-of",
         },
         "prefer-function-type": {
           "create": [Function],
@@ -24651,6 +24856,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-function-type",
         },
         "prefer-includes": {
           "create": [Function],
@@ -24670,6 +24876,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-includes",
         },
         "prefer-literal-enum-member": {
           "create": [Function],
@@ -24703,6 +24910,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-literal-enum-member",
         },
         "prefer-namespace-keyword": {
           "create": [Function],
@@ -24720,6 +24928,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-namespace-keyword",
         },
         "prefer-nullish-coalescing": {
           "create": [Function],
@@ -24823,6 +25032,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-nullish-coalescing",
         },
         "prefer-optional-chain": {
           "create": [Function],
@@ -24893,11 +25103,13 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-optional-chain",
         },
         "prefer-promise-reject-errors": {
           "create": [Function],
           "defaultOptions": [
             {
+              "allow": [],
               "allowEmptyReject": false,
               "allowThrowingAny": false,
               "allowThrowingUnknown": false,
@@ -24918,6 +25130,117 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
               {
                 "additionalProperties": false,
                 "properties": {
+                  "allow": {
+                    "description": "Type specifiers that can be used as Promise rejection reasons.",
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "string",
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "from": {
+                              "enum": [
+                                "file",
+                              ],
+                              "type": "string",
+                            },
+                            "name": {
+                              "oneOf": [
+                                {
+                                  "type": "string",
+                                },
+                                {
+                                  "items": {
+                                    "type": "string",
+                                  },
+                                  "minItems": 1,
+                                  "type": "array",
+                                  "uniqueItems": true,
+                                },
+                              ],
+                            },
+                            "path": {
+                              "type": "string",
+                            },
+                          },
+                          "required": [
+                            "from",
+                            "name",
+                          ],
+                          "type": "object",
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "from": {
+                              "enum": [
+                                "lib",
+                              ],
+                              "type": "string",
+                            },
+                            "name": {
+                              "oneOf": [
+                                {
+                                  "type": "string",
+                                },
+                                {
+                                  "items": {
+                                    "type": "string",
+                                  },
+                                  "minItems": 1,
+                                  "type": "array",
+                                  "uniqueItems": true,
+                                },
+                              ],
+                            },
+                          },
+                          "required": [
+                            "from",
+                            "name",
+                          ],
+                          "type": "object",
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "from": {
+                              "enum": [
+                                "package",
+                              ],
+                              "type": "string",
+                            },
+                            "name": {
+                              "oneOf": [
+                                {
+                                  "type": "string",
+                                },
+                                {
+                                  "items": {
+                                    "type": "string",
+                                  },
+                                  "minItems": 1,
+                                  "type": "array",
+                                  "uniqueItems": true,
+                                },
+                              ],
+                            },
+                            "package": {
+                              "type": "string",
+                            },
+                          },
+                          "required": [
+                            "from",
+                            "name",
+                            "package",
+                          ],
+                          "type": "object",
+                        },
+                      ],
+                    },
+                    "type": "array",
+                  },
                   "allowEmptyReject": {
                     "description": "Whether to allow calls to \`Promise.reject()\` with no arguments.",
                     "type": "boolean",
@@ -24936,6 +25259,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-promise-reject-errors",
         },
         "prefer-readonly": {
           "create": [Function],
@@ -24968,6 +25292,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-readonly",
         },
         "prefer-readonly-parameter-types": {
           "create": [Function],
@@ -25121,6 +25446,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-readonly-parameter-types",
         },
         "prefer-reduce-type-parameter": {
           "create": [Function],
@@ -25139,6 +25465,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "prefer-reduce-type-parameter",
         },
         "prefer-regexp-exec": {
           "create": [Function],
@@ -25157,6 +25484,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-regexp-exec",
         },
         "prefer-return-this-type": {
           "create": [Function],
@@ -25175,6 +25503,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "prefer-return-this-type",
         },
         "prefer-string-starts-ends-with": {
           "create": [Function],
@@ -25213,6 +25542,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "prefer-string-starts-ends-with",
         },
         "prefer-ts-expect-error": {
           "create": [Function],
@@ -25244,6 +25574,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "prefer-ts-expect-error",
         },
         "promise-function-async": {
           "create": [Function],
@@ -25305,6 +25636,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "promise-function-async",
         },
         "related-getter-setter-pairs": {
           "create": [Function],
@@ -25322,6 +25654,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "problem",
           },
+          "name": "related-getter-setter-pairs",
         },
         "require-array-sort-compare": {
           "create": [Function],
@@ -25353,6 +25686,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "require-array-sort-compare",
         },
         "require-await": {
           "create": [Function],
@@ -25373,6 +25707,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             "schema": [],
             "type": "suggestion",
           },
+          "name": "require-await",
         },
         "restrict-plus-operands": {
           "create": [Function],
@@ -25443,6 +25778,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "restrict-plus-operands",
         },
         "restrict-template-expressions": {
           "create": [Function],
@@ -25636,6 +25972,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "restrict-template-expressions",
         },
         "return-await": {
           "create": [Function],
@@ -25699,6 +26036,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "problem",
           },
+          "name": "return-await",
         },
         "sort-type-constituents": {
           "create": [Function],
@@ -25808,6 +26146,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "sort-type-constituents",
         },
         "strict-boolean-expressions": {
           "create": [Function],
@@ -25906,6 +26245,41 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "strict-boolean-expressions",
+        },
+        "strict-void-return": {
+          "create": [Function],
+          "defaultOptions": [
+            {
+              "allowReturnAny": false,
+            },
+          ],
+          "meta": {
+            "docs": {
+              "description": "Disallow passing a value-returning function in a position accepting a void function",
+              "requiresTypeChecking": true,
+              "url": "https://typescript-eslint.io/rules/strict-void-return",
+            },
+            "messages": {
+              "asyncFunc": "Async function used in a context where a void function is expected.",
+              "nonVoidFunc": "Value-returning function used in a context where a void function is expected.",
+              "nonVoidReturn": "Value returned in a context where a void return is expected.",
+            },
+            "schema": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "allowReturnAny": {
+                    "description": "Whether to allow functions returning \`any\` to be used in place expecting a \`void\` function.",
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+            ],
+            "type": "problem",
+          },
+          "name": "strict-void-return",
         },
         "switch-exhaustiveness-check": {
           "create": [Function],
@@ -25954,6 +26328,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "switch-exhaustiveness-check",
         },
         "triple-slash-reference": {
           "create": [Function],
@@ -26008,6 +26383,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "triple-slash-reference",
         },
         "typedef": {
           "create": [Function],
@@ -26078,6 +26454,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
             ],
             "type": "suggestion",
           },
+          "name": "typedef",
         },
         "unbound-method": {
           "create": [Function],
@@ -26114,6 +26491,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             ],
             "type": "problem",
           },
+          "name": "unbound-method",
         },
         "unified-signatures": {
           "create": [Function],
@@ -26152,6 +26530,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             ],
             "type": "suggestion",
           },
+          "name": "unified-signatures",
         },
         "use-unknown-in-catch-callback-variable": {
           "create": [Function],
@@ -26176,6 +26555,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "schema": [],
             "type": "suggestion",
           },
+          "name": "use-unknown-in-catch-callback-variable",
         },
       },
     },
@@ -26577,7 +26957,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
       "importXResolverCompat": [Function],
       "meta": {
         "name": "eslint-plugin-import-x",
-        "version": "4.16.1",
+        "version": "4.16.2",
       },
       "rules": {
         "consistent-type-specifier-style": {
@@ -26587,7 +26967,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce or ban the use of inline type-only markers for named imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/consistent-type-specifier-style.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/consistent-type-specifier-style.md",
             },
             "fixable": "code",
             "messages": {
@@ -26614,7 +26994,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Ensure a default export is present, given a default import.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/default.md",
             },
             "messages": {
               "noDefaultExport": "No default export found in imported module "{{module}}".",
@@ -26630,7 +27010,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce a leading comment with the webpackChunkName for dynamic imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/dynamic-import-chunkname.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/dynamic-import-chunkname.md",
             },
             "hasSuggestions": true,
             "messages": {
@@ -26673,7 +27053,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid any invalid exports, i.e. re-export of the same name.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/export.md",
             },
             "messages": {
               "multiDefault": "Multiple default exports.",
@@ -26691,7 +27071,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Ensure all exports appear after other statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/exports-last.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/exports-last.md",
             },
             "messages": {
               "end": "Export statements should appear at the end of the file",
@@ -26707,7 +27087,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Ensure consistent use of file extension within the import path.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/extensions.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/extensions.md",
             },
             "fixable": "code",
             "hasSuggestions": true,
@@ -26918,7 +27298,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Ensure all imports appear before other statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/first.md",
             },
             "fixable": "code",
             "messages": {
@@ -26944,7 +27324,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Prefer named exports to be grouped together in a single export declaration.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/group-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/group-exports.md",
             },
             "messages": {
               "AssignmentExpression": "Multiple CommonJS exports; consolidate all exports into a single assignment to \`module.exports\`",
@@ -26966,7 +27346,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
                   "message": "Replaced by \`import-x/first\`.",
                   "rule": {
                     "name": "first",
-                    "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/first.md",
+                    "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/first.md",
                   },
                 },
               ],
@@ -26975,7 +27355,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Replaced by \`import-x/first\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/imports-first.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/imports-first.md",
             },
             "fixable": "code",
             "messages": {
@@ -27001,7 +27381,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce the maximum number of dependencies a module can have.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/max-dependencies.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/max-dependencies.md",
             },
             "messages": {
               "max": "Maximum number of dependencies ({{max}}) exceeded.",
@@ -27030,7 +27410,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Ensure named imports correspond to a named export in the remote file.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/named.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/named.md",
             },
             "messages": {
               "notFound": "{{name}} not found in '{{path}}'",
@@ -27061,7 +27441,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/namespace.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/namespace.md",
             },
             "messages": {
               "computedReference": "Unable to validate computed reference to imported namespace '{{namespace}}'.",
@@ -27094,7 +27474,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce a newline after import statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/newline-after-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/newline-after-import.md",
             },
             "fixable": "whitespace",
             "messages": {
@@ -27128,7 +27508,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid import of modules using absolute paths.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-absolute-path.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-absolute-path.md",
             },
             "fixable": "code",
             "messages": {
@@ -27169,7 +27549,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Module systems",
               "description": "Forbid AMD \`require\` and \`define\` calls.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-amd.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-amd.md",
             },
             "messages": {
               "amd": "Expected imports instead of AMD {{type}}().",
@@ -27185,7 +27565,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid anonymous values as default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-anonymous-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-anonymous-default-export.md",
             },
             "messages": {
               "anonymous": "Unexpected default export of anonymous {{type}}",
@@ -27241,7 +27621,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Module systems",
               "description": "Forbid CommonJS \`require\` calls and \`module.exports\` or \`exports.*\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-commonjs.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-commonjs.md",
             },
             "messages": {
               "export": "Expected "export" or "export default"",
@@ -27294,7 +27674,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid a module from importing a module with a dependency path back to itself.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-cycle.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-cycle.md",
             },
             "messages": {
               "cycle": "Dependency cycle detected",
@@ -27360,7 +27740,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-default-export.md",
             },
             "messages": {
               "noAliasDefault": "Do not alias \`{{local}}\` as \`default\`. Just export \`{{local}}\` itself instead.",
@@ -27377,7 +27757,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid imported names marked with \`@deprecated\` documentation tag.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-deprecated.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-deprecated.md",
             },
             "messages": {
               "deprecated": "Deprecated: consider to find an alternative.",
@@ -27394,7 +27774,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid repeated import of the same module in multiple places.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-duplicates.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-duplicates.md",
             },
             "fixable": "code",
             "messages": {
@@ -27424,7 +27804,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid \`require()\` calls with expressions.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-dynamic-require.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-dynamic-require.md",
             },
             "messages": {
               "import": "Calls to import() should use string literals",
@@ -27451,7 +27831,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid empty named import blocks.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-empty-named-blocks.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-empty-named-blocks.md",
             },
             "fixable": "code",
             "hasSuggestions": true,
@@ -27471,7 +27851,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid the use of extraneous packages.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-extraneous-dependencies.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-extraneous-dependencies.md",
             },
             "messages": {
               "devDep": "'{{packageName}}' should be listed in the project's dependencies, not devDependencies.",
@@ -27544,7 +27924,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
               "category": "Module systems",
               "description": "Forbid import statements with CommonJS module.exports.",
               "recommended": true,
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-import-module-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-import-module-exports.md",
             },
             "fixable": "code",
             "messages": {
@@ -27571,7 +27951,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing the submodules of other modules.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-internal-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-internal-modules.md",
             },
             "messages": {
               "noAllowed": "Reaching to "{{importPath}}" is not allowed.",
@@ -27616,7 +27996,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid the use of mutable exports with \`var\` or \`let\`.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-mutable-exports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-mutable-exports.md",
             },
             "messages": {
               "noMutable": "Exporting mutable '{{kind}}' binding, use 'const' instead.",
@@ -27632,7 +28012,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid use of exported name as identifier of default export.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-as-default.md",
             },
             "messages": {
               "default": "Using exported name '{{name}}' as identifier for default export.",
@@ -27648,7 +28028,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid use of exported name as property of default export.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-as-default-member.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-as-default-member.md",
             },
             "messages": {
               "member": "Caution: \`{{objectName}}\` also has a named export \`{{propName}}\`. Check if you meant to write \`import {{{propName}}} from '{{sourcePath}}'\` instead.",
@@ -27664,7 +28044,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid named default exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-default.md",
             },
             "messages": {
               "default": "Use default import syntax to import '{{importName}}'.",
@@ -27680,7 +28060,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid named exports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-named-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-named-export.md",
             },
             "messages": {
               "noAllowed": "Named exports are not allowed.",
@@ -27696,7 +28076,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid namespace (a.k.a. "wildcard" \`*\`) imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-namespace.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-namespace.md",
             },
             "fixable": "code",
             "messages": {
@@ -27726,7 +28106,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Module systems",
               "description": "Forbid Node.js builtin modules.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-nodejs-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-nodejs-modules.md",
             },
             "messages": {
               "builtin": "Do not import Node.js builtin module "{{moduleName}}"",
@@ -27756,7 +28136,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing packages through relative paths.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-packages.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-relative-packages.md",
             },
             "fixable": "code",
             "messages": {
@@ -27797,7 +28177,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid importing modules from parent directories.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-relative-parent-imports.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-relative-parent-imports.md",
             },
             "messages": {
               "noAllowed": "Relative imports from parent directories are not allowed. Please either pass what you're importing through at runtime (dependency injection), move \`{{filename}}\` to same directory as \`{{depPath}}\` or consider making \`{{depPath}}\` a package.",
@@ -27837,7 +28217,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid importing a default export by a different name.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-rename-default.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-rename-default.md",
             },
             "messages": {
               "renameDefault": "Caution: \`{{importBasename}}\` has a default export \`{{defaultExportName}}\`. This {{requiresOrImports}} \`{{defaultExportName}}\` as \`{{importName}}\`. Check if you meant to write \`{{suggestion}}\` instead.",
@@ -27868,7 +28248,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Enforce which files can be imported in a given folder.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-restricted-paths.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-restricted-paths.md",
             },
             "messages": {
               "glob": "Restricted path exceptions must be glob patterns when \`from\` contains glob patterns",
@@ -27948,7 +28328,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
               "category": "Static analysis",
               "description": "Forbid a module from importing itself.",
               "recommended": true,
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-self-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-self-import.md",
             },
             "messages": {
               "self": "Module imports itself.",
@@ -27964,7 +28344,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Forbid unassigned imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unassigned-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unassigned-import.md",
             },
             "messages": {
               "unassigned": "Imported module should be assigned",
@@ -28011,7 +28391,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Ensure imports point to a file/module that can be resolved.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unresolved.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unresolved.md",
             },
             "messages": {
               "casingMismatch": "Casing of {{module}} does not match the underlying filesystem.",
@@ -28059,7 +28439,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Helpful warnings",
               "description": "Forbid modules without exports, or exports without matching import in another module.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-unused-modules.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-unused-modules.md",
             },
             "messages": {
               "notFound": "No exports found",
@@ -28128,6 +28508,10 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
                     "type": "array",
                     "uniqueItems": true,
                   },
+                  "suppressMissingFileEnumeratorAPIWarning": {
+                    "description": "ESLint 10 and later versions remove the FileEnumerator API, which is required by the "no-unused-modules" rule. Therefore a warning message will be logged before an alternative is implemented. You can suppress the warning with this option",
+                    "type": "boolean",
+                  },
                   "unusedExports": {
                     "description": "report exports without any usage",
                     "type": "boolean",
@@ -28146,7 +28530,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid unnecessary path segments in import and require statements.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-useless-path-segments.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-useless-path-segments.md",
             },
             "fixable": "code",
             "messages": {
@@ -28176,7 +28560,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Static analysis",
               "description": "Forbid webpack loader syntax in imports.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/no-webpack-loader-syntax.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/no-webpack-loader-syntax.md",
             },
             "messages": {
               "unexpected": "Unexpected '!' in '{{name}}'. Do not use import syntax to configure webpack loaders.",
@@ -28192,7 +28576,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce a convention in module import order.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/order.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/order.md",
             },
             "fixable": "code",
             "messages": {
@@ -28419,7 +28803,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Prefer a default export if module exports a single name or multiple names.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-default-export.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/prefer-default-export.md",
             },
             "messages": {
               "any": "Prefer default export to be present on every file that has export.",
@@ -28451,7 +28835,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Style guide",
               "description": "Enforce using namespace imports for specific modules, like \`react\`/\`react-dom\`, etc.",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/prefer-namespace-import.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/prefer-namespace-import.md",
             },
             "fixable": "code",
             "messages": {
@@ -28482,7 +28866,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
             "docs": {
               "category": "Module systems",
               "description": "Forbid potentially ambiguous parse goal (\`script\` vs. \`module\`).",
-              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.1/docs/rules/unambiguous.md",
+              "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.16.2/docs/rules/unambiguous.md",
             },
             "messages": {
               "module": "This module could be parsed as a valid script.",
@@ -28820,6 +29204,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "no-template-curly-in-string": "off",
     "no-this-before-super": "off",
     "no-throw-literal": "off",
+    "no-unassigned-vars": "off",
     "no-undef": "off",
     "no-undef-init": "off",
     "no-underscore-dangle": [
@@ -28848,6 +29233,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
+    "no-useless-assignment": "error",
     "no-useless-backreference": "off",
     "no-useless-catch": "off",
     "no-useless-computed-key": "off",
@@ -28890,6 +29276,7 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "off",
+    "preserve-caught-error": "off",
     "radix": "error",
     "require-await": "off",
     "require-yield": "off",

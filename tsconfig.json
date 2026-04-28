@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["ES2023"],
+    "allowJs": true,
     "target": "ES2023",
     "module": "NodeNext",
     "declaration": true,
