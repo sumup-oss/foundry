@@ -26,7 +26,6 @@ describe('eslint', () => {
         packageType: 'commonjs',
         language: Language.JavaScript,
         environments: [],
-        frameworks: [],
         plugins: [],
         openSource: false,
       });
