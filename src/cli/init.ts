@@ -154,7 +154,7 @@ export async function init({ $0, _, ...args }: InitParams): Promise<void> {
           {
             title: 'Add license field',
             enabled: (ctx) =>
-              options.openSource === true && !ctx.packageJson.license,
+              options.openSource === true && !ctx.packageJson?.license,
             task: (ctx) => {
               ctx.packageJson.license = 'Apache-2.0';
             },

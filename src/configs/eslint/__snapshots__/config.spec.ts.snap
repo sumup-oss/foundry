@@ -2328,7 +2328,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
               "configs": [Circular],
               "meta": {
                 "name": "eslint-plugin-compat",
-                "version": "7.0.1",
+                "version": "7.0.2",
               },
               "rules": {
                 "compat": {
@@ -3507,7 +3507,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
               "configs": [Circular],
               "meta": {
                 "name": "eslint-plugin-compat",
-                "version": "7.0.1",
+                "version": "7.0.2",
               },
               "rules": {
                 "compat": {
@@ -3548,7 +3548,7 @@ exports[`eslint > configs > should match the snapshot for the browser preset 1`]
       },
       "meta": {
         "name": "eslint-plugin-compat",
-        "version": "7.0.1",
+        "version": "7.0.2",
       },
       "rules": {
         "compat": {
@@ -15796,7 +15796,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
     "parser": {
       "meta": {
         "name": "typescript-eslint/parser",
-        "version": "8.59.1",
+        "version": "8.60.0",
       },
       "parseForESLint": [Function],
     },
@@ -16094,7 +16094,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16303,7 +16303,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "parser": {
               "meta": {
                 "name": "typescript-eslint/parser",
-                "version": "8.59.1",
+                "version": "8.60.0",
               },
               "parseForESLint": [Function],
             },
@@ -16427,7 +16427,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16507,7 +16507,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16614,7 +16614,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16698,7 +16698,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16792,7 +16792,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16953,7 +16953,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17077,7 +17077,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17148,7 +17148,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17228,7 +17228,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.60.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17776,7 +17776,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
       "meta": {
         "name": "@typescript-eslint/eslint-plugin",
         "namespace": "@typescript-eslint",
-        "version": "8.59.1",
+        "version": "8.60.0",
       },
       "rules": {
         "adjacent-overload-signatures": {
@@ -22461,6 +22461,18 @@ You must still type the parameters of the function.",
             },
           ],
           "meta": {
+            "defaultOptions": [
+              {
+                "detectObjects": false,
+                "enforceConst": false,
+                "ignore": [],
+                "ignoreArrayIndexes": false,
+                "ignoreEnums": false,
+                "ignoreNumericLiteralTypes": false,
+                "ignoreReadonlyClassProperties": false,
+                "ignoreTypeIndexes": false,
+              },
+            ],
             "docs": {
               "description": "Disallow magic numbers",
               "extendsBaseRule": true,
@@ -22476,11 +22488,9 @@ You must still type the parameters of the function.",
                 "additionalProperties": false,
                 "properties": {
                   "detectObjects": {
-                    "default": false,
                     "type": "boolean",
                   },
                   "enforceConst": {
-                    "default": false,
                     "type": "boolean",
                   },
                   "ignore": {
@@ -22499,34 +22509,27 @@ You must still type the parameters of the function.",
                     "uniqueItems": true,
                   },
                   "ignoreArrayIndexes": {
-                    "default": false,
                     "type": "boolean",
                   },
                   "ignoreClassFieldInitialValues": {
-                    "default": false,
                     "type": "boolean",
                   },
                   "ignoreDefaultValues": {
-                    "default": false,
                     "type": "boolean",
                   },
                   "ignoreEnums": {
-                    "default": false,
                     "description": "Whether enums used in TypeScript are considered okay.",
                     "type": "boolean",
                   },
                   "ignoreNumericLiteralTypes": {
-                    "default": false,
                     "description": "Whether numbers used in TypeScript numeric literal types are considered okay.",
                     "type": "boolean",
                   },
                   "ignoreReadonlyClassProperties": {
-                    "default": false,
                     "description": "Whether \`readonly\` class properties are considered okay.",
                     "type": "boolean",
                   },
                   "ignoreTypeIndexes": {
-                    "default": false,
                     "description": "Whether numbers used to index types are okay.",
                     "type": "boolean",
                   },
