@@ -15796,7 +15796,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
     "parser": {
       "meta": {
         "name": "typescript-eslint/parser",
-        "version": "8.59.1",
+        "version": "8.59.4",
       },
       "parseForESLint": [Function],
     },
@@ -16094,7 +16094,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16303,7 +16303,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "parser": {
               "meta": {
                 "name": "typescript-eslint/parser",
-                "version": "8.59.1",
+                "version": "8.59.4",
               },
               "parseForESLint": [Function],
             },
@@ -16427,7 +16427,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16507,7 +16507,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16614,7 +16614,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16698,7 +16698,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16792,7 +16792,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -16953,7 +16953,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -17077,7 +17077,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -17148,7 +17148,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -17228,7 +17228,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.1",
+                  "version": "8.59.4",
                 },
                 "parseForESLint": [Function],
               },
@@ -17776,7 +17776,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
       "meta": {
         "name": "@typescript-eslint/eslint-plugin",
         "namespace": "@typescript-eslint",
-        "version": "8.59.1",
+        "version": "8.59.4",
       },
       "rules": {
         "adjacent-overload-signatures": {
@@ -22461,6 +22461,18 @@ You must still type the parameters of the function.",
             },
           ],
           "meta": {
+            "defaultOptions": [
+              {
+                "detectObjects": false,
+                "enforceConst": false,
+                "ignore": [],
+                "ignoreArrayIndexes": false,
+                "ignoreEnums": false,
+                "ignoreNumericLiteralTypes": false,
+                "ignoreReadonlyClassProperties": false,
+                "ignoreTypeIndexes": false,
+              },
+            ],
             "docs": {
               "description": "Disallow magic numbers",
               "extendsBaseRule": true,
