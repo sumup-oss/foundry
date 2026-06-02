@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 10.1.0
+
+### Minor Changes
+
+- [#1219](https://github.com/sumup-oss/foundry/pull/1219) [`18390e8`](https://github.com/sumup-oss/foundry/commit/18390e801be88750f995db8d028a3b688305a43c) Thanks [@dependabot](https://github.com/apps/dependabot)! - Updated `eslint-plugin-n` to v18. [Read the changelog](https://github.com/eslint-community/eslint-plugin-n/blob/master/CHANGELOG.md).
+
 ## 10.0.0
 
 ### Major Changes
