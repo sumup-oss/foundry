@@ -115,7 +115,7 @@
     "audit-ci": "^7.1.0",
     "license-checker": "^25.0.1",
     "rimraf": "^6.1.2",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.8"
   },
   "peerDependencies": {
