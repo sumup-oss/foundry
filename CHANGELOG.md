@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 10.1.1
+
+### Patch Changes
+
+- [#1247](https://github.com/sumup-oss/foundry/pull/1247) [`893fdd9`](https://github.com/sumup-oss/foundry/commit/893fdd9a415f4aa024fdca0d5c5d61bd3cc594b1) Thanks [@sirineJ](https://github.com/sirineJ)! - Declared support for v6 of `@sumup-oss/stylelint-plugin-circuit-ui` in the peer dependency range.
+
 ## 10.1.0
 
 ### Minor Changes
