@@ -15853,7 +15853,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
     "parser": {
       "meta": {
         "name": "typescript-eslint/parser",
-        "version": "8.59.4",
+        "version": "8.70.0",
       },
       "parseForESLint": [Function],
     },
@@ -15915,12 +15915,12 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-extraneous-class": "error",
             "@typescript-eslint/no-floating-promises": "error",
             "@typescript-eslint/no-for-in-array": "error",
+            "@typescript-eslint/no-generated-empty-object-type": "error",
             "@typescript-eslint/no-implied-eval": "error",
             "@typescript-eslint/no-import-type-side-effects": "error",
             "@typescript-eslint/no-inferrable-types": "error",
             "@typescript-eslint/no-invalid-this": "error",
             "@typescript-eslint/no-invalid-void-type": "error",
-            "@typescript-eslint/no-loop-func": "error",
             "@typescript-eslint/no-magic-numbers": "error",
             "@typescript-eslint/no-meaningless-void-operator": "error",
             "@typescript-eslint/no-misused-new": "error",
@@ -15934,7 +15934,6 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-redeclare": "error",
             "@typescript-eslint/no-redundant-type-constituents": "error",
             "@typescript-eslint/no-require-imports": "error",
-            "@typescript-eslint/no-restricted-imports": "error",
             "@typescript-eslint/no-restricted-types": "error",
             "@typescript-eslint/no-shadow": "error",
             "@typescript-eslint/no-this-alias": "error",
@@ -16012,10 +16011,8 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "no-empty-function": "off",
             "no-implied-eval": "off",
             "no-invalid-this": "off",
-            "no-loop-func": "off",
             "no-magic-numbers": "off",
             "no-redeclare": "off",
-            "no-restricted-imports": "off",
             "no-return-await": "off",
             "no-shadow": "off",
             "no-throw-literal": "off",
@@ -16057,6 +16054,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-duplicate-type-constituents": "off",
             "@typescript-eslint/no-floating-promises": "off",
             "@typescript-eslint/no-for-in-array": "off",
+            "@typescript-eslint/no-generated-empty-object-type": "off",
             "@typescript-eslint/no-implied-eval": "off",
             "@typescript-eslint/no-meaningless-void-operator": "off",
             "@typescript-eslint/no-misused-promises": "off",
@@ -16151,7 +16149,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16240,12 +16238,12 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/no-extraneous-class": "error",
               "@typescript-eslint/no-floating-promises": "error",
               "@typescript-eslint/no-for-in-array": "error",
+              "@typescript-eslint/no-generated-empty-object-type": "error",
               "@typescript-eslint/no-implied-eval": "error",
               "@typescript-eslint/no-import-type-side-effects": "error",
               "@typescript-eslint/no-inferrable-types": "error",
               "@typescript-eslint/no-invalid-this": "error",
               "@typescript-eslint/no-invalid-void-type": "error",
-              "@typescript-eslint/no-loop-func": "error",
               "@typescript-eslint/no-magic-numbers": "error",
               "@typescript-eslint/no-meaningless-void-operator": "error",
               "@typescript-eslint/no-misused-new": "error",
@@ -16259,7 +16257,6 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/no-redeclare": "error",
               "@typescript-eslint/no-redundant-type-constituents": "error",
               "@typescript-eslint/no-require-imports": "error",
-              "@typescript-eslint/no-restricted-imports": "error",
               "@typescript-eslint/no-restricted-types": "error",
               "@typescript-eslint/no-shadow": "error",
               "@typescript-eslint/no-this-alias": "error",
@@ -16337,10 +16334,8 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "no-empty-function": "off",
               "no-implied-eval": "off",
               "no-invalid-this": "off",
-              "no-loop-func": "off",
               "no-magic-numbers": "off",
               "no-redeclare": "off",
-              "no-restricted-imports": "off",
               "no-return-await": "off",
               "no-shadow": "off",
               "no-throw-literal": "off",
@@ -16360,7 +16355,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "parser": {
               "meta": {
                 "name": "typescript-eslint/parser",
-                "version": "8.59.4",
+                "version": "8.70.0",
               },
               "parseForESLint": [Function],
             },
@@ -16393,6 +16388,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-duplicate-type-constituents": "off",
             "@typescript-eslint/no-floating-promises": "off",
             "@typescript-eslint/no-for-in-array": "off",
+            "@typescript-eslint/no-generated-empty-object-type": "off",
             "@typescript-eslint/no-implied-eval": "off",
             "@typescript-eslint/no-meaningless-void-operator": "off",
             "@typescript-eslint/no-misused-promises": "off",
@@ -16484,7 +16480,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16564,7 +16560,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16671,7 +16667,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16755,7 +16751,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16849,7 +16845,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -16918,6 +16914,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/no-extraneous-class": "error",
               "@typescript-eslint/no-floating-promises": "error",
               "@typescript-eslint/no-for-in-array": "error",
+              "@typescript-eslint/no-generated-empty-object-type": "error",
               "@typescript-eslint/no-implied-eval": "error",
               "@typescript-eslint/no-invalid-void-type": "error",
               "@typescript-eslint/no-meaningless-void-operator": "error",
@@ -17010,7 +17007,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17066,6 +17063,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "@typescript-eslint/no-duplicate-type-constituents": "error",
               "@typescript-eslint/no-floating-promises": "error",
               "@typescript-eslint/no-for-in-array": "error",
+              "@typescript-eslint/no-generated-empty-object-type": "error",
               "@typescript-eslint/no-implied-eval": "error",
               "@typescript-eslint/no-meaningless-void-operator": "error",
               "@typescript-eslint/no-misused-promises": "error",
@@ -17134,7 +17132,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17205,7 +17203,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17285,7 +17283,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.59.4",
+                  "version": "8.70.0",
                 },
                 "parseForESLint": [Function],
               },
@@ -17599,6 +17597,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-extraneous-class": "error",
             "@typescript-eslint/no-floating-promises": "error",
             "@typescript-eslint/no-for-in-array": "error",
+            "@typescript-eslint/no-generated-empty-object-type": "error",
             "@typescript-eslint/no-implied-eval": "error",
             "@typescript-eslint/no-invalid-void-type": "error",
             "@typescript-eslint/no-meaningless-void-operator": "error",
@@ -17698,6 +17697,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
             "@typescript-eslint/no-duplicate-type-constituents": "error",
             "@typescript-eslint/no-floating-promises": "error",
             "@typescript-eslint/no-for-in-array": "error",
+            "@typescript-eslint/no-generated-empty-object-type": "error",
             "@typescript-eslint/no-implied-eval": "error",
             "@typescript-eslint/no-meaningless-void-operator": "error",
             "@typescript-eslint/no-misused-promises": "error",
@@ -17833,7 +17833,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
       "meta": {
         "name": "@typescript-eslint/eslint-plugin",
         "namespace": "@typescript-eslint",
-        "version": "8.59.4",
+        "version": "8.70.0",
       },
       "rules": {
         "adjacent-overload-signatures": {
@@ -17996,19 +17996,19 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
                   },
                   "ts-check": {
                     "$ref": "#/items/0/$defs/directiveConfigSchema",
-                    "description": "Whether allow ts-check directives, and with which restrictions.",
+                    "description": "Whether to allow ts-check directives, and with which restrictions.",
                   },
                   "ts-expect-error": {
                     "$ref": "#/items/0/$defs/directiveConfigSchema",
-                    "description": "Whether and when expect-error directives, and with which restrictions.",
+                    "description": "Whether to allow ts-expect-error directives, and with which restrictions.",
                   },
                   "ts-ignore": {
                     "$ref": "#/items/0/$defs/directiveConfigSchema",
-                    "description": "Whether allow ts-ignore directives, and with which restrictions.",
+                    "description": "Whether to allow ts-ignore directives, and with which restrictions.",
                   },
                   "ts-nocheck": {
                     "$ref": "#/items/0/$defs/directiveConfigSchema",
-                    "description": "Whether allow ts-nocheck directives, and with which restrictions.",
+                    "description": "Whether to allow ts-nocheck directives, and with which restrictions.",
                   },
                 },
                 "type": "object",
@@ -18178,6 +18178,7 @@ exports[`eslint > configs > should match the snapshot for the typescript preset 
               "preferIndexSignature": "An index signature is preferred over a record.",
               "preferIndexSignatureSuggestion": "Change into an index signature instead of a record.",
               "preferRecord": "A record is preferred over an index signature.",
+              "preferRecordSuggestion": "Change into a record instead of an index signature.",
             },
             "schema": [
               {
@@ -19350,7 +19351,9 @@ You must still type the parameters of the function.",
               "url": "https://typescript-eslint.io/rules/method-signature-style",
             },
             "fixable": "code",
+            "hasSuggestions": true,
             "messages": {
+              "convertToMethodSignature": "Convert to a method signature. This removes the \`readonly\` modifier, allowing the member to be reassigned.",
               "errorMethod": "Shorthand method signature is forbidden. Use a function property instead.",
               "errorProperty": "Function property signature is forbidden. Use a method shorthand instead.",
             },
@@ -22288,6 +22291,24 @@ You must still type the parameters of the function.",
           },
           "name": "no-for-in-array",
         },
+        "no-generated-empty-object-type": {
+          "create": [Function],
+          "defaultOptions": [],
+          "meta": {
+            "docs": {
+              "description": "Disallow type operations that resolve to the "empty object" type",
+              "recommended": "strict",
+              "requiresTypeChecking": true,
+              "url": "https://typescript-eslint.io/rules/no-generated-empty-object-type",
+            },
+            "messages": {
+              "noGeneratedEmptyObjectType": "This type resolves to \`{}\`, the empty object type. This was likely not intentional.",
+            },
+            "schema": [],
+            "type": "problem",
+          },
+          "name": "no-generated-empty-object-type",
+        },
         "no-implied-eval": {
           "create": [Function],
           "defaultOptions": [],
@@ -22459,6 +22480,18 @@ You must still type the parameters of the function.",
           "create": [Function],
           "defaultOptions": [],
           "meta": {
+            "deprecated": {
+              "deprecatedSince": "8.64.0",
+              "replacedBy": [
+                {
+                  "rule": {
+                    "name": "no-loop-func",
+                    "url": "https://eslint.org/docs/latest/rules/no-loop-func",
+                  },
+                },
+              ],
+              "url": "https://github.com/typescript-eslint/typescript-eslint/issues/12496",
+            },
             "docs": {
               "description": "Disallow function declarations that contain unsafe references inside loop statements",
               "extendsBaseRule": true,
@@ -22624,6 +22657,7 @@ You must still type the parameters of the function.",
             "fixable": "code",
             "hasSuggestions": true,
             "messages": {
+              "meaninglessVoidOnNonCall": "void operator is useless here; it should only discard a call's return value",
               "meaninglessVoidOperator": "void operator shouldn't be used on {{type}}; it should convey that a return value is being ignored",
               "removeVoid": "Remove 'void'",
             },
@@ -22632,7 +22666,7 @@ You must still type the parameters of the function.",
                 "additionalProperties": false,
                 "properties": {
                   "checkNever": {
-                    "description": "Whether to suggest removing \`void\` when the argument has type \`never\`.",
+                    "description": "Whether to suggest removing \`void\` when a call's return type is \`never\`.",
                     "type": "boolean",
                   },
                 },
@@ -22694,7 +22728,28 @@ You must still type the parameters of the function.",
                 "properties": {
                   "checksConditionals": {
                     "description": "Whether to warn when a Promise is provided to conditional statements.",
-                    "type": "boolean",
+                    "oneOf": [
+                      {
+                        "description": "Whether to check conditionals.",
+                        "type": "boolean",
+                      },
+                      {
+                        "additionalProperties": false,
+                        "description": "Detailed settings for conditional inspection.",
+                        "properties": {
+                          "flagUnions": {
+                            "description": "Configures how union types containing Promise-like types are checked.",
+                            "enum": [
+                              "all",
+                              "strict",
+                              "none",
+                            ],
+                            "type": "string",
+                          },
+                        },
+                        "type": "object",
+                      },
+                    ],
                   },
                   "checksSpreads": {
                     "description": "Whether to warn when \`...\` spreading a \`Promise\`.",
@@ -23119,6 +23174,18 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
           "create": [Function],
           "defaultOptions": [],
           "meta": {
+            "deprecated": {
+              "deprecatedSince": "8.64.0",
+              "replacedBy": [
+                {
+                  "rule": {
+                    "name": "no-restricted-imports",
+                    "url": "https://eslint.org/docs/latest/rules/no-restricted-imports",
+                  },
+                },
+              ],
+              "url": "https://github.com/typescript-eslint/typescript-eslint/pull/12527",
+            },
             "docs": {
               "description": "Disallow specified modules when loaded by \`import\`",
               "extendsBaseRule": true,
@@ -23414,6 +23481,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
               "url": "https://typescript-eslint.io/rules/no-shadow",
             },
             "messages": {
+              "noEnumShadow": "Enum members are added to the enum scope, so references to '{{name}}' in enum member initializers resolve to this member instead of the declaration in the upper scope on line {{shadowedLine}} column {{shadowedColumn}}.",
               "noShadow": "'{{name}}' is already declared in the upper scope on line {{shadowedLine}} column {{shadowedColumn}}.",
               "noShadowGlobal": "'{{name}}' is already a global variable.",
             },
@@ -23448,7 +23516,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
                     "type": "boolean",
                   },
                   "ignoreOnInitialization": {
-                    "description": "Whether to ignore the variable initializers when the shadowed variable is presumably still unitialized.",
+                    "description": "Whether to ignore the variable initializers when the shadowed variable is presumably still uninitialized.",
                     "type": "boolean",
                   },
                   "ignoreTypeValueShadow": {
@@ -23486,7 +23554,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
                 "additionalProperties": false,
                 "properties": {
                   "allowDestructuring": {
-                    "description": "Whether to ignore destructurings, such as \`const { props, state } = this\`.",
+                    "description": "Whether to ignore destructuring, such as \`const { props, state } = this\`.",
                     "type": "boolean",
                   },
                   "allowedNames": {
@@ -24274,7 +24342,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
                         "type": "boolean",
                       },
                       "ignoreRestSiblings": {
-                        "description": "Whether to ignore sibling properties in \`...\` destructurings.",
+                        "description": "Whether to ignore sibling properties in \`...\` destructuring.",
                         "type": "boolean",
                       },
                       "ignoreUsingDeclarations": {
@@ -26347,10 +26415,13 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
               "requiresTypeChecking": true,
               "url": "https://typescript-eslint.io/rules/strict-void-return",
             },
+            "hasSuggestions": true,
             "messages": {
               "asyncFunc": "Async function used in a context where a void function is expected.",
               "nonVoidFunc": "Value-returning function used in a context where a void function is expected.",
               "nonVoidReturn": "Value returned in a context where a void return is expected.",
+              "suggestAddVoidOp": "Add a void operator to discard the return value.",
+              "suggestWrapInAsyncIIFE": "Wrap the function body in an async IIFE.",
             },
             "schema": [
               {
@@ -26595,9 +26666,10 @@ If a function does not access \`this\`, it can be annotated with \`this: void\`.
               "url": "https://typescript-eslint.io/rules/unified-signatures",
             },
             "messages": {
+              "allParametersAreSame": "{{failureStringStart}} with identical parameters.",
               "omittingRestParameter": "{{failureStringStart}} with a rest parameter.",
               "omittingSingleParameter": "{{failureStringStart}} with an optional parameter.",
-              "singleParameterDifference": "{{failureStringStart}} taking \`{{type1}} | {{type2}}\`.",
+              "singleParameterDifference": "{{failureStringStart}} taking \`{{types}}\`.",
             },
             "schema": [
               {
