@@ -1,5 +1,11 @@
 # @sumup-oss/foundry
 
+## 10.2.0
+
+### Minor Changes
+
+- [#1224](https://github.com/sumup-oss/foundry/pull/1224) [`2d32948`](https://github.com/sumup-oss/foundry/commit/2d329489eeeaeee402c9f2b84842931d155b2b7d) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bumped the `@typescript-eslint/*` dependencies to v8.70.0. Refer to the [changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md).
+
 ## 10.1.1
 
 ### Patch Changes
