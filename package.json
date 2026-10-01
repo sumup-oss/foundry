@@ -73,7 +73,7 @@
     "@biomejs/js-api": "^4.0.0",
     "@biomejs/wasm-nodejs": "2.4.12",
     "@eslint/js": "^10.0.1",
-    "@inquirer/confirm": "^6.0.1",
+    "@inquirer/confirm": "^6.3.2",
     "@listr2/prompt-adapter-inquirer": "^3.0.5",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
     "@typescript-eslint/parser": "^8.70.0",
