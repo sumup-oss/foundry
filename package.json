@@ -70,7 +70,7 @@
   ],
   "dependencies": {
     "@biomejs/biome": "2.4.13",
-    "@biomejs/js-api": "^4.0.0",
+    "@biomejs/js-api": "^6.0.0",
     "@biomejs/wasm-nodejs": "2.4.12",
     "@eslint/js": "^10.0.1",
     "@inquirer/confirm": "^6.3.2",
